@@ -1,0 +1,15 @@
+// Peerless Athlete: increase duration to long rest
+new entry "Shout_LHB_Heroism_PeerlessAthlete"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_LHB_Heroism_PeerlessAthlete"
+// data "SpellProperties" "ApplyStatus(LHB_HEROISM_PEERLESSATHLETE,100,100)"
+data "SpellProperties" "ApplyStatus(LHB_HEROISM_PEERLESSATHLETE,100,-1)"
+// data "TooltipStatusApply" "ApplyStatus(LHB_HEROISM_PEERLESSATHLETE,100,100)"
+data "TooltipStatusApply" "ApplyStatus(LHB_HEROISM_PEERLESSATHLETE,100,-1)"
+
+// Mighty Deed: add condition to only allow passive to be procced in combat
+new entry "LHB_Heroism_MightyDeed_Passive"
+type "PassiveData"
+using "LHB_Heroism_MightyDeed_Passive"
+data "Conditions" "Combat()"

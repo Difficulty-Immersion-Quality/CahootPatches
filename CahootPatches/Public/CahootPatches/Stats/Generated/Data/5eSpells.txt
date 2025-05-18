@@ -1,0 +1,228 @@
+// ============================ Sword Burst, Thunderclap, Word of Radiance ============================
+// Increase damage die by a size from d6 to d8
+
+new entry "Shout_SwordBurst"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_SwordBurst"
+// data "SpellSuccess" "IF(not CharacterLevelGreaterThan(12)):DealDamage(LevelMapValue(D6Cantrip),Force,Magical);IF(CharacterLevelGreaterThan(12) and not CharacterLevelGreaterThan(16)):DealDamage(3d6,Force,Magical);IF(CharacterLevelGreaterThan(16)):DealDamage(4d6,Force,Magical)"
+data "SpellSuccess" "IF(not CharacterLevelGreaterThan(12)):DealDamage(LevelMapValue(D8Cantrip),Force,Magical);IF(CharacterLevelGreaterThan(12) and not CharacterLevelGreaterThan(16)):DealDamage(3d8,Force,Magical);IF(CharacterLevelGreaterThan(16)):DealDamage(4d8,Force,Magical)"
+// data "SpellFail" "IF(HasPassive('PotentCantrip',context.Source) and not CharacterLevelGreaterThan(12)):DealDamage((LevelMapValue(D8Cantrip))/2,Force,Magical);IF(HasPassive('PotentCantrip',context.Source) and CharacterLevelGreaterThan(12) and not CharacterLevelGreaterThan(16)):DealDamage(3d6,Force,Magical);IF(HasPassive('PotentCantrip',context.Source) and CharacterLevelGreaterThan(16)):DealDamage(4d6,Force,Magical)"
+data "SpellFail" "IF(HasPassive('PotentCantrip',context.Source) and not CharacterLevelGreaterThan(12)):DealDamage((LevelMapValue(D8Cantrip))/2,Force,Magical);IF(HasPassive('PotentCantrip',context.Source) and CharacterLevelGreaterThan(12) and not CharacterLevelGreaterThan(16)):DealDamage(3d8,Force,Magical);IF(HasPassive('PotentCantrip',context.Source) and CharacterLevelGreaterThan(16)):DealDamage(4d8,Force,Magical)"
+// data "TooltipDamageList" "DealDamage(LevelMapValue(D6Cantrip),Force)"
+data "TooltipDamageList" "DealDamage(LevelMapValue(D8Cantrip),Force)"
+
+new entry "Shout_Thunderclap"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_Thunderclap"
+// data "SpellSuccess" "IF(not CharacterLevelGreaterThan(16)):DealDamage(LevelMapValue(D6Cantrip),Thunder,Magical);IF(CharacterLevelGreaterThan(16)):DealDamage(4d8,Thunder,Magical)"
+data "SpellSuccess" "IF(not CharacterLevelGreaterThan(16)):DealDamage(LevelMapValue(D8Cantrip),Thunder,Magical);IF(CharacterLevelGreaterThan(16)):DealDamage(4d8,Thunder,Magical)"
+// data "SpellFail" "IF(HasPassive('PotentCantrip',context.Source) and not CharacterLevelGreaterThan(16)):DealDamage((LevelMapValue(D6Cantrip))/2,Thunder,Magical);IF(HasPassive('PotentCantrip',context.Source) and CharacterLevelGreaterThan(16)):DealDamage(4d6/2,Thunder,Magical)"
+data "SpellFail" "IF(HasPassive('PotentCantrip',context.Source) and not CharacterLevelGreaterThan(16)):DealDamage((LevelMapValue(D8Cantrip))/2,Thunder,Magical);IF(HasPassive('PotentCantrip',context.Source) and CharacterLevelGreaterThan(16)):DealDamage(4d8/2,Thunder,Magical)"
+// data "TooltipDamageList" "DealDamage(LevelMapValue(D6Cantrip),Thunder)"
+data "TooltipDamageList" "DealDamage(LevelMapValue(D8Cantrip),Thunder)"
+
+new entry "Shout_WordOfRadiance"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_WordOfRadiance"
+// data "SpellSuccess" "IF(not CharacterLevelGreaterThan(16)):DealDamage(LevelMapValue(D6Cantrip),Radiant,Magical);IF(CharacterLevelGreaterThan(16)):DealDamage(4d6,Radiant,Magical);"
+data "SpellSuccess" "IF(not CharacterLevelGreaterThan(16)):DealDamage(LevelMapValue(D8Cantrip),Radiant,Magical);IF(CharacterLevelGreaterThan(16)):DealDamage(4d8,Radiant,Magical);"
+// data "SpellFail" "IF(HasPassive('PotentCantrip',context.Source) and not CharacterLevelGreaterThan(16)):DealDamage((LevelMapValue(D6Cantrip))/2,Radiant,Magical);IF(HasPassive('PotentCantrip',context.Source) and CharacterLevelGreaterThan(16)):DealDamage(4d6/2,Radiant,Magical)"
+data "SpellFail" "IF(HasPassive('PotentCantrip',context.Source) and not CharacterLevelGreaterThan(16)):DealDamage((LevelMapValue(D8Cantrip))/2,Radiant,Magical);IF(HasPassive('PotentCantrip',context.Source) and CharacterLevelGreaterThan(16)):DealDamage(4d8/2,Radiant,Magical)"
+// data "TooltipDamageList" "DealDamage(LevelMapValue(D6Cantrip),Radiant)"
+data "TooltipDamageList" "DealDamage(LevelMapValue(D8Cantrip),Radiant)"
+
+// ============================ Magic Circle ============================
+// Remove not combat/turn-based requirement
+
+new entry "Target_Snare"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_Snare"
+data "Requirements" ""
+
+// ============================ Magic Circle ============================
+// Remove not combat/turn-based requirement
+// From Sumra's Ranger Subclasses Combined mod: remove RequirementConditions line also and override description with original from 5e Spells
+
+new entry "Target_MagicCircle"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_MagicCircle"
+// Create a [1] radius area of magical energy. Celestial, elemental, fiend, fey and undead creatures have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; against targets within the area, targets within the area can’t be &lt;LSTag Type="Status" Tooltip="CHARMED"&gt;Charmed&lt;/LSTag&gt;, &lt;LSTag Type="Status" Tooltip="FRIGHTENED"&gt;Frightened&lt;/LSTag&gt;, or &lt;LSTag Type="Status" Tooltip="LOW_GHOST_POSSESSED"&gt;Possessed&lt;/LSTag&gt; by the creatures, and the creatures cannot enter the area by nonmagical means.
+data "Description" "hcab94b97g25acg43d6g8d4ag40c3ac313601;1"
+data "DescriptionParams" "Distance(3)"
+// If the creatures try to teleport or fly into the area, they must succeed on a &lt;LSTag Tooltip="Charisma"&gt;Charisma&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or they are pushed [1] out of the circle.
+data "ExtraDescription" "h8fbd23b3g8fcfg4b23g95cbge11b53b51400;1"
+data "ExtraDescriptionParams" "Distance(5)"
+// data "Requirements" "!Combat"
+data "Requirements" ""
+// data "RequirementConditions" "not TurnBased()"
+data "RequirementConditions" ""
+
+// ============================ Motivational Speech ============================
+// Increase temp hp but decrease max targets, and remove not in combat requirement
+
+// Spell: decrease max targets to 3
+new entry "Target_MotivationalSpeech"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_MotivationalSpeech"
+// Three creatures in the area gain [1] and have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on Wisdom &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;. If hit by an attack, an affected creature has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on its next &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt; during combat.
+data "Description" "h38571638g79a7g4ae6g8380g34d54cf06253;1"
+data "AmountOfTargets" "3"
+data "Requirements" ""
+
+// Status: increase temp hp to 15, +6 per upcast level
+new entry "MOTIVATIONAL_SPEECH"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MOTIVATIONAL_SPEECH"
+data "DescriptionParams" "GainTemporaryHitPoints(15)"
+data "StackPriority" "15"
+data "Boosts" "TemporaryHP(15);Advantage(SavingThrow,Wisdom)"
+
+new entry "MOTIVATIONAL_SPEECH_4"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MOTIVATIONAL_SPEECH_4"
+data "DescriptionParams" "GainTemporaryHitPoints(21)"
+data "StackPriority" "21"
+data "Boosts" "TemporaryHP(21);Advantage(SavingThrow,Wisdom)"
+
+new entry "MOTIVATIONAL_SPEECH_5"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MOTIVATIONAL_SPEECH_5"
+data "DescriptionParams" "GainTemporaryHitPoints(27)"
+data "StackPriority" "27"
+data "Boosts" "TemporaryHP(27);Advantage(SavingThrow,Wisdom)"
+
+new entry "MOTIVATIONAL_SPEECH_6"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MOTIVATIONAL_SPEECH_6"
+data "StackPriority" "33"
+data "Boosts" "TemporaryHP(33);Advantage(SavingThrow,Wisdom)"
+data "DescriptionParams" "GainTemporaryHitPoints(33)
+
+new entry "MOTIVATIONAL_SPEECH_7"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MOTIVATIONAL_SPEECH_7"
+data "StackPriority" "39"
+data "Boosts" "TemporaryHP(39);Advantage(SavingThrow,Wisdom)"
+data "DescriptionParams" "GainTemporaryHitPoints(39)"
+
+new entry "MOTIVATIONAL_SPEECH_8"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MOTIVATIONAL_SPEECH_8"
+data "StackPriority" "45"
+data "Boosts" "TemporaryHP(45);Advantage(SavingThrow,Wisdom)"
+data "DescriptionParams" "GainTemporaryHitPoints(45)"
+
+new entry "MOTIVATIONAL_SPEECH_9"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MOTIVATIONAL_SPEECH_9"
+data "StackPriority" "51"
+data "Boosts" "TemporaryHP(51);Advantage(SavingThrow,Wisdom)"
+data "DescriptionParams" "GainTemporaryHitPoints(51)"
+
+// ============================ Conjure Volley ============================
+// Change damage to magical
+
+new entry "CONJURE_VOLLEY"
+type "StatusData"
+data "StatusType" "BOOST"
+using "CONJURE_VOLLEY"
+data "OnApplyFunctors" "DealDamage(8d8,MainRangedWeaponDamageType,Magical)"
+
+new entry "CONJURE_VOLLEY_FAIL"
+type "StatusData"
+data "StatusType" "BOOST"
+using "CONJURE_VOLLEY_FAIL"
+data "OnApplyFunctors" "DealDamage(8d8/2,MainRangedWeaponDamageType,Magical)"
+
+new entry "CONJURE_VOLLEY_BLUDGEONING"
+type "StatusData"
+data "StatusType" "BOOST"
+using "CONJURE_VOLLEY_BLUDGEONING"
+data "OnApplyFunctors" "DealDamage(8d8,Bludgeoning,Magical)"
+
+new entry "CONJURE_VOLLEY_BLUDGEONING_FAIL"
+type "StatusData"
+data "StatusType" "BOOST"
+using "CONJURE_VOLLEY_BLUDGEONING_FAIL"
+data "OnApplyFunctors" "DealDamage(8d8/2,Bludgeoning,Magical)"
+
+new entry "CONJURE_VOLLEY_SLASHING"
+type "StatusData"
+data "StatusType" "BOOST"
+using "CONJURE_VOLLEY_SLASHING"
+data "OnApplyFunctors" "DealDamage(8d8,Slashing,Magical)"
+
+new entry "CONJURE_VOLLEY_SLASHING_FAIL"
+type "StatusData"
+data "StatusType" "BOOST"
+using "CONJURE_VOLLEY_SLASHING_FAIL"
+data "OnApplyFunctors" "DealDamage(8d8/2,Slashing,Magical)"
+
+new entry "CONJURE_VOLLEY_PIERCING"
+type "StatusData"
+data "StatusType" "BOOST"
+using "CONJURE_VOLLEY_PIERCING"
+data "OnApplyFunctors" "DealDamage(8d8,Piercing,Magical)"
+
+new entry "CONJURE_VOLLEY_PIERCING_FAIL"
+type "StatusData"
+data "StatusType" "BOOST"
+using "CONJURE_VOLLEY_PIERCING_FAIL"
+data "OnApplyFunctors" "DealDamage(8d8/2,Piercing,Magical)"
+
+// ============================ Holy Weapon ============================
+// Decrease damage buff for weapon from 2d8 2d4
+
+new entry "Target_HolyWeapon"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_HolyWeapon"
+// data "DescriptionParams" "DealDamage(2d8,Radiant)"
+data "DescriptionParams" "DealDamage(2d4,Radiant)"
+
+new entry "HOLY_WEAPON"
+type "StatusData"
+data "StatusType" "BOOST"
+using "HOLY_WEAPON"
+// data "DescriptionParams" "2d8"
+data "DescriptionParams" "DealDamage(2d4,Radiant)"
+// data "Boosts" "WeaponDamage(2d8,Radiant);WeaponProperty(Magical);GameplayLight(9,false,0.1)"
+data "Boosts" "WeaponDamage(2d4,Radiant);WeaponProperty(Magical);GameplayLight(9,false,0.1)"
+
+// Also fix Valdacil's 5e Spell Adjustments accidentally overriding this entire status
+new entry "HOLY_WEAPON_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "Boosts" "UnlockSpell(Shout_HolyWeapon_Burst)"
+// data "OnRemoveFunctors" "ApplyStatus(BREAK_CONCENTRATION,100,0)"
+data "OnRemoveFunctors" "ApplyEquipmentStatus(MainHand,HOLY_WEAPON,100,0)"
+data "RemoveConditions" "SpellId('Shout_HolyWeapon_Burst')"
+data "RemoveEvents" "OnSpellCast"
+data "StackId" "HOLY_WEAPON_TECHNICAL"
+data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator"
+
+// ============================ Regenerate ============================
+// Remove not combat requirement
+
+new entry "Target_Regenerate"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_Regenerate"
+data "Requirements" ""
+
+
+
+

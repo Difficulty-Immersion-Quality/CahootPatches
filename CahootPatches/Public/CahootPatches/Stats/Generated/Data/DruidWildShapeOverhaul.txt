@@ -1,0 +1,18 @@
+// ============================================= Bulette =============================================
+
+// Deadly Leap no longer hit allies
+new entry "WSO_Projectile_DeadlyLeap_Bulette"
+type "SpellData"
+data "SpellType" "Projectile"
+using "WSO_Projectile_DeadlyLeap_Bulette"
+data "TargetConditions" "not Self() and not Ally() and not Dead() and not Item()"
+
+// ============================================= Owlbear =============================================
+
+// Rupture no longer hit allies 
+new entry "WSO_Target_Rupture_Owlbear"
+type "SpellData"
+data "SpellType" "Target"
+using "WSO_Target_Rupture_Owlbear"
+data "TargetConditions" "not Self() and not Ally() and not Dead() and not Item()"
+data "Description" "h0d6e0466g0aaag4592gb35bgbd5f749da35d"

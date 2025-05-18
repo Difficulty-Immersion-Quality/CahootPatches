@@ -1,0 +1,7 @@
+// OneDnD Monk Martial Arts passive: fix tooltip's LSTag
+new entry "CL_Passive_OneDnD_MartialArts"
+type "PassiveData"
+using "CL_Passive_OneDnD_MartialArts"
+// Attacks with &lt;LSTag Tooltip="MonkWeapon"&gt;Monk Weapons&lt;/LSTag&gt; and unarmed attacks deal [1], unless their normal damage is higher and scale with your &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; instead of your &lt;LSTag Tooltip="Strength"&gt;Strength&lt;/LSTag&gt; if your Dexterity is higher. In addition, you can make &lt;LSTag Type="Spell" Tooltip="CL_Target_OneDnD_MartialArts_UnarmedStrike_BonusAction"&gt;Unarmed Strikes&lt;/LSTag&gt; as a &lt;LSTag Type="ActionResource" Tooltip="BonusActionPoint"&gt;bonus action&lt;/LSTag&gt;.
+data "Description" "h24a45b2cgd16fg4189g85c1gde831fc0aa62;1"
+

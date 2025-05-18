@@ -1,0 +1,100 @@
+// ================================ Adding level 7-9 scrolls to more locations ================================
+
+// The treasure tables already added by SecretScrolls
+// new treasuretable "LOW_CountingHouse_HighSecurityVault_8"
+// CanMerge 1
+// new subtable "1,1"
+// object category "MagicScroll_7",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "MagicScroll_8",1,0,0,0,0,0,0,0
+
+// new treasuretable "LOW_OmeluumSupplies_Reward"
+// CanMerge 1
+// new subtable "1,1"
+// object category "MagicScroll_7",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "MagicScroll_8",1,0,0,0,0,0,0,0
+
+// new treasuretable "LOW_WQH_AllandraChest"
+// CanMerge 1
+// new subtable "1,1"
+// object category "MagicScroll_8",1,0,0,0,0,0,0,0
+
+// new treasuretable "LOW_SorcerousSundries_MystraVault_Treasure"
+// CanMerge 1
+// new subtable "1,1"
+// object category "MagicScroll_7",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "MagicScroll_8",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "MagicScroll_9",1,0,0,0,0,0,0,0
+
+// Adding level 7 scrolls to the regular vendor scroll treasure table
+// Adding it as a single new subtable because I don't think I can override the existing previous level 11+ subtable without overriding the entire treasure table.
+// Should be fine because I don't wanna edit that existing subtable anyway, and not adding higher than level 7 scrolls.
+new treasuretable "Supply_Scroll_Single"
+CanMerge 1
+new subtable "1,1"
+StartLevel "13"
+object category "MagicScroll_7",2,0,0,0,0,0,0,0
+
+// Adding one level 7 scroll to High Security Vault 9 (key from completing Return Ratakth's Gold/pickpocketed from him; vanilla reward is just Elegant Studded Leather)
+new treasuretable "LOW_CountingHouse_HighSecurityVault_9"
+CanMerge 1
+new subtable "1,1"
+object category "MagicScroll_7",1,0,0,0,0,0,0,0
+
+// Adding one each levels 7, 8 and 9 scrolls to High Security Vault 1 (key from display case in Ramazith's Tower)
+new treasuretable "LOW_CountingHouse_HighSecurityVault_9"
+CanMerge 1
+new subtable "1,1"
+object category "MagicScroll_7",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "MagicScroll_8",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "MagicScroll_9",1,0,0,0,0,0,0,0
+
+// Adding one level 7 OR 8 OR 9 scroll to chest upstairs in Devil's Fee (same location as Mask of Soul Perception)
+new treasuretable "LOW_DevilsFee_HelsikChest_Treasure"
+CanMerge 1
+new subtable "1,1"
+object category "MagicScroll_7",3,0,0,0,0,0,0,0
+object category "MagicScroll_8",2,0,0,0,0,0,0,0
+object category "MagicScroll_9",1,0,0,0,0,0,0,0
+
+// Adding one level 8 scroll to quest reward for Help the Hag Survivors
+new treasuretable "LOW_BreakHagHex_QuestReward"
+CanMerge 1
+new subtable "1,1"
+object category "MagicScroll_8",1,0,0,0,0,0,0,0
+
+// ================================ Legendary Lathander set from LathanderArmory for personal use ================================
+
+new treasuretable "MOO_KethericCombat_Chest"
+CanMerge 1
+new subtable "1,1"
+object category "I_CSS_Lathander_BreastplateB",1,0,0,0,0,0,0,0
+
+new treasuretable "SHA_HiddenRoom_Magic_Chest"
+CanMerge 1
+new subtable "1,1"
+object category "I_CSS_Lathander_Glove_SunPlate",1,0,0,0,0,0,0,0
+
+new treasuretable "MOO_SecretStudyTreasure_Chest"
+CanMerge 1
+new subtable "1,1"
+object category "I_CSS_Lathander_BootsPlateB",1,0,0,0,0,0,0,0
+
+new treasuretable "LOW_StormshoreTabernacle_GenericGod_Treasure"
+CanMerge 1
+new subtable "1,1"
+object category "I_CSS_Lathander_Circ_Band_A",1,0,0,0,0,0,0,0
+
+new treasuretable "LOW_SorcerousSundries_MystraVault_Weapon_Treasure"
+CanMerge 1
+new subtable "1,1"
+object category "I_CSS_Lathander_SunSperm_Cape",1,0,0,0,0,0,0,0
+
+
+
+

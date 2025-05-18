@@ -1,0 +1,176 @@
+// ================================ Shield ================================
+
+// AC bonus decreased to 4 (previously 5)
+new entry "Shout_Shield_Wizard"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_Shield_Wizard"
+data "Description" "h0711cc83g6c6bg4fa2ga6f3g452f7389fda0;1"
+// data "DescriptionParams" "5"
+data "DescriptionParams" "4"
+
+new entry "Interrupt_Shield_Wizard"
+type "InterruptData"
+using "Interrupt_Shield_Wizard"
+data "Description" "h39e94ee1g0aa0g4b7ag806bg7f88310410f8;1"
+
+new entry "Interrupt_Shield_Sorcerer"
+type "InterruptData"
+using "Interrupt_Shield_Sorcerer"
+// data "Properties" "IF(HasInterruptedAttack()):AdjustRoll(-5);IF(IsSpellChildOrVariantFromContext('Projectile_MagicMissile')):SetRoll(0);ApplyStatus(INTERRUPT_SHIELD_SORCERER,100,1);ApplyStatus(OBSERVER_OBSERVER,SHIELD,100,1)"
+data "Properties" "IF(HasInterruptedAttack()):AdjustRoll(-4);IF(IsSpellChildOrVariantFromContext('Projectile_MagicMissile')):SetRoll(0);ApplyStatus(INTERRUPT_SHIELD_SORCERER,100,1);ApplyStatus(OBSERVER_OBSERVER,SHIELD,100,1)"
+
+new entry "Interrupt_Shield_Warlock"
+type "InterruptData"
+using "Interrupt_Shield_Warlock"
+// data "Properties" "IF(HasInterruptedAttack()):AdjustRoll(-5);IF(IsSpellChildOrVariantFromContext('Projectile_MagicMissile')):SetRoll(0);ApplyStatus(INTERRUPT_SHIELD_WARLOCK,100,1);ApplyStatus(OBSERVER_OBSERVER,SHIELD,100,1)"
+data "Properties" "IF(HasInterruptedAttack()):AdjustRoll(-4);IF(IsSpellChildOrVariantFromContext('Projectile_MagicMissile')):SetRoll(0);ApplyStatus(INTERRUPT_SHIELD_WARLOCK,100,1);ApplyStatus(OBSERVER_OBSERVER,SHIELD,100,1)"
+
+new entry "SHIELD"
+type "StatusData"
+data "StatusType" "BOOST"
+using "SHIELD"
+data "Description" "hbb62bd84ge3bfg45a5g8600g5a279f0658ab;1"
+// data "Boosts" "AC(5);IF(IsSpellChildOrVariantFromContext('Projectile_MagicMissile')):DamageReduction(Force,Flat,100)"
+data "Boosts" "AC(4);IF(IsSpellChildOrVariantFromContext('Projectile_MagicMissile')):DamageReduction(Force,Flat,100)"
+
+// ================================ Haste ================================
+// Decrease AC bonus to +1 (previously +2) and movement speed bonus to 6m (previously 9m)
+
+new entry "Target_Haste"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_Haste"
+// Target yourself or an ally to become &lt;LSTag Type="Status" Tooltip="HASTE"&gt;Hastened&lt;/LSTag&gt;: gain an &lt;LSTag Tooltip="Action"&gt;action&lt;/LSTag&gt;, become faster and gain +1 to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;.
+data "Description" "hf873a7f6g0a72g4ab3g924bg192b38c25be7;1"
+
+new entry "HASTE"
+type "StatusData"
+data "StatusType" "BOOST"
+using "HASTE"
+// Affected entity has a +[1] bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;, &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on Dexterity &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;, its &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; is increased by [2], and it can take one additional &lt;LSTag Tooltip="Action"&gt;action&lt;/LSTag&gt; per turn. When the condition ends, the creature becomes &lt;LSTag Type="Status" Tooltip="HASTE_LETHARGY"&gt;Lethargic&lt;/LSTag&gt;.
+data "Description" "hc21d9efegcce2g442fgaf7cgc500849eb98e;1"
+// data "DescriptionParams" ""
+data "DescriptionParams" "1;Distance(6)"
+// data "Boosts" "ActionResource(Movement,9,0);AC(2);ActionResource(ActionPoint,1,0);Advantage(SavingThrow, Dexterity)"
+data "Boosts" "ActionResource(Movement,6,0);AC(1);ActionResource(ActionPoint,1,0);Advantage(SavingThrow, Dexterity)"
+
+new entry "HASTE_SURFACE"
+type "StatusData"
+data "StatusType" "BOOST"
+using "HASTE_SURFACE"
+data "Description" "hc21d9efegcce2g442fgaf7cgc500849eb98e;1"
+// data "DescriptionParams" ""
+data "DescriptionParams" "1;Distance(6)"
+
+new entry "TAD_MIND_SANCTUARY_HASTE"
+type "StatusData"
+data "StatusType" "BOOST"
+using "TAD_MIND_SANCTUARY_HASTE"
+// Affected entity has a +2 bonus to <LSTag Tooltip="ArmourClass">Armour Class</LSTag>, <LSTag Tooltip="Advantage">Advantage</LSTag> on Dexterity <LSTag Tooltip="SavingThrow">Saving Throws</LSTag>, its <LSTag Tooltip="MovementSpeed">movement speed</LSTag> is doubled, and it can take one additional action per turn. When the condition ends, the creature becomes <LSTag Type="Status" Tooltip="HASTE_LETHARGY">Lethargic</LSTag>.
+data "Description" "hc21d9efegcce2g442fgaf7cgc500849eb98e;1"
+// data "DescriptionParams" ""
+data "DescriptionParams" "1;Distance(6)"
+
+new entry "MAG_CELESTIAL_HASTE"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MAG_CELESTIAL_HASTE"
+// Affected entity has a +[1] bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;, &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on Dexterity &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;, its &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; is increased by [2], and it can take one additional &lt;LSTag Tooltip="Action"&gt;action&lt;/LSTag&gt; per turn.data "Description" "h73b475f8g69bdg4bb0gab7eg1912ddc513b4;2"
+data "Description" "ha9ee67d5g4d32g4fc1gb3d6g617fde258d34;1"
+// data "DescriptionParams" ""
+data "DescriptionParams" "1;Distance(6)"
+
+// ================================ Hunger of Hadar ================================
+// Movement speed is only reduced by 33% now (previously 50% - used Difficult Terrain status)
+
+new entry "Target_HungerOfHadar"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_HungerOfHadar"
+data "ExtraDescription" "hfbc81e92ga2cfg470eg93e9g80cee5c6d5e0;1"
+// data "DescriptionParams" "DealDamage(2d6,Cold);DealDamage(2d6,Acid)"
+data "DescriptionParams" "DealDamage(2d6,Cold);DealDamage(2d6,Acid);33"
+
+new entry "VOID_AURA"
+type "StatusData"
+data "StatusType" "BOOST"
+using "VOID_AURA"
+data "Description" "ha15ca294g805eg49d6g958ag0f47fc23e17a;1"
+// data "DescriptionParams" "DealDamage(2d6,Cold);DealDamage(2d6,Acid)"
+data "DescriptionParams" "DealDamage(2d6,Cold);DealDamage(2d6,Acid);33"
+// data "AuraStatuses" "TARGET:IF(Character()):ApplyStatus(VOID_START,100,-1);TARGET:IF(Character()):ApplyStatus(VOID_END,100,-1);TARGET:IF(Character()):ApplyStatus(DIFFICULT_TERRAIN,100,-1)"
+data "AuraStatuses" "TARGET:IF(Character()):ApplyStatus(VOID_START,100,-1);TARGET:IF(Character()):ApplyStatus(VOID_END,100,-1);TARGET:IF(Character()):ApplyStatus(HUNGER_OF_HADAR_SLOW,100,-1)"
+
+new entry "VOID_START"
+type "StatusData"
+data "StatusType" "BOOST"
+using "VOID_START"
+data "Description" "h7be3d67bg22beg41fbga7d2g5b4c4bb3bfef;1"
+// data "DescriptionParams" "DealDamage(2d6,Cold);DealDamage(2d6,Acid)"
+data "DescriptionParams" "DealDamage(2d6,Cold);DealDamage(2d6,Acid);33"
+
+new entry "HUNGER_OF_HADAR_SLOW"
+type "StatusData"
+data "StatusType" "BOOST"
+using "DIFFICULT_TERRAIN"
+data "DisplayName" "hf1eb09bfg4c93g489cg8c62gbd9345d6e1d6;1"
+data "Description" "hd8e178ecg1efag49abg9c27g626b5e35c6d7;1"
+data "DescriptionParams" "33"
+data "Boosts" "ActionResourceConsumeMultiplier(Movement,1.5,0);MovementSpeedLimit(Walk)"
+data "StatusGroups" "SG_DifficultTerrain"
+
+// Modifying the AI spell override in the summon to prevent AI from casting the spell on themselves 
+new entry "Projectile_AiHelper_HungerOfHadar"
+type "SpellData"
+data "SpellType" "Projectile"
+using "Projectile_AiHelper_HungerOfHadar"
+// data "SpellProperties" "ApplyStatus(VOID_START,100,1);ApplyStatus(VOID_END,100,1);"
+data "SpellProperties" "IF(Enemy()):DealDamage(4d6,Cold);IF(Enemy()):DealDamage(4d6,Acid);IF(Enemy()):ApplyStatus(BLINDED,100,1)"
+
+// ================================ Heroes' Feast ================================
+// Removed poison and disease immunity
+
+new entry "Shout_HeroesFeast"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_HeroesFeast"
+data "Description" "h04e69098gfbe5g4916ga002gcd74cc7dbf97;1"
+data "DescriptionParams" "12"
+
+new entry "HEROES_FEAST"
+type "StatusData"
+data "StatusType" "BOOST"
+using "HEROES_FEAST"
+data "Description" "hbf720219gffd7g4b64g9491ge7b40c8e7d9d;1"
+// data "Boosts" "StatusImmunity(SG_Disease);StatusImmunity(SG_Poisoned);StatusImmunity(SG_Frightened);Advantage(SavingThrow,Wisdom);IncreaseMaxHP(12)"
+data "Boosts" "StatusImmunity(SG_Frightened);Advantage(SavingThrow,Wisdom);IncreaseMaxHP(12)"
+
+// ================================ Globe of Invulnerability ================================
+// Reworked to instead give resistance to all damage, flat 2 damage reduction, and +2 bonus to all saving throws
+
+new entry "Target_GlobeOfInvulnerability"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_GlobeOfInvulnerability"
+data "DisplayName" "hb215306agc1f7g4859g9489gad8337fcfca8;1"
+data "Description" "hb1daa1c3gb3c9g44dfg9f85gee0d2fca7059;1"
+
+new entry "GLOBE_OF_INVULNERABILITY_AURA"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GLOBE_OF_INVULNERABILITY_AURA"
+data "DisplayName" "hb1daa1c3gb3c9g44dfg9f85gee0d2fca7059;1"
+
+new entry "GLOBE_OF_INVULNERABILITY"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GLOBE_OF_INVULNERABILITY"
+data "DisplayName" "he5a18a93g728cg44c1gb231g1a66113fc7bc;1"
+data "Description" "hd2f87513gc329g4d7fgb424gca0aa6b32932;1"
+data "DescriptionParams" "2;2"
+data "StackId" "PROTECTED"
+// data "Boosts" "Invulnerable();Advantage(AllSavingThrows)"
+data "Boosts" "Resistance(All, Resistant);DamageReduction(All, Flat, 2);RollBonus(SavingThrow,2)"
+// data "StatusGroups" "SG_RemoveOnRespec;SG_Ignore_AOO"
+data "StatusPropertyFlags" ""

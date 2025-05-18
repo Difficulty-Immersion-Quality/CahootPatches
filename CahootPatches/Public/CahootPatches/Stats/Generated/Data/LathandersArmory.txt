@@ -1,0 +1,109 @@
+// ================================= Sunwheel Mantle =================================
+// Change Crusader's Mantle to inherit from base game spell, remove spell slot cost, and have long rest cooldown
+
+new entry "CSS_Lathy_CrusadersMantle"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_CrusadersMantle"
+data "Cooldown" "OncePerRestPerItem"
+data "Icon" "CSS_Lathy_CrusaderMantle_Icon"
+// data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:3"
+data "UseCosts" "BonusActionPoint:1"
+
+// ================================= Ruined Dawnmaster's Crest =================================
+// Fix Surge of Light's heal not triggering properly
+
+// Add technical status to armour to track the wearer
+new entry "CSS_LATHANDER_CREST_TRINKET"
+type "Armor"
+using "CSS_LATHANDER_CREST_TRINKET"
+data "StatusOnEquip" "LATHANDER_SURGEOFLIGHT_TECHNICAL"
+
+// Passive only gives 3 hit points to entity that has the technical status. SELF parameter removed from RegainHitPoints()
+new entry "CSS_Lathander_Pass_SurgeOfLight"
+type "PassiveData"
+using "CSS_Lathander_Pass_SurgeOfLight"
+// Whenever the wearer is healed, they receive an additional [1] of healing.
+data "Description" "hce421159g0407g470fg85deg6fc73d6c24bc;1"
+data "DescriptionParams" "RegainHitPoints(3)"
+// data "Conditions" "(Character() and not Self()) or AreaRadiusGreaterThan(1)"
+data "Conditions" "HasStatus('LATHANDER_SURGEOFLIGHT_TECHNICAL', context.Target)"
+// data "StatsFunctors" "IF(not HasStatus('MAG_HEAL_SELF_ONCE_TECHNICAL', context.Source)):RegainHitPoints(SELF,3);ApplyStatus(SELF, MAG_HEAL_SELF_ONCE_TECHNICAL, 100, 0)"
+data "StatsFunctors" "IF(not HasStatus('MAG_HEAL_SELF_ONCE_TECHNICAL', context.Source)):RegainHitPoints(3);ApplyStatus(SELF, MAG_HEAL_SELF_ONCE_TECHNICAL, 100, 0)"
+
+// New technical status
+new entry "LATHANDER_SURGEOFLIGHT_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackId" "LATHANDER_SURGEOFLIGHT_TECHNICAL"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;ApplyToDead;IgnoreResting"
+
+// ================================= Sunburst Signet and Sky Compass Ring =================================
+// Fix passives' BoostContexts and BoostCOnditions to make them more reliably trigger their Boosts
+
+new entry "CSS_Lathander_Pass_IlluminateAC" 
+type "PassiveData"
+using "CSS_Lathander_Pass_IlluminateAC"
+// data "BoostContext" "OnEquip;OnCreate"
+data "BoostContext" "OnObscurityChanged;OnEquip;OnCreate;OnAttacked;OnMovedDistance;OnStatusApplied;OnStatusRemoved"
+// data "BoostConditions" "IF(HasObscuredState(ObscuredState.Clear, context.Source))"
+data "BoostConditions" "HasObscuredState(ObscuredState.Clear, context.Source)"
+
+new entry "CSS_Lathander_Pass_IlluminateConc" 
+type "PassiveData"
+using "CSS_Lathander_Pass_IlluminateConc"
+// data "StatsFunctorContext" "OnObscurityChanged;OnCreate"
+data "BoostContext" "OnObscurityChanged;OnEquip;OnCreate;OnAttacked;OnMovedDistance;OnStatusApplied;OnStatusRemoved"
+// data "BoostConditions" "IF(HasObscuredState(ObscuredState.Clear, context.Source))"
+data "BoostConditions" "HasObscuredState(ObscuredState.Clear, context.Source)"
+
+new entry "CSS_Lathander_Pass_IlluminateConc2" 
+type "PassiveData"
+using "CSS_Lathander_Pass_IlluminateConc2"
+// data "StatsFunctorContext" "OnObscurityChanged;OnCreate"
+data "BoostContext" "OnObscurityChanged;OnEquip;OnCreate;OnAttacked;OnMovedDistance;OnStatusApplied;OnStatusRemoved"
+// data "BoostConditions" "IF(not HasObscuredState(ObscuredState.Clear, context.Source))"
+data "BoostConditions" "not HasObscuredState(ObscuredState.Clear, context.Source)"
+
+// ================================= Sunburst Signet =================================
+// Add short rest cooldown to Daylight variants, and fix inheritances for variants to inherit from base game spells
+
+new entry "CSS_Lathy_Daylight_Container"
+type "SpellData"
+data "SpellType" "Target"
+using "CSS_Lathy_Daylight_Container"
+data "Cooldown" "OncePerShortRestPerItem"
+
+new entry "CSS_Lathy_Spell_Daylight_S"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_Daylight"
+data "SpellContainerID" "CSS_Lathy_Daylight_Container"
+data "Icon" "CSS_Lathander_Daylight_Icon"
+// Dawn's Light: Sphere
+data "DisplayName" "h0a0c739bg96c5g4e47gba5cg6831a6604782;1"
+data "Description" "hc04888ccg3e30g4faegaa40g75906c4ff62e;1"
+data "UseCosts" "ActionPoint:1"
+
+new entry "CSS_Lathy_Spell_Daylight_Item"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_Daylight_Enchantment"
+data "Icon" "CSS_Lathander_Daylight_Icon"
+// Dawn's Light: Enchant Item
+data "DisplayName" "h3f6b9952g6dd6g48c9g927bgb0d26c3e0b95;1"
+data "Description" "h2a05f823g53fdg47b3gb24cg41116a4cc174;1"
+data "UseCosts" "ActionPoint:1"
+
+// // ================================= Sun Prince's Breastplate ================================= (changes not applied due to personal rework of this armour)
+// // Divine Protection: Fix  the Turned status applying to the wearer instead of the attacker 
+// new entry "CSS_Lathy_Pass_HolyRebuked"
+// type "PassiveData"
+// using "CSS_Lathy_Pass_HolyRebuked"
+// // data "StatsFunctors" "ApplyStatus(TURNED, 100, 3)"
+// data "StatsFunctors" "ApplyStatus(SWAP,TURNED, 100, 3)"
+
+
+
+
+
