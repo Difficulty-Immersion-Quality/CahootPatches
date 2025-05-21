@@ -65,6 +65,7 @@ using "Gnoll_Hunter"
 data "Passives" "CX_Ranger_Boost;CX_Ranger_Hunter_Boost;CX_Martial_Boost;AttackOfOpportunity;Darkvision;DarknessRules;Rampage"
 
 // ==================================== Constructs - Robot mfers ====================================
+
 // "_Base" > "_Construct" > "Automaton" > "AdamantineGolem" > "UND_AdamantineGolem"
 //                        > "AnimatedArmor" > "TWN_ShadowAnimatedArmour"
 //                                          > "LOW_RamazithsTower_Armour"
@@ -409,6 +410,7 @@ data "TooltipDamageList" "DealDamage(10d4+10,Psychic);DealDamage(10d4+10,Force)"
 // data "ActionResources" "ActionPoint:1;BonusActionPoint:1;ReactionActionPoint:3"
 
 // ==================================== Objects relevant for combat ====================================
+
 // "_BaseItem" > "OBJ_Destr_Support_Stone" > "OBJ_LOW_HoH_Pillar"
 //             > "HAV_ShadowPortal"
 

@@ -291,7 +291,8 @@ data "TooltipDamageList" "DealDamage(5d10+10,Radiant)"
 // data "TooltipStatusApply" "ApplyStatus(SUNBEAM,100,10)"
 data "TooltipStatusApply" "ApplyStatus(SUNBEAM,100,1)"
 
-// Inheritances - keeping original damage
+// Inheritances
+// Blood of Lathander's Sunbeam: keeping original damage
 new entry "Zone_MAG_BloodOfLathander_Sunbeam"
 type "SpellData"
 data "SpellType" "Zone"
@@ -299,3 +300,11 @@ using "Zone_MAG_BloodOfLathander_Sunbeam"
 data "SpellSuccess" "DealDamage(6d8,Radiant,Magical);ApplyStatus(SUNBEAM,100,1)"
 data "SpellFail" "DealDamage((6d8)/2,Radiant,Magical)"
 data "TooltipDamageList" "DealDamage(6d8,Radiant)"
+
+// Markoheshkir's Sunbeam from my mod: removing concentration
+new entry "CHT_Zone_MAG_Legendary_Chromatic_Sunbeam"
+type "SpellData"
+data "SpellType" "Zone"
+using "CHT_Zone_MAG_Legendary_Chromatic_Sunbeam"
+// data "SpellFlags" "HasVerbalComponent;HasSomaticComponent;IsSpell;IsConcentration;IsHarmful;Temporary"
+data "SpellFlags" "HasVerbalComponent;HasSomaticComponent;IsSpell;IsHarmful;Temporary"
