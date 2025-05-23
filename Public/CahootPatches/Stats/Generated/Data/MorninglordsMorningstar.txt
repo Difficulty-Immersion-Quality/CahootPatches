@@ -1,0 +1,15 @@
+// ================================= Nerfs to The Morninglord's Morningstar mod =================================
+
+// Blood of Lathander: remove Morninglord's Radiance passive
+new entry "CRE_BloodOfLathander"
+type "Weapon"
+using "CRE_BloodOfLathander"
+data "PassivesOnEquip" "XEN_MorninglordsMorningstar_AttackBonus_Passive;CRE_LathandersBlessing_Passive;CRE_LathandersLight_Passive;CRE_LathandersBlessing_Cooldown_Passive;XEN_MorninglordsMorningstar_Moonshield_Tracker"
+
+// Blood of Lathander's Sunbeam: decrease recast duration to 2 turns
+new entry "Zone_MAG_BloodOfLathander_Sunbeam"
+type "SpellData"
+data "SpellType" "Zone"
+using "Zone_MAG_BloodOfLathander_Sunbeam"
+data "SpellProperties" "CAST:ApplyStatus(SELF,XEN_MORNINGLORDS_MORNINGSTAR_SUNBEAM_RECAST,100,2)"
+data "TooltipStatusApply" "ApplyStatus(XEN_MORNINGLORDS_MORNINGSTAR_SUNBEAM,100,1);ApplyStatus(XEN_MORNINGLORDS_MORNINGSTAR_SUNBEAM_RECAST,100,2)"

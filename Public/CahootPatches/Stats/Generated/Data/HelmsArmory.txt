@@ -1,0 +1,48 @@
+// ==================================== Chest armour ====================================
+// Fixes Faithguard +2 AC remaining on target even if they no longer have Shield of Faith
+
+new entry "CSS_HelmArmory_Pass_Faithguard"
+type "PassiveData"
+using "CSS_HelmArmory_Pass_Faithguard"
+// You gain an additional +[1] to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; when &lt;LSTag Type="Status" Tooltip="SHIELD_OF_FAITH"&gt;Shield of Faith&lt;/LSTag&gt; is active.
+data "Description" "h5259232cg94bcg4f1fg86cag49bd2775aea0"
+// data "DescriptionParams" "2"
+data "StatsFunctors" "ApplyStatus(HELMARMORY_FAITHGUARD,100,-1)"
+// data "Boosts" "AC(2)"
+data "Boosts" ""
+
+// New status
+new entry "HELMARMORY_FAITHGUARD"
+type "StatusData"
+data "StatusType" "BOOST"
+data "DisplayName" "h96487335ga28eg4d11ga040g3988f3187acc;1"
+data "Description" "h433f9e7cg1f4dg4680ga58ag1299b22eca8e;1"
+data "DescriptionParams" "2"
+data "Icon" "Spell_Abjuration_ShieldOfFaith"
+data "StackId" "HELM_FAITHGUARD"
+data "StackType" ""
+data "Boosts" "AC(2)"
+data "Passives" ""
+data "RemoveConditions" "StatusId('SHIELD_OF_FAITH')"
+data "RemoveEvents" "OnStatusRemoved"
+
+// ==================================== Additional loca changes ====================================
+new entry "CSS_HelmArmor_Pass_DivineVigilance"
+type "PassiveData"
+using "CSS_HelmArmor_Pass_DivineVigilance"
+// You gain a +3 bonus to Initiative Rolls and have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on Perception &lt;LSTag Tooltip="AbilityCheck"&gt;Checks&lt;/LSTag&gt;.
+data "Description" "ha910c197g7b7ag443dga5cagace2a219dde8"
+
+new entry "CSS_HelmArmor_Pass_Weavebane"
+type "PassiveData"
+using "CSS_HelmArmor_Pass_Weavebane"
+// You have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; against spells. This weapon deals an additional [1] to targets &lt;LSTag Tooltip="Concentration"&gt;Concentrating&lt;/LSTag&gt; on a spell.
+data "Description" "h26e9271ag521dg49begb54eg511971cdde17"
+// data "DescriptionParams" "DealDamage(1d6,Force)"
+
+new entry "CSS_HelmArmory_Pass_ShieldHeal"
+type "PassiveData"
+using "CSS_HelmArmory_Pass_ShieldHeal"
+// Landing an attack on a target heals allies for [1] in a [2] radius around you. This effect can only occur once per turn.
+data "Description" "h02da00cdgac67g45f4g8516g806b0ee900b7"
+// data "DescriptionParams" "RegainHitPoints(1d4);Distance(9)"
