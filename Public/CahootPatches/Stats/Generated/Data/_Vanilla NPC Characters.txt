@@ -1,4 +1,4 @@
-// ==================================== Aberrations ====================================
+// ==================================== Aberration ====================================
 // "_Aberration"
 //  ├─ "MindFlayer"
 //  │   ├─ "END_Daisy"
@@ -67,7 +67,30 @@ data "Vitality" "12"
 // // data "ActionResources" "ActionPoint:1;BonusActionPoint:1;ReactionActionPoint:1"
 // data "ActionResources" "ActionPoint:1;BonusActionPoint:1;ReactionActionPoint:3"
 
-// ==================================== Constructs ====================================
+// ==================================== Beast ====================================
+// "_Base"
+//  ├─ "_Beast"
+//  │   ├─ "Boar"
+//  │   │   ├─ "Boar_Hell"
+//  │   │   │   ├─ "Boar_Hell_Weak"
+//  │   │   │   ├─ "LOW_DevilsFee_Boar"
+//  │   │   │   └─ "LOW_Raphael_Boar"
+//  │   │   ├─ "Boar_Wildshape"
+//  │   │   ├─ "CRA_Boar"
+//  │   │   └─ "Companion_Boar"
+//  │   │       └─ "Companion_Boar_5"
+//  │   │           └─ "Companion_Boar_7"
+//  │   │               └─ "Companion_Boar_8"
+//  │   │                   └─ "Companion_Boar_11"
+
+// Vengeful Boars (House of Hope)
+new entry "LOW_Raphael_Boar"
+type "Character"
+using "LOW_Raphael_Boar"
+// data "Passives" "AttackOfOpportunity;Darkvision;DarknessRules;BurningHide_HellBoar;DispelEvilAndGood_Charm_Check;DispelEvilAndGood_Frightened_Check;DispelEvilAndGood_Possessed_Check"
+data "Passives" "AttackOfOpportunity;Darkvision;DarknessRules;BurningHide_HellBoar;DispelEvilAndGood_Charm_Check;DispelEvilAndGood_Frightened_Check;DispelEvilAndGood_Possessed_Check;Mobile_PassiveBonuses;MAG_Fire_BurningOnDamaged_Cloak_Passive;MAG_Fire_ApplyBurningOnFireDamage_Passive;MAG_Infernal_Plate_Armor_Passive"
+
+// ==================================== Construct ====================================
 // "_Base"
 //  ├─ "_Construct"
 //  │   ├─ "AnimatedArmor"
@@ -149,7 +172,7 @@ data "StatusType" "BOOST"
 using "UND_ADAMANTINEGOLEM_DEFAULT"
 data "Boosts" "MovementSpeedLimit(Walk);Resistance(Bludgeoning, Resistant);Resistance(Cold, Resistant);Resistance(Thunder, Resistant);Resistance(Piercing, Immune);Resistance(Slashing, Immune);Resistance(Force, Resistant);Resistance(Acid, Resistant)"
 
-// ==================================== Critters ====================================
+// ==================================== Critter ====================================
 // "_Beast"
 //  ├─ "_Critter"
 //  │   ├─ "BlueJay"
@@ -209,7 +232,7 @@ data "Vitality" "3"
 data "Passives" "Confusion_CraniumRat;DarknessRules;Darkvision;Goon_Magic_Allergy_Unlock;WildMagic"
 data "PsychicResistance" "Resistant"
 
-// ==================================== Dragons ====================================
+// ==================================== Dragon ====================================
 // "_Dragon"
 //  ├─ "Dragon_AdultRed"
 //  │   ├─ "INT_Dragon"                             --- Unused
@@ -225,7 +248,7 @@ using "Dragon_BronzeSkeletal"
 // data "PersonalStatusImmunities" "SG_Poisoned;BLEEDING;SLEEPING;GAPING_WOUND;CHEST_TRAUMA;DAZED;SHOCKED;SHOCKED_SURFACE;SHOCKING_GRASP;SG_Paralyzed;SG_Charmed;SG_Frightened;SG_Fleeing;SG_Prone;WET"
 data "PersonalStatusImmunities" "SG_Poisoned;BLEEDING;SLEEPING;GAPING_WOUND;CHEST_TRAUMA;DAZED;SHOCKED;SHOCKED_SURFACE;SHOCKING_GRASP;SG_Paralyzed;SG_Charmed;SG_Frightened;SG_Fleeing;SG_Prone;WET;SG_Exhausted"
 
-// ==================================== Elves (and one Undead) ====================================
+// ==================================== Elf (and one Undead) ====================================
 // "_Elf"
 //  ├─ "Elf_Melee"                                      --- (Has Fighter progressions)
 //  │   ├─ "END_CityWatchMelee_Elf"                     --- Watchman (summon from Gather Your Allies) (Inherits Fighter progressions)
@@ -274,7 +297,7 @@ using "ApostleOfMyrkul"
 // data "Strength" "23"
 data "Strength" "26"
 
-// ==================================== Fiends ====================================
+// ==================================== Fiend ====================================
 // "_Base"
 //  ├─ "_Fiend"
 //  │   ├─ "Cambion"
@@ -284,8 +307,47 @@ data "Strength" "26"
 //  │   │   ├─ "LOW_HouseOfHope_Cambion"
 //  │   │   └─ "TUT_Cambion_NoCrits"
 //  │   │       └─ "TUT_CambionCommander"
+//  │   ├─ "Incubus"
+//  │   ├─ "_Demon"
+//  │   │   ├─ "Balor"
+//  │   │   ├─ "Manes"
+//  │   │   ├─ "Quasit"
+//  │   │   │   └─ "Chain_Quasit"
+//  │   │   │       └─ "FOR_QuasitSummon"
+//  │   │   └─ "Vrock"
+//  │   ├─ "_Devil"
+//  │   │   ├─ "Devil_Barbed"
+//  │   │   ├─ "Devil_Bearded"
+//  │   │   ├─ "Devil_Bone"
+//  │   │   ├─ "Devil_Chain"
+//  │   │   ├─ "Devil_Horned"
+//  │   │   │   └─ "LOW_Monitor_BeastForm"
+//  │   │   ├─ "Devil_Ice"
+//  │   │   ├─ "Devil_Spined"
+//  │   │   ├─ "Erinyes"
+//  │   │   ├─ "Imp"
+//  │   │   │   ├─ "Butler"
+//  │   │   │   ├─ "Chain_Imp"
+//  │   │   │   ├─ "Imp_Weak"
+//  │   │   │   │   ├─ "Imp_Crippled"
+//  │   │   │   │   ├─ "Imp_Weak_NoXP"
+//  │   │   │   │   └─ "TUT_Imp_NerfedSightRange"
+//  │   │   │   │       └─ "TUT_Imp_NerfedSightRange_02"
+//  │   │   │   ├─ "LOW_DevilsFee_Imp"
+//  │   │   │   │   └─ "LOW_DevilsFee_Imp_Ally"
+//  │   │   │   ├─ "LOW_PlagueShip_Imp"
+//  │   │   │   ├─ "LOW_Raphael_Imp"
+//  │   │   │   ├─ "TWN_Brewer_Imp_Acid"
+//  │   │   │   ├─ "TWN_Brewer_Imp_Cold"
+//  │   │   │   ├─ "TWN_Brewer_Imp_Fire"
+//  │   │   │   ├─ "TWN_Brewer_Imp_Lightning"
+//  │   │   │   └─ "TWN_Brewer_Imp_Poison"
+//  │   │   ├─ "Lemure"
+//  │   │   ├─ "Merregon"                                  -- Merregons (Added Fighter progressions)
+//  │   │   │   └─ "LOW_HouseOfHope_Merregon"              -- House of Hope Merregons (Inherits Fighter progressions)
+//  │   │   └─ "Orthon"                                   
 
-// Raphael: 
+// Raphael
 new entry "GLO_Raphael"
 type "Character"
 // using "Cambion"
@@ -300,7 +362,7 @@ data "BludgeoningResistance" "ResistantToNonMagical"
 data "SlashingResistance" "ResistantToNonMagical"
 data "PiercingResistance" "ResistantToNonMagical"
 
-// House of Hope Cambions (Added Warlock progressions, Fiend subclass, and Pact of the Blade passives)
+// Vengeful Cambions (House of Hope) (Added Warlock progressions, Fiend subclass, and Pact of the Blade passives)
 new entry "LOW_HouseOfHope_Cambion"
 type "Character"
 using "LOW_HouseOfHope_Cambion"
@@ -311,7 +373,14 @@ data "Passives" "CX_Warlock_Fiend_Boost;AttackOfOpportunity;DarknessRules;Darkvi
 // data "Progressions" ""
 data "Progressions" "51274504-865d-46d1-a3b6-c72e9384904a"
 
-// ==================================== Gnolls ====================================
+// Vengeful Imps (House of Hope)
+new entry "LOW_Raphael_Imp"
+type "Character"
+using "LOW_Raphael_Imp"
+// data "Passives" "AttackOfOpportunity;DarknessRules;Darkvision;DevilsSight;ShortResting;DispelEvilAndGood_Charm_Check;DispelEvilAndGood_Frightened_Check;DispelEvilAndGood_Possessed_Check;MagicResistance;LOW_RaphaelImp_AgonizingBlast"
+data "Passives" "AttackOfOpportunity;DarknessRules;Darkvision;DevilsSight;ShortResting;DispelEvilAndGood_Charm_Check;DispelEvilAndGood_Frightened_Check;DispelEvilAndGood_Possessed_Check;MagicResistance;LOW_RaphaelImp_AgonizingBlast;Goon_Magic_Allergy_Unlock;Goon_AttackRoll_2;MAG_ClosQuarterRangedSpell_Passive"
+
+// ==================================== Gnoll ====================================
 // "_Base"
 //  ├─ "_Humanoid"
 //  │   ├─ "_Gnolls"
@@ -420,7 +489,7 @@ using "TWN_KuoToa_champ"
 // data "Passives" "SunlightSensitivity;AttackOfOpportunity;Darkvision;DarknessRules;TWN_KuoToa_Storm"
 data "Passives" "CX_Barbarian_WildMagic_Boost;SunlightSensitivity;AttackOfOpportunity;Darkvision;DarknessRules;TWN_KuoToa_Storm;Goon_Magic_Allergy_Unlock"
 
-// ==================================== Monstrosities ====================================
+// ==================================== Monstrosity ====================================
 // "_Base"
 //  ├─ "_Monstrosity"
 //  │   ├─ "Bulette"
@@ -450,7 +519,7 @@ data "ActionResources" "ActionPoint:1;BonusActionPoint:1;Movement:9;ReactionActi
 // data "Passives" "Multiattack_Doppelganger;AttackOfOpportunity;Darkvision;DarknessRules"
 data "Passives" "CX_Rogue_Assassin_Boost;AttackOfOpportunity;Darkvision;DarknessRules;Multiattack_Doppelganger;LOW_Guildhall_SneakyRiposte;ExtraAttack"
 
-// ==================================== Oozes ====================================
+// ==================================== Ooze ====================================
 // "_Base"
 // ├─ "_Ooze"
 // │   ├─ "Ooze_Gray"                  --- Unused
