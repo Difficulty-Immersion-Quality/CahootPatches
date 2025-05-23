@@ -51,7 +51,11 @@ new entry "END_Daisy"
 type "Character"
 using "END_Daisy"
 // data "Strength" "13"
-data "Strength" "18"
+data "Strength" "20"
+//data "Intelligence" "19"
+data "Intelligence" "21"
+// data "Passives" "AttackOfOpportunity;DarknessRules;MagicResistance;TAD_Charm"
+data "Passives" "CX_Martial_Boost;CX_Magic_Boost;AttackOfOpportunity;DarknessRules;MagicResistance;TAD_Charm;ExtraAttack;MAG_Psychic_MentalFatigue_Ring_Passive"
 
 // Tentacles: decrease health so they're not such a chore with CX health increases
 new entry "Tentacle_Netherbrain"
