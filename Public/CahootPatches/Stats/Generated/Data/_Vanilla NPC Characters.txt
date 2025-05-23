@@ -88,7 +88,7 @@ new entry "LOW_Raphael_Boar"
 type "Character"
 using "LOW_Raphael_Boar"
 // data "Passives" "AttackOfOpportunity;Darkvision;DarknessRules;BurningHide_HellBoar;DispelEvilAndGood_Charm_Check;DispelEvilAndGood_Frightened_Check;DispelEvilAndGood_Possessed_Check"
-data "Passives" "AttackOfOpportunity;Darkvision;DarknessRules;BurningHide_HellBoar;DispelEvilAndGood_Charm_Check;DispelEvilAndGood_Frightened_Check;DispelEvilAndGood_Possessed_Check;Mobile_PassiveBonuses;MAG_Fire_BurningOnDamaged_Cloak_Passive;MAG_Fire_ApplyBurningOnFireDamage_Passive;MAG_Infernal_Plate_Armor_Passive"
+data "Passives" "AttackOfOpportunity;Darkvision;DarknessRules;BurningHide_HellBoar;DispelEvilAndGood_Charm_Check;DispelEvilAndGood_Frightened_Check;DispelEvilAndGood_Possessed_Check;Mobile_PassiveBonuses;Mobile_DashAcrossDifficultTerrain;MAG_Fire_BurningOnDamaged_Cloak_Passive;MAG_Fire_ApplyBurningOnFireDamage_Passive;MAG_Infernal_Plate_Armor_Passive"
 
 // ==================================== Construct ====================================
 // "_Base"
