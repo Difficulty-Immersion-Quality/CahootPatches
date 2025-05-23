@@ -450,6 +450,51 @@ data "ActionResources" "ActionPoint:1;BonusActionPoint:1;Movement:9;ReactionActi
 // data "Passives" "Multiattack_Doppelganger;AttackOfOpportunity;Darkvision;DarknessRules"
 data "Passives" "CX_Rogue_Assassin_Boost;AttackOfOpportunity;Darkvision;DarknessRules;Multiattack_Doppelganger;LOW_Guildhall_SneakyRiposte;ExtraAttack"
 
+// ==================================== Oozes ====================================
+// "_Base"
+// ├─ "_Ooze"
+// │   ├─ "Ooze_Gray"                  --- Unused
+// │   └─ "Ooze_Jelly_Ochre"
+// │       ├─ "HAV_Phasm"
+// │       ├─ "LOW_GreaseWizard_Ooze"
+// │       └─ "TWN_Ooze_Putrid"
+
+new entry "Ooze_Jelly_Ochre"
+type "Character"
+// using "_Ooze"
+using "Ooze_Jelly_Ochre"
+// data "Passives" "Blindsight;AttackOfOpportunity;DarknessRules;Darkvision"
+data "Passives" "Blindsight;AttackOfOpportunity;DarknessRules;Darkvision;Goon_Damage_Acid_d6_Attacks;DreadAmbusher;MAG_Acid_NoxiousFumes_Gloves_Passive"
+// data "SlashingResistance" "Resistant"
+data "SlashingResistance" "None"
+data "AcidResistance" "Immune"
+data "PsychicResistance" "Resistant"
+data "PiercingResistance" "Resistant"
+data "BludgeoningResistance" "Resistant"
+data "PoisonResistance" "Resistant"
+
+new entry "HAV_Phasm"
+type "Character"
+using "HAV_Phasm"
+// data "Passives" "AttackOfOpportunity;DarknessRules;Darkvision;Blindsight;HAV_Phasm_AcidPool"
+data "Passives" "Blindsight;AttackOfOpportunity;DarknessRules;Darkvision;HAV_Phasm_AcidPool;Goon_Damage_Acid_d6_Attacks;DreadAmbusher;MAG_Acid_NoxiousFumes_Gloves_Passive"
+
+new entry "LOW_GreaseWizard_Ooze"
+type "Character"
+using "LOW_GreaseWizard_Ooze"
+// data "PersonalStatusImmunities" "BLEEDING;GAPING_WOUND;CHEST_TRAUMA;SG_Charmed;SG_Frightened;UNCONSCIOUS;BLINDED;ACID;KNOCKED_OUT;PRONE_GREASE;SG_DifficultTerrain"
+data "PersonalStatusImmunities" "KNOCKED_OUT;GAPING_WOUND;CHEST_TRAUMA;BLEEDING;BARBED_ARROW;HAMSTRING;CRIPPLED;DAZED;SUFFOCATING;SG_Blinded;SG_Charmed;SG_Exhausted;SG_Frightened;SG_Sleeping;SG_Unconscious;SG_Prone;SG_DifficultTerrain"
+// data "Passives" "Blindsight;AttackOfOpportunity;DarknessRules;Darkvision"
+data "Passives" "Blindsight;AttackOfOpportunity;DarknessRules;Darkvision;Goon_Damage_Acid_d6_Attacks;DreadAmbusher;MAG_Acid_NoxiousFumes_Gloves_Passive;Goon_Magic_Allergy_Unlock"
+
+new entry "TWN_Ooze_Putrid"
+type "Character"
+using "TWN_Ooze_Putrid"
+// data "PersonalStatusImmunities" "BLEEDING;GAPING_WOUND;CHEST_TRAUMA;SG_Charmed;SG_Frightened;UNCONSCIOUS;BLINDED;KNOCKED_OUT;ACID;SCL_SHADOW_CURSE"
+data "PersonalStatusImmunities" "KNOCKED_OUT;GAPING_WOUND;CHEST_TRAUMA;BLEEDING;BARBED_ARROW;HAMSTRING;CRIPPLED;DAZED;SUFFOCATING;SG_Blinded;SG_Charmed;SG_Exhausted;SG_Frightened;SG_Sleeping;SG_Unconscious;SG_Prone;SG_DifficultTerrain;SCL_SHADOW_CURSE"
+// data "Passives" "AttackOfOpportunity;DarknessRules;Darkvision;Blindsight"
+data "Passives" "Blindsight;AttackOfOpportunity;DarknessRules;Darkvision;Goon_Damage_Acid_d6_Attacks;DreadAmbusher;MAG_Acid_NoxiousFumes_Gloves_Passive"
+
 // ========================================== Sahuagin ==========================================
 // "_Base"
 //  ├─ "_Humanoid"
