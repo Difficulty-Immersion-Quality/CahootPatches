@@ -1,5 +1,4 @@
 // ==================================== Aberrations ====================================
-
 // "_Aberration"
 //  ├─ "MindFlayer"
 //  │   ├─ "END_Daisy"
@@ -69,7 +68,6 @@ data "Vitality" "12"
 // data "ActionResources" "ActionPoint:1;BonusActionPoint:1;ReactionActionPoint:3"
 
 // ==================================== Constructs ====================================
-
 // "_Base"
 //  ├─ "_Construct"
 //  │   ├─ "AnimatedArmor"
@@ -151,6 +149,65 @@ data "StatusType" "BOOST"
 using "UND_ADAMANTINEGOLEM_DEFAULT"
 data "Boosts" "MovementSpeedLimit(Walk);Resistance(Bludgeoning, Resistant);Resistance(Cold, Resistant);Resistance(Thunder, Resistant);Resistance(Piercing, Immune);Resistance(Slashing, Immune);Resistance(Force, Resistant);Resistance(Acid, Resistant)"
 
+// ==================================== Critters ====================================
+// "_Beast"
+//  ├─ "_Critter"
+//  │   ├─ "BlueJay"
+//  │   │   └─ "BlueJay_Polymorph"
+//  │   ├─ "Cat"
+//  │   │   ├─ "Familiar_Cat"
+//  │   │   ├─ "Panther"
+//  │   │   │   └─ "Wildshape_Panther"
+//  │   │   │       └─ "Wildshape_Panther_8"
+//  │   │   │           └─ "Wildshape_Panther_10"
+//  │   │   │               └─ "Wildshape_Panther_12"
+//  │   │   ├─ "Tressym"
+//  │   │   └─ "Wildshape_SaberTooth_Tiger"
+//  │   │       └─ "Wildshape_SaberTooth_Tiger_10"
+//  │   │           └─ "Wildshape_SaberTooth_Tiger_12"
+//  │   ├─ "Chicken"
+//  │   ├─ "Crab"
+//  │   │   ├─ "Familiar_Crab"
+//  │   │   └─ "LOW_HagSurvivor_Crab"
+//  │   ├─ "Deer"
+//  │   ├─ "Dog"
+//  │   │   ├─ "Dog_Ghost"
+//  │   │   ├─ "FindFamiliar_Dog"
+//  │   │   └─ "RED_WarDog"
+//  │   ├─ "Eagle"
+//  │   ├─ "Frog"
+//  │   │   ├─ "Familiar_Frog"
+//  │   │   └─ "HAG_MurderFrog"
+//  │   ├─ "Gremishka"
+//  │   ├─ "MiniatureGiantSpaceHamster_Boo"
+//  │   ├─ "Ox"
+//  │   ├─ "Pig"
+//  │   ├─ "Rat"
+//  │   │   ├─ "Familiar_Rat"
+//  │   │   ├─ "LOW_Prison_TraderRat"
+//  │   │   ├─ "Rat_Combatant"
+//  │   │   │   ├─ "Rat_Narcoleptic"
+//  │   │   │   ├─ "Rat_Vampire"
+//  │   │   │   └─ "Rat_Wounding"
+//  │   │   ├─ "Rat_Cranium"
+//  │   │   └─ "Rat_Giant"
+
+// Cranium Rats - Ajax is a terrorist
+new entry "Rat_Cranium"
+type "Character"
+// using "Rat"
+using "Rat_Cranium"
+// data "Dexterity" "14"
+data "Dexterity" "16"
+// data "Intelligence" "4"
+data "Intelligence" "6"
+// data "Wisdom" "11"
+data "Wisdom" "12"
+// data "Vitality" "2"
+data "Vitality" "3"
+// data "Passives" "Confusion_CraniumRat;DarknessRules;Darkvision"
+data "Passives" "Confusion_CraniumRat;DarknessRules;Darkvision;Goon_Magic_Allergy_Unlock;WildMagic"
+data "PsychicResistance" "Resistant"
 
 // ==================================== Dragons ====================================
 // "_Dragon"
@@ -169,7 +226,6 @@ using "Dragon_BronzeSkeletal"
 data "PersonalStatusImmunities" "SG_Poisoned;BLEEDING;SLEEPING;GAPING_WOUND;CHEST_TRAUMA;DAZED;SHOCKED;SHOCKED_SURFACE;SHOCKING_GRASP;SG_Paralyzed;SG_Charmed;SG_Frightened;SG_Fleeing;SG_Prone;WET;SG_Exhausted"
 
 // ==================================== Elves (and one Undead) ====================================
-
 // "_Elf"
 //  ├─ "Elf_Melee"                                      --- (Has Fighter progressions)
 //  │   ├─ "END_CityWatchMelee_Elf"                     --- Watchman (summon from Gather Your Allies) (Inherits Fighter progressions)
@@ -219,7 +275,6 @@ using "ApostleOfMyrkul"
 data "Strength" "26"
 
 // ==================================== Gnolls ====================================
-
 // "_Base"
 //  ├─ "_Humanoid"
 //  │   ├─ "_Gnolls"
@@ -262,7 +317,6 @@ data "Passives" "CX_Ranger_Hunter_Boost;AttackOfOpportunity;Darkvision;DarknessR
 data "Progressions" "f0ede459-8b86-48fd-ac11-4432573566a5"
 
 // ==================================== Kuatoa - Fish gang fish gang ====================================
-
 // "_Base"
 // ├─ "_Humanoid"
 // │   ├─ "Kuotoa"
@@ -328,6 +382,7 @@ type "Character"
 using "TWN_KuoToa_champ"
 // data "Passives" "SunlightSensitivity;AttackOfOpportunity;Darkvision;DarknessRules;TWN_KuoToa_Storm"
 data "Passives" "CX_Barbarian_WildMagic_Boost;SunlightSensitivity;AttackOfOpportunity;Darkvision;DarknessRules;TWN_KuoToa_Storm;Goon_Magic_Allergy_Unlock"
+
 // ==================================== Monstrosities ====================================
 // "_Base"
 //  ├─ "_Monstrosity"
@@ -359,7 +414,6 @@ data "ActionResources" "ActionPoint:1;BonusActionPoint:1;Movement:9;ReactionActi
 data "Passives" "CX_Rogue_Assassin_Boost;AttackOfOpportunity;Darkvision;DarknessRules;Multiattack_Doppelganger;LOW_Guildhall_SneakyRiposte;ExtraAttack"
 
 // ========================================== Sahuagin ==========================================
-
 // "_Base"
 //  ├─ "_Humanoid"
 //  │   ├─ "Sahuagin"
@@ -410,9 +464,7 @@ using "Sahuagin_Ranged"
 // data "Passives" "BloodFrenzy_Sahuagin;ExtraAttack;AttackOfOpportunity;DarknessRules"
 data "Passives" "CX_Rogue_Assassin_Boost;BloodFrenzy_Sahuagin;AttackOfOpportunity;DarknessRules;ExtraAttack;ExtraAttack_2"
 
-
 // ==================================== Undead ====================================
-
 // "_Undead"
 //  ├─ "DarkJusticiar_Melee"                              --- Justiciar Avengers in Gauntlet of Shar (Added Fighter progression)
 //  │   ├─ "DarkJusticiar_Boss"                           --- Unused (Added Fighter progression)
@@ -449,9 +501,7 @@ data "NecroticResistance" "Resistant"
 // data "RadiantResistance" ""
 data "RadiantResistance" "Resistant"
 
-
 // ==================================== Objects relevant for combat ====================================
-
 // "_BaseItem"
 //  ├─ "HAV_ShadowPortal"
 //  ├─ "OBJ_Destr_Support_Stone"
