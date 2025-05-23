@@ -1,0 +1,430 @@
+// ==================================== Aberrations ====================================
+
+// "_Aberration"
+//  ├─ "MindFlayer"
+//  │   ├─ "END_Daisy"
+//  │   ├─ "INT_Emperor"
+//  │   ├─ "MindFlayer_Arcanist"
+//  │   ├─ "MindFlayer_Caster"
+//  │   ├─ "MindFlayer_Lich"
+//  │   ├─ "MindFlayer_Player"
+//  │   ├─ "MindFlayer_Weak"
+//  │   │   └─ "CRA_Escape_Mindflayer"
+//  │   ├─ "TUT_HelmMindflayer"
+//  │   └─ "UND_SOB_Mindflayer"
+//  ├─ "MindFlayer_Tadpole"
+//  ├─ "Sharn"
+//  ├─ "Spectator"
+//  │   └─ "Spectator_Strong"
+//  ├─ "Tentacle_Netherbrain"
+//  ├─ "VampireSquid"
+//  ├─ "VampireSquid_Tentacle"
+//  ├─  "_Aberration_Gustav"
+//  ├─ "KillerReplica_Base"             --- Countermeasures - Netherbrain fight if siding with the Emperor
+//  │   ├─ "KillerReplica_Barbarian"    --- (Has Barbarian progressions)
+//  │   ├─ "KillerReplica_Bard"         --- (Has Bard progressions)
+//  │   ├─ "KillerReplica_Cleric"       --- (Has Cleric progressions)
+//  │   ├─ "KillerReplica_Druid"        --- (Has Druid progressions)
+//  │   ├─ "KillerReplica_Fighter"      --- (Has Fighter progressions)
+//  │   ├─ "KillerReplica_Monk"         --- (Has Monk progressions)
+//  │   ├─ "KillerReplica_Paladin"      --- (Has Paladin progressions)
+//  │   ├─ "KillerReplica_Ranger"       --- (Has Ranger progressions)
+//  │   ├─ "KillerReplica_Rogue"        --- (Has Rogue progressions)
+//  │   ├─ "KillerReplica_Sorcerer"
+//  │   ├─ "KillerReplica_Warlock"
+//  │   └─ "KillerReplica_Wizard"
+
+// Mind Flayers: increase AC
+new entry "MindFlayer"
+type "Character"
+using "MindFlayer"
+// data "Armor" "14"
+data "Armor" "16"
+
+// Encounters Overhaul: changing crash site Mind Flayer to remove increased AC from inheritance
+new entry "EO_Mindflayer"
+type "Character"
+using "EO_Mindflayer"
+data "Armor" "14"
+
+// Dream Guardians (if siding with Orpheus): make their melee attacks not suck since after changing their Command spell costs to bonus action, they should actually be making weapon attacks (boosting Strength instead they're not using a Finesse weapon)
+new entry "END_Daisy"
+type "Character"
+using "END_Daisy"
+// data "Strength" "13"
+data "Strength" "18"
+
+// Tentacles: decrease health so they're not such a chore with CX health increases
+new entry "Tentacle_Netherbrain"
+type "Character"
+using "Tentacle_Netherbrain"
+// data "Vitality" "32"
+data "Vitality" "12"
+
+// Netherbrain: tentative changes
+// new entry "END_Netherbrain"
+// type "Character"
+// using "END_Netherbrain"
+// // data "ActionResources" "ActionPoint:1;BonusActionPoint:1;ReactionActionPoint:1"
+// data "ActionResources" "ActionPoint:1;BonusActionPoint:1;ReactionActionPoint:3"
+
+// ==================================== Constructs ====================================
+
+// "_Base"
+//  ├─ "_Construct"
+//  │   ├─ "AnimatedArmor"
+//  │   │   ├─ "LOW_RamazithsTower_Armour"
+//  │   │   └─ "TWN_ShadowAnimatedArmour"
+//  │   ├─ "Automaton"
+//  │   │   └─ "AdamantineGolem"
+//  │   │       └─ "UND_AdamantineGolem"
+
+new entry "_Construct"
+type "Character"
+// using "_Base"
+using "_Construct"
+// data "PersonalStatusImmunities" "BLEEDING;GAPING_WOUND;CHEST_TRAUMA"
+data "PersonalStatusImmunities" "DISARMED;BLEEDING;GAPING_WOUND;CHEST_TRAUMA;PETRIFIED;PARALYZED;DRUNK;SURPRISED;SUFFOCATING;TAUNTED;POISONED;SHOCKED;SHOCKED_SURFACE;STINKING_CLOUD;BLEEDING;DAZED;HAMSTRING;LURING_SONG;LURING_SONG_AURA_VICTIM;RAY_OF_ENFEEBLEMENT;SILENCED;SILENCED_AURA;TIMMASK_SPORES;SPIDER_INFESTATION;POISON_MALICE_CONDITION;UNI_POISON_BREWER_CONDITION"
+// data "Passives" "AttackOfOpportunity;DarknessRules"
+data "Passives" "AttackOfOpportunity;DarknessRules;ExtraAttack;AntimagicSusceptibility;Darkvision;MAG_ChargedLightning_TempHP_Helmet_Passive;MAG_ChargedLightning_Electrocute_Armor_Passive;;MAG_ChargedLightning_Dash_Boots_Passive;MAG_Thunder_Reverberation_Gloves_Passive;LightningAbsortion;ARA_Cloak_StaticCharge_Passive;ARA_Cloak_KeepCharged_Passive"
+data "PoisonResistance" "Immune"
+data "PsychicResistance" "Resistant"
+data "SlashingResistance" "Resistant"
+data "PiercingResistance" "Resistant"
+data "BludgeoningResistance" "Vulnerable"
+data "ColdResistance" "Resistant"
+data "FireResistance" "Resistant"
+data "AcidResistance" "Vulnerable"
+
+new entry "AnimatedArmor"
+type "Character"
+using "AnimatedArmor"
+// data "PersonalStatusImmunities" "PETRIFIED;SG_Charmed;SG_Frightened;PARALYZED;SG_Poisoned;SLEEPING;UNCONSCIOUS;BLINDED;KNOCKED_OUT;BLEEDING;GAPING_WOUND;CHEST_TRAUMA;SG_Sleeping;BARBED_ARROW"
+data "PersonalStatusImmunities" "KNOCKED_OUT;GAPING_WOUND;CHEST_TRAUMA;BLEEDING;BARBED_ARROW;HAMSTRING;CRIPPLED;DAZED;SUFFOCATING;SG_Blinded;SG_Charmed;SG_Confused;SG_Disease;SG_Drunk;SG_Exhausted;SG_Frightened;SG_Paralyzed;SG_Poisoned;SG_Sleeping;SG_Taunted;SG_Unconscious;SURPRISED;SHOCKED;RAY_OF_ENFEEBLEMENT;PETRIFIED"
+// data "Passives" "ExtraAttack;AntimagicSusceptibility;AttackOfOpportunity;Darkvision;DarknessRules"
+data "Passives" "CX_Fighter_Champion_Boost;ExtraAttack;AntimagicSusceptibility;AttackOfOpportunity;Darkvision;DarknessRules;MAG_ChargedLightning_TempHP_Helmet_Passive;MAG_ChargedLightning_Electrocute_Armor_Passive;MAG_ChargedLightning_Dash_Boots_Passive;MAG_Thunder_Reverberation_Gloves_Passive;LightningAbsortion;ARA_Cloak_StaticCharge_Passive;ARA_Cloak_KeepCharged_Passive"
+// data "PoisonResistance" "Resistant"
+data "PoisonResistance" "Immune"
+
+new entry "TWN_ShadowAnimatedArmour"
+type "Character"
+using "TWN_ShadowAnimatedArmour"
+// data "PersonalStatusImmunities" "PETRIFIED;SG_Charmed;SG_Frightened;PARALYZED;SG_Poisoned;SLEEPING;UNCONSCIOUS;BLINDED;KNOCKED_OUT;BLEEDING;GAPING_WOUND;CHEST_TRAUMA;"
+data "PersonalStatusImmunities" "KNOCKED_OUT;GAPING_WOUND;CHEST_TRAUMA;BLEEDING;BARBED_ARROW;HAMSTRING;CRIPPLED;DAZED;SUFFOCATING;SG_Blinded;SG_Charmed;SG_Confused;SG_Disease;SG_Drunk;SG_Exhausted;SG_Frightened;SG_Paralyzed;SG_Poisoned;SG_Sleeping;SG_Taunted;SG_Unconscious;SURPRISED;SHOCKED;RAY_OF_ENFEEBLEMENT;PETRIFIED;ACID;TWN_OOZE_PUTRID_AURA_STATUS;SCL_SHADOW_CURSE"
+// data "Passives" "AttackOfOpportunity;DarknessRules;Darkvision;ExtraAttack;DispelEvilAndGood_Charm_Check;DispelEvilAndGood_Frightened_Check;DispelEvilAndGood_Possessed_Check;TWN_AasimarSurvivor_SpawnShadow"
+data "Passives" "CX_Fighter_Champion_Boost;ExtraAttack;AntimagicSusceptibility;AttackOfOpportunity;Darkvision;DarknessRules;DispelEvilAndGood_Charm_Check;DispelEvilAndGood_Frightened_Check;DispelEvilAndGood_Possessed_Check;TWN_AasimarSurvivor_SpawnShadow;MAG_ChargedLightning_TempHP_Helmet_Passive;MAG_ChargedLightning_Electrocute_Armor_Passive;MAG_ChargedLightning_Dash_Boots_Passive;MAG_Thunder_Reverberation_Gloves_Passive;LightningAbsortion;ARA_Cloak_StaticCharge_Passive;ARA_Cloak_KeepCharged_Passive"
+
+// Grym - Adjust resistances and vulnerabilities
+new entry "UND_AdamantineGolem"
+type "Character"
+using "UND_AdamantineGolem"
+// data "PersonalStatusImmunities" "PETRIFIED;SG_Charmed;SG_Frightened;PARALYZED;SG_Poisoned;UNCONSCIOUS;KNOCKED_OUT;BURNING;BURNING_LAVA;STUNNED;BLEEDING;GAPING_WOUND;CHEST_TRAUMA;DAZED;WILD_MAGIC_BURNING;DAZED;DIFFICULT_TERRAIN_LAVA"
+data "PersonalStatusImmunities" "PETRIFIED;SG_Charmed;SG_Frightened;PARALYZED;SG_Poisoned;UNCONSCIOUS;KNOCKED_OUT;BURNING;BURNING_LAVA;STUNNED;BLEEDING;GAPING_WOUND;CHEST_TRAUMA;DAZED;DAZED;DIFFICULT_TERRAIN_LAVA"
+// data "BludgeoningResistance" "Vulnerable"
+data "BludgeoningResistance" "Vulnerable"
+//data "SlashingResistance" "Resistant"
+data "SlashingResistance" "Resistant"
+// data "PiercingResistance" "Resistant"
+data "PiercingResistance" "Resistant"
+// data "AcidResistance" "Resistant"
+data "AcidResistance" "Vulnerable"
+//data "ColdResistance" "Resistant"
+data "ColdResistance" "None"
+//data "FireResistance" "Immune"
+data "FireResistance" "Immune"
+// data "ForceResistance" "Resistant"
+data "ForceResistance" "Vulnerable"
+// data "LightningResistance" "Immune"
+data "LightningResistance" "Immune"
+// data "NecroticResistance" "Immune"
+data "NecroticResistance" "Immune"
+// data "PoisonResistance" "Immune"
+data "PoisonResistance" "Immune"
+// data "PsychicResistance" "Immune"
+data "PsychicResistance" "Immune"
+// data "RadiantResistance" "Immune"
+data "RadiantResistance" "Immune"
+
+new entry "UND_ADAMANTINEGOLEM_DEFAULT"
+type "StatusData"
+data "StatusType" "BOOST"
+using "UND_ADAMANTINEGOLEM_DEFAULT"
+data "Boosts" "MovementSpeedLimit(Walk);Resistance(Bludgeoning, Resistant);Resistance(Cold, Resistant);Resistance(Thunder, Resistant);Resistance(Piercing, Immune);Resistance(Slashing, Immune);Resistance(Force, Resistant);Resistance(Acid, Resistant)"
+
+
+// ==================================== Dragons ====================================
+// "_Dragon"
+//  ├─ "Dragon_AdultRed"
+//  │   ├─ "INT_Dragon"                             --- Unused
+//  │   │   └─ "INT_Dragon_Proxy"                   --- Unused
+//  │   └─ "LOW_VossSewers_Red_Dragonborn_Qdenos"   --- Qudenos (Dragonborn form)
+//  └─ "Dragon_Bronze"                              --- (Used just for Ansur's flashback cutscene template?)
+//      ├─ "Dragon_BronzeSkeletal"
+//      └─ "Dragon_BronzeSkeletal_Proxy"            --- Ansur's body parts
+
+new entry "Dragon_BronzeSkeletal"
+type "Character"
+using "Dragon_BronzeSkeletal"
+// data "PersonalStatusImmunities" "SG_Poisoned;BLEEDING;SLEEPING;GAPING_WOUND;CHEST_TRAUMA;DAZED;SHOCKED;SHOCKED_SURFACE;SHOCKING_GRASP;SG_Paralyzed;SG_Charmed;SG_Frightened;SG_Fleeing;SG_Prone;WET"
+data "PersonalStatusImmunities" "SG_Poisoned;BLEEDING;SLEEPING;GAPING_WOUND;CHEST_TRAUMA;DAZED;SHOCKED;SHOCKED_SURFACE;SHOCKING_GRASP;SG_Paralyzed;SG_Charmed;SG_Frightened;SG_Fleeing;SG_Prone;WET;SG_Exhausted"
+
+// ==================================== Elves (and one Undead) ====================================
+
+// "_Elf"
+//  ├─ "Elf_Melee"                                      --- (Has Fighter progressions)
+//  │   ├─ "END_CityWatchMelee_Elf"                     --- Watchman (summon from Gather Your Allies) (Inherits Fighter progressions)
+//  │   ├─ "Elf_Cleric"                                 --- (Has Cleric progressions)
+//  │   │   ├─ "SHA_ClericOfShar"                       --- Unused (Inherits Cleric progressions)
+//  │   │   └─ "WYR_OpenHandTemple_Elf_Cleric"          --- Brother Bill, Open Hand Temple (Inherits Cleric progressions)
+//  │   ├─ "HAV_FlamingFist_Elf_Melee"                  --- Fist Cyril - Flaming Fist (Inherits Fighter progressions)
+//  │   ├─ "HAV_ShadowCursed_FlamingFist_Elf_Melee"     --- Shadow-Cursed Flaming Fist (Halsin portal defense) (Inherits Fighter progressions)
+//  │   ├─ "LOW_ArabellaPowers_Brigand_Elf_Melee"       --- Livin' Large Timbo (dead kekw) (Inherits Cleric progressions)
+//  │   ├─ "LOW_DoormanyGuard"                          --- Unused (Inherits Fighter progressions)
+//  │   ├─ "LOW_HouseOfGrief_Cultist_Melee_Elf"         --- Sharran Novice Dollay, Sharran Novice Dohna - Church of Shar (Inherits Fighter progressions)
+//  │   ├─ "LOW_HouseOfGrief_Justiciar"                 --- Justiciar Crusader Owltalon, Justiciar Crusader Nightmist - Church of Shar (Inherits Fighter progressions)
+//  │   ├─ "LOW_ShadowheartFather"                      --- (Inherits Fighter progressions)
+//  │   ├─ "SCE_FlamingFist_Elf_Melee"                  --- Flaming Fist (Inherits Fighter progressions)
+//  │   ├─ "SCL_Harper_Elf_Melee"                       --- Shadow-Cursed Harper (Inherits Fighter progressions)
+//  │   │   └─ "SCL_Caravan_Ambusher_Branthos"          --- Harper Branthos (Inherits Fighter progressions)
+//  │   └─ "SHA_Nightsong"
+//  ├─ "MOO_AcolyteOfTheAbsolute_Elf"   --- Acolyte Kimmeral - Cult of the Absolute (Has Cleric progressions) 
+//  ├─ "MOO_FanaticOfTheAbsolute_Elf"
+//  ├─ "MOO_ZealotOfTheAbsolute_Elf"
+//  ├─ "SCL_Ketheric"
+
+// Dame Aylin: give small attack roll bonus 
+new entry "SHA_Nightsong"
+type "Character"
+using "SHA_Nightsong"
+// data "Passives" "AttackOfOpportunity;DarknessRules;ExtraAttack;"
+data "Passives" "CX_Boss_Boost;CX_Paladin_Vengeance_Boost;AttackOfOpportunity;DarknessRules;ExtraAttack;NPC_AttackRoll_2"
+
+// Ketheric: Increase Ketheric's and Apostle of Myrkul form's Strength
+new entry "SCL_Ketheric"
+type "Character"
+using "SCL_Ketheric"
+// data "Strength" "18"
+data "Strength" "20"
+
+// "_Base"
+//  └─ "_Undead"
+//      ├─ "ApostleOfMyrkul"    --- Apostle of Myrkul - Visage of the Dead God (Unused because it's actually just Ketheric right?)
+//      ├─ "Brewer"
+//      ├─ "CrawlingClaw"
+
+new entry "ApostleOfMyrkul"
+type "Character"
+using "ApostleOfMyrkul"
+// data "Strength" "23"
+data "Strength" "26"
+
+// ==================================== Gnolls ====================================
+
+// "_Base"
+//  ├─ "_Humanoid"
+//  │   ├─ "_Gnolls"
+//  │   │   ├─ "Gnoll"
+//  │   │   │   └─ "Gnoll_Newborn"
+//  │   │   ├─ "Gnoll_Fang"
+//  │   │   ├─ "Gnoll_FleshGnawer"
+//  │   │   ├─ "Gnoll_Flind"        --- Flind - Gnoll Warlord
+//  │   │   └─ "Gnoll_Hunter"
+
+// Gnoll Fang of Yeenoghu (Added Fighter progressions, Champion subclass)
+new entry "Gnoll_Fang"
+type "Character"
+using "Gnoll_Fang"
+// data "DefaultBoosts" "ProficiencyBonus(SavingThrow, Constitution); ProficiencyBonus(SavingThrow, Wisdom); ProficiencyBonus(SavingThrow, Charisma); BlockRegainHP(Undead;Construct)"
+data "DefaultBoosts" "ProficiencyBonus(SavingThrow, Constitution); ProficiencyBonus(SavingThrow, Wisdom); ProficiencyBonus(SavingThrow, Charisma); BlockRegainHP(Undead;Construct); UnlockSpell(Shout_Fury_Gnoll)"
+// data "Passives" "Rampage;AttackOfOpportunity;Darkvision;DarknessRules"
+data "Passives" "CX_Fighter_Champion_Boost;AttackOfOpportunity;Darkvision;DarknessRules;Rampage"
+// data "Progressions" ""
+data "Progressions" "0e6da493-5a37-423b-8c28-629462b22faa"
+
+// Gnoll Flesh Gnawer (Added Barbarian progressions)
+new entry "Gnoll_FleshGnawer"
+type "Character"
+using "Gnoll_FleshGnawer"
+// data "DefaultBoosts" "ProficiencyBonus(SavingThrow, Constitution); ProficiencyBonus(SavingThrow, Wisdom); ProficiencyBonus(SavingThrow, Charisma); BlockRegainHP(Undead;Construct)"
+data "DefaultBoosts" "ProficiencyBonus(SavingThrow, Constitution); ProficiencyBonus(SavingThrow, Wisdom); ProficiencyBonus(SavingThrow, Charisma); BlockRegainHP(Undead;Construct); UnlockSpell(Shout_Fury_Gnoll)"
+// data "Passives" "AttackOfOpportunity;Darkvision;DarknessRules"
+data "Passives" "AttackOfOpportunity;Darkvision;DarknessRules"
+// data "Progressions" ""
+data "Progressions" "56db8107-e04c-4fe3-94f3-fd4acd44cd4a"
+
+// Gnoll Hunter (Added Ranger progressions, Hunter subclass)
+new entry "Gnoll_Hunter"
+type "Character"
+using "Gnoll_Hunter"
+// data "Passives" "Rampage;AttackOfOpportunity;Darkvision;DarknessRules"
+data "Passives" "CX_Ranger_Hunter_Boost;AttackOfOpportunity;Darkvision;DarknessRules;Rampage"
+// data "Progressions" ""
+data "Progressions" "f0ede459-8b86-48fd-ac11-4432573566a5"
+
+// ==================================== Monstrosities ====================================
+// "_Base"
+//  ├─ "_Monstrosity"
+//  │   ├─ "Bulette"
+//  │   │   └─ "Test_Hits"
+//  │   ├─ "DisplacerBeast"
+//  │   ├─ "Doppelganger"                      -- Doppelgangers (Added Rogue progressions)
+//  │   │   ├─ "LOW_NotJaheira"                -- Fake Jaheira Doppelganger (Inherits Rogue progressions)
+//  │   │   └─ "WYR_DG_Dribbles"               -- Dribbles (Inherits Rogue progressions)
+//  │   ├─ "Drider"
+//  │   │   └─ "SCL_DriderCaravan_Drider"
+//  │   ├─ "Ettercap"
+//  │   │   └─ "FOR_Ettercap"
+//  │   ├─ "Harpy"
+
+new entry "Harpy"
+type "Character"
+using "Harpy"
+// data "PersonalStatusImmunities" "PRONE_FALLEN;LURING_SONG;CRIPPLED"
+data "PersonalStatusImmunities" "PRONE_FALLEN;SG_Charmed;HAMSTRING;CRIPPLED"
+data "ThunderResistance" "Vulnerable"
+
+new entry "Doppelganger"
+type "Character"
+using "Doppelganger"
+// data "ActionResources" "ActionPoint:1;BonusActionPoint:1;Movement:9;ReactionActionPoint:1"
+data "ActionResources" "ActionPoint:1;BonusActionPoint:1;Movement:9;ReactionActionPoint:2"
+// data "Passives" "Multiattack_Doppelganger;AttackOfOpportunity;Darkvision;DarknessRules"
+data "Passives" "CX_Rogue_Assassin_Boost;AttackOfOpportunity;Darkvision;DarknessRules;Multiattack_Doppelganger;LOW_Guildhall_SneakyRiposte;ExtraAttack"
+
+// ========================================== Sahuagin ==========================================
+
+// "_Base"
+//  ├─ "_Humanoid"
+//  │   ├─ "Sahuagin"
+//  │   │   ├─ "LOW_IronThrone_Sahuagin"
+//  │   │   ├─ "Sahuagin_Champion"
+//  │   │   │   └─ "END_SahuaginAlly_Champion"
+//  │   │   ├─ "Sahuagin_Melee"
+//  │   │   ├─ "Sahuagin_Ranged"
+//  │   │   │   └─ "END_SahuaginAlly_Ranged"
+//  │   │   └─ "Sahuagin_Warlock"
+
+// Add Extra Attack (or Improved Extra Attack if they already have Extra Attack) to all enemy Sahuagin
+
+new entry "Sahuagin"
+type "Character"
+using "Sahuagin"
+// data "Dexterity" "11"
+data "Dexterity" "12"
+// data "Wisdom" "13"
+data "Wisdom" "12"
+// data "PersonalStatusImmunities" "DIFFICULT_TERRAIN_DEEPWATER"
+data "PersonalStatusImmunities" "DIFFICULT_TERRAIN_DEEPWATER;BURNING;BURNING_TRIAL;WILD_MAGIC_BURNING;BURNING_AZER;BURNING_TRAPWALL"
+// data "Passives" "BloodFrenzy_Sahuagin;AttackOfOpportunity;DarknessRules"
+data "Passives" "CX_Martial_Boost;BloodFrenzy_Sahuagin;AttackOfOpportunity;DarknessRules;ExtraAttack"
+data "LightningResistance" "Vulnerable"
+data "ColdResistance" "Resistant"
+data "FireResistance" "Resistant"
+data "AcidResistance" "Resistant"
+
+// (Added Fighter progressions, added Champion subclass)
+new entry "Sahuagin_Champion"
+type "Character"
+using "Sahuagin_Champion"
+// data "Passives" "BloodFrenzy_Sahuagin;ExtraAttack;AttackOfOpportunity;DarknessRules"
+data "Passives" "CX_Fighter_Champion_Boost;BloodFrenzy_Sahuagin;AttackOfOpportunity;DarknessRules;ExtraAttack;ExtraAttack_2"
+
+// (Added Fighter progressions, added Champion subclass)
+new entry "Sahuagin_Melee"
+type "Character"
+using "Sahuagin_Melee"
+// data "Passives" "BloodFrenzy_Sahuagin;AttackOfOpportunity;DarknessRules"
+data "Passives" "CX_Fighter_Champion_Boost;BloodFrenzy_Sahuagin;AttackOfOpportunity;DarknessRules;ExtraAttack"
+
+// (Added Rogue progressions, added Assassin subclass)
+new entry "Sahuagin_Ranged"
+type "Character"
+using "Sahuagin_Ranged"
+// data "Passives" "BloodFrenzy_Sahuagin;ExtraAttack;AttackOfOpportunity;DarknessRules"
+data "Passives" "CX_Rogue_Assassin_Boost;BloodFrenzy_Sahuagin;AttackOfOpportunity;DarknessRules;ExtraAttack;ExtraAttack_2"
+
+
+// ==================================== Undead ====================================
+
+// "_Undead"
+//  ├─ "DarkJusticiar_Melee"                              --- Justiciar Avengers in Gauntlet of Shar (Added Fighter progression)
+//  │   ├─ "DarkJusticiar_Boss"                           --- Unused (Added Fighter progression)
+//  │   ├─ "DarkJusticiar_Caster"                         --- Justiciar Nightweavers in Gauntlet of Shar (Added Wizard progression)
+//  │   │   ├─ "LOW_HouseOfGrief_Cultist_Caster"          --- Mirie; Sharran Fidelians in House of Grief (Added Wizard progression)
+//  │   │   └─ "SHA_LastJusticiar_Lyrthindor"             --- Lyrthindor (Gauntlet of Shar) (Added Cleric progression)
+//  │   ├─ "DarkJusticiar_Melee_Summon"                   --- Justiciar Avengers that spawn from Umbral Tremors (Inherits Fighter progression)
+//  │   ├─ "DarkJusticiar_Ranger"                         --- Justiciar Soulhunters in Gauntlet of Shar (Added Ranger progression)
+//  │   │   ├─ "DarkJusticiar_Ranger_Summon"              --- Justiciar Soulhunters that spawn from Umbral Tremors (Inherits Ranger progression)
+//  │   │   └─ "TWN_DarkJusticiar_Intelligence"           --- Intelligent Sentinel under shrine to Shar in Reithwin (Added Wizard progression)
+//  │   ├─ "LOW_HouseOfGrief_Cultist_Melee"               --- Sharran Novice summons from Gather Your Allies (Inherits Fighter progression) (Why is this here????)
+//  │   ├─ "SHA_InitialJusticiar"                         --- (Added Fighter progression)
+//  │   ├─ "TWN_DarkJusticiar_Charisma"                   --- Charisma Sentinel under shrine to Shar in Reithwin (Added Paladin progression)
+//  │   └─ "TWN_DarkJusticiar_Wisdom"                     --- Wisdom Sentinel under shrine to Shar in Reithwin (Added Cleric progression)
+
+// Lyrthindor: Increase stats and give additional passives
+new entry "SHA_LastJusticiar_Lyrthindor"
+type "Character"
+using "SHA_LastJusticiar_Lyrthindor"
+// data "Strength" "18"
+data "Strength" "20"
+// data "Constitution" "12"
+data "Constitution" "14"
+// data "Wisdom" "18"
+data "Wisdom" "20"
+// data "Vitality" "112"
+data "Vitality" "125"
+// data "PersonalStatusImmunities" ""
+data "PersonalStatusImmunities" "SG_Charmed;SG_Frightened;GAPING_WOUND;CHEST_TRAUMA;BLEEDING;ACID;TURNED"
+// data "Passives" "SHA_VisionOfShar;SHA_Lyrthindor_UnlockExtraSpellSlots;AttackOfOpportunity;Darkvision;DarknessRules"
+data "Passives" "CX_MiniBoss_Boost;CX_Cleric_Trickery_Boost;CX_Martial_Boost;AttackOfOpportunity;Darkvision;DarknessRules;SHA_VisionOfShar;SHA_Lyrthindor_UnlockExtraSpellSlots;MultiattackDefense;NPC_DamageReduction;Tough;Durable;MAG_Fighter_ActionSurge_AttackBonus_Gloves_Passive;RelentlessEndurance;MageSlayer_Advantage;MageSlayer_AttackCaster;SavageAttacker"
+// data "NecroticResistance" ""
+data "NecroticResistance" "Resistant"
+// data "RadiantResistance" ""
+data "RadiantResistance" "Resistant"
+
+
+// ==================================== Objects relevant for combat ====================================
+
+// "_BaseItem"
+//  ├─ "HAV_ShadowPortal"
+//  ├─ "OBJ_Destr_Support_Stone"
+//  │   └─ "OBJ_LOW_HoH_Pillar"
+
+// Halsin portal defense
+new entry "HAV_ShadowPortal"
+type "Object"
+// using "_BaseItem"
+using "_BaseItem"
+// data "Vitality" "142"
+data "Vitality" "200"
+// data "PiercingResistance" ""
+data "PiercingResistance" "ResistantToNonMagical"
+data "SlashingResistance" "ResistantToNonMagical"
+data "BludgeoningResistance" "Immune"
+// data "NecroticResistance" ""
+data "NecroticResistance" "Resistant"
+// data "PoisonResistance" ""
+data "PoisonResistance" "Immune"
+// data "PsychicResistance" ""
+data "PsychicResistance" "Immune"
+// data "RadiantResistance" ""
+data "RadiantResistance" "Resistant"
+data "AcidResistance" "Resistant"
+data "FireResistance" "Resistant"
+data "ColdResistance" "Resistant"
+
+// Raphael's pillars in House of Hope
+new entry "OBJ_LOW_HoH_Pillar"
+type "Object"
+using "OBJ_LOW_HoH_Pillar"
+// data "SlashingResistance" "None"
+data "SlashingResistance" "Resistant"
+// data "BludgeoningResistance" "Vulnerable"
+data "BludgeoningResistance" ""
+// data "ColdResistance" "None"
+data "ColdResistance" "Immune"
+// data "LightningResistance" "None"
+data "LightningResistance" "Resistant"
+// data "RadiantResistance" "None"
+data "RadiantResistance" "Vulnerable"
+
