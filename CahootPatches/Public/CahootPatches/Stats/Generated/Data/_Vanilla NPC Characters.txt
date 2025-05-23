@@ -274,6 +274,43 @@ using "ApostleOfMyrkul"
 // data "Strength" "23"
 data "Strength" "26"
 
+// ==================================== Fiends ====================================
+// "_Base"
+//  ├─ "_Fiend"
+//  │   ├─ "Cambion"
+//  │   │   ├─ "Cambion_PlanarAlly"
+//  │   │   ├─ "GLO_Raphael"
+//  │   │   │   └─ "LOW_Raphael_Monster_Form_Stats"
+//  │   │   ├─ "LOW_HouseOfHope_Cambion"
+//  │   │   └─ "TUT_Cambion_NoCrits"
+//  │   │       └─ "TUT_CambionCommander"
+
+// Raphael: 
+new entry "GLO_Raphael"
+type "Character"
+// using "Cambion"
+using "GLO_Raphael"
+// data "ActionResources" "ActionPoint:1;BonusActionPoint:1;Movement:12;ReactionActionPoint:1;SpellSlot:0:9:1;"
+data "ActionResources" "ActionPoint:1;BonusActionPoint:1;Movement:15;ReactionActionPoint:2;SpellSlot:0:9:1"
+data "PoisonResistance" "Resistant"
+data "LightningResistance" "Resistant"
+data "NecroticResistance" "Resistant"
+data "ForceResistance" "Resistant"
+data "BludgeoningResistance" "ResistantToNonMagical"
+data "SlashingResistance" "ResistantToNonMagical"
+data "PiercingResistance" "ResistantToNonMagical"
+
+// House of Hope Cambions (Added Warlock progressions, Fiend subclass, and Pact of the Blade passives)
+new entry "LOW_HouseOfHope_Cambion"
+type "Character"
+using "LOW_HouseOfHope_Cambion"
+// data "Charisma" "16"
+data "Charisma" "20"
+// data "Passives" "AttackOfOpportunity;DarknessRules;Darkvision;ExtraAttack;FiendishBlessing;DispelEvilAndGood_Charm_Check;DispelEvilAndGood_Frightened_Check;DispelEvilAndGood_Possessed_Check;"
+data "Passives" "CX_Warlock_Fiend_Boost;AttackOfOpportunity;DarknessRules;Darkvision;ExtraAttack;FiendishBlessing;DispelEvilAndGood_Charm_Check;DispelEvilAndGood_Frightened_Check;DispelEvilAndGood_Possessed_Check;PactOfTheBlade;Goon_Pact_Blade_Passive;PP_AscendedPact_Text_Passive;PP_AP_Blade_Passive;PP_AP_BladeDeepened_Passive;PP_EverlastingPact_Text_Passive;PP_EP_Blade_Passive;PP_EP_Blade_Two_Passive"
+// data "Progressions" ""
+data "Progressions" "51274504-865d-46d1-a3b6-c72e9384904a"
+
 // ==================================== Gnolls ====================================
 // "_Base"
 //  ├─ "_Humanoid"
