@@ -146,12 +146,13 @@ data "SpellProperties" "RegainHitPoints(9d6+SpellCastingAbilityModifier)"
 data "TooltipDamageList" "RegainHitPoints(9d6+SpellCastingAbilityModifier)"
 data "TooltipUpcastDescriptionParams" "RegainHitPoints(1d6)"
 
-// Mass Cure Wounds: Now 4d8 + 1d8 per upcast (previously 3d8 + 1d8 per upcast)
+// Mass Cure Wounds: Now 4d8 + 1d8 per upcast (previously 3d8 + 1d8 per upcast). Also overwriting description change made by Syrchalis' Rebalance - Level 5 Spells with vanilla description
 new entry "Target_CureWounds_Mass"
 type "SpellData"
 data "SpellType" "Target"
 using "Target_CureWounds_Mass"
 data "SpellProperties" "RegainHitPoints(4d8+SpellCastingAbilityModifier)"
+data "Description" "h5f5a8b76ga1a5g401ag9d6cg236a8303c133;5"
 data "DescriptionParams" "RegainHitPoints(4d8+SpellCastingAbilityModifier)"
 data "TooltipDamageList" "RegainHitPoints(4d8+SpellCastingAbilityModifier)"
 
@@ -160,6 +161,7 @@ type "SpellData"
 data "SpellType" "Target"
 using "Target_CureWounds_Mass_6"
 data "SpellProperties" "RegainHitPoints(5d8+SpellCastingAbilityModifier)"
+data "Description" "h5f5a8b76ga1a5g401ag9d6cg236a8303c133;5"
 data "DescriptionParams" "RegainHitPoints(5d8+SpellCastingAbilityModifier)"
 data "TooltipDamageList" "RegainHitPoints(5d8+SpellCastingAbilityModifier)"
 

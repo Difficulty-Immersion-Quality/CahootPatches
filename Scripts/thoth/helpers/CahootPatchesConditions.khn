@@ -25,6 +25,11 @@ function CHT_BanishingSmiteCheck(entity)
     return ConditionResult(entity.HPPercentage < 50)
 end
 
+function CHT_MaximumStackableStatus_4(entity, stringStatusGroupName)
+    local entity = entity or context.Target
+    return ConditionResult(GetStatusDuration(stringStatusGroupName, entity) > 4)
+end
+
 -- Spell level (not Power level)
 function CHT_IsSpellLevelEqualToOrLessThan(value)
 	if value == 0 then

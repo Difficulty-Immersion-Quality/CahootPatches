@@ -174,3 +174,23 @@ data "StackId" "PROTECTED"
 data "Boosts" "Resistance(All, Resistant);DamageReduction(All, Flat, 2);RollBonus(SavingThrow,2)"
 // data "StatusGroups" "SG_RemoveOnRespec;SG_Ignore_AOO"
 data "StatusPropertyFlags" ""
+
+// ================================ Arcane Acuity ================================
+// Copy Syrchalis changes, but set maximum duration to 4 stacks
+
+new entry "MAG_GISH_ARCANE_ACUITY"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MAG_GISH_ARCANE_ACUITY"
+data "DescriptionParams" "1;1"
+
+new entry "MAG_GISH_ARCANE_ACUITY_DURATION_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MAG_GISH_ARCANE_ACUITY_DURATION_TECHNICAL"
+data "OnApplyFunctors" "IF(CHT_MaximumStackableStatus_4(context.Target, 'MAG_GISH_ARCANE_ACUITY')):SetStatusDuration(MAG_GISH_ARCANE_ACUITY, 4, ForceSet) "
+
+new entry "MAG_ArcaneAcuity_ReduceDurationPerDamage_Passive"
+type "PassiveData"
+using "MAG_ArcaneAcuity_ReduceDurationPerDamage_Passive"
+data "StatsFunctors" "SetStatusDuration(MAG_GISH_ARCANE_ACUITY,-1,Add)"
