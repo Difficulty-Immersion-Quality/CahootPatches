@@ -46,6 +46,17 @@ type "Character"
 using "EO_Mindflayer"
 data "Armor" "14"
 
+// Emperor (Added Wizard progressions, added Enchantment subclass)
+new entry "INT_Emperor"
+type "Character"
+using "INT_Emperor"
+// data "ProficiencyBonus" ""
+data "ProficiencyBonus" "4"
+// data "Passives" "AttackOfOpportunity;DarknessRules;MagicResistance"
+data "Passives" "CX_Wizard_Enchantment_Boost;AttackOfOpportunity;DarknessRules;MagicResistance"
+// data "Progressions" ""
+data "Progressions" "44bdbc5e-a003-4d61-87f0-5ced20d3804e"
+
 // Dream Guardians (if siding with Orpheus): make their melee attacks not suck since after changing their Command spell costs to bonus action, they should actually be making weapon attacks (boosting Strength instead they're not using a Finesse weapon)
 new entry "END_Daisy"
 type "Character"
@@ -366,6 +377,15 @@ data "BludgeoningResistance" "ResistantToNonMagical"
 data "SlashingResistance" "ResistantToNonMagical"
 data "PiercingResistance" "ResistantToNonMagical"
 
+// Haarlep (added Bard progressions, added Lore subclass)
+new entry "Incubus"
+type "Character"
+using "Incubus"
+// data "Passives" "EtherealEscape_Incubus;AttackOfOpportunity;Darkvision;DarknessRules;DispelEvilAndGood_Charm_Check;DispelEvilAndGood_Frightened_Check;DispelEvilAndGood_Possessed_Check"
+data "Passives" "CX_Bard_Lore_Boost;AttackOfOpportunity;Darkvision;DarknessRules;DispelEvilAndGood_Charm_Check;DispelEvilAndGood_Frightened_Check;DispelEvilAndGood_Possessed_Check;EtherealEscape_Incubus"
+// data "Progressions" ""
+data "Progressions" "cbe5059f-7a9f-4b98-be6a-07c9cd8e02c2"
+
 // Vengeful Cambions (House of Hope) (Added Warlock progressions, Fiend subclass, and Pact of the Blade passives)
 new entry "LOW_HouseOfHope_Cambion"
 type "Character"
@@ -522,6 +542,15 @@ using "Doppelganger"
 data "ActionResources" "ActionPoint:1;BonusActionPoint:1;Movement:9;ReactionActionPoint:2"
 // data "Passives" "Multiattack_Doppelganger;AttackOfOpportunity;Darkvision;DarknessRules"
 data "Passives" "CX_Rogue_Assassin_Boost;AttackOfOpportunity;Darkvision;DarknessRules;Multiattack_Doppelganger;LOW_Guildhall_SneakyRiposte;ExtraAttack"
+
+// Dribbles (Inherits Rogue progressions, inherits Assassin subclass) (Added Barbarian progressions along with inherited Rogue; added Wild Magic subclass along with inherited Assassin)
+new entry "WYR_DG_Dribbles"
+type "Character"
+using "WYR_DG_Dribbles"
+// data "Passives" "Multiattack_Doppelganger;AttackOfOpportunity;Darkvision;DarknessRules"
+data "Passives" "CX_Barbarian_WildMagic_Boost;CX_Rogue_Assassin_Boost;AttackOfOpportunity;Darkvision;DarknessRules;Multiattack_Doppelganger"
+// data "Progressions" ""
+data "Progressions" "56db8107-e04c-4fe3-94f3-fd4acd44cd4a;532203c2-7bcb-4162-9a7c-2bb20e227a30"
 
 // ==================================== Ooze ====================================
 // "_Base"
