@@ -76,11 +76,11 @@ using "Tentacle_Netherbrain"
 data "Vitality" "12"
 
 // Netherbrain: tentative changes
-// new entry "END_Netherbrain"
-// type "Character"
-// using "END_Netherbrain"
-// // data "ActionResources" "ActionPoint:1;BonusActionPoint:1;ReactionActionPoint:1"
-// data "ActionResources" "ActionPoint:1;BonusActionPoint:1;ReactionActionPoint:3"
+new entry "END_Netherbrain"
+type "Character"
+using "END_Netherbrain"
+// data "ActionResources" "ActionPoint:1;BonusActionPoint:1;ReactionActionPoint:1"
+data "ActionResources" "ActionPoint:1;BonusActionPoint:1;ReactionActionPoint:3"
 
 // ==================================== Beast ====================================
 // "_Base"
@@ -539,7 +539,6 @@ data "PersonalStatusImmunities" "PRONE_FALLEN;SG_Charmed;HAMSTRING;CRIPPLED"
 data "Passives" "AttackOfOpportunity;DarknessRules;Multiattack_Harpy"
 // data "ThunderResistance" ""
 data "ThunderResistance" "Vulnerable"
-
 
 new entry "Doppelganger"
 type "Character"
