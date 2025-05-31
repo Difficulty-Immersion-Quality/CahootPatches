@@ -82,7 +82,7 @@ data "UseCosts" "BonusActionPoint:1;"
 // // data "TooltipDamageList" "DealDamage(10d6,Psychic)"
 // data "TooltipDamageList" "DealDamage(10d4+10,Psychic);DealDamage(10d4+10,Force)"
 
-// Instead with 3 reactions, keeping same damage as vanilla but just split between Psychic and Force
+// Retributive Brainquake: instead with 3 reactions, keeping same damage as vanilla but just split between Psychic and Force
 new entry "Target_PsionicRebuke_Netherbrain"
 type "SpellData"
 data "SpellType" "Target"
