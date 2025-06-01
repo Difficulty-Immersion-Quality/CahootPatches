@@ -258,13 +258,13 @@ data "StackId" "CHT_CC_SORCERER_ENDLESSWELL_TRACKER"
 data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;ApplyToDead;"
 data "RemoveEvents" "OnSpellCast"
 data "RemoveConditions" "HasStatus('CC_SORCERER_FREE_CAST',context.Source)"
-data "OnRemoveFunctors" "IF(HasStatus('CC_SORCERER_FREE_CAST',context.Source)):ApplyStatus(CHT_CC_SORCERER_ENDLESSWELL_USED,100,-1);IF(HasStatus('CC_SORCERER_FREE_CAST',context.Source)):DealDamage(SELF,1d8,Force)"
+data "OnRemoveFunctors" "IF(HasStatus('CC_SORCERER_FREE_CAST',context.Source)):ApplyStatus(CHT_CC_SORCERER_ENDLESSWELL_USED,100,1);IF(HasStatus('CC_SORCERER_FREE_CAST',context.Source)):DealDamage(SELF,1d8,Force)"
 
 new entry "CHT_CC_SORCERER_ENDLESSWELL_USED"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StackId" "CHT_CC_SORCERER_ENDLESSWELL_USED"
-data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;ApplyToDead;RemoveOnLongRest"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;ApplyToDead"
 
 // ==================================== Faith and Fortitude - Cleric Equipment ====================================
 
