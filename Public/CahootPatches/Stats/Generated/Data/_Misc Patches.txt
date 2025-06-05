@@ -91,6 +91,14 @@ data "Description" "h5a6970b0g1f2dg4060g9e88g4ecc1899c571;1"
 // data "DescriptionParams" "Distance(3)"
 data "DescriptionParams" "3"
 
+// ========================== Booming Blade ==========================
+// Change base game version to use 5e Spells' version
+
+new entry "Target_BoomingBlade_ClassSpell"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_BoomingBlade_5e"
+
 // ========================== Staff of Interruption ==========================
 // Fix Counterspell from the weapon not actually rolling as a level 5 Counterspell
 
