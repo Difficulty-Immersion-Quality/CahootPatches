@@ -35,12 +35,13 @@ data "SpellFail" "IF(HasPassive('PotentCantrip',context.Source) and not Characte
 data "TooltipDamageList" "DealDamage(LevelMapValue(D8Cantrip),Radiant)"
 
 // ============================ Magic Circle ============================
-// Remove not combat/turn-based requirement
+// Remove not combat requirement
 
 new entry "Target_Snare"
 type "SpellData"
 data "SpellType" "Target"
 using "Target_Snare"
+// data "Requirements" "!Combat"
 data "Requirements" ""
 
 // ============================ Magic Circle ============================
@@ -63,19 +64,67 @@ data "Requirements" ""
 data "RequirementConditions" ""
 
 // ============================ Motivational Speech ============================
-// Increase temp hp but decrease max targets, and remove not in combat requirement
+// Increase temp hp to increase temp hp to 15, +6 per upcast level, but decrease max targets to 3 at all levels, and remove not in combat requirement
 
-// Spell: decrease max targets to 3
+// Spell
 new entry "Target_MotivationalSpeech"
 type "SpellData"
 data "SpellType" "Target"
 using "Target_MotivationalSpeech"
 // Three creatures in the area gain [1] and have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on Wisdom &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;. If hit by an attack, an affected creature has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on its next &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt; during combat.
 data "Description" "h38571638g79a7g4ae6g8380g34d54cf06253;1"
+// data "DescriptionParams" "GainTemporaryHitPoints(5)"
+data "DescriptionParams" "GainTemporaryHitPoints(15)"
+// data "TooltipUpcastDescriptionParams" "GainTemporaryHitPoints(5)"
+data "TooltipUpcastDescriptionParams" "GainTemporaryHitPoints(6)"
+// data "AmountOfTargets" "5"
 data "AmountOfTargets" "3"
+// data "Requirements" "!Combat"
 data "Requirements" ""
 
-// Status: increase temp hp to 15, +6 per upcast level
+new entry "Target_MotivationalSpeech_4"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_MotivationalSpeech_4"
+// data "DescriptionParams" "GainTemporaryHitPoints(5)"
+data "DescriptionParams" "GainTemporaryHitPoints(21)"
+
+new entry "Target_MotivationalSpeech_5"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_MotivationalSpeech_5"
+// data "DescriptionParams" "GainTemporaryHitPoints(5)"
+data "DescriptionParams" "GainTemporaryHitPoints(27)"
+
+new entry "Target_MotivationalSpeech_6"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_MotivationalSpeech_6"
+// data "DescriptionParams" "GainTemporaryHitPoints(5)"
+data "DescriptionParams" "GainTemporaryHitPoints(33)"
+
+new entry "Target_MotivationalSpeech_7"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_MotivationalSpeech_7"
+// data "DescriptionParams" "GainTemporaryHitPoints(5)"
+data "DescriptionParams" "GainTemporaryHitPoints(39)"
+
+new entry "Target_MotivationalSpeech_8"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_MotivationalSpeech_8"
+// data "DescriptionParams" "GainTemporaryHitPoints(5)"
+data "DescriptionParams" "GainTemporaryHitPoints(45)"
+
+new entry "Target_MotivationalSpeech_9"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_MotivationalSpeech_9"
+// data "DescriptionParams" "GainTemporaryHitPoints(5)"
+data "DescriptionParams" "GainTemporaryHitPoints(51)"
+
+// Status
 new entry "MOTIVATIONAL_SPEECH"
 type "StatusData"
 data "StatusType" "BOOST"
@@ -221,6 +270,7 @@ new entry "Target_Regenerate"
 type "SpellData"
 data "SpellType" "Target"
 using "Target_Regenerate"
+// data "Requirements" "!Combat"
 data "Requirements" ""
 
 
