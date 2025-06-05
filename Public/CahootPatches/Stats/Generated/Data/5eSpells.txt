@@ -264,15 +264,26 @@ data "StackId" "HOLY_WEAPON_TECHNICAL"
 data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator"
 
 // ============================ Regenerate ============================
-// Remove not combat requirement
+// Remove not combat requirement, fix DescriptionParams, and increase heal at start of turn to 5 hit points (up from 1 hit point)
 
 new entry "Target_Regenerate"
 type "SpellData"
 data "SpellType" "Target"
 using "Target_Regenerate"
+// Touch a creature to stimulate its natural healing ability, immediately healing it for [1] + [2], then another [3] at the start of its turns until the spell ends.
+data "Description" "h13ca8280gdb76g4dfag89ddga754c32f0d6f;1"
+// data "DescriptionParams" "RegainHitPoints(4d8+15);RegainHitPoints(1);ApplyStatus(REGENERATE,100,600)"
+data "DescriptionParams" "RegainHitPoints(4d8);RegainHitPoints(15);RegainHitPoints(5)"
+// data "TooltipDamageList" "RegainHitPoints(4d8+15);RegainHitPoints(1)"
+data "TooltipDamageList" "RegainHitPoints(4d8+15);RegainHitPoints(5)"
 // data "Requirements" "!Combat"
 data "Requirements" ""
 
-
-
-
+new entry "REGENERATE"
+type "StatusData"
+data "StatusType" "BOOST"
+using "REGENERATE"
+// data "DescriptionParams" "RegainHitPoints(1)"
+data "DescriptionParams" "RegainHitPoints(5)"
+// data "TickFunctors" "IF(not Dead()):RegainHitPoints(1)"
+data "TickFunctors" "IF(not Dead()):RegainHitPoints(5)"
