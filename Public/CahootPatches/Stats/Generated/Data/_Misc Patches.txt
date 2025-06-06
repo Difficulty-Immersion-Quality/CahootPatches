@@ -75,22 +75,6 @@ using "Target_HinderingSmash"
 // data "SpellSuccess" "IF(Character() and HasWeaponInMainHand() and not SavingThrow(Ability.Strength, ManeuverSaveDC()+2)):ApplyStatus(HINDERED,100,2);IF(not Summon() and not Tagged('UNDEAD') and not HasStatus('SG_Polymorph') and not Tagged('CONSTRUCT') and not Tagged('CREATURE_SPORE_SERVANT') and not IsImmuneToStatus('KNOCKED_OUT') ):DealDamage(ImprovisedWeapon+max(DexterityModifier,StrengthModifier), MainMeleeWeaponDamageType, Nonmagical, Nonlethal);IF(Summon() or Tagged('UNDEAD') or HasStatus('SG_Polymorph') or Tagged('CONSTRUCT') or Tagged('CREATURE_SPORE_SERVANT') or IsImmuneToStatus('KNOCKED_OUT')):DealDamage(ImprovisedWeapon+max(DexterityModifier,StrengthModifier), MainMeleeWeaponDamageType);ExecuteWeaponFunctors(MainHand)"
 data "SpellSuccess" "IF(Character() and HasWeaponInMainHand() and not SavingThrow(Ability.Strength, ManeuverSaveDC()+2)):ApplyStatus(HINDERED,100,2);IF(not Summon() and not Tagged('UNDEAD') and not HasStatus('SG_Polymorph') and not Tagged('CONSTRUCT') and not Tagged('CREATURE_SPORE_SERVANT') and not IsImmuneToStatus('KNOCKED_OUT') and HasAnyStatus({'HEXBLADE_BIND', 'PACT_BLADE', 'SHILLELAGH', 'MAG_MELEE_CASTER_BOON', 'LHB_SEL_TASHASOTHERWORLDLYGUISE_MAGICWEAPON', 'FourEle_Attuned'}, {}, {}, GetAttackWeapon())):DealDamage(ImprovisedWeapon+max(IntelligenceModifier, WisdomModifier, CharismaModifier), MainMeleeWeaponDamageType, Nonmagical, Nonlethal);IF(not Summon() and not Tagged('UNDEAD') and not HasStatus('SG_Polymorph') and not Tagged('CONSTRUCT') and not Tagged('CREATURE_SPORE_SERVANT') and not IsImmuneToStatus('KNOCKED_OUT') and HasAnyStatus({}, {}, {'HEXBLADE_BIND', 'PACT_BLADE', 'SHILLELAGH', 'MAG_MELEE_CASTER_BOON', 'LHB_SEL_TASHASOTHERWORLDLYGUISE_MAGICWEAPON', 'FourEle_Attuned'}, GetAttackWeapon())):DealDamage(ImprovisedWeapon+max(DexterityModifier,StrengthModifier), MainMeleeWeaponDamageType, Nonmagical, Nonlethal);;IF(Summon() or Tagged('UNDEAD') or HasStatus('SG_Polymorph') or Tagged('CONSTRUCT') or Tagged('CREATURE_SPORE_SERVANT') or IsImmuneToStatus('KNOCKED_OUT') and HasAnyStatus({}, {}, {'HEXBLADE_BIND', 'PACT_BLADE', 'SHILLELAGH', 'MAG_MELEE_CASTER_BOON', 'LHB_SEL_TASHASOTHERWORLDLYGUISE_MAGICWEAPON', 'FourEle_Attuned'}, GetAttackWeapon())):DealDamage(ImprovisedWeapon+max(DexterityModifier,StrengthModifier), MainMeleeWeaponDamageType);IF(not Summon() and not Tagged('UNDEAD') and not HasStatus('SG_Polymorph') and not Tagged('CONSTRUCT') and not Tagged('CREATURE_SPORE_SERVANT') and not IsImmuneToStatus('KNOCKED_OUT') and HasAnyStatus({}, {}, {'HEXBLADE_BIND', 'PACT_BLADE', 'SHILLELAGH', 'MAG_MELEE_CASTER_BOON', 'LHB_SEL_TASHASOTHERWORLDLYGUISE_MAGICWEAPON', 'FourEle_Attuned'}, GetAttackWeapon())):DealDamage(ImprovisedWeapon+max(DexterityModifier,StrengthModifier), MainMeleeWeaponDamageType, Nonmagical, Nonlethal);;IF(Summon() or Tagged('UNDEAD') or HasStatus('SG_Polymorph') or Tagged('CONSTRUCT') or Tagged('CREATURE_SPORE_SERVANT') or IsImmuneToStatus('KNOCKED_OUT') and HasAnyStatus({'HEXBLADE_BIND', 'PACT_BLADE', 'SHILLELAGH', 'MAG_MELEE_CASTER_BOON', 'LHB_SEL_TASHASOTHERWORLDLYGUISE_MAGICWEAPON', 'FourEle_Attuned'}, {}, {}, GetAttackWeapon())):DealDamage(ImprovisedWeapon+max(IntelligenceModifier, WisdomModifier, CharismaModifier), MainMeleeWeaponDamageType);ExecuteWeaponFunctors(MainHand)"
 
-// ========================== Dawnburst Strike ==========================
-// Change to single target and increase save DC for blindness (original AoE wasn't working hit allies and couldn't fix it myself so just changed the effect)
-
-new entry "Target_MAG_WeaponAction_FlashingDawn"
-type "SpellData"
-data "SpellType" "Target"
-using "Target_MAG_WeaponAction_FlashingDawn"
-// data "AreaRadius" "3"
-data "AreaRadius" ""
-// data "SpellSuccess" "TARGET:DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType); TARGET:DealDamage(ProficiencyBonus, Radiant);AOE:IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)):ApplyStatus(BLINDED, 100, 3);ExecuteWeaponFunctors(MainHand)"
-data "SpellSuccess" "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType);DealDamage(ProficiencyBonus, Radiant);IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC()+4)):ApplyStatus(BLINDED, 100, 3);ExecuteWeaponFunctors(MainHand)"
-// Deal additional Radiant damage equal to your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt;. On a hit, light erupts on the target, forcing it to make a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or be &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blinded&lt;/LSTag&gt; for [1] turns.
-data "Description" "h5a6970b0g1f2dg4060g9e88g4ecc1899c571;1"
-// data "DescriptionParams" "Distance(3)"
-data "DescriptionParams" "3"
-
 // ========================== Booming Blade ==========================
 // Change base game version to use 5e Spells' version
 
@@ -98,14 +82,6 @@ new entry "Target_BoomingBlade_ClassSpell"
 type "SpellData"
 data "SpellType" "Target"
 using "Target_BoomingBlade_5e"
-
-// ========================== Staff of Interruption ==========================
-// Fix Counterspell from the weapon not actually rolling as a level 5 Counterspell
-
-new entry "Interrupt_MAG_Counterspell"
-type "InterruptData"
-using "Interrupt_Counterspell"
-data "Roll" "TryCounterspellHigherLevel(5)"
 
 // ========================== Crusader's Mantle ==========================
 // Disable combat log
@@ -115,6 +91,14 @@ type "StatusData"
 data "StatusType" "BOOST"
 using "CRUSADERS_MANTLE"
 data "StatusPropertyFlags" "DisableCombatlog"
+
+// ========================== Staff of Interruption: Counterspell ==========================
+// Fix Counterspell from the weapon not actually rolling as a level 5 Counterspell
+
+new entry "Interrupt_MAG_Counterspell"
+type "InterruptData"
+using "Interrupt_Counterspell"
+data "Roll" "TryCounterspellHigherLevel(5)"
 
 // ========================== Luminous Armour ==========================
 // Change quality to Rare to reflect it being BiS endgame gear for some builds still
@@ -242,3 +226,29 @@ type "Armor"
 using "UNI_MassHealRing"
 // data "Rarity" "Uncommon"
 data "Rarity" "Rare"
+
+// ========================== The Sacred Star: Dawnburst Strike ==========================
+// Change to single target and increase save DC for blindness (original AoE wasn't working hit allies and couldn't fix it myself so just changed the effect)
+
+new entry "Target_MAG_WeaponAction_FlashingDawn"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_MAG_WeaponAction_FlashingDawn"
+// data "AreaRadius" "3"
+data "AreaRadius" ""
+// data "SpellSuccess" "TARGET:DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType); TARGET:DealDamage(ProficiencyBonus, Radiant);AOE:IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)):ApplyStatus(BLINDED, 100, 3);ExecuteWeaponFunctors(MainHand)"
+data "SpellSuccess" "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType);DealDamage(ProficiencyBonus, Radiant);IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC()+4)):ApplyStatus(BLINDED, 100, 3);ExecuteWeaponFunctors(MainHand)"
+// Deal additional Radiant damage equal to your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt;. On a hit, light erupts on the target, forcing it to make a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or be &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blinded&lt;/LSTag&gt; for [1] turns.
+data "Description" "h5a6970b0g1f2dg4060g9e88g4ecc1899c571;1"
+// data "DescriptionParams" "Distance(3)"
+data "DescriptionParams" "3"
+
+// ========================== Balduran's Giantlayer: Giant Form ==========================
+// Change cost to bonus action
+
+new entry "Shout_MAG_Legendary_GiantSlayer_EnlargeSelf"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_MAG_Legendary_GiantSlayer_EnlargeSelf"
+// data "UseCosts" "ActionPoint:1"
+data "UseCosts" "BonusActionPoint:1"
