@@ -6,14 +6,6 @@ data "StatusType" "BOOST"
 using "BLINDED"
 data "Boosts" "IF(not (TD_BlindFighting() or (HasPassive('Blindsense',context.Source) and not (HasPassive('Deafness',context.Source) or HasStatus('SG_Deafened',context.Source))))):Disadvantage(AttackRoll);IF(not (TD_BlindFighting(context.Target) or (HasPassive('Blindsense',context.Source) and not (HasPassive('Deafness',context.Source) or HasStatus('SG_Deafened',context.Source))))):Advantage(AttackTarget)"
 
-// ==================================== Stop NPCs cancelling Banishment ====================================
-
-new entry "SYR_Target_Banishment_Cancel"
-type "SpellData"
-data "SpellType" "Target"
-using "SYR_Target_Banishment_Cancel"
-data "RequirementConditions" "IS(Player(context.Source))”
-
 // ==================================== Make Spiritual Weapon summons not slow as shit ====================================
 // All other summons inherit from Greataxe
 
@@ -60,14 +52,55 @@ data "StatusType" "BOOST"
 using "METAMAGIC_TRANSMUTED_THUNDER"
 data "StackId" "TRANSMUTED_SPELL"
 
-// ==================================== Fix conflcit between Expansion and Barbarian QOL? ====================================
+// ==================================== Rage now functions out of combat ====================================
+// Relevant mods: Expansion & Barbarian QoL
 
+new entry "RAGE"
+type "StatusData"
+data "StatusType" "BOOST"
+using "RAGE"
+// data "RemoveConditions" "not HasStatus('RAGE_STOP_REMOVE') or not Combat()"
+data "RemoveConditions" "not HasPassive('PersistentRage') and not HasStatus('RAGE_STOP_REMOVE') and not Combat()"
+// data "TickFunctors" "IF(not Combat(context.Source)):RemoveStatus(SG_Rage)"
+data "TickFunctors" "IF(not HasPassive('PersistentRage') and not HasStatus('RAGE_STOP_REMOVE') and not Combat(context.Source)):RemoveStatus(SG_Rage)"
+
+// Barbarian QoL edits
 new entry "RAGE_STOP_REMOVE"
 type "StatusData"
 data "StatusType" "BOOST"
 using "RAGE_STOP_REMOVE"
-data "RemoveConditions" ""
-data "RemoveEvents" ""
+// data "StackType" "Ignore"
+data "StackType" "Overwrite"
+// data "StatusPropertyFlags" "DisableCombatlog"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+data "OnApplyFunctors" "IF(not HasPassive('PersistentRage')):ApplyStatus(GOON_RAGE_STOP_REMOVE_DISPLAY,100,1)"
+
+// New status (Barbarian QoL loca and handles)
+new entry "GOON_RAGE_STOP_REMOVE_DISPLAY"
+type "StatusData"
+data "StatusType" "BOOST"
+// Rage Sustained
+data "DisplayName" "h017604bbb2b944bfa5464eb2e2306a30ae9g;1"
+// Your <LSTag Type="Status" Tooltip="RAGE">Rage</LSTag> will not end this turn.
+data "Description" "h6b3623a5f0364412829224032eb5643dg4b7;1"
+data "Icon" "GenericIcon_Intent_Damage"
+data "TickType" "EndTurn"
+data "RemoveConditions" "not HasStatus('SG_Rage') and not HasStatus('RAGE_STOP_REMOVE')"
+data "RemoveEvents" "OnStatusRemoved"
+
+// Expansion
+new entry "PersistentRage"
+type "PassiveData"
+using "PersistentRage"
+// data "DisplayName" "h3d75abe2gf7f7g41c8g8ae1g26be3c7041d9;1"
+// data "Description" "hbeddf31dg9e62g477bgae64gc192e7a47c7e;1"
+// data "Icon" "PassiveFeature_PersistentRage"
+// data "Properties" "Highlighted"
+// data "Conditions" "StatusID('RAGE_STOP_REMOVE') or StatusHasStatusGroup('SG_Rage')"
+data "Conditions" "HasStatus('SG_Rage')"
+// data "StatsFunctors" "IF(not HasStatus('PERSISTENT_RAGE',context.Source)):ApplyStatus(PERSISTENT_RAGE,100,-1)"
+data "StatsFunctors" "IF(StatusId('RAGE_STOP_REMOVE')):ApplyStatus(RAGE_STOP_REMOVE,100,1)"
+data "StatsFunctorContext" "OnStatusRemoved"
 
 // ==================================== Make some weapons with fire VFX show in cutscenes ====================================
 
