@@ -34,6 +34,14 @@ data "SpellFail" "IF(HasPassive('PotentCantrip',context.Source) and not Characte
 // data "TooltipDamageList" "DealDamage(LevelMapValue(D6Cantrip),Radiant)"
 data "TooltipDamageList" "DealDamage(LevelMapValue(D8Cantrip),Radiant)"
 
+// ============================ Flock of Familiars ============================
+// Remove Imp and Quasit spells from ContainerSpells field, since the spells themselves were removed in version 2.2. Patches like Valdacil's will cause them to show up but otherwise have no data
+new entry "Target_FlockOfFamiliars"
+type "SpellData"
+data "SpellType" "Target"
+// data "ContainerSpells" "Target_FlockOfFamiliars_Cat;Target_FlockOfFamiliars_Crab;Target_FlockOfFamiliars_Frog;Target_FlockOfFamiliars_Rat;Target_FlockOfFamiliars_Raven;Target_FlockOfFamiliars_Spider;Target_FlockOfFamiliars_Imp;Target_FlockOfFamiliars_Quasit"
+data "ContainerSpells" "Target_FlockOfFamiliars_Cat;Target_FlockOfFamiliars_Crab;Target_FlockOfFamiliars_Frog;Target_FlockOfFamiliars_Rat;Target_FlockOfFamiliars_Raven;Target_FlockOfFamiliars_Spider"
+
 // ============================ Magic Circle ============================
 // Remove not combat requirement
 
