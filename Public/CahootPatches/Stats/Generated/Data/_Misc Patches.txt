@@ -1,3 +1,95 @@
+// ==================================== Free use coatings ====================================
+
+new entry "OBJ_WyvernPoison"
+type "Object"
+using "OBJ_WyvernPoison"
+data "UseCosts" ""
+
+new entry "ALCH_Solution_Oil_Wizardsbane"
+type "Object"
+using "ALCH_Solution_Oil_Wizardsbane"
+data "UseCosts" ""
+
+new entry "UNI_Poison_Brewer"
+type "Object"
+using "UNI_Poison_Brewer"
+data "UseCosts" ""
+
+new entry "Solution_Toxin_Basic"
+type "Object"
+using "Solution_Toxin_Basic"
+data "UseCosts" ""
+
+new entry "OBJ_SerpentVenom"
+type "Object"
+using "OBJ_SerpentVenom"
+data "UseCosts" ""
+
+new entry "OBJ_PurpleWormPoison"
+type "Object"
+using "OBJ_PurpleWormPoison"
+data "UseCosts" ""
+
+new entry "ALCH_Solution_Oil_Frost"
+type "Object"
+using "ALCH_Solution_Oil_Frost"
+data "UseCosts" ""
+
+new entry "ALCH_Solution_Oil_Reduce"
+type "Object"
+using "ALCH_Solution_Oil_Reduce"
+data "UseCosts" ""
+
+new entry "ALCH_Solution_Oil_Combustion"
+type "Object"
+using "ALCH_Solution_Oil_Combustion"
+data "UseCosts" ""
+
+new entry "ALCH_Solution_Oil_Bane"
+type "Object"
+using "ALCH_Solution_Oil_Bane"
+data "UseCosts" ""
+
+new entry "ALCH_Solution_Oil_AttackBuff"
+type "Object"
+using "ALCH_Solution_Oil_AttackBuff"
+data "UseCosts" ""
+
+new entry "OBJ_Malice"
+type "Object"
+using "OBJ_Malice"
+data "UseCosts" ""
+
+new entry "OBJ_ParalysisPotion"
+type "Object"
+using "OBJ_ParalysisPotion"
+data "UseCosts" ""
+
+new entry "ALCH_Solution_Oil_DamageAttackBuff"
+type "Object"
+using "ALCH_Solution_Oil_DamageAttackBuff"
+data "UseCosts" ""
+
+new entry "OBJ_DrowPoison"
+type "Object"
+using "OBJ_DrowPoison"
+data "UseCosts" ""
+
+new entry "OBJ_CrawlerMucus"
+type "Object"
+using "OBJ_CrawlerMucus"
+data "UseCosts" ""
+
+new entry "OBJ_BasicPoison"
+type "Object"
+using "OBJ_BasicPoison"
+data "UseCosts" ""
+
+new entry "ALCH_Solution_Oil_RemoveResistanceFire"
+type "Object"
+using "ALCH_Solution_Oil_RemoveResistanceFire"
+data "UseCosts" ""
+
 // ========================== Make throwing healing potions do nothing ==========================
 
 new entry "Projectile_Potion_Destroy_Healing"
@@ -78,10 +170,10 @@ data "SpellSuccess" "IF(Character() and HasWeaponInMainHand() and not SavingThro
 // ========================== Booming Blade ==========================
 // Change base game version to use 5e Spells' version
 
-new entry "Target_BoomingBlade_ClassSpell"
-type "SpellData"
-data "SpellType" "Target"
-using "Target_BoomingBlade_5e"
+// new entry "Target_BoomingBlade_ClassSpell"
+// type "SpellData"
+// data "SpellType" "Target"
+// using "Target_BoomingBlade_5e"
 
 // ========================== Crusader's Mantle ==========================
 // Disable combat log
