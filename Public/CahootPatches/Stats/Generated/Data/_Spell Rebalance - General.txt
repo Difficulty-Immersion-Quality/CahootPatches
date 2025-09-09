@@ -147,64 +147,6 @@ data "SpellType" "Target"
 using "Target_CreateWater_StaffOfRain"
 data "UseCosts" "BonusActionPoint:1"
 
-// ==================================== Moonbeam ====================================
-// No longer hits allies
-
-new entry "MOONBEAM_AURA"
-type "StatusData"
-data "StatusType" "BOOST"
-using "MOONBEAM_AURA"
-data "AuraStatuses" "TARGET:IF(Character() and not Dead() and not Ally() and not HasStatus('KNOCKED_OUT')):ApplyStatus(MOONBEAM,100,-1)"
-
-new entry "MOONBEAM_AURA_3"
-type "StatusData"
-data "StatusType" "BOOST"
-using "MOONBEAM_AURA_3"
-data "AuraStatuses" "TARGET:IF(Character() and not Dead() and not Ally() and not HasStatus('KNOCKED_OUT')):ApplyStatus(MOONBEAM_3,100,-1)"
-
-new entry "MOONBEAM_AURA_4"
-type "StatusData"
-data "StatusType" "BOOST"
-using "MOONBEAM_AURA_4"
-data "AuraStatuses" "TARGET:IF(Character() and not Dead() and not Ally() and not HasStatus('KNOCKED_OUT')):ApplyStatus(MOONBEAM_4,100,-1)"
-
-new entry "MOONBEAM_AURA_5"
-type "StatusData"
-data "StatusType" "BOOST"
-using "MOONBEAM_AURA_5"
-data "AuraStatuses" "TARGET:IF(Character() and not Dead() and not Ally() and not HasStatus('KNOCKED_OUT')):ApplyStatus(MOONBEAM_5,100,-1)"
-
-new entry "MOONBEAM_AURA_6"
-type "StatusData"
-data "StatusType" "BOOST"
-using "MOONBEAM_AURA_6"
-data "AuraStatuses" "TARGET:IF(Character() and not Dead() and not Ally() and not HasStatus('KNOCKED_OUT')):ApplyStatus(MOONBEAM_6,100,-1)"
-
-new entry "MOONBEAM_AURA_7"
-type "StatusData"
-data "StatusType" "BOOST"
-using "MOONBEAM_AURA_7"
-data "AuraStatuses" "TARGET:IF(Character() and not Dead() and not Ally() and not HasStatus('KNOCKED_OUT')):ApplyStatus(MOONBEAM_7,100,-1)"
-
-new entry "MOONBEAM_AURA_8"
-type "StatusData"
-data "StatusType" "BOOST"
-using "MOONBEAM_AURA_8"
-data "AuraStatuses" "TARGET:IF(Character() and not Dead() and not Ally() and not HasStatus('KNOCKED_OUT')):ApplyStatus(MOONBEAM_8,100,-1)"
-
-new entry "MOONBEAM_AURA_9"
-type "StatusData"
-data "StatusType" "BOOST"
-using "MOONBEAM_AURA_9"
-data "AuraStatuses" "TARGET:IF(Character() and not Dead() and not Ally() and not HasStatus('KNOCKED_OUT')):ApplyStatus(MOONBEAM_9,100,-1)"
-
-// Dame Aylin's Moonbeam
-new entry "MOO_NIGHTSONG_MOONBEAM"
-type "StatusData"
-data "StatusType" "BOOST"
-using "MOO_NIGHTSONG_MOONBEAM"
-data "AuraStatuses" "TARGET:IF(Character() and not Dead() and not Ally() and not HasStatus('KNOCKED_OUT')):ApplyStatus(MOONBEAM,100,-1)"
-
 // ==================================== Lesser Restoration ====================================
 // Change cost to bonus action
 new entry "Target_LesserRestoration"
@@ -268,6 +210,74 @@ data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:9"
 data "RitualCosts" "BonusActionPoint:1"
 data "RootSpellID" "Target_LesserRestoration"
 data "PowerLevel" "9"
+
+// ==================================== Moonbeam ====================================
+// No longer hits allies
+
+new entry "MOONBEAM_AURA"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MOONBEAM_AURA"
+data "AuraStatuses" "TARGET:IF(Character() and not Dead() and not Ally() and not HasStatus('KNOCKED_OUT')):ApplyStatus(MOONBEAM,100,-1)"
+
+new entry "MOONBEAM_AURA_3"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MOONBEAM_AURA_3"
+data "AuraStatuses" "TARGET:IF(Character() and not Dead() and not Ally() and not HasStatus('KNOCKED_OUT')):ApplyStatus(MOONBEAM_3,100,-1)"
+
+new entry "MOONBEAM_AURA_4"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MOONBEAM_AURA_4"
+data "AuraStatuses" "TARGET:IF(Character() and not Dead() and not Ally() and not HasStatus('KNOCKED_OUT')):ApplyStatus(MOONBEAM_4,100,-1)"
+
+new entry "MOONBEAM_AURA_5"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MOONBEAM_AURA_5"
+data "AuraStatuses" "TARGET:IF(Character() and not Dead() and not Ally() and not HasStatus('KNOCKED_OUT')):ApplyStatus(MOONBEAM_5,100,-1)"
+
+new entry "MOONBEAM_AURA_6"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MOONBEAM_AURA_6"
+data "AuraStatuses" "TARGET:IF(Character() and not Dead() and not Ally() and not HasStatus('KNOCKED_OUT')):ApplyStatus(MOONBEAM_6,100,-1)"
+
+new entry "MOONBEAM_AURA_7"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MOONBEAM_AURA_7"
+data "AuraStatuses" "TARGET:IF(Character() and not Dead() and not Ally() and not HasStatus('KNOCKED_OUT')):ApplyStatus(MOONBEAM_7,100,-1)"
+
+new entry "MOONBEAM_AURA_8"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MOONBEAM_AURA_8"
+data "AuraStatuses" "TARGET:IF(Character() and not Dead() and not Ally() and not HasStatus('KNOCKED_OUT')):ApplyStatus(MOONBEAM_8,100,-1)"
+
+new entry "MOONBEAM_AURA_9"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MOONBEAM_AURA_9"
+data "AuraStatuses" "TARGET:IF(Character() and not Dead() and not Ally() and not HasStatus('KNOCKED_OUT')):ApplyStatus(MOONBEAM_9,100,-1)"
+
+// Dame Aylin's Moonbeam
+new entry "MOO_NIGHTSONG_MOONBEAM"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MOO_NIGHTSONG_MOONBEAM"
+data "AuraStatuses" "TARGET:IF(Character() and not Dead() and not Ally() and not HasStatus('KNOCKED_OUT')):ApplyStatus(MOONBEAM,100,-1)"
+
+// ==================================== Spiritual Weapon ====================================
+// Make the summons not slow as shit
+// All other summons inherit from Greataxe
+
+new entry "SpiritualWeapon_Greataxe"
+type "Character"
+using "SpiritualWeapon_Greataxe"
+// data "ActionResources" "BonusActionPoint:1;Movement:6"
+data "ActionResources" "BonusActionPoint:1;Movement:9"
 
 // ==================================== Guardian of Faith ====================================
 // Health increased to 70 (from 50) and added resistance to all damage types, with immunity to Poison and Psychic damage
