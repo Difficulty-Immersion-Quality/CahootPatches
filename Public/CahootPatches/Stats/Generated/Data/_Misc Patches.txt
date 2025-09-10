@@ -211,77 +211,87 @@ using "MAG_Radiant_RadiatingOrb_Gloves"
 data "Rarity" "Rare"
 
 // ========================== Gloves of Battlemage's Power ==========================
-// // Make purple quality and change to Patch 8 version but with bugs fixed
+// Bug Fix: Inadvertently fix every issue with Larian's Patch #8 implementation, such as Shadow Blade and Flame Blade triggering the effect with every successful attack.
+// Changes: Swapped conditions for gaining from a janky list of spells using weapons to all melee spell attacks. 
 
 // new entry "MAG_Gish_ArcaneAcuity_Gloves"
 // type "Armor"
-// using "MAG_Gish_ArcaneAcuity_Gloves"
-// // data "Rarity" "Rare"
-// data "Rarity" "VeryRare"
-// data "PassivesOnEquip" "MAG_Gish_ArcaneAcuity_Gloves_Passive"
-
-// new entry "MAG_Gish_ArcaneAcuity_Gloves_Passive"
-// type "PassiveData"
-// using "MAG_Gish_ArcaneAcuity_Gloves_Passive"
-// // When you hit a target with a spell or &lt;LSTag Tooltip="Cantrip"&gt;cantrip&lt;/LSTag&gt; that uses a weapon, you gain &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt; for [1] turns.
-// data "Description" "h3e4efa11g8425g4497g9c84g9cdf091cb9ed;1"
-// data "DescriptionParams" "2"
-// data "Properties" "OncePerAttack"
-// data "StatsFunctorContext" "OnDamage"
-// // data "Conditions" "ArcaneAcuityGlovesCondition();"
-// data "Conditions" "CHT_ArcaneAcuityGlovesCondition() and not HasStatus('SPIKE_GROWTH')"
-// data "StatsFunctors" "ApplyStatus(SELF, MAG_GISH_ARCANE_ACUITY, 100, 2);ApplyStatus(SELF, MAG_GISH_ARCANE_ACUITY_DURATION_TECHNICAL, 100, 1)"
-
-// Goon's fix for the original (pre-patch 8) version, plus also increasing the Arcane Acuity duration to 3 turns and item quality to Very Rare
-
-// Vanilla entries
-new entry "MAG_Gish_ArcaneAcuity_Gloves"
-type "Armor"
-using "_Hand_Magic_Metal"
-data "RootTemplate" "15381544-e616-46e6-a881-0af793971863"
-data "ValueUUID" "a229f048-70b0-4b0c-88cb-29b5c6bdb2d0"
+// using "_Hand_Magic_Metal"
+// data "RootTemplate" "15381544-e616-46e6-a881-0af793971863"
+// data "ValueUUID" "a229f048-70b0-4b0c-88cb-29b5c6bdb2d0"
 // data "Rarity" "Rare"
-data "Rarity" "VeryRare"
 // data "PassivesOnEquip" "MAG_Gish_ArcaneAcuity_Gloves_Passive"
-data "PassivesOnEquip" "MAG_Gish_ArcaneAcuity_Gloves_Passive;Goon_ArcaneAcuity_Gloves_Technical_Passive"
-data "Unique" "1"
+// data "Unique" "1"
+
+new entry "GOON_GLOVESOFBATTLEMAGESPOWER_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StatusPropertyFlags" "DisablePortraitIndicator;DisableOverhead;DisableCombatlog;IgnoreResting"
 
 new entry "MAG_Gish_ArcaneAcuity_Gloves_Passive"
 type "PassiveData"
-data "DisplayName" "haab50542gb3f3g41c5g9ee9gefb50accc757;3"
-// When a weapon &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt; inflicts a condition, the wielder gains &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt; for [1] turns.
-data "Description" "h892bd340gceb6g4493g8223g0ea12783f411;1"
-data "DescriptionParams" "3"
-data "Properties" "OncePerAttack"
-// data "StatsFunctorContext" "OnStatusApply"
-data "StatsFunctorContext" "OnStatusApplied"
-data "Conditions" "HasStatus('GOON_ARCANEACUITY_GLOVES_ONATTACK_TECHNICAL') and HasStatus('GOON_ARCANEACUITY_GLOVES_ONSTATUS_TECHNICAL')"
-// data "StatsFunctors" "IF(IsWeaponAttack()):ApplyStatus(SELF, MAG_GISH_ARCANE_ACUITY, 100, 2);IF(IsWeaponAttack()):ApplyStatus(SELF, MAG_GISH_ARCANE_ACUITY_DURATION_TECHNICAL, 100, 1)"
-data "StatsFunctors" "ApplyStatus(SELF, MAG_GISH_ARCANE_ACUITY, 100, 3);ApplyStatus(SELF, MAG_GISH_ARCANE_ACUITY_DURATION_TECHNICAL, 100, 1);RemoveStatus(GOON_ARCANEACUITY_GLOVES_ONATTACK_TECHNICAL);RemoveStatus(GOON_ARCANEACUITY_GLOVES_ONSTATUS_TECHNICAL)"
+using "MAG_Gish_ArcaneAcuity_Gloves_Passive"
+// Battlemage's Power
+// data "DisplayName" "haab50542gb3f3g41c5g9ee9gefb50accc757;3"
+// When you hit a target with a spell or &lt;LSTag Tooltip="Cantrip"&gt;cantrip&lt;/LSTag&gt; that uses a weapon, you gain &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt;.
+// data "Description" "hbae6c94bg09c9g45e6ga267gef7984d501be;11"
+// When you hit a target with a &lt;LSTag Tooltip="MeleeSpellAttack"&gt;Melee Spell Attack&lt;/LSTag&gt;, you gain [2] turns of &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt;.
+data "Description" "hf583b6a7g93e9g4024g849fge9c76241e0ab;1"
+// data "Properties" "OncePerAttack"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "ArcaneAcuityGlovesCondition();"
+data "Conditions" "IsAttackType(AttackType.MeleeSpellAttack) or (IsMeleeAttack() and IsSpell())"
+// data "StatsFunctors" "ApplyStatus(SELF, MAG_GISH_ARCANE_ACUITY, 100, 2);ApplyStatus(SELF, MAG_GISH_ARCANE_ACUITY_DURATION_TECHNICAL, 100, 1)"
 
-// Custom entries
-new entry "Goon_ArcaneAcuity_Gloves_Technical_Passive"
-type "PassiveData"
-data "Properties" "IsHidden;OncePerAttack"
-data "StatsFunctors" "IF(context.HasContextFlag(StatsFunctorContext.OnAttack)):ApplyStatus(SELF,GOON_ARCANEACUITY_GLOVES_ONATTACK_TECHNICAL,100,1);IF(context.HasContextFlag(StatsFunctorContext.OnStatusApply)):ApplyStatus(SELF,GOON_ARCANEACUITY_GLOVES_ONSTATUS_TECHNICAL,100,1)"
-data "StatsFunctorContext" "OnAttack;OnStatusApply"
-data "Conditions" "(context.HasContextFlag(StatsFunctorContext.OnAttack) and IsWeaponAttack()) or (context.HasContextFlag(StatsFunctorContext.OnStatusApply) and not Self() and not StatusDoesNotInvokeOnStatusApply())"
+// // Goon's fix for the original (pre-patch 8) version, plus also increasing the Arcane Acuity duration to 3 turns and item quality to Very Rare
+// // Vanilla entries
+// new entry "MAG_Gish_ArcaneAcuity_Gloves"
+// type "Armor"
+// using "_Hand_Magic_Metal"
+// data "RootTemplate" "15381544-e616-46e6-a881-0af793971863"
+// data "ValueUUID" "a229f048-70b0-4b0c-88cb-29b5c6bdb2d0"
+// // data "Rarity" "Rare"
+// data "Rarity" "VeryRare"
+// // data "PassivesOnEquip" "MAG_Gish_ArcaneAcuity_Gloves_Passive"
+// data "PassivesOnEquip" "MAG_Gish_ArcaneAcuity_Gloves_Passive;Goon_ArcaneAcuity_Gloves_Technical_Passive"
+// data "Unique" "1"
 
-new entry "GOON_ARCANEACUITY_GLOVES_ONATTACK_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "DisplayName" "h523e0454g6b73gb985g37bbgdc61a1118438;1"
-data "StackType" "Ignore"
-data "TickType" "EndTurn"
-data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+// new entry "MAG_Gish_ArcaneAcuity_Gloves_Passive"
+// type "PassiveData"
+// data "DisplayName" "haab50542gb3f3g41c5g9ee9gefb50accc757;3"
+// // When a weapon &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt; inflicts a condition, the wielder gains &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt; for [1] turns.
+// data "Description" "h892bd340gceb6g4493g8223g0ea12783f411;1"
+// data "DescriptionParams" "3"
+// data "Properties" "OncePerAttack"
+// // data "StatsFunctorContext" "OnStatusApply"
+// data "StatsFunctorContext" "OnStatusApplied"
+// data "Conditions" "HasStatus('GOON_ARCANEACUITY_GLOVES_ONATTACK_TECHNICAL') and HasStatus('GOON_ARCANEACUITY_GLOVES_ONSTATUS_TECHNICAL')"
+// // data "StatsFunctors" "IF(IsWeaponAttack()):ApplyStatus(SELF, MAG_GISH_ARCANE_ACUITY, 100, 2);IF(IsWeaponAttack()):ApplyStatus(SELF, MAG_GISH_ARCANE_ACUITY_DURATION_TECHNICAL, 100, 1)"
+// data "StatsFunctors" "ApplyStatus(SELF, MAG_GISH_ARCANE_ACUITY, 100, 3);ApplyStatus(SELF, MAG_GISH_ARCANE_ACUITY_DURATION_TECHNICAL, 100, 1);RemoveStatus(GOON_ARCANEACUITY_GLOVES_ONATTACK_TECHNICAL);RemoveStatus(GOON_ARCANEACUITY_GLOVES_ONSTATUS_TECHNICAL)"
 
-new entry "GOON_ARCANEACUITY_GLOVES_ONSTATUS_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "DisplayName" "hd8cfd152g848cgfb39g8bd4gb36d2b6958c9;1"
-data "StackType" "Ignore"
-data "TickType" "EndTurn"
-data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+// // Custom entries
+// new entry "Goon_ArcaneAcuity_Gloves_Technical_Passive"
+// type "PassiveData"
+// data "Properties" "IsHidden;OncePerAttack"
+// data "StatsFunctors" "IF(context.HasContextFlag(StatsFunctorContext.OnAttack)):ApplyStatus(SELF,GOON_ARCANEACUITY_GLOVES_ONATTACK_TECHNICAL,100,1);IF(context.HasContextFlag(StatsFunctorContext.OnStatusApply)):ApplyStatus(SELF,GOON_ARCANEACUITY_GLOVES_ONSTATUS_TECHNICAL,100,1)"
+// data "StatsFunctorContext" "OnAttack;OnStatusApply"
+// data "Conditions" "(context.HasContextFlag(StatsFunctorContext.OnAttack) and IsWeaponAttack()) or (context.HasContextFlag(StatsFunctorContext.OnStatusApply) and not Self() and not StatusDoesNotInvokeOnStatusApply())"
+
+// new entry "GOON_ARCANEACUITY_GLOVES_ONATTACK_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "DisplayName" "h523e0454g6b73gb985g37bbgdc61a1118438;1"
+// data "StackType" "Ignore"
+// data "TickType" "EndTurn"
+// data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+
+// new entry "GOON_ARCANEACUITY_GLOVES_ONSTATUS_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "DisplayName" "hd8cfd152g848cgfb39g8bd4gb36d2b6958c9;1"
+// data "StackType" "Ignore"
+// data "TickType" "EndTurn"
+// data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
 
 // ========================== Boots of Stormy Clamour ==========================
 // Change quality to Rare to reflect it being BiS endgame gear for some builds still
