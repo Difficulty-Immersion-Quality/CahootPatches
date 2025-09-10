@@ -1,4 +1,5 @@
-// ================================ Slight rework and buffs for Sumradagnoth's Way of the Sun Soul ================================
+// ================================ Way of the Sun Soul ================================
+// Slight rework and buffs
 
 // ================================ Radiant Sun Bolt ================================
 // Costs 1 ki point now, but is an unarmed attack (previously ranged spell attack) using Wisdom modifier for attack and damage rolls (instead of Dexterity modifier like for regular unarmed attacks). Range is decreased to 6m (previously 9m)
