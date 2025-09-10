@@ -1,10 +1,21 @@
 // ================================= Nerfs to The Morninglord's Morningstar mod =================================
 
-// Blood of Lathander: remove Morninglord's Radiance passive
+// Morninglord's Radiance passive: removed
 new entry "CRE_BloodOfLathander"
 type "Weapon"
 using "CRE_BloodOfLathander"
 data "PassivesOnEquip" "XEN_MorninglordsMorningstar_AttackBonus_Passive;CRE_LathandersBlessing_Passive;CRE_LathandersLight_Passive;CRE_LathandersBlessing_Cooldown_Passive;XEN_MorninglordsMorningstar_Moonshield_Tracker"
+
+// Divine Weapon status: adds half spellcasting modifier to attack rolls and damage rolls instead of weapon using higher of Strength or spellcasting modifier
+// Extra damage against undead and fiends is now only based on Strength modifier
+new entry "XEN_MORNINGLORDS_MORNINGSTAR_DIVINE_WEAPON"
+type "StatusData"
+data "StatusType" "BOOST"
+using "XEN_MORNINGLORDS_MORNINGSTAR_DIVINE_WEAPON"
+data "Description" "h37fed4e7g3a46g45c5ga034ga5c35e9eceb2;1"
+data "DescriptionParams" "DealDamage(,Bludgeoning)"
+// data "Boosts" "IF(MorninglordsMorningstarIsGreaterThanStrength()):WeaponAttackRollAbilityOverride(SpellCastingAbility);IF(Tagged('FIEND',context.Target) or MorninglordsMorningstarIsUndead()):WeaponDamage(max(SpellCastingAbilityModifier,StrengthModifier),Bludgeoning)"
+data "Boosts" "WeaponAttackRollBonus(SpellCastingAbilityModifier/2);WeaponDamage(SpellCastingAbilityModifier/2,Piercing);IF(Tagged('FIEND',context.Target) or MorninglordsMorningstarIsUndead()):WeaponDamage(ProficiencyBonus,Bludgeoning)"
 
 // Blood of Lathander's Sunbeam: decrease recast duration to 2 turns
 new entry "Zone_MAG_BloodOfLathander_Sunbeam"

@@ -44,6 +44,9 @@
 	<!-- DruidWildShapeOverhaul -->
 	<content contentuid="h0d6e0466g0aaag4592gb35bgbd5f749da35d" version="1">Rupture the earth, causing debris to tear through all nearby enemies, dealing [1], and an additional [1] to knocked &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt; creatures.</content>
 	
+	<!-- Morninglord's Morningstar -->
+	<content contentuid="h37fed4e7g3a46g45c5ga034ga5c35e9eceb2" version="1">The wielder of this weapon is always &lt;LSTag Tooltip="Proficiency"&gt;Proficient&lt;/LSTag&gt; with it and adds half its &lt;LSTag Tooltip="SpellcastingAbilityModifier"&gt;Spellcasting Ability&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; and damage rolls with the weapon. &lt;br&gt;&lt;br&gt;This weapon deals additional[1] equal to the wielder's &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt; against Fiends and Undead.</content>
+
 	<!-- Rebalance to GraphicFade mods (some of these lines may no longer be used but too lazy to cross reference them all) -->
 	<!-- Beast and Bow - Ranger Equipment -->
 	<content contentuid="hab7d75d4gf054g4c04gacf6ga0aa47d9ab94" version="1">The hawk's keen gaze guides your aim, revealing your prey's vulnerabilities. Targets that have [1]% or fewer &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt; take an additional [2] from &lt;LSTag Tooltip="RangedWeaponAttack"&gt;ranged weapon attacks&lt;/LSTag&gt;.</content>
@@ -180,7 +183,7 @@
 	<content contentuid="hc2a1827agb2ecg4892g9b89g3ccffe8dc776" version="1">Whenever you deal Fire damage to an enemy, you gain [1] turns of &lt;LSTag Type="Status" Tooltip="MAG_FIRE_HEAT"&gt;Heat&lt;/LSTag&gt;.</content>
 	<content contentuid="h03436fd0gc4a9g4122g8b67g7546fcd668fe" version="1">When you heal a creature, it gains the effect of &lt;LSTag Type="Status" Tooltip="SANCTUARY"&gt;Sanctuary&lt;/LSTag&gt; for 1 turn.</content>
 	
-	<!-- SunSoul5e -->
+	<!-- 5e Monk Subclasses Combined -->
 	<content contentuid="h5b953896gee9cg4bb8gb06cg72ebc7adb6ab" version="1">Hurl a searing bolt of magical radiance. After making this attack, your next attack will also deal an additional [1].</content>
 	<content contentuid="h4c650077gb444g4974g8a95g4b48cdc10abe" version="1">This attack's &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt; and damage roll use your Wisdom &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; instead of your Dexterity Modifier. When you use this attack as part of your Attack action on your turn, you may spend 1 &lt;LSTag Type="ActionResource" Tooltip="KiPoint"&gt;ki point&lt;/LSTag&gt; to attack twice more with it as a &lt;LSTag Tooltip="BonusAction"&gt;bonus action&lt;/LSTag&gt;.</content>
 	<content contentuid="h1d5be7f4gd982g495cg814fg2a1f88143030" version="1">Radiant Soul</content>
