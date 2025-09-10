@@ -14,7 +14,7 @@ data "TooltipDamageList" "RegainHitPoints(2*ClassLevel(Paladin));RegainHitPoints
 new entry "Target_LayOnHands_BigHeal"
 type "SpellData"
 data "SpellType" "Target"
-using "Target_LayOnHands_SmallHeal"
+using "Target_LayOnHands_BigHeal"
 // data "SpellProperties" "TARGET:RegainHitPoints(4*Level+CharismaModifier)"
 data "SpellProperties" "TARGET:RegainHitPoints(4*ClassLevel(Paladin)+CharismaModifier)"
 // data "TooltipDamageList" "RegainHitPoints(4*Level);RegainHitPoints(CharismaModifier)"
