@@ -271,6 +271,16 @@ data "RemoveEvents" "OnSpellCast"
 data "StackId" "HOLY_WEAPON_TECHNICAL"
 data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator"
 
+// ============================ Synaptic Static ============================
+// Fix TargetConditions forcing the spell to target an NPC instead of being able to free target
+
+new entry "Target_SynapticStatic"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_SynapticStatic"
+// data "TargetConditions" "not Dead() and not Item() and IntelligenceGreaterThan(2)"
+data "TargetConditions" "not Dead() and not Item()"
+
 // ============================ Regenerate ============================
 // Remove not combat requirement, fix DescriptionParams, and increase heal at start of turn to 5 hit points (up from 1 hit point)
 
