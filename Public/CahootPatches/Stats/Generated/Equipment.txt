@@ -1,0 +1,9 @@
+// ============================================ Path of the Righteous ============================================
+// Remove shield from the mod
+
+new equipment "EQP_Siael_POTR_Shield"
+add initialweaponset "Melee"
+add equipmentgroup
+add equipment entry "WPN_Goblin_Scimitar"
+// add equipmentgroup
+// add equipment entry "Siael_POTR_Shield_D"

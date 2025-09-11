@@ -178,6 +178,68 @@
 	<content contentuid="h02da00cdgac67g45f4g8516g806b0ee900b7" version="1">Landing an attack on a target heals allies for [1] in a [2] radius around you. This effect can only occur once per turn.</content>
 	<content contentuid="h26e9271ag521dg49begb54eg511971cdde17" version="1">You have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; against spells. This weapon deals an additional [1] to targets &lt;LSTag Tooltip="Concentration"&gt;Concentrating&lt;/LSTag&gt; on a spell.</content>
 	
+	<!-- Path of the Righteous -->
+	<content contentuid="h40b1f521gcf1eg4fe0g9f81gbf4ee8d32f33" version="1">&lt;LSTag Type="Passive" Tooltip="Siael_POTR_Wrath"&gt;Wrath of the Righteous Set&lt;/LSTag&gt;: 1/3
+&lt;LSTag Type="Passive" Tooltip="Siael_POTR_Righteous"&gt;Path of the Righteous Set&lt;/LSTag&gt;: 1/10</content>
+	<content contentuid="h500445c2g0052g45e3gae22gf6642b989977" version="1">&lt;LSTag Type="Passive" Tooltip="Siael_POTR_Protection"&gt;Protection of the Righteous Set&lt;/LSTag&gt;: 1/1
+&lt;LSTag Type="Passive" Tooltip="Siael_POTR_Righteous"&gt;Path of the Righteous Set&lt;/LSTag&gt;: 1/10</content>
+	<content contentuid="h34e04d8427a548eb9d20d66e71d9492f0gf3" version="1">&lt;LSTag Type="Passive" Tooltip="Siael_POTR_Mercy"&gt;Mercy of the Righteous Set&lt;/LSTag&gt;: 1/2
+&lt;LSTag Type="Passive" Tooltip="Siael_POTR_Righteous"&gt;Path of the Righteous Set&lt;/LSTag&gt;: 1/10</content>
+	<content contentuid="h1a336ecfgce7eg48aagb3bcg5f6c353e0f27" version="1">&lt;LSTag Type="Passive" Tooltip="Siael_POTR_Resolve"&gt;Resolve of the Righteous Set&lt;/LSTag&gt;: 1/2
+&lt;LSTag Type="Passive" Tooltip="Siael_POTR_Righteous"&gt;Path of the Righteous Set&lt;/LSTag&gt;: 1/10</content>
+	<content contentuid="hb459640ag4529g4e02gba3eg50f425ddf1ff" version="1">&lt;LSTag Type="Passive" Tooltip="Siael_POTR_Justice"&gt;Justice of the Righteous Set&lt;/LSTag&gt;: 1/2
+&lt;LSTag Type="Passive" Tooltip="Siael_POTR_Righteous"&gt;Path of the Righteous Set&lt;/LSTag&gt;: 1/10</content>
+	<content contentuid="heb9c28bfg0405g49c2gafc7g0bf50b6d7ab1" version="1">&lt;LSTag Type="Passive" Tooltip="Siael_POTR_Wrath"&gt;Wrath of the Righteous Set&lt;/LSTag&gt;: 1/3
+&lt;LSTag Type="Passive" Tooltip="Siael_POTR_Righteous_L"&gt;Path of the Righteous Set&lt;/LSTag&gt;: 1/10</content>
+	<content contentuid="h0ede8b6fgea50g4e60gaa44g4c542fe9d2f3" version="1">&lt;LSTag Type="Passive" Tooltip="Siael_POTR_Protection"&gt;Protection of the Righteous Set&lt;/LSTag&gt;: 1/1
+&lt;LSTag Type="Passive" Tooltip="Siael_POTR_Righteous_L"&gt;Path of the Righteous Set&lt;/LSTag&gt;: 1/10</content>
+	<content contentuid="he89a18ffg4d7ag4321gb045geaa181db26fb" version="1">&lt;LSTag Type="Passive" Tooltip="Siael_POTR_Mercy"&gt;Mercy of the Righteous Set&lt;/LSTag&gt;: 1/2
+&lt;LSTag Type="Passive" Tooltip="Siael_POTR_Righteous_L"&gt;Path of the Righteous Set&lt;/LSTag&gt;: 1/10</content>
+	<content contentuid="h09178ca4gb1deg413fga3b7g0b61721daaef" version="1">&lt;LSTag Type="Passive" Tooltip="Siael_POTR_Resolve"&gt;Resolve of the Righteous Set&lt;/LSTag&gt;: 1/2
+&lt;LSTag Type="Passive" Tooltip="Siael_POTR_Righteous_L"&gt;Path of the Righteous Set&lt;/LSTag&gt;: 1/10</content>
+	<content contentuid="hf45d4091gacc7g49dfg8f6egcf3c73640856" version="1">&lt;LSTag Type="Passive" Tooltip="Siael_POTR_Justice"&gt;Justice of the Righteous Set&lt;/LSTag&gt;: 1/2
+&lt;LSTag Type="Passive" Tooltip="Siael_POTR_Righteous_L"&gt;Path of the Righteous Set&lt;/LSTag&gt;: 1/10</content>
+	<content contentuid="h117ca7a4gc74ag4f70gb495g272965395c87" version="1">This weapon deals an additional [1].</content>
+	<content contentuid="h88239792g39eag4bc2g95d8g17e5dae42ba9" version="1">The blade emits light in a [1] radius, &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blinding&lt;/LSTag&gt; Undead, Fiends, Feys, Monstrosities and Aberrations within. Attacks with this weapon &lt;LSTag Type="Status" Tooltip="TURNED"&gt;Turn&lt;/LSTag&gt; such creatures for 1 turn if they fail a &lt;LSTag Tooltip="DifficultyClass"&gt;DC&lt;/LSTag&gt; [2] Wisdom &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.</content>
+	<content contentuid="hd3833184g2f3cg49fcga5d2g66ba54dd9c87" version="1">The blade emits light in a [1] radius, &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blinding&lt;/LSTag&gt; Undead, Fiends, Feys, Monstrosities and Aberrations within. Attacks with this weapon &lt;LSTag Type="Status" Tooltip="TURNED"&gt;Turn&lt;/LSTag&gt; such creatures for 1 turn if they fail a &lt;LSTag Tooltip="DifficultyClass"&gt;DC&lt;/LSTag&gt; [2] Wisdom &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;. The blade's light counts as sunlight.</content>
+	<content contentuid="h9ba5d93bgf277g4ca4gb3cfg5ecc7e6f2e99" version="1">Your &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; threshold is reduced by [1] when attacking Undead, Fiends, Feys, Monstrosities and Aberrations with this weapon.</content>
+	<content contentuid="ha058d94dgbf12g487fg985ag08a612491cd0" version="1">Divine Reckoning</content>
+	<content contentuid="h78b104e3ge5a1g48a7g8051g1e90af8930cf" version="1">Whenever you take[1] or[2], your attacker takes the same amount as[2].</content>
+	<content contentuid="h6ed3f90eg1d02g42afg93bdgb99130d15c2a" version="1">When damaged below [1][2], cast &lt;LSTag Type="Spell" Tooltip="Siael_POTR_Armor_Globe"&gt;Globe of Protection&lt;/LSTag&gt;. This can only occur once per &lt;LSTag Tooltip="LongRest"&gt;Long Rest&lt;/LSTag&gt;.</content>
+	<content contentuid="h9c7edde5gdedbg4f39g82a8g3296260bab9d" version="1">You can't be &lt;LSTag Type="Status" Tooltip="SURPRISED"&gt;Surprised&lt;/LSTag&gt;, &lt;LSTag Type="Status" Tooltip="FRIGHTENED"&gt;Frightened&lt;/LSTag&gt;, nor afflicted with other emotion-altering conditions. Your &lt;LSTag Tooltip="Concentration"&gt;Concentration&lt;/LSTag&gt; cannot be broken by damage alone, and you have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; to maintain it.</content>
+	<content contentuid="h2c5f690fgee17g4509gb095gf60291d1ad90" version="1">Lay on Hands no longer costs an &lt;LSTag Tooltip="Action"&gt;action&lt;/LSTag&gt; or &lt;LSTag Tooltip="BonusAction"&gt;bonus action&lt;/LSTag&gt;. The &lt;LSTag Type="ActionResource" Tooltip="LayOnHandsCharge"&gt;Charges&lt;/LSTag&gt; are replenished after a &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;.</content>
+	<content contentuid="hbe8bf4dcgee4cg44c0gbc9ag75949cbb7d7e" version="1">Whenever you cast a Smite, gain &lt;LSTag Type="Status" Tooltip="MAG_MOMENTUM"&gt;Momentum&lt;/LSTag&gt; and &lt;LSTag Type="Status" Tooltip="DISENGAGE"&gt;Disengage&lt;/LSTag&gt; for the turn.</content>
+	<content contentuid="h4873d10cg06aeg4c00g9487gd7ee2d446045" version="1">If you end your turn in the same position where you started, you become a beacon of unwavering faith. Until the start of your next turn, you recover 25% of all[1] lost.</content>
+	<content contentuid="h16d15aa8gfcf1g4483g8e94g10802d89091c" version="1">This creature takes [1] (equal to a quarter of your level) if it starts its turn in sunlight.</content>	
+	<content contentuid="h4999001dg0b36g4b77g868dgfbcfe458f1f2" version="1">You can cast &lt;LSTag Type="Spell" Tooltip="Shout_CrusadersMantle"&gt;Crusader's Mantle&lt;/LSTag&gt; without expending an &lt;LSTag Tooltip="Action"&gt;action&lt;/LSTag&gt; or &lt;LSTag Tooltip="BonusAction"&gt;bonus action&lt;/LSTag&gt;.</content>
+	<content contentuid="hc0020ecbg621eg40f3g92e3gccc16999657a" version="1">Divine Alacrity</content>
+	<content contentuid="ha2bd34e5gdd91g4af8g8b9ege817d4788255" version="1">When you use your &lt;LSTag Type="ActionResource" Tooltip="ChannelOath"&gt;Channel Oath&lt;/LSTag&gt; spells, the number you need to &lt;LSTag Tooltip="AttackRoll"&gt;roll&lt;/LSTag&gt; a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; on your next weapon attack is reduced by [1].</content>
+	<content contentuid="h83fbc0c8gda9bg4fa4g8a88gbaaca101a64e" version="1">Zealous Oath</content>
+	<content contentuid="h1d8b2879gd8b8g47d4ga8f6gea8778924b30" version="1">The number you need to &lt;LSTag Tooltip="AttackRoll"&gt;roll&lt;/LSTag&gt; a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; on your next weapon attack is reduced by [1].</content>
+	<content contentuid="h45c08b34g7c81g434ag8bf0ga64da351cf0e" version="1">Apotheosis</content>
+	<content contentuid="h83ac0864g7b85g4735gbe01gf7cb24bf6336" version="1">You gain the ability to cast &lt;LSTag Type="Spell" Tooltip="Siael_POTR_Protection_Spell"&gt;Apotheosis&lt;/LSTag&gt;.</content>
+	<content contentuid="h522dc8d8g5967g4569g9854ge1ce5eee144c" version="1">Assume a stance that turns your foes' aggression against them. Your &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; is reduced by [1], but you take [2] less damage from all sources.&lt;br&gt;&lt;br&gt;Each time an enemy attacks you, your damage dealt with weapon attacks increases by [3]. This effect decreases by one stack each turn and can stack up to [4] times.</content>
+	<content contentuid="heb7526b8g8924g4793gbf40g4852733f75cf" version="1">Your &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; is reduced by [1] and you take [2] less damage from all sources.&lt;br&gt;&lt;br&gt;Each time an enemy attacks you, your damage dealt with weapon attacks increases by [3]. This effect decreases by one stack each turn and can stack up to [4] times.</content>
+	<content contentuid="h91be4769g8c44g4ba8g9719gb37b4936d381" version="1">Apotheosis: Martial Mastery</content>
+	<content contentuid="h4a4d9e03g03cag4ecag92a1g0f538906293e" version="1">The damage you deal with weapon attacks is increased by [1] for every turn remaining.</content>
+	<content contentuid="h8c080cc9gd4e3g4be3g9c9eg3d5becc22c2a" version="1">Apotheosis: End</content>
+	<content contentuid="hd550e7e3gd110g4941g85abgd71586a136f4" version="1">Put an end to your stance. This will remove all weapon damage bonuses from Apotheosis.</content>
+	<content contentuid="hfc444f7eg5502g4f0bgbfacg42ae59b02790" version="1">Heretic's Pyre</content>
+	<content contentuid="h9b50b1b3g6cedg4369ga183gcc209bdf3327" version="1">When you deal[1] to an enemy Undead, Fiend, Fey, Monstrosity or Aberration that can't be &lt;LSTag Type="Status" Tooltip="TURNED"&gt;Turned&lt;/LSTag&gt;, inflict &lt;LSTag Type="Status" Tooltip="BURNING_HOLY"&gt;Holy Flame&lt;/LSTag&gt; to it for 3 turns. This effect can occur per turn per target.</content>
+	<content contentuid="hcb5dd19cg44bcg44deg8f9cg70ee9017ac18" version="1">Your &lt;LSTag Type="Spell" Tooltip="Target_SacredFlame"&gt;Sacred Flame&lt;/LSTag&gt; inflicts &lt;LSfTag Type="Status" Tooltip="BURNING_HOLY"&gt;Holy Flame&lt;/LSTag&gt; for [1] turns.</content>
+	<content contentuid="hc524b30bgc295g44e4g8639g8741f9e20b61" version="1">You can't be stopped by mundane means and are immune to being &lt;LSTag Type="Status" Tooltip="PETRIFIED"&gt;Petrified&lt;/LSTag&gt;, &lt;LSTag Type="Status" Tooltip="RESTRAINED"&gt;Restrained&lt;/LSTag&gt; or being made &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt;.</content>
+	<content contentuid="hc40f46d4ga454g4acdg97b5g3e42f9d5e4f1" version="1">Whenever you heal[1], inflict &lt;LSTag Type="Status" Tooltip="MAG_RADIANT_RADIATING_ORB"&gt;Radiating Orb&lt;/LSTag&gt; to every foe within [2] for 2 turns. Each enemy can only be affected once per turn.</content>
+	<content contentuid="h725fecfcgc0b8g4b91g9dedg525ce619d6ef" version="1">Cast a ray of light, dealing [1].</content>
+	<content contentuid="h3f326ccfg4236g4d88g8a6eg7c0318249887" version="1">Your oath grants you even more intense power. 
+You can cast &lt;LSTag Type="Spell" Tooltip="Siael_POTR_Cantrip"&gt;Last Judgement&lt;/LSTag&gt;, and it functions with effects from the set that use &lt;LSTag Type="Spell" Tooltip="Target_SacredFlame"&gt;Sacred Flame&lt;/LSTag&gt;.
+Moreover, &lt;LSTag Type="Status" Tooltip="BURNING_HOLY"&gt;Holy Flame&lt;/LSTag&gt; that you inflict deals an additional [1] per remaining turn of it.
+
+You still benefit from &lt;LSTag Type="Passive" Tooltip="Siael_POTR_Righteous_R"&gt;Noble Knight&lt;/LSTag&gt;.</content>
+	
+	<content contentuid="h23e8164fg653fg4f8bg892cgfcf764d6d9fd" version="1">Your celestial presence is almighty. Foes within your Paladin aura are &lt;LSTag Tooltip="Vulnerable"&gt;Vulnerable&lt;/LSTag&gt; to[1].
+
+You still benefit from &lt;LSTag Type="Passive" Tooltip="Siael_POTR_Righteous"&gt;The Righteous&lt;/LSTag&gt;.</content>
+
 	<!-- Cloaks of Faerun -->
 	<content contentuid="he1f00503g0dccg4a2eg9e31ga572de2a975a" version="1">Whenever the wearer succeeds on a &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; against a spell, they regain [1]. This effect can only occur once per turn.</content>
 	<content contentuid="hc2a1827agb2ecg4892g9b89g3ccffe8dc776" version="1">Whenever you deal Fire damage to an enemy, you gain [1] turns of &lt;LSTag Type="Status" Tooltip="MAG_FIRE_HEAT"&gt;Heat&lt;/LSTag&gt;.</content>

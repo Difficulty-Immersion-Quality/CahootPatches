@@ -1,0 +1,469 @@
+// ================================== Sword ==================================
+// Weapon: remove finesse property, nerf extra Radiant damage (see Holy Blade edits below)
+new entry "Siael_POTR_Sword_D"
+type "Weapon"
+using "Siael_POTR_Sword_D"
+// data "Weapon Properties" "Finesse;Versatile;NoDualWield;Melee;Dippable"
+data "Weapon Properties" "Versatile;NoDualWield;Melee;Dippable"
+
+new entry "Siael_POTR_Sword_R"
+type "Weapon"
+using "Siael_POTR_Sword_R"
+// data "Weapon Properties" "Finesse;Versatile;NoDualWield;Melee;Dippable;Magical"
+data "Weapon Properties" "Versatile;NoDualWield;Melee;Dippable;Magical"
+// data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical);WeaponDamage(1d4+1, Radiant)"
+data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical);WeaponDamage(1d4, Radiant)"
+
+new entry "Siael_POTR_Sword_V"
+type "Weapon"
+using "Siael_POTR_Sword_V"
+// data "Weapon Properties" "Finesse;Versatile;NoDualWield;Melee;Dippable;Magical"
+data "Weapon Properties" "Versatile;NoDualWield;Melee;Dippable;Magical"
+// data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);WeaponDamage(1d4+2, Radiant)"
+data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);WeaponDamage(1d6, Radiant)"
+
+new entry "Siael_POTR_Sword_L"
+type "Weapon"
+using "Siael_POTR_Sword_L"
+// data "Weapon Properties" "Finesse;Versatile;NoDualWield;Melee;Dippable;Magical"
+data "Weapon Properties" "Versatile;NoDualWield;Melee;Dippable;Magical"
+// data "DefaultBoosts" "WeaponEnchantment(3);WeaponProperty(Magical);WeaponDamage(1d4+3, Radiant)"
+data "DefaultBoosts" "WeaponEnchantment(3);WeaponProperty(Magical);WeaponDamage(1d8, Radiant)"
+
+new entry "Siael_POTR_Sword_M"
+type "Weapon"
+using "Siael_POTR_Sword_M"
+// data "Weapon Properties" "Finesse;Versatile;NoDualWield;Melee;Dippable;Magical"
+data "Weapon Properties" "Versatile;NoDualWield;Melee;Dippable;Magical"
+// data "DefaultBoosts" "WeaponEnchantment(5);WeaponProperty(Magical);WeaponDamage(1d4+5, Radiant)"
+data "DefaultBoosts" "WeaponEnchantment(5);WeaponProperty(Magical);WeaponDamage(1d10, Radiant)"
+
+// Holy Blade: loca edit and decrease radiant damage at each rarity
+new entry "Siael_POTR_Sword_P1_R"
+type "PassiveData"
+using "Siael_POTR_Sword_P1_R"
+// This weapon deals an additional [1].
+data "Description" "h117ca7a4gc74ag4f70gb495g272965395c87;1"
+// data "DescriptionParams" "DealDamage(1d4+1,Radiant)"
+data "DescriptionParams" "DealDamage(1d4,Radiant)"
+
+new entry "Siael_POTR_Sword_P1_V"
+type "PassiveData"
+using "Siael_POTR_Sword_P1_V"
+// data "DescriptionParams" "DealDamage(1d4+2,Radiant)"
+data "DescriptionParams" "DealDamage(1d6,Radiant)"
+
+new entry "Siael_POTR_Sword_P1"
+type "PassiveData"
+using "Siael_POTR_Sword_P1"
+// data "DescriptionParams" "DealDamage(1d4+3,Radiant)"
+data "DescriptionParams" "DealDamage(1d8,Radiant)"
+
+new entry "Siael_POTR_Sword_P1_M"
+type "PassiveData"
+using "Siael_POTR_Sword_P1_M"
+// data "DescriptionParams" "DealDamage(1d4+5,Radiant)"
+data "DescriptionParams" "DealDamage(1d10,Radiant)"
+
+// Celestial Annointment: loca edits and icon changed to use Daylight from Lathander's Armory mod (already added in this .pak for ATT's Sunburst)
+new entry "Siael_POTR_Sword_P2"
+type "PassiveData"
+using "Siael_POTR_Sword_P2"
+// The blade emits light in a [1] radius, &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blinding&lt;/LSTag&gt; Undead, Fiends, Feys, Monstrosities and Aberrations within. Attacks with this weapon &lt;LSTag Type="Status" Tooltip="TURNED"&gt;Turn&lt;/LSTag&gt; such creatures for 1 turn if they fail a &lt;LSTag Tooltip="DifficultyClass"&gt;DC&lt;/LSTag&gt; [2] Wisdom &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.
+data "Description" "h88239792g39eag4bc2g95d8g17e5dae42ba9;1"
+// data "Icon" "Spell_Evocation_Moonbeam"
+data "Icon" "ATT_Spell_Evocation_Sunburst"
+
+new entry "Siael_POTR_Sword_P2_L"
+type "PassiveData"
+using "Siael_POTR_Sword_P2"
+// The blade emits light in a [1] radius, &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blinding&lt;/LSTag&gt; Undead, Fiends, Feys, Monstrosities and Aberrations within. Attacks with this weapon &lt;LSTag Type="Status" Tooltip="TURNED"&gt;Turn&lt;/LSTag&gt; such creatures for 1 turn if they fail a &lt;LSTag Tooltip="DifficultyClass"&gt;DC&lt;/LSTag&gt; [2] Wisdom &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;. The blade's light counts as sunlight.
+data "Description" "hd3833184g2f3cg49fcga5d2g66ba54dd9c87;1"
+// data "Icon" "Spell_Evocation_Moonbeam"
+data "Icon" "ATT_Spell_Evocation_Sunburst"
+
+// Bane of Evil: decreases critical hit threshold by 3 against specified types instead of always guaranteeing critical hits, and only works for attacks with the weapon
+new entry "Siael_POTR_Sword_P4"
+type "PassiveData"
+using "Siael_POTR_Sword_P4"
+// Your &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; threshold is reduced by [1] when attacking Undead, Fiends, Feys, Monstrosities and Aberrations with this weapon.
+data "Description" "h9ba5d93bgf277g4ca4gb3cfg5ecc7e6f2e99;1"
+// data "DescriptionParams" ""
+data "DescriptionParams" "3"
+// data "BoostConditions" ""
+data "BoostConditions" "AttackedWithPassiveSourceWeapon() and (Tagged('UNDEAD') or Tagged('UNDEAD_BEAST') or Tagged('FIEND') or Tagged('FEY') or Tagged('MONSTROSITY') or Tagged('ABERRATION'))"
+// data "Boosts" "IF(Tagged('UNDEAD') or Tagged('UNDEAD_BEAST') or Tagged('FIEND') or Tagged('FEY') or Tagged('MONSTROSITY') or Tagged('ABERRATION')):MinimumRollResult(Attack,20)"
+data "Boosts" "ReduceCriticalAttackThreshold(3)"
+
+// ================================== Shield ==================================
+// Remove entirely from set
+
+// Protection set bonus
+new entry "SIAEL_POTR_ARMOR"
+type "StatusData"
+data "StatusType" "BOOST"
+using "SIAEL_POTR_ARMOR"
+// data "OnApplyFunctors" "IF(HasStatus('SIAEL_POTR_SHIELD')):ApplyStatus(SIAEL_POTR_PROTECTION,100,-1)"
+data "OnApplyFunctors" "ApplyStatus(SIAEL_POTR_PROTECTION,100,-1)"
+
+// Upgrade spell containers
+new entry "Siael_POTR_Upgrades"
+type "SpellData"
+data "SpellType" "Shout"
+using "Siael_POTR_Upgrades"
+// data "ContainerSpells" "Siael_POTR_UpgradeSword_1;Siael_POTR_UpgradeGauntlets_1;Siael_POTR_UpgradeBoots_1;Siael_POTR_UpgradeArmor_1;Siael_POTR_UpgradeHelmet_1;Siael_POTR_UpgradeCloak_1;Siael_POTR_UpgradeShield_1;Siael_POTR_UpgradeRing1_1;Siael_POTR_UpgradeRing2_1;Siael_POTR_UpgradeAmulet_1;Siael_POTR_UpgradeTrinket_1"
+data "ContainerSpells" "Siael_POTR_UpgradeSword_1;Siael_POTR_UpgradeGauntlets_1;Siael_POTR_UpgradeBoots_1;Siael_POTR_UpgradeArmor_1;Siael_POTR_UpgradeHelmet_1;Siael_POTR_UpgradeCloak_1;Siael_POTR_UpgradeRing1_1;Siael_POTR_UpgradeRing2_1;Siael_POTR_UpgradeAmulet_1;Siael_POTR_UpgradeTrinket_1"
+
+new entry "Siael_POTR_Upgrades_L"
+type "SpellData"
+data "SpellType" "Shout"
+using "Siael_POTR_Upgrades_L"
+// data "ContainerSpells" "Siael_POTR_UpgradeSword_2;Siael_POTR_UpgradeGauntlets_2;Siael_POTR_UpgradeBoots_2;Siael_POTR_UpgradeArmor_2;Siael_POTR_UpgradeHelmet_2;Siael_POTR_UpgradeCloak_2;Siael_POTR_UpgradeShield_2;Siael_POTR_UpgradeRing1_2;Siael_POTR_UpgradeRing2_2;Siael_POTR_UpgradeAmulet_2;Siael_POTR_UpgradeTrinket_2"
+data "ContainerSpells" "Siael_POTR_UpgradeSword_2;Siael_POTR_UpgradeGauntlets_2;Siael_POTR_UpgradeBoots_2;Siael_POTR_UpgradeArmor_2;Siael_POTR_UpgradeHelmet_2;Siael_POTR_UpgradeCloak_2;Siael_POTR_UpgradeRing1_2;Siael_POTR_UpgradeRing2_2;Siael_POTR_UpgradeAmulet_2;Siael_POTR_UpgradeTrinket_2"
+
+// ================================== Armour ==================================
+
+// Armour: remove resistance to Radiant damage, heavy armour proficiency, and Exotic Material passive
+new entry "Siael_POTR_Armor_V"
+type "Armor"
+using "Siael_POTR_Armor_V"
+// data "Boosts" "Disadvantage(Skill,Stealth);Resistance(Radiant,Resistant);Proficiency(HeavyArmor)"
+data "Boosts" "Disadvantage(Skill,Stealth)"
+// data "PassivesOnEquip" "EqLib_PlateBody_Passive;Siael_POTR_Armor_P1_V;Siael_POTR_Armor_P2_V;Siael_POTR_Armor_P3;MAG_ExoticMaterial_Druid_Passive"
+data "PassivesOnEquip" "EqLib_PlateBody_Passive;Siael_POTR_Armor_P1_V;Siael_POTR_Armor_P2_V;Siael_POTR_Armor_P3"
+// data "Armor Class Ability" "Dexterity"
+data "Armor Class Ability" "None"
+
+new entry "Siael_POTR_Armor_L"
+type "Armor"
+using "Siael_POTR_Armor_L"
+// data "Boosts" "Disadvantage(Skill,Stealth);Resistance(Radiant,Resistant)"
+data "Boosts" "Disadvantage(Skill,Stealth)"
+// data "PassivesOnEquip" "EqLib_PlateBody_Passive;Siael_POTR_Armor_P1_L;Siael_POTR_Armor_P2_L;Siael_POTR_Armor_P3;MAG_ExoticMaterial_Druid_Passive;Siael_POTR_Armor_P4"
+data "PassivesOnEquip" "EqLib_PlateBody_Passive;Siael_POTR_Armor_P1_L;Siael_POTR_Armor_P2_L;Siael_POTR_Armor_P3;Siael_POTR_Armor_P4"
+// data "Armor Class Ability" "Dexterity"
+data "Armor Class Ability" "None"
+data "ArmorClass" "0"
+
+// One-Man Phalanx: replace text showing  "Globe of Invulnerability" with "Globe of Protection" to be consistent with personal changes to the spell, and change hp threshold to 40%
+new entry "Siael_POTR_Armor_P3"
+type "PassiveData"
+using "Siael_POTR_Armor_P3"
+// When damaged below [1][2], cast &lt;LSTag Type="Spell" Tooltip="Siael_POTR_Armor_Globe"&gt;Globe of Protection&lt;/LSTag&gt;. This can only occur once per &lt;LSTag Tooltip="LongRest"&gt;Long Rest&lt;/LSTag&gt;.
+data "Description" "h6ed3f90eg1d02g42afg93bdgb99130d15c2a;1"
+// data "DescriptionParams" "35%;RegainHitPoints(,)"
+data "DescriptionParams" "40%;RegainHitPoints(,)"
+// data "Conditions" "HasHPPercentageEqualOrLessThan(35)"
+data "Conditions" "HasHPPercentageEqualOrLessThan(40)"
+
+// Radiant Retort: rename and nerf from reflecting back double the damage to only reflecting back the same amount of damage
+new entry "Siael_POTR_Armor_P4"
+type "PassiveData"
+using "Siael_POTR_Armor_P4"
+// Divine Reckoning
+data "DisplayName" "ha058d94dgbf12g487fg985ag08a612491cd0;1"
+// Whenever you take[1] or[2], your attacker takes the same amount as[2].
+data "Description" "h78b104e3ge5a1g48a7g8051g1e90af8930cf;1"
+// data "Boosts" "IF(not IsRedirectedDamage() and not Ally()):RedirectDamage(2,Radiant,Necrotic,true);IF(not IsRedirectedDamage() and not Ally()):RedirectDamage(2,Radiant,Radiant,true)"
+data "Boosts" "IF(not IsRedirectedDamage() and not Ally()):RedirectDamage(1,Radiant,Necrotic,true);IF(not IsRedirectedDamage() and not Ally()):RedirectDamage(1,Radiant,Radiant,true)"
+
+// ================================== Helmet ==================================
+
+// Paramount Mettle: loca edit
+new entry "Siael_POTR_Head_P3"
+type "PassiveData"
+using "Siael_POTR_Head_P3"
+// You can't be &lt;LSTag Type="Status" Tooltip="SURPRISED"&gt;Surprised&lt;/LSTag&gt;, &lt;LSTag Type="Status" Tooltip="FRIGHTENED"&gt;Frightened&lt;/LSTag&gt;, nor afflicted with other emotion-altering conditions. Your &lt;LSTag Tooltip="Concentration"&gt;Concentration&lt;/LSTag&gt; cannot be broken by damage alone, and you have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; to maintain it.data "Description" "h9c7edde5gdedbg4f39g82a8g3296260bab9d;1"
+data "Description" "h9c7edde5gdedbg4f39g82a8g3296260bab9d;1"
+
+// ================================== Gloves ==================================
+
+// Mantra of Vitality: also remove bonus action costs for compatibility with Lightbringer Reforged
+new entry "Siael_POTR_Gauntlets_P3"
+type "PassiveData"
+using "Siael_POTR_Gauntlets_P3"
+// Lay on Hands no longer costs an &lt;LSTag Tooltip="Action"&gt;action&lt;/LSTag&gt; or &lt;LSTag Tooltip="BonusAction"&gt;bonus action&lt;/LSTag&gt;. The &lt;LSTag Type="ActionResource" Tooltip="LayOnHandsCharge"&gt;Charges&lt;/LSTag&gt; are replenished after a &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;.
+data "Description" "h2c5f690fgee17g4509gb095gf60291d1ad90;1"
+// data "Boosts" "UnlockSpellVariant(HasUseCosts('LayOnHandsCharge'),ModifyUseCosts(Replace,ActionPoint,0,0,ActionPoint),ModifyTooltipDescription())"
+data "Boosts" "UnlockSpellVariant(HasUseCosts('LayOnHandsCharge'),ModifyUseCosts(Replace,ActionPoint,0,0,ActionPoint),ModifyTooltipDescription());UnlockSpellVariant(HasUseCosts('LayOnHandsCharge'),ModifyUseCosts(Replace,BonusActionPoint,0,0,BonusActionPoint),ModifyTooltipDescription())"
+
+// ================================== Boots ==================================
+
+// Creed of Freedom (very rare version): loca edits
+new entry "Siael_POTR_Boots_P1_V"
+type "PassiveData"
+using "Siael_POTR_Boots_P1_V"
+// Whenever you cast a Smite, gain &lt;LSTag Type="Status" Tooltip="MAG_MOMENTUM"&gt;Momentum&lt;/LSTag&gt; and &lt;LSTag Type="Status" Tooltip="DISENGAGE"&gt;Disengage&lt;/LSTag&gt; for the turn.
+data "Description" "hbe8bf4dcgee4cg44c0gbc9ag75949cbb7d7e;1"
+
+// Holy Grounds: decrease health regained to 25% (previously 50%)
+new entry "Siael_POTR_Boots_P3"
+type "PassiveData"
+using "Siael_POTR_Boots_P3"
+// If you end your turn in the same position where you started, you become a beacon of unwavering faith. Until the start of your next turn, you recover 25% of all[1] lost.
+data "Description" "h4873d10cg06aeg4c00g9487gd7ee2d446045;1"
+
+new entry "Siael_POTR_Boots_Heal"
+type "PassiveData"
+using "Siael_POTR_Boots_Heal"
+// If you end your turn in the same position where you started, you become a beacon of unwavering faith. Until the start of your next turn, you recover 25% of all[1] lost.
+data "Description" "h4873d10cg06aeg4c00g9487gd7ee2d446045;1"
+// data "StatsFunctors" "RegainHitPoints(DamageDone/2)"
+data "StatsFunctors" "RegainHitPoints(DamageDone/4)"
+
+// ================================== Cloak ==================================
+
+// Ever Adorned: also remove bonus action for compatibility with mod changing Crusader's Mantle cost to bonus action
+new entry "Siael_POTR_Cape_P2"
+type "PassiveData"
+using "Siael_POTR_Cape_P2"
+// You can cast &lt;LSTag Type="Spell" Tooltip="Shout_CrusadersMantle"&gt;Crusader's Mantle&lt;/LSTag&gt; without expending an &lt;LSTag Tooltip="Action"&gt;action&lt;/LSTag&gt; or &lt;LSTag Tooltip="BonusAction"&gt;bonus action&lt;/LSTag&gt;.
+data "Description" "h4999001dg0b36g4b77g868dgfbcfe458f1f2;1"
+// data "Boosts" "UnlockSpellVariant(SpellId('Shout_CrusadersMantle') or SpellId('PoU_UnholyMantle'),ModifyUseCosts(Replace,ActionPoint,0,0,ActionPoint),ModifyTooltipDescription())"
+data "Boosts" "UnlockSpellVariant(SpellId('Shout_CrusadersMantle') or SpellId('PoU_UnholyMantle'),ModifyUseCosts(Replace,ActionPoint,0,0,ActionPoint),ModifyTooltipDescription());UnlockSpellVariant(SpellId('Shout_CrusadersMantle') or SpellId('PoU_UnholyMantle'),ModifyUseCosts(Replace,BonusActionPoint,0,0,BonusActionPoint),ModifyTooltipDescription())"
+
+// Celestial Haste: rename to be different from vanilla spell and decrease movement speed bonus to 3m
+new entry "Siael_POTR_Cape_P3"
+type "PassiveData"
+using "Siael_POTR_Cape_P3"
+// Divine Alacrity
+data "DisplayName" "hc0020ecbg621eg40f3g92e3gccc16999657a;1"
+// data "DescriptionParams" "Distance(4.5)"
+data "DescriptionParams" "Distance(3)"
+// data "Boosts" "ActionResource(Movement,4.5,0);ActionResource(BonusActionPoint,1,0);ActionResource(ReactionActionPoint,1,0)"
+data "Boosts" "ActionResource(Movement,3,0);ActionResource(BonusActionPoint,1,0);ActionResource(ReactionActionPoint,1,0)"
+
+// ================================== Trinket ==================================
+
+// Tyranny of the Sun
+// Sensitive to Sunlight: decrease damage taken and remove disadvantage on attack rolls and ability checks
+new entry "SIAEL_POTR_SUNLIGHT_SENSITIVITY"
+type "StatusData"
+data "StatusType" "BOOST"
+using "SIAEL_POTR_SUNLIGHT_SENSITIVITY"
+// This creature takes [1] (equal to a quarter of your level) if it starts its turn in sunlight.
+data "Description" "h16d15aa8gfcf1g4483g8e94g10802d89091c;1"
+// data "DescriptionParams" "DealDamage(Cause.Level/2,Radiant)"
+data "DescriptionParams" "DealDamage(Cause.Level/4,Radiant)"
+// data "Boosts" "IF(IsInSunlight(context.Target)):Disadvantage(AttackRoll);IF(IsInSunlight(context.Target)):Disadvantage(AllAbilities)"
+data "Boosts" ""
+// data "TickFunctors" "IF(IsInSunlight(context.Target) or HasStatus('SUNLIGHT_FROM_SPELL_TECHNICAL',context.Target)):DealDamage(Cause.Level/2,Radiant,Magical)"
+data "TickFunctors" "IF(IsInSunlight(context.Target) or HasStatus('SUNLIGHT_FROM_SPELL_TECHNICAL',context.Target)):DealDamage(Cause.Level/4,Radiant,Magical)"
+
+// ================================== Set Bonuses ==================================
+
+// ================================== Justice set: Zealous Oath ==================================
+// Reworked to temporarily decrease your critical hit threshold after casting a channel oath spell instead of giving Lay on Hand charges
+new entry "Siael_POTR_Justice"
+type "PassiveData"
+using "Siael_POTR_Justice"
+// When you use your &lt;LSTag Type="ActionResource" Tooltip="ChannelOath"&gt;Channel Oath&lt;/LSTag&gt; spells, the number you need to &lt;LSTag Tooltip="AttackRoll"&gt;roll&lt;/LSTag&gt; a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; on your next weapon attack is reduced by [1]
+data "Description" "ha2bd34e5gdd91g4af8g8b9ege817d4788255;1"
+// data "DescriptionParams" ""
+data "DescriptionParams" "5"
+// data "StatsFunctors" "ApplyStatus(SELF,SIAEL_POTR_JUSTICE_EFFECT,100,max(WisdomModifier,CharismaModifier))"
+data "StatsFunctors" "ApplyStatus(SELF,CHT_POTR_JUSTICE_EFFECT,100,-1)"
+
+// // Using a technical status to apply the status that actually has the status to prevent the real status from being affected by Law of Eternity passive on Ring 2
+// new entry "CHT_POTR_JUSTICE_EFFECT_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator"
+// data "OnApplyFunctors" "ApplyStatus(CHT_POTR_JUSTICE_EFFECT,100,5)"
+
+new entry "CHT_POTR_JUSTICE_EFFECT"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackId" "CHT_POTR_JUSTICE_EFFECT"
+// Zealous Oath
+data "DisplayName" "h83fbc0c8gda9bg4fa4g8a88gbaaca101a64e;1"
+// The number you need to &lt;LSTag Tooltip="AttackRoll"&gt;roll&lt;/LSTag&gt; a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; on your next weapon attack is reduced by [1].
+data "Description" "h1d8b2879gd8b8g47d4ga8f6gea8778924b30;1"
+data "DescriptionParams" "5"
+data "Icon" "Action_Paladin_InquisitorsMight"
+data "StatusGroups" "SG_RemoveOnRespec"
+data "Boosts" "IF(IsWeaponAttack()):ReduceCriticalAttackThreshold(5)"
+data "RemoveEvents" "OnAttack"
+data "RemoveConditions" "IsWeaponAttack()"
+data "StatusEffect" "1870a2ff-96a1-45c7-91ac-de1a1c922afe"
+
+// ================================== Protection set: King of the Hill ==================================
+// Completely reworked from a tank spell (as the set no longer has a shield) to a more selfish and offensive-oriented spell
+new entry "Siael_POTR_Protection"
+type "PassiveData"
+using "Siael_POTR_Protection"
+// Apotheosis
+data "DisplayName" "h45c08b34g7c81g434ag8bf0ga64da351cf0e;1"
+// You gain the ability to cast &lt;LSTag Type="Spell" Tooltip="Siael_POTR_Protection_Spell"&gt;Apotheosis&lt;/LSTag&gt;.
+data "Description" "h83ac0864g7b85g4735gbe01gf7cb24bf6336;1"
+// data "DescriptionParams" "20;GainTemporaryHitPoints(100%)"
+data "DescriptionParams" """
+
+new entry "Siael_POTR_Protection_Spell"
+type "SpellData"
+data "SpellType" "Shout"
+using "Siael_POTR_Protection_Spell"
+// Apotheosis
+data "DisplayName" "h45c08b34g7c81g434ag8bf0ga64da351cf0e;1"
+// Assume a stance that turns your foes' aggression against them. Your &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; is reduced by [1], but you take [2] less damage from all sources.&lt;br&gt;&lt;br&gt;Each time an enemy attacks you, your damage dealt with weapon attacks increases by [3]. This effect decreases by one stack each turn and can stack up to [4] times.
+data "Description" "h522dc8d8g5967g4569g9854ge1ce5eee144c;1"
+// data "DescriptionParams" "20;GainTemporaryHitPoints(100%)"
+data "DescriptionParams" "3;2;1;5"
+
+new entry "SIAEL_POTR_PROTECTION_ACTIVE"
+type "StatusData"
+data "StatusType" "BOOST"
+using "SIAEL_POTR_PROTECTION_ACTIVE"
+// Apotheosis
+data "DisplayName" "h45c08b34g7c81g434ag8bf0ga64da351cf0e;1"
+// Your &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; is reduced by [1] and you take [2] less damage from all sources.&lt;br&gt;&lt;br&gt;Each time an enemy attacks you, your damage dealt with weapon attacks increases by [3]. This effect decreases by one stack each turn and can stack up to [4] times.
+data "Description" "heb7526b8g8924g4793gbf40g4852733f75cf;1"
+// data "DescriptionParams" "20;GainTemporaryHitPoints(MaxHP*2)"
+data "DescriptionParams" "3;2;1;5"
+// data "Boosts" "TemporaryHP(MaxHP*2):AC(-20);UnlockSpell(Siael_POTR_Protection_SpellEnd);ActionResourceBlock(ActionPoint);ActionResourceBlock(BonusActionPoint);ActionResourceBlock(Movement);Grounded();ActionResource(ReactionActionPoint,4,0);StatusImmunity(SIAEL_POTR_SHIELD_ON);StatusImmunity(SIAEL_POTR_SHIELD_OFF)"
+data "Boosts" "AC(-3);DamageReduction(All,Flat,2);UnlockSpell(Siael_POTR_Protection_SpellEnd)"
+// data "Passives" ""
+data "Passives" "CHT_POTR_Protection_Passive"
+
+// Custom passives and statuses
+new entry "CHT_POTR_Protection_Passive"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "StatsFunctorContext" "OnAttacked"
+data "Conditions" "Enemy(context.Target) and not Self() and IsAttack()"
+data "StatsFunctors" "ApplyStatus(CHT_POTR_PROTECTION_CRIT_REDUCTION,100,Target.CHT_POTR_PROTECTION_CRIT_REDUCTION.Duration+1);ApplyStatus(CHT_POTR_PROTECTION_CRIT_REDUCTION_TECHNICAL, 100, 1)"
+
+new entry "CHT_POTR_PROTECTION_CRIT_REDUCTION"
+type "StatusData"
+data "StatusType" "BOOST"
+// Apotheosis: Martial Mastery
+data "DisplayName" "h91be4769g8c44g4ba8g9719gb37b4936d381;1"
+// The damage you deal with weapon attacks is increased by [1] for every turn remaining.
+data "Description" "h4a4d9e03g03cag4ecag92a1g0f538906293e;3"
+data "DescriptionParams" "1"
+data "Icon" "Siael_POTR_Protection"
+data "StackId" "CHT_POTR_PROTECTION_CRIT_REDUCTION"
+data "StackType" "Overwrite"
+data "Boosts" "CharacterWeaponDamage(1)"
+data "StatusPropertyFlags" "MultiplyEffectsByDuration;DisableCombatlog"
+
+new entry "CHT_POTR_PROTECTION_CRIT_REDUCTION_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackId" "CHT_POTR_PROTECTION_CRIT_REDUCTION_TECHNICAL"
+data "StackType" "Overwrite"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+data "OnApplyFunctors" "IF(MaximumLowStackableStatus(context.Target, 'CHT_POTR_PROTECTION_CRIT_REDUCTION')):SetStatusDuration(CHT_POTR_PROTECTION_CRIT_REDUCTION, 5, ForceSet)"
+
+new entry "Siael_POTR_Protection_SpellEnd"
+type "SpellData"
+data "SpellType" "Shout"
+using "Siael_POTR_Protection_SpellEnd"
+// Apotheosis: End
+data "DisplayName" "h8c080cc9gd4e3g4be3g9c9eg3d5becc22c2a;1"
+// Put an end to your stance. This will remove all weapon damage bonuses from Apotheosis.
+data "Description" "hd550e7e3gd110g4941g85abgd71586a136f4;1"
+// data "SpellProperties" "RemoveStatus(SELF,SIAEL_POTR_PROTECTION_ACTIVE)"
+data "SpellProperties" "RemoveStatus(SELF,SIAEL_POTR_PROTECTION_ACTIVE);RemoveStatus(SELF,CHT_POTR_PROTECTION_CRIT_REDUCTION)"
+
+// ================================== Wrath + Justice sets: Heretic Pyre ==================================
+// Loca edits
+new entry "Siael_POTR_WJ"
+type "PassiveData"
+using "Siael_POTR_WJ"
+// Heretic's Pyre
+data "DisplayName" "hfc444f7eg5502g4f0bgbfacg42ae59b02790;1"
+// When you deal[1] to an enemy Undead, Fiend, Fey, Monstrosity or Aberration that can't be &lt;LSTag Type="Status" Tooltip="TURNED"&gt;Turned&lt;/LSTag&gt;, inflict &lt;LSTag Type="Status" Tooltip="BURNING_HOLY"&gt;Holy Flame&lt;/LSTag&gt; to it for 3 turns. This effect can occur per turn per target.
+data "Description" "h9b50b1b3g6cedg4369ga183gcc209bdf3327;1"
+
+// ================================== Wrath + Resolve Sets: Burn the Foul ==================================
+// Decrease Holy Fire duration to 2 turns
+new entry "Siael_POTR_WR"
+type "PassiveData"
+using "Siael_POTR_WR"
+// Your &lt;LSTag Type="Spell" Tooltip="Target_SacredFlame"&gt;Sacred Flame&lt;/LSTag&gt; inflicts &lt;LSTag Type="Status" Tooltip="BURNING_HOLY"&gt;Holy Flame&lt;/LSTag&gt; for [1] turns.
+data "Description" "hcb5dd19cg44bcg44deg8f9cg70ee9017ac18;1"
+// data "DescriptionParams" ""
+data "DescriptionParams" "2"
+// data "StatsFunctors" "ApplyStatus(BURNING_HOLY,100,3)"
+data "StatsFunctors" "ApplyStatus(BURNING_HOLY,100,2)"
+
+// ================================== Protection + Resolve sets: Unstoppable Courage ==================================
+// Remove paralyzed from immunities
+new entry "Siael_POTR_PR"
+type "PassiveData"
+using "Siael_POTR_PR"
+// You can't be stopped by mundane means and are immune to being &lt;LSTag Type="Status" Tooltip="PETRIFIED"&gt;Petrified&lt;/LSTag&gt;, &lt;LSTag Type="Status" Tooltip="RESTRAINED"&gt;Restrained&lt;/LSTag&gt; or being made &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt;.
+data "Description" "hc524b30bgc295g44e4g8639g8741f9e20b61;1"
+// data "Boosts" "StatusImmunity(SG_Paralyzed);StatusImmunity(SG_Petrified);StatusImmunity(SG_Prone);StatusImmunity(SG_Restrained)"
+data "Boosts" "StatusImmunity(SG_Petrified);StatusImmunity(SG_Prone);StatusImmunity(SG_Restrained)"
+
+// ================================== Protection + Mercy sets: Sacred Watch ==================================
+// Nerf heal to always 1d4 instead of d4 cantrip scaling
+new entry "Siael_POTR_PM"
+type "PassiveData"
+using "Siael_POTR_PM"
+// data "DescriptionParams" "RegainHitPoints(LevelMapValue(D4Cantrip))"
+data "DescriptionParams" "RegainHitPoints(LevelMapValue(1d4))"
+
+new entry "Siael_POTR_PM_Target"
+type "PassiveData"
+using "Siael_POTR_PM_Target"
+// data "StatsFunctors" "ApplyStatus(SIAEL_POTR_PM_STACK,100,1);RegainHitPoints(LevelMapValue(D4Cantrip));IF(StatusDurationEqualOrMoreThan(context.Target,'SIAEL_POTR_PM_STACK',2)):ApplyStatus(SIAEL_POTR_PM_STOP,100,1)"
+data "StatsFunctors" "ApplyStatus(SIAEL_POTR_PM_STACK,100,1);RegainHitPoints(LevelMapValue(1d4));IF(StatusDurationEqualOrMoreThan(context.Target,'SIAEL_POTR_PM_STACK',2)):ApplyStatus(SIAEL_POTR_PM_STOP,100,1)"
+
+// ================================== Mercy + Resolve sets: Luminous Sermon ==================================
+// Clarify tooltip
+new entry "Siael_POTR_MR"
+type "PassiveData"
+using "Siael_POTR_MR"
+// Whenever you heal[1], inflict &lt;LSTag Type="Status" Tooltip="MAG_RADIANT_RADIATING_ORB"&gt;Radiating Orb&lt;/LSTag&gt; to every foe within [2] for 2 turns. Each enemy can only be affected once per turn.
+data "Description" "hc40f46d4ga454g4acdg97b5g3e42f9d5e4f1;1"
+
+new entry "Siael_POTR_MR_Explosion"
+type "SpellData"
+data "SpellType" "Projectile"
+using "Siael_POTR_MR_Explosion"
+// Whenever you heal[1], inflict &lt;LSTag Type="Status" Tooltip="MAG_RADIANT_RADIATING_ORB"&gt;Radiating Orb&lt;/LSTag&gt; to every foe within [2] for 2 turns. Each enemy can only be affected once per turn.
+data "Description" "hc40f46d4ga454g4acdg97b5g3e42f9d5e4f1;1"
+
+// ================================== Mercy + Justice sets: Resplendant Oath ==================================
+// Nerf heal to always 1d6 instead of d6 cantrip scaling
+new entry "Siael_POTR_MJ"
+type "PassiveData"
+using "Siael_POTR_MJ"
+// data "DescriptionParams" "Distance(9);RegainHitPoints(LevelMapValue(D6Cantrip))"
+data "DescriptionParams" "Distance(9);RegainHitPoints(LevelMapValue(1d6))"
+
+new entry "Siael_POTR_MJ_Exp"
+type "SpellData"
+data "SpellType" "Projectile"
+using "Siael_POTR_MJ_Exp"
+// data "DescriptionParams" "Distance(9);RegainHitPoints(LevelMapValue(D6Cantrip))"
+data "DescriptionParams" "Distance(9);RegainHitPoints(LevelMapValue(1d6))"
+// data "SpellProperties" "IF(Ally() and HasHPPercentageEqualOrLessThan(50)):ApplyStatus(SIAEL_POTR_MJ_HP,100,-1);IF(Ally()):RegainHitPoints(LevelMapValue(D6Cantrip));IF(not Ally()):ApplyStatus(BURNING_HOLY,100,2)"
+data "SpellProperties" "IF(Ally() and HasHPPercentageEqualOrLessThan(50)):ApplyStatus(SIAEL_POTR_MJ_HP,100,-1);IF(Ally()):RegainHitPoints(LevelMapValue(1d6));IF(not Ally()):ApplyStatus(BURNING_HOLY,100,2)"
+
+// ================================== Full Very Rare set ================================== 
+// Loca edit
+new entry "Siael_POTR_Righteous"
+type "PassiveData"
+using "Siael_POTR_Righteous"
+// Your oath grants you even more intense power. You can cast &lt;LSTag Type="Spell" Tooltip="Siael_POTR_Cantrip"&gt;Last Judgement&lt;/LSTag&gt;, and it functions with effects from the set that use &lt;LSTag Type="Spell" Tooltip="Target_SacredFlame"&gt;Sacred Flame&lt;/LSTag&gt;. Moreover, &lt;LSTag Type="Status" Tooltip="BURNING_HOLY"&gt;Holy Flame&lt;/LSTag&gt; that you inflict deals an additional [1] per remaining turn of it. You still benefit from &lt;LSTag Type="Passive" Tooltip="Siael_POTR_Righteous_R"&gt;Noble Knight&lt;/LSTag&gt;.
+data "Description" "h3f326ccfg4236g4d88g8a6eg7c0318249887;1"
+
+// Last Judgement loca edit
+new entry "Siael_POTR_Cantrip"
+type "SpellData"
+data "SpellType" "Projectile"
+using "Siael_POTR_Cantrip"
+// Cast a ray of light, dealing [1].
+data "Description" "h725fecfcgc0b8g4b91g9dedg525ce619d6ef;1"
+
+// ================================== Full Legendary set ==================================
+// Loca edit
+new entry "Siael_POTR_Righteous_L"
+type "PassiveData"
+using "Siael_POTR_Righteous_L"
+// Your celestial presence is almighty. Foes within your Paladin aura are &lt;LSTag Tooltip="Vulnerable"&gt;Vulnerable&lt;/LSTag&gt; to[1]. You still benefit from &lt;LSTag Type="Passive" Tooltip="Siael_POTR_Righteous"&gt;The Righteous&lt;/LSTag&gt;.
+data "Description" "h23e8164fg653fg4f8bg892cgfcf764d6d9fd;1"

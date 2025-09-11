@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<save>
+	<version major="4" minor="0" revision="9" build="0" lslib_meta="v1,bswap_guids,lsf_adjacency" />
+	<region id="Templates">
+		<node id="Templates">
+			<children>
+				<node id="GameObjects">
+					<attribute id="AnubisConfigName" type="FixedString" value="" />
+					<attribute id="CharacterVisualResourceID" type="FixedString" value="c7fdb9e7-35f2-a058-5ff3-140288fc9433" />
+					<attribute id="DefaultState" type="uint8" value="11" />
+					<attribute id="DisplayName" type="TranslatedString" handle="h7bf73dd5g7ca0g4513g8a85gf7cd7205b1b2" version="1" />
+					<attribute id="Flag" type="int32" value="1" />
+					<attribute id="Icon" type="FixedString" value="c7fdb9e7-35f2-a058-5ff3-140288fc9433-EQP_Goblin_Scimitar_(Icon_Goblin_Male)" />
+					<attribute id="LevelName" type="FixedString" value="WLD_Main_A" />
+					<attribute id="MapKey" type="FixedString" value="bc444150-dcb5-4dcd-8487-2a6c8fe2ba78" />
+					<attribute id="Name" type="LSString" value="Siael_POTR_DeadGob_1" />
+					<attribute id="ReadinessFlags" type="uint32" value="128" />
+					<attribute id="TemplateName" type="FixedString" value="31ae25e6-e3b8-4079-b0c9-e60cc49a74d1" />
+					<attribute id="Type" type="FixedString" value="character" />
+					<attribute id="Equipment" type="FixedString" value="EQP_Siael_POTR_Shield" />
+					<children>
+						<node id="LayerList">
+							<children>
+								<node id="Layers">
+									<children>
+										<node id="Object">
+											<attribute id="MapKey" type="FixedString" value="WLD_VillageSubs_C" />
+											<children>
+												<node id="Layer">
+													<attribute id="Object" type="guid" value="b2873934-d483-a33d-1aac-0def9a02a341" />
+												</node>
+											</children>
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Transform">
+							<attribute id="Position" type="fvec3" value="93.473 11.553158 80.26227" />
+							<attribute id="RotationQuat" type="fvec4" value="0 0.32193074 0 0.9467632" />
+							<attribute id="Scale" type="float" value="1" />
+						</node>
+						<!-- <node id="InventoryList">
+							<children>
+								<node id="InventoryItem">
+									<attribute id="Object" type="FixedString" value="Siael_POTR_Loot_Shield" />
+								</node>
+							</children>
+						</node> -->
+					</children>
+				</node>
+				<node id="GameObjects">
+					<attribute id="AnubisConfigName" type="FixedString" value="" />
+					<attribute id="CharacterVisualResourceID" type="FixedString" value="c7fdb9e7-35f2-a058-5ff3-140288fc9433" />
+					<attribute id="DefaultState" type="uint8" value="11" />
+					<attribute id="DisplayName" type="TranslatedString" handle="h7bf73dd5g7ca0g4513g8a85gf7cd7205b1b2" version="1" />
+					<attribute id="Flag" type="int32" value="1" />
+					<attribute id="Icon" type="FixedString" value="c7fdb9e7-35f2-a058-5ff3-140288fc9433-EQP_Goblin_Scimitar_(Icon_Goblin_Male)" />
+					<attribute id="LevelName" type="FixedString" value="WLD_Main_A" />
+					<attribute id="MapKey" type="FixedString" value="c9738355-4f2c-4514-8195-05ba25666130" />
+					<attribute id="Name" type="LSString" value="Siael_POTR_DeadGob_2" />
+					<attribute id="ReadinessFlags" type="uint32" value="128" />
+					<attribute id="TemplateName" type="FixedString" value="31ae25e6-e3b8-4079-b0c9-e60cc49a74d1" />
+					<attribute id="Type" type="FixedString" value="character" />
+					<attribute id="Equipment" type="FixedString" value="EQP_Siael_POTR_Amulet" />
+					<children>
+						<node id="LayerList">
+							<children>
+								<node id="Layers">
+									<children>
+										<node id="Object">
+											<attribute id="MapKey" type="FixedString" value="WLD_VillageSubs_C" />
+											<children>
+												<node id="Layer">
+													<attribute id="Object" type="guid" value="b2873934-d483-a33d-1aac-0def9a02a341" />
+												</node>
+											</children>
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+						<node id="Transform">
+							<attribute id="Position" type="fvec3" value="-181.705 0.69730675 97.73127" />
+							<attribute id="RotationQuat" type="fvec4" value="0 0.44848213 0 0.8937918" />
+							<attribute id="Scale" type="float" value="1.2" />
+						</node>
+						<node id="ItemList">
+							<children>
+								<node id="Item">
+									<attribute id="AIFlags" type="uint16" value="0" />
+									<attribute id="Amount" type="int32" value="1" />
+									<attribute id="CanBePickpocketed" type="bool" value="True" />
+									<attribute id="FallbackStartRound" type="int32" value="-1" />
+									<attribute id="IsDroppedOnDeath" type="bool" value="True" />
+									<attribute id="IsTradable" type="uint8" value="0" />
+									<attribute id="ItemName" type="LSString" value="Siael_POTR_Amulet_D" />
+									<attribute id="LevelName" type="LSString" value="WLD_Main_A" />
+									<attribute id="MinimumImpact" type="int32" value="0" />
+									<attribute id="OnlyCastOnSelf" type="bool" value="False" />
+									<attribute id="ScoreModifier" type="float" value="1" />
+									<attribute id="StartRound" type="int32" value="0" />
+									<attribute id="TemplateID" type="FixedString" value="3538aea3-5da0-4ee8-8592-4d58c933f495" />
+									<attribute id="Type" type="uint8" value="2" />
+									<attribute id="UUID" type="FixedString" value="a3cbf2ff-f949-4633-b98f-41fcf8ac8906" />
+									<children>
+										<node id="SourceConditions">
+											<attribute id="MaximumHealthPercentage" type="int32" value="100" />
+											<attribute id="MinimumHealthPercentage" type="int32" value="0" />
+											<children>
+												<node id="Tags" />
+											</children>
+										</node>
+										<node id="TargetConditions">
+											<attribute id="MaximumHealthPercentage" type="int32" value="100" />
+											<attribute id="MinimumHealthPercentage" type="int32" value="0" />
+											<children>
+												<node id="Tags" />
+											</children>
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+			</children>
+		</node>
+	</region>
+</save>
