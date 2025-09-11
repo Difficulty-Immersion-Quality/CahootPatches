@@ -68,32 +68,32 @@ CanMerge 1
 new subtable "1,1"
 object category "MagicScroll_8",1,0,0,0,0,0,0,0
 
-// ================================ Legendary Lathander set from LathanderArmory for personal use ================================
+// // ================================ Legendary Lathander set from LathanderArmory for personal use ================================
 
-new treasuretable "MOO_KethericCombat_Chest"
-CanMerge 1
-new subtable "1,1"
-object category "I_CSS_Lathander_BreastplateB",1,0,0,0,0,0,0,0
+// new treasuretable "MOO_KethericCombat_Chest"
+// CanMerge 1
+// new subtable "1,1"
+// object category "I_CSS_Lathander_BreastplateB",1,0,0,0,0,0,0,0
 
-new treasuretable "SHA_HiddenRoom_Magic_Chest"
-CanMerge 1
-new subtable "1,1"
-object category "I_CSS_Lathander_Glove_SunPlate",1,0,0,0,0,0,0,0
+// new treasuretable "SHA_HiddenRoom_Magic_Chest"
+// CanMerge 1
+// new subtable "1,1"
+// object category "I_CSS_Lathander_Glove_SunPlate",1,0,0,0,0,0,0,0
 
-new treasuretable "MOO_SecretStudyTreasure_Chest"
-CanMerge 1
-new subtable "1,1"
-object category "I_CSS_Lathander_BootsPlateB",1,0,0,0,0,0,0,0
+// new treasuretable "MOO_SecretStudyTreasure_Chest"
+// CanMerge 1
+// new subtable "1,1"
+// object category "I_CSS_Lathander_BootsPlateB",1,0,0,0,0,0,0,0
 
-new treasuretable "LOW_StormshoreTabernacle_GenericGod_Treasure"
-CanMerge 1
-new subtable "1,1"
-object category "I_CSS_Lathander_Circ_Band_A",1,0,0,0,0,0,0,0
+// new treasuretable "LOW_StormshoreTabernacle_GenericGod_Treasure"
+// CanMerge 1
+// new subtable "1,1"
+// object category "I_CSS_Lathander_Circ_Band_A",1,0,0,0,0,0,0,0
 
-new treasuretable "LOW_SorcerousSundries_MystraVault_Weapon_Treasure"
-CanMerge 1
-new subtable "1,1"
-object category "I_CSS_Lathander_SunSperm_Cape",1,0,0,0,0,0,0,0
+// new treasuretable "LOW_SorcerousSundries_MystraVault_Weapon_Treasure"
+// CanMerge 1
+// new subtable "1,1"
+// object category "I_CSS_Lathander_SunSperm_Cape",1,0,0,0,0,0,0,0
 
 
 

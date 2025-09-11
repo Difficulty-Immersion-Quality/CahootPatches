@@ -121,7 +121,7 @@
 					<attribute id="MapKey" type="FixedString" value="b13fb5e5-9d07-4f5e-853b-dbe0567c6ce8" />
 					<attribute id="Name" type="LSString" value="Siael_POTR_Gauntlets_D" />
 					<attribute id="Stats" type="FixedString" value="Siael_POTR_Gauntlets_D" />
-					<attribute id="Icon" type="FixedString" value="Item_ARM_Gloves_Metal_E" />
+					<attribute id="Icon" type="FixedString" value="CSS_Lathander_Arm_SunPrinceGlove_Icon" />
 					<attribute id="LevelName" type="FixedString" value="" />
 					<attribute id="Type" type="FixedString" value="item" />
 					<attribute id="ParentTemplateId" type="FixedString" value="1dcdf52e-b596-4e3a-8d1c-8fff17ed8c2c" />
@@ -299,7 +299,7 @@
 					<attribute id="MapKey" type="FixedString" value="91d768aa-fac7-421a-927d-c6fa28625d73" />
 					<attribute id="Name" type="LSString" value="Siael_POTR_Gauntlets_R" />
 					<attribute id="Stats" type="FixedString" value="Siael_POTR_Gauntlets_R" />
-					<attribute id="Icon" type="FixedString" value="Item_ARM_Gloves_Metal_E" />
+					<attribute id="Icon" type="FixedString" value="CSS_Lathander_Arm_SunPrinceGlove_Icon" />
 					<attribute id="LevelName" type="FixedString" value="" />
 					<attribute id="Type" type="FixedString" value="item" />
 					<attribute id="ParentTemplateId" type="FixedString" value="b13fb5e5-9d07-4f5e-853b-dbe0567c6ce8" />
@@ -472,7 +472,7 @@
 					<attribute id="MapKey" type="FixedString" value="0950cc60-84df-4ae0-8511-4a6e64c0305e" />
 					<attribute id="Name" type="LSString" value="Siael_POTR_Gauntlets_V" />
 					<attribute id="Stats" type="FixedString" value="Siael_POTR_Gauntlets_V" />
-					<attribute id="Icon" type="FixedString" value="Item_ARM_Gloves_Metal_E" />
+					<attribute id="Icon" type="FixedString" value="CSS_Lathander_Arm_SunPrinceGlove_Icon" />
 					<attribute id="LevelName" type="FixedString" value="" />
 					<attribute id="Type" type="FixedString" value="item" />
 					<attribute id="ParentTemplateId" type="FixedString" value="b13fb5e5-9d07-4f5e-853b-dbe0567c6ce8" />
@@ -645,7 +645,7 @@
 					<attribute id="MapKey" type="FixedString" value="54631b69-e8ee-471c-8e77-aeb7fe93f60c" />
 					<attribute id="Name" type="LSString" value="Siael_POTR_Gauntlets_L" />
 					<attribute id="Stats" type="FixedString" value="Siael_POTR_Gauntlets_L" />
-					<attribute id="Icon" type="FixedString" value="Item_ARM_Gloves_Metal_E" />
+					<attribute id="Icon" type="FixedString" value="CSS_Lathander_Arm_SunPrinceGlove_Icon" />
 					<attribute id="LevelName" type="FixedString" value="" />
 					<attribute id="Type" type="FixedString" value="item" />
 					<attribute id="ParentTemplateId" type="FixedString" value="b13fb5e5-9d07-4f5e-853b-dbe0567c6ce8" />
@@ -818,7 +818,7 @@
 					<attribute id="MapKey" type="FixedString" value="beaf5421-f696-4a9a-bc79-84af1037c978" />
 					<attribute id="Name" type="LSString" value="Siael_POTR_Boots_D" />
 					<attribute id="Stats" type="FixedString" value="Siael_POTR_Boots_D" />
-					<attribute id="Icon" type="FixedString" value="Generated_MAG_EndGame_Metal_Boots_Magic" />
+					<attribute id="Icon" type="FixedString" value="CSS_Lathander_Arm_SunPrinceBoot_Icon" />
 					<attribute id="LevelName" type="FixedString" value="" />
 					<attribute id="Type" type="FixedString" value="item" />
 					<attribute id="CoverAmount" type="uint8" value="0" />
@@ -1027,7 +1027,7 @@
 					<attribute id="MapKey" type="FixedString" value="e0cb79a9-f19a-4416-b7a4-7cf09aa4e1c6" />
 					<attribute id="Name" type="LSString" value="Siael_POTR_Boots_R" />
 					<attribute id="Stats" type="FixedString" value="Siael_POTR_Boots_R" />
-					<attribute id="Icon" type="FixedString" value="Generated_MAG_EndGame_Metal_Boots_Magic" />
+					<attribute id="Icon" type="FixedString" value="CSS_Lathander_Arm_SunPrinceBoot_Icon" />
 					<attribute id="LevelName" type="FixedString" value="" />
 					<attribute id="Type" type="FixedString" value="item" />
 					<attribute id="ParentTemplateId" type="FixedString" value="beaf5421-f696-4a9a-bc79-84af1037c978" />
@@ -1221,7 +1221,7 @@
 					<attribute id="MapKey" type="FixedString" value="01ed02fd-eb31-4f30-85c6-f9f23e4d164f" />
 					<attribute id="Name" type="LSString" value="Siael_POTR_Boots_V" />
 					<attribute id="Stats" type="FixedString" value="Siael_POTR_Boots_V" />
-					<attribute id="Icon" type="FixedString" value="Generated_MAG_EndGame_Metal_Boots_Magic" />
+					<attribute id="Icon" type="FixedString" value="CSS_Lathander_Arm_SunPrinceBoot_Icon" />
 					<attribute id="LevelName" type="FixedString" value="" />
 					<attribute id="Type" type="FixedString" value="item" />
 					<attribute id="ParentTemplateId" type="FixedString" value="beaf5421-f696-4a9a-bc79-84af1037c978" />
@@ -1415,7 +1415,7 @@
 					<attribute id="MapKey" type="FixedString" value="ae6dc6c0-3eaf-4c8d-afdd-984c0b415757" />
 					<attribute id="Name" type="LSString" value="Siael_POTR_Boots_L" />
 					<attribute id="Stats" type="FixedString" value="Siael_POTR_Boots_L" />
-					<attribute id="Icon" type="FixedString" value="Generated_MAG_EndGame_Metal_Boots_Magic" />
+					<attribute id="Icon" type="FixedString" value="CSS_Lathander_Arm_SunPrinceBoot_Icon" />
 					<attribute id="LevelName" type="FixedString" value="" />
 					<attribute id="Type" type="FixedString" value="item" />
 					<attribute id="ParentTemplateId" type="FixedString" value="beaf5421-f696-4a9a-bc79-84af1037c978" />
@@ -1609,7 +1609,7 @@
 					<attribute id="MapKey" type="FixedString" value="5c5a9832-5ae1-4b00-b9b0-f015e18a449c" />
 					<attribute id="Name" type="LSString" value="Siael_POTR_Armor_D" />
 					<attribute id="Stats" type="FixedString" value="Siael_POTR_Armor_D" />
-					<attribute id="Icon" type="FixedString" value="Generated_ARM_Plate_2_Magic" />
+					<attribute id="Icon" type="FixedString" value="CSS_Lathander_Arm_SunPrinceTorso_Icon" />
 					<attribute id="LevelName" type="FixedString" value="" />
 					<attribute id="Type" type="FixedString" value="item" />
 					<attribute id="ParentTemplateId" type="FixedString" value="95b4e2c4-759a-4d33-a2d1-4e0ee6ed4f29" />
@@ -2099,7 +2099,7 @@
 					<attribute id="MapKey" type="FixedString" value="2fefb133-39c6-49f3-8cf6-040eae5b43f0" />
 					<attribute id="Name" type="LSString" value="Siael_POTR_Armor_R" />
 					<attribute id="Stats" type="FixedString" value="Siael_POTR_Armor_R" />
-					<attribute id="Icon" type="FixedString" value="Generated_ARM_Plate_2_Magic" />
+					<attribute id="Icon" type="FixedString" value="CSS_Lathander_Arm_SunPrinceTorso_Icon" />
 					<attribute id="LevelName" type="FixedString" value="" />
 					<attribute id="Type" type="FixedString" value="item" />
 					<attribute id="ParentTemplateId" type="FixedString" value="5c5a9832-5ae1-4b00-b9b0-f015e18a449c" />
@@ -2587,7 +2587,7 @@
 					<attribute id="MapKey" type="FixedString" value="479dcc04-be02-4b6f-8af4-c00fe3d036aa" />
 					<attribute id="Name" type="LSString" value="Siael_POTR_Armor_V" />
 					<attribute id="Stats" type="FixedString" value="Siael_POTR_Armor_V" />
-					<attribute id="Icon" type="FixedString" value="Generated_ARM_Plate_2_Magic" />
+					<attribute id="Icon" type="FixedString" value="CSS_Lathander_Arm_SunPrinceTorso_Icon" />
 					<attribute id="LevelName" type="FixedString" value="" />
 					<attribute id="Type" type="FixedString" value="item" />
 					<attribute id="ParentTemplateId" type="FixedString" value="5c5a9832-5ae1-4b00-b9b0-f015e18a449c" />
@@ -3075,7 +3075,7 @@
 					<attribute id="MapKey" type="FixedString" value="79d96a77-9569-4191-9037-61dec83709f6" />
 					<attribute id="Name" type="LSString" value="Siael_POTR_Armor_L" />
 					<attribute id="Stats" type="FixedString" value="Siael_POTR_Armor_L" />
-					<attribute id="Icon" type="FixedString" value="Generated_ARM_Plate_2_Magic" />
+					<attribute id="Icon" type="FixedString" value="CSS_Lathander_Arm_SunPrinceTorso_Icon" />
 					<attribute id="LevelName" type="FixedString" value="" />
 					<attribute id="Type" type="FixedString" value="item" />
 					<attribute id="ParentTemplateId" type="FixedString" value="5c5a9832-5ae1-4b00-b9b0-f015e18a449c" />
@@ -3563,7 +3563,7 @@
 					<attribute id="MapKey" type="FixedString" value="01c426eb-f692-4832-8e3e-f14f36a39254" />
 					<attribute id="Name" type="LSString" value="Siael_POTR_Head_D" />
 					<attribute id="Stats" type="FixedString" value="Siael_POTR_Head_D" />
-					<attribute id="Icon" type="FixedString" value="Item_ARM_Helmet_Metal_D_Magic" />
+					<attribute id="Icon" type="FixedString" value="CSS_Lathander_Circlet_Band_Icon" />
 					<attribute id="LevelName" type="FixedString" value="" />
 					<attribute id="Type" type="FixedString" value="item" />
 					<attribute id="ParentTemplateId" type="FixedString" value="2b69a73f-0d1b-4514-bdae-5565a8045e26" />
@@ -3774,7 +3774,7 @@
 					<attribute id="MapKey" type="FixedString" value="40215888-0d3c-4e7c-8092-6014bb1d378b" />
 					<attribute id="Name" type="LSString" value="Siael_POTR_Head_R" />
 					<attribute id="Stats" type="FixedString" value="Siael_POTR_Head_R" />
-					<attribute id="Icon" type="FixedString" value="Item_ARM_Helmet_Metal_D_Magic" />
+					<attribute id="Icon" type="FixedString" value="CSS_Lathander_Circlet_Band_Icon" />
 					<attribute id="Type" type="FixedString" value="item" />
 					<attribute id="ParentTemplateId" type="FixedString" value="01c426eb-f692-4832-8e3e-f14f36a39254" />
 					<attribute id="ColorPreset" type="guid" value="01ddcc43-cac3-4e9f-ad56-3194c4419bbf" />
@@ -3982,7 +3982,7 @@
 					<attribute id="MapKey" type="FixedString" value="f2f43418-6691-417b-9138-d8c6ac61a5b4" />
 					<attribute id="Name" type="LSString" value="Siael_POTR_Head_V" />
 					<attribute id="Stats" type="FixedString" value="Siael_POTR_Head_V" />
-					<attribute id="Icon" type="FixedString" value="Item_ARM_Helmet_Metal_D_Magic" />
+					<attribute id="Icon" type="FixedString" value="CSS_Lathander_Circlet_Band_Icon" />
 					<attribute id="Type" type="FixedString" value="item" />
 					<attribute id="ParentTemplateId" type="FixedString" value="01c426eb-f692-4832-8e3e-f14f36a39254" />
 					<attribute id="ColorPreset" type="guid" value="121fe480-85e2-4b91-8e2e-2d5421b4ce15" />
@@ -4190,7 +4190,7 @@
 					<attribute id="MapKey" type="FixedString" value="81e19b97-42ed-43b7-81ad-0deeb96c2e25" />
 					<attribute id="Name" type="LSString" value="Siael_POTR_Head_L" />
 					<attribute id="Stats" type="FixedString" value="Siael_POTR_Head_L" />
-					<attribute id="Icon" type="FixedString" value="Item_ARM_Helmet_Metal_D_Magic" />
+					<attribute id="Icon" type="FixedString" value="CSS_Lathander_Circlet_Band_Icon" />
 					<attribute id="Type" type="FixedString" value="item" />
 					<attribute id="ParentTemplateId" type="FixedString" value="01c426eb-f692-4832-8e3e-f14f36a39254" />
 					<attribute id="ColorPreset" type="guid" value="a8edb333-c42d-4ae4-ba69-098f787496a0" />
@@ -4398,7 +4398,7 @@
 					<attribute id="MapKey" type="FixedString" value="67bfce50-5f00-4b00-8221-df9537859fe4" />
 					<attribute id="Name" type="LSString" value="Siael_POTR_Cape_D" />
 					<attribute id="Stats" type="FixedString" value="Siael_POTR_Cape_D" />
-					<attribute id="Icon" type="FixedString" value="Generated_MAG_EndGameCaster_Cape_A_Magic" />
+					<attribute id="Icon" type="FixedString" value="CSS_Lathander_Arm_Spermcape_Icon" />
 					<attribute id="LevelName" type="FixedString" value="" />
 					<attribute id="Type" type="FixedString" value="item" />
 					<attribute id="ParentTemplateId" type="FixedString" value="a1978b4d-3d93-49ec-9a8b-d19171ed35d5" />
@@ -4621,7 +4621,7 @@
 					<attribute id="MapKey" type="FixedString" value="69e54126-15cd-4ba0-8f01-4e7cd74972a1" />
 					<attribute id="Name" type="LSString" value="Siael_POTR_Cape_R" />
 					<attribute id="Stats" type="FixedString" value="Siael_POTR_Cape_R" />
-					<attribute id="Icon" type="FixedString" value="Generated_MAG_EndGameCaster_Cape_A_Magic" />
+					<attribute id="Icon" type="FixedString" value="CSS_Lathander_Arm_Spermcape_Icon" />
 					<attribute id="ParentTemplateId" type="FixedString" value="67bfce50-5f00-4b00-8221-df9537859fe4" />
 					<attribute id="Type" type="FixedString" value="item" />
 					<attribute id="ColorPreset" type="guid" value="01ddcc43-cac3-4e9f-ad56-3194c4419bbf" />
@@ -4842,7 +4842,7 @@
 					<attribute id="MapKey" type="FixedString" value="872a2406-3efb-4fe4-8757-ef77daf8d149" />
 					<attribute id="Name" type="LSString" value="Siael_POTR_Cape_V" />
 					<attribute id="Stats" type="FixedString" value="Siael_POTR_Cape_V" />
-					<attribute id="Icon" type="FixedString" value="Generated_MAG_EndGameCaster_Cape_A_Magic" />
+					<attribute id="Icon" type="FixedString" value="CSS_Lathander_Arm_Spermcape_Icon" />
 					<attribute id="ParentTemplateId" type="FixedString" value="67bfce50-5f00-4b00-8221-df9537859fe4" />
 					<attribute id="Type" type="FixedString" value="item" />
 					<attribute id="ColorPreset" type="guid" value="121fe480-85e2-4b91-8e2e-2d5421b4ce15" />
@@ -5063,7 +5063,7 @@
 					<attribute id="MapKey" type="FixedString" value="769e290b-f492-480d-ad6d-3c857e5bb35a" />
 					<attribute id="Name" type="LSString" value="Siael_POTR_Cape_L" />
 					<attribute id="Stats" type="FixedString" value="Siael_POTR_Cape_L" />
-					<attribute id="Icon" type="FixedString" value="Generated_MAG_EndGameCaster_Cape_A_Magic" />
+					<attribute id="Icon" type="FixedString" value="CSS_Lathander_Arm_Spermcape_Icon" />
 					<attribute id="ParentTemplateId" type="FixedString" value="67bfce50-5f00-4b00-8221-df9537859fe4" />
 					<attribute id="Type" type="FixedString" value="item" />
 					<attribute id="ColorPreset" type="guid" value="e9681c6e-5331-4de4-8fa2-9e81becdd300" />
