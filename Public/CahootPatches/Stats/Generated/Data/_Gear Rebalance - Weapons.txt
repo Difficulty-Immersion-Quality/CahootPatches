@@ -1,0 +1,513 @@
+// ============================================================================================================================ Melee Weapons ============================================================================================================================
+
+// ========================== Sussur weapons ==========================
+// Increase save DC for silence from flat 12 to weapon manoeuver DC + 1 
+// Add +1 to attack rolls
+
+new entry "FOR_IncompleteMasterwork_SussurDagger"
+type "Weapon"
+using "FOR_IncompleteMasterwork_SussurDagger"
+// data "Boosts" ""
+data "Boosts" "RollBonus(Attack,1)"
+// data "WeaponFunctors" "IF(not SavingThrow(Ability.Constitution, 12)):ApplyStatus(SILENCED,100, 2)"
+data "WeaponFunctors" "IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC()+1)):ApplyStatus(SILENCED,100, 2)"
+
+new entry "FOR_IncompleteMasterwork_SussurSickle"
+type "Weapon"
+using "FOR_IncompleteMasterwork_SussurSickle"
+// data "Boosts" ""
+data "Boosts" "RollBonus(Attack,1)"
+// data "WeaponFunctors" "IF(not SavingThrow(Ability.Constitution, 12)):ApplyStatus(SILENCED,100, 2)"
+data "WeaponFunctors" "IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC()+1)):ApplyStatus(SILENCED,100, 2)"
+
+new entry "FOR_IncompleteMasterwork_SussurGreatsword"
+type "Weapon"
+using "FOR_IncompleteMasterwork_SussurGreatsword"
+// data "Boosts" ""
+data "Boosts" "RollBonus(Attack,1)"
+// data "WeaponFunctors" "IF(not SavingThrow(Ability.Constitution, 12)):ApplyStatus(SILENCED,100, 2)"
+data "WeaponFunctors" "IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC()+1)):ApplyStatus(SILENCED,100, 2)"
+
+// ===============================================================================
+//                                       Daggers  
+// ===============================================================================
+
+// ========================== Ambusher ==========================
+// Increase rarity to Very Rare, enchantment to +2
+
+new entry "MAG_Ambusher_Shortsword"
+type "Weapon"
+using "MAG_Ambusher_Shortsword"
+// data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical)"
+data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical)"
+// data "Rarity" "Rare"
+data "Rarity" "VeryRare"
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+data "ValueUUID" "81764c3c-c7a9-49a7-b145-d31ffd5aebe1"
+
+// Sentinel Weapon: increase initiative bonus to +2
+new entry "MAG_InitiativeWeapon_Passive"
+type "PassiveData"
+using "MAG_InitiativeWeapon_Passive"
+// data "DescriptionParams" "1"
+data "DescriptionParams" "2"
+// data "Boosts" "Initiative(1);Advantage(Skill, Perception)"
+data "Boosts" "Initiative(2);Advantage(Skill, Perception)"
+
+// ===============================================================================
+//                                       Flails  
+// ===============================================================================
+
+// ===============================================================================
+//                                       Glaives  
+// ===============================================================================
+
+// ========================== Drakethroat Glaive ==========================
+// Draconic Elemental Weapon: can only be used on self, but each element type now also inflicts a condition upon a hit with the weapon if the target fails a CON save
+
+// Spells
+new entry "Target_MAG_ElementalWeapon"
+type "SpellData"
+using "Target_MAG_ElementalWeapon"
+// data "SpellType" "Target"
+data "SpellType" "Shout"
+// data "TargetConditions" "IsWeapon() or (not Enemy() and HasWeaponInMainHand())"
+data "TargetConditions" ""
+// Imbue the Drakethroat Glaive with elemental power. It receives a +[1] bonus to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;, and deals an additional [2] damage of your choice. Hits with the weapon have a chance of inflicting a condition corresponding to the elemental type on the target.
+data "Description" "h9a8cca28gab4eg4972g9746gbe35bc63f252;1"
+// data "DescriptionParams" "1"
+data "DescriptionParams" "1;1d4"
+
+new entry "Target_MAG_ElementalWeapon_Acid"
+type "SpellData"
+using "Target_MAG_ElementalWeapon_Acid"
+// data "SpellType" "Target"
+data "SpellType" "Shout"
+// data "TargetConditions" "IsWeapon() or (not Enemy() and HasWeaponInMainHand())"
+data "TargetConditions" ""
+// data "SpellProperties" "IF(Item()):ApplyStatus(ELEMENTAL_WEAPON_ACID,100,-1);IF(not Item()):ApplyEquipmentStatus(MainHand,ELEMENTAL_WEAPON_ACID,100,-1)"
+data "SpellProperties" "ApplyEquipmentStatus(SELF,MainHand,CHT_DRAKETHROAT_ELEMENTAL_WEAPON_ACID,100,-1)"
+// Imbue your weapon with a corrosive might. It receives a +[1] bonus to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; and deals an additional [2]. Hits with this weapon will cover the target in &lt;LSTag Type="Status" Tooltip="ACID"&gt;Acid&lt;/LSTag&gt; for [3] turns if they fail a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.
+data "Description" "h7f2828fbg8bd6g4377gb2fbgbaed441d6e39;1"
+// data "DescriptionParams" "1;DealDamage(1d4,Acid)"
+data "DescriptionParams" "1;DealDamage(1d4,Acid);2"
+// data "TooltipStatusApply" "ApplyStatus(ELEMENTAL_WEAPON_ACID, 100, -1)"
+data "TooltipStatusApply" "ApplyStatus(CHT_DRAKETHROAT_ELEMENTAL_WEAPON_ACID, 100, -1)"
+
+new entry "Target_MAG_ElementalWeapon_Cold"
+type "SpellData"
+using "Target_MAG_ElementalWeapon_Cold"
+// data "SpellType" "Target"
+data "SpellType" "Shout"
+// data "TargetConditions" "IsWeapon() or (not Enemy() and HasWeaponInMainHand())"
+data "TargetConditions" ""
+// data "SpellProperties" "IF(Item()):ApplyStatus(ELEMENTAL_WEAPON_COLD,100,-1);IF(not Item()):ApplyEquipmentStatus(MainHand,ELEMENTAL_WEAPON_COLD,100,-1)"
+data "SpellProperties" "ApplyEquipmentStatus(SELF,MainHand,CHT_DRAKETHROAT_ELEMENTAL_WEAPON_COLD,100,-1)"
+// Imbue your weapon with an icy might. It receives a +[1] bonus to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; and deals an additional [2]. Hits with this weapon will inflict &lt;LSTag Type="Status" Tooltip="MAG_FROST"&gt;Encrusted with Frost&lt;/LSTag&gt; on the target for [3] turns if they fail a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.
+data "Description" "hfe25a4d2g4bc9g44f2gb35ag97dc11b605c2;1"
+// data "DescriptionParams" "1;DealDamage(1d4,Cold)"
+data "DescriptionParams" "1;DealDamage(1d4,Cold);4"
+// data "TooltipStatusApply" "ApplyStatus(ELEMENTAL_WEAPON_COLD, 100, -1)"
+data "TooltipStatusApply" "ApplyStatus(CHT_DRAKETHROAT_ELEMENTAL_WEAPON_COLD, 100, -1)"
+
+new entry "Target_MAG_ElementalWeapon_Fire"
+type "SpellData"
+using "Target_MAG_ElementalWeapon_Fire"
+// data "SpellType" "Target"
+data "SpellType" "Shout"
+// data "TargetConditions" "IsWeapon() or (not Enemy() and HasWeaponInMainHand())"
+data "TargetConditions" ""
+// data "SpellProperties" "IF(Item()):ApplyStatus(ELEMENTAL_WEAPON_FIRE,100,-1);IF(not Item()):ApplyEquipmentStatus(MainHand,ELEMENTAL_WEAPON_FIRE,100,-1)"
+data "SpellProperties" "ApplyEquipmentStatus(SELF,MainHand,CHT_DRAKETHROAT_ELEMENTAL_WEAPON_FIRE,100,-1)"
+// Imbue your weapon with a fiery might. it receives a +[1] bonus to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; and deals an additional [2]. Hits with this weapon will inflict &lt;LSTag Type="Status" Tooltip="BURNING"&gt;Burning&lt;/LSTag&gt; on the target for [3] turns if they fail a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.
+data "Description" "h80bf071bg62fdg4bf6g8202ge88b2df341f7;1"
+// data "DescriptionParams" "1;DealDamage(1d4,Fire)"
+data "DescriptionParams" "1;DealDamage(1d4,Fire);2"
+// data "TooltipStatusApply" "ApplyStatus(ELEMENTAL_WEAPON_FIRE, 100, -1)"
+data "TooltipStatusApply" "ApplyStatus(CHT_DRAKETHROAT_ELEMENTAL_WEAPON_FIRE, 100, -1)"
+
+new entry "Target_MAG_ElementalWeapon_Lightning"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_MAG_ElementalWeapon_Lightning"
+// data "TargetConditions" "IsWeapon() or (not Enemy() and HasWeaponInMainHand())"
+data "TargetConditions" "Self()"
+// data "SpellProperties" "IF(Item()):ApplyStatus(ELEMENTAL_WEAPON_LIGHTNING,100,-1);IF(not Item()):ApplyEquipmentStatus(MainHand,ELEMENTAL_WEAPON_LIGHTNING,100,-1)"
+data "SpellProperties" "ApplyEquipmentStatus(SELF,MainHand,CHT_DRAKETHROAT_ELEMENTAL_WEAPON_LIGHTNING,100,-1)"
+// Imbue your weapon with an electrical might. It receives a +[1] bonus to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; and deals an additional [2]. Hits with this weapon will inflict &lt;LSTag Type="Status" Tooltip="SHOCKED"&gt;Shocked&lt;/LSTag&gt; on the target for [3] turns if they fail a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.
+data "Description" "h1b09661bgb69dg4b1cgbcfeg2e39ff3abd3a;1"
+// data "DescriptionParams" "1;DealDamage(1d4,Lightning)"
+data "DescriptionParams" "1;DealDamage(1d4,Lightning);2"
+// data "TooltipStatusApply" "ApplyStatus(ELEMENTAL_WEAPON_LIGHTNING, 100, -1)"
+data "TooltipStatusApply" "ApplyStatus(CHT_DRAKETHROAT_ELEMENTAL_WEAPON_LIGHTNING, 100, -1)"
+
+new entry "Target_MAG_ElementalWeapon_Thunder"
+type "SpellData"
+using "Target_MAG_ElementalWeapon_Thunder"
+// data "SpellType" "Target"
+data "SpellType" "Shout"
+// data "TargetConditions" "IsWeapon() or (not Enemy() and HasWeaponInMainHand())"
+data "TargetConditions" ""
+// data "SpellProperties" "IF(Item()):ApplyStatus(ELEMENTAL_WEAPON_THUNDER,100,-1);IF(not Item()):ApplyEquipmentStatus(MainHand,ELEMENTAL_WEAPON_THUNDER,100,-1)"
+data "SpellProperties" "ApplyEquipmentStatus(SELF,MainHand,CHT_DRAKETHROAT_ELEMENTAL_WEAPON_THUNDER,100,-1)"
+// Imbue your weapon with a thunderous might. It receives a +[1] bonus to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; and deals an additional [2]. Hits with this weapon will inflict &lt;LSTag Type="Status" Tooltip="MAG_THUNDER_REVERBERATION"&gt;Reverberation&lt;/LSTag&gt; on the target for [3] turns if they fail a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.
+data "Description" "h1b600958ga1d1g4d3egb07egf609f669b4cc;1"
+// data "DescriptionParams" "1;DealDamage(1d4,Thunder)"
+data "DescriptionParams" "1;DealDamage(1d4,Thunder);2"
+// data "TooltipStatusApply" "ApplyStatus(ELEMENTAL_WEAPON_THUNDER, 100, -1)"
+data "TooltipStatusApply" "ApplyStatus(CHT_DRAKETHROAT_ELEMENTAL_WEAPON_THUNDER, 100, -1)"
+
+// Custom statuses
+new entry "CHT_DRAKETHROAT_ELEMENTAL_WEAPON_ACID"
+type "StatusData"
+data "StatusType" "BOOST"
+using "ELEMENTAL_WEAPON_ACID"
+// Draconic Elemental Weapon: Acid
+data "DisplayName" "h705abf47g451dg447dgba2egf8688bb4dab9;1"
+// Has a +[1] bonus to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; and deals an additional [2]. Hits with this weapon will cover the target in &lt;LSTag Type="Status" Tooltip="ACID"&gt;Acid&lt;/LSTag&gt; for [3] turns if they fail a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.
+data "Description" "h703a28c8g37a9g4e82gb911gbf98df639ccb;1"
+// data "DescriptionParams" "1;DealDamage(1d4,Acid)"
+data "DescriptionParams" "1;DealDamage(1d4,Acid);2"
+// data "Passives" ""
+data "Passives" "CHT_Drakethroat_Elemental_Weapon_Acid_Passive"
+
+new entry "CHT_DRAKETHROAT_ELEMENTAL_WEAPON_COLD"
+type "StatusData"
+data "StatusType" "BOOST"
+using "ELEMENTAL_WEAPON_COLD"
+// Draconic Elemental Weapon: Cold
+data "DisplayName" "h0c4104b6gca0eg449bg86b5g7ad2940b70cf;1"
+// Has a +[1] bonus to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; and deals an additional [2]. Hits with this weapon will inflict &lt;LSTag Type="Status" Tooltip="MAG_FROST"&gt;Encrusted with Frost&lt;/LSTag&gt; on the target for [3] turns if they fail a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.
+data "Description" "h55f95e0eg08c7g4b42gbe7ag3661a93f7060;1"
+// data "DescriptionParams" "1;DealDamage(1d4,Cold)"
+data "DescriptionParams" "1;DealDamage(1d4,Cold);4"
+// data "Passives" ""
+data "Passives" "CHT_Drakethroat_Elemental_Weapon_Cold_Passive"
+
+new entry "CHT_DRAKETHROAT_ELEMENTAL_WEAPON_FIRE"
+type "StatusData"
+data "StatusType" "BOOST"
+using "ELEMENTAL_WEAPON_FIRE"
+// Draconic Elemental Weapon: Fire
+data "DisplayName" "h847da477gbdc1g4a87g9bd1ge09ceb4ee2da;1"
+// Has a +[1] bonus to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; and deals an additional [2]. Hits with this weapon will inflict &lt;LSTag Type="Status" Tooltip="BURNING"&gt;Burning&lt;/LSTag&gt; on the target for [3] turns if they fail a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.
+data "Description" "h5ecfef94g841eg44ccg8f24g9d147088f618;1"
+// data "DescriptionParams" "1;DealDamage(1d4,Fire)"
+data "DescriptionParams" "1;DealDamage(1d4,Fire);2"
+// data "Passives" ""
+data "Passives" "CHT_Drakethroat_Elemental_Weapon_Fire_Passive"
+
+new entry "CHT_DRAKETHROAT_ELEMENTAL_WEAPON_LIGHTNING"
+type "StatusData"
+data "StatusType" "BOOST"
+using "ELEMENTAL_WEAPON_LIGHTNING"
+// Draconic Elemental Weapon: Lightning
+data "DisplayName" "h5c4d2613g8ba4g4249ga9cfg70c792b3a5db;1"
+// Has a +[1] bonus to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; and deals an additional [2]. Hits with this weapon will inflict &lt;LSTag Type="Status" Tooltip="SHOCKED"&gt;Shocked&lt;/LSTag&gt; on the target for [3] turns if they fail a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.
+data "Description" "h67ee8340g8fc6g4781gbd66g18038690bffb;1"
+// data "DescriptionParams" "1;DealDamage(1d4,Lightning)"
+data "DescriptionParams" "1;DealDamage(1d4,Lightning);2"
+// data "Passives" ""
+data "Passives" "CHT_Drakethroat_Elemental_Weapon_Lightning_Passive"
+
+new entry "CHT_DRAKETHROAT_ELEMENTAL_WEAPON_THUNDER"
+type "StatusData"
+data "StatusType" "BOOST"
+using "ELEMENTAL_WEAPON_THUNDER"
+// Draconic Elemental Weapon: Thunder
+data "DisplayName" "h5f1f97efgcfbfg4de5gb481gd504d0a344f9;1"
+// Has a +[1] bonus to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; and deals an additional [2]. Hits with this weapon will inflict &lt;LSTag Type="Status" Tooltip="MAG_THUNDER_REVERBERATION"&gt;Reverberation&lt;/LSTag&gt; on the target for [3] turns if they fail a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.
+data "Description" "h931a1be5g0b2fg484bgaccdgd8437e6673a5;1"
+// data "DescriptionParams" "1;DealDamage(1d4,Thunder)"
+data "DescriptionParams" "1;DealDamage(1d4,Thunder);2"
+// data "Passives" ""
+data "Passives" "CHT_Drakethroat_Elemental_Weapon_Thunder_Passive"
+
+// Custom passives
+new entry "CHT_Drakethroat_Elemental_Weapon_Acid_Passive"
+type "PassiveData"
+data "Properties" "IsHidden"
+// Draconic Elemental Weapon: Acid
+data "DisplayName" "h705abf47g451dg447dgba2egf8688bb4dab9;1"
+// Target is covered in &lt;LSTag Type="Status" Tooltip="ACID"&gt;Acid&lt;/LSTag&gt; for [1] turns unless they succeed a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.
+data "Description" "h8a5c6187g3359g4f31g80cdgd92a53815596;1"
+data "DescriptionParams" "2"
+data "StatsFunctorContext" "OnDamage"
+data "Conditions" "AttackedWithPassiveSourceWeapon()"
+data "StatsFunctors" "IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC())):ApplyStatus(ACID,100,2)"
+
+new entry "CHT_Drakethroat_Elemental_Weapon_Cold_Passive"
+type "PassiveData"
+using "CHT_Drakethroat_Elemental_Weapon_Acid_Passive"
+// Draconic Elemental Weapon: Cold
+data "DisplayName" "h0c4104b6gca0eg449bg86b5g7ad2940b70cf;1"
+// Target becomes &lt;LSTag Type="Status" Tooltip="MAG_FROST"&gt;Encrusted with Frost&lt;/LSTag&gt; for [1] turns unless they succeed a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.
+data "Description" "h800dca9bg6cb4g46c8gb179geaae809b843a;1"
+data "DescriptionParams" "4"
+data "StatsFunctors" "IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC())):ApplyStatus(MAG_FROST,100,4)"
+
+new entry "CHT_Drakethroat_Elemental_Weapon_Fire_Passive"
+type "PassiveData"
+using "CHT_Drakethroat_Elemental_Weapon_Acid_Passive"
+// Draconic Elemental Weapon: Fire
+data "DisplayName" "h847da477gbdc1g4a87g9bd1ge09ceb4ee2da;1"
+// Target is inflicted with &lt;LSTag Type="Status" Tooltip="BURNING"&gt;Burning&lt;/LSTag&gt; for [1] turns unless they succeed a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.
+data "Description" "h36c3f1f2g9eb3g47b6g8e69g90ffa2dec42e;1"
+data "DescriptionParams" "2"
+data "StatsFunctors" "IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC())):ApplyStatus(BURNING,100,2)"
+
+new entry "CHT_Drakethroat_Elemental_Weapon_Lightning_Passive"
+type "PassiveData"
+using "CHT_Drakethroat_Elemental_Weapon_Acid_Passive"
+// Draconic Elemental Weapon: Lightning
+data "DisplayName" "h5c4d2613g8ba4g4249ga9cfg70c792b3a5db;1"
+// Target is &lt;LSTag Type="Status" Tooltip="SHOCKED"&gt;Shocked&lt;/LSTag&gt; for [1] turns unless they succeed a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.
+data "Description" "h4b9334bcgce21g4d6ag88begc855d25f38a3;1"
+data "DescriptionParams" "2"
+data "StatsFunctors" "IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC())):ApplyStatus(SHOCKED,100,2)"
+
+new entry "CHT_Drakethroat_Elemental_Weapon_Thunder_Passive"
+type "PassiveData"
+using "CHT_Drakethroat_Elemental_Weapon_Acid_Passive"
+// Draconic Elemental Weapon: Thunder
+data "DisplayName" "h5f1f97efgcfbfg4de5gb481gd504d0a344f9;1"
+// Target is inflicted with &lt;LSTag Type="Status" Tooltip="MAG_THUNDER_REVERBERATION"&gt;Reverberation&lt;/LSTag&gt; for [1] turns unless they succeed a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.
+data "Description" "h92dbf803g575cg4de9gb029ga3f92f3e3fb5;1"
+data "DescriptionParams" "2"
+data "StatsFunctors" "IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC())):ApplyStatus(MAG_THUNDER_REVERBERATION,100,2)"
+
+// ========================== Moonlight Glaive ==========================
+// Radiant damage increased to 1d6
+
+new entry "MAG_Moonlight_Glaive"
+type "Weapon"
+using "MAG_Moonlight_Glaive"
+// data "Rarity" "Rare"
+data "Rarity" "VeryRare"
+// data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);WeaponDamage(1d4, Radiant)"
+data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);WeaponDamage(1d6, Radiant)"
+// data "ValueUUID" "4cd41c74-9c86-4233-922e-4db5bc750df5"
+data "ValueUUID" "71191c11-966f-4c19-b4ee-eb36d31c4944"
+
+// ========================== The Dancing Breeze ==========================
+// Whirlwind Attack: cooldown decreased to per combat
+new entry "Shout_MAG_WhirlwindAttack"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_MAG_WhirlwindAttack"
+// data "Cooldown" "OncePerShortRest"
+data "Cooldown" "OncePerCombat"
+
+// ===============================================================================
+//                                       Greataxes  
+// ===============================================================================
+
+// ========================== Hellfire Greataxe ==========================
+// Hellflame Cleave: can no longer hit allies and cooldown decreased to per combat
+
+new entry "Zone_MAG_Automaton_Human_Steelwatcher_HellfireCleave"
+type "SpellData"
+data "SpellType" "Zone"
+using "Zone_MAG_Automaton_Human_Steelwatcher_HellfireCleave"
+// data "TargetConditions" "not Dead() and not (HasPassive('SculptSpells', context.Source) and Ally()) and not Tagged('INVISIBLE_HELPER')"
+data "TargetConditions" "(Character() or Item()) and not Self() and not Dead() and not Ally()"
+// data "Cooldown" "OncePerShortRest"
+data "Cooldown" "OncePerCombat"
+
+// ===============================================================================
+//                                       Greatswords  
+// ===============================================================================
+
+// ========================== Balduran's Giantlayer ==========================
+// Giant Form: change cost to bonus action
+
+new entry "Shout_MAG_Legendary_GiantSlayer_EnlargeSelf"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_MAG_Legendary_GiantSlayer_EnlargeSelf"
+// data "UseCosts" "ActionPoint:1"
+data "UseCosts" "BonusActionPoint:1"
+
+// ===============================================================================
+//                                       Halberds  
+// ===============================================================================
+
+// ========================== Harmonium Halberd ==========================
+// Strength increase increased to 3
+
+new entry "MAG_BG_Harmonium_Halberd"
+type "Weapon"
+using "MAG_BG_Harmonium_Halberd"
+// data "Boosts" "Ability(Strength, 2, 23);Ability(Intelligence, -1);Ability(Wisdom, -1)"
+data "Boosts" "Ability(Strength, 3, 23);Ability(Intelligence, -1);Ability(Wisdom, -1)"
+
+// ===============================================================================
+//                                       Longswords  
+// ===============================================================================
+
+// ========================== Larethian's Wrath ==========================
+// Razor Gale: cooldown decreased to per combat
+new entry "Zone_Mag_WeaponAction_RazorGale"
+type "SpellData"
+data "SpellType" "Zone"
+using "Zone_Mag_WeaponAction_RazorGale"
+// data "Cooldown" "OncePerShortRest"
+data "Cooldown" "OncePerCombat"
+
+// ===============================================================================
+//                                       Morningstars  
+// ===============================================================================
+
+// ========================== The Sacred Star ==========================
+// Dawnburst Strike: change to single target and increase save DC for blindness (original AoE wasn't working hit allies and couldn't fix it myself so just changed the effect)
+
+new entry "Target_MAG_WeaponAction_FlashingDawn"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_MAG_WeaponAction_FlashingDawn"
+// data "AreaRadius" "3"
+data "AreaRadius" ""
+// data "SpellSuccess" "TARGET:DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType); TARGET:DealDamage(ProficiencyBonus, Radiant);AOE:IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC()+2)):ApplyStatus(BLINDED, 100, 3);ExecuteWeaponFunctors(MainHand)"
+data "SpellSuccess" "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType);DealDamage(ProficiencyBonus, Radiant);IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC()+4)):ApplyStatus(BLINDED, 100, 3);ExecuteWeaponFunctors(MainHand)"
+// Deal additional Radiant damage equal to your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt;. On a hit, light erupts on the target, forcing it to make a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or be &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blinded&lt;/LSTag&gt; for [1] turns.
+data "Description" "h5a6970b0g1f2dg4060g9e88g4ecc1899c571;1"
+// data "DescriptionParams" "Distance(3)"
+data "DescriptionParams" "3"
+
+// ========================== Ravengard's Scourger ==========================
+// Commander's Strike: cost is now only a bonus action
+new entry "Target_MAG_CommanderStrike"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_MAG_CommanderStrike"
+// data "UseCosts" "ActionPoint:1; BonusActionPoint:1"
+data "UseCosts" "BonusActionPoint:1"
+
+// ===============================================================================
+//                                       Quarterstaves  
+// ===============================================================================
+
+// ========================== Gold Wyrmling Staff ==========================
+// Also gives Searing Smite (short rest cooldown) in addition to Fire Bolt
+
+new entry "MAG_Fire_FireDamage_Quarterstaff"
+type "Weapon"
+using "MAG_Fire_FireDamage_Quarterstaff"
+// data "Boosts" "UnlockSpell(Projectile_MAG_FireBolt_Staff)"
+data "Boosts" "UnlockSpell(Projectile_MAG_FireBolt_Staff);UnlockSpell(CHT_MAG_Smite_Searing)"
+
+new entry "CHT_MAG_Smite_Searing"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_Smite_Searing"
+// data "HitCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:1"
+data "HitCosts" ""
+// data "SpellFlags" "IsConcentration;IsHarmful;HasVerbalComponent;IsSpell"
+data "SpellFlags" "IsHarmful;HasVerbalComponent;IsSpell"
+// data "Cooldown" ""
+data "Cooldown" "OncePerShortRestPerItem"
+
+// ========================== Despair of Athkatla ==========================
+// Increase rarity to Very Rare
+// New passive: inflicting a condition on an enemy applies 2 turns of Reverberation. Dealing spell damage to a target with Reverberation causes them to be Dazed for 2 turns if they fail a CON save
+
+new entry "MAG_LC_Lorroakan_Quarterstaff"
+type "Weapon"
+using "MAG_LC_Lorroakan_Quarterstaff"
+// data "Rarity" "Rare"
+data "Rarity" "VeryRare"
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+data "ValueUUID" "81764c3c-c7a9-49a7-b145-d31ffd5aebe1"
+// data "PassivesOnEquip" "MAG_ArcaneEnchantment_Lesser_Passive"
+data "PassivesOnEquip" "MAG_ArcaneEnchantment_Lesser_Passive;CHT_MAG_LC_Lorroakan_Quarterstaff_Reverb_Passive;CHT_MAG_LC_Lorroakan_Quarterstaff_Dazed_Passive"
+
+new entry "CHT_MAG_LC_Lorroakan_Quarterstaff_Reverb_Passive"
+type "PassiveData"
+// Raging Storm
+data "DisplayName" "hd29c21bag2717g4989gae2cg661187f6fb36;1"
+// When you inflict a condition upon a hostile target, they suffer [1] turns of &lt;LSTag Type="Status" Tooltip="MAG_THUNDER_REVERBERATION"&gt;Reverberation&lt;/LSTag&gt;. When you deal spell damage to a target with &lt;LSTag Type="Status" Tooltip="MAG_THUNDER_REVERBERATION"&gt;Reverberation&lt;/LSTag&gt;, it must make a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; against your &lt;LSTag Tooltip="SpellDifficultyClass"&gt;Spell Save DC&lt;/LSTag&gt; or become &lt;LSTag Type="Status" Tooltip="DAZED"&gt;Dazed&lt;/LSTag&gt; for [2] turns.
+data "Description" "h2ec6e766g1a1fg4322gb759ge3bdf534501d;1"
+data "DescriptionParams" "2;2"
+data "Properties" "OncePerAttack"
+data "StatsFunctorContext" "OnStatusApply"
+data "Conditions" "IsSpell() and Enemy() and not Self() and not StatusId('MAG_THUNDER_REVERBERATION') and not StatusId('MONK_SOUND_SWITCH')"
+data "StatsFunctors" "ApplyStatus(SWAP, MAG_THUNDER_REVERBERATION, 100, 2);ApplyStatus(MAG_THUNDER_REVERBERATION_DURATION_TECHNICAL, 100, 1)"
+
+new entry "CHT_MAG_LC_Lorroakan_Quarterstaff_Dazed_Passive"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "StatsFunctorContext" "OnDamage"
+data "Conditions" "IsSpell() and HasStatus('MAG_THUNDER_REVERBERATION') and not HasStatus('DAZED')"
+data "StatsFunctors" "IF(not SavingThrow(Ability.Constitution, SourceSpellDC())):ApplyStatus(DAZED,100,2)"
+
+// ===============================================================================
+//                                       Rapiers  
+// ===============================================================================
+
+// ========================== Infernal Rapier ==========================
+// Melee Caster: fix description text
+
+new entry "MAG_MeleeCaster_Passive"
+type "PassiveData"
+using "MAG_MeleeCaster_Passive"
+// Instead of its Strength or Dexterity &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;, the wielder adds their &lt;LSTag Tooltip="SpellcastingAbilityModifier"&gt;Spellcasting Ability Modifier&lt;/LSTag&gt; to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; with this weapon.
+data "Description" "h4f9480b1gfa10g405dgad9eg611bd8bafda8;1"
+
+new entry "MAG_MELEE_CASTER_BOON"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MAG_MELEE_CASTER_BOON"
+// Instead of its Strength or Dexterity &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;, the wielder adds their &lt;LSTag Tooltip="SpellcastingAbilityModifier"&gt;Spellcasting Ability Modifier&lt;/LSTag&gt; to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; with this weapon.
+data "Description" "h4f9480b1gfa10g405dgad9eg611bd8bafda8;1"
+
+// ===============================================================================
+//                                       Shortswords  
+// ===============================================================================
+
+// ===============================================================================
+//                                       Tridents  
+// ===============================================================================
+
+// ========================== Trident of the Waves ==========================
+// Increase enchantment to +2; add 1d4 Cold damage
+
+new entry "MAG_LC_Wave_Trident"
+type "Weapon"
+using "MAG_LC_Wave_Trident"
+// data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical)"
+data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);WeaponDamage(1d4,Cold)"
+
+// ===============================================================================
+//                                       Warhammers  
+// ===============================================================================
+
+// ========================== Hammer of the Just ==========================
+// Add 1d4 Radiant damage
+
+new entry "MAG_Tyrrant_Warhammer"
+type "Weapon"
+using "MAG_Tyrrant_Warhammer"
+// data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical)"
+data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);WeaponDamage(1d4,Radiant)"
+
+// ============================================================================================================================ Ranged Weapons ============================================================================================================================
+
+// ===============================================================================
+//                                       Shortbows  
+// ===============================================================================
+
+// ===============================================================================
+//                                       Longbows  
+// ===============================================================================
+
+// ===============================================================================
+//                                       Hand Crossbows  
+// ===============================================================================
+
+// ===============================================================================
+//                                       Light Crossbows  
+// ===============================================================================
+
+// ===============================================================================
+//                                       Heavy Crossbows  
+// ===============================================================================
