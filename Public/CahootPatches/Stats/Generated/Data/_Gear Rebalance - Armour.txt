@@ -1,10 +1,96 @@
 // ===============================================================================
-//                                       Chest  
+//                                       Armour  
 // ===============================================================================
+
+// ========================== Robe of Summer ==========================
+// New passive: increase all Fire damage done by 2, with subsequent damage (AoE or multiattacks) only being buffed by 1 damage
+new entry "UNI_RobeOfSummer"
+type "Armor"
+using "UNI_RobeOfSummer"
+data "PassivesOnEquip" "CHT_RobeOfSummer_FireDamage_Passive"
+
+new entry "CHT_RobeOfSummer_FireDamage_Passive"
+type "PassiveData"
+// Estival Heat
+data "DisplayName" "h6daa1f68g238fg4043gafa3gdb62220b9646;1"
+// When you deal[1], deal an extra [2]. This bonus damage only applies once per attack. The damage bonus for subsequent hits or to secondary targets in the same attack is reduced to [3].
+data "Description" "h7a9a490cg01d8g4206g87cdg792c747676dc;1"
+data "DescriptionParams" "DealDamage(,Fire);DealDamage(2,Fire);DealDamage(1,Fire)"
+data "Boosts" "IF(HasDamageDoneForType(DamageType.Fire) and ConditionResult(context.HitDescription.FirstAttack)):DamageBonus(2);IF(HasDamageDoneForType(DamageType.Fire) and not ConditionResult(context.HitDescription.FirstAttack)):DamageBonus(1);"
+
+// ========================== Obsidian Laced Robe ==========================
+// New passive: inflict Burning for 2 turns when dealing Fire damage with a spell or cantrip (same as in Syrchalis' mod, but cleaned up tooltip)
+new entry "MAG_Heat_Fire_Robe"
+type "Armor"
+using "MAG_Heat_Fire_Robe"
+// data "PassivesOnEquip" "MAG_Heat_Fire_Robe_Passive;"
+data "PassivesOnEquip" "CHT_ObsidianLacedRobe_Burning_Passive;MAG_Heat_Fire_Robe_Passive;"
+
+new entry "CHT_ObsidianLacedRobe_Burning_Passive"
+type "PassiveData"
+// Flaming Wrath
+data "DisplayName" "h73e64822g8cb5g4432g90a2gc810f4a7bf33;1"
+// On a hit with a spell or cantrip that deals[1], afflict targets with &lt;LSTag Type="Status" Tooltip="BURNING"&gt;Burning&lt;/LSTag&gt; for [2] turns.
+data "Description" "h73e64822g8cb5g4432g90a2gc810f4a7bf33;1"
+data "DescriptionParams" "DealDamage(,Fire);2"
+data "StatsFunctorContext" "OnDamage"
+data "Conditions" "HasDamageDoneForType(DamageType.Fire) and not Ally() and (IsSpell() or IsCantrip())"
+data "StatsFunctors" "ApplyStatus(BURNING,100,2)"
+
+// ========================== Bided Time ==========================
+// Add +1 AC; passive changed to gain Arcane Charge when attacked instead of when hit with a melee attack
+// wtf is this Shield passive
+new entry "MAG_CQCaster_GainArcaneChargeOnDamaged_Robe"
+type "Armor"
+using "MAG_CQCaster_GainArcaneChargeOnDamaged_Robe"
+// data "Boosts" ""
+data "Boosts" "AC(1)"
+// data "Rarity" "Uncommon"
+data "Rarity" "Rare"
+// data "ValueUUID" "be545ee9-311c-4ab8-ab14-fefcc552cace"
+data "ValueUUID" "240eb257-ef20-4877-89bd-6956b4b7c41a"
+// data "PassivesOnEquip" "Shield;MAG_CQCaster_GainArcaneChargeOnDamaged_Robe_Passive"
+data "PassivesOnEquip" "MAG_CQCaster_GainArcaneChargeOnDamaged_Robe_Passive"
+
+new entry "MAG_CQCaster_GainArcaneChargeOnDamaged_Robe_Passive"
+type "PassiveData"
+using "MAG_CQCaster_GainArcaneChargeOnDamaged_Robe_Passive"
+// You gain &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_CHARGE"&gt;Arcane Charge&lt;/LSTag&gt; for [1] turns when a foe makes a melee attack against you.
+data "Description" "ha62d55d8g0fb8g468ag8cfcg18b68e3a9b81;1"
+data "DescriptionParams" "2"
+// data "Conditions" "IsMeleeAttack() and Enemy() and HasDamageEffectFlag(DamageFlags.Hit)"
+data "Conditions" "IsMeleeAttack() and Enemy()"
+
+// ========================== Veil of the Morning ==========================
+// By the point you get this item, there aren't many Undead left in the game (especially if you obtained it by killing Mystic Carrion rather than buying from him), so giving item a more generally useful passive than specifically for fighting Undead while still keeping the theme (Holy Fire does more damage vs. Undead)
+// New passive: inflict Holy Fire for 2 turns when dealing Radiant damage 
+new entry "MAG_WYRM_UndeadProtector_Robe"
+type "Armor"
+using "MAG_WYRM_UndeadProtector_Robe"
+// data "PassivesOnEquip" "MAG_WYRM_UndeadProtector_Robe_Passive"
+data "PassivesOnEquip" "MAG_WYRM_UndeadProtector_Robe_Passive;CHT_VeiloftheMorning_HolyFire_Passive"
+
+new entry "CHT_VeiloftheMorning_HolyFire_Passive"
+type "PassiveData"
+// Dawn's Wrath
+data "DisplayName" "h47f090edgc99bg4ea4gab93gfe42b6d914c8;1"
+// When you deal[1], you also also cause foes to burn with &lt;LSTag Type="Status" Tooltip="BURNING_HOLY"&gt;Holy Fire&lt;/LSTag&gt; for [2] turns.
+data "Description" "h5741f8e8gcdbbg415eg9ecdg3d83f1e4a302;1"
+data "DescriptionParams" "DealDamage(,Radiant);2"
+data "StatsFunctorContext" "OnDamage"
+data "Conditions" "HasDamageDoneForType(DamageType.Radiant) and not Ally()"
+data "StatsFunctors" "ApplyStatus(BURNING_HOLY,100,2)"
+
+// ========================== Elegant Studded Leather ==========================
+// Add advantage on DEX saving throws
+new entry "MAG_EndGame_StuddedLeather_Armor"
+type "Armor"
+using "MAG_EndGame_StuddedLeather_Armor"
+// data "Boosts" "Advantage(Skill, Stealth);UnlockSpell(Shout_MAG_Shield_LeatherArmor)"
+data "Boosts" "Advantage(SavingThrow, Dexterity);Advantage(Skill, Stealth);UnlockSpell(Shout_MAG_Shield_LeatherArmor)"
 
 // ========================== Luminous Armour ==========================
 // Change quality to Rare to reflect it being BiS endgame gear for some builds still
-
 new entry "MAG_Radiant_RadiatingOrb_Armor"
 type "Armor"
 using "MAG_Radiant_RadiatingOrb_Armor"
@@ -19,7 +105,6 @@ data "ValueUUID" "240eb257-ef20-4877-89bd-6956b4b7c41a"
 
 // ========================== Luminous Gloves ==========================
 // Change quality to Rare to reflect it being BiS endgame gear for some builds still
-
 new entry "MAG_Radiant_RadiatingOrb_Gloves"
 type "Armor"
 using "MAG_Radiant_RadiatingOrb_Gloves"
@@ -111,22 +196,88 @@ data "Conditions" "IsAttackType(AttackType.MeleeSpellAttack) or (IsMeleeAttack()
 // data "TickType" "EndTurn"
 // data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
 
+// ========================== Swordmaster Gloves ==========================
+// Sword Mastery: attack roll bonus increased to +2
+new entry "MAG_OfSwordmaster_Gloves_Passive"
+type "PassiveData"
+using "MAG_OfSwordmaster_Gloves_Passive"
+// data "DescriptionParams" "1"
+data "DescriptionParams" "2"
+// data "Boosts" "Proficiency(Shortswords);Proficiency(Longswords);Proficiency(Greatswords);RollBonus(MeleeWeaponAttack, 1)"
+data "Boosts" "Proficiency(Shortswords);Proficiency(Longswords);Proficiency(Greatswords);RollBonus(MeleeWeaponAttack, 2)"
+
+// ========================== Martial Exertion Gloves ==========================
+// Martial Exertion: decrease self-damage to 3d6
+new entry "Shout_MAG_Martial_Exertion"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_MAG_Martial_Exertion"
+// data "SpellProperties" "IF(HasAnyExtraAttack(context.Source)):ApplyStatus(MAG_MARTIAL_EXERTION_Q,100,1);IF(not HasAnyExtraAttack(context.Source)):ApplyStatus(MAG_MARTIAL_EXERTION,100,1);DealDamage(6d6, Piercing)"
+data "SpellProperties" "IF(HasAnyExtraAttack(context.Source)):ApplyStatus(MAG_MARTIAL_EXERTION_Q,100,1);IF(not HasAnyExtraAttack(context.Source)):ApplyStatus(MAG_MARTIAL_EXERTION,100,1);DealDamage(3d6, Piercing)"
+// data "DescriptionParams" "DealDamage(6d6, Piercing)"
+data "DescriptionParams" "DealDamage(3d6, Piercing)"
+
 // ===============================================================================
 //                                       Footwear  
 // ===============================================================================
 
+// ========================== Mystra's Grace ==========================
+// Gives 1m movement speed and +1 to Arcana checks
+new entry "UND_Tower_BootsFeatherFall"
+type "Armor"
+using "UND_Tower_BootsFeatherFall"
+// data "Boosts" "UnlockSpell(Shout_UND_FeatherFall_Tower_Boots)"
+data "Boosts" "UnlockSpell(Shout_UND_FeatherFall_Tower_Boots);Skill(Arcana,1);ActionResource(Movement,1,0)"
+
 // ========================== Boots of Stormy Clamour ==========================
 // Change quality to Rare to reflect it being BiS endgame gear for some builds still (ValueUUID not changed because their ValueScale is changed to 2 in Honour Mode)
-
 new entry "MAG_Thunder_ReverberationOnStatusApply_Boots"
 type "Armor"
 using "MAG_Thunder_ReverberationOnStatusApply_Boots"
 // data "Rarity" "Uncommon"
 data "Rarity" "Rare"
 
+// ========================== Vital Conduit Boots ==========================
+// Vital Conduit: increase temporary hp to 12
+new entry "MAG_Gish_TempHPWhileConcentrating_Boots_Passive"
+type "PassiveData"
+using "MAG_Gish_TempHPWhileConcentrating_Boots_Passive"
+// data "DescriptionParams" "GainTemporaryHitPoints(8)"
+data "DescriptionParams" "GainTemporaryHitPoints(12)"
+// data "StatsFunctors" "ApplyStatus(SELF, MAG_TEMPORARY_HP_8, 100, -1)"
+data "StatsFunctors" "ApplyStatus(SELF, CHT_MAG_TEMPORARY_HP_12, 100, -1)"
+
+new entry "CHT_MAG_TEMPORARY_HP_12"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MAG_TEMPORARY_HP"
+// Kept from death's door by a brief magical boost. Gained [1] <LSTag Tooltip="TemporaryHitPoints">temporary hit points</LSTag> .
+data "Description" "hffe4f11ag01fdg422agbbfeg619b1fabbe3b;2"
+data "DescriptionParams" "12"
+data "StackPriority" "12"
+data "Boosts" "TemporaryHP(12)"
+
+// ========================== Boots of Apparent Death ==========================
+// Gives +1 to CON saving throws
+new entry "TWN_BootsOfApparentDeath"
+type "Armor"
+using "TWN_BootsOfApparentDeath"
+// data "Boosts" "UnlockSpell(Target_TWN_FeignDeath)"
+data "Boosts" "RollBonus(SavingThrow, 1, Constitution);UnlockSpell(Target_TWN_FeignDeath)"
+
+// ========================== Dark Justiciar Boots ==========================
+// Shadow Teleportation: change cost to bonus action and decrease cooldown to per combat
+new entry "Target_MAG_Shadow_Shadowstep"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_MAG_Shadow_Shadowstep"
+// data "Cooldown" "OncePerShortRestPerItem"
+data "Cooldown" "OncePerCombat"
+// data "UseCosts" "ActionPoint:1"
+data "UseCosts" "BonusActionPoint:1"
+
 // ========================== Spacehunt Boots ==========================
 // Dimension Door: cost changed to bonus action to be consistent with changes to the spell
-
 new entry "Teleportation_MAG_Dolor_DimensionDoor"
 type "SpellData"
 data "SpellType" "Shout"
@@ -138,9 +289,18 @@ data "UseCosts" "BonusActionPoint:1"
 //                                       Cloaks  
 // ===============================================================================
 
+// ========================== Cloak of Elemental Absorption ==========================
+// Absorb Elements: cooldown reduced to once per combat
+new entry "MAG_Interrupt_MAG_Interrupt_AbsorbElements_Resource_Passive"
+type "PassiveData"
+using "MAG_Interrupt_MAG_Interrupt_AbsorbElements_Resource_Passive"
+// data "Properties" "IsHidden;OncePerShortRest"
+data "Properties" "IsHidden;OncePerCombat"
+// data "StatsFunctorContext" "OnCreate;OnShortRest;OnLongRest"
+data "StatsFunctorContext" "OnCreate;OnCombatStarted;OnShortRest;OnLongRest"
+
 // ========================== Mantle of the Holy Warrior ==========================
 // Crusader's Mantle: cost changed to bonus action to be consistent with changes to the spell
-
 new entry "Shout_MAG_CrusadersMantle"
 type "SpellData"
 data "SpellType" "Shout"
@@ -154,7 +314,6 @@ data "UseCosts" "BonusActionPoint:1"
 
 // ========================== Amulet of Silvanus ==========================
 // Lesser Restoration: cost changed to bonus action to be consistent with changes to the spell
-
 new entry "Target_DEN_BearReward_LesserRestoration"
 type "SpellData"
 data "SpellType" "Target"
@@ -162,13 +321,67 @@ using "Target_DEN_BearReward_LesserRestoration"
 // data "UseCosts" "ActionPoint:1"
 data "UseCosts" "BonusActionPoint:1"
 
+// ========================== Komira's Locket ==========================
+// Add special nerfed version of Otto's Irresistible Dance:
+// Doesn't give disadvantage on attack rolls and DEX saving throws, lasts 3 turns only, requires a Wisdom saving throw on the initial cast. Short rest cooldown
+new entry "DEN_Arabella_Locket"
+type "Armor"
+using "DEN_Arabella_Locket"
+// data "Boosts" "UnlockSpell(Target_DEN_DancingLights_Arabella_Locket)"
+data "Boosts" "UnlockSpell(Target_DEN_DancingLights_Arabella_Locket);UnlockSpell(CHT_IrresistibleDance_Arabella_Locket)"
+
+new entry "CHT_IrresistibleDance_Arabella_Locket"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_IrresistibleDance"
+data "Level" "1"
+// data "SpellProperties" "ApplyStatus(IRRESISTIBLE_DANCE,100,10)"
+data "SpellProperties" ""
+// data "SpellRoll" ""
+data "SpellRoll" "not SavingThrow(Ability.Wisdom, SourceSpellDC())"
+// data ""
+data "SpellSuccess" "ApplyStatus(CHT_ARABELLA_DANCE,100,3)"
+// Arabella's Gleeful Dance
+data "DisplayName" "h37aae19ag50ddg4dc5gb8e5gdf824c1adc8e;1"
+// Cause a creature to start dancing, making it unable to take &lt;LSTag Tooltip="Action"&gt;actions&lt;/LSTag&gt; or move. Its attackers have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;. The target can make a &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; every turn and upon taking damage to break free.
+data "Description" "h0f467088g08c2g4154g8af4gb9cdcc3b4fb3;1"
+// The dancer has <LSTag Tooltip="Disadvantage">Disadvantage</LSTag> on <LSTag Tooltip="AttackRoll">Attack Rolls</LSTag> and Dexterity <LSTag Tooltip="SavingThrow">Saving Throws</LSTag>.
+// data "ExtraDescription" "h6aeff13cg4c03g4ae9g923dg04bafb7981e7;2"
+data "ExtraDescription" ""
+// data "TooltipStatusApply" "ApplyStatus(IRRESISTIBLE_DANCE,100,10)"
+data "TooltipStatusApply" "ApplyStatus(CHT_ARABELLA_DANCE,100,3)"
+// data "Cooldown" ""
+data "Cooldown" "OncePerRestPerItem"
+// data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:6"
+data "UseCosts" "ActionPoint:1"
+
+new entry "CHT_ARABELLA_DANCE"
+type "StatusData"
+data "StatusType" "BOOST"
+using "IRRESISTIBLE_DANCE"
+// data "Boosts" "Advantage(AttackTarget);Disadvantage(AttackRoll);ActionResourceBlock(Movement);ActionResourceBlock(ActionPoint);Disadvantage(SavingThrow,Dexterity)"
+data "Boosts" "Advantage(AttackTarget);ActionResourceBlock(Movement);ActionResourceBlock(ActionPoint)"
+// data "RemoveEvents" "OnTurn"
+data "RemoveEvents" "OnTurn;OnDamage"
+
 // ===============================================================================
 //                                       Rings  
 // ===============================================================================
 
+// ========================== Ring of Mind-Shielding ==========================
+// Shelter: now gives immunity to being charmed and +2 to INT and WIS saving throws
+new entry "UNI_UND_RingOfMindShielding_Passive"
+type "PassiveData"
+using "UNI_UND_RingOfMindShielding_Passive"
+// You gain a +[1] bonus to Intelligence and Wisdom &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; and are immune to being &lt;LSTag Type="Status" Tooltip="CHARMED"&gt;Charmed&lt;/LSTag&gt;.
+data "Description" "h10121987ga23fg4f5ega399g49fd9728dab9;1"
+// data "DescriptionParams" ""
+data "DescriptionParams" "2"
+// data "Boosts" "Tag(CHARMED_ADV)"
+data "Boosts" "StatusImmunity(SG_Charmed);RollBonus(SavingThrow,2,Intelligence);RollBonus(SavingThrow,2,Wisdom)"
+
 // ========================== Coruscation Ring ==========================
 // Change quality to Rare to reflect it being BiS endgame gear for some builds still
-
 new entry "MAG_Radiant_RadiatingOrb_Ring"
 type "Armor"
 using "MAG_Radiant_RadiatingOrb_Ring"
@@ -179,7 +392,6 @@ data "ValueUUID" "94356ef2-bb14-4595-88cf-86f544ef12eb"
 
 // ========================== Callous Glow Ring ==========================
 // Change quality to Very Rare to reflect it being BiS endgame gear for some builds still
-
 new entry "MAG_Radiant_DamageBonusOnIlluminatedTarget_Ring"
 type "Armor"
 using "MAG_Radiant_DamageBonusOnIlluminatedTarget_Ring"
@@ -190,7 +402,6 @@ data "ValueUUID" "94356ef2-bb14-4595-88cf-86f544ef12eb"
 
 // ========================== The Whispering Promise ==========================
 // Change quality to Rare to reflect it being BiS endgame gear for some builds still
-
 new entry "UNI_MassHealRing"
 type "Armor"
 using "UNI_MassHealRing"
@@ -201,7 +412,6 @@ data "ValueUUID" "94356ef2-bb14-4595-88cf-86f544ef12eb"
 
 // ========================== Ring of Blink ==========================
 // Blink: cost changed to bonus action to be consistent with changes to the spell
-
 new entry "Shout_MAG_Blink"
 type "SpellData"
 data "SpellType" "Shout"
@@ -211,10 +421,34 @@ data "UseCosts" "BonusActionPoint:1"
 
 // ========================== Shifting Corpus Ring ==========================
 // Blur: cost changed to bonus action to be consistent with changes to the spell
-
 new entry "Shout_MAG_FlamingFist_ScoutRing_Blur"
 type "SpellData"
 data "SpellType" "Shout"
 using "Shout_MAG_FlamingFist_ScoutRing_Blur"
 // data "UseCosts" "ActionPoint:1"
 data "UseCosts" "BonusActionPoint:1"
+
+// ===============================================================================
+//                                       Shields  
+// ===============================================================================
+
+// ========================== Glowing Shield ==========================
+// Loving Protection: increase temporary hp to 12
+new entry "MAG_LowHP_TemporaryHP_Passive"
+type "PassiveData"
+using "MAG_LowHP_TemporaryHP_Passive"
+// Once per &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;, if you are below [1] &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt; and take damage, you gain [2] &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt;.
+data "Description" "h644f1487gc26dg40e7gacaag5e3899554a3d;1"
+// data "DescriptionParams" ""
+data "DescriptionParams" "50%;12"
+// data "StatsFunctors" "ApplyStatus(MAG_TEMPORARY_HP_8,100,-1)"
+data "StatsFunctors" "ApplyStatus(CHT_MAG_TEMPORARY_HP_12,100,-1)"
+
+// ========================== Shield of Shielding ==========================
+// Shield: decrease cooldown to per short rest
+new entry "Shout_MAG_Shield"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_MAG_Shield"
+// data "Cooldown" "OncePerRestPerItem"
+data "Cooldown" "OncePerShortRestPerItem"

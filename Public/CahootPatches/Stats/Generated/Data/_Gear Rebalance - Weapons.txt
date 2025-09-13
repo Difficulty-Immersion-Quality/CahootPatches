@@ -3,7 +3,6 @@
 // ========================== Sussur weapons ==========================
 // Increase save DC for silence from flat 12 to weapon manoeuver DC + 1 
 // Add +1 to attack rolls
-
 new entry "FOR_IncompleteMasterwork_SussurDagger"
 type "Weapon"
 using "FOR_IncompleteMasterwork_SussurDagger"
@@ -34,7 +33,6 @@ data "WeaponFunctors" "IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC()
 
 // ========================== Ambusher ==========================
 // Increase rarity to Very Rare, enchantment to +2
-
 new entry "MAG_Ambusher_Shortsword"
 type "Weapon"
 using "MAG_Ambusher_Shortsword"
@@ -64,7 +62,6 @@ data "Boosts" "Initiative(2);Advantage(Skill, Perception)"
 
 // ========================== Drakethroat Glaive ==========================
 // Draconic Elemental Weapon: can only be used on self, but each element type now also inflicts a condition upon a hit with the weapon if the target fails a CON save
-
 // Spells
 new entry "Target_MAG_ElementalWeapon"
 type "SpellData"
@@ -278,7 +275,6 @@ data "StatsFunctors" "IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC())
 
 // ========================== Moonlight Glaive ==========================
 // Radiant damage increased to 1d6
-
 new entry "MAG_Moonlight_Glaive"
 type "Weapon"
 using "MAG_Moonlight_Glaive"
@@ -304,7 +300,6 @@ data "Cooldown" "OncePerCombat"
 
 // ========================== Hellfire Greataxe ==========================
 // Hellflame Cleave: can no longer hit allies and cooldown decreased to per combat
-
 new entry "Zone_MAG_Automaton_Human_Steelwatcher_HellfireCleave"
 type "SpellData"
 data "SpellType" "Zone"
@@ -315,12 +310,38 @@ data "TargetConditions" "(Character() or Item()) and not Self() and not Dead() a
 data "Cooldown" "OncePerCombat"
 
 // ===============================================================================
+//                                       Greatclubs  
+// ===============================================================================
+
+// ========================== Punch-Drunk Bastard ==========================
+// Tippler's Rage: increase Thunder damage to 1d6
+new entry "MAG_TWN_Brewer_DrunkardRage_Passive"
+type "PassiveData"
+using "MAG_TWN_Brewer_DrunkardRage_Passive"
+// data "DescriptionParams" "DealDamage(1d4,Thunder);Distance(3)"
+data "DescriptionParams" "DealDamage(1d6,Thunder);Distance(3)"
+
+new entry "MAG_DRUNKARD_RAGE"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MAG_DRUNKARD_RAGE"
+// data "DescriptionParams" "DealDamage(1d4,Thunder);Distance(3)"
+data "DescriptionParams" "DealDamage(1d6,Thunder);Distance(3)"
+
+// (Honour Mode version)
+new entry "Projectile_MAG_Mobility_ExplosionOnJump_Explosion"
+type "SpellData"
+data "SpellType" "Projectile"
+using "Projectile_MAG_Mobility_ExplosionOnJump_Explosion"
+// data "SpellProperties" "DealDamage(1d4,Thunder,Magical,,0,,true,false)"
+data "SpellProperties" "DealDamage(1d6,Thunder,Magical,,0,,true,false)"
+
+// ===============================================================================
 //                                       Greatswords  
 // ===============================================================================
 
 // ========================== Balduran's Giantlayer ==========================
 // Giant Form: change cost to bonus action
-
 new entry "Shout_MAG_Legendary_GiantSlayer_EnlargeSelf"
 type "SpellData"
 data "SpellType" "Shout"
@@ -334,7 +355,6 @@ data "UseCosts" "BonusActionPoint:1"
 
 // ========================== Harmonium Halberd ==========================
 // Strength increase increased to 3
-
 new entry "MAG_BG_Harmonium_Halberd"
 type "Weapon"
 using "MAG_BG_Harmonium_Halberd"
@@ -355,12 +375,31 @@ using "Zone_Mag_WeaponAction_RazorGale"
 data "Cooldown" "OncePerCombat"
 
 // ===============================================================================
+//                                       Maces  
+// ===============================================================================
+
+// ========================== Devotee's Mace ==========================
+// Gains +2 spell save DC
+new entry "MAG_Cleric_Devotees_Mace"
+type "Weapon"
+using "MAG_Cleric_Devotees_Mace"
+// data "PassivesOnEquip" ""
+data "PassivesOnEquip" "MAG_SpellSaveDC_Enchantment_Passive"
+
+// Healing Incense: cooldown decreased to per combat
+new entry "Shout_MAG_DevoteesMace_Healing_Aura"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_MAG_DevoteesMace_Healing_Aura"
+// data "Cooldown" "OncePerRestPerItem"
+data "Cooldown" "OncePerCombat"
+
+// ===============================================================================
 //                                       Morningstars  
 // ===============================================================================
 
 // ========================== The Sacred Star ==========================
 // Dawnburst Strike: change to single target and increase save DC for blindness (original AoE wasn't working hit allies and couldn't fix it myself so just changed the effect)
-
 new entry "Target_MAG_WeaponAction_FlashingDawn"
 type "SpellData"
 data "SpellType" "Target"
@@ -389,7 +428,6 @@ data "UseCosts" "BonusActionPoint:1"
 
 // ========================== Gold Wyrmling Staff ==========================
 // Also gives Searing Smite (short rest cooldown) in addition to Fire Bolt
-
 new entry "MAG_Fire_FireDamage_Quarterstaff"
 type "Weapon"
 using "MAG_Fire_FireDamage_Quarterstaff"
@@ -410,7 +448,6 @@ data "Cooldown" "OncePerShortRestPerItem"
 // ========================== Despair of Athkatla ==========================
 // Increase rarity to Very Rare
 // New passive: inflicting a condition on an enemy applies 2 turns of Reverberation. Dealing spell damage to a target with Reverberation causes them to be Dazed for 2 turns if they fail a CON save
-
 new entry "MAG_LC_Lorroakan_Quarterstaff"
 type "Weapon"
 using "MAG_LC_Lorroakan_Quarterstaff"
@@ -446,7 +483,6 @@ data "StatsFunctors" "IF(not SavingThrow(Ability.Constitution, SourceSpellDC()))
 
 // ========================== Infernal Rapier ==========================
 // Melee Caster: fix description text
-
 new entry "MAG_MeleeCaster_Passive"
 type "PassiveData"
 using "MAG_MeleeCaster_Passive"
@@ -470,7 +506,6 @@ data "Description" "h4f9480b1gfa10g405dgad9eg611bd8bafda8;1"
 
 // ========================== Trident of the Waves ==========================
 // Increase enchantment to +2; add 1d4 Cold damage
-
 new entry "MAG_LC_Wave_Trident"
 type "Weapon"
 using "MAG_LC_Wave_Trident"
@@ -483,7 +518,6 @@ data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);WeaponDamage(
 
 // ========================== Hammer of the Just ==========================
 // Add 1d4 Radiant damage
-
 new entry "MAG_Tyrrant_Warhammer"
 type "Weapon"
 using "MAG_Tyrrant_Warhammer"
