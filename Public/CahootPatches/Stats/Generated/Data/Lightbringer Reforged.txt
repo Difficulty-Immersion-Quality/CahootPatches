@@ -1,3 +1,60 @@
+// ============================================================== Judgments ==============================================================
+// Revert Divine Smite being considered as a spell
+
+new entry "Target_Smite_Divine"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_Smite_Divine"
+// data "SpellSchool" "Evocation"
+data "SpellSchool" ""
+// data "SpellFlags" "IsMelee;IsHarmful;IsSpell"
+data "SpellFlags" "IsMelee;IsHarmful"
+
+new entry "Target_Smite_Divine_2"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_Smite_Divine_2"
+// data "SpellSchool" "Evocation"
+data "SpellSchool" ""
+// data "SpellFlags" "IsMelee;IsHarmful;IsSpell"
+data "SpellFlags" "IsMelee;IsHarmful"
+
+new entry "Target_Smite_Divine_3"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_Smite_Divine_3"
+// data "SpellSchool" "Evocation"
+data "SpellSchool" ""
+// data "SpellFlags" "IsMelee;IsHarmful;IsSpell"
+data "SpellFlags" "IsMelee;IsHarmful"
+
+new entry "Target_Smite_Divine_4"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_Smite_Divine_4"
+// data "SpellSchool" "Evocation"
+data "SpellSchool" ""
+// data "SpellFlags" "IsMelee;IsHarmful;IsSpell"
+data "SpellFlags" "IsMelee;IsHarmful"
+
+new entry "Target_Smite_Divine_5"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_Smite_Divine_5"
+// data "SpellSchool" "Evocation"
+data "SpellSchool" ""
+// data "SpellFlags" "IsMelee;IsHarmful;IsSpell"
+data "SpellFlags" "IsMelee;IsHarmful"
+
+new entry "Target_Smite_Divine_6"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_Smite_Divine_6"
+// data "SpellSchool" "Evocation"
+data "SpellSchool" ""
+// data "SpellFlags" "IsMelee;IsHarmful;IsSpell"
+data "SpellFlags" "IsMelee;IsHarmful"
+
 // ============================================================== Lay on Hands ==============================================================
 // Revert all heal variants to scaling off Paladin instead of character level
 
