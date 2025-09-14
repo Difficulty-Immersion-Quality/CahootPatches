@@ -241,7 +241,7 @@ using "CONJURE_VOLLEY_PIERCING_FAIL"
 data "OnApplyFunctors" "DealDamage(8d8/2,Piercing,Magical)"
 
 // ============================ Holy Weapon ============================
-// Decrease damage buff for weapon from 2d8 2d4
+// Decrease damage buff for weapon from 2d8 to 2d4
 
 new entry "Target_HolyWeapon"
 type "SpellData"
