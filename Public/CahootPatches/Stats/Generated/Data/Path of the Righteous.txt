@@ -461,9 +461,26 @@ using "Siael_POTR_Cantrip"
 data "Description" "h725fecfcgc0b8g4b91g9dedg525ce619d6ef;1"
 
 // ================================== Full Legendary set ==================================
-// Loca edit
+// Change from applying Vulnerability to Radiant damage to just causing foes to take extra 1d8 damage when they take Radiant damage
 new entry "Siael_POTR_Righteous_L"
 type "PassiveData"
 using "Siael_POTR_Righteous_L"
-// Your celestial presence is almighty. Foes within your Paladin aura are &lt;LSTag Tooltip="Vulnerable"&gt;Vulnerable&lt;/LSTag&gt; to[1]. You still benefit from &lt;LSTag Type="Passive" Tooltip="Siael_POTR_Righteous"&gt;The Righteous&lt;/LSTag&gt;.
+// Your celestial presence is almighty. Foes within your Paladin aura take an additional [1] whenever they take[2]. You still benefit from &lt;LSTag Type="Passive" Tooltip="Siael_POTR_Righteous"&gt;The Righteous&lt;/LSTag&gt;.
 data "Description" "h23e8164fg653fg4f8bg892cgfcf764d6d9fd;1"
+// data "DescriptionParams" "DealDamage(,Radiant)"
+data "DescriptionParams" "DealDamage(1d8,Radiant);DealDamage(,Radiant)"
+
+new entry "SIAEL_POTR_RAD_VULN"
+type "StatusData"
+data "StatusType" "BOOST"
+using "SIAEL_POTR_RAD_VULN"
+// Entity takes an additional [1] whenever it takes[2].
+data "Description" "h4695d505g041dg4999ga53bg64d3d0aa1885;1"
+// data "DescriptionParams" "DealDamage(1d4,Radiant)"
+data "DescriptionParams" "DealDamage(1d8,Radiant);DealDamage(,Radiant)"
+// data "BoostContext" ""
+data "BoostContext" "OnDamaged"
+// data "BoostConditions" ""
+data "BoostConditions" "HasDamageDoneForType(DamageType.Radiant)"
+// data "Boosts" "Resistance(Radiant,Vulnerable)"
+data "Boosts" "DamageTakenBonus(1d8, Radiant, False)"

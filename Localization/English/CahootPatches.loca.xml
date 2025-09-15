@@ -275,9 +275,11 @@ Moreover, &lt;LSTag Type="Status" Tooltip="BURNING_HOLY"&gt;Holy Flame&lt;/LSTag
 
 You still benefit from &lt;LSTag Type="Passive" Tooltip="Siael_POTR_Righteous_R"&gt;Noble Knight&lt;/LSTag&gt;.</content>
 	
-	<content contentuid="h23e8164fg653fg4f8bg892cgfcf764d6d9fd" version="1">Your celestial presence is almighty. Foes within your Paladin aura are &lt;LSTag Tooltip="Vulnerable"&gt;Vulnerable&lt;/LSTag&gt; to[1].
-
-You still benefit from &lt;LSTag Type="Passive" Tooltip="Siael_POTR_Righteous"&gt;The Righteous&lt;/LSTag&gt;.</content>
+	<content contentuid="h23e8164fg653fg4f8bg892cgfcf764d6d9fd" version="1">Your celestial presence is almighty. Foes within your Paladin aura take an additional [1] whenever they take[2].
+	
+You still benefit from &lt;LSTag Type="Passive" Tooltip="Siael_POTR_Righteous"&gt;The Righteous&lt;/LSTag&gt;.
+data "Description" "h23e8164fg653fg4f8bg892cgfcf764d6d9fd;1"</content>
+	<content contentuid="h4695d505g041dg4999ga53bg64d3d0aa1885" version="1">Entity takes an additional [1] whenever it takes[2].</content>
 
 	<!-- Cloaks of Faerun -->
 	<content contentuid="he1f00503g0dccg4a2eg9e31ga572de2a975a" version="1">Whenever the wearer succeeds on a &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; against a spell, they regain [1]. This effect can only occur once per turn.</content>
