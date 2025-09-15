@@ -302,6 +302,8 @@ data "Description" "h23e8164fg653fg4f8bg892cgfcf764d6d9fd;1"</content>
 	<content contentuid="h80c7df12g1905g46efgbc84gb3408bb96229" version="1">Deal additional[1] equal to your &lt;LSTag Tooltip="Charisma"&gt;Charisma&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; to this target.</content>
 
 	<!-- SkillActions -->
+	<content contentuid="hc4be2689gaf69g4801g8851g60e5ceab8bc6" version="1">Skill Actions</content>
+	<content contentuid="h3c26d22dge432g48d7g989dg02c3a963530e" version="1">Additional common actions based on skill proficiency.</content>
 	<!-- <content contentuid="hb8b0b891gc7c1g4604g8946gf442e53d7365" version="1">Shove (Trip)</content> -->
 	<content contentuid="h6fd82a18gc4b8g4aa8g8b89g80c616ffbf41" version="1">Make an Athletics &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt; against a target's Athletics or Acrobatics. On a success, the target is knocked &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt;. Usable only if you have Athletics &lt;LSTag Tooltip="Proficiency"&gt;proficiency&lt;/LSTag&gt;.</content>
 	<!-- <content contentuid="hdccba7d2g171fg4cf0ga6d5g5ab26cf06d60" version="1">Swap Places</content> -->
