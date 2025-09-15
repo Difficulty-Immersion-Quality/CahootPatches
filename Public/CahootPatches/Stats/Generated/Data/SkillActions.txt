@@ -22,14 +22,14 @@ data "Description" "hafa55388ga927g41ccgb700g822093c4a4b2;1"
 data "Cooldown" "OncePerShortRest"
 data "Requirements" ""
 
-// Sleight of Hand (Feint): increase cooldown to long rest (previously per combat), and make it a class action instead of weapon action (removing IsDefaultWeaponAction spell flag)
+// Sleight of Hand (Feint): increase cooldown to short rest (previously per combat), and make it a class action instead of weapon action (removing IsDefaultWeaponAction spell flag)
 new entry "Target_Feint"
 type "Spelldata"
 data "Spelltype" "Target"
 using "Target_Feint"
 // Make a Sleight of Hand &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt; against a target's Perception. On a success, the target becomes &lt;LSTag Type="Status" Tooltip="OFF_BALANCED"&gt;Off Balanced&lt;/LSTag&gt;. Usable only if you have Sleight of Hand &lt;LSTag Tooltip="Proficiency"&gt;proficiency&lt;/LSTag&gt;.
 data "Description" "h83ecee38ge720g4dd4gaeb4g2b5b204386ba;1"
-data "Cooldown" "OncePerRest"
+data "Cooldown" "OncePerShortRest"
 data "Requirements" ""
 data "SpellFlags" "IsMelee;IsHarmful"
 
@@ -121,14 +121,14 @@ data "TargetConditions" "not Ally() and not Dead() and Tagged('BEAST') not Intel
 data "Cooldown" "OncePerShortRest"
 data "Requirements" ""
 
-// Insight (Predict): fix StackID for PREDICTED (previously used same StackID as for WEAK_SPOT_FOUND), increase cooldown to long rest (previously per combat)
+// Insight (Predict): fix StackID for PREDICTED (previously used same StackID as for WEAK_SPOT_FOUND), increase cooldown to short rest (previously per combat)
 new entry "Target_Predict"
 type "Spelldata"
 data "Spelltype" "Target"
 using "Target_Predict"
 // Make an Insight &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt; against a target's Deception. On a success, the target has &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on its &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;. Usable only if you have Insight &lt;LSTag Tooltip="Proficiency"&gt;proficiency&lt;/LSTag&gt;.
 data "Description" "ha55ff626gc306g4e34gb302g79783593f865;1"
-data "Cooldown" "OncePerRest"
+data "Cooldown" "OncePerShortRest"
 data "Requirements" ""
 
 new entry "PREDICTED"
@@ -139,18 +139,18 @@ using "PREDICTED"
 data "Description" "hfe152d84g9489g44ecg9e7bg012c2082e950"
 data "StackId" "PREDICTED"
 
-// Medicine (First Aid): decrease heal to d6 cantrip + Wisdom modifier (previously d8 cantrip scaling + 1d8 + Wisdom modifier) and added healing from Wisdom modifier is now halved on a failed check (previously full amount of Wisdom modifier was always added); increase cooldown to long rest (previously per combat)
+// Medicine (First Aid): decrease heal to d4 cantrip + Wisdom modifier (previously d8 cantrip scaling + 1d8 + Wisdom modifier) and added healing from Wisdom modifier is now halved on a failed check (previously full amount of Wisdom modifier was always added); increase cooldown to short rest (previously per combat)
 new entry "Target_First_Aid"
 type "Spelldata"
 data "Spelltype" "Target"
 using "Target_First_Aid"
 // Make a DC 15 Medicine &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt; on an ally. The ally recovers &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt; on a success, and half as many hit points on a failed &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt;. Usable only if you have Medicine &lt;LSTag Tooltip="Proficiency"&gt;proficiency&lt;/LSTag&gt;.
 data "Description" "h75e55557gd606g4a80g89b4g884b9ed2ad08;1"
-data "DescriptionParams" "RegainHitPoints(LevelMapValue(D6Cantrip));RegainHitPoints(ProficiencyBonus)"
-data "SpellSuccess" "RegainHitPoints(LevelMapValue(D6Cantrip)+ProficiencyBonus)"
-data "SpellFail" "RegainHitPoints((LevelMapValue(D6Cantrip)+ProficiencyBonus)/2)"
-data "TooltipDamageList" "RegainHitPoints(LevelMapValue(D6Cantrip)+ProficiencyBonus)"
-data "Cooldown" "OncePerRest"
+data "DescriptionParams" "RegainHitPoints(LevelMapValue(D4Cantrip));RegainHitPoints(ProficiencyBonus)"
+data "SpellSuccess" "RegainHitPoints(LevelMapValue(D4Cantrip)+ProficiencyBonus)"
+data "SpellFail" "RegainHitPoints((LevelMapValue(D4Cantrip)+ProficiencyBonus)/2)"
+data "TooltipDamageList" "RegainHitPoints(LevelMapValue(D4Cantrip)+ProficiencyBonus)"
+data "Cooldown" "OncePerShortRest"
 data "Requirements" ""
 
 // Perception (Seek): fix spell using Survival proficiency instead of Perception, duration changed to 10 turns (previously until long rest), and removed Spell flag
@@ -177,34 +177,34 @@ data "Description" "hfc14517cg8d62g4937g87b4gf67f4d58c281;1"
 data "Cooldown" "OncePerShortRest"
 data "Requirements" ""
 
-// Deception (Deceive): increase cooldown to long rest (previously per combat)
+// Deception (Deceive): increase cooldown to short rest (previously per combat)
 new entry "Target_Deceive"
 type "Spelldata"
 data "Spelltype" "Target"
 using "Target_Deceive"
 // Make a Deception &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt; against a target's Insight. On a success, the target becomes &lt;LSTag Type="Status" Tooltip="CONFUSION"&gt;Confused&lt;/LSTag&gt;. The target must have an Intelligence of 7 or more. Usable only if you have Deception &lt;LSTag Tooltip="Proficiency"&gt;proficiency&lt;/LSTag&gt;.
 data "Description" "h3dc04fb0gd06ag4bfdga012g1bcea23414c0;1"
-data "Cooldown" "OncePerRest"
+data "Cooldown" "OncePerShortRest"
 data "Requirements" ""
 
-// Intimidation (Intimidate): increase cooldown to long rest (previously per combat)
+// Intimidation (Intimidate): increase cooldown to short rest (previously per combat)
 new entry "Target_Intimidate"
 type "SpellData"
 data "Spelltype" "Target"
 using "Target_Intimidate"
 // Make an Intimidation &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt; against a target's Insight. On a success, the target becomes &lt;LSTag Type="Status" Tooltip="FRIGHTENED"&gt;Frightened&lt;/LSTag&gt;. Usable only if you have Intimidation &lt;LSTag Tooltip="Proficiency"&gt;proficiency&lt;/LSTag&gt;.
 data "Description" "hf897a25eg03dfg43b8gb78dgdd99c4a0fab9;1"
-data "Cooldown" "OncePerRest"
+data "Cooldown" "OncePerShortRest"
 data "Requirements" ""
 
-// Persuasion (Persuade): increase cooldown to long rest (previously per combat)
+// Persuasion (Persuade): increase cooldown to short rest (previously per combat)
 new entry "Target_Persuade"
 type "Spelldata"
 data "Spelltype" "Target"
 using "Target_Persuade"
 // Make a Deception &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt; against a target's Insight. On a success, the target becomes &lt;LSTag Type="Status" Tooltip="CHARMED"&gt;Charmed&lt;/LSTag&gt;. The target must have an Intelligence of 7 or more. Usable only if you have Persuasion &lt;LSTag Tooltip="Proficiency"&gt;proficiency&lt;/LSTag&gt;.
 data "Description" "h0c1de080gf647g46b4gbfabg7509e826ce4f;1"
-data "Cooldown" "OncePerRest"
+data "Cooldown" "OncePerShortRest"
 data "Requirements" ""
 
 // Performance (Taunt): fix requirement to proficiency in Performance (previously proficiency in Persuasion) and increase cooldown to short rest (previously per combat)
