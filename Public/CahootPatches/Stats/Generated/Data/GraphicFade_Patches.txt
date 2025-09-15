@@ -23,6 +23,30 @@ using "BB_Projectile_Cerberus_NecroticBolt"
 // data "SpellSuccess" "DealDamage(1d10, Necrotic,Magical);IF(HasHPLessThan(50) and not HasHPLessThan(1)):DealDamage(1d10, Necrotic,Magical);IF(not IsKillingBlow()):RegainHitPoints(SELF,(DamageDone)/2);IF(IsKillingBlow()):RegainHitPoints(SELF,(DamageDone))"
 data "SpellSuccess" "DealDamage(1d10, Necrotic,Magical);IF(HasHPPercentageLessThan(50) and not HasHPLessThan(1)):DealDamage(1d10, Necrotic,Magical);IF(not IsKillingBlow()):RegainHitPoints(SELF,(DamageDone)/2);IF(IsKillingBlow()):RegainHitPoints(SELF,(DamageDone))"
 
+// ==================== Preventing damage rider sources ====================
+new entry "BB_PiercingWind_Passive"
+type "PassiveData"
+using "BB_PiercingWind_Passive"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "IsWeaponAttack() and HasDamageEffectFlag(DamageFlags.Hit)"
+// data "StatsFunctors" "IF(IsAttackType(AttackType.RangedWeaponAttack)):DealDamage(1d4, MainRangedWeaponDamageType)"
+data "StatsFunctors" "IF(IsAttackType(AttackType.RangedWeaponAttack)):DealDamage(1d4, MainRangedWeaponDamageType,Magical,,0,,true,true)"
+
+new entry "BB_DamageToTagged_Passive"
+type "PassiveData"
+using "BB_DamageToTagged_Passive"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "IsWeaponAttack() and HasDamageEffectFlag(DamageFlags.Hit) and Tagged('BEAST',context.Target) or Tagged('MONSTROSITY',context.Target)"
+// data "StatsFunctors" "IF(IsAttackType(AttackType.MeleeWeaponAttack)):DealDamage(1d4, MainMeleeWeaponDamageType);IF(IsAttackType(AttackType.RangedWeaponAttack)):DealDamage(1d4, MainRangedWeaponDamageType);IF(IsAttackType(AttackType.MeleeOffHandWeaponAttack)):DealDamage(1d4, OffhandMeleeWeaponDamageType);IF(IsAttackType(AttackType.RangedOffHandWeaponAttack)):DealDamage(1d4, OffhandRangedWeaponDamageType)"
+data "StatsFunctors" "IF(IsAttackType(AttackType.MeleeWeaponAttack)):DealDamage(1d4, MainMeleeWeaponDamageType,Magical,,0,,true,true);IF(IsAttackType(AttackType.RangedWeaponAttack)):DealDamage(1d4, MainRangedWeaponDamageType,Magical,,0,,true,true);IF(IsAttackType(AttackType.MeleeOffHandWeaponAttack)):DealDamage(1d4, OffhandMeleeWeaponDamageType,Magical,,0,,true,true);IF(IsAttackType(AttackType.RangedOffHandWeaponAttack)):DealDamage(1d4, OffhandRangedWeaponDamageType,Magical,,0,,true,true)"
+
+new entry "BB_HuntersShroud_Passive"
+type "PassiveData"
+using "BB_HuntersShroud_Passive"
+// data "StatsFunctorContext" "OnAttack"
+// data "Conditions" "IsRangedWeaponAttack() and HasDamageEffectFlag(DamageFlags.Hit) and not DistanceToTargetGreaterThan(9.0) and not IsCritical()"
+// data "StatsFunctors" "IF(IsAttackType(AttackType.RangedWeaponAttack) and IsWeaponOfProficiencyGroup('Shortbows', GetActiveWeapon())):DealDamage(1d6,Piercing);IF(IsAttackType(AttackType.RangedWeaponAttack) and IsWeaponOfProficiencyGroup('Longbows', GetActiveWeapon())):DealDamage(1d8,Piercing);IF(IsAttackType(AttackType.RangedWeaponAttack) and IsWeaponOfProficiencyGroup('Darts', GetActiveWeapon())):DealDamage(1d4,Piercing);IF(IsAttackType(AttackType.RangedWeaponAttack) and IsWeaponOfProficiencyGroup('Slings', GetActiveWeapon())):DealDamage(1d4,Bludgeoning);IF(IsAttackType(AttackType.RangedWeaponAttack) and IsWeaponOfProficiencyGroup('LightCrossbows', GetActiveWeapon())):DealDamage(1d8,Piercing);IF(IsAttackType(AttackType.RangedWeaponAttack) and IsWeaponOfProficiencyGroup('HeavyCrossbows', GetActiveWeapon())):DealDamage(1d10,Piercing);IF(IsAttackType(AttackType.RangedWeaponAttack) and IsWeaponOfProficiencyGroup('HandCrossbows', GetActiveWeapon())):DealDamage(1d6,Piercing)"
+data "StatsFunctors" "IF(IsAttackType(AttackType.RangedWeaponAttack) and IsWeaponOfProficiencyGroup('Shortbows', GetActiveWeapon())):DealDamage(1d6,Piercing,Magical,,0,,true,true);IF(IsAttackType(AttackType.RangedWeaponAttack) and IsWeaponOfProficiencyGroup('Longbows', GetActiveWeapon())):DealDamage(1d8,Piercing,Magical,,0,,true,true);IF(IsAttackType(AttackType.RangedWeaponAttack) and IsWeaponOfProficiencyGroup('Darts', GetActiveWeapon())):DealDamage(1d4,Piercing,Magical,,0,,true,true);IF(IsAttackType(AttackType.RangedWeaponAttack) and IsWeaponOfProficiencyGroup('Slings', GetActiveWeapon())):DealDamage(1d4,Bludgeoning,Magical,,0,,true,true);IF(IsAttackType(AttackType.RangedWeaponAttack) and IsWeaponOfProficiencyGroup('LightCrossbows', GetActiveWeapon())):DealDamage(1d8,Piercing,Magical,,0,,true,true);IF(IsAttackType(AttackType.RangedWeaponAttack) and IsWeaponOfProficiencyGroup('HeavyCrossbows', GetActiveWeapon())):DealDamage(1d10,Piercing,Magical,,0,,true,true);IF(IsAttackType(AttackType.RangedWeaponAttack) and IsWeaponOfProficiencyGroup('HandCrossbows', GetActiveWeapon())):DealDamage(1d6,Piercing,Magical,,0,,true,true)"
 
 // ==================================== Chaos and Control - Sorcerer Equipment ====================================
 
@@ -266,6 +290,15 @@ data "StatusType" "BOOST"
 data "StackId" "CHT_CC_SORCERER_ENDLESSWELL_USED"
 data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;ApplyToDead"
 
+// ==================== Preventing damage rider sources ====================
+new entry "CC_CharismaticForce_Passive"
+type "PassiveData"
+using "CC_CharismaticForce_Passive"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "IsSpell()"
+// data "StatsFunctors" "IF(HasDamageDoneForType(DamageType.Force)):DealDamage(CharismaModifier/2, Force);IF(HasDamageDoneForType(DamageType.Radiant)):DealDamage(CharismaModifier/2, Radiant);IF(HasDamageDoneForType(DamageType.Psychic)):DealDamage(CharismaModifier/2, Psychic)"
+data "StatsFunctors" "IF(HasDamageDoneForType(DamageType.Force)):DealDamage(CharismaModifier/2, Force,Magical,,0,,true,true);IF(HasDamageDoneForType(DamageType.Radiant)):DealDamage(CharismaModifier/2, Radiant,Magical,,0,,true,true);IF(HasDamageDoneForType(DamageType.Psychic)):DealDamage(CharismaModifier/2, Psychic,Magical,,0,,true,true)"
+
 // ==================================== Faith and Fortitude - Cleric Equipment ====================================
 
 // Staff of Radiant Authority
@@ -299,6 +332,14 @@ using "Target_CureWounds_DivineDuality"
 data "SpellProperties" "RegainHitPoints(4d6+SpellCastingAbilityModifier)"
 // data "TooltipDamageList" "RegainHitPoints(2d8+SpellCastingAbilityModifier)"
 data "TooltipDamageList" "RegainHitPoints(4d6+SpellCastingAbilityModifier)"
+
+// Branding Smite: having it inherit from the vanilla spell for compatibility with mods that change it (and also so it inherits Honour Mode changes)
+new entry "Target_Smite_Branding_DivineDuality"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_Smite_Branding"
+data "HitCosts" "BonusActionPoint:1"
+data "Cooldown" "OncePerRest"
 
 // Life-Weaver Crossbow
 // Sacred Bolt: increase radius to 2m (previously 1.5m), heal changed to 2d6 (previously 1d10+Cleric level) and damage changed to 1d10 (previously (1d10+Cleric level)/2); add damage/healing to spell tooltip
@@ -405,6 +446,22 @@ using "DruidEquipmentAct3_Staff_of_the_Ancient_Guardian"
 // data "PassivesOnEquip" "GG_Three_SpellSaveDC_Passive"
 data "PassivesOnEquip" "MAG_SpellSaveDC_Enchantment_Passive"
 
+// ==================== Preventing damage rider sources ====================
+new entry "GG_Three_IncreasedElementalDamage_Passive"
+type "PassiveData"
+using "GG_Three_IncreasedElementalDamage_Passive"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "IsSpell()"
+// data "StatsFunctors" "IF(HasDamageDoneForType(DamageType.Thunder)):DealDamage(1d6, Thunder);IF(HasDamageDoneForType(DamageType.Lightning)):DealDamage(1d6, Lightning);IF(HasDamageDoneForType(DamageType.Cold)):DealDamage(1d6, Cold)"
+data "StatsFunctors" "IF(HasDamageDoneForType(DamageType.Thunder)):DealDamage(1d6, Thunder,Magical,,0,,true,true);IF(HasDamageDoneForType(DamageType.Lightning)):DealDamage(1d6, Lightning,Magical,,0,,true,true);IF(HasDamageDoneForType(DamageType.Cold)):DealDamage(1d6, Cold,Magical,,0,,true,true)"
+
+new entry "Target_GG_One_WeaversEdge"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_GG_One_WeaversEdge"
+// data "SpellSuccess" "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType); ExecuteWeaponFunctors(MainHand); ApplyStatus(WEB,100,2, , , ,not SavingThrow(Ability.Strength, SourceSpellDC(), AdvantageOnRestrained(),DisadvantageOnRestrained()));DealDamage(1d4,Poison,Magical)"
+data "SpellSuccess" "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType); ExecuteWeaponFunctors(MainHand); ApplyStatus(WEB,100,2, , , ,not SavingThrow(Ability.Strength, SourceSpellDC(), AdvantageOnRestrained(),DisadvantageOnRestrained()));DealDamage(1d4,Poison,Magical,,0,,true,false)"
+
 // ==================================== Might and Metal - Fighter Equipment  ====================================
 
 // Ring of Razor's Edge: change rarity to Very Rare (previously Uncommon)
@@ -446,6 +503,34 @@ data "Description" "h4a348116g3a9ag4246ga3e2g9dacba24b5a9;1"
 data "DescriptionParams" "4"
 // data "Boosts" "AC(-2);Resistance(Piercing, Vulnerable);Resistance(Slashing, Vulnerable);Resistance(Bludgeoning, Vulnerable)"
 data "Boosts" "AC(-4)"
+
+// ==================== Preventing damage rider sources ====================
+new entry "MM_SanguineFeast_Passive"
+type "PassiveData"
+using "MM_SanguineFeast_Passive"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "AttackedWithPassiveSourceWeapon() and HasStatus('BLEEDING', context.Target)"
+// data "StatsFunctors" "DealDamage(1d4,Necrotic,Magical)"
+data "StatsFunctors" "DealDamage(1d4,Necrotic,Magical,,0,,true,false)"
+
+// new entry "MM_FuryFlurry_Passive"
+// type "PassiveData"
+// data "DisplayName" "h22892942gd938g469dg96bag67bafebbd049;1"
+// data "Description" "h22892942gd938g469dg96bag67bafebbd050;1"
+// data "DescriptionParams" "DealDamage(MainMeleeWeapon,MainMeleeWeaponDamageType);15"
+// data "Icon" "PassiveFeature_SavageAttacker"
+// data "Properties" "OncePerAttack"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "IsMeleeWeaponAttack()"
+// data "StatsFunctors" "IF(RollDieAgainstDC(DiceType.d100,85)):ApplyStatus(MM_FURY_FLURRY_CHECK,100,0)"
+
+// See passive above for application of this status
+new entry "MM_FURY_FLURRY_CHECK"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MM_FURY_FLURRY_CHECK"
+// data "OnApplySuccess" "DealDamage(max(1,MainMeleeWeapon), MainMeleeWeaponDamageType);ExecuteWeaponFunctors(MainHand)"
+data "OnApplySuccess" "DealDamage(max(1,MainMeleeWeapon), MainMeleeWeaponDamageType,Magical,,0,,true,true);ExecuteWeaponFunctors(MainHand)"
 
 // ==================================== Oath and Order - Paladin Equipment ====================================
 
@@ -516,6 +601,31 @@ data "DescriptionParams" "50"
 // data "StatsFunctors" "IF(RollDieAgainstDC(DiceType.d100,60)):ApplyStatus(SELF,OO_RESTORE_OATH,100,0)"
 data "StatsFunctors" "IF(RollDieAgainstDC(DiceType.d100,51)):ApplyStatus(SELF,OO_RESTORE_OATH,100,0)"
 
+// ==================== Preventing damage rider sources ====================
+new entry "OO_RadiantCondemnation_Passive"
+type "PassiveData"
+using "OO_RadiantCondemnation_Passive"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "IsAttack() and (Tagged('UNDEAD') or Tagged('FIEND') or Tagged('MONSTROSITY') or Tagged('ABERRATION'))"
+// data "StatsFunctors" "DealDamage(ClassLevel(Paladin), Radiant)"
+data "StatsFunctors" "DealDamage(ClassLevel(Paladin), Radiant,Magical,,0,,true,false)"
+
+new entry "OO_EmboldenedSmite_Passive"
+type "PassiveData"
+using "OO_EmboldenedSmite_Passive"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "IsAttack() and OOIsDivineSmite()"
+// data "StatsFunctors" "DealDamage(1d4,Radiant,Magical)"
+data "StatsFunctors" "DealDamage(1d4,Radiant,Magical,,0,,true,true)"
+
+new entry "OO_AvengerFury_Passive"
+type "PassiveData"
+using "OO_AvengerFury_Passive"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "AttackedWithPassiveSourceWeapon()"
+// data "StatsFunctors" "IF(not Tagged('FIEND',context.Target) and not Tagged('UNDEAD',context.Target)):DealDamage(1d8,Radiant);IF(Tagged('FIEND',context.Target) or Tagged('UNDEAD',context.Target)):DealDamage(2d8,Radiant)"
+data "StatsFunctors" "IF(not Tagged('FIEND',context.Target) and not Tagged('UNDEAD',context.Target)):DealDamage(1d8,Radiant,Magical,,0,,true,false);IF(Tagged('FIEND',context.Target) or Tagged('UNDEAD',context.Target)):DealDamage(2d8,Radiant,Magical,,0,,true,false)"
+
 // ==================================== Pact and Power - Warlock Equipment  ====================================
 
 // Shortbow of the Binding Vow: 
@@ -566,7 +676,7 @@ data "Description" "h612819fcge6d0g4d57gb472g9c8de5025616;1"
 data "OnApplyFunctors" "DealDamage(SELF,2d8,Necrotic)"
 
 // Soulknife of the Everlasting Pact
-// Echoes of the Eternal Pact: [Pact of the Tome]: decrease damage to 1d8 (previously 2d4)
+// Echoes of the Eternal Pact: [Pact of the Tome]: decrease damage to 1d8 (previously 2d4) and fix DRS
 new entry "PP_EverlastingPact_Text_Passive"
 type "PassiveData"
 using "PP_EverlastingPact_Text_Passive"
@@ -578,8 +688,10 @@ data "DescriptionParams" "DealDamage(2d6,Psychic);2;2;DealDamage(1d8,Psychic)"
 new entry "PP_EP_Tome_Passive" 
 type "PassiveData"
 using "PP_EP_Tome_Passive"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "HasPassive('PactOfTheTome',context.Source)"
 // data "StatsFunctors" "IF(IsSpell() and IsCantrip()):DealDamage(2d4,Psychic)"
-data "StatsFunctors" "IF(IsSpell() and IsCantrip()):DealDamage(1d8,Psychic)"
+data "StatsFunctors" "IF(IsSpell() and IsCantrip()):DealDamage(1d8,Psychic,Magical,,0,,true,false)"
 
 // Visage of the Inner Demon
 // Demonic Surge: decrease cooldown to per short rest (previously once per combat)
@@ -589,6 +701,31 @@ data "SpellType" "Shout"
 using "PP_Shout_DemonicSurge"
 //data "Cooldown" "OncePerCombat"
 data "Cooldown" "OncePerShortRestPerItem"
+
+// ==================== Preventing damage rider sources ====================
+new entry "PP_Shadowfell_Infusion_Passive"
+type "PassiveData"
+using "PP_Shadowfell_Infusion_Passive"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "SpellId('Shout_ArmsOfHadar') or SpellId('Shout_ArmsOfHadar_2') or SpellId('Shout_ArmsOfHadar_3') or SpellId('Shout_ArmsOfHadar_4') or SpellId('Shout_ArmsOfHadar_5') or SpellId('Shout_ArmsOfHadar_6')"
+// data "StatsFunctors" "DealDamage(1d4,Necrotic,Magical)"
+data "StatsFunctors" "DealDamage(1d4,Necrotic,Magical,,0,,true,true)"
+
+new entry "PP_SurgeOfBrimstone_Buff"
+type "PassiveData"
+using "PP_SurgeOfBrimstone_Buff"
+// data "StatsFunctorContext" "OnCastResolved;OnDamage"
+// data "Conditions" "IsSpell() and (HasDamageDoneForType(DamageType.Fire) or HasDamageDoneForType(DamageType.Necrotic))"
+// data "StatsFunctors" "IF(HasDamageDoneForType(DamageType.Fire)):DealDamage(2d4,Fire,Magical);IF(HasDamageDoneForType(DamageType.Necrotic)):DealDamage(2d4,Necrotic,Magical);IF(HasDamageDoneForType(DamageType.Fire)):RemoveStatus(SELF,PP_SURGE_BRIMSTONE);IF(HasDamageDoneForType(DamageType.Necrotic)):RemoveStatus(SELF,PP_SURGE_BRIMSTONE)"
+data "StatsFunctors" "IF(HasDamageDoneForType(DamageType.Fire)):DealDamage(2d4,Fire,Magical,,0,,true,true);IF(HasDamageDoneForType(DamageType.Necrotic)):DealDamage(2d4,Necrotic,Magical,,0,,true,true);IF(HasDamageDoneForType(DamageType.Fire)):RemoveStatus(SELF,PP_SURGE_BRIMSTONE);IF(HasDamageDoneForType(DamageType.Necrotic)):RemoveStatus(SELF,PP_SURGE_BRIMSTONE)"
+
+new entry "PP_FeastOnTheWounded_Passive"
+type "PassiveData"
+using "PP_FeastOnTheWounded_Passive"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "IsAttack() and HasHPPercentageWithoutTemporaryHPEqualOrLessThan(99, context.Target)"
+// data "StatsFunctors" "DealDamage(1d8,Necrotic)"
+data "StatsFunctors" "DealDamage(1d8,Necrotic,Magical,,0,,true,false)"
 
 // ==================================== Rage and Resilience - Barbarian Equipment ====================================
 
@@ -745,6 +882,31 @@ data "Conditions" ""
 // data "Boosts" ""
 data "Boosts" "IF(IsWeaponAttack()):DamageBonus(StrengthModifier/2)"
 
+// ==================== Preventing damage rider sources ====================
+new entry "RR_PrimalFury_Fire_Passive"
+type "PassiveData"
+using "RR_PrimalFury_Fire_Passive"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "AttackedWithPassiveSourceWeapon() and HasHPPercentageWithoutTemporaryHPEqualOrLessThan(50, context.Target)"
+// data "StatsFunctors" "DealDamage(1d6,Fire,Magical)"
+data "StatsFunctors" "DealDamage(1d6,Fire,Magical,,0,,true,false)"
+
+new entry "RR_MountainKing_Strength_Passive"
+type "PassiveData"
+using "RR_MountainKing_Strength_Passive"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "not Dead()"
+// data "StatsFunctors" "IF(IsMeleeWeaponAttack()):DealDamage(StrengthModifier/2,MainWeaponDamageType)"
+data "StatsFunctors" "IF(IsMeleeWeaponAttack()):DealDamage(StrengthModifier/2,MainWeaponDamageType,Magical,,0,,true,true)"
+
+new entry "RR_MountainKing_Attk_Passive"
+type "PassiveData"
+using "RR_MountainKing_Attk_Passive"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "not Dead() and SizeEqualOrGreater(Size.Large)"
+// data "StatsFunctors" "IF(IsWeaponAttack()):DealDamage(1d6,MainWeaponDamageType)"
+data "StatsFunctors" "IF(IsWeaponAttack()):DealDamage(1d6,MainWeaponDamageType,Magical,,0,,true,true)"
+
 // ==================================== Song and Steel - Bard Equipment ====================================
 
 // Visage of Vanishing Laughter: 
@@ -844,6 +1006,55 @@ data "DescriptionParams" "1d8"
 // data "Boosts" "EntityThrowDamage(2d4)"
 data "Boosts" "EntityThrowDamage(1d8)"
 
+// ==================== Preventing damage rider sources ====================
+new entry "VV_WhisperWind_Passive"
+type "PassiveData"
+using "VV_WhisperWind_Passive"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "AttackedWithPassiveSourceWeapon()"
+// data "StatsFunctors" "IF(RollDieAgainstDC(DiceType.d100,85)):DealDamage(1d6,Psychic,Magical)"
+data "StatsFunctors" "IF(RollDieAgainstDC(DiceType.d100,85)):DealDamage(1d6,Psychic,Magical,,0,,true,false)"
+
+new entry "VV_NineLives_Passive"
+type "PassiveData"
+using "VV_NineLives_Passive"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "AttackedWithPassiveSourceWeapon() and IsCritical()"
+// data "StatsFunctors" "IF(not SavingThrow(Ability.Constitution,17)):DealDamage(4d6,Necrotic);RegainHitPoints(SELF,(DamageDone)/2)"
+data "StatsFunctors" "IF(not SavingThrow(Ability.Constitution,17)):DealDamage(4d6,Necrotic,Magical,,0,,true,false);RegainHitPoints(SELF,(DamageDone)/2)"
+
+new entry "VV_BackstabBlade_Assassinate_Passive"
+type "PassiveData"
+using "VV_BackstabBlade_Assassinate_Passive"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "not FacingMe() and HasDamageEffectFlag(DamageFlags.Hit) and SpellId('Target_SneakAttack')"
+// data "StatsFunctors" "DealDamage(2d6, Psychic,Magical)"
+data "StatsFunctors" "DealDamage(2d6, Psychic,Magical,,0,,true,false)"
+
+new entry "VV_AssassinsEye_Passive"
+type "PassiveData"
+using "VV_AssassinsEye_Passive"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "not FacingMe() and HasDamageEffectFlag(DamageFlags.Hit) and IsMeleeWeaponAttack()"
+// data "StatsFunctors" "DealDamage(1d6, MainMeleeWeaponDamageType)"
+data "StatsFunctors" "DealDamage(1d6, MainMeleeWeaponDamageType,Magical,,0,,true,true)"
+
+new entry "VV_LightningReflexes_Passive"
+type "PassiveData"
+using "VV_LightningReflexes_Passive"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "IsMeleeWeaponAttack() and HasDamageEffectFlag(DamageFlags.Hit)"
+// data "StatsFunctors" "DealDamage(ProficiencyBonus, Lightning)"
+data "StatsFunctors" "DealDamage(ProficiencyBonus, Lightning,Magical,,0,,true,false)"
+
+new entry "VV_Nightwhisper_Passive"
+type "PassiveData"
+using "VV_Nightwhisper_Passive"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "not FacingMe() and IsMeleeWeaponAttack()"
+// data "StatsFunctors" "IF(not SavingThrow(Ability.Wisdom, 15)):DealDamage(2d4, Psychic,Magical)"
+data "StatsFunctors" "IF(not SavingThrow(Ability.Wisdom, 15)):DealDamage(2d4, Psychic,Magical,,0,,true,false)"
+
 // ==================================== Wands and Weave - Wizard Equipment ====================================
 
 // Hood of the Archmage: change Intelligence bonus to give +2 Intelligence instead, with max of 22 (previously set Intelligence to 20)
@@ -885,3 +1096,12 @@ type "StatusData"
 data "StatusType" "BOOST"
 using "SHIELD_OF_FAITH"
 data "StackId" "CHT_WW_SHIELD_OF_FAITH"
+
+// ==================== Preventing damage rider sources ====================
+new entry "WW_ArcRepeater_Crit_Passive"
+type "PassiveData"
+using "WW_ArcRepeater_Crit_Passive"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "IsSpell() and IsCritical()"
+// data "StatsFunctors" "DealDamage(1d8, Force,Magical);ApplyStatus(SELF, WW_ARC_REPEATER_CRIT, 100, -1)"
+data "StatsFunctors" "DealDamage(1d8, Force,Magical,,0,,true,false);ApplyStatus(SELF, WW_ARC_REPEATER_CRIT, 100, -1)"
