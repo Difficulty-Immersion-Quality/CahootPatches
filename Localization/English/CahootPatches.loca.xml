@@ -294,6 +294,11 @@ You still benefit from &lt;LSTag Type="Passive" Tooltip="Siael_POTR_Righteous"&g
 	<content contentuid="h20a4a86bg182cg42ddgb2abg4254aa0762dc" version="1">Become wreathed in, or extinguish, a magical aura that shines light to a radius of [1], grants you a +[2] bonus to your &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;, and can damage creatures that make melee attacks against you.</content>
 	<content contentuid="hcd63c206gd620g4e1dga766ge9f75ff928cb" version="1">Entity emits an aura of light with a radius of [1] and has a +[2] bonus to its &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;.</content>
 	
+	<!-- The Celestial -->
+	<content contentuid="h27795dcdg5513g4de4g8400g899b06949cc5" version="1">Your link to the Celestial allows you to serve as a conduit for radiant energy. You have &lt;LSTag Tooltip="Resistant"&gt;Resistance&lt;/LSTag&gt; to Radiant damage, and once per turn, when you hit a target with a weapon attack, you can deal additional[1] equal to your Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;.</content>
+	<content contentuid="hd5708b57g98bbg463egaf2eg2a36bbcb003b" version="1">Radiant Soul</content>
+	<content contentuid="h80c7df12g1905g46efgbc84gb3408bb96229" version="1">Deal additional[1] equal to your &lt;LSTag Tooltip="Charisma"&gt;Charisma&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; to this target.</content>
+
 	<!-- SkillActions -->
 	<!-- <content contentuid="hb8b0b891gc7c1g4604g8946gf442e53d7365" version="1">Shove (Trip)</content> -->
 	<content contentuid="h6fd82a18gc4b8g4aa8g8b89g80c616ffbf41" version="1">Make an Athletics &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt; against a target's Athletics or Acrobatics. On a success, the target is knocked &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt;. Usable only if you have Athletics &lt;LSTag Tooltip="Proficiency"&gt;proficiency&lt;/LSTag&gt;.</content>
