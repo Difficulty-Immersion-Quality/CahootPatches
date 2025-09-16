@@ -1,5 +1,7 @@
 // ==================================== Colour Spray ====================================
 // Now a Constitution saving throw instead of being successful based off target hp, and range is increased to 8m. Upcasting has no effect.
+
+// Not self-inheriting to overwrite Syrchalis changes
 new entry "Zone_ColorSpray"
 type "SpellData"
 data "SpellType" "Zone"
@@ -279,6 +281,7 @@ data "PowerLevel" "9"
 // ==================================== Sleep ====================================
 // Now targets a 2m AoE with a Wisdom saving throw, instead of being based off hp. Targets who fail fall asleep for 1 turn, and at the end of their next turn, make another saving throw. If they fail the second one, they fall asleep for 9 more turns. Upcasting has no effect.
 
+// Not self-inheriting to overwrite Syrchalis changes
 new entry "Target_Sleep"
 type "SpellData"
 data "SpellType" "Target"
@@ -442,35 +445,30 @@ type "SpellData"
 data "SpellType" "Target"
 using "Target_LesserRestoration_3"
 data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:3"
-data "RitualCosts" "BonusActionPoint:1"
 
 new entry "Target_LesserRestoration_4"
 type "SpellData"
 data "SpellType" "Target"
 using "Target_LesserRestoration_4"
 data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:4"
-data "RitualCosts" "BonusActionPoint:1"
 
 new entry "Target_LesserRestoration_5"
 type "SpellData"
 data "SpellType" "Target"
 using "Target_LesserRestoration_5"
 data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:5"
-data "RitualCosts" "BonusActionPoint:1"
 
 new entry "Target_LesserRestoration_6"
 type "SpellData"
 data "SpellType" "Target"
 using "Target_LesserRestoration_6"
 data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:6"
-data "RitualCosts" "BonusActionPoint:1"
 
 new entry "Target_LesserRestoration_7"
 type "SpellData"
 data "SpellType" "Target"
 using "Target_LesserRestoration"
 data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:7"
-data "RitualCosts" "BonusActionPoint:1"
 data "RootSpellID" "Target_LesserRestoration"
 data "PowerLevel" "7"
 
@@ -479,7 +477,6 @@ type "SpellData"
 data "SpellType" "Target"
 using "Target_LesserRestoration"
 data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:8"
-data "RitualCosts" "BonusActionPoint:1"
 data "RootSpellID" "Target_LesserRestoration"
 data "PowerLevel" "8"
 
@@ -488,7 +485,6 @@ type "SpellData"
 data "SpellType" "Target"
 using "Target_LesserRestoration"
 data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:9"
-data "RitualCosts" "BonusActionPoint:1"
 data "RootSpellID" "Target_LesserRestoration"
 data "PowerLevel" "9"
 

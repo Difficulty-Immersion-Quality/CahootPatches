@@ -184,3 +184,12 @@ type "InterruptData"
 using "Interrupt_Counterspell"
 data "Roll" "TryCounterspellHigherLevel(5)"
 
+// ========================== BLINDED status ==========================
+// Force the TickType to be EndTurn
+
+new entry "BLINDED"
+type "StatusData"
+data "StatusType" "BOOST"
+using "BLINDED"
+// data "TickType" ""
+data "TickType" "EndTurn"
