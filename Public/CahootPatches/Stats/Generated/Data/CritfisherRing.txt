@@ -8,11 +8,15 @@ using "MAG_Critfisherring"
 // data "Rarity" "Legendary"
 data "Rarity" "VeryRare"
 
-// Decrease crit threshold reduction to 2
+// Decrease crit threshold reduction to 2, and make unique (directly removed Tutorial Chest treasure table entry in original mod)
 new entry "MAG_ImprovedGoonerCritical"
 type "PassiveData"
 using "MAG_ImprovedGoonerCritical"
-// data "DescriptionParams" "3"
+// The number you need to &lt;LSTag Tooltip="AttackRoll"&gt;roll&lt;/LSTag&gt; a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; while attacking is reduced by [1]. This effect can stack.
+data "Description" "hb4e340afgd8a7g4a70g9cb4g1a122d1d128f;1"
+// data "DescriptionParams" ""
 data "DescriptionParams" "2"
 // data "Boosts" "ReduceCriticalAttackThreshold(3)"
 data "Boosts" "ReduceCriticalAttackThreshold(2)"
+// data "Unique" ""
+data "Unique" "1"

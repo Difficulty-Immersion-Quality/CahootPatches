@@ -285,10 +285,13 @@ You still benefit from &lt;LSTag Type="Passive" Tooltip="Siael_POTR_Righteous"&g
 data "Description" "h23e8164fg653fg4f8bg892cgfcf764d6d9fd;1"</content>
 	<content contentuid="h4695d505g041dg4999ga53bg64d3d0aa1885" version="1">Entity takes an additional [1] whenever it takes[2].</content>
 
+	<!-- CritfisherRing -->
+	<content contentuid="hb4e340afgd8a7g4a70g9cb4g1a122d1d128f" version="1">The number you need to &lt;LSTag Tooltip="AttackRoll"&gt;roll&lt;/LSTag&gt; a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; while attacking is reduced by [1]. This effect can stack.</content>
+
 	<!-- Cloaks of Faerun -->
-	<content contentuid="he1f00503g0dccg4a2eg9e31ga572de2a975a" version="1">Whenever the wearer succeeds on a &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; against a spell, they regain [1]. This effect can only occur once per turn.</content>
+	<!-- <content contentuid="he1f00503g0dccg4a2eg9e31ga572de2a975a" version="1">Whenever the wearer succeeds on a &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; against a spell, they regain [1]. This effect can only occur once per turn.</content>
 	<content contentuid="hc2a1827agb2ecg4892g9b89g3ccffe8dc776" version="1">Whenever you deal Fire damage to an enemy, you gain [1] turns of &lt;LSTag Type="Status" Tooltip="MAG_FIRE_HEAT"&gt;Heat&lt;/LSTag&gt;.</content>
-	<content contentuid="h03436fd0gc4a9g4122g8b67g7546fcd668fe" version="1">When you heal a creature, it gains the effect of &lt;LSTag Type="Status" Tooltip="SANCTUARY"&gt;Sanctuary&lt;/LSTag&gt; for 1 turn.</content>
+	<content contentuid="h03436fd0gc4a9g4122g8b67g7546fcd668fe" version="1">When you heal a creature, it gains the effect of &lt;LSTag Type="Status" Tooltip="SANCTUARY"&gt;Sanctuary&lt;/LSTag&gt; for 1 turn.</content> -->
 	
 	<!-- 5e Monk Subclasses Combined -->
 	<content contentuid="h5b953896gee9cg4bb8gb06cg72ebc7adb6ab" version="1">Hurl a searing bolt of magical radiance. After making this attack, your next attack will also deal an additional [1].</content>
