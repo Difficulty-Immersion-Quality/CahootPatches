@@ -8,7 +8,7 @@ using "MAG_Critfisherring"
 // data "Rarity" "Legendary"
 data "Rarity" "VeryRare"
 
-// Decrease crit threshold reduction to 2, and make unique (directly removed Tutorial Chest treasure table entry in original mod)
+// Decrease crit threshold reduction to 2
 new entry "MAG_ImprovedGoonerCritical"
 type "PassiveData"
 using "MAG_ImprovedGoonerCritical"
@@ -18,5 +18,3 @@ data "Description" "hb4e340afgd8a7g4a70g9cb4g1a122d1d128f;1"
 data "DescriptionParams" "2"
 // data "Boosts" "ReduceCriticalAttackThreshold(3)"
 data "Boosts" "ReduceCriticalAttackThreshold(2)"
-// data "Unique" ""
-data "Unique" "1"
