@@ -129,7 +129,7 @@ data "StatusType" "BOOST"
 using "COLOR_SPRAY"
 data "TickType" "StartTurn"
 
-// ==================================== Create Water ====================================
+// ==================================== Create or Destroy Water ====================================
 // Costs bonus action instead of action due to Wet nerfs
 
 new entry "Target_CreateWater"
@@ -186,6 +186,66 @@ data "SpellType" "Target"
 using "Target_CreateWater_9"
 data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:9"
 
+new entry "Target_DestroyWater"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_DestroyWater"
+data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:1"
+
+new entry "Target_DestroyWater_2"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_DestroyWater_2"
+data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:2"
+
+new entry "Target_DestroyWater_2"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_DestroyWater_2"
+data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:2"
+
+new entry "Target_DestroyWater_3"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_DestroyWater_3"
+data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:3"
+
+new entry "Target_DestroyWater_4"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_DestroyWater_4"
+data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:4"
+
+new entry "Target_DestroyWater_5"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_DestroyWater_5"
+data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:5"
+
+new entry "Target_DestroyWater_6"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_DestroyWater_6"
+data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:6"
+
+new entry "Target_DestroyWater_7"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_DestroyWater_7"
+data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:7"
+
+new entry "Target_DestroyWater_8"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_DestroyWater_8"
+data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:8"
+
+new entry "Target_DestroyWater_9"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_DestroyWater_9"
+data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:9"
+
 // Item spells
 new entry "Target_CreateWater_StaffOfRain"
 type "SpellData"
@@ -198,6 +258,28 @@ new entry "Target_MAG_Umberlee_CreateDestroyWater"
 type "SpellData"
 data "SpellType" "Target"
 using "Target_MAG_Umberlee_CreateDestroyWater"
+// data "UseCosts" "ActionPoint:1"
+data "UseCosts" "BonusActionPoint:1"
+
+new entry "Target_MAG_Umberlee_CreateWater"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_MAG_Umberlee_CreateWater"
+// data "UseCosts" "ActionPoint:1"
+data "UseCosts" "BonusActionPoint:1"
+
+new entry "Target_MAG_Umberlee_DestroyWater"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_MAG_Umberlee_DestroyWater"
+// data "UseCosts" "ActionPoint:1"
+data "UseCosts" "BonusActionPoint:1"
+
+// Conjuration Wizard: level 2 subclass feature
+new entry "Target_CreateWater_MinorConjuration"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_CreateWater_MinorConjuration"
 // data "UseCosts" "ActionPoint:1"
 data "UseCosts" "BonusActionPoint:1"
 
