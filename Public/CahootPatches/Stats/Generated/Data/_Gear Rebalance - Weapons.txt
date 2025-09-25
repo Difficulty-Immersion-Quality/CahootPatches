@@ -374,6 +374,43 @@ using "Zone_Mag_WeaponAction_RazorGale"
 // data "Cooldown" "OncePerShortRest"
 data "Cooldown" "OncePerCombat"
 
+// ========================== Blackguard's Sword ==========================
+// Rarity increased to Very Rare
+new entry "MAG_OB_Paladin_DeathKnight_Longsword"
+type "Weapon"
+using "MAG_OB_Paladin_DeathKnight_Longsword"
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+data "ValueUUID" "81764c3c-c7a9-49a7-b145-d31ffd5aebe1"
+// data "Rarity" "Rare"
+data "Rarity" "VeryRare"
+// data "PassivesOnEquip" "MAG_DazingSmite_Passive"
+data "PassivesOnEquip" "MAG_DazingSmite_Passive;CHT_BlackguardSword_Kill_Passive"
+
+// Dazing Smite: increased save DC from flat 13 to weapon manoeuvre, and fix it requiring to deal damage instead of just on a hit like description says
+new entry "MAG_DazingSmite_Passive"
+type "PassiveData"
+using "MAG_DazingSmite_Passive"
+// data "TooltipSave" ""
+data "TooltipSave" "Constitution"
+// data "StatsFunctorContext" "OnDamage;OnStatusApply"
+data "StatsFunctorContext" "OnAttack"
+// data "Conditions" ""
+data "Conditions" "IsSmiteSpells() and not IsMiss();"
+// data "StatsFunctors" "IF(context.HasContextFlag(StatsFunctorContext.OnDamage) and IsSmiteSpells()):ApplyStatus(DAZED, 100, 2,,,,not SavingThrow(Ability.Constitution,13));IF(context.HasContextFlag(StatsFunctorContext.OnStatusApply) and StatusId('INTERRUPT_SMITE_DIVINE_VFX')):ApplyStatus(DAZED, 100, 2,,,,not SavingThrow(Ability.Constitution,13))"
+data "StatsFunctors" "IF(not SavingThrow(Ability.Constitution, ManeuverSaveDC())):ApplyStatus(DAZED, 100, 2)"
+
+// New passive: regain 2d4 hit points when dealing a critical hit or killing blow with Necrotic damage
+new entry "CHT_BlackguardSword_Kill_Passive"
+type "PassiveData"
+// Unholy Exchange
+data "DisplayName" "he2d43d3fgad58g494aga871g19b279fa1556;1"
+// When you deal a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; or killing blow with[1], you regain [2].
+data "Description" "h5c3a0a65g4cd2g420fga96ag5a5a6e65701e;1"
+data "DescriptionParams" "DealDamage(,Necrotic);RegainHitPoints(2d4)"
+data "StatsFunctorContext" "OnDamage"
+data "Conditions" "Character() and HasDamageDoneForType(DamageType.Necrotic) and (IsKillingBlow() or IsCritical())"
+data "StatsFunctors" "RegainHitPoints(SELF, 2d4)"
+
 // ===============================================================================
 //                                       Maces  
 // ===============================================================================
@@ -444,6 +481,32 @@ data "HitCosts" ""
 data "SpellFlags" "IsHarmful;HasVerbalComponent;IsSpell"
 // data "Cooldown" ""
 data "Cooldown" "OncePerShortRestPerItem"
+
+// ========================== Harper Sacredstriker ==========================
+// Gives +1 to spell attack rolls
+new entry "MAG_Harpers_OfWeapons_Quarterstaff"
+type "Weapon"
+using "MAG_Harpers_OfWeapons_Quarterstaff"
+// data "PassivesOnEquip" ""
+data "PassivesOnEquip" "CHT_SpellAttackRoll_1_Passive"
+
+// Custom passive because the only passive in vanilla with +1 to spell attack rolls doesn't have a fitting name
+new entry "CHT_SpellAttackRoll_1_Passive"
+type "PassiveData"
+// Arcane Accuracy
+data "DisplayName" "h1eaa6c44gd9c5g4a00g9d81g5c5710f2f995;6"
+// You gain a +[1] bonus to Spell &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;.
+data "Description" "h280ef7c0g07a5g49a3g8dffg3a0177848e21;1"
+data "DescriptionParams" "1"
+data "Boosts" "RollBonus(MeleeSpellAttack, 1);RollBonus(RangedSpellAttack, 1)"
+
+// ========================== Staff of Interruption ==========================
+// Gives +1 to spell save DC
+new entry "MAG_LC_Counterspell_Quarterstaff"
+type "Weapon"
+using "MAG_LC_Counterspell_Quarterstaff"
+// data "PassivesOnEquip" "MAG_LC_Counterspell_Quarterstaff_Resource_Passive"
+data "PassivesOnEquip" "MAG_LC_Counterspell_Quarterstaff_Resource_Passive;MAG_SpellSaveDC_Enchantment_Lesser_Passive"
 
 // ========================== Despair of Athkatla ==========================
 // Increase rarity to Very Rare
@@ -545,3 +608,20 @@ data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);WeaponDamage(
 // ===============================================================================
 //                                       Heavy Crossbows  
 // ===============================================================================
+
+// ========================== The Long Arm of the Gur ==========================
+// Revenant Scourge: fix passive not working and now applicable against Aberrations and Monstrosities as well
+new entry "MAG_UNDEAD_SLAYER_BLESS"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MAG_UNDEAD_SLAYER_BLESS"
+// data "Boosts" "IF(Tagged('UNDEAD', context.Target)):WeaponAttackRollBonus(1d4);IF(Tagged('UNDEAD', context.Target)):WeaponDamage(1d4, Piercing)"
+data "Boosts" ""
+
+new entry "MAG_UndeadSlayer_Passive"
+type "PassiveData"
+using "MAG_UndeadSlayer_Passive"
+// >Attacks with this weapon against Aberrations, Monstrosities, and Undead gain a +[1] to &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt; and Damage rolls.
+data "Description" "h0b4b9f6cg32b7g49d5ga2c0gf4ba55b65778;1"
+// data "Boosts" ""
+data "Boosts" "IF((Tagged('UNDEAD') or Tagged('ABERRATION') or Tagged('MONSTROSITY')) and IsRangedWeaponAttack()):CharacterWeaponDamage(1d4);IF(Tagged('UNDEAD') or Tagged('ABERRATION') or Tagged('MONSTROSITY')):RollBonus(RangedWeaponAttack, 1d4);"

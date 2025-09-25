@@ -62,8 +62,9 @@ data "DescriptionParams" "2"
 data "Conditions" "IsMeleeAttack() and Enemy()"
 
 // ========================== Veil of the Morning ==========================
-// By the point you get this item, there aren't many Undead left in the game (especially if you obtained it by killing Mystic Carrion rather than buying from him), so giving item a more generally useful passive than specifically for fighting Undead while still keeping the theme (Holy Fire does more damage vs. Undead)
 // New passive: inflict Holy Fire for 2 turns when dealing Radiant damage 
+// See TreasureTables.txt: moved drop location to reward for completing Rescue the Tieflings, so you can still get use out of the armour while you're actually fighting Undead
+
 new entry "MAG_WYRM_UndeadProtector_Robe"
 type "Armor"
 using "MAG_WYRM_UndeadProtector_Robe"
@@ -98,6 +99,14 @@ using "MAG_Radiant_RadiatingOrb_Armor"
 data "Rarity" "Rare"
 // data "ValueUUID" "be545ee9-311c-4ab8-ab14-fefcc552cace"
 data "ValueUUID" "240eb257-ef20-4877-89bd-6956b4b7c41a"
+
+// ========================== Blackguard's Plate ==========================
+// Increase damage reduction to 2
+new entry "MAG_OB_Paladin_DeathKnight_Armor"
+type "Armor"
+using "MAG_OB_Paladin_DeathKnight_Armor"
+// data "PassivesOnEquip" "ARM_MagicalPlate_1_Passive"
+data "PassivesOnEquip" "ARM_MagicalPlate_2_Passive"
 
 // ===============================================================================
 //                                       Handwear  
@@ -217,6 +226,27 @@ data "SpellProperties" "IF(HasAnyExtraAttack(context.Source)):ApplyStatus(MAG_MA
 // data "DescriptionParams" "DealDamage(6d6, Piercing)"
 data "DescriptionParams" "DealDamage(3d6, Piercing)"
 
+// ========================== Blackguard's Gauntlets ==========================
+// Rarity increased to Very Rare
+new entry "MAG_OB_Paladin_DeathKnight_Gloves"
+type "Armor"
+using "MAG_OB_Paladin_DeathKnight_Gloves"
+// data "ValueUUID" "240eb257-ef20-4877-89bd-6956b4b7c41a"
+data "ValueUUID" "adfdafe5-f4da-4c64-a1e6-a33d626437d2"
+// data "Rarity" "Rare"
+data "Rarity" "VeryRare"
+// data "PassivesOnEquip" ""
+data "PassivesOnEquip" "CHT_BlackguardGauntlets_SpellAdvantage_Passive"
+
+// New passive: grants advantage on melee spell attack rolls
+new entry "CHT_BlackguardGauntlets_SpellAdvantage_Passive"
+type "PassiveData"
+// Touch of Death
+data "DisplayName" "h4cd883a0ge3ddg495agafb9g999236995f9c;1"
+// You gain &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on all &lt;LSTag Tooltip="MeleeSpellAttack"&gt;Melee Spell Attacks&lt;/LSTag&gt;.
+data "Description" "h5669904cg31d2g4013g8ee2g358bed898c58;1"
+data "Boosts" "IF(IsMeleeSpellAttack()):Advantage(AttackRoll)"
+
 // ===============================================================================
 //                                       Footwear  
 // ===============================================================================
@@ -284,6 +314,47 @@ data "SpellType" "Shout"
 using "Teleportation_MAG_Dolor_DimensionDoor"
 // data "UseCosts" "ActionPoint:1"
 data "UseCosts" "BonusActionPoint:1"
+
+// ========================== Blackguard's Greaves ==========================
+// Rarity increased to Very Rare and replaced Longstrider with new separate passive
+new entry "MAG_OB_Paladin_DeathKnight_Boots"
+type "Armor"
+using "MAG_OB_Paladin_DeathKnight_Boots"
+// data "ValueUUID" "240eb257-ef20-4877-89bd-6956b4b7c41a"
+data "ValueUUID" "adfdafe5-f4da-4c64-a1e6-a33d626437d2"
+// data "Rarity" "Rare"
+data "Rarity" "VeryRare"
+// data "PassivesOnEquip" "MAG_Longstrider_Passive"
+data "PassivesOnEquip" "CHT_BlackguardGreaves_Movement_Passive"
+// data "StatusOnEquip" "MAG_END_GAME_LONGSTRIDER"
+data "StatusOnEquip" ""
+
+// New passive: gives 3m movement speed (so stacks with Longstrider). When jumping, can possibly fear enemies in a 3m radius upon landing if they fail a DC 17 WIS saving throw
+new entry "CHT_BlackguardGreaves_Movement_Passive"
+type "PassiveData"
+// Dreaded Entrance
+data "DisplayName" "h569a8dc5g8cebg4a4eg9d75gb54d9e1f48df;1"
+// Your &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; increases by [1].&lt;br&gt;&lt;br&gt;When you &lt;LSTag Type="Spell" Tooltip="Projectile_Jump"&gt;Jump&lt;/LSTag&gt;, enemies in a [2] radius where you land must succeed a DC [3] Wisdom &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or be &lt;LSTag Type="Status" Tooltip="FEARED"&gt;Feared&lt;/LSTag&gt; for [4] turns. You can toggle this effect off.
+data "Description" "hb4eb78fdg5538g495cg9357gccca6477bc3e;1"
+data "DescriptionParams" "Distance(3);Distance(3);17;2"
+data "Properties" "IsToggled;Temporary;ToggledDefaultOn"
+data "StatsFunctorContext" "OnProjectileExploded"
+data "Conditions" "SpellCategoryIs(SpellCategory.Jump)"
+data "StatsFunctors" "PROJECTILE:CreateExplosion(CHT_BlackguardGreaves_Jump_Explosion);RemoveStatus(SG_Invisible)"
+
+new entry "CHT_BlackguardGreaves_Jump_Explosion"
+type "SpellData"
+data "SpellType" "Projectile"
+data "AreaRadius" "3"
+data "ExplodeRadius" "3"
+data "SpellRoll" "not SavingThrow(Ability.Wisdom, 17, AdvantageOnFrightened(), DisadvantageOnFrightened())"
+data "SpellSuccess" "ApplyStatus(FEARED,100,2);IF(HasWeaponInMainHand()):ApplyStatus(DISARM,100,1)"
+data "SpellFail" "ApplyStatus(SAVED_AGAINST_HOSTILE_SPELL, 100, 0)"
+data "TargetConditions" "Character() and not Self() and not Ally() and not Dead() and not IsImmuneToStatus('FEARED')"
+data "Trajectories" "0be6e4d7-55fe-4ee0-8acc-94fc3b474817,78f998fb-2bb4-c8bd-c170-fcd899abc905,a62c27e3-86c0-db69-8f04-0ea3074cae7a"
+data "Icon" "PassiveFeature_Generic_Explosion"
+data "SpellFlags" "IsTrap;IsHarmful"
+data "TargetEffect" "b460b24b-23e4-4f8f-a533-4d82512bedeb"
 
 // ===============================================================================
 //                                       Cloaks  
