@@ -191,6 +191,14 @@ new entry "Target_CreateWater_StaffOfRain"
 type "SpellData"
 data "SpellType" "Target"
 using "Target_CreateWater_StaffOfRain"
+// data "UseCosts" "ActionPoint:1"
+data "UseCosts" "BonusActionPoint:1"
+
+new entry "Target_MAG_Umberlee_CreateDestroyWater"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_MAG_Umberlee_CreateDestroyWater"
+// data "UseCosts" "ActionPoint:1"
 data "UseCosts" "BonusActionPoint:1"
 
 // ==================================== Guiding Bolt ====================================
