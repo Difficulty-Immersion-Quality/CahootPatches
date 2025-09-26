@@ -564,16 +564,46 @@ data "Description" "h4f9480b1gfa10g405dgad9eg611bd8bafda8;1"
 // ===============================================================================
 
 // ===============================================================================
+//                                       Sickles  
+// ===============================================================================
+
+// ===============================================================================
 //                                       Tridents  
 // ===============================================================================
 
 // ========================== Trident of the Waves ==========================
-// Increase enchantment to +2; add 1d4 Cold damage
+// Increase enchantment to +2
 new entry "MAG_LC_Wave_Trident"
 type "Weapon"
 using "MAG_LC_Wave_Trident"
 // data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical)"
-data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);WeaponDamage(1d4,Cold)"
+data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical)"
+// data "Boosts" ""
+data "Boosts" "UnlockSpell(CHT_HiemalStrike_Upgraded)"
+
+// Add upgraded version of Hiemal Strike from Water Myrmidons that uses weapon save DC + 1 instead of flat 13 and deals 2d6 instead of 1d10 Cold damage
+new entry "CHT_HiemalStrike_Upgraded"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_FreezingStrike_Myrmidon_Water"
+// data "SpellSuccess" "IF(not SavingThrow(Ability.Constitution,13)):ApplyStatus(CHILLED,100,2);DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType);DealDamage(1d10, Cold,Magical)"
+data "SpellSuccess" "IF(not SavingThrow(Ability.Constitution,ManeuverSaveDC+1)):ApplyStatus(CHILLED,100,2);DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType);DealDamage(2d6, Cold,Magical)"
+// Chill of the Waves
+data "DisplayName" "h45deef2cg817cg44d0gbcb3gace58ab899e9;1"
+// Pierce a creature with your trident, dealing additional[1] and possibly &lt;LSTag Type="Status" Tooltip="CHILLED"&gt;Chilling&lt;/LSTag&gt; it.
+data "Description" "h2fd69e81ge0dfg4188g9501g9ae4c8ee3d16;1"
+// data "DescriptionParams" "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType);DealDamage(1d10,Cold)"
+data "DescriptionParams" "DealDamage(,Cold)"
+// data "TooltipDamageList" "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType);DealDamage(1d10,Cold)"
+data "TooltipDamageList" "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType);DealDamage(2d6,Cold)"
+// data "Cooldown" ""
+data "Cooldown" "OncePerShortRestPerItem"
+// data "SpellAnimation" "2e641496-73b7-4b6b-8e64-fab0a96530a7,2e641496-73b7-4b6b-8e64-fab0a96530a7,2e641496-73b7-4b6b-8e64-fab0a96530a7;2485a7ef-b922-4ca5-997a-32d91e3e940e,d75a50e7-0c75-4617-b445-9e19492e14b5,7fc1c2ad-1c2e-48bc-8fc3-618813025648;626a5d86-8cf8-4504-9b68-d07caab210a5,ed4e16cc-922f-45db-ac6b-69c4043e515d,4e538f81-b438-4354-8751-1d5a5403569b;c141f461-68c2-4282-9a39-be9a3886c17d,af2d16d7-91b5-4eb8-86f9-bba2004f5d0e,12b51e37-3bac-4b4d-9fbe-28039dfce32a;1e771026-9de7-4a9c-8d6e-fda61ed1ca96,1e771026-9de7-4a9c-8d6e-fda61ed1ca96,1e771026-9de7-4a9c-8d6e-fda61ed1ca96;85441f85-ec22-4e64-af54-4f2999b967b5,85441f85-ec22-4e64-af54-4f2999b967b5,85441f85-ec22-4e64-af54-4f2999b967b5;,,;,,;,,"
+data "SpellAnimation" "2ba949b7-0329-4190-992c-11b0d29183c5,,;9583ecee-cf6c-4735-86db-7ebf1df15eae,,;de006e3f-70fb-4eb7-a98d-d845d15b20e8,,;50696db7-d931-4734-915d-32d038ba99a5,,;a0503ad0-c1b1-449c-b431-4ac6c39c58d7,,;c36ed247-2272-492b-99c2-2ca10b014670,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+// data "DualWieldingSpellAnimation" ""
+data "DualWieldingSpellAnimation" "c25d80c5-aaf3-4aba-bc1f-bb1c8534725e,,;45bcbbd4-f9ca-4b19-88c2-822c5e2b0d8b,,;466e7470-712f-4a67-8ef1-5908a20b0449,,;c1713221-163b-4bae-95de-e6681d665c76,,;dc83b386-41f5-43df-9649-788107052830,,;b63dee1e-08e1-4f7a-88ee-1e6baa38e0dd,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+// data "SpellFlags" "Wildshape;IsHarmful"
+data "SpellFlags" "IsHarmful"
 
 // ===============================================================================
 //                                       Warhammers  

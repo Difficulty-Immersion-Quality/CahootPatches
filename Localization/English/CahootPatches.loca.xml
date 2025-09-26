@@ -54,15 +54,15 @@
 	<content contentuid="h36c3f1f2g9eb3g47b6g8e69g90ffa2dec42e" version="1">Target is inflicted with &lt;LSTag Type="Status" Tooltip="BURNING"&gt;Burning&lt;/LSTag&gt; for [1] turns unless they succeed a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.</content>
 	<content contentuid="h4b9334bcgce21g4d6ag88begc855d25f38a3" version="1">Target is &lt;LSTag Type="Status" Tooltip="SHOCKED"&gt;Shocked&lt;/LSTag&gt; for [1] turns unless they succeed a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.</content>
 	<content contentuid="h92dbf803g575cg4de9gb029ga3f92f3e3fb5" version="1">Target is inflicted with &lt;LSTag Type="Status" Tooltip="MAG_THUNDER_REVERBERATION"&gt;Reverberation&lt;/LSTag&gt; for [1] turns unless they succeed a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.</content>
-	
 	<content contentuid="he2d43d3fgad58g494aga871g19b279fa1556" version="1">Unholy Exchange</content>
 	<content contentuid="h5c3a0a65g4cd2g420fga96ag5a5a6e65701e" version="1">When you deal a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; or killing blow with[1], you regain [2].</content>
-
 	<content contentuid="h4f9480b1gfa10g405dgad9eg611bd8bafda8" version="1">Instead of its Strength or Dexterity &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;, the wielder adds their &lt;LSTag Tooltip="SpellcastingAbilityModifier"&gt;Spellcasting Ability Modifier&lt;/LSTag&gt; to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; with this weapon.</content>
 	<content contentuid="h1eaa6c44gd9c5g4a00g9d81g5c5710f2f995" version="1">Arcane Accuracy</content>
 	<content contentuid="h280ef7c0g07a5g49a3g8dffg3a0177848e21" version="1">You gain a +[1] bonus to Spell &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;.</content>
 	<content contentuid="hd29c21bag2717g4989gae2cg661187f6fb36" version="1">Raging Storm</content>
 	<content contentuid="h2ec6e766g1a1fg4322gb759ge3bdf534501d" version="1">When you inflict a condition upon a hostile target, they suffer [1] turns of &lt;LSTag Type="Status" Tooltip="MAG_THUNDER_REVERBERATION"&gt;Reverberation&lt;/LSTag&gt;. When you deal spell damage to a target with &lt;LSTag Type="Status" Tooltip="MAG_THUNDER_REVERBERATION"&gt;Reverberation&lt;/LSTag&gt;, it must make a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; against your &lt;LSTag Tooltip="SpellDifficultyClass"&gt;Spell Save DC&lt;/LSTag&gt; or become &lt;LSTag Type="Status" Tooltip="DAZED"&gt;Dazed&lt;/LSTag&gt; for [2] turns.</content>
+	<content contentuid="h45deef2cg817cg44d0gbcb3gace58ab899e9" version="1">Chill of the Waves</content>
+	<content contentuid="h2fd69e81ge0dfg4188g9501g9ae4c8ee3d16" version="1">Pierce a creature with your trident, dealing additional[1] and possibly &lt;LSTag Type="Status" Tooltip="CHILLED"&gt;Chilling&lt;/LSTag&gt; it.</content>
 	<content contentuid="h0b4b9f6cg32b7g49d5ga2c0gf4ba55b65778" version="1">Attacks with this weapon against Aberrations, Monstrosities, and Undead gain a +[1] to &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt; and Damage rolls.</content>
 
 	<!-- Gear rebalances - Armour -->
@@ -73,6 +73,9 @@
 	<content contentuid="h73e64822g8cb5g4432g90a2gc810f4a7bf33" version="1">On a hit with a spell or cantrip that deals[1], afflict targets with &lt;LSTag Type="Status" Tooltip="BURNING"&gt;Burning&lt;/LSTag&gt; for [2] turns.</content>
 	<content contentuid="h47f090edgc99bg4ea4gab93gfe42b6d914c8" version="1">Dawn's Wrath</content>
 	<content contentuid="h5741f8e8gcdbbg415eg9ecdg3d83f1e4a302" version="1">When you deal[1], you also also cause foes to burn with &lt;LSTag Type="Status" Tooltip="BURNING_HOLY"&gt;Holy Fire&lt;/LSTag&gt; for [2] turns.</content>
+	<content contentuid="h7ce9e17fgccf2g4f2fga01ega0d4eaababe0" version="1">Chilly Depths</content>
+	<content contentuid="h169ee614g2ffcg465bg889agab70115acfd2" version="1">When you deal[1] to a &lt;LSTag Type="Status" Tooltip="WET"&gt;Wet&lt;/LSTag&gt; target, you inflict &lt;LSTag Type="Status" Tooltip="MAG_FROST"&gt;Encrusted with Frost&lt;/LSTag&gt; to it for [2] turns.</content>
+
 	<content contentuid="ha62d55d8g0fb8g468ag8cfcg18b68e3a9b81" version="1">You gain &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_CHARGE"&gt;Arcane Charge&lt;/LSTag&gt; for [1] turns when a foe makes a melee attack against you.</content>
 	<content contentuid="h4cd883a0ge3ddg495agafb9g999236995f9c" version="1">Touch of Death</content>
 	<content contentuid="h5669904cg31d2g4013g8ee2g358bed898c58" version="1">You gain &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on all &lt;LSTag Tooltip="MeleeSpellAttack"&gt;Melee Spell Attacks&lt;/LSTag&gt;.</content>

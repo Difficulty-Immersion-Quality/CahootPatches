@@ -702,6 +702,14 @@ using "Shout_CrusadersMantle_9"
 // data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:9"
 data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:9"
 
+// Spells from items
+new entry "Shout_MAG_CrusadersMantle"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_CrusadersMantle"
+// data "UseCosts" "ActionPoint:1"
+data "UseCosts" "BonusActionPoint:1"
+
 // ==================================== Guardian of Faith ====================================
 // Health increased to 70 (from 50) and added resistance to all damage types, with immunity to Poison and Psychic damage
 

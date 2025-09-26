@@ -64,7 +64,6 @@ data "Conditions" "IsMeleeAttack() and Enemy()"
 // ========================== Veil of the Morning ==========================
 // New passive: inflict Holy Fire for 2 turns when dealing Radiant damage 
 // See TreasureTables.txt: moved drop location to reward for completing Rescue the Tieflings, so you can still get use out of the armour while you're actually fighting Undead
-
 new entry "MAG_WYRM_UndeadProtector_Robe"
 type "Armor"
 using "MAG_WYRM_UndeadProtector_Robe"
@@ -81,6 +80,25 @@ data "DescriptionParams" "DealDamage(,Radiant);2"
 data "StatsFunctorContext" "OnDamage"
 data "Conditions" "HasDamageDoneForType(DamageType.Radiant) and not Ally()"
 data "StatsFunctors" "ApplyStatus(BURNING_HOLY,100,2)"
+
+// ========================== Wavemother's Robe ==========================
+// New passive: your Cold damage spells inflict 4 turns of Encrusted with Frost to Wet targets
+new entry "MAG_LC_Umberlee_Regeneration_Robe"
+type "Armor"
+using "MAG_LC_Umberlee_Regeneration_Robe"
+// data "PassivesOnEquip" "MAG_Umberlee_FireColdResistance_Passive;MAG_LC_Umberlee_Regeneration_Boots_Passive"
+data "PassivesOnEquip" "CHT_WavemothersRobe_Cold_Passive;MAG_Umberlee_FireColdResistance_Passive;MAG_LC_Umberlee_Regeneration_Boots_Passive"
+
+new entry "CHT_WavemothersRobe_Cold_Passive"
+type "PassiveData"
+// Chilly Depths
+data "DisplayName" "h7ce9e17fgccf2g4f2fga01ega0d4eaababe0;1"
+// When you deal[1] to a &lt;LSTag Type="Status" Tooltip="WET"&gt;Wet&lt;/LSTag&gt; target, you inflict &lt;LSTag Type="Status" Tooltip="MAG_FROST"&gt;Encrusted with Frost&lt;/LSTag&gt; to it for [2] turns.
+data "Description" "h169ee614g2ffcg465bg889agab70115acfd2;1"
+data "DescriptionParams" "DealDamage(,Cold);4"
+data "StatsFunctorContext" "OnDamage"
+data "Conditions" "IsSpell() and HasDamageDoneForType(DamageType.Cold) and not Ally() and HasStatus('WET',context.Target)"
+data "StatsFunctors" "ApplyStatus(MAG_FROST,100,4)"
 
 // ========================== Elegant Studded Leather ==========================
 // Add advantage on DEX saving throws
@@ -370,14 +388,13 @@ data "Properties" "IsHidden;OncePerCombat"
 // data "StatsFunctorContext" "OnCreate;OnShortRest;OnLongRest"
 data "StatsFunctorContext" "OnCreate;OnCombatStarted;OnShortRest;OnLongRest"
 
-// ========================== Mantle of the Holy Warrior ==========================
-// Crusader's Mantle: cost changed to bonus action to be consistent with changes to the spell
-new entry "Shout_MAG_CrusadersMantle"
-type "SpellData"
-data "SpellType" "Shout"
-using "Shout_CrusadersMantle"
-// data "UseCosts" "ActionPoint:1"
-data "UseCosts" "BonusActionPoint:1"
+// ========================== Wavemother's Cloak ==========================
+// Add +1 AC
+new entry "MAG_LC_Umberlee_Protection_Cape"
+type "Armor"
+using "MAG_LC_Umberlee_Protection_Cape"
+// data "Boosts" ""
+data "Boosts" "AC(1)""
 
 // ===============================================================================
 //                                       Amulets  
