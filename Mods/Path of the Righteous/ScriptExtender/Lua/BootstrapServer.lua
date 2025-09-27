@@ -313,10 +313,10 @@ Ext.Osiris.RegisterListener("FlagSet", 3, "after", function(flag, speaker, dialo
     elseif flag == "UND_DuergarCamp_State_GnomeAtMyconids_f48d9c4e-e6eb-46dc-93a7-89326d11829b" then
         print("SIAEL - Gnomes were saved and returned to myconid circle.")
         TemplateAddTo("54f1f1bf-68c1-4244-9c09-bf65144ecc15",GetHostCharacter(),1,1)
-    --Wulbren - Gnomish Support
-    elseif flag == "HAV_WrootRequest_Event_GaveGift_7b1df8d9-36e9-2de8-3a77-1f1a8c6ff32e" then
-        print("SIAEL - Wulbren was brought back to Barcus.")
-        TemplateAddTo("35b9c251-a742-4952-b799-5bc9fd4f9cfe",GetHostCharacter(),1,1)
+    -- --Wulbren - Gnomish Support
+    -- elseif flag == "HAV_WrootRequest_Event_GaveGift_7b1df8d9-36e9-2de8-3a77-1f1a8c6ff32e" then
+    --     print("SIAEL - Wulbren was brought back to Barcus.")
+    --     TemplateAddTo("35b9c251-a742-4952-b799-5bc9fd4f9cfe",GetHostCharacter(),1,1)
     --Gondians - Ended Tyranny
     elseif flag == "LOW_SteelWatchFoundry_State_Outcome_AllGondiansSaved_422247be-9c7a-4a0b-bf9e-070e62c72d1f" and stopGondians == 0 then
         stopGondians = 1
@@ -414,7 +414,7 @@ Ext.Osiris.RegisterListener("QuestUpdateUnlocked", 3, "after", function(characte
         print("SIAEL - Adamantine Forge used.")
         TemplateAddTo("26bb3e6f-efa6-4c8b-9fc2-34d0739e6eff",GetHostCharacter(),1,1)
     --Moonrise Jailbreak - Cheerful Reunion
-    elseif topLevelQuestID == "Act2_Criminal_MoonriseJailbreak" and (stateID == "AllEscaped" or stateID == "BoatAllEscaped" or stateID == "AllEscapedHav" or stateID == "BoatAllEscapedHav") and stopMoonrise == 0 then
+    elseif topLevelQuestID == "HAV_SaveTieflingPrisoners" and stateID == "RescueSuccess" and stopMoonrise == 0 then
         stopMoonrise = 1
         print("SIAEL - All Moonrise prisonners were freed.")
         TemplateAddTo("6b91bdb7-3f58-4bb6-ab6b-a8250752c035",GetHostCharacter(),1,1)
@@ -488,11 +488,11 @@ Ext.Osiris.RegisterListener("QuestUpdateUnlocked", 3, "after", function(characte
         stopDribbles = 1
         print("SIEL - Dribbles will perform encore.")
         TemplateAddTo("6e0e6f08-781a-42e3-a7b2-357036564754",GetHostCharacter(),1,1)
-    --Iron Throne - Old Faith Memorabilia
-    elseif topLevelQuestID == "LOW_SaveGondians" and stateID == "LeftIronThrone_AllSaved" and stopIronThrone == 0 then
-        stopIronThrone = 1
-        print("SIAEL - All the prisonners from the Iron Throne were saved.")
-        TemplateAddTo("884d6e6d-3246-45cc-97b7-6ae5139d009f",GetHostCharacter(),1,1)
+    -- --Iron Throne - Old Faith Memorabilia
+    -- elseif topLevelQuestID == "LOW_SaveGondians" and stateID == "LeftIronThrone_AllSaved" and stopIronThrone == 0 then
+    --     stopIronThrone = 1
+    --     print("SIAEL - All the prisonners from the Iron Throne were saved.")
+    --     TemplateAddTo("884d6e6d-3246-45cc-97b7-6ae5139d009f",GetHostCharacter(),1,1)
     end
 end)
 
@@ -930,16 +930,16 @@ local function FilterStatuses(status)
     or status == "AURA_OF_PROTECTION_2"
     or status == "AURA_OF_WARDING_2"
     or status == "CONSECRATION_AURA_BONUSES"
-    or status == "AURA_OF_COURAGE_BUFF"
-    or status == "AURA_OF_DEVOTION_BUFF"
-    or status == "AURA_OF_HATE_BUFF"
-    or status == "AURA_OF_PROTECTION_BUFF"
-    or status == "AURA_OF_WARDING_BUFF"
+    --or status == "AURA_OF_COURAGE_BUFF"
+    --or status == "AURA_OF_DEVOTION_BUFF"
+    --or status == "AURA_OF_HATE_BUFF"
+    --or status == "AURA_OF_PROTECTION_BUFF"
+    --or status == "AURA_OF_WARDING_BUFF"
     or status == "SIAEL_POTR_ARMOR_R"
     or status == "SIAEL_POTR_ARMOR_V"
     or status == "SIAEL_POTR_ARMOR"
-    or status == "SIAEL_POTR_ARMOR_AURA"
-    or status == "SIAEL_POTR_ARMOR_AURA_EFFECT"
+    --or status == "SIAEL_POTR_ARMOR_AURA"
+    --or status == "SIAEL_POTR_ARMOR_AURA_EFFECT"
 end
 
 local function HasValidAura(object)
@@ -988,13 +988,13 @@ end
 
 --Handles the Stalwart Paragon passive, applying the effects when an ally is within the wearer's aura
 Ext.Osiris.RegisterListener("StatusApplied", 4, "after", function(object, status, causee, storyActionID)
-    if status == "SIAEL_POTR_ARMOR_AURA_EFFECT" then
+    --[[if status == "SIAEL_POTR_ARMOR_AURA_EFFECT" then
         causer = causee
     elseif status == "SIAEL_POTR_GUIDANCE" and HasPassive(causee,"Siael_POTR_Righteous_R") == 1 then
         ApplyStatus(object,"SIAEL_POTR_PFEG",-1,0,causee)
     end
     if FilterStatuses(status) then
-        if HasActiveStatus(object,"SIAEL_POTR_ARMOR_AURA_EFFECT") == 1 and HasValidAuraEffect(object,causee) then
+        if HasActiveStatus(object,"SIAEL_POTR_ARMOR_AURA_EFFECT") == 1 and HasValidAuraEffect(object,causee) and HasActiveStatus(object,"SIAEL_POTR_GUIDANCE") == 0 then
             print("Stalwart Paragon - Ally: " .. ResolveTranslatedString(GetDisplayName(object)))
             StalwartParagon(object,causee)
         elseif HasActiveStatus(object,"SIAEL_POTR_ARMOR_AURA") == 1 and HasValidAura(object) then
@@ -1010,11 +1010,22 @@ Ext.Osiris.RegisterListener("StatusApplied", 4, "after", function(object, status
             end
         end
     end
+    ]]--
+    if FilterStatuses(status) and (HasActiveStatus(object,"SIAEL_POTR_ARMOR_R") == 1 or HasActiveStatus(object,"SIAEL_POTR_ARMOR") == 1) then
+        print("Stalwart Paragon - Self: " .. ResolveTranslatedString(GetDisplayName(object)))
+        ApplyStatus(object,"SIAEL_POTR_ARMOR_AURA",-1,0,object)
+        StalwartParagon(object,object)
+    elseif status == "SIAEL_POTR_ARMOR_AURA_EFFECT" then
+        print("Stalwart Paragon - Ally: " .. ResolveTranslatedString(GetDisplayName(object)))
+        StalwartParagon(object,causee)
+    elseif status == "SIAEL_POTR_GUIDANCE" and HasPassive(causee,"Siael_POTR_Righteous_R") == 1 then
+        ApplyStatus(object,"SIAEL_POTR_PFEG",-1,0,causee)
+    end
 end)
 
 --Handles removal of above effects, on the wearer we check they don't have the aura source (or effect for Inquisitor), on others we check they don't have the aura effects
 Ext.Osiris.RegisterListener("StatusRemoved", 4, "after", function(object, status, causee, applyStoryActionID)
-    if FilterStatuses(status) then
+    --[[if FilterStatuses(status) and IsAlly(object,GetHostCharacter()) then
         causer = causee
         print(status .. " removed from " .. ResolveTranslatedString(GetDisplayName(object)))
         if (HasActiveStatus(object,"SIAEL_POTR_ARMOR_AURA") == 0 or not HasValidAura(object)) and (HasActiveStatus(object,"SIAEL_POTR_ARMOR_AURA_EFFECT") == 0 or not HasValidAuraEffect(object,causer)) then
@@ -1034,5 +1045,21 @@ Ext.Osiris.RegisterListener("StatusRemoved", 4, "after", function(object, status
                 RemoveStatus(uuid,"SIAEL_POTR_PFEG")
             end
         end
+    end
+    ]]--
+    --If we remove armor, or still have the armor but lose all valid auras...
+    if (status == "SIAEL_POTR_ARMOR_R" or status == "SIAEL_POTR_ARMOR") or (HasActiveStatus(object,"SIAEL_POTR_ARMOR_R") == 1 or HasActiveStatus(object,"SIAEL_POTR_ARMOR") == 1) and not HasValidAura(object) then
+        RemoveStatus(object,"SIAEL_POTR_ARMOR_AURA")
+        RemoveStatus(object,"SIAEL_POTR_GUIDANCE")
+        RemoveStatus(object,"SIAEL_POTR_BLESS")
+        RemoveStatus(object,"SIAEL_POTR_HEROISM")
+        RemoveStatus(object,"SIAEL_POTR_PFEG")
+        if object ~= nil then print("Stalwart Paragon - Self removal: " .. ResolveTranslatedString(GetDisplayName(object))) end
+    elseif status == "SIAEL_POTR_ARMOR_AURA_EFFECT" then
+        RemoveStatus(object,"SIAEL_POTR_GUIDANCE")
+        RemoveStatus(object,"SIAEL_POTR_BLESS")
+        RemoveStatus(object,"SIAEL_POTR_HEROISM")
+        RemoveStatus(object,"SIAEL_POTR_PFEG")
+        if object ~= nil then print("Stalwart Paragon - Ally removal: " .. ResolveTranslatedString(GetDisplayName(object))) end
     end
 end)
