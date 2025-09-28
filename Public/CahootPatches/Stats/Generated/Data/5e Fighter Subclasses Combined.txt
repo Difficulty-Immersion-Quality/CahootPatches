@@ -1,0 +1,67 @@
+// ================================== Psi Warrior ==================================
+
+// Fix some passives not being hidden
+new entry "TelekineticMovementUnlock"
+type "PassiveData"
+using "TelekineticMovementUnlock"
+// data "Properties" ""
+data "Properties" "IsHidden"
+
+new entry "PsiPoweredLeapUnlock"
+type "PassiveData"
+using "PsiPoweredLeapUnlock"
+// data "Properties" ""
+data "Properties" "IsHidden"
+
+new entry "TelekineticMasterUnlock"
+type "PassiveData"
+using "TelekineticMasterUnlock"
+// data "Properties" ""
+data "Properties" "IsHidden"
+
+
+// ================================== Rune Warrior ==================================
+
+// Fix some passives not being hidden
+new entry "UnlockGiantMight"
+type "PassiveData"
+using "UnlockGiantMight"
+// data "Properties" ""
+data "Properties" "IsHidden"
+
+new entry "StormRune_Ability_Adv"
+type "PassiveData"
+using "StormRune_Ability_Adv"
+// data "Properties" ""
+data "Properties" "IsHidden"
+
+new entry "StormRune_Ability_Dis"
+type "PassiveData"
+using "StormRune_Ability_Dis"
+// data "Properties" ""
+data "Properties" "IsHidden"
+
+new entry "UnlockRunicJuggernaut"
+type "PassiveData"
+using "UnlockRunicJuggernaut"
+// data "Properties" ""
+data "Properties" "IsHidden"
+
+// ================================== Samurai ==================================
+
+// Fix some passives not being hidden
+new entry "UnlockFightingSpirit"
+type "PassiveData"
+using "UnlockFightingSpirit"
+// data "Properties" ""
+data "Properties" "IsHidden"
+
+// ================================== Sharpshooter ==================================
+
+// Fix some passives not being hidden
+
+new entry "SearchUnlock_SS"
+type "PassiveData"
+using "SearchUnlock_SS"
+// data "Properties" ""
+data "Properties" "IsHidden"
