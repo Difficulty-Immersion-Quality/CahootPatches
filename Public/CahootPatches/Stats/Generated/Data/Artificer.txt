@@ -1,0 +1,27 @@
+// ===================================== Firearms =====================================
+// Change Proficiency Group to Slings and MartialWeapons to remove the UI error showing "Not proficient with UNKNOWN PROFICIENCYGROUP" when you didn't have both Slings and Firearms proficiency
+// Need to include MartialWeapons, as otherwise it won't show a weapon type in the weapon's tooltip. This allows classes who already have Martial Weapon proficiency to be able to use these guns, when normally they require being na Artificer or having the Gunner feat, but I don't care enough
+
+new entry "WPN_Artillerist_Pistol_Firearm"
+type "Weapon"
+using "WPN_Artillerist_Pistol_Firearm"
+// data "Proficiency Group" "Slings;Firearms"
+data "Proficiency Group" "Slings;MartialWeapons"
+
+new entry "WPN_Artificer_Rifle"
+type "Weapon"
+using "WPN_Artificer_Rifle"
+// data "Proficiency Group" "Slings;Firearms"
+data "Proficiency Group" "Slings;MartialWeapons"
+
+new entry "WPN_Artillerist_Eldritch_Cannon"
+type "Weapon"
+using "WPN_Artillerist_Eldritch_Cannon"
+// data "Proficiency Group" "Firearms"
+data "Proficiency Group" "Firearms;MartialWeapons"
+
+new entry "WPN_Artillerist_Eldritch_Cannon_2h"
+type "Weapon"
+using "WPN_Artillerist_Eldritch_Cannon_2h"
+// data "Proficiency Group" "Firearms"
+data "Proficiency Group" "Firearms;MartialWeapons"
