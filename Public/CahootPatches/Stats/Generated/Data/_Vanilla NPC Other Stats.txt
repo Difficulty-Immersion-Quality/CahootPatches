@@ -1,34 +1,34 @@
-// ==================================== Inquisitor Ch'r'ai W'wargaz ====================================
-// Nerfs to his damage and AC debuff he puts on players
+// // ==================================== Inquisitor Ch'r'ai W'wargaz ====================================
+// // Nerfs to his damage and AC debuff he puts on players
 
-// Nerfs Psychic damage per Mindsteal Link from 1d4 to 1 
-new entry "CRE_MINDSTEAL_LINK_SOURCE"
-type "StatusData"
-data "StatusType" "BOOST"
-using "CRE_MINDSTEAL_LINK_SOURCE"
-// Leeching the psychic energy of those around him.<br><br>Receives a +[1] bonus to Armour Class and deals an additional [2] per creature he's connected to.
-// data "Description" "hcdb13a9dg8210g4286g812cgb4825e8b6d47;3"
-data "DescriptionParams" "1;DealDamage(1,Psychic)"
-data "Boosts" "AC(1);CharacterWeaponDamage(1,Psychic)"
+// // Nerfs Psychic damage per Mindsteal Link from 1d4 to 1 
+// new entry "CRE_MINDSTEAL_LINK_SOURCE"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// using "CRE_MINDSTEAL_LINK_SOURCE"
+// // Leeching the psychic energy of those around him.<br><br>Receives a +[1] bonus to Armour Class and deals an additional [2] per creature he's connected to.
+// // data "Description" "hcdb13a9dg8210g4286g812cgb4825e8b6d47;3"
+// data "DescriptionParams" "1;DealDamage(1,Psychic)"
+// data "Boosts" "AC(1);CharacterWeaponDamage(1,Psychic)"
 
-// Reduces AC decrease from 2 to 1
-new entry "CRE_MINDSTEAL_LINK_TARGET"
-type "StatusData"
-data "StatusType" "BOOST"
-using "CRE_MINDSTEAL_LINK_TARGET"
-// Being drained by Ch'r'ai W'wargaz.<br><br>Received a -[1] penalty on its <LSTag Tooltip="ArmourClass">Armour Class</LSTag> and is <LSTag Tooltip="Vulnerable">Vulnerable</LSTag> to Psychic damage.<br><br>Condition ends when the affected entity damages Ch'r'ai W'wargaz.
-// data "Description" "h76121768g6750g468dgac5egba181d8d1fbc;4"
-data "DescriptionParams" "1"
-data "Boosts" "Resistance(Psychic, Vulnerable);AC(-1);"
+// // Reduces AC decrease from 2 to 1
+// new entry "CRE_MINDSTEAL_LINK_TARGET"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// using "CRE_MINDSTEAL_LINK_TARGET"
+// // Being drained by Ch'r'ai W'wargaz.<br><br>Received a -[1] penalty on its <LSTag Tooltip="ArmourClass">Armour Class</LSTag> and is <LSTag Tooltip="Vulnerable">Vulnerable</LSTag> to Psychic damage.<br><br>Condition ends when the affected entity damages Ch'r'ai W'wargaz.
+// // data "Description" "h76121768g6750g468dgac5egba181d8d1fbc;4"
+// data "DescriptionParams" "1"
+// data "Boosts" "Resistance(Psychic, Vulnerable);AC(-1);"
 
-// Description change for the spell
-new entry "Projectile_CRE_GithyankiInquisitor_Mindsteal_Link"
-type "SpellData"
-data "SpellType" "Projectile"
-using "Projectile_CRE_GithyankiInquisitor_Mindsteal_Link"
-// You gain a +[1] bonus to your <LSTag Tooltip="ArmourClass">Armour Class</LSTag> and deal an additional [2] with weapon attacks.<br><br>The target receives a -[3] penalty to its Armour Class and becomes <LSTag Tooltip="Vulnerable">Vulnerable</LSTag> to Psychic damage.
-// data "ExtraDescription" "h14557decg611eg448egae09g551d6fbe04a5;3"
-data "ExtraDescriptionParams" "1;DealDamage(1,Psychic);1"
+// // Description change for the spell
+// new entry "Projectile_CRE_GithyankiInquisitor_Mindsteal_Link"
+// type "SpellData"
+// data "SpellType" "Projectile"
+// using "Projectile_CRE_GithyankiInquisitor_Mindsteal_Link"
+// // You gain a +[1] bonus to your <LSTag Tooltip="ArmourClass">Armour Class</LSTag> and deal an additional [2] with weapon attacks.<br><br>The target receives a -[3] penalty to its Armour Class and becomes <LSTag Tooltip="Vulnerable">Vulnerable</LSTag> to Psychic damage.
+// // data "ExtraDescription" "h14557decg611eg448egae09g551d6fbe04a5;3"
+// data "ExtraDescriptionParams" "1;DealDamage(1,Psychic);1"
 
 // ========================================== Dream Guardian spells (Netherbrain fight, siding with Orpheus) ==========================================
 // Change all Command spells to use bonus action instead of action cost
@@ -96,3 +96,19 @@ data "SpellFail" "DealDamage((5d6)/2,Psychic,Magical);DealDamage((5d6)/2,Force,M
 // data "DescriptionParams" "DealDamage(10d6,Psychic)" - description doesn't actually using this parameter
 // data "TooltipDamageList" "DealDamage(10d6,Psychic)"
 data "TooltipDamageList" "DealDamage(5d6,Psychic);DealDamage(5d6,Force)"
+
+// ==================================== Large Humanoids - Giants and Ogres ====================================
+// "_Base"
+// ├─ "_Humanoid"
+// │   ├─ "_Giants"
+// │   │   ├─ "Ogre"
+// │   │   │   ├─ "CAMP_MintharaAmbush_Ogre"
+// │   │   │   ├─ "FOR_OgreCaptain"
+// │   │   │   ├─ "FOR_OgreMate"
+// │   │   │   ├─ "FOR_OgreMercenary"
+// │   │   │   ├─ "GOB_Ogre_Bodyguard"
+// │   │   │   └─ "Test_Combat"
+// │   │   │       ├─ "END_SaferoomHelper"
+// │   │   │       ├─ "Test_Throwing_Medium"
+// │   │   │       ├─ "Test_Throwing_Small"
+// │   │   │       └─ "Test_Throwing_Tiny"
