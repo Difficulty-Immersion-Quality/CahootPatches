@@ -30,43 +30,6 @@
 // // data "ExtraDescription" "h14557decg611eg448egae09g551d6fbe04a5;3"
 // data "ExtraDescriptionParams" "1;DealDamage(1,Psychic);1"
 
-// ========================================== Dream Guardian spells (Netherbrain fight, siding with Orpheus) ==========================================
-// Change all Command spells to use bonus action instead of action cost
-new entry "Target_END_Daisy_Command_Drop"
-type "SpellData"
-data "SpellType" "Target"
-using "Target_END_Daisy_Command_Drop"
-// data "UseCosts" "ActionPoint:1;"
-data "UseCosts" "BonusActionPoint:1;"
-
-new entry "Target_END_Daisy_Command_Flee"
-type "SpellData"
-data "SpellType" "Target"
-using "Target_END_Daisy_Command_Flee"
-// data "UseCosts" "ActionPoint:1;"
-data "UseCosts" "BonusActionPoint:1;"
-
-new entry "Target_END_Daisy_Command_Grovel"
-type "SpellData"
-data "SpellType" "Target"
-using "Target_END_Daisy_Command_Grovel"
-// data "UseCosts" "ActionPoint:1;"
-data "UseCosts" "BonusActionPoint:1;"
-
-new entry "Target_END_Daisy_Command_Halt"
-type "SpellData"
-data "SpellType" "Target"
-using "Target_END_Daisy_Command_Halt"
-// data "UseCosts" "ActionPoint:1;"
-data "UseCosts" "BonusActionPoint:1;"
-
-new entry "Target_END_Daisy_Command_Hush"
-type "SpellData"
-data "SpellType" "Target"
-using "Target_END_Daisy_Command_Hush"
-// data "UseCosts" "ActionPoint:1;"
-data "UseCosts" "BonusActionPoint:1;"
-
 // ========================================== Netherbrain: make Retributive Brainquake deadlier ==========================================
 // new entry "Target_PsionicRebuke_Netherbrain"
 // type "SpellData"
@@ -96,19 +59,3 @@ data "SpellFail" "DealDamage((5d6)/2,Psychic,Magical);DealDamage((5d6)/2,Force,M
 // data "DescriptionParams" "DealDamage(10d6,Psychic)" - description doesn't actually using this parameter
 // data "TooltipDamageList" "DealDamage(10d6,Psychic)"
 data "TooltipDamageList" "DealDamage(5d6,Psychic);DealDamage(5d6,Force)"
-
-// ==================================== Large Humanoids - Giants and Ogres ====================================
-// "_Base"
-// ├─ "_Humanoid"
-// │   ├─ "_Giants"
-// │   │   ├─ "Ogre"
-// │   │   │   ├─ "CAMP_MintharaAmbush_Ogre"
-// │   │   │   ├─ "FOR_OgreCaptain"
-// │   │   │   ├─ "FOR_OgreMate"
-// │   │   │   ├─ "FOR_OgreMercenary"
-// │   │   │   ├─ "GOB_Ogre_Bodyguard"
-// │   │   │   └─ "Test_Combat"
-// │   │   │       ├─ "END_SaferoomHelper"
-// │   │   │       ├─ "Test_Throwing_Medium"
-// │   │   │       ├─ "Test_Throwing_Small"
-// │   │   │       └─ "Test_Throwing_Tiny"
