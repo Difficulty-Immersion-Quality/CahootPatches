@@ -1,0 +1,125 @@
+// ================================= Mighty Deeds =================================
+// Increase duration to 3 turns
+
+new entry "Shout_MightyDeeds"
+type "SpellData"
+data "SpellType" "Target"
+using "Shout_MightyDeeds"
+// Channel your Oath to guide yourself or an ally. Enemies have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&gt; on &lt;LSTag Tooltip="OpportunityAttack"&gt;Opportunity Attacks&lt;/LSTag&gt; against your target and the number they need to roll a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; is reduced by 1.
+data "Description" "hcf98525dg3750g4337g8a17gf5705dc119ec;1"
+// data "SpellProperties" "ApplyStatus(MIGHTY_DEEDS,100,2)"
+data "SpellProperties" "ApplyStatus(MIGHTY_DEEDS,100,3)"
+// data "TooltipStatusApply" "ApplyStatus(MIGHTY_DEEDS,100,2)"
+data "TooltipStatusApply" "ApplyStatus(MIGHTY_DEEDS,100,3)"
+
+// ================================= Inspiring Smite =================================
+
+// Passive: fix distance amount in description (says 10m, supposed to be 9m)
+new entry "InspiringSmite_Passive"
+type "PassiveData"
+using "InspiringSmite_Passive"
+// As part of your Divine Smite feature, you may channel your Oath to give yourself and all allies within [1] &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt; equal to your &lt;LSTag Tooltip="Charisma"&gt;Charisma&lt;/LSTag&gt; &lt;LSTag Tooltip="Modifier"&gt;Modifier&lt;/LSTag&gt; plus Paladin Level.
+data "Description" "h81043278g8482g4408gbe0egf7a82c6374a7;1"
+// data "DescriptionParams" ""
+data "DescriptionParams" "Distance(9)"
+
+// Spell: remove bonus action cost (same change as 2024)
+new entry "Shout_InspiringSmite"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_InspiringSmite"
+data "Description" "h81043278g8482g4408gbe0egf7a82c6374a7;8"
+// data "UseCosts" "BonusActionPoint:1;ChannelOath:1"
+data "UseCosts" "ChannelOath:1"
+
+// ================================= Aura of Alacrity =================================
+// Increase aura radius to from 3m/6m/9m to 6m/9m/12m at levels 7/12/18 respectively
+
+new entry "AuraOfAlacrity"
+type "PassiveData"
+using "AuraOfAlacrity"
+// You and your allies within [1] have their &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; increased by [2]. The aura disappears if you fall Unconscious.
+data "Description" "ha31aa544g2296g45e2ga1d8g1f9aef0fdaed;1"
+// data "DescriptionParams" "Distance(3)"
+data "DescriptionParams" "Distance(6);Distance(3)"
+
+new entry "AuraOfAlacrity_6"
+type "PassiveData"
+using "AuraOfAlacrity_6"
+// You and your allies within [1] have their &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; increased by [2]. The aura disappears if you fall Unconscious.
+data "Description" "he9d4598cgde4eg4441gaa15g3a00a91e9fef;1"
+// data "DescriptionParams" "Distance(6)"
+data "DescriptionParams" "Distance(9);Distance(3)"
+
+new entry "AuraOfAlacrity_9"
+type "PassiveData"
+using "AuraOfAlacrity_9"
+// You and your allies within [1] have their &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; increased by [2]. The aura disappears if you fall Unconscious.
+data "Description" "hd39b8906g6d88g41a7ga0acg1aafa9228ad7;1"
+// data "DescriptionParams" "Distance(9)"
+data "DescriptionParams" "Distance(12);Distance(3)"
+
+// Fix statuses using wrong localization handles, and adds new _BUFF statuses for the increased radius versions of the aura (so their descriptions are updated with the increased radius)
+new entry "AURA_OF_ALACRITY"
+type "StatusData"
+data "StatusType" "BOOST"
+using "AURA_OF_ALACRITY"
+// You and your allies within [1] have their &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; increased by [2]. The aura disappears if you fall Unconscious.
+data "Description" "ha31aa544g2296g45e2ga1d8g1f9aef0fdaed;1"
+// data "DescriptionParams" "Distance(3)"
+data "DescriptionParams" "Distance(6);Distance(3)"
+// data "AuraRadius" "3"
+data "AuraRadius" "6"
+
+new entry "AURA_OF_ALACRITY_BUFF"
+type "StatusData"
+data "StatusType" "BOOST"
+using "AURA_OF_ALACRITY_BUFF"
+// &lt;LSTag Tooltip="MovementSpeed"&gt;Movement speed&lt;/LSTag&gt; increases by [1] if entity starts its turn within [2] of the spellcaster.
+data "Description" "h7c30fc40gc2d9g426agb346g120d0c37662b;1"
+// data "DescriptionParams" "Distance(3)"
+data "DescriptionParams" "Distance(3);Distance(6)"
+
+new entry "AURA_OF_ALACRITY_6"
+type "StatusData"
+data "StatusType" "BOOST"
+using "AURA_OF_ALACRITY_6"
+// You and your allies within [1] have their &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; increased by [2]. The aura disappears if you fall Unconscious.
+data "Description" "he9d4598cgde4eg4441gaa15g3a00a91e9fef;1"
+// data "DescriptionParams" "Distance(3)"
+data "DescriptionParams" "Distance(3);Distance(9)"
+// data "AuraRadius" "6"
+data "AuraRadius" "9"
+// data "AuraStatuses" "IF(Ally() and not Tagged('INANIMATE')):ApplyStatus(AURA_OF_ALACRITY_BUFF)"
+data "AuraStatuses" "IF(Ally() and not Tagged('INANIMATE')):ApplyStatus(AURA_OF_ALACRITY_6_BUFF)"
+
+new entry "AURA_OF_ALACRITY_6_BUFF"
+type "StatusData"
+data "StatusType" "BOOST"
+using "AURA_OF_ALACRITY_BUFF"
+// &lt;LSTag Tooltip="MovementSpeed"&gt;Movement speed&lt;/LSTag&gt; increases by [1] if entity starts its turn within [2] of the spellcaster.
+data "Description" "h9918abc2gd3afg42aeg95a5g58eaa6eb2f20;4"
+// data "DescriptionParams" "Distance(3)"
+data "DescriptionParams" "Distance(3);Distance(6)"
+
+new entry "AURA_OF_ALACRITY_9"
+type "StatusData"
+data "StatusType" "BOOST"
+using "AURA_OF_ALACRITY_9"
+// You and your allies within [1] have their &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; increased by [2]. The aura disappears if you fall Unconscious.
+data "Description" "he9d4598cgde4eg4441gaa15g3a00a91e9fef;1"
+// data "DescriptionParams" "Distance(3)"
+data "DescriptionParams" "Distance(3);Distance(12)"
+// data "AuraRadius" "9"
+data "AuraRadius" "12"
+// data "AuraStatuses" "IF(Ally() and not Tagged('INANIMATE')):ApplyStatus(AURA_OF_ALACRITY_BUFF)"
+data "AuraStatuses" "IF(Ally() and not Tagged('INANIMATE')):ApplyStatus(AURA_OF_ALACRITY_9_BUFF)"
+
+new entry "AURA_OF_ALACRITY_9_BUFF"
+type "StatusData"
+data "StatusType" "BOOST"
+using "AURA_OF_ALACRITY_BUFF"
+// &lt;LSTag Tooltip="MovementSpeed"&gt;Movement speed&lt;/LSTag&gt; increases by [1] if entity starts its turn within [2] of the spellcaster.
+data "Description" "hc8920e27gbe44g4a6bgb944g317fa8f7dae3;4"
+// data "DescriptionParams" "Distance(3)"
+data "DescriptionParams" "Distance(3);Distance(9)"
