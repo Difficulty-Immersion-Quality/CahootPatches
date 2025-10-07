@@ -1,0 +1,25 @@
+// =============================== Talarith gear ===============================
+// Change pricing for some gear that were using Very Rare gold values instead of Legendary gold values
+
+// Base template for all the gear (using MagicRingVeryRare)
+new entry "OBJ_Spjm_Talarith_Template"
+type "Armor"
+using "OBJ_Spjm_Talarith_Template"
+// data "ValueUUID" "3e8b9d6e-7e83-4fd7-bc99-bb4956d67a2a"
+data "ValueUUID" "4b9657a0-5a00-442a-b76e-535715cbaa86"
+
+// Amulet
+new entry "OBJ_Spjm_Talarith_Necklace_Template"
+type "Armor"
+using "OBJ_Spjm_Talarith_Necklace_Template"
+// data "ValueUUID" "ccaceafa-6dc1-41c7-bd43-db6d4da8a3d8"
+data "ValueUUID" "589981db-3c73-421f-9c2f-afca259e499d"
+
+// =============================== Gythka (Halberd) ===============================
+// Add +2 enchantment and make a magical weapon
+
+new entry "OBJ_Spjm_GythkaHalberd_Wpn_Template"
+type "Weapon"
+using "OBJ_Spjm_GythkaHalberd_Wpn_Template"
+// data "DefaultBoosts" ""
+data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical)"
