@@ -1,14 +1,40 @@
-// Peerless Athlete: increase duration to long rest
+// ================================= Heroic Presence =================================
+// Also affects yourself now
+
+new entry "Shout_LHB_Heroism_HeroicPresence"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_LHB_Heroism_HeroicPresence"
+// data "TargetConditions" "Character() and not Self() and not Enemy()"
+data "TargetConditions" "Character() and not Enemy()"
+
+// ================================= Peerless Athlete =================================
+// Also gives +2 Strength, but decrease duration to 10 turns
+
 new entry "Shout_LHB_Heroism_PeerlessAthlete"
 type "SpellData"
 data "SpellType" "Shout"
 using "Shout_LHB_Heroism_PeerlessAthlete"
+// data "Description" "LHB_PeerlessAthlete_Description;1"
+// Augment your athleticism with divine favour. Your &lt;LSTag Tooltip="Strength"&gt;Strength&lt;/LSTag&gt; increases by [1] and you gain &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on all &lt;LSTag Tooltip="Acrobatics"&gt;Acrobatics&lt;/LSTag&gt; and &lt;LSTag Tooltip="Athletics"&gt;Athletics&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityCheck"&gt;Checks&lt;/LSTag&gt;.
+data "Description" "h52343558g1d56g490cgb2a7g3cc03ebf5119;1"
 // data "SpellProperties" "ApplyStatus(LHB_HEROISM_PEERLESSATHLETE,100,100)"
-data "SpellProperties" "ApplyStatus(LHB_HEROISM_PEERLESSATHLETE,100,-1)"
+data "SpellProperties" "ApplyStatus(LHB_HEROISM_PEERLESSATHLETE,100,10)"
 // data "TooltipStatusApply" "ApplyStatus(LHB_HEROISM_PEERLESSATHLETE,100,100)"
-data "TooltipStatusApply" "ApplyStatus(LHB_HEROISM_PEERLESSATHLETE,100,-1)"
+data "TooltipStatusApply" "ApplyStatus(LHB_HEROISM_PEERLESSATHLETE,100,10)"
 
-// Mighty Deed: add condition to only allow passive to be procced in combat
+new entry "LHB_HEROISM_PEERLESSATHLETE"
+type "StatusData"
+data "StatusType" "BOOST"
+using "LHB_HEROISM_PEERLESSATHLETE"
+// data "Description" "LHB_PeerlessAthlete_Description;1"
+data "Description" "h52343558g1d56g490cgb2a7g3cc03ebf5119;1"
+// data "Boosts" "Advantage(Skill,Acrobatics);Advantage(Skill,Athletics)"
+data "Boosts" "Ability(Strength,2);Advantage(Skill,Acrobatics);Advantage(Skill,Athletics)"
+
+// ================================= Mighty Deed =================================
+// Add condition to only allow passive to be procced in combat
+
 new entry "LHB_Heroism_MightyDeed_Passive"
 type "PassiveData"
 using "LHB_Heroism_MightyDeed_Passive"
