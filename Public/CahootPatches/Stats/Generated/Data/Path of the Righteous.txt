@@ -65,35 +65,43 @@ using "Siael_POTR_Sword_P1_M"
 // data "DescriptionParams" "DealDamage(1d4+5,Radiant)"
 data "DescriptionParams" "DealDamage(1d10,Radiant)"
 
-// Celestial Annointment: loca edits and icon changed to use Daylight from Lathander's Armory mod (already added in this .pak for ATT's Sunburst)
+// Celestial Annointment: remove possibility to Turn creatures on a hit. Icon changed to use Daylight from Lathander's Armory mod (already added in this .pak for ATT's Sunburst)
 new entry "Siael_POTR_Sword_P2"
 type "PassiveData"
 using "Siael_POTR_Sword_P2"
-// The blade emits light in a [1] radius, &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blinding&lt;/LSTag&gt; Undead, Fiends, Feys, Monstrosities and Aberrations within. Attacks with this weapon &lt;LSTag Type="Status" Tooltip="TURNED"&gt;Turn&lt;/LSTag&gt; such creatures for 1 turn if they fail a &lt;LSTag Tooltip="DifficultyClass"&gt;DC&lt;/LSTag&gt; [2] Wisdom &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.
+// The blade emits light in a [1] radius, &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blinding&lt;/LSTag&gt; Undead, Fiends, Feys, Monstrosities and Aberrations within.
 data "Description" "h88239792g39eag4bc2g95d8g17e5dae42ba9;1"
 // data "Icon" "Spell_Evocation_Moonbeam"
 data "Icon" "ATT_Spell_Evocation_Sunburst"
+// data "StatsFunctorContext" "OnAttack"
+data "StatsFunctorContext" ""
+// data "Conditions" "AttackedWithPassiveSourceWeapon() and IsHit() and not AnyEntityIsItem() and not Dead(context.Target) and Enemy() and (Tagged('UNDEAD', context.Target) or Tagged('FEY', context.Target) or Tagged('MONSTROSITY', context.Target) or Tagged('ABERRATION', context.Target) or Tagged('FIEND', context.Target) or HasStatus('LOW_GHOST_POSSESSED', context.Target))"
+data "Conditions" ""
+// data "StatsFunctors" "IF(not SavingThrow(Ability.Wisdom,12,AdvantageOnTurned())):ApplyStatus(TURNED,100,1)"
+data "StatsFunctors" ""
 
 new entry "Siael_POTR_Sword_P2_L"
 type "PassiveData"
 using "Siael_POTR_Sword_P2"
-// The blade emits light in a [1] radius, &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blinding&lt;/LSTag&gt; Undead, Fiends, Feys, Monstrosities and Aberrations within. Attacks with this weapon &lt;LSTag Type="Status" Tooltip="TURNED"&gt;Turn&lt;/LSTag&gt; such creatures for 1 turn if they fail a &lt;LSTag Tooltip="DifficultyClass"&gt;DC&lt;/LSTag&gt; [2] Wisdom &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;. The blade's light counts as sunlight.
+// The blade emits light in a [1] radius, &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blinding&lt;/LSTag&gt; Undead, Fiends, Feys, Monstrosities and Aberrations within. The light counts as sunlight.
 data "Description" "hd3833184g2f3cg49fcga5d2g66ba54dd9c87;1"
 // data "Icon" "Spell_Evocation_Moonbeam"
 data "Icon" "ATT_Spell_Evocation_Sunburst"
+// data "StatsFunctors" "IF(not SavingThrow(Ability.Wisdom,14,AdvantageOnTurned())):ApplyStatus(TURNED,100,1)"
+data "StatsFunctors" ""
 
-// Bane of Evil: decreases critical hit threshold by 3 against specified types instead of always guaranteeing critical hits, and only works for attacks with the weapon
+// Bane of Evil: decreases critical hit threshold by 2 against specified types instead of always guaranteeing critical hits, and only works for attacks with the weapon
 new entry "Siael_POTR_Sword_P4"
 type "PassiveData"
 using "Siael_POTR_Sword_P4"
 // Your &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; threshold is reduced by [1] when attacking Undead, Fiends, Feys, Monstrosities and Aberrations with this weapon.
 data "Description" "h9ba5d93bgf277g4ca4gb3cfg5ecc7e6f2e99;1"
 // data "DescriptionParams" ""
-data "DescriptionParams" "3"
+data "DescriptionParams" "2"
 // data "BoostConditions" ""
 data "BoostConditions" "AttackedWithPassiveSourceWeapon() and (Tagged('UNDEAD') or Tagged('UNDEAD_BEAST') or Tagged('FIEND') or Tagged('FEY') or Tagged('MONSTROSITY') or Tagged('ABERRATION'))"
 // data "Boosts" "IF(Tagged('UNDEAD') or Tagged('UNDEAD_BEAST') or Tagged('FIEND') or Tagged('FEY') or Tagged('MONSTROSITY') or Tagged('ABERRATION')):MinimumRollResult(Attack,20)"
-data "Boosts" "ReduceCriticalAttackThreshold(3)"
+data "Boosts" "ReduceCriticalAttackThreshold(2)"
 
 // ================================== Shield ==================================
 // Remove entirely from set
@@ -145,6 +153,23 @@ data "PassivesOnEquip" "EqLib_PlateBody_Passive;Siael_POTR_Armor_P1_L;Siael_POTR
 data "Armor Class Ability" "None"
 data "ArmorClass" "0"
 
+// Sanctified Plate: reduce saving throw bonus for Very Rare and Legendary to +1
+new entry "Siael_POTR_Armor_P1_V"
+type "PassiveData"
+using "Siael_POTR_Armor_P1_V"
+// data "DescriptionParams" "2;2"
+data "DescriptionParams" "2;1"
+// data "Boosts" "IF(not IsRedirectedDamage() and not IsFallDamage() and not HasStatus('SIAEL_POTR_PROTECTION_ACTIVE')):DamageReduction(All,Flat,2);RollBonus(SavingThrow,2)"
+data "Boosts" "IF(not IsRedirectedDamage() and not IsFallDamage() and not HasStatus('SIAEL_POTR_PROTECTION_ACTIVE')):DamageReduction(All,Flat,2);RollBonus(SavingThrow,1)"
+
+new entry "Siael_POTR_Armor_P1_L"
+type "PassiveData"
+using "Siael_POTR_Armor_P1_L"
+// data "DescriptionParams" "3;2"
+data "DescriptionParams" "3;1"
+// data "Boosts" "IF(not IsRedirectedDamage() and not IsFallDamage() and not HasStatus('SIAEL_POTR_PROTECTION_ACTIVE')):DamageReduction(All,Flat,3);RollBonus(SavingThrow,2)"
+data "Boosts" "IF(not IsRedirectedDamage() and not IsFallDamage() and not HasStatus('SIAEL_POTR_PROTECTION_ACTIVE')):DamageReduction(All,Flat,3);RollBonus(SavingThrow,1)"
+
 // One-Man Phalanx: replace text showing  "Globe of Invulnerability" with "Globe of Protection" to be consistent with personal changes to the spell, and change hp threshold to 40%
 new entry "Siael_POTR_Armor_P3"
 type "PassiveData"
@@ -169,12 +194,14 @@ data "Boosts" "IF(not IsRedirectedDamage() and not Ally()):RedirectDamage(1,Radi
 
 // ================================== Helmet ==================================
 
-// Paramount Mettle: loca edit
+// Paramount Mettle: remove concentration being unable to being broken by damage
 new entry "Siael_POTR_Head_P3"
 type "PassiveData"
 using "Siael_POTR_Head_P3"
-// You can't be &lt;LSTag Type="Status" Tooltip="SURPRISED"&gt;Surprised&lt;/LSTag&gt;, &lt;LSTag Type="Status" Tooltip="FRIGHTENED"&gt;Frightened&lt;/LSTag&gt;, nor afflicted with other emotion-altering conditions. Your &lt;LSTag Tooltip="Concentration"&gt;Concentration&lt;/LSTag&gt; cannot be broken by damage alone, and you have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; to maintain it.data "Description" "h9c7edde5gdedbg4f39g82a8g3296260bab9d;1"
+// You can't be &lt;LSTag Type="Status" Tooltip="SURPRISED"&gt;Surprised&lt;/LSTag&gt;, &lt;LSTag Type="Status" Tooltip="FRIGHTENED"&gt;Frightened&lt;/LSTag&gt;, nor afflicted with other emotion-altering conditions. You have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; to maintain your &lt;LSTag Tooltip="Concentration"&gt;Concentration&lt;/LSTag&gt;.
 data "Description" "h9c7edde5gdedbg4f39g82a8g3296260bab9d;1"
+//data "Boosts" "StatusImmunity(SURPRISED);StatusImmunity(SG_Frightened);StatusImmunity(SG_Fleeing);StatusImmunity(SG_Charmed);ConcentrationIgnoreDamage(Abjuration);ConcentrationIgnoreDamage(Conjuration);ConcentrationIgnoreDamage(Divination);ConcentrationIgnoreDamage(Enchantment);ConcentrationIgnoreDamage(Evocation);ConcentrationIgnoreDamage(Illusion);ConcentrationIgnoreDamage(Necromancy);ConcentrationIgnoreDamage(Transmutation);ConcentrationIgnoreDamage();Advantage(Concentration)"
+data "Boosts" "StatusImmunity(SURPRISED);StatusImmunity(SG_Frightened);StatusImmunity(SG_Fleeing);StatusImmunity(SG_Charmed);Advantage(Concentration)"
 
 // ================================== Gloves ==================================
 
@@ -193,7 +220,7 @@ data "Boosts" "UnlockSpellVariant(HasUseCosts('LayOnHandsCharge'),ModifyUseCosts
 new entry "Siael_POTR_Boots_P1_V"
 type "PassiveData"
 using "Siael_POTR_Boots_P1_V"
-// Whenever you cast a Smite, gain &lt;LSTag Type="Status" Tooltip="MAG_MOMENTUM"&gt;Momentum&lt;/LSTag&gt; and &lt;LSTag Type="Status" Tooltip="DISENGAGE"&gt;Disengage&lt;/LSTag&gt; for the turn.
+// Whenever you cast a Smite spell, gain &lt;LSTag Type="Status" Tooltip="MAG_MOMENTUM"&gt;Momentum&lt;/LSTag&gt; and &lt;LSTag Type="Status" Tooltip="DISENGAGE"&gt;Disengage&lt;/LSTag&gt; for the turn.
 data "Description" "hbe8bf4dcgee4cg44c0gbc9ag75949cbb7d7e;1"
 
 // Holy Grounds: decrease health regained to 25% (previously 50%)
@@ -222,16 +249,72 @@ data "Description" "h4999001dg0b36g4b77g868dgfbcfe458f1f2;1"
 // data "Boosts" "UnlockSpellVariant(SpellId('Shout_CrusadersMantle') or SpellId('PoU_UnholyMantle'),ModifyUseCosts(Replace,ActionPoint,0,0,ActionPoint),ModifyTooltipDescription())"
 data "Boosts" "UnlockSpellVariant(SpellId('Shout_CrusadersMantle') or SpellId('PoU_UnholyMantle'),ModifyUseCosts(Replace,ActionPoint,0,0,ActionPoint),ModifyTooltipDescription());UnlockSpellVariant(SpellId('Shout_CrusadersMantle') or SpellId('PoU_UnholyMantle'),ModifyUseCosts(Replace,BonusActionPoint,0,0,BonusActionPoint),ModifyTooltipDescription())"
 
-// Celestial Haste: rename to be different from vanilla spell and decrease movement speed bonus to 3m
+// Celestial Haste: rename to be different from vanilla spell, decrease movement speed bonus to 3m, and remove extra bonus action
 new entry "Siael_POTR_Cape_P3"
 type "PassiveData"
 using "Siael_POTR_Cape_P3"
 // Divine Alacrity
 data "DisplayName" "hc0020ecbg621eg40f3g92e3gccc16999657a;1"
+// Your &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; is increased by [1] and you gain an additional &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;reaction&lt;/LSTag&gt;.
+data "Description" "ha9cbe3f8g840fg4228ga294g44b3ce182b2b;1"
 // data "DescriptionParams" "Distance(4.5)"
 data "DescriptionParams" "Distance(3)"
 // data "Boosts" "ActionResource(Movement,4.5,0);ActionResource(BonusActionPoint,1,0);ActionResource(ReactionActionPoint,1,0)"
-data "Boosts" "ActionResource(Movement,3,0);ActionResource(BonusActionPoint,1,0);ActionResource(ReactionActionPoint,1,0)"
+data "Boosts" "ActionResource(Movement,3,0);ActionResource(ReactionActionPoint,1,0)"
+
+// ================================== Amulet ==================================
+
+// Font of Life: change from restoring percentage of target's hit points to flat amount
+new entry "Siael_POTR_Amulet_P3"
+type "PassiveData"
+using "Siael_POTR_Amulet_P3"
+// Your heals restore additional[1] equal to the higher of your &lt;LSTag Tooltip="Charisma"&gt;Charisma&lt;/LSTag&gt; or &lt;LSTag Tooltip="Wisdom"&gt;Wisdom&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;.<
+data "Description" "hf36c4758ga7b5g4394g8bf5g35fe68ca689f;1"
+// data "StatsFunctors" "RegainHitPoints(max(1,(context.Target.MaxHP*max(WisdomModifier,CharismaModifier))/100));RegainHitPoints(max(1,(context.Target.MaxHP*max(WisdomModifier,CharismaModifier))/100),Undead)"
+data "StatsFunctors" "RegainHitPoints(max(1,max(WisdomModifier,CharismaModifier)));RegainHitPoints(max(1,max(WisdomModifier,CharismaModifier)),Undead)"
+
+// ================================== Ring 1 ==================================
+
+// Killing Monsters: rework to decrease critical hit threshold by 1 when casting a Smite
+new entry "Siael_POTR_Ring1_P1"
+type "PassiveData"
+using "Siael_POTR_Ring1_P1"
+// When you cast a Smite, the number you need to &lt;LSTag Tooltip="AttackRoll"&gt;roll&lt;/LSTag&gt; a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; is reduced by [1].
+data "Description" "he03c77d5g5191g488eg8f42g567e9cd4dd15;1"
+// data "DescriptionParams" "DealDamage(LevelMapValue(D6Cantrip),Radiant)"
+data "DescriptionParams" "1"
+// data "Properties" "Highlighted;OncePerAttack"
+data "Properties" "Highlighted"
+// data "StatsFunctorContext" "OnStatusApply"
+data "StatsFunctorContext" ""
+// data "Conditions" "StatusId('TURNED') and not Dead()"
+data "Conditions" ""
+// data "StatsFunctors" "ApplyStatus(UNDEAD_FORTITUDE_DISABLED,100,0);DealDamage(LevelMapValue(D6Cantrip),Radiant)"
+data "StatsFunctors" ""
+// data "BoostContext" ""
+data "BoostContext" "OnAttack"
+// data "Boosts" ""
+data "Boosts" "IF(IsSmiteSpells()):ReduceCriticalAttackThreshold(1)"
+
+new entry "Siael_POTR_Ring1_P1_V"
+type "PassiveData"
+using "Siael_POTR_Ring1_P1_V"
+// data "DescriptionParams" "DealDamage(LevelMapValue(D6Cantrip)+1d6,Radiant)"
+data "DescriptionParams" "1"
+// data "StatsFunctors" "ApplyStatus(UNDEAD_FORTITUDE_DISABLED,100,0);DealDamage(LevelMapValue(D6Cantrip)+1d6,Radiant)"
+data "StatsFunctors" ""
+// data "Boosts" ""
+data "Boosts" "IF(IsSmiteSpells()):ReduceCriticalAttackThreshold(1)"
+
+new entry "Siael_POTR_Ring1_P1_L"
+type "PassiveData"
+using "Siael_POTR_Ring1_P1_L"
+// data "DescriptionParams" "DealDamage(LevelMapValue(D6Cantrip)+2d6,Radiant)"
+data "DescriptionParams" "2"
+// data "StatsFunctors" "ApplyStatus(UNDEAD_FORTITUDE_DISABLED,100,0);DealDamage(LevelMapValue(D6Cantrip)+2d6,Radiant)"
+data "StatsFunctors" ""
+// data "Boosts" ""
+data "Boosts" "IF(IsSmiteSpells()):ReduceCriticalAttackThreshold(2)"
 
 // ================================== Trinket ==================================
 
@@ -253,7 +336,7 @@ data "TickFunctors" "IF(IsInSunlight(context.Target) or HasStatus('SUNLIGHT_FROM
 // ================================== Set Bonuses ==================================
 
 // ================================== Justice set: Zealous Oath ==================================
-// Reworked to temporarily decrease your critical hit threshold after casting a channel oath spell instead of giving Lay on Hand charges
+// Reworked to temporarily decrease your critical hit threshold after casting a Channel Oath spell instead of giving Lay on Hand charges
 new entry "Siael_POTR_Justice"
 type "PassiveData"
 using "Siael_POTR_Justice"
@@ -411,6 +494,27 @@ type "PassiveData"
 using "Siael_POTR_PM_Target"
 // data "StatsFunctors" "ApplyStatus(SIAEL_POTR_PM_STACK,100,1);RegainHitPoints(LevelMapValue(D4Cantrip));IF(StatusDurationEqualOrMoreThan(context.Target,'SIAEL_POTR_PM_STACK',2)):ApplyStatus(SIAEL_POTR_PM_STOP,100,1)"
 data "StatsFunctors" "ApplyStatus(SIAEL_POTR_PM_STACK,100,1);RegainHitPoints(LevelMapValue(1d4));IF(StatusDurationEqualOrMoreThan(context.Target,'SIAEL_POTR_PM_STACK',2)):ApplyStatus(SIAEL_POTR_PM_STOP,100,1)"
+
+// ================================== Justice + Resolve sets: Trial by Radiance ==================================
+// Decrease Radiating Orb duration to 1 turn and remove chance to Turn enemies
+new entry "Siael_POTR_RJ"
+type "PassiveData"
+using "Siael_POTR_RJ"
+// At the beginning of your turn, enemy Undead, Fiends, Feys, Monstrosities and Aberrations within your Paladin Aura are affected by &lt;LSTag Type="Status" Tooltip="MAG_RADIANT_RADIATING_ORB"&gt;Radiating Orb&lt;/LSTag&gt; for 1 turn.
+data "Description" "ha3eb39a4gc393g44d4gb5c9gd9ab4477cc78;1"
+// data "DescriptionParams" "12"
+data "DescriptionParams" ""
+
+new entry "SIAEL_POTR_RJ_EFFECT"
+type "StatusData"
+data "StatusType" "BOOST"
+using "SIAEL_POTR_RJ_EFFECT"
+data "Description" "ha3eb39a4gc393g44d4gb5c9gd9ab4477cc78;1"
+// data "DescriptionParams" "12"
+data "DescriptionParams" ""
+// data "TickFunctors" "IF(Tagged('UNDEAD') or Tagged('UNDEAD_BEAST') or Tagged('FIEND') or Tagged('FEY') or Tagged('MONSTROSITY') or Tagged('ABERRATION')):ApplyStatus(MAG_RADIANT_RADIATING_ORB,100,2);IF(Tagged('UNDEAD') or Tagged('UNDEAD_BEAST') or Tagged('FIEND') or Tagged('FEY') or Tagged('MONSTROSITY') or Tagged('ABERRATION')):ApplyStatus(SIAEL_POTR_RJ_TECHNICAL,100,0)"
+data "TickFunctors" "IF(Tagged('UNDEAD') or Tagged('UNDEAD_BEAST') or Tagged('FIEND') or Tagged('FEY') or Tagged('MONSTROSITY') or Tagged('ABERRATION')):ApplyStatus(MAG_RADIANT_RADIATING_ORB,100,2)"
+
 
 // ================================== Mercy + Resolve sets: Luminous Sermon ==================================
 // Clarify tooltip
