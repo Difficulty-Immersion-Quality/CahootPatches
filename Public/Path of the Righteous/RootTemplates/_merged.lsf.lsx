@@ -7604,8 +7604,8 @@
 					</children>
 				</node>
 				<node id="GameObjects">
-					<attribute id="DisplayName" type="TranslatedString" handle="h98e7d1e1g9c34g4418g90f6gbcb190688161" version="1" />
-					<attribute id="Description" type="TranslatedString" handle="hb93d2c96338d48c59a99bf8c6e148ca34g95" version="1" />
+					<attribute id="DisplayName" type="TranslatedString" handle="hb432c18575ca450ca696b076a84959d6bd33" version="1" />
+					<attribute id="Description" type="TranslatedString" handle="hbb2f633e38284e19806920202c4072cdg7b4" version="1" />
 					<attribute id="TechnicalDescription" type="TranslatedString" handle="h1c91db806a5944f2b2f723dd1ada757f5800" version="1" />
 					<attribute id="MapKey" type="FixedString" value="e5342865-60aa-4ec6-a660-0d88399ed1ba" />
 					<attribute id="Name" type="LSString" value="Siael_POTR_Ring2Mat_2B" />
