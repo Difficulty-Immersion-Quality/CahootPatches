@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<save>
+    <version major="4" minor="0" revision="9" build="322"/>
+    <region id="Feats">
+        <node id="root">
+            <children>
+				<node id="Feat">
+                    <attribute id="Name" type="FixedString" value="Grappler"/>
+                    <!-- <attribute id="PassivesAdded" type="LSString" value="Grappler"/> -->
+                    <attribute id="PassivesAdded" type="LSString" value="Grappler;CHT_Grappler_Strength"/>
+                    <attribute id="Requirements" type="LSString" value="FeatRequirementAbilityGreaterEqual(&apos;Strength&apos;,13)"/>
+                    <attribute id="UUID" type="guid" value="e633bc1c-86ee-4856-8ea9-0fa4e3d4dff7"/>
+                </node>
+            </children>
+        </node>
+    </region>
+</save>
