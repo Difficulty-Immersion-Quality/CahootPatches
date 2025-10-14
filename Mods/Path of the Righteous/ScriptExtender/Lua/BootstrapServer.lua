@@ -385,106 +385,111 @@ local stopNaaber = 0
 local stopMurders = 0
 local stopDribbles = 0
 local stopIronThrone = 0
+local qst = ""
+local state = ""
 --Objective detector - Quests
 Ext.Osiris.RegisterListener("QuestUpdateUnlocked", 3, "after", function(character, topLevelQuestID, stateID)
-    if character == GetHostCharacter() then
+    if qst ~= topLevelQuestID or state ~= state then
+        qst = topLevelQuestID
+        state = stateID
         print(topLevelQuestID .. " " .. stateID)
-        --Emerald Grove - Horned and Thorned Gratitude
-        if topLevelQuestID == "DEN_Conflict" and stateID == "SidedTieflings_Celebrate"  and stopEG == 0 then
-            print("SIAEL - Emerald Grove was saved.")
-            stopEG = 1
-            TemplateAddTo("4cd50383-d02b-4023-b8eb-d70d5a30e96f",GetHostCharacter(),1,1)
-        --Florrick - Pendant of Tyr
-        elseif topLevelQuestID == "WYR_FreeFlorrick" and (stateID == "Escaped" or stateID == "Escaped_Peaceful") and stopFlorrick == 0  then
-            stopFlorrick = 1
-            print("SIAEL - Counsellor Florrick escaped.")
-            TemplateAddTo("03efce1d-0cc4-493a-99df-ba17d16eee96",GetHostCharacter(),1,1)
-        --Adamantine Forge - Mithral Will
-        elseif topLevelQuestID == "UND_AdamantineForge" and stateID == "ItemPickedUp" and stopAF == 0  then
-            stopAF = 1
-            print("SIAEL - Adamantine Forge used.")
-            TemplateAddTo("26bb3e6f-efa6-4c8b-9fc2-34d0739e6eff",GetHostCharacter(),1,1)
-        --Moonrise Jailbreak - Cheerful Reunion
-        elseif topLevelQuestID == "HAV_SaveTieflingPrisoners" and (stateID == "RescueSuccess" or stateID == "AllEscaped" or stateID == "BoatAllEscaped" or stateID == "AllEscapedHav") and stopMoonrise == 0 then
-            stopMoonrise = 1
-            print("SIAEL - All Moonrise prisonners were freed.")
-            TemplateAddTo("6b91bdb7-3f58-4bb6-ab6b-a8250752c035",GetHostCharacter(),1,1)
-        --Kagha - Bramble of Redemption
-        elseif topLevelQuestID == "DEN_Conflict" and stateID == "FightGood" and stopKagha == 0 then
-            stopKagha = 1
-            print("SIAEL - Kagha was turned from the Shadow Druids.")
-            TemplateAddTo("28730b0f-f06f-4937-96bc-478dc492867f",GetHostCharacter(),1,1)
-        --Halsin - Druidic Gratitude
-        elseif topLevelQuestID == "DEN_Conflict" and (stateID == "FoundHalsin_Known_KillLeaders" or stateID == "HalsinLeft_KilledLeaders") and stopHalsin == 0 then
-            stopHalsin = 1
-            print("SIAEL - Halsin was rescued.")
-            TemplateAddTo("4d80a901-54e7-4c9d-81cc-471ecfcc1fcc",GetHostCharacter(),1,1)
-        -- --Volo - Thrilled Autograph
-        -- elseif topLevelQuestID == "DEN_VoloAdventure" and stateID == "VoloCamp" and stopVolo == 0 then
-        --     stopVolo = 1
-        --     print("SIAEL - Volo has been rescued and sent to camp.")
-        --     TemplateAddTo("ce9f40cf-6b50-4b57-89c5-efefbbb6aba8",GetHostCharacter(),1,1)
-        -- --Ethel - Widow's Mourning
-        -- elseif topLevelQuestID == "HAG_HagSpawn" and stateID == "SavedMayrina" and stopEthel == 0 then
-        --     stopEthel = 1
-        --     print("SIAEL - Mayrina has been freed.")
-        --     TemplateAddTo("ff2fd759-2d8a-4d0c-801a-6ec39817a55d",GetHostCharacter(),1,1)
-        --Marcus - Moonveil Keep
-        elseif topLevelQuestID == "GLO_Moonrise" and (stateID == "ProtectedIsobel_Reach" or stateID == "SavedIsobel") and stopIsobel == 0 then
-            stopIsobel = 1
-            print("SIAEL - Marcus was prevented from taking Isobel.")
-            TemplateAddTo("1bfca79f-70e7-40c2-b851-21ac2a67d38f",GetHostCharacter(),1,1)
-        --Yurgir - Fiendish Cinders
-        elseif topLevelQuestID == "SHA_OldEnemy" and stateID == "DefeatedOrphon" and stopYurgir == 0 then
-            stopYurgir = 1
-            print("SIAEL - Yurgir was killed in the Gauntlet of Shar.")
-            TemplateAddTo("79a5abfe-385b-45be-9d64-5b72ec7ce7b1",GetHostCharacter(),1,1)
-        --Nightsong - Selunite Crescent
-        elseif (topLevelQuestID == "SHA_Nightsong" and stateID == "NightsongFreed") or (topLevelQuestID == "ORI_Avatar_ShadowHeart" and stateID == "Nightsong_Spared") and stopNightsong == 0 then
-            stopNightsong = 1
-            print("SIAEL - Nightsong has been freed from the Shadowfell.")
-            TemplateAddTo("97eb92bb-9865-4e76-94e9-17ad868d794f",GetHostCharacter(),1,1)
-        --Ketheric - Piece of Wavered Faith
-        elseif topLevelQuestID == "MOO_EndKetheric" and (stateID == "DefeatedKetheric" or stateID == "DefeatedKetheric_Suicide") and stopKetheric == 0  then
-            stopKetheric = 1
-            print("SIAEL - Ketheric Thorm was defeated.")
-            TemplateAddTo("fd43c7e4-6fcb-4c38-9f95-a7105a938a13",GetHostCharacter(),1,1)
-        --Thaniel -- Shadow-Touched Dawnbloom
-        elseif topLevelQuestID == "SCL_LiftingTheCurse" and stateID == "TalkToThaniel" and stopThaniel == 0 then
-            stopThaniel = 1
-            print("SIAEL - The Shadow Curse was lifted.")
-            TemplateAddTo("c8104249-bd0a-401d-90ed-482d6c07b635",GetHostCharacter(),1,1)
-        --Arfur - Preserved Plush
-        elseif topLevelQuestID == "WYR_Donations" and stateID == "LearnedPassword_ArfurConfessed" and stopArfur == 0 then
-            stopArfur = 1
-            print("SIAEL - Arfur was exposed.")
-            TemplateAddTo("d558a5d5-a18b-464f-a091-433cdbccc18c",GetHostCharacter(),1,1)
-        --Valeria - Bhaalspawn Helmet
-        elseif topLevelQuestID == "GLO_GatherYourAllies" and stateID == "ValeriaPromisesSupport" and stopValeria == 0 then
-            stopValeria = 1
-            print("SIAEL - Valeria was freed from the Murder Tribunal.")
-            TemplateAddTo("ea848cfb-6def-44a5-b4c0-4ead74aaca0d",GetHostCharacter(),1,1)
-        --Naaber - Utmost Patience
-        elseif topLevelQuestID == "HIDDEN_BGO_Boosters" and stateID == "WYR_FigaroSister_FinishedNaaberDialog" and stopNaaber == 0 then
-            stopNaaber = 1
-            print("SIAEL - Naaber was listened to patiently.")
-            TemplateAddTo("fec8eac5-b97c-419d-a4cd-1b73deb8a5c4",GetHostCharacter(),1,1)
-        --Murders - Truthseeker's Grace
-        elseif topLevelQuestID == "WYR_OpenHandMurder" and stateID == "WYR_ConvinceAnnoyingElephant_GoToDevella" and stopMurders == 0 then
-            stopMurders = 1
-            print("SIAEL - The Open Hand Temple murders were solved.")
-            TemplateAddTo("d8b65034-bbc1-4e4f-9876-5ea27d4e1607",GetHostCharacter(),1,1)
-        --Dribbles - Encore et Encore
-        elseif topLevelQuestID == "WYR_Clown" and stateID == "Rewarded" and stopDribbles == 0 then
-            stopDribbles = 1
-            print("SIEL - Dribbles will perform encore.")
-            TemplateAddTo("6e0e6f08-781a-42e3-a7b2-357036564754",GetHostCharacter(),1,1)
-        -- --Iron Throne - Old Faith Memorabilia
-        -- elseif topLevelQuestID == "LOW_SaveGondians" and stateID == "LeftIronThrone_AllSaved" and stopIronThrone == 0 then
-        --     stopIronThrone = 1
-        --     print("SIAEL - All the prisonners from the Iron Throne were saved.")
-        --     TemplateAddTo("884d6e6d-3246-45cc-97b7-6ae5139d009f",GetHostCharacter(),1,1)
-        end
+    end
+    --Emerald Grove - Horned and Thorned Gratitude
+    if topLevelQuestID == "DEN_Conflict" and stateID == "SidedTieflings_Celebrate"  and stopEG == 0 then
+        print("SIAEL - Emerald Grove was saved.")
+        stopEG = 1
+        TemplateAddTo("4cd50383-d02b-4023-b8eb-d70d5a30e96f",GetHostCharacter(),1,1)
+    --Florrick - Pendant of Tyr
+    elseif topLevelQuestID == "WYR_FreeFlorrick" and (stateID == "Escaped" or stateID == "Escaped_Peaceful") and stopFlorrick == 0  then
+        stopFlorrick = 1
+        print("SIAEL - Counsellor Florrick escaped.")
+        TemplateAddTo("03efce1d-0cc4-493a-99df-ba17d16eee96",GetHostCharacter(),1,1)
+    --Adamantine Forge - Mithral Will
+    elseif topLevelQuestID == "UND_AdamantineForge" and stateID == "ItemPickedUp" and stopAF == 0  then
+        stopAF = 1
+        print("SIAEL - Adamantine Forge used.")
+        TemplateAddTo("26bb3e6f-efa6-4c8b-9fc2-34d0739e6eff",GetHostCharacter(),1,1)
+    --Moonrise Jailbreak - Cheerful Reunion
+    elseif topLevelQuestID == "HAV_SaveTieflingPrisoners" and (stateID == "RescueSuccess" or stateID == "AllEscaped" or stateID == "BoatAllEscaped" or stateID == "AllEscapedHav") and stopMoonrise == 0 then
+        stopMoonrise = 1
+        print("SIAEL - All Moonrise prisonners were freed.")
+        TemplateAddTo("6b91bdb7-3f58-4bb6-ab6b-a8250752c035",GetHostCharacter(),1,1)
+    --Kagha - Bramble of Redemption
+    elseif topLevelQuestID == "DEN_Conflict" and stateID == "KaghaTurnedGood" and stopKagha == 0 then
+        stopKagha = 1
+        print("SIAEL - Kagha was turned from the Shadow Druids.")
+        TemplateAddTo("28730b0f-f06f-4937-96bc-478dc492867f",GetHostCharacter(),1,1)
+    --Halsin - Druidic Gratitude
+    elseif topLevelQuestID == "DEN_Conflict" and (stateID == "FoundHalsin_Known_KillLeaders" or stateID == "HalsinLeft_KilledLeaders") and stopHalsin == 0 then
+        stopHalsin = 1
+        print("SIAEL - Halsin was rescued.")
+        TemplateAddTo("4d80a901-54e7-4c9d-81cc-471ecfcc1fcc",GetHostCharacter(),1,1)
+    -- --Volo - Thrilled Autograph
+    -- elseif topLevelQuestID == "DEN_VoloAdventure" and stateID == "VoloCamp" and stopVolo == 0 then
+    --     stopVolo = 1
+    --     print("SIAEL - Volo has been rescued and sent to camp.")
+    --     TemplateAddTo("ce9f40cf-6b50-4b57-89c5-efefbbb6aba8",GetHostCharacter(),1,1)
+    -- --Ethel - Widow's Mourning
+    -- elseif topLevelQuestID == "HAG_HagSpawn" and stateID == "SavedMayrina" and stopEthel == 0 then
+    --     stopEthel = 1
+    --     print("SIAEL - Mayrina has been freed.")
+    --     TemplateAddTo("ff2fd759-2d8a-4d0c-801a-6ec39817a55d",GetHostCharacter(),1,1)
+    --Marcus - Moonveil Keep
+    elseif topLevelQuestID == "GLO_Moonrise" and (stateID == "ProtectedIsobel_Reach" or stateID == "SavedIsobel") and stopIsobel == 0 then
+        stopIsobel = 1
+        print("SIAEL - Marcus was prevented from taking Isobel.")
+        TemplateAddTo("1bfca79f-70e7-40c2-b851-21ac2a67d38f",GetHostCharacter(),1,1)
+    --Yurgir - Fiendish Cinders
+    elseif topLevelQuestID == "SHA_OldEnemy" and stateID == "DefeatedOrphon" and stopYurgir == 0 then
+        stopYurgir = 1
+        print("SIAEL - Yurgir was killed in the Gauntlet of Shar.")
+        TemplateAddTo("79a5abfe-385b-45be-9d64-5b72ec7ce7b1",GetHostCharacter(),1,1)
+    --Nightsong - Selunite Crescent
+    elseif (topLevelQuestID == "SHA_Nightsong" and stateID == "NightsongFreed") or (topLevelQuestID == "ORI_Avatar_ShadowHeart" and stateID == "Nightsong_Spared") and stopNightsong == 0 then
+        stopNightsong = 1
+        print("SIAEL - Nightsong has been freed from the Shadowfell.")
+        TemplateAddTo("97eb92bb-9865-4e76-94e9-17ad868d794f",GetHostCharacter(),1,1)
+    --Ketheric - Piece of Wavered Faith
+    elseif topLevelQuestID == "MOO_EndKetheric" and (stateID == "DefeatedKetheric" or stateID == "DefeatedKetheric_Suicide") and stopKetheric == 0  then
+        stopKetheric = 1
+        print("SIAEL - Ketheric Thorm was defeated.")
+        TemplateAddTo("fd43c7e4-6fcb-4c38-9f95-a7105a938a13",GetHostCharacter(),1,1)
+    --Thaniel -- Shadow-Touched Dawnbloom
+    elseif topLevelQuestID == "SCL_LiftingTheCurse" and stateID == "TalkToThaniel" and stopThaniel == 0 then
+        stopThaniel = 1
+        print("SIAEL - The Shadow Curse was lifted.")
+        TemplateAddTo("c8104249-bd0a-401d-90ed-482d6c07b635",GetHostCharacter(),1,1)
+    --Arfur - Preserved Plush
+    elseif topLevelQuestID == "WYR_Donations" and stateID == "LearnedPassword_ArfurConfessed" and stopArfur == 0 then
+        stopArfur = 1
+        print("SIAEL - Arfur was exposed.")
+        TemplateAddTo("d558a5d5-a18b-464f-a091-433cdbccc18c",GetHostCharacter(),1,1)
+    --Valeria - Bhaalspawn Helmet
+    elseif topLevelQuestID == "GLO_GatherYourAllies" and stateID == "ValeriaPromisesSupport" and stopValeria == 0 then
+        stopValeria = 1
+        print("SIAEL - Valeria was freed from the Murder Tribunal.")
+        TemplateAddTo("ea848cfb-6def-44a5-b4c0-4ead74aaca0d",GetHostCharacter(),1,1)
+    --Naaber - Utmost Patience
+    elseif topLevelQuestID == "HIDDEN_BGO_Boosters" and stateID == "WYR_FigaroSister_FinishedNaaberDialog" and stopNaaber == 0 then
+        stopNaaber = 1
+        print("SIAEL - Naaber was listened to patiently.")
+        TemplateAddTo("fec8eac5-b97c-419d-a4cd-1b73deb8a5c4",GetHostCharacter(),1,1)
+    --Murders - Truthseeker's Grace
+    elseif topLevelQuestID == "WYR_OpenHandMurder" and stateID == "WYR_ConvinceAnnoyingElephant_GoToDevella" and stopMurders == 0 then
+        stopMurders = 1
+        print("SIAEL - The Open Hand Temple murders were solved.")
+        TemplateAddTo("d8b65034-bbc1-4e4f-9876-5ea27d4e1607",GetHostCharacter(),1,1)
+    --Dribbles - Encore et Encore
+    elseif topLevelQuestID == "WYR_Clown" and stateID == "Rewarded" and stopDribbles == 0 then
+        stopDribbles = 1
+        print("SIEL - Dribbles will perform encore.")
+        TemplateAddTo("6e0e6f08-781a-42e3-a7b2-357036564754",GetHostCharacter(),1,1)
+    -- --Iron Throne - Old Faith Memorabilia
+    -- elseif topLevelQuestID == "LOW_SaveGondians" and stateID == "LeftIronThrone_AllSaved" and stopIronThrone == 0 then
+    --     stopIronThrone = 1
+    --     print("SIAEL - All the prisonners from the Iron Throne were saved.")
+    --     TemplateAddTo("884d6e6d-3246-45cc-97b7-6ae5139d009f",GetHostCharacter(),1,1)
+    -- end
     end
 end)
 
@@ -910,30 +915,6 @@ Ext.Osiris.RegisterListener("StatusApplied", 4, "after", function(object, status
     end
 end)
 
-local function FilterStatuses(status)
-    return status == "AURA_OF_COURAGE"
-    or status == "AURA_OF_DEVOTION"
-    or status == "AURA_OF_HATE"
-    or status == "AURA_OF_DEVOTION"
-    or status == "AURA_OF_PROTECTION"
-    or status == "AURA_OF_WARDING"
-    or status == "AURA_OF_COURAGE_2"
-    or status == "AURA_OF_HATE_2"
-    or status == "AURA_OF_PROTECTION_2"
-    or status == "AURA_OF_WARDING_2"
-    or status == "CONSECRATION_AURA_BONUSES"
-    --or status == "AURA_OF_COURAGE_BUFF"
-    --or status == "AURA_OF_DEVOTION_BUFF"
-    --or status == "AURA_OF_HATE_BUFF"
-    --or status == "AURA_OF_PROTECTION_BUFF"
-    --or status == "AURA_OF_WARDING_BUFF"
-    or status == "SIAEL_POTR_ARMOR_R"
-    or status == "SIAEL_POTR_ARMOR_V"
-    or status == "SIAEL_POTR_ARMOR"
-    --or status == "SIAEL_POTR_ARMOR_AURA"
-    --or status == "SIAEL_POTR_ARMOR_AURA_EFFECT"
-end
-
 local function HasValidAura(object)
     return HasActiveStatus(object,"AURA_OF_COURAGE") == 1
     or HasActiveStatus(object,"AURA_OF_DEVOTION") == 1
@@ -965,47 +946,48 @@ local function StalwartParagon(object,causee)
         ApplyStatus(object,"SIAEL_POTR_BLESS",-1,0,causee)
         ApplyStatus(object,"SIAEL_POTR_HEROISM",-1,0,causee)
     end
+    if HasPassive(causee,"Siael_POTR_Righteous_R") == 1 then
+        ApplyStatus(object,"SIAEL_POTR_PFEG",-1,0,causee)
+    end
 end
-
 
 --Handles the Stalwart Paragon passive, applying the effects when an ally is within the wearer's aura
 Ext.Osiris.RegisterListener("StatusApplied", 4, "after", function(object, status, causee, storyActionID)
-    if Ext.Vars.GetModVariables("60b7b37b-c006-4775-bda2-6ebb726acc12").stalwart ~= 1 then
-        if FilterStatuses(status) and (HasActiveStatus(object,"SIAEL_POTR_ARMOR_R") == 1 or HasActiveStatus(object,"SIAEL_POTR_ARMOR") == 1) and HasActiveStatus(object,"SIAEL_POTR_ARMOR_AURA") == 0 then
+    Wait(10,function()
+        if HasValidAura(object) == true and (HasActiveStatus(object,"SIAEL_POTR_ARMOR_R") == 1 or HasActiveStatus(object,"SIAEL_POTR_ARMOR") == 1) and HasActiveStatus(object,"SIAEL_POTR_ARMOR_AURA") == 0 and Ext.Vars.GetModVariables("60b7b37b-c006-4775-bda2-6ebb726acc12").stalwart ~= 1 then
+            Ext.Vars.GetModVariables("60b7b37b-c006-4775-bda2-6ebb726acc12")["stalwart"] = 1
             print("Stalwart Paragon - Self: " .. ResolveTranslatedString(GetDisplayName(object)))
             ApplyStatus(object,"SIAEL_POTR_ARMOR_AURA",-1,0,object)
             StalwartParagon(object,object)
-            Ext.Vars.GetModVariables("60b7b37b-c006-4775-bda2-6ebb726acc12")["stalwart"] = 1
         end
-    else
-        if status == "SIAEL_POTR_ARMOR_AURA_EFFECT" then
-            print("Stalwart Paragon - Ally: " .. ResolveTranslatedString(GetDisplayName(object)))
-            StalwartParagon(object,causee)
-        elseif status == "SIAEL_POTR_GUIDANCE" and HasPassive(causee,"Siael_POTR_Righteous_R") == 1 and HasActiveStatus(object,"SIAEL_POTR_PFEG") == 0 then
-            ApplyStatus(object,"SIAEL_POTR_PFEG",-1,0,causee)
-        end
+    end)
+
+    --For allies receiving the aura status
+    if status == "SIAEL_POTR_ARMOR_AURA_EFFECT" then
+        print("Stalwart Paragon - Ally: " .. ResolveTranslatedString(GetDisplayName(object)))
+        StalwartParagon(object,causee)
     end
 end)
 
 --Handles removal of above effects, on the wearer we check they don't have the aura source (or effect for Inquisitor), on others we check they don't have the aura effects
 Ext.Osiris.RegisterListener("StatusRemoved", 4, "after", function(object, status, causee, applyStoryActionID)
     --If we remove armor, or still have the armor but lose all valid auras...
-    if Ext.Vars.GetModVariables("60b7b37b-c006-4775-bda2-6ebb726acc12").stalwart ~= 0 then
-        if status == "SIAEL_POTR_ARMOR_AURA_EFFECT" then
-            RemoveStatus(object,"SIAEL_POTR_GUIDANCE")
-            RemoveStatus(object,"SIAEL_POTR_BLESS")
-            RemoveStatus(object,"SIAEL_POTR_HEROISM")
-            RemoveStatus(object,"SIAEL_POTR_PFEG")
-            if object ~= nil then print("Stalwart Paragon - Ally removal: " .. ResolveTranslatedString(GetDisplayName(object))) end
-        elseif (status == "SIAEL_POTR_ARMOR_R" or status == "SIAEL_POTR_ARMOR") or ((HasActiveStatus(object,"SIAEL_POTR_ARMOR_R") == 1 or HasActiveStatus(object,"SIAEL_POTR_ARMOR") == 1) and not HasValidAura(object)) then
-            Ext.Vars.GetModVariables("60b7b37b-c006-4775-bda2-6ebb726acc12")["stalwart"] = 0
-            RemoveStatus(object,"SIAEL_POTR_ARMOR_AURA")
-            RemoveStatus(object,"SIAEL_POTR_GUIDANCE")
-            RemoveStatus(object,"SIAEL_POTR_BLESS")
-            RemoveStatus(object,"SIAEL_POTR_HEROISM")
-            RemoveStatus(object,"SIAEL_POTR_PFEG")
-            if object ~= nil then print("Stalwart Paragon - Self removal: " .. ResolveTranslatedString(GetDisplayName(object))) end
-        end
+    if HasActiveStatus(object,"SIAEL_POTR_ARMOR_AURA") == 1 and ((status == "SIAEL_POTR_ARMOR_R" or status == "SIAEL_POTR_ARMOR") or HasValidAura(object) == false) then
+        RemoveStatus(object,"SIAEL_POTR_ARMOR_AURA")
+        RemoveStatus(object,"SIAEL_POTR_GUIDANCE")
+        RemoveStatus(object,"SIAEL_POTR_BLESS")
+        RemoveStatus(object,"SIAEL_POTR_HEROISM")
+        RemoveStatus(object,"SIAEL_POTR_PFEG")
+        Ext.Vars.GetModVariables("60b7b37b-c006-4775-bda2-6ebb726acc12")["stalwart"] = 0
+        if object ~= nil then print("Stalwart Paragon - Self removal: " .. ResolveTranslatedString(GetDisplayName(object))) end
+    end
+
+    if status == "SIAEL_POTR_ARMOR_AURA_EFFECT" then
+        RemoveStatus(object,"SIAEL_POTR_GUIDANCE")
+        RemoveStatus(object,"SIAEL_POTR_BLESS")
+        RemoveStatus(object,"SIAEL_POTR_HEROISM")
+        RemoveStatus(object,"SIAEL_POTR_PFEG")
+        if object ~= nil then print("Stalwart Paragon - Ally removal: " .. ResolveTranslatedString(GetDisplayName(object))) end
     end
 end)
 
@@ -1017,6 +999,18 @@ Ext.Osiris.RegisterListener("StatusRemoved", 4, "after", function(object, status
         RemoveStatus(object,"SIAEL_POTR_SHIELD_OFF")
     end
 end)
+
+--Handles Zealous Oath properly giving the LoH charges
+--Had to do it this way because Law of Eternity was messing with it, considering it part of the Channel Oath action. Here, it is independent
+Ext.Osiris.RegisterListener("StatusAttempt", 4, "after", function(object, status, causee, storyActionID)
+    if status == "SIAEL_POTR_JUSTICE_EFFECT_TECHNICAL" then
+        ApplyStatus(object,"SIAEL_POTR_JUSTICE_EFFECT",6*math.max(Ext.Entity.Get(object).Stats.AbilityModifiers[6],Ext.Entity.Get(object).Stats.AbilityModifiers[7]),0,object)
+        Wait(10, function()
+            RemoveStatus(object,status)
+        end)
+    end
+end)
+
 
 
 --Breaking oath unequips all PotR equipment requirring to be paladin
