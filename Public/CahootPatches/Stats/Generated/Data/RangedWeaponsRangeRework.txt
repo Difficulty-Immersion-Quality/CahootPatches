@@ -1,9 +1,0 @@
-// Hand Crossbows: increase range
-
-new entry "WPN_HandCrossbow"
-type "Weapon"
-using "WPN_HandCrossbow"
-// data "Damage Range" "600"
-data "Damage Range" "1200"
-// data "WeaponRange" "375"
-data "WeaponRange" "750"
