@@ -240,37 +240,6 @@ data "StatusType" "BOOST"
 using "CONJURE_VOLLEY_PIERCING_FAIL"
 data "OnApplyFunctors" "DealDamage(8d8/2,Piercing,Magical)"
 
-// ============================ Holy Weapon ============================
-// Decrease damage buff for weapon from 2d8 to 2d4
-
-new entry "Target_HolyWeapon"
-type "SpellData"
-data "SpellType" "Target"
-using "Target_HolyWeapon"
-// data "DescriptionParams" "DealDamage(2d8,Radiant)"
-data "DescriptionParams" "DealDamage(2d4,Radiant)"
-
-new entry "HOLY_WEAPON"
-type "StatusData"
-data "StatusType" "BOOST"
-using "HOLY_WEAPON"
-// data "DescriptionParams" "2d8"
-data "DescriptionParams" "DealDamage(2d4,Radiant)"
-// data "Boosts" "WeaponDamage(2d8,Radiant);WeaponProperty(Magical);GameplayLight(9,false,0.1)"
-data "Boosts" "WeaponDamage(2d4,Radiant);WeaponProperty(Magical);GameplayLight(9,false,0.1)"
-
-// Also fix Valdacil's 5e Spell Adjustments accidentally overriding this entire status
-new entry "HOLY_WEAPON_TECHNICAL"
-type "StatusData"
-data "StatusType" "BOOST"
-data "Boosts" "UnlockSpell(Shout_HolyWeapon_Burst)"
-// data "OnRemoveFunctors" "ApplyStatus(BREAK_CONCENTRATION,100,0)"
-data "OnRemoveFunctors" "ApplyEquipmentStatus(MainHand,HOLY_WEAPON,100,0)"
-data "RemoveConditions" "SpellId('Shout_HolyWeapon_Burst')"
-data "RemoveEvents" "OnSpellCast"
-data "StackId" "HOLY_WEAPON_TECHNICAL"
-data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator"
-
 // ============================ Synaptic Static ============================
 // Fix TargetConditions forcing the spell to target an NPC instead of being able to free target
 
@@ -280,6 +249,29 @@ data "SpellType" "Target"
 using "Target_SynapticStatic"
 // data "TargetConditions" "not Dead() and not Item() and IntelligenceGreaterThan(2)"
 data "TargetConditions" "not Dead() and not Item()"
+
+// ============================ Tenser's Transformation ============================
+// Increase duration to long rest, but decrease extra weapon damage to 2d8
+
+new entry "Shout_TensersTransformation"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_TensersTransformation"
+// data "SpellProperties" "ApplyStatus(TENSERS_TRANSFORMATION,100,100)"
+data "SpellProperties" "ApplyStatus(TENSERS_TRANSFORMATION,100,10)"
+// data "ExtraDescriptionParams" "GainTemporaryHitPoints(50);DealDamage(2d12,Force)"
+data "ExtraDescriptionParams" "GainTemporaryHitPoints(50);DealDamage(2d8,Force)"
+// data "TooltipStatusApply" "ApplyStatus(TENSERS_TRANSFORMATION,100,100)"
+data "TooltipStatusApply" "ApplyStatus(TENSERS_TRANSFORMATION,100,10)"
+
+new entry "TENSERS_TRANSFORMATION"
+type "StatusData"
+data "StatusType" "BOOST"
+using "TENSERS_TRANSFORMATION"
+// data "DescriptionParams" "GainTemporaryHitPoints(50);DealDamage(2d12,Force)"
+data "DescriptionParams" "GainTemporaryHitPoints(50);DealDamage(2d8,Force)"
+// data "Boosts" "IF(IsWeaponAttack()):Advantage(AttackRoll); CharacterWeaponDamage(2d12, Force); Proficiency(LightArmor); Proficiency(MediumArmor); Proficiency(HeavyArmor); Proficiency(Shields); Proficiency(SimpleWeapons); Proficiency(MartialWeapons);  Proficiency(LightArmor); ProficiencyBonus(SavingThrow,Strength); ProficiencyBonus(SavingThrow,Constitution); BlockSpellCast();ScaleMultiplier(1.1)"
+data "Boosts" "IF(IsWeaponAttack()):Advantage(AttackRoll); CharacterWeaponDamage(2d8, Force); Proficiency(LightArmor); Proficiency(MediumArmor); Proficiency(HeavyArmor); Proficiency(Shields); Proficiency(SimpleWeapons); Proficiency(MartialWeapons);  Proficiency(LightArmor); ProficiencyBonus(SavingThrow,Strength); ProficiencyBonus(SavingThrow,Constitution); BlockSpellCast();ScaleMultiplier(1.1)"
 
 // ============================ Regenerate ============================
 // Remove not combat requirement, fix DescriptionParams, and increase heal at start of turn to 5 hit points (up from 1 hit point)
