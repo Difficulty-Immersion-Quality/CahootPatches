@@ -1,4 +1,5 @@
 // ================================== Sword ==================================
+
 // Weapon: remove finesse property, nerf extra Radiant damage (see Holy Blade edits below)
 new entry "Siael_POTR_Sword_D"
 type "Weapon"
@@ -514,7 +515,6 @@ data "Description" "ha3eb39a4gc393g44d4gb5c9gd9ab4477cc78;1"
 data "DescriptionParams" ""
 // data "TickFunctors" "IF(Tagged('UNDEAD') or Tagged('UNDEAD_BEAST') or Tagged('FIEND') or Tagged('FEY') or Tagged('MONSTROSITY') or Tagged('ABERRATION')):ApplyStatus(MAG_RADIANT_RADIATING_ORB,100,2);IF(Tagged('UNDEAD') or Tagged('UNDEAD_BEAST') or Tagged('FIEND') or Tagged('FEY') or Tagged('MONSTROSITY') or Tagged('ABERRATION')):ApplyStatus(SIAEL_POTR_RJ_TECHNICAL,100,0)"
 data "TickFunctors" "IF(Tagged('UNDEAD') or Tagged('UNDEAD_BEAST') or Tagged('FIEND') or Tagged('FEY') or Tagged('MONSTROSITY') or Tagged('ABERRATION')):ApplyStatus(MAG_RADIANT_RADIATING_ORB,100,2)"
-
 
 // ================================== Mercy + Resolve sets: Luminous Sermon ==================================
 // Clarify tooltip
