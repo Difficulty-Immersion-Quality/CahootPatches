@@ -42,7 +42,7 @@ data "SpellType" "Target"
 // data "ContainerSpells" "Target_FlockOfFamiliars_Cat;Target_FlockOfFamiliars_Crab;Target_FlockOfFamiliars_Frog;Target_FlockOfFamiliars_Rat;Target_FlockOfFamiliars_Raven;Target_FlockOfFamiliars_Spider;Target_FlockOfFamiliars_Imp;Target_FlockOfFamiliars_Quasit"
 data "ContainerSpells" "Target_FlockOfFamiliars_Cat;Target_FlockOfFamiliars_Crab;Target_FlockOfFamiliars_Frog;Target_FlockOfFamiliars_Rat;Target_FlockOfFamiliars_Raven;Target_FlockOfFamiliars_Spider"
 
-// ============================ Magic Circle ============================
+// ============================ Snare ============================
 // Remove not combat requirement
 
 new entry "Target_Snare"
@@ -51,6 +51,131 @@ data "SpellType" "Target"
 using "Target_Snare"
 // data "Requirements" "!Combat"
 data "Requirements" ""
+
+// ============================ Ashardalon's Stride ============================
+// Increase damage to 2d6
+
+// Spell
+new entry "Shout_AshardalonsStride"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_AshardalonsStride"
+// data "ExtraDescriptionParams" "Distance(2);DealDamage(1d6,Fire)"
+data "ExtraDescriptionParams" "Distance(2);DealDamage(2d6,Fire)"
+
+// Status to self
+new entry "ASHARDALONS_STRIDE"
+type "StatusData"
+data "StatusType" "BOOST"
+using "ASHARDALONS_STRIDE"
+// data "DescriptionParams" "Distance(6);Distance(2);DealDamage(1d6,Fire)"
+data "DescriptionParams" "Distance(6);Distance(2);DealDamage(2d6,Fire)"
+
+new entry "ASHARDALONS_STRIDE_4"
+type "StatusData"
+data "StatusType" "BOOST"
+using "ASHARDALONS_STRIDE_4"
+// data "DescriptionParams" "Distance(7.5);Distance(2);DealDamage(2d6,Fire)"
+data "DescriptionParams" "Distance(7.5);Distance(2);DealDamage(3d6,Fire)"
+
+new entry "ASHARDALONS_STRIDE_5"
+type "StatusData"
+data "StatusType" "BOOST"
+using "ASHARDALONS_STRIDE_5"
+// data "DescriptionParams" "Distance(9);Distance(2);DealDamage(3d6,Fire)"
+data "DescriptionParams" "Distance(9);Distance(2);DealDamage(4d6,Fire)"
+
+new entry "ASHARDALONS_STRIDE_6"
+type "StatusData"
+data "StatusType" "BOOST"
+using "ASHARDALONS_STRIDE_6"
+// data "DescriptionParams" "Distance(10.5);Distance(2);DealDamage(4d6,Fire)"
+data "DescriptionParams" "Distance(10.5);Distance(2);DealDamage(5d6,Fire)"
+
+new entry "ASHARDALONS_STRIDE_7"
+type "StatusData"
+data "StatusType" "BOOST"
+using "ASHARDALONS_STRIDE_7"
+// data "DescriptionParams" "Distance(12);Distance(2);DealDamage(5d6,Fire)"
+data "DescriptionParams" "Distance(12);Distance(2);DealDamage(6d6,Fire)"
+
+new entry "ASHARDALONS_STRIDE_8"
+type "StatusData"
+data "StatusType" "BOOST"
+using "ASHARDALONS_STRIDE_8"
+// data "DescriptionParams" "Distance(13.5);Distance(2);DealDamage(6d6,Fire)"
+data "DescriptionParams" "Distance(13.5);Distance(2);DealDamage(7d6,Fire)"
+
+new entry "ASHARDALONS_STRIDE_9"
+type "StatusData"
+data "StatusType" "BOOST"
+using "ASHARDALONS_STRIDE_9"
+// data "DescriptionParams" "Distance(15);Distance(2);DealDamage(7d6,Fire)"
+data "DescriptionParams" "Distance(15);Distance(2);DealDamage(8d6,Fire)"
+
+// Status applying the damage
+new entry "ASHARDALONS_STRIDE_DAMAGE"
+type "StatusData"
+data "StatusType" "BOOST"
+using "ASHARDALONS_STRIDE_DAMAGE"
+// data "DescriptionParams" "DealDamage(1d6,Fire)"
+data "DescriptionParams" "DealDamage(2d6,Fire)"
+// data "OnApplyFunctors" "DealDamage(1d6,Fire,Magical)"
+data "OnApplyFunctors" "DealDamage(2d6,Fire,Magical)"
+
+new entry "ASHARDALONS_STRIDE_DAMAGE_4"
+type "StatusData"
+data "StatusType" "BOOST"
+using "ASHARDALONS_STRIDE_DAMAGE_4"
+// data "DescriptionParams" "DealDamage(2d6,Fire)"
+data "DescriptionParams" "DealDamage(3d6,Fire)"
+// data "OnApplyFunctors" "DealDamage(2d6,Fire,Magical)"
+data "OnApplyFunctors" "DealDamage(3d6,Fire,Magical)"
+
+new entry "ASHARDALONS_STRIDE_DAMAGE_5"
+type "StatusData"
+data "StatusType" "BOOST"
+using "ASHARDALONS_STRIDE_DAMAGE_5"
+// data "DescriptionParams" "DealDamage(3d6,Fire)"
+data "DescriptionParams" "DealDamage(4d6,Fire)"
+// data "OnApplyFunctors" "DealDamage(3d6,Fire,Magical)"
+data "OnApplyFunctors" "DealDamage(4d6,Fire,Magical)"
+
+new entry "ASHARDALONS_STRIDE_DAMAGE_6"
+type "StatusData"
+data "StatusType" "BOOST"
+using "ASHARDALONS_STRIDE_DAMAGE_6"
+// data "DescriptionParams" "DealDamage(4d6,Fire)"
+data "DescriptionParams" "DealDamage(5d6,Fire)"
+// data "OnApplyFunctors" "DealDamage(4d6,Fire,Magical)"
+data "OnApplyFunctors" "DealDamage(5d6,Fire,Magical)"
+
+new entry "ASHARDALONS_STRIDE_DAMAGE_7"
+type "StatusData"
+data "StatusType" "BOOST"
+using "ASHARDALONS_STRIDE_DAMAGE_7"
+// data "DescriptionParams" "DealDamage(5d6,Fire)"
+data "DescriptionParams" "DealDamage(6d6,Fire)"
+// data "OnApplyFunctors" "DealDamage(5d6,Fire,Magical)"
+data "OnApplyFunctors" "DealDamage(6d6,Fire,Magical)"
+
+new entry "ASHARDALONS_STRIDE_DAMAGE_8"
+type "StatusData"
+data "StatusType" "BOOST"
+using "ASHARDALONS_STRIDE_DAMAGE_8"
+// data "DescriptionParams" "DealDamage(6d6,Fire)"
+data "DescriptionParams" "DealDamage(7d6,Fire)"
+// data "OnApplyFunctors" "DealDamage(6d6,Fire,Magical)"
+data "OnApplyFunctors" "DealDamage(7d6,Fire,Magical)"
+
+new entry "ASHARDALONS_STRIDE_DAMAGE_9"
+type "StatusData"
+data "StatusType" "BOOST"
+using "ASHARDALONS_STRIDE_DAMAGE_9"
+// data "DescriptionParams" "DealDamage(7d6,Fire)"
+data "DescriptionParams" "DealDamage(8d6,Fire)"
+// data "OnApplyFunctors" "DealDamage(7d6,Fire,Magical)"
+data "OnApplyFunctors" "DealDamage(8d6,Fire,Magical)"
 
 // ============================ Magic Circle ============================
 // Remove not combat/turn-based requirement
@@ -239,6 +364,41 @@ type "StatusData"
 data "StatusType" "BOOST"
 using "CONJURE_VOLLEY_PIERCING_FAIL"
 data "OnApplyFunctors" "DealDamage(8d8/2,Piercing,Magical)"
+
+// ============================ Raise Dead ============================
+// Remove out of combat requirement. Resurrected entity comes back with full hp, and the attack roll/ability check/saving throw penalty is completely removed after a long rest
+
+new entry "Target_RaiseDead"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_RaiseDead"
+// data "SpellProperties" "Resurrect(100,1);RestoreResource(Movement, 100%, 0);UseActionResource(ActionPoint,100%,0);UseActionResource(BonusActionPoint,100%,0);ApplyStatus(RAISE_DEAD,100,-1)"
+data "SpellProperties" "Resurrect(100,1);RestoreResource(Movement, 100%, 0);UseActionResource(ActionPoint,100%,0);UseActionResource(BonusActionPoint,100%,0);ApplyStatus(RAISE_DEAD,100,-1);RegainHitPoints(context.Target.MaxHP)"
+data "Description" "h4d5bfb07gd3e4g4f28g86f1geecd1d89eb48;1"
+// data "DescriptionParams" "RegainHitPoints(1)"
+data "DescriptionParams" "RegainHitPoints(,)"
+// Coming back from the dead is an ordeal. The creature has a -[1] penalty to all &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;, &lt;LSTag Tooltip="AbilityCheck"&gt;Ability Checks&lt;/LSTag&gt; and &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;. This penalty is removed after a &lt;LSTag Tooltip="LongRest"&gt;Long Rest&lt;/LSTag&gt;.
+data "ExtraDescription" "h4d520542gb2bdg440eg833fg04db8167f449;1"
+// data "ExtraDescriptionParams" ""
+data "ExtraDescriptionParams" "4"
+// data "Requirements" "!Combat"
+data "Requirements" ""
+// data "Cooldown" ""
+data "Cooldown" "OncePerCombat"
+
+new entry "RAISE_DEAD"
+type "StatusData"
+data "StatusType" "BOOST"
+using "RAISE_DEAD"
+//his entity was raised from the dead and receives a -[1] penalty to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;, &lt;LSTag Tooltip="AbilityCheck"&gt;Ability Checks&lt;/LSTag&gt; and &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.
+data "Description" "h4a084863g69a3g43dega18dg7b894d898b16;1"
+data "DescriptionParams" "4"
+// data "OnRemoveFunctors" "ApplyStatus(RAISE_DEAD_2,100,-1)"
+data "OnRemoveFunctors" ""
+// data "StatusPropertyFlags" "ApplyToDead;IgnoreResting;DisableOverhead;DisableCombatlog"
+data "StatusPropertyFlags" "ApplyToDead;DisableOverhead;DisableCombatlog"
+// data "Passives" "RaiseDead"
+data "Passives" ""
 
 // ============================ Synaptic Static ============================
 // Fix TargetConditions forcing the spell to target an NPC instead of being able to free target

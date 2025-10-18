@@ -105,7 +105,10 @@
 	<content contentuid="h38571638g79a7g4ae6g8380g34d54cf06253" version="1">Three creatures in the area gain [1] and have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on Wisdom &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;. If hit by an attack, an affected creature has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on its next &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt; during combat.</content>	
 	<content contentuid="h13ca8280gdb76g4dfag89ddga754c32f0d6f" version="1">Touch a creature to stimulate its natural healing ability, immediately healing it for [1] + [2], then another [3] at the start of its turns until the spell ends.</content>
 	<content contentuid="c777d29e-f060-493e-aa19-2b3b5ce56cbe" version="1">Shadowspawn</content>
-	
+	<content contentuid="h4d5bfb07gd3e4g4f28g86f1geecd1d89eb48" version="1">Touch a creature that has died and return it to life with full[1].</content>
+	<content contentuid="h4d520542gb2bdg440eg833fg04db8167f449" version="1">Coming back from the dead is an ordeal. The creature has a -[1] penalty to all &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;, &lt;LSTag Tooltip="AbilityCheck"&gt;Ability Checks&lt;/LSTag&gt; and &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;. This penalty is removed after a &lt;LSTag Tooltip="LongRest"&gt;Long Rest&lt;/LSTag&gt;.</content>
+	<content contentuid="h4a084863g69a3g43dega18dg7b894d898b16" version="1">This entity was raised from the dead and receives a -[1] penalty to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;, &lt;LSTag Tooltip="AbilityCheck"&gt;Ability Checks&lt;/LSTag&gt; and &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.</content>
+
 	<!-- AdvancedTTSpells -->
 	<content contentuid="h47af5db9g9ba8g4a63g8e1ag84d5a7040e3f" version="1">Allies make this &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; with &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; and Undead make it with &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt;. </content>
 	
