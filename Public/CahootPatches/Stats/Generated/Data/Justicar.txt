@@ -1,0 +1,19 @@
+// ================================== Divine Judgment ==================================
+// Now reduces critical hit threshold by 2 instead of 1
+
+new entry "Target_LHB_Justicar_DivineJudgment"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_LHB_Justicar_DivineJudgment"
+// Choose a creature you can see within [1] and mark it as a foe of your god. While marked, the number you need to roll for a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; on an &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt; against the target is reduced by [2].
+data "Description" "h2fdc0e99g77bcg4a87g8805gdbf140338574;1"
+// data "DescriptionParams" ""
+data "DescriptionParams" "Distance(9);2"
+
+new entry "LHB_Justicar_DivineJudgment"
+type "PassiveData"
+using "LHB_Justicar_DivineJudgment"
+// Choose a creature you can see within [1] and mark it as a foe of your god. While marked, the number you need to roll for a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; on an &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt; against the target is reduced by [2].
+data "Description" "h2fdc0e99g77bcg4a87g8805gdbf140338574;1"
+// data "Boosts" "IF(HasStatus('LHB_DIVINEJUDGMENT', context.Target, context.Source) and IsAttack()):ReduceCriticalAttackThreshold(1)"
+data "Boosts" "IF(HasStatus('LHB_DIVINEJUDGMENT', context.Target, context.Source) and IsAttack()):ReduceCriticalAttackThreshold(2)"
