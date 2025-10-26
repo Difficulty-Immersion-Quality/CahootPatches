@@ -1,0 +1,21 @@
+// ===================================== Divine Soul =====================================
+// Empowered Healing: Increase healing done to triple spell slot level used
+
+new entry "Shout_EmpoweredHealing"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_EmpoweredHealing"
+// When you or a creature within [1] of you casts a spell that restores &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt;, increase the amount restored by triple the spell's level.
+data "Description" "hff58cc7fg07e0g4c6dga1abg1ea57f80cafe;1"
+
+new entry "Interrupt_EmpoweredHealing"
+type "InterruptData"
+using "Interrupt_EmpoweredHealing"
+// When you or a creature within [1] of you casts a spell that restores &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt;, increase the amount restored by triple the spell's level.
+data "Description" "hff58cc7fg07e0g4c6dga1abg1ea57f80cafe;1"
+
+new entry "EmpoweredHealing_Caster"
+type "PassiveData"
+using "EmpoweredHealing_Caster"
+// data "StatsFunctors" "RegainHitPoints(2*SpellPowerLevel)"
+data "StatsFunctors" "RegainHitPoints(3*SpellPowerLevel)"

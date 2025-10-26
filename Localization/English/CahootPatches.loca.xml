@@ -103,6 +103,9 @@
 	<content contentuid="h2fdc0e99g77bcg4a87g8805gdbf140338574" version="1">Choose a creature you can see within [1] and mark it as a foe of your god. While marked, the number you need to roll for a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; on an &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt; against the target is reduced by [2].</content>
 	<content contentuid="h2fdc0e99g77bcg4a87g8805gdbf140338574" version="1">Dawn's Wrath</content>
 
+	<!-- BookOfSorceres_NexusVersion -->
+	<content contentuid="h2b5a3b41g94aegbeffgf1b7gdd731243a31a" version="1">When you or a creature within [1] of you casts a spell that restores &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt;, increase the amount restored by triple the spell's level.</content>
+
 	<!-- 5e Spells -->
 	<content contentuid="hcab94b97g25acg43d6g8d4ag40c3ac313601" version="1">Create a [1] radius area of magical energy. Celestial, elemental, fiend, fey and undead creatures have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; against targets within the area, targets within the area can’t be &lt;LSTag Type="Status" Tooltip="CHARMED"&gt;Charmed&lt;/LSTag&gt;, &lt;LSTag Type="Status" Tooltip="FRIGHTENED"&gt;Frightened&lt;/LSTag&gt;, or &lt;LSTag Type="Status" Tooltip="LOW_GHOST_POSSESSED"&gt;Possessed&lt;/LSTag&gt; by the creatures, and the creatures cannot enter the area by nonmagical means.</content>
 	<content contentuid="h8fbd23b3g8fcfg4b23g95cbge11b53b51400" version="1">If the creatures try to teleport or fly into the area, they must succeed on a &lt;LSTag Tooltip="Charisma"&gt;Charisma&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or they are pushed [1] out of the circle.</content>
