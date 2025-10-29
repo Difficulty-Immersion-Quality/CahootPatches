@@ -803,14 +803,14 @@ data "RootSpellID" "Target_GreaterRestoration"
 data "PowerLevel" "9"
 
 // ==================================== Sunbeam ====================================
-// Increase damage to 5d10+10 (15-60), but decrease recast window to 3 turns (i.e. 2 subsequent turns after current one), and remove concentration. Also clarify tooltip's status that the blind condition is only 1 turn per application
+// Increase damage to 5d10+10 (15-60), but decrease recast window to 4 turns (i.e. 3 subsequent turns after current one). Also clarify tooltip's status that the blind condition is only 1 turn per application
 
 new entry "Zone_Sunbeam"
 type "SpellData"
 data "SpellType" "Zone"
 using "Zone_Sunbeam"
 // data "SpellProperties" "ApplyStatus(SELF,SUNBEAM_OWNER,100,10)"
-data "SpellProperties" "ApplyStatus(SELF,SUNBEAM_OWNER,100,3)"
+data "SpellProperties" "ApplyStatus(SELF,SUNBEAM_OWNER,100,4)"
 // data "SpellSuccess" "DealDamage(6d8,Radiant,Magical);ApplyStatus(SUNBEAM,100,1)"
 data "SpellSuccess" "DealDamage(5d10+10,Radiant,Magical);ApplyStatus(SUNBEAM,100,1)"
 // data "SpellFail" "DealDamage((6d8)/2,Radiant,Magical)"
@@ -818,9 +818,7 @@ data "SpellFail" "DealDamage((5d10+10)/2,Radiant,Magical)"
 // data "TooltipDamageList" "DealDamage(6d8,Radiant)"
 data "TooltipDamageList" "DealDamage(5d10+10,Radiant)"
 // data "TooltipStatusApply" "ApplyStatus(SUNBEAM,100,10);ApplyStatus(SUNBEAM_OWNER,100,10)"
-data "TooltipStatusApply" "ApplyStatus(SUNBEAM,100,1);ApplyStatus(SUNBEAM_OWNER,100,3)"
-// data "SpellFlags" "HasVerbalComponent;HasSomaticComponent;IsSpell;IsConcentration;IsHarmful"
-data "SpellFlags" "HasVerbalComponent;HasSomaticComponent;IsSpell;IsHarmful"
+data "TooltipStatusApply" "ApplyStatus(SUNBEAM,100,1);ApplyStatus(SUNBEAM_OWNER,100,4)"
 
 new entry "Zone_Sunbeam_Recreate"
 type "SpellData"
@@ -844,11 +842,3 @@ using "Zone_MAG_BloodOfLathander_Sunbeam"
 data "SpellSuccess" "DealDamage(6d8,Radiant,Magical);ApplyStatus(SUNBEAM,100,1)"
 data "SpellFail" "DealDamage((6d8)/2,Radiant,Magical)"
 data "TooltipDamageList" "DealDamage(6d8,Radiant)"
-
-// Markoheshkir's Sunbeam from my mod: removing concentration
-new entry "CHT_Zone_MAG_Legendary_Chromatic_Sunbeam"
-type "SpellData"
-data "SpellType" "Zone"
-using "CHT_Zone_MAG_Legendary_Chromatic_Sunbeam"
-// data "SpellFlags" "HasVerbalComponent;HasSomaticComponent;IsSpell;IsConcentration;IsHarmful;Temporary"
-data "SpellFlags" "HasVerbalComponent;HasSomaticComponent;IsSpell;IsHarmful;Temporary"
