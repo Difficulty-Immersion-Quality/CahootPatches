@@ -86,6 +86,41 @@
 	<content contentuid="h644f1487gc26dg40e7gacaag5e3899554a3d" version="1">Once per &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;, if you are below [1] &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt; and take damage, you gain [2] &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt;.</content>
 	<content contentuid="h10121987ga23fg4f5ega399g49fd9728dab9" version="1">You gain a +[1] bonus to Intelligence and Wisdom &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; and are immune to being &lt;LSTag Type="Status" Tooltip="CHARMED"&gt;Charmed&lt;/LSTag&gt;.</content>
 
+	<!-- CollegeOfTheMoons -->
+	<content contentuid="h612a9a67g4e62g4bd8g8e48g561d1ca7b52c" version="1">Tale of Life</content>
+	<content contentuid="h1baf6296g9ab7g498dg8987g648be6df9198" version="1">You invoke a tale of vitality and thriving earth. When you restore &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt; to a creature with a spell, you can expend a &lt;LSTag Type="ActionResource" Tooltip="BardicInspiration"&gt;Bardic Inspiration&lt;/LSTag&gt; die to increase the amount of hit points restored by [1].</content>
+	<content contentuid="h1444e6e0gf500g4318g9255g611a22c2ccc3" version="1">Tale of Life</content>
+	<content contentuid="hd05ed4cbg8967g4ba2g895agc294b5e683cf" version="1">When you restore &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt; to a creature with a spell, you can increase the amount of hit points restored by [1].</content>
+	<content contentuid="h85f54b42g4976g461cgb9e0g681ac841a32f" version="1">Tale of Life</content>
+	<content contentuid="heeb4f9ccg3b79g4642gb57fgc58cc63f01e5" version="1">When you restore &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt; to a creature with a spell, you can increase the amount of hit points restored by [1].</content>
+	<content contentuid="h1a1f17a9g9de0g4026gaa38g377037a2cffa" version="1">You invoke a tale of mystery and secrets. When you give a creature a &lt;LSTag Type="Status" Tooltip="BARDIC_INSPIRATION"&gt;Bardic Inspiration&lt;/LSTag&gt; die, you can take the &lt;LSTag Type="Spell" Tooltip="Shout_Disengage"&gt;Disengage&lt;/LSTag&gt; or &lt;LSTag Type="Spell" Tooltip="Shout_Hide"&gt;Hide&lt;/LSTag&gt; action for free.</content>
+	<content contentuid="h92ade126g6d35g4c64gb5d1gc3f8284cdbf7" version="1">Tale of Gloam: Disengage or Hide</content>
+	<content contentuid="h4959b942g8d01g4db9gae59g70ede43940d4" version="1">You can take the &lt;LSTag Type="Spell" Tooltip="Shout_Disengage"&gt;Disengage&lt;/LSTag&gt; or &lt;LSTag Type="Spell" Tooltip="Shout_Hide"&gt;Hide&lt;/LSTag&gt; action for free.</content>
+	<content contentuid="hb49d617egbe40g4900ga73bg0c0a281266b0" version="1">You invoke a tale of merriment and fey guile. You can cast &lt;LSTag Type="Spell" Tooltip="CHT_Target_TaleMirth"&gt;Tale of Mirth: Mocking Words&lt;/LSTag&gt;.</content>
+	<content contentuid="he196a8feg7489g4413g878cgad8e7a969872" version="1">Tale of Mirth: Mocking Words</content>
+	<content contentuid="h310dfd0dgf6cbg49f5g9c10g97f08613fde0" version="1">Choose one creature you can see. The creature must subtract an amount equal to a roll of your &lt;LSTag Type="ActionResource" Tooltip="BardicInspiration"&gt;Bardic Inspiration&lt;/LSTag&gt; dice from the next &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; it makes before the start of your next turn.</content>
+	<content contentuid="h636593b4g3894g4fb9g81f1gf316dafa5fe7" version="1">Tale of Mirth: Mocking Words</content>
+	<content contentuid="h779c5aebgd744g4de9g8796gdb492d2e5dc8" version="1">Affected entity has a penalty equal to the duration indicated to the next &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; it makes before the start of your next turn.</content>
+	<content contentuid="habb0811egf21bg4a3bg833fgfe00c7f125b0" version="1">Tale of Mirth (-1)</content>
+	<content contentuid="hfd37a82eg1369g4f47g883fga60b000c57ea" version="1">Tale of Mirth (-2)</content>
+	<content contentuid="h80535710g4f7cg4c38gab8ag383792ac6738" version="1">Tale of Mirth (-3)</content>
+	<content contentuid="h6d415f17ge8fbg4ffdg8b5bge1e7b7a7310e" version="1">Tale of Mirth (-4)</content>
+	<content contentuid="h491b314cgf568g472dgb645g1d88f7282409" version="1">Tale of Mirth (-5)</content>
+	<content contentuid="h87716e65gb0bbg4f91g83e6g6bbf3899167a" version="1">Tale of Mirth (-6)</content>
+	<content contentuid="h943da924ge4d1g49dbg8902g180a715c08e1" version="1">Tale of Mirth (-7)</content>
+	<content contentuid="ha11ca361g239dg4be7gbb57gd483f40f27df" version="1">Tale of Mirth (-8)</content>
+	<content contentuid="ha68d9588g9fa9g48b5ga717g26ca7239dd10" version="1">Tale of Mirth (-9)</content>
+	<content contentuid="h2e70bdfcg126ag4e3dg9d6bg69380f838811" version="1">Tale of Mirth (-10)</content>
+	<content contentuid="h623a37edgaf91g4c40ga911g6173aa0f7fc6" version="1">Tale of Mirth (-11)</content>
+	<content contentuid="h4030f40dga3cag4a6dga988gbb45fdd3f63c" version="1">Tale of Mirth (-12)</content>
+
+	<content contentuid="h06ac9548g00f0g4fd4g881ag48f969cfec9a" version="1">Call down a beam of light that damages any enemy or heals any ally that enters the beam or starts its turn in the light. You can use an action to move the beam [1].</content>
+	<content contentuid="h0ac2e4b1g9fa8g4704g9d83ga8dd7cd25e42" version="1">Move Blessing of the Moonwells: Moonbeam</content>
+	<content contentuid="h53866138g0fffg43c7g9175g2b5b22eb5f4e" version="1">Move the beam of moonlight up to [1]. The beam of light damages any enemy and heals any ally that enters the beam or starts its turn in the light.</content>
+	<content contentuid="h5b03bb0fga085g4bfcg84a0g783214c9eac1" version="1">Blessing of the Moonwells: Moonbeam</content>	
+	<content contentuid="h475fcb37gae10g421fg96c6gcb1b193a61ac" version="1">Ghostly flames engulf any creature that enters this silvery light or starts its turn inside the light, dealing [1] to enemies and healing allies for [2]. On a successful save, enemies still take half damage.</content>
+	<content contentuid="hfa4973c9g8411g4606g85ccg6490052ece8f" version="1">Creature is engulfed by ghostly flames that heal for [1] per turn.</content>
+
 	<!-- Oath of Heroism -->
 	<content contentuid="h52343558g1d56g490cgb2a7g3cc03ebf5119" version="1">Augment your athleticism with divine favour. Your &lt;LSTag Tooltip="Strength"&gt;Strength&lt;/LSTag&gt; increases by [1] and you gain &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on all &lt;LSTag Tooltip="Acrobatics"&gt;Acrobatics&lt;/LSTag&gt; and &lt;LSTag Tooltip="Athletics"&gt;Athletics&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityCheck"&gt;Checks&lt;/LSTag&gt;.</content>
 
