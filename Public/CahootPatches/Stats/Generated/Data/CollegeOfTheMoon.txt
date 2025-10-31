@@ -1,6 +1,7 @@
 // ===================================== Moonshae Folktales =====================================
 // Rework to be closer to RAW: doesn't cost a Bardic Inspiration die to activate, but the actual effects require expending a Bardic Inspiration die
 // Statuses for each individual variety are now actually removed upon choosing a different tale
+// Change cost to bonus action so it could be viable to switch in combat, as otherwise you'd just stick with the best option for your build and never deviate from it
 
 new entry "Shout_MoonshaeFolktales"
 type "SpellData"
@@ -11,7 +12,7 @@ data "Level" ""
 // data "Cooldown" "OncePerTurn"
 data "Cooldown" ""
 // data "UseCosts" "ActionPoint:1;BardicInspiration:1;"
-data "UseCosts" "ActionPoint:1"
+data "UseCosts" "BonusActionPoint:1"
 //data "SpellFlags" "IsSpell;HasSomaticComponent;IsLinkedSpellContainer"
 data "SpellFlags" "HasSomaticComponent;IsLinkedSpellContainer"
 
@@ -34,7 +35,7 @@ data "DescriptionParams" "RegainHitPoints(LevelMapValue(BardicInspiration))"
 // data "SpellProperties" "ApplyStatus(MOON_TALELIFE,100,-1)"
 data "SpellProperties" "IF(not ClassLevelHigherOrEqualThan(5,'Bard')):ApplyStatus(CHT_MOON_TALELIFE_D6,100,-1);IF(ClassLevelHigherOrEqualThan(5,'Bard') and not ClassLevelHigherOrEqualThan(10,'Bard')):ApplyStatus(CHT_MOON_TALELIFE_D8,100,-1);IF(ClassLevelHigherOrEqualThan(10,'Bard') and not ClassLevelHigherOrEqualThan(15,'Bard')):ApplyStatus(CHT_MOON_TALELIFE_D10,100,-1);IF(ClassLevelHigherOrEqualThan(15,'Bard')):ApplyStatus(CHT_MOON_TALELIFE_D12,100,-1)"
 // data "UseCosts" "ActionPoint:1;BardicInspiration:1;"
-data "UseCosts" "ActionPoint:1"
+data "UseCosts" "BonusActionPoint:1"
 // data "SpellFlags" "IsSpell;HasSomaticComponent"
 data "SpellFlags" "HasSomaticComponent"
 
@@ -109,6 +110,7 @@ type "InterruptData"
 using "CHT_Interrupt_TaleLife_d6"
 data "Properties" "ApplyStatus(OBSERVER_SOURCE,CHT_MOON_TALELIFE_HEAL_D12,100,1)"
 
+// UseSpell isn't working in the reaction, so this spell is commented out for now. Going instead with applying a status to do the heal
 // new entry "CHT_Target_TaleLife"
 // type "SpellData"
 // data "SpellType" "Target"
@@ -126,7 +128,7 @@ data "Properties" "ApplyStatus(OBSERVER_SOURCE,CHT_MOON_TALELIFE_HEAL_D12,100,1)
 // data "TargetEffect" "70319a43-6342-4996-811d-dd50df8b3fa1"
 // data "Sheathing" "DontChange"
 
-/// Status applied to targets healed
+// Status applied to targets healed
 new entry "CHT_MOON_TALELIFE_HEAL_D6"
 type "StatusData"
 data "StatusType" "BOOST"
@@ -214,7 +216,7 @@ data "Cooldown" ""
 // You invoke a tale of mystery and secrets. When you give a creature a &lt;LSTag Type="Status" Tooltip="BARDIC_INSPIRATION"&gt;Bardic Inspiration&lt;/LSTag&gt; die, you can take the &lt;LSTag Type="Spell" Tooltip="Shout_Disengage"&gt;Disengage&lt;/LSTag&gt; or &lt;LSTag Type="Spell" Tooltip="Shout_Hide"&gt;Hide&lt;/LSTag&gt; action for free.
 data "Description" "h1a1f17a9g9de0g4026gaa38g377037a2cffa;1"
 // data "UseCosts" "ActionPoint:1;BardicInspiration:1;"
-data "UseCosts" "ActionPoint:1"
+data "UseCosts" "BonusActionPoint:1"
 // data "SpellFlags" "IsSpell;HasSomaticComponent"
 data "SpellFlags" "IsSpell"
 
@@ -262,7 +264,7 @@ data "Cooldown" ""
 // You invoke a tale of merriment and fey guile. You can cast &lt;LSTag Type="Spell" Tooltip="CHT_Target_TaleMirth"&gt;Tale of Mirth: Mocking Words&lt;/LSTag&gt;.
 data "Description" "hb49d617egbe40g4900ga73bg0c0a281266b0;1"
 // data "UseCosts" "ActionPoint:1;BardicInspiration:1;"
-data "UseCosts" "ActionPoint:1"
+data "UseCosts" "BonusActionPoint :1"
 // data "SpellFlags" "IsSpell;HasSomaticComponent"
 data "SpellFlags" "IsSpell"
 

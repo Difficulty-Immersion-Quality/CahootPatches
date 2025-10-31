@@ -101,19 +101,6 @@
 	<content contentuid="h310dfd0dgf6cbg49f5g9c10g97f08613fde0" version="1">Choose one creature you can see. The creature must subtract an amount equal to a roll of your &lt;LSTag Type="ActionResource" Tooltip="BardicInspiration"&gt;Bardic Inspiration&lt;/LSTag&gt; dice from the next &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; it makes before the start of your next turn.</content>
 	<content contentuid="h636593b4g3894g4fb9g81f1gf316dafa5fe7" version="1">Tale of Mirth: Mocking Words</content>
 	<content contentuid="h779c5aebgd744g4de9g8796gdb492d2e5dc8" version="1">Affected entity has a penalty equal to the duration indicated to the next &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; it makes before the start of your next turn.</content>
-	<content contentuid="habb0811egf21bg4a3bg833fgfe00c7f125b0" version="1">Tale of Mirth (-1)</content>
-	<content contentuid="hfd37a82eg1369g4f47g883fga60b000c57ea" version="1">Tale of Mirth (-2)</content>
-	<content contentuid="h80535710g4f7cg4c38gab8ag383792ac6738" version="1">Tale of Mirth (-3)</content>
-	<content contentuid="h6d415f17ge8fbg4ffdg8b5bge1e7b7a7310e" version="1">Tale of Mirth (-4)</content>
-	<content contentuid="h491b314cgf568g472dgb645g1d88f7282409" version="1">Tale of Mirth (-5)</content>
-	<content contentuid="h87716e65gb0bbg4f91g83e6g6bbf3899167a" version="1">Tale of Mirth (-6)</content>
-	<content contentuid="h943da924ge4d1g49dbg8902g180a715c08e1" version="1">Tale of Mirth (-7)</content>
-	<content contentuid="ha11ca361g239dg4be7gbb57gd483f40f27df" version="1">Tale of Mirth (-8)</content>
-	<content contentuid="ha68d9588g9fa9g48b5ga717g26ca7239dd10" version="1">Tale of Mirth (-9)</content>
-	<content contentuid="h2e70bdfcg126ag4e3dg9d6bg69380f838811" version="1">Tale of Mirth (-10)</content>
-	<content contentuid="h623a37edgaf91g4c40ga911g6173aa0f7fc6" version="1">Tale of Mirth (-11)</content>
-	<content contentuid="h4030f40dga3cag4a6dga988gbb45fdd3f63c" version="1">Tale of Mirth (-12)</content>
-
 	<content contentuid="h06ac9548g00f0g4fd4g881ag48f969cfec9a" version="1">Call down a beam of light that damages any enemy or heals any ally that enters the beam or starts its turn in the light. You can use an action to move the beam [1].</content>
 	<content contentuid="h0ac2e4b1g9fa8g4704g9d83ga8dd7cd25e42" version="1">Move Blessing of the Moonwells: Moonbeam</content>
 	<content contentuid="h53866138g0fffg43c7g9175g2b5b22eb5f4e" version="1">Move the beam of moonlight up to [1]. The beam of light damages any enemy and heals any ally that enters the beam or starts its turn in the light.</content>
