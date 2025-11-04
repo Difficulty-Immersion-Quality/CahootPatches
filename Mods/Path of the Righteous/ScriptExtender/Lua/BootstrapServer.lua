@@ -300,9 +300,9 @@ Ext.Osiris.RegisterListener("FlagSet", 3, "after", function(flag, speaker, dialo
         print("SIAEL - The Mad Monk's Curse has been lifted.")
         TemplateAddTo("54eaf5d7-2616-4ed6-9eb0-420f54e2849b",GetHostCharacter(),1,1)
     --Grymforge Gnomes - Broken Chains
-    elseif flag == "UND_DuergarCamp_State_GnomeAtMyconids_f48d9c4e-e6eb-46dc-93a7-89326d11829b" then
-        print("SIAEL - Gnomes were saved and returned to myconid circle.")
-        TemplateAddTo("54f1f1bf-68c1-4244-9c09-bf65144ecc15",GetHostCharacter(),1,1)
+    --elseif flag == "UND_DuergarCamp_State_GnomeAtMyconids_f48d9c4e-e6eb-46dc-93a7-89326d11829b" then
+        --print("SIAEL - Gnomes were saved and returned to myconid circle.")
+        --TemplateAddTo("54f1f1bf-68c1-4244-9c09-bf65144ecc15",GetHostCharacter(),1,1)
     -- --Wulbren - Gnomish Support
     -- elseif flag == "HAV_WrootRequest_Event_GaveGift_7b1df8d9-36e9-2de8-3a77-1f1a8c6ff32e" then
     --     print("SIAEL - Wulbren was brought back to Barcus.")
@@ -385,6 +385,7 @@ local stopNaaber = 0
 local stopMurders = 0
 local stopDribbles = 0
 local stopIronThrone = 0
+local stopFreeGnomes = 0
 local qst = ""
 local state = ""
 --Objective detector - Quests
@@ -489,7 +490,11 @@ Ext.Osiris.RegisterListener("QuestUpdateUnlocked", 3, "after", function(characte
     --     stopIronThrone = 1
     --     print("SIAEL - All the prisonners from the Iron Throne were saved.")
     --     TemplateAddTo("884d6e6d-3246-45cc-97b7-6ae5139d009f",GetHostCharacter(),1,1)
-    -- end
+    --Grymforge Gnomes - Broken Chains
+    elseif topLevelQuestID == "UND_GnomeRescue" and (stateID == "ThankedFreed_Beldron" or stateID == "ThankedFreed_BeldronThulla") and stopFreeGnomes == 0 then
+        stopFreeGnomes = 1
+        print("SIAEL - Gnomes were saved and returned to myconid circle.")
+        TemplateAddTo("54f1f1bf-68c1-4244-9c09-bf65144ecc15",GetHostCharacter(),1,1)
     end
 end)
 
