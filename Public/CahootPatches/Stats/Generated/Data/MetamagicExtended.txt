@@ -1,0 +1,21 @@
+// ========================== Seeking Spell ==========================
+// Remove ExtraDescription inherited from Metamagic_Twinned
+
+new entry "Metamagic_Seeking"
+type "PassiveData"
+using "Metamagic_Seeking"
+data "ExtraDescription" ""
+
+
+// ========================== Quickened Spell (addon) ==========================
+// This entry is overwritten by the Book of Sorcerers mod by IncogneatoBurrito. Putting this here to ensure the change to make this cost 2 Sorcery points goes through
+
+new entry "Metamagic_Quickened"
+type "PassiveData"
+using "Metamagic_Quickened"
+// data "DescriptionParams" "3"
+data "DescriptionParams" "2"
+// data "EnabledConditions" "HasActionResource('SorceryPoint', 3, 0, false, false, context.Source)"
+data "EnabledConditions" "HasActionResource('SorceryPoint', 2, 0, false, false, context.Source)"
+// data "Boosts" "UnlockSpellVariant(QuickenedSpellCheck(),ModifyUseCosts(Add,SorceryPoint,2,0),ModifyUseCosts(Replace,BonusActionPoint,1,0,ActionPoint))"
+data "Boosts" "UnlockSpellVariant(QuickenedSpellCheck(),ModifyUseCosts(Add,SorceryPoint,3,0),ModifyUseCosts(Replace,BonusActionPoint,1,0,ActionPoint))"
