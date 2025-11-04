@@ -867,12 +867,14 @@ data "DescriptionParams" "DealDamage(1d6,Force)"
 data "Boosts" " IF(IsMeleeWeaponAttack() and (Tagged('WPN_GREATAXE', GetAttackWeapon(context.Source)) or Tagged('WPN_GREATCLUB', GetAttackWeapon(context.Source)) or Tagged('WPN_GREATSWORD', GetAttackWeapon(context.Source)) or Tagged('WPN_MAUL', GetAttackWeapon(context.Source)))):DamageBonus(1d6,Force)"
 
 // Ring of the Berserker's Might
-// Berserker’s Strength: change damage bonus to half Strength modifier (previously half Barbarian level)
+// Berserker’s Strength: change damage bonus to half Strength modifier (previously half Barbarian level) and add once per turn cooldown
 new entry "RR_BerserkerStrength_Passive"
 type "PassiveData"
 using "RR_BerserkerStrength_Passive"
-// Add half of your Strength &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; (rounded down) to your weapon attack damage.
+// Add half of your Strength &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; (rounded down) to your weapon attack damage. This effect can only occur once per turn.
 data "Description" "hd756051egcb0bg45f3g90e7g9cff52d9e567;1"
+// data "Properties" "Highlighted"
+data "Properties" "Highlighted;OncePerTurn"
 // data "StatsFunctors" "IF(IsWeaponAttack()):DealDamage(ClassLevel(Barbarian)/2,MainWeaponDamageType)"
 data "StatsFunctors" ""
 // data "StatsFunctorContext" "OnDamage"
