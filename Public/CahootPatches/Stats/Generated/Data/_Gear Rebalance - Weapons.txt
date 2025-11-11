@@ -544,6 +544,16 @@ data "StatsFunctors" "IF(not SavingThrow(Ability.Constitution, SourceSpellDC()))
 //                                       Rapiers  
 // ===============================================================================
 
+// ========================== Pelorsun Blade ==========================
+// Increase enchantment from +1 to +2
+// Also change drop location from Cazador's dungeon to Lann Tarv's special stock (see TreasureTables.txt)
+
+new entry "MAG_LC_RadiantLight_Rapier"
+type "Weapon"
+using "MAG_LC_RadiantLight_Rapier"
+// data "DefaultBoosts" "WeaponEnchantment(1);WeaponProperty(Magical)"
+data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical)"
+
 // ========================== Infernal Rapier ==========================
 // Melee Caster: fix description text
 new entry "MAG_MeleeCaster_Passive"

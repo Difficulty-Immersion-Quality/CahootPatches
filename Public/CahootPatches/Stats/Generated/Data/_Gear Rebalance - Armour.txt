@@ -394,7 +394,7 @@ new entry "MAG_LC_Umberlee_Protection_Cape"
 type "Armor"
 using "MAG_LC_Umberlee_Protection_Cape"
 // data "Boosts" ""
-data "Boosts" "AC(1)""
+data "Boosts" "AC(1)"
 
 // ===============================================================================
 //                                       Amulets  

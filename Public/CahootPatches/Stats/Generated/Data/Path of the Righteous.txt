@@ -381,7 +381,7 @@ data "DisplayName" "h45c08b34g7c81g434ag8bf0ga64da351cf0e;1"
 // You gain the ability to cast &lt;LSTag Type="Spell" Tooltip="Siael_POTR_Protection_Spell"&gt;Apotheosis&lt;/LSTag&gt;.
 data "Description" "h83ac0864g7b85g4735gbe01gf7cb24bf6336;1"
 // data "DescriptionParams" "20;GainTemporaryHitPoints(100%)"
-data "DescriptionParams" """
+data "DescriptionParams" ""
 
 new entry "Siael_POTR_Protection_Spell"
 type "SpellData"
