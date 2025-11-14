@@ -1,14 +1,6 @@
-// ================================= Sunwheel Mantle =================================
-// Change Crusader's Mantle to inherit from base game spell, remove spell slot cost, and have long rest cooldown
-
-new entry "CSS_Lathy_CrusadersMantle"
-type "SpellData"
-data "SpellType" "Shout"
-using "Shout_CrusadersMantle"
-data "Cooldown" "OncePerRestPerItem"
-data "Icon" "CSS_Lathy_CrusaderMantle_Icon"
-// data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:3"
-data "UseCosts" "BonusActionPoint:1"
+// =============================================================================================
+// ========================================= Bug Fixes =========================================
+// =============================================================================================
 
 // ================================= Ruined Dawnmaster's Crest =================================
 // Fix Surge of Light's heal not triggering properly
@@ -39,7 +31,7 @@ data "StackId" "LATHANDER_SURGEOFLIGHT_TECHNICAL"
 data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;ApplyToDead;IgnoreResting"
 
 // ================================= Sunburst Signet and Sky Compass Ring =================================
-// Fix passives' BoostContexts and BoostCOnditions to make them more reliably trigger their Boosts
+// Fix passives' BoostContexts and BoostConditions to make them more reliably trigger their Boosts
 
 new entry "CSS_Lathander_Pass_IlluminateAC" 
 type "PassiveData"
@@ -95,15 +87,273 @@ data "DisplayName" "h3f6b9952g6dd6g48c9g927bgb0d26c3e0b95;1"
 data "Description" "h2a05f823g53fdg47b3gb24cg41116a4cc174;1"
 data "UseCosts" "ActionPoint:1"
 
-// // ================================= Sun Prince's Breastplate ================================= (changes not applied due to personal rework of this armour)
-// // Divine Protection: Fix  the Turned status applying to the wearer instead of the attacker 
-// new entry "CSS_Lathy_Pass_HolyRebuked"
-// type "PassiveData"
-// using "CSS_Lathy_Pass_HolyRebuked"
-// // data "StatsFunctors" "ApplyStatus(TURNED, 100, 3)"
-// data "StatsFunctors" "ApplyStatus(SWAP,TURNED, 100, 3)"
+// ================================= Sun Prince's Breastplate =================================
+// Divine Protection: Fix  the Turned status applying to the wearer instead of the attacker 
+new entry "CSS_Lathy_Pass_HolyRebuked"
+type "PassiveData"
+using "CSS_Lathy_Pass_HolyRebuked"
+// data "StatsFunctors" "ApplyStatus(TURNED, 100, 3)"
+data "StatsFunctors" "ApplyStatus(SWAP,TURNED, 100, 3)"
 
 
+// =============================================================================================
+// ========================================= Reworks =========================================
+// =============================================================================================
 
+// ================================= Sunlight's Last Gleaning =================================
+// Complete rework to make weapon more interesting, as original version in the mod was just reusing existing vanilla passives.
+// Also changed drop location to chest on top of Moonrise Towers, at phase 1 of Ketheric fight.
 
+// Weapon: Remove Finesse
+new entry "CSS_Lathander_WPN_HALOSPEAR"
+type "Weapon"
+using "CSS_Lathander_WPN_HALOSPEAR"
+// data "BoostsOnEquipMainHand" "UnlockSpell(Rush_SpringAttack)"
+data "BoostsOnEquipMainHand" "UnlockSpell(Rush_SpringAttack);UnlockSpell(CHT_Rush_LathanderSpear_Charge)"
+// data "PassivesOnEquip" "CRE_LathandersLight_Passive;CSS_Lathander_Pass_CompassSpear;MAG_WYRM_UndeadBane_GreatAxe_Passive"
+data "PassivesOnEquip" "CHT_LathanderSpear_RadiantDamage;CHT_LathanderSpear_Critical;CHT_LathanderSpear_SavingThrow"
+// data "PassivesMainHand" ""
+data "PassivesMainHand" "CHT_LathanderSpear_RadiantDamage_Mainhand"
+// data "PassivesOffHand" ""
+data "PassivesOffHand" "CHT_LathanderSpear_RadiantDamage_Offhand"
+// data "StatusOnEquip" "MAG_LATHANDERS_LIGHT_TECHNICAL"
+data "StatusOnEquip" ""
+// data "ValueUUID" "81764c3c-c7a9-49a7-b145-d31ffd5aebe1"
+data "ValueUUID" "d24c441f-7ebe-4229-8522-cf34c257ff20"
+// data "Weapon Properties" "Versatile;Finesse;Melee;Dippable;Thrown"
+data "Weapon Properties" "Versatile;Melee;Dippable;Thrown"
 
+// Dawnburst Charge: new spell
+new entry "CHT_Rush_LathanderSpear_Charge"
+type "SpellData"
+data "SpellType" "Rush"
+using "Rush_SpringAttack"
+data "TargetRadius" "12"
+data "MovementSpeed" "60000"
+// Dawnburst Charge
+data "DisplayName" "h126b80cag2a41g49f4g8e8cgeb9af860b211;1"
+// Rush forward in a flash of light, damaging all enemies in your path and possibly &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blind&lt;/LSTag&gt; them.
+data "Description" "h368de0d1g3fbcg4b78g9e20gc1762094ad40;1"
+data "Icon" "CHT_SpearCharge_Radiant"
+data "SpellSuccess" "IF(Character() and not SavingThrow(Ability.Constitution, ManeuverSaveDC())):ApplyStatus(BLINDED,100,2);DealDamage(MainMeleeWeapon,Piercing);DealDamage(1d4,Radiant,Magical,,0,,true,false);ExecuteWeaponFunctors(MainHand)"
+data "TooltipDamageList" "DealDamage(MainMeleeWeapon,Piercing);DealDamage(1d4,Radiant)"
+data "TooltipAttackSave" "MeleeWeaponAttack;Constitution"
+data "TooltipStatusApply" "ApplyStatus(BLINDED,100,2)"
+data "SpellAnimation" "8b8bb757-21ce-4e02-a2f3-97d55cf2f90b,,;7bfeb9dd-1348-45c7-bff9-ed42f8cd43a1,,;b780092c-cc12-43d5-b60e-acbac3fdceed,,;abbeb7de-2128-4b16-95e5-7b9d7b1af2f9,,;7bb52cd4-0b1c-4926-9165-fa92b75876a3,,;,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+data "OnlyHit1Target" "0"
+
+// Morninglord's Blessing
+new entry "CHT_LathanderSpear_RadiantDamage"
+type "PassiveData"
+// Morninglord's Blessing
+data "DisplayName" "h2c0a2fccg697ag4478gb61agfa792101b0e5;1"
+// When wielded by a follower of Lathander, this weapon deals an additional [1].
+data "Description" "hbc2bfc21g1ec5g4591g9a5fg0194eacfae81;1"
+data "DescriptionParams" "DealDamage(1d6,Radiant)"
+data "TooltipConditionalDamage" "DealDamage(1d6,Radiant)"
+data "Icon" "Action_Paladin_SacredWeapon"
+
+new entry "CHT_LathanderSpear_RadiantDamage_Mainhand"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "BoostContext" "OnCreate"
+data "BoostConditions" "Tagged('LATHANDER', context.Source) or Tagged('AUMANATOR', context.Source)"
+data "Boosts" "IF(IsMainHandAttack()):CharacterWeaponDamage(1d6, Radiant)"
+
+new entry "CHT_LathanderSpear_RadiantDamage_Offhand"
+type "PassiveData"
+using "CHT_LathanderSpear_RadiantDamage_Mainhand"
+data "Boosts" "IF(IsOffHandAttack()):CharacterWeaponDamage(1d6, Radiant)"
+
+// Solar Judgment
+new entry "CHT_LathanderSpear_Critical"
+type "PassiveData"
+// Solar Judgment
+data "DisplayName" "h01eade5fgcf3eg410dgb7e2g4f451d7b85ac;1"
+// When you score a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; with this weapon, inflict [1] turns of &lt;LSTag Type="Status" Tooltip="BURNING_HOLY"&gt;Holy Fire&lt;/LSTag&gt; to all enemies within [2] and possibly knock them &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt;.
+data "Description" "had8a6ebcg31cfg444cg9f13g1cbb2c147296;1"
+data "DescriptionParams" "2;Distance(3)"
+data "Icon" "Action_Paladin_InquisitorsMight"
+data "StatsFunctorContext" "OnDamage"
+data "Conditions" "AttackedWithPassiveSourceWeapon() and IsCritical() and not IsMiss() and not IsCriticalMiss()"
+data "StatsFunctors" "CreateExplosion(CHT_Projectile_LathanderSpear_HolyFire)"
+
+new entry "CHT_Projectile_LathanderSpear_HolyFire"
+type "SpellData"
+data "SpellType" "Projectile"
+data "SpellProperties" "ApplyStatus(BURNING_HOLY,100,2)"
+data "SpellRoll" "not SavingThrow(Ability.Strength,HybridCasterWeaponActionDC()())"
+data "SpellSuccess" "ApplyStatus(PRONE,100,1)"
+data "TargetFloor" "-1"
+data "AreaRadius" "3"
+data "ExplodeRadius" "3"
+data "TargetConditions" "not Item() and not Self() and not Ally() and not Dead() and Enemy()"
+data "Trajectories" "4c8494a4-8fad-45cb-8a4f-09df87b84e3b,c6b3d9f4-d161-408a-a97c-1dbeb6cb423e,9453686a-2f90-4f29-a2dd-bb9099b8c6dd"
+data "ProjectileCount" "1"
+data "DisplayName" "h01eade5fgcf3eg410dgb7e2g4f451d7b85ac;1"
+data "Description" "had8a6ebcg31cfg444cg9f13g1cbb2c147296;1"
+data "DescriptionParams" "2;Distance(3)"
+data "TooltipDamageList" "DealDamage(1d4,Radiant)"
+data "Icon" "GenericIcon_DamageType_Radiant"
+data "SpellFlags" "HasHighGroundRangeExtension;AddFallDamageOnLand;IsTrap;RangeIgnoreVerticalThreshold;IsHarmful"
+data "DamageType" "Radiant"
+
+// Dawnbringer's Valour
+new entry "CHT_LathanderSpear_SavingThrow"
+type "PassiveData"
+// Dawnbringer's Valour
+data "DisplayName" "hb3bd7f59g729bg4e7egae39g6b7df52ad9c9;1"
+// When you succeed a &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;, you heal for [1] and your next &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;melee weapon attack&lt;/LSTag&gt; deals an additional [2].
+data "Description" "h335e3aa7g5f67g4b76gb37egc85f883d9b27;1"
+data "Icon" "Action_Cleric_RadianceOfTheDawn"
+data "DescriptionParams" "RegainHitPoints(1d6);DealDamage(1d6,Radiant)"
+data "StatsFunctorContext" "OnAttacked"
+data "Conditions" "IsLastConditionRollSuccess(ConditionRollType.ConditionSavingThrow) and not Self() and IsSavingThrow()"
+data "StatsFunctors" "RegainHitPoints(SELF,1d6);ApplyStatus(CHT_LATHANDERSPEAR_RADIANT_BUFF,100,2)"
+
+new entry "CHT_LATHANDERSPEAR_RADIANT_BUFF"
+type "StatusData"
+// Dawnbringer's Retribution
+data "DisplayName" "ha0e56014gb7e5g4f7dgb6f0gad81164ac25f;1"
+// Entity's next &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;melee weapon attack&lt;/LSTag&gt; deals an additional [1].
+data "Description" "h473cfe40g6885g442fga5e8g8ea6c6ca5358;1"
+data "DescriptionParams" "DealDamage(1d6,Radiant)"
+data "Icon" "GenericIcon_DamageType_Radiant"
+data "StatusType" "BOOST"
+data "StackId" "CHT_LATHANDERSPEAR_RADIANT_BUFF"
+data "Passives" "CHT_LathanderSpear_SavingThrow_Damage"
+data "StatusEffect" "dd787a57-9a51-475c-b882-b0ada6a8993c"
+
+new entry "CHT_LathanderSpear_SavingThrow_Damage"
+type "PassiveData"
+data "Icon" "Action_Paladin_AuraOfDevotion"
+data "StatsFunctorContext" "OnDamage"
+data "Conditions" "IsMeleeWeaponAttack() and not IsMiss() and not IsCriticalMiss()"
+data "StatsFunctors" "RemoveStatus(SELF,CHT_LATHANDERSPEAR_RADIANT_BUFF)"
+data "Boosts" "DamageBonus(1d6,Radiant)"
+data "Properties" "IsHidden"
+
+// ================================= Mornmaster's Laurels =================================
+// Rework
+
+new entry "CSS_Lathander_Circ_Woven" 
+type "Armor"
+using "CSS_Lathander_Circ_Woven"
+// data "PassivesOnEquip" "MAG_Radiant_Radiating_Helmet_Passive"
+data "PassivesOnEquip" "CHT_LathanderCirclet_Initiative;CHT_LathanderCirclet_StartCombat"
+// data "Boosts" "SpellSaveDC(1)"
+data "Boosts" ""
+
+// Auric Focus
+new entry "CHT_LathanderCirclet_Initiative"
+type "PassiveData"
+// Auric Focus
+data "DisplayName" "h49bca846g788fg4b66gb439g3fa17c829e76;1"
+// Gain a +[1] bonus to Initiative Rolls.
+data "Description" "h65150db6gea68g4d6egb29egb8e5db768ba6;1"
+data "DescriptionParams" "1"
+data "Boosts" "Initiative(1)"
+
+new entry "CHT_LathanderCirclet_StartCombat"
+type "PassiveData"
+// Dawnstrike
+data "DisplayName" "ha3363100g22d0g4d94g850fgfeb0b7f59c16;1"
+// Your first &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt; each combat has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;.
+data "Description" "h8f8c6675gf0c4g4659g94c8gc75c58d4b933;1"
+data "Properties" "OncePerCombat"
+data "StatsFunctorContext" "OnTurn"
+data "Conditions" "Combat()"
+data "StatsFunctors" "ApplyStatus(CHT_LATHANDERCIRCLET_STARTCOMBAT,100,1)"
+
+new entry "CHT_LATHANDERCIRCLET_STARTCOMBAT"
+type "StatusData"
+data "StatusType" "BOOST"
+// Dawnstrike
+data "DisplayName" "ha3363100g22d0g4d94g850fgfeb0b7f59c16;1"
+// Next &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt; has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;.
+data "Description" "h1466d3b2g73bfg4f02gabeagbfe2451be048;1"
+data "Icon" "GenericIcon_Intent_Damage"
+data "StackId" "CHT_LATHANDERCIRCLET_STARTCOMBAT"
+data "TickType" "EndTurn"
+data "Boosts" "Advantage(AttackRoll)"
+data "RemoveConditions" "IsAttack()"
+data "RemoveEvents" "OnAttack"
+
+// ================================= Sunwheel Mantle =================================
+// Rework
+
+new entry "CSS_Lathander_DarkUrge_Cloak"
+type "Armor"
+using "CSS_Lathander_DarkUrge_Cloak"
+// data "ValueUUID" "f0e7be35-8be4-483d-afa8-dc9a104ea758"
+data "ValueUUID" "c5ad02e9-b4d4-4df1-a9cd-02b80d017eaa"
+// data "Boosts" "UnlockSpell(CSS_Lathy_CrusadersMantle)"
+data "Boosts" ""
+// data "PassivesOnEquip" "CSS_Lathander_Pass_DivineWeave" 
+data "PassivesOnEquip" "CHT_LathanderCloak_Cycle" 
+data "StatusOnEquip" "CHT_LATHANDERCLOAK_AURA_TECHNICAL"
+
+// Sunwheel Cycle
+new entry "CHT_LathanderCloak_Cycle"
+type "PassiveData"
+// Sunwheel Cycle
+data "DisplayName" "h89222b06gd606g478cgab1cga702d5cab661;1"
+// At the start of each of your turns, alternate between a +[1] bonus to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; or &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;.
+data "Description" "h9cd1b0e4g8a09g4c1eg8677ge2ca58024931;1"
+data "DescriptionParams" "2"
+data "StatsFunctorContext" "OnTurn"
+data "Conditions" "Combat()"
+data "StatsFunctors" "IF(CHT_StatusADurationLessThanOrEqualStatusBDuration(context.Source,'CHT_LATHANDERCLOAK_CYCLE_ATTACK_TECHNICAL','CHT_LATHANDERCLOAK_CYCLE_ARMOUR_TECHNICAL')):ApplyStatus(CHT_LATHANDERCLOAK_CYCLE_ATTACK,100,1);IF(CHT_StatusADurationLessThanOrEqualStatusBDuration(context.Source,'CHT_LATHANDERCLOAK_CYCLE_ATTACK_TECHNICAL','CHT_LATHANDERCLOAK_CYCLE_ARMOUR_TECHNICAL')):ApplyStatus(CHT_LATHANDERCLOAK_CYCLE_ATTACK_TECHNICAL,100,CHT_LATHANDERCLOAK_CYCLE_ATTACK_TECHNICAL.Duration+1);IF(not CHT_StatusADurationLessThanOrEqualStatusBDuration(context.Source,'CHT_LATHANDERCLOAK_CYCLE_ATTACK_TECHNICAL','CHT_LATHANDERCLOAK_CYCLE_ARMOUR_TECHNICAL')):ApplyStatus(CHT_LATHANDERCLOAK_CYCLE_ARMOUR,100,1);IF(not CHT_StatusADurationLessThanOrEqualStatusBDuration(context.Source,'CHT_LATHANDERCLOAK_CYCLE_ATTACK_TECHNICAL','CHT_LATHANDERCLOAK_CYCLE_ARMOUR_TECHNICAL')):ApplyStatus(CHT_LATHANDERCLOAK_CYCLE_ARMOUR_TECHNICAL,100,CHT_LATHANDERCLOAK_CYCLE_ARMOUR_TECHNICAL.Duration+1)"
+
+new entry "CHT_LATHANDERCLOAK_CYCLE_ATTACK"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackId" "CHT_LATHANDERCLOAK_CYCLE_ATTACK"
+// Sunwheel Cycle: Light Phase
+data "DisplayName" "h07a5ce54gec00g403dga560g738bff0b1e2b;1"
+// Entity has a +[1] bonus to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;.
+data "Description" "h5b7bf6edg469dg4e19gaa05g14b667024ae3;1"
+data "DescriptionParams" "2"
+data "Icon" "PassiveFeature_ExtraAttack"
+data "Boosts" "RollBonus(Attack,2)"
+
+new entry "CHT_LATHANDERCLOAK_CYCLE_ARMOUR"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackId" "CHT_LATHANDERCLOAK_CYCLE_ARMOUR"
+// Sunwheel Cycle: Warmth Phase
+data "DisplayName" "h7b501909g4f8fg471dga53ag6da3b0678233;1"
+// Entity has a +[1] bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;.
+data "Description" "h9d49efbbge5b2g4a8dg84cbgc6b74f093478;1"
+data "DescriptionParams" "2"
+data "Icon" "PassiveFeature_ShieldMaster_Block"
+data "Boosts" "AC(2)"
+
+new entry "CHT_LATHANDERCLOAK_CYCLE_ATTACK_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackId" "CHT_LATHANDERCLOAK_CYCLE_ATTACK_TECHNICAL"
+data "StatusPropertyFlags" "DisableCombatlog;DisablePortraitIndicator;DisableOverhead;FreezeDuration"
+
+new entry "CHT_LATHANDERCLOAK_CYCLE_ARMOUR_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackId" "CHT_LATHANDERCLOAK_CYCLE_ARMOUR_TECHNICAL"
+data "StatusPropertyFlags" "DisableCombatlog;DisablePortraitIndicator;DisableOverhead;FreezeDuration"
+
+// ================================= Signet of the Yellow God =================================
+// Rework
+
+new entry "CSS_Lathander_Ring_YellowGod"
+type "Armor"
+using "CSS_Lathander_Ring_YellowGod"
+// data "PassivesOnEquip" "MAG_Frightened_Immunity_Passive"
+data "PassivesOnEquip" "CHT_LathanderRing_IlluminatedAttack"
+
+new entry "CHT_LathanderRing_IlluminatedAttack"
+type "PassiveData"
+// Dawn's Determination
+data "DisplayName" "hdc403143g6e63g4889g81fdgbd26a11ac6bc;1"
+// If you roll a 1 on an &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt; or damage roll while illuminated, you can reroll the die and must use the new roll.
+data "Description" "hb2c8c827ge535g4357g9f0cg588a29a5a4bb;1"
+data "Boosts" "IF(HasObscuredState(ObscuredState.Clear, context.Source)):Reroll(Attack,1,true);IF(HasObscuredState(ObscuredState.Clear, context.Source)):Reroll(Damage,1,true)"

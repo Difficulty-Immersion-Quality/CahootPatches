@@ -274,7 +274,31 @@
 	
 	<!-- LathanderArmory -->
 	<content contentuid="hce421159g0407g470fg85deg6fc73d6c24bc" version="1">Whenever the wearer is healed, they receive an additional [1] of healing.</content>
-	
+	<content contentuid="h126b80cag2a41g49f4g8e8cgeb9af860b211" version="1">Dawnburst Charge</content>
+	<content contentuid="h368de0d1g3fbcg4b78g9e20gc1762094ad40" version="1">Rush forward in a flash of light, damaging all enemies in your path and possibly &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blind&lt;/LSTag&gt; them.</content>
+	<content contentuid="h2c0a2fccg697ag4478gb61agfa792101b0e5" version="1">Morninglord's Blessing</content>
+	<content contentuid="hbc2bfc21g1ec5g4591g9a5fg0194eacfae81" version="1">When wielded by a follower of Lathander, this weapon deals an additional [1].</content>
+	<content contentuid="h01eade5fgcf3eg410dgb7e2g4f451d7b85ac" version="1">Solar Judgment</content>
+	<content contentuid="had8a6ebcg31cfg444cg9f13g1cbb2c147296" version="1">When you score a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; with this weapon, inflict [1] turns of &lt;LSTag Type="Status" Tooltip="BURNING_HOLY"&gt;Holy Fire&lt;/LSTag&gt; to all enemies within [2] and possibly knock them &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt;.</content>
+	<content contentuid="hb3bd7f59g729bg4e7egae39g6b7df52ad9c9" version="1">Dawnbringer's Valour</content>
+	<content contentuid="h335e3aa7g5f67g4b76gb37egc85f883d9b27" version="1">When you succeed a &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;, you heal for [1] and your next &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;melee weapon attack&lt;/LSTag&gt; deals an additional [2].</content>
+	<content contentuid="ha0e56014gb7e5g4f7dgb6f0gad81164ac25f" version="1">Dawnbringer's Retribution</content>
+	<content contentuid="h473cfe40g6885g442fga5e8g8ea6c6ca5358" version="1">Entity's next &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;melee weapon attack&lt;/LSTag&gt; deals an additional [1].</content>
+	<content contentuid="h49bca846g788fg4b66gb439g3fa17c829e76" version="1">Auric Focus</content>
+	<content contentuid="h65150db6gea68g4d6egb29egb8e5db768ba6" version="1">Gain a +[1] bonus to Initiative Rolls.</content>
+	<content contentuid="ha3363100g22d0g4d94g850fgfeb0b7f59c16" version="1">Dawnstrike</content>
+	<content contentuid="h8f8c6675gf0c4g4659g94c8gc75c58d4b933" version="1">Your first &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt; each combat has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;.</content>
+	<content contentuid="h1466d3b2g73bfg4f02gabeagbfe2451be048" version="1">Next &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt; has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;.</content>
+	<content contentuid="h89222b06gd606g478cgab1cga702d5cab661" version="1">Sunwheel Cycle</content>
+	<content contentuid="h9cd1b0e4g8a09g4c1eg8677ge2ca58024931" version="1">At the start of each of your turns, alternate between a +[1] bonus to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; or &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;.</content>
+	<content contentuid="h07a5ce54gec00g403dga560g738bff0b1e2b" version="1">Sunwheel Cycle: Light Phase</content>
+	<content contentuid="h5b7bf6edg469dg4e19gaa05g14b667024ae3" version="1">Entity has a +[1] bonus to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;.</content>
+	<content contentuid="h7b501909g4f8fg471dga53ag6da3b0678233" version="1">Sunwheel Cycle: Warmth Phase</content>
+	<content contentuid="h9d49efbbge5b2g4a8dg84cbgc6b74f093478" version="1">Entity has a +[1] bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;.</content>
+	<content contentuid="hdc403143g6e63g4889g81fdgbd26a11ac6bc" version="1">Dawn's Determination</content>
+	<content contentuid="hb2c8c827ge535g4357g9f0cg588a29a5a4bb" version="1">If you roll a 1 on an &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt; or damage roll while illuminated, you can reroll the die and must use the new roll.</content>
+
+
 	<!-- HelmArmory -->
 	<content contentuid="ha910c197g7b7ag443dga5cagace2a219dde8" version="1">You gain a +3 bonus to Initiative Rolls and have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on Perception &lt;LSTag Tooltip="AbilityCheck"&gt;Checks&lt;/LSTag&gt;.</content>
 	<content contentuid="h5259232cg94bcg4f1fg86cag49bd2775aea0" version="1">You gain an additional +[1] to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; when &lt;LSTag Type="Status" Tooltip="SHIELD_OF_FAITH"&gt;Shield of Faith&lt;/LSTag&gt; is active.</content>

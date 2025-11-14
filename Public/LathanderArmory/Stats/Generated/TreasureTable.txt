@@ -1,0 +1,334 @@
+new treasuretable "TUT_Chest_Potions"
+CanMerge 1
+new subtable "1,1"
+object category "I_CSS_LathanderArmory_Chest",1,0,0,0,0,0,0,0
+
+new treasuretable "CSS_LathanderArmory_Chest_TT"
+CanMerge 1
+new subtable "1,1"
+object category "I_CSS_LathanderArmory_EasyBox",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_LathanderA_StarterBox",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_LathanderA_BookBoxConve",1,0,0,0,0,0,0,0
+new subtable "1,1"
+
+new treasuretable "CSS_LathanderArmory_BookBoxConve_TT"
+CanMerge 1
+new subtable "1,1"
+object category "I_CSS_LATHANDER_SIMPLEPRAYER_BOOK",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_LATHANDER_PLAYKISSES_BOOK",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_LATHANDER_WHYWORSHIP_SHEET",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_LATHANDER_DROWFAIRYTALE_BOOK",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_LATHANDER_CHILDPRAYER_SHEET",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_LATHANDER_CLERICCOUTURE_BOOK",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_LATHANDER_RENAMING_BOOK",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_LATHANDER_WATERPAINTINGS_BOOK",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_LATHANDER_SELUNECONVERT_BOOK",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_LATHANDERARMORY_BOOK",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_LATHANDER_CHAUNTEASTORY_BOOK",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_LATHANDER_PLAYCASTNOTES_BOOK",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_LATHANDER_THREESUNHERESY_BOOK",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_LATHANDER_WHOISAMAUNATOR_BOOK",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_Shield_LathyKitePortrait",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_LathanderArmory_Letter_01",1,0,0,0,0,0,0,0
+
+
+
+new treasuretable "CSS_LathanderArmory_EasyBox_TT"
+CanMerge 1
+new subtable "1,1"
+object category "I_CSS_Shield_LathanderKite",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_Shield_LathanderCircle_Enamel",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_Shield_LathanderCircle_Plain",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_Shield_LathanderCircle_Dyed",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_LOOT_GEN_Idol_Stone_LathanderA",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_LOOT_GEN_Idol_Stone_LathanderB",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_LOOT_GEN_Idol_Stone_Amaunator",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_Lathander_DarkUrge_Cloak",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_LATHANDER_CREST_TRINKET",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_Lathander_CircletSilver",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_Lathander_BreastplateB",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_Lathander_BootsPlateB",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_LATHANDER_MonkNklc_Lost",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_Lathander_Ring_SkyCompass",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_Lathander_Ring_Topaz",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_Lathander_Ring_RoseWheel",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_Lathander_Ring_YellowGod",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_Lathander_Glove_SunPlate",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_Lathander_Circ_Band_A",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_Lathander_Circ_Woven",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_Lathander_VineCircletM",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_Lathander_Ring_Myrkul",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_Lathander_WPN_HALOSPEAR",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_WPN_LATHANDER_GRDOFATH_A",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_Lathander_ARM_HalfPlate",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_Lathander_SunSperm_Cape",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_Lathander_WPN_MSReskin",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_Lathander_ARM_PaladinACT2",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_Lathander_WPN_DawnDrum",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_LOOT_GEN_CaelarCoin",1,0,0,0,0,0,0,0
+
+new treasuretable "CSS_LathanderA_StarterBox_TT"
+CanMerge 1
+new subtable "1,1"
+object category "I_CSS_Lathander_ARM_StartPlate",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_Lathander_ARM_StartTabard",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_LATHANDER_MonkNklc_New",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_Shield_LathanderCircle_NewPlayer",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_LOOT_GEN_Idol_Stone_LathanderA",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_LATHANDER_SIMPLEPRAYER_BOOK",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_OBJ_Soap",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CONS_FOOD_Vegetable_Garlic",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_Lathander_WPN_Morningstarter",1,0,0,0,0,0,0,0
+
+
+new treasuretable "CRE_TreasuryVault_2_Treasure"
+CanMerge 1
+new subtable "1,1"
+object category "I_CSS_Lathander_Circ_Woven",1,0,0,0,0,0,0,0
+
+new treasuretable "DEN_Entrance_Trade"
+CanMerge 1
+new subtable "1,1"
+object category "I_CSS_LOOT_GEN_Idol_Stone_LathanderA",1,0,0,0,0,0,0,0
+
+
+new treasuretable "DEN_Weaponsmith_Trade"
+CanMerge 1
+new subtable "1,1"
+object category "I_CSS_Shield_LathanderCircle_NewPlayer",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_Lathander_ARM_HalfPlate",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_Lathander_ARM_StartTabard",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_WPN_HUM_Morningstar_A_0",1,0,0,0,0,0,0,0
+
+
+new treasuretable "GOB_PriestChanber_Chest"
+CanMerge 1
+new subtable "1,1"
+object category "I_CSS_Lathander_WPN_MSReskin",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_Shield_LathanderCircle_Plain",1,0,0,0,0,0,0,0
+
+
+new treasuretable "UND_SeluneOutpost_Treasure"
+CanMerge 1
+new subtable "1,1"
+object category "I_CSS_Lathander_Ring_SkyCompass",1,0,0,0,0,0,0,0
+
+new treasuretable "UND_SocietyOfBrilliance_Mindflayer"
+CanMerge 1
+new subtable "1,1"
+object category "I_CSS_Lathander_CircletSilver",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_LATHANDER_DROWFAIRYTALE_BOOK",1,0,0,0,0,0,0,0
+
+new treasuretable "SCL_MasonGuild_Chest"
+CanMerge 1
+new subtable "1,1"
+object category "I_CSS_Lathander_Ring_RoseWheel",1,0,0,0,0,0,0,0
+
+new treasuretable "HAV_HarperQuarterMaster_Magic_Trade"
+CanMerge 1
+new subtable "1,1"
+object category "I_CSS_Lathander_VineCircletM",1,0,0,0,0,0,0,0
+
+new treasuretable "CRE_Expeditioner_Trade"
+CanMerge 1
+new subtable "1,1"
+object category "I_CSS_LATHANDER_CHAUNTEASTORY_BOOK",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_LATHANDER_CREST_TRINKET",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_LATHANDER_RENAMING_BOOK",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_LATHANDER_WATERPAINTINGS_BOOK",1,0,0,0,0,0,0,0
+
+
+new treasuretable "CRE_RooftopExploration_Chest"
+CanMerge 1
+new subtable "1,1"
+object category "I_CSS_Shield_LathanderKite",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_Shield_LathanderCircle_Enamel",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_Shield_LathanderCircle_Dyed",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_LATHANDERARMORY_BOOK",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_WPN_LATHANDER_GRDOFATH_A",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_Lathander_DarkUrge_Cloak",1,0,0,0,0,0,0,0
+
+
+new treasuretable "CRE_Temple_Buried_Treasure"
+CanMerge 1
+new subtable "1,1"
+object category "I_CSS_Lathander_Ring_YellowGod",1,0,0,0,0,0,0,0
+
+
+// new treasuretable "SCL_AbsoluteEntraceFort_Treasure"
+// CanMerge 1
+// new subtable "1,1"
+// object category "I_CSS_Lathander_WPN_HALOSPEAR",1,0,0,0,0,0,0,0
+
+new treasuretable "MOO_KethericCombat_Chest"
+CanMerge 1
+new subtable "1,1"
+object category "I_CSS_Lathander_WPN_HALOSPEAR",1,0,0,0,0,0,0,0
+
+new treasuretable "SCL_MasonGuild_Chest"
+CanMerge 1
+new subtable "1,1"
+object category "I_CSS_LATHANDER_CHAUNTEASTORY_BOOK",1,0,0,0,0,0,0,0
+
+new treasuretable "SCL_InterrogationTable_Hidden_Chest"
+CanMerge 1
+new subtable "1,1"
+object category "I_CSS_LATHANDER_SELUNECONVERT_BOOK",1,0,0,0,0,0,0,0
+
+new treasuretable "SCL_BannedSeluneItem"
+CanMerge 1
+new subtable "1,1"
+object category "I_CSS_LOOT_GEN_Idol_Stone_Amaunator",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_Lathander_Ring_Topaz",1,0,0,0,0,0,0,0
+
+new treasuretable "HAV_TavernTrapped_Chest"
+CanMerge 1
+new subtable "1,1"
+object category "I_CSS_Lathander_ARM_PaladinACT2",1,0,0,0,0,0,0,0
+
+new treasuretable "MOO_ZhentQuartermaster"
+CanMerge 1
+new subtable "1,1"
+object category "I_CSS_LATHANDER_THREESUNHERESY_BOOK",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_LATHANDER_WHOISAMAUNATOR_BOOK",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_Lathander_Ring_Myrkul",1,0,0,0,0,0,0,0
+
+
+
+new treasuretable "LOW_StormshoreTabernacle_Guardian"
+CanMerge 1
+new subtable "1,1"
+object category "I_CSS_LOOT_GEN_Idol_Stone_Amaunator",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_LOOT_GEN_Idol_Stone_LathanderA",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_LOOT_GEN_Idol_Stone_LathanderB",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_LATHANDER_SIMPLEPRAYER_BOOK",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_LATHANDER_CLERICCOUTURE_BOOK",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_LATHANDER_MonkNklc_New",1,0,0,0,0,0,0,0
+
+new treasuretable "WYR_OpenHand_PersonalChest"
+CanMerge 1
+new subtable "1,1"
+object category "I_CSS_LATHANDER_WHYWORSHIP_SHEET",1,0,0,0,0,0,0,0
+
+new treasuretable "LOW_SorcerousSundries_MystraVault_Weapon_Treasure"
+CanMerge 1
+new subtable "1,1"
+object category "I_CSS_Lathander_BreastplateB",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_Lathander_BootsPlateB",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_Lathander_Glove_SunPlate",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_LATHANDER_MonkNklc_Lost",1,0,0,0,0,0,0,0
+
+new treasuretable "LOW_SteepsTrader_BooksAndScrolls"
+CanMerge 1
+new subtable "1,1"
+object category "I_CSS_LATHANDER_CHAUNTEASTORY_BOOK",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_LATHANDER_THREESUNHERESY_BOOK",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_LATHANDER_WHOISAMAUNATOR_BOOK",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_LATHANDER_PLAYKISSES_BOOK",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_LATHANDER_DROWFAIRYTALE_BOOK",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_LATHANDER_CLERICCOUTURE_BOOK",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_LATHANDER_RENAMING_BOOK",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_LATHANDER_SELUNECONVERT_BOOK",1,0,0,0,0,0,0,0
+
+
+new treasuretable "LOW_SteepsTrader_Armor"
+CanMerge 1
+new subtable "1,1"
+object category "I_CSS_Lathander_Circ_Band_A",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_CSS_Lathander_SunSperm_Cape",1,0,0,0,0,0,0,0
+
+new treasuretable "LOW_MusicTrader"
+CanMerge 1
+new subtable "1,1"
+object category "I_CSS_Lathander_WPN_DawnDrum",1,0,0,0,0,0,0,0
+
+new treasuretable "LOW_MysticCarrion_Hoard_Chest"
+CanMerge 1
+new subtable "1,1"
+object category "I_CSS_LOOT_GEN_CaelarCoin",1,0,0,0,0,0,0,0
