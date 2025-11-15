@@ -272,7 +272,7 @@ data "StatusType" "BOOST"
 data "DisplayName" "ha3363100g22d0g4d94g850fgfeb0b7f59c16;1"
 // Next &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt; has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;.
 data "Description" "h1466d3b2g73bfg4f02gabeagbfe2451be048;1"
-data "Icon" "GenericIcon_Intent_Damage"
+data "Icon" "Action_CommandersStrike"
 data "StackId" "CHT_LATHANDERCIRCLET_STARTCOMBAT"
 data "TickType" "EndTurn"
 data "Boosts" "Advantage(AttackRoll)"
@@ -314,7 +314,7 @@ data "DisplayName" "h07a5ce54gec00g403dga560g738bff0b1e2b;1"
 // Entity has a +[1] bonus to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;.
 data "Description" "h5b7bf6edg469dg4e19gaa05g14b667024ae3;1"
 data "DescriptionParams" "2"
-data "Icon" "PassiveFeature_ExtraAttack"
+data "Icon" "GenericIcon_Intent_Damage"
 data "Boosts" "RollBonus(Attack,2)"
 
 new entry "CHT_LATHANDERCLOAK_CYCLE_ARMOUR"
@@ -326,7 +326,7 @@ data "DisplayName" "h7b501909g4f8fg471dga53ag6da3b0678233;1"
 // Entity has a +[1] bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;.
 data "Description" "h9d49efbbge5b2g4a8dg84cbgc6b74f093478;1"
 data "DescriptionParams" "2"
-data "Icon" "PassiveFeature_ShieldMaster_Block"
+data "Icon" "GenericIcon_Intent_Buff"
 data "Boosts" "AC(2)"
 
 new entry "CHT_LATHANDERCLOAK_CYCLE_ATTACK_TECHNICAL"
