@@ -312,6 +312,15 @@ data "TargetConditions" "Character() and Enemy() and not (Self() or Ally())"
 // Unleash a wave of shimmering light that washes over all enemies around you. Each creature affected must make a DC15 &lt;LSTag Tooltip="Wisdom"&gt;Wisdom&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or becomed &lt;LSTag Type="Status" Tooltip="CHARMED"&gt;Charmed&lt;/LSTag&gt;.
 data "Description" "h9fc4a74agacb9g434fgb239gaedf61413fb0;1"
 
+// Starlight Circlet
+// Celestial Spark: remove Channel Divinity cost
+new entry "Shout_CelestialSpark"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_CelestialSpark"
+// data "UseCosts" "ActionPoint:1;ChannelDivinity:1"
+data "UseCosts" "ActionPoint:1"
+
 // Ring of the Twilight Cleric
 // Empowering Twilight: add once per turn limit to passive
 new entry "MAG_Twilight_Damage_Passive"
@@ -387,7 +396,16 @@ using "Projectile_SoH_Heal"
 // data "TargetConditions" "Character() and not Enemy()"
 data "TargetConditions" "Character() and Ally() and not Dead()"
 
-// ing of the Guiding Star
+// Helm of Luminous Devotion
+// Divine Retribution: remove Channel Divinity cost
+new entry "Shout_DivineRetribution"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_DivineRetribution"
+// data "UseCosts" "ActionPoint:1;ChannelDivinity:1"
+data "UseCosts" "ActionPoint:1"
+
+// Ring of the Guiding Star
 // Aura of the Heavens: decrease weapon damage bonus and damage reduction to Wisdom modifier minus 1 (previously full Wisdom modifier)
 new entry "MAG_StarAura_Ring_Passive"
 type "PassiveData"
