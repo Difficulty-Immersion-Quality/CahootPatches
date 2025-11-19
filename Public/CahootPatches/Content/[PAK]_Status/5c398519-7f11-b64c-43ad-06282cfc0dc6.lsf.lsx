@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<save>
+	<version major="4" minor="8" revision="0" build="500" lslib_meta="v1,bswap_guids,lsf_keys_adjacency" />
+	<region id="EffectBank">
+		<node id="EffectBank">
+			<children>
+				<node id="Resource">
+					<attribute id="ID" type="FixedString" value="5c398519-7f11-b64c-43ad-06282cfc0dc6" />
+					<attribute id="Name" type="LSString" value="CHT_Daylight_Mini_VFX" />
+					<attribute id="SourceFile" type="LSString" value="Public/Test_ec7b3388-55d2-c77a-9cf4-5279df39e5e9/Assets/Effects/Effects_Banks/CHT_Daylight_Mini_VFX.lsfx" />
+					<attribute id="EffectName" type="FixedString" value="CHT_Daylight_Mini_VFX" />
+					<attribute id="BoundsMin" type="fvec3" value="-1.7320509 0.017949104 -1.7320509" />
+					<attribute id="BoundsMax" type="fvec3" value="1.7320509 3.482051 1.7320509" />
+					<attribute id="CullingDistance" type="float" value="0" />
+					<attribute id="Duration" type="float" value="2.500423" />
+					<attribute id="Looping" type="bool" value="True" />
+					<attribute id="InterruptionMode" type="uint32" value="2" />
+					<children>
+						<node id="Dependencies">
+							<children>
+								<node id="DependentResource">
+									<attribute id="Object" type="FixedString" value="bfe5c3b1-98b4-4cc2-98ca-4bff0fe190cf" />
+								</node>
+								<node id="DependentResource">
+									<attribute id="Object" type="FixedString" value="49cc18e2-625c-48cb-bfc3-7823c0af0860" />
+								</node>
+								<node id="DependentResource">
+									<attribute id="Object" type="FixedString" value="0bd6700c-cb83-f377-534c-414c9a2ef3e8" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+			</children>
+		</node>
+	</region>
+</save>

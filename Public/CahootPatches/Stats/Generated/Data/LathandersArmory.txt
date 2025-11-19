@@ -233,8 +233,124 @@ data "StatsFunctors" "RemoveStatus(SELF,CHT_LATHANDERSPEAR_RADIANT_BUFF)"
 data "Boosts" "DamageBonus(1d6,Radiant)"
 data "Properties" "IsHidden"
 
-// ================================= Mornmaster's Laurels =================================
+// ================================= Sol =================================
 // Rework
+// Drop location changed to being sold by Vicar Humbletoes
+
+new entry "CSS_Shield_LathanderKite"
+type "Armor"
+using "CSS_Shield_LathanderKite"
+// data "ArmorClass" "2"
+data "ArmorClass" "3"
+// data "PassivesOnEquip" "CSS_Lathander_Pass_UndeadKiller;CSS_Lathander_GTFO_Poser;CSS_Lathander_Pass_HolyDeflector"
+data "PassivesOnEquip" "CSS_Lathander_GTFO_Poser;CHT_LathanderShield_Aegis;CHT_LathanderShield_Light"
+// data "Boosts" "UnlockSpell(CSS_Lathy_Daylight_Container)"
+data "Boosts" "Resistance(Necrotic,Resistant)"
+
+new entry "CSS_Shield_LathyKitePortrait"
+type ""
+using "CSS_Shield_LathanderKite"
+data "RootTemplate" "3170103c-aa8c-43fc-99bd-c7dda4e2b01d"
+
+// Daybreak Aegis
+new entry "CHT_LathanderShield_Aegis"
+type "PassiveData"
+// Daybreak Aegis
+data "DisplayName" "hd363d672g572ag4513g9dacg5499984a4ab1;1"
+// You gain a +[1] bonus to the first &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; you make each turn.
+data "Description" "h593340bcgf325g4eefg985fg299b0096929e;1"
+data "DescriptionParams" "1d4"
+data "Icon" "Action_Legendary_Defensive"
+data "StatsFunctorContext" "OnCombatStarted;OnTurn"
+data "Conditions" "Combat()"
+data "StatsFunctors" "ApplyStatus(CHT_LATHANDERSHIELD_AEGIS,100,1)"
+
+new entry "CHT_LATHANDERSHIELD_AEGIS"
+type "StatusData"
+data "StatusType" "BOOST"
+// Daybreak Aegis
+data "DisplayName" "hd2eb3b37gff42g42d7g8bb7g36bee460ee61;1"
+// Has a +[1] bonus to next &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.
+data "Description" "hbeca30d2gdf1cg45dcgb9efgef9001880bf3;1"
+data "DescriptionParams" "1d4"
+data "Icon" "Action_Legendary_Defensive"
+data "StackId" "CHT_LATHANDERSHIELD_AEGIS"
+data "StackPriority" "0"
+data "Passives" "CHT_LathanderShield_Aegis_Technical"
+
+new entry "CHT_LathanderShield_Aegis_Technical"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "Boosts" "RollBonus(SavingThrow,1d4)"
+data "StatsFunctorContext" "OnAttacked"
+data "Conditions" "IsSavingThrow()"
+data "StatsFunctors" "RemoveStatus(CHT_LATHANDERSHIELD_AEGIS)"
+
+// Dawn's Light
+new entry "CHT_LathanderShield_Light"
+type "PassiveData"
+// Dawn's Light
+data "DisplayName" "h8626ba6cgeafcg40b2gb104ge678bd0f9993;1"
+// The shield shines with the light of the sun, dispelling darkness in a [1] radius. All enemies in this light take an additional [2] damage from all sources. You can toggle this effect off.
+data "Description" "h967da47dg1d7bg42acgac30gdcce189354bf;1"
+data "DescriptionParams" "Distance(6);DealDamage(1,Radiant)"
+data "Icon" "CSS_Lathander_Daylight_Icon"
+data "Properties" "IsToggled;ToggledDefaultOn;ToggledDefaultAddToHotbar"
+data "ToggleOnFunctors" "ApplyEquipmentStatus(OffHand,CHT_DAYLIGHT_MINI_SHIELD,100,-1);ApplyStatus(CHT_LATHANDERSHIELD_LIGHT_AURA,100,-1)"
+data "ToggleOffFunctors" "ApplyEquipmentStatus(OffHand,CHT_DAYLIGHT_MINI_SHIELD_REMOVER,100,0);RemoveStatus(CHT_LATHANDERSHIELD_LIGHT_AURA)"
+data "StatsFunctorContext" "OnCreate"
+data "StatsFunctors" "ApplyEquipmentStatus(OffHand,CHT_DAYLIGHT_MINI_SHIELD,100,-1)"
+
+new entry "CHT_DAYLIGHT_MINI_SHIELD_REMOVER"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackId" "CHT_DAYLIGHT_MINI_SHIELD_REMOVER"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+data "OnApplyFunctors" "RemoveStatus(CHT_DAYLIGHT_MINI_SHIELD)"
+
+new entry "CHT_DAYLIGHT_MINI_SHIELD"
+type "StatusData"
+data "StatusType" "BOOST"
+using "DAYLIGHT"
+// Morninglight
+data "DisplayName" "he91fa054g9ad4g4575g9f2dgb715666feac5;1"
+data "DescriptionParams" "Distance(6)"
+data "StackId" "CHT_DAYLIGHT_MINI_SHIELD"
+data "Boosts" "GameplayLight(6,false,0.1,true)"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+data "StatusEffect" "79c11265-d415-4f1a-ac21-1c7c87c3e7a7"
+
+new entry "CHT_LATHANDERSHIELD_LIGHT_AURA"
+type "StatusData"
+data "StatusType" "BOOST"
+// Dawn's Light
+data "DisplayName" "h93dc2b51g6c42g4065ga0a3ga305ffa68389;1"
+// Enemies within [1] take an additional [2] from all sources.
+data "Description" "h966250dag3eb5g4009g9262gac682bc48a42;1"
+data "DescriptionParams" "Distance(6);DealDamage(1,Radiant)"
+data "Icon" "CSS_Lathander_Daylight_Icon"
+data "StackId" "CHT_LATHANDERSHIELD_LIGHT_AURA"
+data "AuraRadius" "6"
+data "AuraStatuses" "IF(Enemy() and not Self() and Character()):ApplyStatus(CHT_LATHANDERSHIELD_LIGHT_DEBUFF)"
+data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead"
+
+new entry "CHT_LATHANDERSHIELD_LIGHT_DEBUFF"
+type "StatusData"
+data "StatusType" "BOOST"
+// Searing Dawn
+data "DisplayName" "h70f3e09eg5d8bg4a8cgb1ecgc204475b6f86;1"
+// Affected entity takes an additional [1] from all sources.
+data "Description" "h2069bfb6gf07bg4cf2gbf9eg443ff5f8f6cf;1"
+data "DescriptionParams" "DealDamage(1,Radiant)"
+data "Icon" "GenericIcon_Intent_Debuff"
+data "StackId" "CHT_LATHANDERSHIELD_LIGHT_DEBUFF"
+data "StackPriority" "5"
+data "Boosts" "DamageTakenBonus(1,Radiant,False)"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog"
+data "ManagedStatusEffectType" "Negative"
+
+// ================================= Mornmaster's Laurels =================================
+// Complete rework
 
 new entry "CSS_Lathander_Circ_Woven" 
 type "Armor"
@@ -254,6 +370,7 @@ data "Description" "h65150db6gea68g4d6egb29egb8e5db768ba6;1"
 data "DescriptionParams" "1"
 data "Boosts" "Initiative(1)"
 
+// Dawnstrike
 new entry "CHT_LathanderCirclet_StartCombat"
 type "PassiveData"
 // Dawnstrike
@@ -280,7 +397,7 @@ data "RemoveConditions" "IsAttack()"
 data "RemoveEvents" "OnAttack"
 
 // ================================= Sunwheel Mantle =================================
-// Rework
+// Complete rework
 
 new entry "CSS_Lathander_DarkUrge_Cloak"
 type "Armor"
@@ -342,13 +459,15 @@ data "StackId" "CHT_LATHANDERCLOAK_CYCLE_ARMOUR_TECHNICAL"
 data "StatusPropertyFlags" "DisableCombatlog;DisablePortraitIndicator;DisableOverhead;FreezeDuration"
 
 // ================================= Signet of the Yellow God =================================
-// Rework
+// Complete rework
 
 new entry "CSS_Lathander_Ring_YellowGod"
 type "Armor"
 using "CSS_Lathander_Ring_YellowGod"
 // data "PassivesOnEquip" "MAG_Frightened_Immunity_Passive"
 data "PassivesOnEquip" "CHT_LathanderRing_IlluminatedAttack"
+// data "Boosts" "Skill(Intimidation,2)"
+data "Boosts" ""
 
 new entry "CHT_LathanderRing_IlluminatedAttack"
 type "PassiveData"
