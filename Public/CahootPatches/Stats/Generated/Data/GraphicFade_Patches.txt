@@ -1,77 +1,172 @@
 // ==================================== Beast and Bow - Ranger Equipment ====================================
 
-// Archer's Eye Charm: change Wisdom bonus to give +2 Wisdom instead, with max of 22 (previously set Wisdom to 20)
-new entry "BB_ArchersEyeCharm"
-type "Armor"
-using "BB_ArchersEyeCharm"
-data "Boosts" "Ability(Wisdom,2,22);UnlockSpell(BB_Shout_ArcherEyeCharm)"
-
-// Farstrider's Reach
-// Arrow of the Farstrider: change cost to action (previously bonus action)
-new entry "BB_Projectile_Farstrider"
-type "SpellData"
-data "SpellType" "Projectile"
-using "BB_Projectile_Farstrider"
-data "UseCosts" "ActionPoint:1"
-
-// Cerberus' Maw
-// Necrotic Bolt: fix hp condition using flat hp value instead of hp percentage
+// ==================================== BB - Cerberus' Maw
+// Necrotic Bolt: fix hp condition using flat hp value instead of hp percentage ; Changed it to deal only one instance of damage by expanding the conditions
 new entry "BB_Projectile_Cerberus_NecroticBolt"
 type "SpellData"
 data "SpellType" "Projectile"
 using "BB_Projectile_Cerberus_NecroticBolt"
-// data "SpellSuccess" "DealDamage(1d10, Necrotic,Magical);IF(HasHPLessThan(50) and not HasHPLessThan(1)):DealDamage(1d10, Necrotic,Magical);IF(not IsKillingBlow()):RegainHitPoints(SELF,(DamageDone)/2);IF(IsKillingBlow()):RegainHitPoints(SELF,(DamageDone))"
-data "SpellSuccess" "DealDamage(1d10, Necrotic,Magical);IF(HasHPPercentageLessThan(50) and not HasHPLessThan(1)):DealDamage(1d10, Necrotic,Magical);IF(not IsKillingBlow()):RegainHitPoints(SELF,(DamageDone)/2);IF(IsKillingBlow()):RegainHitPoints(SELF,(DamageDone))"
+// data "Cooldown" "OncePerShortRestPerItem"
+// data "SpellProperties" "GROUND:DealDamage(MainRangedWeapon, MainRangedWeaponDamageType);GROUND:ExecuteWeaponFunctors(MainHand);IF(not Player(context.Source)):ApplyStatus(SELF,AI_HELPER_EXTRAATTACK,100,1);;CastOffhand[GROUND:DealDamage(OffhandRangedWeapon,OffhandRangedWeaponDamageType);GROUND:ExecuteWeaponFunctors(OffHand)]"
+// data "TargetFloor" "-1"
+// data "TargetRadius" "RangedMainWeaponRange"
+// data "SpellRoll" "Attack(AttackType.RangedWeaponAttack);CastOffhand[Attack(AttackType.RangedOffHandWeaponAttack)]"
+// data "SpellSuccess" "DealDamage(1d10, Necrotic,Magical);IF(HasHPPercentageLessThan(50) and not HasHPLessThan(1)):DealDamage(1d10, Necrotic,Magical);IF(not IsKillingBlow()):RegainHitPoints(SELF,(DamageDone)/2);IF(IsKillingBlow()):RegainHitPoints(SELF,(DamageDone))"
+data "SpellSuccess" "IF(not HasHPLessThan(50)):DealDamage(1d10, Necrotic,Magical);IF(HasHPPercentageLessThan(50) and not HasHPLessThan(1)):DealDamage(2d10, Necrotic,Magical);IF(not IsKillingBlow()):RegainHitPoints(SELF,(DamageDone)/2);IF(IsKillingBlow()):RegainHitPoints(SELF,(DamageDone))"
+// data "TargetConditions" "not Self() and not Dead()"
+// data "ProjectileCount" "1"
+// data "Trajectories" "0ec803e3-b962-4e96-bfcf-d2221fdddba3,d35f5172-26c5-d00c-b3aa-80625773099c,26908cea-3340-e0bb-88c1-1e473dcab618"
+// data "Icon" "Action_MenacingAttack_Ranged"
+// data "DisplayName" "he05cbb7fge340g4a3cg944fgc40ef70069e139;1"
+// data "Description" "he05cbb7fge340g4a3cg944fgc40ef70069e140;1"
+// data "DescriptionParams" "DealDamage(1d10, Necrotic)"
+// data "ExtraDescription" "he05cbb7fge340g4a3cg944fgc40ef70069e141;1"
+// data "ExtraDescriptionParams" "DealDamage(1d10, Necrotic)"
+// data "TooltipDamageList" "DealDamage(1d10,Necrotic)"
+// data "TooltipAttackSave" "RangedWeaponAttack"
+// data "TooltipStatusApply" ""
+// data "CastSound" "Proj_Arr_Cast_ArrowOfWrathsEmbrace"
+// data "PreviewCursor" "Bow"
+// data "CastTextEvent" "Cast"
+// data "AlternativeCastTextEvents" "CastOffhand"
+// data "CycleConditions" "Enemy() and not Dead()"
+// data "UseCosts" "ActionPoint:1"
+// data "DualWieldingUseCosts" ""
+// data "SpellAnimation" "73afb4e5-8cfe-4479-95cf-16889597fee3,,;7e67bfd0-2fc2-4d10-bed5-cfda9e660de5,,;eb054308-7fce-4b85-bf4c-7a0031fda7ac,,;0b0dc35b-4953-45c0-a9eb-8d3fef5e798a,,;6ec808e1-e128-44ef-9361-a713bf86de8f,,;b2e9c771-3497-444c-b360-23b4441985a1,,;f920a0a6-f257-4ce4-8d17-2dcaa7bb7bbb,,;,,;,,"
+// data "DualWieldingSpellAnimation" "73afb4e5-8cfe-4479-95cf-16889597fee3,,;7e67bfd0-2fc2-4d10-bed5-cfda9e660de5,,;eb054308-7fce-4b85-bf4c-7a0031fda7ac,,:4a789a60-04b8-4a26-b476-65cf26ca558b,,;a11b8bcb-ba24-417a-aa86-4e4379c41ee2,,;6ec808e1-e128-44ef-9361-a713bf86de8f,,;b2e9c771-3497-444c-b360-23b4441985a1,,;f920a0a6-f257-4ce4-8d17-2dcaa7bb7bbb,,;,,;,,"
+// data "VerbalIntent" "Damage"
+// data "WeaponTypes" "Ammunition"
+// data "SpellFlags" "HasHighGroundRangeExtension;RangeIgnoreVerticalThreshold;IsHarmful;DisplayInItemTooltip"
+// data "HitAnimationType" "PhysicalDamage"
+// data "SpellAnimationIntentType" "Aggressive"
+// data "PrepareEffect" "c0f8e443-7c4f-464e-b39d-76f0a8d1a4e3"
+// data "CastEffect" "eb0be77f-6358-4d72-b42b-856045f9631a"
+// data "DamageType" "Necrotic"
+// data "SpellSoundMagnitude" "None"
+// data "Sheathing" "Ranged"
 
-// ==================== Preventing damage rider sources ====================
-new entry "BB_PiercingWind_Passive"
+// ==================================== BB - Vinewoven Shortbow
+// Bug Fix: Tooltip should display proper damage with functionality in tact.
+// Changes: Treant's Grasp uses ManeuverSaveDC instead of a fixed DC of 12.
+// Changes: Added a new passive, to thematically display the functionality of the extra condtional damage.
+new entry "RangerEquipmentAIO_Vinewoven_Shortbow"
+type "Weapon"
+// using "WPN_Shortbow_1"
+using "RangerEquipmentAIO_Vinewoven_Shortbow"
+// data "RootTemplate" "f6e5e9a5-7841-4645-a8bb-5d6a961eb12d"
+// data "Rarity" "Rare"
+// data "Damage Type" "Piercing"
+// data "DefaultBoosts" "WeaponEnchantment(1)"
+data "DefaultBoosts" "WeaponEnchantment(1);IF(IsRangedWeaponAttack()):WeaponDamage(max(1,DexterityModifier)/2)"
+// data "Boosts" ""
+// data "PassivesOnEquip" "BB_Vinewoven_Passive"
+data "PassivesOnEquip" "BB_Vinewoven_Passive;Goon_BB_Vinewoven_Damage_Passive"
+// data "Weight" "0.9"
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "ComboCategory" "d2"
+// data "ValueScale" "1"
+// data "ValueRounding" "1"
+// data "ValueLevel" "3"
+// data "Unique" "1"
+
+new entry "Tut_RangerEquipmentAIO_Vinewoven_Shortbow"
+type "Weapon"
+// using "WPN_Shortbow_1"
+using "Tut_RangerEquipmentAIO_Vinewoven_Shortbow"
+// data "RootTemplate" "f6e5e9a5-7841-4645-a8bb-5d6a961eb12d"
+// data "Rarity" "Rare"
+// data "Damage Type" "Piercing"
+// data "DefaultBoosts" "WeaponEnchantment(1)"
+data "DefaultBoosts" "WeaponEnchantment(1);IF(IsRangedWeaponAttack()):WeaponDamage(max(1,DexterityModifier)/2)"
+// data "Boosts" ""
+// data "PassivesOnEquip" "BB_Vinewoven_Passive"
+data "PassivesOnEquip" "BB_Vinewoven_Passive;Goon_BB_Vinewoven_Damage_Passive"
+// data "Weight" "0.9"
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "ComboCategory" "d2"
+// data "ValueScale" "1"
+// data "ValueRounding" "1"
+// data "ValueLevel" "3"
+// data "Unique" ""
+
+new entry "BB_Vinewoven_Passive"
 type "PassiveData"
-using "BB_PiercingWind_Passive"
+using "BB_Vinewoven_Passive"
+// Treant's Grasp
+// data "DisplayName" "he05cbb7fge340g4a3cg944fgc40ef70069e7;1"
+// The living wood of the bow reaches out with its own will, guiding your aim and possibly &lt;LSTag Type="Status" Tooltip="ENSNARED"&gt;Ensnaring&lt;/LSTag&gt; those struck by its arrows. This weapon also deals additional damage equal to half your Dexterity &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;.
+// data "Description" "he05cbb7fge340g4a3cg944fgc40ef70069e8;1"
+// The living wood of the bow reaches out with its own will, guiding your aim and possibly &lt;LSTag Type="Status" Tooltip="ENSNARED"&gt;Ensnaring&lt;/LSTag&gt; those struck by its arrows.
+data "Description" "hc8f41164g3c43g4c0fga181gea776245b317;1"
 // data "StatsFunctorContext" "OnDamage"
-// data "Conditions" "IsWeaponAttack() and HasDamageEffectFlag(DamageFlags.Hit)"
-// data "StatsFunctors" "IF(IsAttackType(AttackType.RangedWeaponAttack)):DealDamage(1d4, MainRangedWeaponDamageType)"
-data "StatsFunctors" "IF(IsAttackType(AttackType.RangedWeaponAttack)):DealDamage(1d4, MainRangedWeaponDamageType,Magical,,0,,true,true)"
+// data "Conditions" "AttackedWithPassiveSourceWeapon() and IsRangedWeaponAttack()"
+// data "StatsFunctors" "IF(not SavingThrow(Ability.Dexterity, 8)):ApplyStatus(ENSNARED,100,1)"
+data "StatsFunctors" "IF(not SavingThrow(Ability.Dexterity,ManeuverSaveDC())):ApplyStatus(ENSNARED,100,1)"
+// data "Boosts" "IF(IsRangedWeaponAttack()):DamageBonus(max(1,DexterityModifier)/2)"
+data "Boosts" ""
 
-new entry "BB_DamageToTagged_Passive"
+new entry "Goon_BB_Vinewoven_Damage_Passive"
 type "PassiveData"
-using "BB_DamageToTagged_Passive"
-// data "StatsFunctorContext" "OnDamage"
-// data "Conditions" "IsWeaponAttack() and HasDamageEffectFlag(DamageFlags.Hit) and Tagged('BEAST',context.Target) or Tagged('MONSTROSITY',context.Target)"
-// data "StatsFunctors" "IF(IsAttackType(AttackType.MeleeWeaponAttack)):DealDamage(1d4, MainMeleeWeaponDamageType);IF(IsAttackType(AttackType.RangedWeaponAttack)):DealDamage(1d4, MainRangedWeaponDamageType);IF(IsAttackType(AttackType.MeleeOffHandWeaponAttack)):DealDamage(1d4, OffhandMeleeWeaponDamageType);IF(IsAttackType(AttackType.RangedOffHandWeaponAttack)):DealDamage(1d4, OffhandRangedWeaponDamageType)"
-data "StatsFunctors" "IF(IsAttackType(AttackType.MeleeWeaponAttack)):DealDamage(1d4, MainMeleeWeaponDamageType,Magical,,0,,true,true);IF(IsAttackType(AttackType.RangedWeaponAttack)):DealDamage(1d4, MainRangedWeaponDamageType,Magical,,0,,true,true);IF(IsAttackType(AttackType.MeleeOffHandWeaponAttack)):DealDamage(1d4, OffhandMeleeWeaponDamageType,Magical,,0,,true,true);IF(IsAttackType(AttackType.RangedOffHandWeaponAttack)):DealDamage(1d4, OffhandRangedWeaponDamageType,Magical,,0,,true,true)"
-
-new entry "BB_HuntersShroud_Passive"
-type "PassiveData"
-using "BB_HuntersShroud_Passive"
-// data "StatsFunctorContext" "OnAttack"
-// data "Conditions" "IsRangedWeaponAttack() and HasDamageEffectFlag(DamageFlags.Hit) and not DistanceToTargetGreaterThan(9.0) and not IsCritical()"
-// data "StatsFunctors" "IF(IsAttackType(AttackType.RangedWeaponAttack) and IsWeaponOfProficiencyGroup('Shortbows', GetActiveWeapon())):DealDamage(1d6,Piercing);IF(IsAttackType(AttackType.RangedWeaponAttack) and IsWeaponOfProficiencyGroup('Longbows', GetActiveWeapon())):DealDamage(1d8,Piercing);IF(IsAttackType(AttackType.RangedWeaponAttack) and IsWeaponOfProficiencyGroup('Darts', GetActiveWeapon())):DealDamage(1d4,Piercing);IF(IsAttackType(AttackType.RangedWeaponAttack) and IsWeaponOfProficiencyGroup('Slings', GetActiveWeapon())):DealDamage(1d4,Bludgeoning);IF(IsAttackType(AttackType.RangedWeaponAttack) and IsWeaponOfProficiencyGroup('LightCrossbows', GetActiveWeapon())):DealDamage(1d8,Piercing);IF(IsAttackType(AttackType.RangedWeaponAttack) and IsWeaponOfProficiencyGroup('HeavyCrossbows', GetActiveWeapon())):DealDamage(1d10,Piercing);IF(IsAttackType(AttackType.RangedWeaponAttack) and IsWeaponOfProficiencyGroup('HandCrossbows', GetActiveWeapon())):DealDamage(1d6,Piercing)"
-data "StatsFunctors" "IF(IsAttackType(AttackType.RangedWeaponAttack) and IsWeaponOfProficiencyGroup('Shortbows', GetActiveWeapon())):DealDamage(1d6,Piercing,Magical,,0,,true,true);IF(IsAttackType(AttackType.RangedWeaponAttack) and IsWeaponOfProficiencyGroup('Longbows', GetActiveWeapon())):DealDamage(1d8,Piercing,Magical,,0,,true,true);IF(IsAttackType(AttackType.RangedWeaponAttack) and IsWeaponOfProficiencyGroup('Darts', GetActiveWeapon())):DealDamage(1d4,Piercing,Magical,,0,,true,true);IF(IsAttackType(AttackType.RangedWeaponAttack) and IsWeaponOfProficiencyGroup('Slings', GetActiveWeapon())):DealDamage(1d4,Bludgeoning,Magical,,0,,true,true);IF(IsAttackType(AttackType.RangedWeaponAttack) and IsWeaponOfProficiencyGroup('LightCrossbows', GetActiveWeapon())):DealDamage(1d8,Piercing,Magical,,0,,true,true);IF(IsAttackType(AttackType.RangedWeaponAttack) and IsWeaponOfProficiencyGroup('HeavyCrossbows', GetActiveWeapon())):DealDamage(1d10,Piercing,Magical,,0,,true,true);IF(IsAttackType(AttackType.RangedWeaponAttack) and IsWeaponOfProficiencyGroup('HandCrossbows', GetActiveWeapon())):DealDamage(1d6,Piercing,Magical,,0,,true,true)"
+// Comfortable Grip
+data "DisplayName" "hf382fc66gb266g4a14g99efgdf6e830bf845;1"
+// This weapon deals additional damage equal to half your Dexterity &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;.
+data "Description" "h80b5489bga092g4de7ga178g40cfbe9b8ddc;1"
 
 // ==================================== Chaos and Control - Sorcerer Equipment ====================================
 
-// Staff of Arcane Resonance
+// ==================================== CC - Staff of Arcane Resonance
 // Inner Tap: now only recovers Sorcery Points equal to half your Charisma modiifer, rounded up (previously equal to full Charisma modifier)
 new entry "CC_Shout_InnerTap"
 type "SpellData"
 data "SpellType" "Shout"
 using "CC_Shout_InnerTap"
-// Activate the staff to gain &lt;LSTag Type="ActionResource" Tooltip="SorceryPoint"&gt;Sorcery Points&lt;/LSTag&gt; equal to half your Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;, rounded up. This effect can only occur once per &lt;LSTag Tooltip="LongRest"&gt;Long Rest&lt;/LSTag&gt;.
+// data "AIFlags" "CanNotUse"
+// data "TargetConditions" "Self()"
+// data "Icon" "Skill_Sorcerer_CreateSorceryPoints_1"
+// data "Cooldown" "OncePerRestPerItem"
+// data "DisplayName" "h27ad4a5fg8ebeg4b8egb71dg81a7d073b023;1"
+// As a bonus action, you can activate the staff to gain &lt;LSTag Type="ActionResource" Tooltip="SorceryPoint"&gt;Sorcery Point&lt;/LSTag&gt; equal to your Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;. (Long Rest Cooldown).
+// data "Description" "h27ad4a5fg8ebeg4b8egb71dg81a7d073b024;1"
+// Activate the staff to gain &lt;LSTag Type="ActionResource" Tooltip="SorceryPoint"&gt;Sorcery Points&lt;/LSTag&gt; equal to half your Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;, rounded up.
 data "Description" "h92f3f36dg904cg4c60ga6c6gde60eb3f527d;1"
-// data "SpellProperties" "IF(CharismaModifier=1):RestoreResource(SorceryPoint,1,0);IF(CharismaModifier=2):RestoreResource(SorceryPoint,2,0);IF(CharismaModifier=3):RestoreResource(SorceryPoint,3,0);IF(CharismaModifier=4):RestoreResource(SorceryPoint,4,0);IF(CharismaModifier=5):RestoreResource(SorceryPoint,5,0);IF(CharismaModifier=6):RestoreResource(SorceryPoint,6,0);IF(CharismaModifier=7):RestoreResource(SorceryPoint,7,0);IF(CharismaModifier=8):RestoreResource(SorceryPoint,8,0);IF(CharismaModifier=9):RestoreResource(SorceryPoint,9,0);IF(CharismaModifier=10):RestoreResource(SorceryPoint,10,0)"
+// data "SpellProperties" "IF(ConditionResult(context.Source.Charisma == 12) or ConditionResult(context.Source.Charisma == 13)):RestoreResource(SorceryPoint,1,0);IF(ConditionResult(context.Source.Charisma  == 14) or ConditionResult(context.Source.Charisma  == 15)):RestoreResource(SorceryPoint,2,0);IF(ConditionResult(context.Source.Charisma  == 16) or ConditionResult(context.Source.Charisma  == 17)):RestoreResource(SorceryPoint,3,0);IF(ConditionResult(context.Source.Charisma  == 18) or ConditionResult(context.Source.Charisma  == 19)):RestoreResource(SorceryPoint,4,0);IF(ConditionResult(context.Source.Charisma  == 20) or ConditionResult(context.Source.Charisma  == 21)):RestoreResource(SorceryPoint,5,0);IF(ConditionResult(context.Source.Charisma  == 22) or ConditionResult(context.Source.Charisma  == 23)):RestoreResource(SorceryPoint,6,0);IF(ConditionResult(context.Source.Charisma  == 24) or ConditionResult(context.Source.Charisma  == 25)):RestoreResource(SorceryPoint,7,0);IF(ConditionResult(context.Source.Charisma  == 26) or ConditionResult(context.Source.Charisma  == 27)):RestoreResource(SorceryPoint,8,0);IF(ConditionResult(context.Source.Charisma  == 28) or ConditionResult(context.Source.Charisma  == 29)):RestoreResource(SorceryPoint,9,0);IF(ConditionResult(context.Source.Charisma  >= 30)):RestoreResource(SorceryPoint,10,0)"
 data "SpellProperties" "IF(CharismaModifier=1 or CharismaModifier=2):RestoreResource(SorceryPoint,1,0);IF(CharismaModifier=3 or CharismaModifier=4):RestoreResource(SorceryPoint,2,0);IF(CharismaModifier=5 or CharismaModifier=6):RestoreResource(SorceryPoint,3,0);IF(CharismaModifier=7 or CharismaModifier=8):RestoreResource(SorceryPoint,4,0);IF(CharismaModifier=9 or CharismaModifier=10):RestoreResource(SorceryPoint,5,0);IF(CharismaModifier=6):RestoreResource(SorceryPoint,6,0);IF(CharismaModifier=7):RestoreResource(SorceryPoint,7,0);IF(CharismaModifier=8):RestoreResource(SorceryPoint,8,0);IF(CharismaModifier=9):RestoreResource(SorceryPoint,9,0);IF(CharismaModifier=10):RestoreResource(SorceryPoint,10,0)"
+// data "CastSound" "Action_Cast_ArcaneRecovery"
+// data "TargetSound" "Action_Impact_ArcaneRecovery"
+// data "PreviewCursor" "Cast"
+// data "CastTextEvent" "Cast"
+// data "UseCosts" "BonusActionPoint:1"
+// data "SpellAnimation" "03114753-8d91-4c52-8207-728a67cdd59b,,;,,;51c06d74-c048-452a-a248-41a751728e3e,,;e9731a5c-e4ba-4872-8950-36d625061ec3,,;8fcb1f19-a84b-486d-81fa-098aaf7cc9be,,;,,;c5bd6ce6-281c-4314-9f74-9f7bb2f4cf03,,;,,;,,"
+// data "VerbalIntent" "Utility"
+// data "SpellStyleGroup" "Class"
+// data "PrepareEffect" "af787096-8656-4495-a6ce-cbd376578069"
+// data "CastEffect" "b7fb4cd6-971f-44c0-9447-378092d36b63"
 
-// Gloves of the Arcanist’s Gambit
+// ==================================== CC - Gloves of the Arcanist’s Gambit
 // Sorcerous Wager passive: nerfed to only give +1 bonus for every two spell levels used (previously +1 bonus for every spell level used)
-new entry "CC_SorcerousWager_Passive"
-type "PassiveData"
-using "CC_SorcerousWager_Passive"
+
+new entry "CC_SORCEROUS_WAGER_ONE"
+type "StatusData"
+data "StatusType" "BOOST"
+using "CC_SORCEROUS_WAGER_ONE"
+// Sorcerous Wager
+// data "DisplayName" "h27ad4a5fg8ebeg4b8egb71dg81a7d073b032;1"
+// Affected entity has a +[1] bonus to its spell &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; and spell &lt;LSTag Tooltip="DifficultyClass"&gt;Difficulty Class&lt;/LSTag&gt;.
+// data "Description" "h27ad4a5fg8ebeg4b8egb71dg81a7d073b034;1"
 // 	When you cast a spell and spend at least 1 &lt;LSTag Type="ActionResource" Tooltip="SorceryPoint"&gt;Sorcery Point&lt;/LSTag&gt;, you gain a bonus to your &lt;LSTag Tooltip="AttackRoll"&gt;Spell Attack Rolls&lt;/LSTag&gt; and &lt;LSTag Tooltip="SpellDifficultyClass"&gt;Spell Save DC&lt;/LSTag&gt; equal to half the spell level cast, rounded up. This bonus lasts 1 turn. This effect can only occur once per turn.
 data "Description" "h00ccd4e2g61a2g49d0g9f76g3df8d72168a1;1"
+// data "DescriptionParams" "1"
+// data "Icon" "Action_Mag_SpellSlotRestoration"
+// data "SoundLoop" "Misc_Status_ArcaneAcuity_MO"
+// data "SoundStop" "Misc_Status_ArcaneAcuity_MO_Stop"
+// data "StackId" "CC_SORCEROUS_WAGER_ONE"
+// data "Boosts" "RollBonus(MeleeSpellAttack,1);RollBonus(RangedSpellAttack, 1);SpellSaveDC(1)"
+// data "StatusEffect" "b3e7fa61-37d7-4696-bf6e-31b46beba46b"
 
 new entry "CC_SORCEROUS_WAGER_TWO"
 type "StatusData"
 data "StatusType" "BOOST"
+// using "CC_SORCEROUS_WAGER_ONE"
 using "CC_SORCEROUS_WAGER_TWO"
 // data "DescriptionParams" "2"
 data "DescriptionParams" "1"
@@ -81,58 +176,108 @@ data "Boosts" "RollBonus(MeleeSpellAttack,1);RollBonus(RangedSpellAttack, 1);Spe
 new entry "CC_SORCEROUS_WAGER_THREE"
 type "StatusData"
 data "StatusType" "BOOST"
+// using "CC_SORCEROUS_WAGER_ONE"
 using "CC_SORCEROUS_WAGER_THREE"
+// data "DescriptionParams" "3"
 data "DescriptionParams" "2"
+// data "Boosts" "RollBonus(MeleeSpellAttack,3);RollBonus(RangedSpellAttack, 3);SpellSaveDC(3)"
 data "Boosts" "RollBonus(MeleeSpellAttack,2);RollBonus(RangedSpellAttack, 2);SpellSaveDC(2)"
 
 new entry "CC_SORCEROUS_WAGER_FOUR"
 type "StatusData"
 data "StatusType" "BOOST"
+// using "CC_SORCEROUS_WAGER_ONE"
 using "CC_SORCEROUS_WAGER_FOUR"
+// data "DescriptionParams" "4"
 data "DescriptionParams" "2"
+// data "Boosts" "RollBonus(MeleeSpellAttack,4);RollBonus(RangedSpellAttack, 4);SpellSaveDC(4)"
 data "Boosts" "RollBonus(MeleeSpellAttack,2);RollBonus(RangedSpellAttack, 2);SpellSaveDC(2)"
 
 new entry "CC_SORCEROUS_WAGER_FIVE"
 type "StatusData"
 data "StatusType" "BOOST"
+// using "CC_SORCEROUS_WAGER_ONE"
 using "CC_SORCEROUS_WAGER_FIVE"
+// data "DescriptionParams" "5"
 data "DescriptionParams" "3"
+// data "Boosts" "RollBonus(MeleeSpellAttack,5);RollBonus(RangedSpellAttack, 5);SpellSaveDC(5)"
 data "Boosts" "RollBonus(MeleeSpellAttack,4);RollBonus(RangedSpellAttack, 3);SpellSaveDC(3)"
 
 new entry "CC_SORCEROUS_WAGER_SIX"
 type "StatusData"
 data "StatusType" "BOOST"
+// using "CC_SORCEROUS_WAGER_ONE"
 using "CC_SORCEROUS_WAGER_SIX"
+// data "DescriptionParams" "6"
 data "DescriptionParams" "3"
+// data "Boosts" "RollBonus(MeleeSpellAttack,6);RollBonus(RangedSpellAttack, 6);SpellSaveDC(6)"
 data "Boosts" "RollBonus(MeleeSpellAttack,4);RollBonus(RangedSpellAttack, 3);SpellSaveDC(3)"
 
 new entry "CC_SORCEROUS_WAGER_SEVEN"
 type "StatusData"
 data "StatusType" "BOOST"
+// using "CC_SORCEROUS_WAGER_ONE"
 using "CC_SORCEROUS_WAGER_SEVEN"
+// data "DescriptionParams" "7"
 data "DescriptionParams" "4"
+// data "Boosts" "RollBonus(MeleeSpellAttack,7);RollBonus(RangedSpellAttack, 7);SpellSaveDC(7)"
 data "Boosts" "RollBonus(MeleeSpellAttack,4);RollBonus(RangedSpellAttack, 4);SpellSaveDC(4)"
 
 new entry "CC_SORCEROUS_WAGER_EIGHT"
 type "StatusData"
 data "StatusType" "BOOST"
+// using "CC_SORCEROUS_WAGER_ONE"
 using "CC_SORCEROUS_WAGER_EIGHT"
+// data "DescriptionParams" "8"
 data "DescriptionParams" "4"
+// data "Boosts" "RollBonus(MeleeSpellAttack,8);RollBonus(RangedSpellAttack, 8);SpellSaveDC(8)"
 data "Boosts" "RollBonus(MeleeSpellAttack,4);RollBonus(RangedSpellAttack, 4);SpellSaveDC(4)"
 
 new entry "CC_SORCEROUS_WAGER_NINE"
 type "StatusData"
 data "StatusType" "BOOST"
+// using "CC_SORCEROUS_WAGER_ONE"
 using "CC_SORCEROUS_WAGER_NINE"
+// data "DescriptionParams" "9"
 data "DescriptionParams" "5"
+// data "Boosts" "RollBonus(MeleeSpellAttack,9);RollBonus(RangedSpellAttack, 9);SpellSaveDC(9)"
 data "Boosts" "RollBonus(MeleeSpellAttack,5);RollBonus(RangedSpellAttack, 5);SpellSaveDC(5)"
 
-// Cloak of the Sorcerous Soul: remove +1 spell save DC, but increase chance of regaining a Sorcery Point to 30% (previously 15%)
+// ==================================== CC - Cloak of the Sorcerous Soul
+// Remove +1 spell save DC, but increase chance of regaining a Sorcery Point to 30% (previously 15%)
 new entry "CC_Sorcerer_Equipment_Cloak_of_the_Sorcerous_Soul"
 type "Armor"
+// using "_Back_Magic"
 using "CC_Sorcerer_Equipment_Cloak_of_the_Sorcerous_Soul"
+// data "RootTemplate" "ced16d61-ce2d-4bb8-823d-ad4997cb45da"
+// data "Rarity" "Rare"
+// data "Boosts" ""
 // data "PassivesOnEquip" "MAG_ArcaneEnchantment_Lesser_Passive;CC_PointOfReturn_Passive"
 data "PassivesOnEquip" "CHT_SpellAttackRoll_Passive;CC_PointOfReturn_Passive"
+// data "Weight" "0.5"
+// data "ValueUUID" "a229f048-70b0-4b0c-88cb-29b5c6bdb2d0"
+// data "ComboCategory" "d2"
+// data "ValueScale" "1"
+// data "ValueRounding" "1"
+// data "ValueLevel" "5"
+// data "Unique" "1"
+
+new entry "Tut_CC_Sorcerer_Equipment_Cloak_of_the_Sorcerous_Soul"
+type "Armor"
+// using "_Back_Magic"
+using "Tut_CC_Sorcerer_Equipment_Cloak_of_the_Sorcerous_Soul"
+// data "RootTemplate" "ced16d61-ce2d-4bb8-823d-ad4997cb45da"
+// data "Rarity" "Rare"
+// data "Boosts" ""
+// data "PassivesOnEquip" "MAG_ArcaneEnchantment_Lesser_Passive;CC_PointOfReturn_Passive"
+data "PassivesOnEquip" "CHT_SpellAttackRoll_Passive;CC_PointOfReturn_Passive"
+// data "Weight" "0.5"
+// data "ValueUUID" "a229f048-70b0-4b0c-88cb-29b5c6bdb2d0"
+// data "ComboCategory" "d2"
+// data "ValueScale" "1"
+// data "ValueRounding" "1"
+// data "ValueLevel" "5"
+// data "Unique" ""
 
 new entry "CHT_SpellAttackRoll_Passive"
 type "PassiveData"
@@ -146,32 +291,35 @@ data "Boosts" "RollBonus(MeleeSpellAttack, 1);RollBonus(RangedSpellAttack, 1)"
 new entry "CC_PointOfReturn_Passive"
 type "PassiveData"
 using "CC_PointOfReturn_Passive"
+// Point of Return
+// data "DisplayName" "h27ad4a5fg8ebeg4b8egb71dg81a7d073b052;1"
+// After expanding a &lt;LSTag Type="ActionResource" Tooltip="SorceryPoint"&gt;Sorcery Point&lt;/LSTag&gt;, you have a 15% chance to restore 1 &lt;LSTag Type="ActionResource" Tooltip="SorceryPoint"&gt;Sorcery Point&lt;/LSTag&gt;.
+// data "Description" "h27ad4a5fg8ebeg4b8egb71dg81a7d073b053;1"
 // After using at least 1 &lt;LSTag Type="ActionResource" Tooltip="SorceryPoint"&gt;Sorcery Point&lt;/LSTag&gt;, you have a [1]% chance to restore 1 Sorcery Point.
 data "Description" "hc6b46909g0870g4e75gb58cg9aedebda684c;1"
 data "DescriptionParams" "30"
+// data "Icon" "Skill_Sorcerer_CreateSorceryPoints_1"
+// data "Properties" "Highlighted"
+// data "StatsFunctorContext" "OnCast"
+// data "Conditions" "HasUseCosts('SorceryPoint', true) and not IsCantrip()"
 // data "StatsFunctors" "IF(RollDieAgainstDC(DiceType.d100,85)):ApplyStatus(SELF,CC_POINT_OF_RETURN,100, 0)"
 data "StatsFunctors" "IF(RollDieAgainstDC(DiceType.d100,71)):ApplyStatus(SELF,CC_POINT_OF_RETURN,100, 0)"
 
-// Amethyst Heartstone
+// ==================================== CC - Amethyst Heartstone
 // Heartstone Parry: decrease spell save DC and AC bonus to +1 (previously +2)
 new entry "CC_HeartstoneParry_Passive"
 type "PassiveData"
 using "CC_HeartstoneParry_Passive"
+// Heartstone Parry
+// data "DisplayName" "h27ad4a5fg8ebeg4b8egb71dg81a7d073b089;1"
+// While the Heartstone is equipped, you gain a +[1] bonus to &lt;LSTag Tooltip="SpellDifficultyClass"&gt;Spell Save DC&lt;/LSTag&gt; and Armor Class.
+// data "Description" "h27ad4a5fg8ebeg4b8egb71dg81a7d073b090;1"
 // data "DescriptionParams" "2"
 data "DescriptionParams" "1"
 // data "Boosts" "SpellSaveDC(2);AC(2)"
 data "Boosts" "SpellSaveDC(1);AC(1)"
 
-new entry "CC_Shout_Heartstone_Infusion"
-type "SpellData"
-data "SpellType" "Shout"
-using "CC_Shout_Heartstone_Infusion"
-// data "UseCosts" "ActionPoint:1"
-data "UseCosts" "BonusActionPointActionPoint:1"
-// data "Requirements" "!Combat"
-data "Requirements" ""
-
-// Hat of Font Surge
+// ==================================== CC - Hat of Font Surge
 // Font Surge: now only recovers Sorcery Points equal to half your Sorcerer level, rounded up (previously equal to Sorcerer level)
 new entry "CC_Shout_FontSurge"
 type "SpellData"
@@ -182,313 +330,612 @@ data "Description" "h2204bc8fg1160g4d88g931fg67abee69465b;1"
 // data "SpellProperties" "IF(CCSorcererLevelCheck(1)):RestoreResource(SorceryPoint,1,0);IF(CCSorcererLevelCheck(2)):RestoreResource(SorceryPoint,2,0);IF(CCSorcererLevelCheck(3)):RestoreResource(SorceryPoint,3,0);IF(CCSorcererLevelCheck(4)):RestoreResource(SorceryPoint,4,0);IF(CCSorcererLevelCheck(5)):RestoreResource(SorceryPoint,5,0);IF(CCSorcererLevelCheck(6)):RestoreResource(SorceryPoint,6,0);IF(CCSorcererLevelCheck(7)):RestoreResource(SorceryPoint,7,0);IF(CCSorcererLevelCheck(8)):RestoreResource(SorceryPoint,8,0);IF(CCSorcererLevelCheck(9)):RestoreResource(SorceryPoint,9,0);IF(CCSorcererLevelCheck(10)):RestoreResource(SorceryPoint,10,0);IF(CCSorcererLevelCheck(11)):RestoreResource(SorceryPoint,11,0);IF(CCSorcererLevelCheck(12)):RestoreResource(SorceryPoint,12,0);IF(CCSorcererLevelCheck(13)):RestoreResource(SorceryPoint,13,0);IF(CCSorcererLevelCheck(14)):RestoreResource(SorceryPoint,14,0);IF(CCSorcererLevelCheck(15)):RestoreResource(SorceryPoint,15,0);IF(CCSorcererLevelCheck(16)):RestoreResource(SorceryPoint,16,0);IF(CCSorcererLevelCheck(17)):RestoreResource(SorceryPoint,17,0);IF(CCSorcererLevelCheck(18)):RestoreResource(SorceryPoint,18,0);IF(CCSorcererLevelCheck(19)):RestoreResource(SorceryPoint,19,0);IF(CCSorcererLevelCheck(20)):RestoreResource(SorceryPoint,20,0)"
 data "SpellProperties" "IF(CCSorcererLevelCheck(1) or CCSorcererLevelCheck(2)):RestoreResource(SorceryPoint,1,0);IF(CCSorcererLevelCheck(3) or CCSorcererLevelCheck(4)):RestoreResource(SorceryPoint,2,0);IF(CCSorcererLevelCheck(5) or CCSorcererLevelCheck(6)):RestoreResource(SorceryPoint,3,0);IF(CCSorcererLevelCheck(7) or CCSorcererLevelCheck(8)):RestoreResource(SorceryPoint,4,0);IF(CCSorcererLevelCheck(9) or CCSorcererLevelCheck(2)):RestoreResource(SorceryPoint,5,0);IF(CCSorcererLevelCheck(11) or CCSorcererLevelCheck(12)):RestoreResource(SorceryPoint,6,0);IF(CCSorcererLevelCheck(13) or CCSorcererLevelCheck(14)):RestoreResource(SorceryPoint,7,0);IF(CCSorcererLevelCheck(15) or CCSorcererLevelCheck(16)):RestoreResource(SorceryPoint,8,0);IF(CCSorcererLevelCheck(17) or CCSorcererLevelCheck(18)):RestoreResource(SorceryPoint,9,0);IF(CCSorcererLevelCheck(19) or CCSorcererLevelCheck(20)):RestoreResource(SorceryPoint,10,0)"
 
-// Grimoire of the First Sorcerer
+// ==================================== CC - Grimoire of the First Sorcerer
 // Echo of Forgotten Power: decrease Sorcery Point recovery chance 
 new entry "CC_FORGOTTEN_POWER"
 type "StatusData"
 data "StatusType" "BOOST"
 using "CC_FORGOTTEN_POWER"
-// data "OnApplyFunctors" "IF(RollDieAgainstDC(DiceType.d100,74)):RestoreResource(SorceryPoint,1,0);IF(RollDieAgainstDC(DiceType.d100,78)):RestoreResource(SorceryPoint,2,0);IF(RollDieAgainstDC(DiceType.d100,82)):RestoreResource(SorceryPoint,3,0);IF(RollDieAgainstDC(DiceType.d100,86)):RestoreResource(SorceryPoint,4,0);IF(RollDieAgainstDC(DiceType.d100,90)):RestoreResource(SorceryPoint,5,0)"
+// Forgotten Power
+// data "DisplayName" "h27ad4a5fg8ebeg4b8egb71dg81a7d073b079;1"
+// Restore a random amount of &lt;LSTag Type="ActionResource" Tooltip="SorceryPoint"&gt;Sorcery Points&lt;/LSTag&gt;.
+// data "Description" "h27ad4a5fg8ebeg4b8egb71dg81a7d073b081;1"
+// data "Icon" "Action_AstralKnowledge"
+// data "StatusPropertyFlags" "DisablePortraitIndicator"
+// data "OnApplyFunctors" "IF(RollDieAgainstDC(DiceType.d100,81)):RestoreResource(SorceryPoint,1,0);IF(RollDieAgainstDC(DiceType.d100,86)):RestoreResource(SorceryPoint,2,0);IF(RollDieAgainstDC(DiceType.d100,91)):RestoreResource(SorceryPoint,3,0);IF(RollDieAgainstDC(DiceType.d100,96)):RestoreResource(SorceryPoint,4,0);IF(RollDieAgainstDC(DiceType.d100,98)):RestoreResource(SorceryPoint,5,0)"
 data "OnApplyFunctors" "IF(RollDieAgainstDC(DiceType.d100,81)):RestoreResource(SorceryPoint,1,0);IF(RollDieAgainstDC(DiceType.d100,86)):RestoreResource(SorceryPoint,2,0);IF(RollDieAgainstDC(DiceType.d100,91)):RestoreResource(SorceryPoint,3,0);IF(RollDieAgainstDC(DiceType.d100,96)):RestoreResource(SorceryPoint,4,0);IF(RollDieAgainstDC(DiceType.d100,98)):RestoreResource(SorceryPoint,5,0)"
 
-// ====== Pouch of Sorcerous Sand and Amulet of the Infinite Wellspring: add compatibility for metamagic options from darkcharl's Metamagic Extended ======
-// Custom statuses + passives to track the metamagic being toggled on. Note that the mod's metamagic passives for Empowered and Transmuted already include these statuses
-new entry "Metamagic_Seeking"
-type "PassiveData"
-using "Metamagic_Seeking"
-data "ToggleOnFunctors" "ApplyStatus(CHT_CC_METAMAGIC_SEEKING,100,-1)"
-data "ToggleOffFunctors" "RemoveStatus(CHT_CC_METAMAGIC_SEEKING)"
-
-new entry "CHT_CC_METAMAGIC_SEEKING"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StackId" "CHT_CC_METAMAGIC_SEEKING"
-data "StackPriority" "0"
-data "Passives" "CHT_CC_Meta_Seeking"
-data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
-data "StatusGroups" "SG_RemoveOnRespec"
-
-new entry "CHT_CC_Meta_Seeking"
+// ==================================== CC - Pouch of Sorcerous Sand & Amulet of the Infinite Wellspring
+// Bug Fix: CC_Meta_Transmuted doesn't exist?
+new entry "CC_Meta_Transmuted"
 type "PassiveData"
 data "Properties" "IsHidden"
 
-new entry "METAMAGIC_EMPOWERED"
-type "StatusData"
-data "StatusType" "BOOST"
-using "METAMAGIC_EMPOWERED"
-data "Passives" "CHT_CC_Meta_Empowered"
-
-new entry "CHT_CC_Meta_Empowered"
-type "PassiveData"
-data "Properties" "IsHidden"
-
-new entry "METAMAGIC_TRANSMUTED_SPELL"
-type "StatusData"
-data "StatusType" "BOOST"
-using "METAMAGIC_TRANSMUTED_SPELL"
-data "Passives" "CHT_CC_Meta_Transmuted"
-
-new entry "CHT_CC_Meta_Transmuted"
-type "PassiveData"
-data "Properties" "IsHidden"
-
-// Making the Freecast status work with the new metamagics
-new entry "CC_SORCERER_FREE_CAST"
-type "StatusData"
-data "StatusType" "BOOST"
-using "CC_SORCERER_FREE_CAST"
-// data "Boosts" "IF(HasPassive('CC_Meta_Careful',context.Source) or HasPassive('CC_Meta_Distant',context.Source) or HasPassive('CC_Meta_Extended',context.Source) or HasPassive('CC_Meta_Twinned',context.Source) or HasPassive('CC_Meta_Heightened',context.Source) or HasPassive('CC_Meta_Quickened',context.Source) or HasPassive('CC_Meta_Subtle',context.Source)):UnlockSpellVariant(not SpellId(' '),ModifyUseCosts(Replace,SorceryPoint,0,0,SorceryPoint))"
-data "Boosts" "IF(HasPassive('CC_Meta_Careful',context.Source) or HasPassive('CC_Meta_Distant',context.Source) or HasPassive('CC_Meta_Extended',context.Source) or HasPassive('CC_Meta_Twinned',context.Source) or HasPassive('CC_Meta_Heightened',context.Source) or HasPassive('CC_Meta_Quickened',context.Source) or HasPassive('CC_Meta_Subtle',context.Source) or HasPassive('CHT_CC_Meta_Seeking',context.Source) or HasPassive('CHT_CC_Meta_Empowered',context.Source) or HasPassive('CHT_CC_Meta_Transmuted',context.Source)):UnlockSpellVariant(not SpellId(' '),ModifyUseCosts(Replace,SorceryPoint,0,0,SorceryPoint))"
-
-// Fixing Freecast not working after long rest
-new entry "CC_SORCERER_FREE_CAST_USED"
-type "StatusData"
-data "StatusType" "BOOST"
-using "CC_SORCERER_FREE_CAST_USED"
-// data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;ApplyToDead;IgnoreResting"
-data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;ApplyToDead;RemoveOnLongRest"
-// data "RemoveConditions" "HasStatus('LONG_REST')"
-data "RemoveConditions" ""
-// data "RemoveEvents" "OnStatusApplied"
-data "RemoveEvents" ""
-
-// Making the respective item passives work with the new metamagics (compatibility fix for Amulet of the Infinite Wellspring is included in its own section below)
-new entry "CC_SorcerousSand_Passive"
-type "PassiveData"
-using "CC_SorcerousSand_Passive"
-// data "EnabledConditions" "HasActionResource('SorceryPoint', 1, 0, false, false, context.Source) and (HasStatus('CC_METAMAGIC_CAREFUL',context.Source) or HasStatus('CC_METAMAGIC_DISTANT',context.Source) or HasStatus('CC_METAMAGIC_EXTENDED',context.Source) or HasStatus('CC_METAMAGIC_HEIGHTENED',context.Source) or HasStatus('CC_METAMAGIC_QUICKENED',context.Source) or HasStatus('CC_METAMAGIC_SUBTLE',context.Source) or HasStatus('CC_METAMAGIC_TWINNED',context.Source)) and not HasStatus('CC_SORCERER_FREE_CAST_USED')"
-data "EnabledConditions" "HasActionResource('SorceryPoint', 1, 0, false, false, context.Source) and (HasStatus('CC_METAMAGIC_CAREFUL',context.Source) or HasStatus('CC_METAMAGIC_DISTANT',context.Source) or HasStatus('CC_METAMAGIC_EXTENDED',context.Source) or HasStatus('CC_METAMAGIC_HEIGHTENED',context.Source) or HasStatus('CC_METAMAGIC_QUICKENED',context.Source) or HasStatus('CC_METAMAGIC_SUBTLE',context.Source) or HasStatus('CC_METAMAGIC_TWINNED',context.Source) or HasStatus('CHT_CC_METAMAGIC_SEEKING',context.Source) or HasStatus('METAMAGIC_EMPOWERED',context.Source) or HasStatus('METAMAGIC_TRANSMUTED_SPELL',context.Source)) and not HasStatus('CC_SORCERER_FREE_CAST_USED')"
-
-// Amulet of the Infinite Wellspring
-// Endless Well: fix not having a once per turn cooldown and add 1d8 Force self-damage each time you use it
+// ==================================== CC - Amulet of the Infinite Wellspring
+// Endless Well: Added 1d8 Force self-damage each time you use it
 new entry "CC_EndlessWell_Passive"
 type "PassiveData"
 using "CC_EndlessWell_Passive"
+// The Endless Well
+// data "DisplayName" "h27ad4a5fg8ebeg4b8egb71dg81a7d073b069;1"
+// While your Metamagic ability is active, the amulet floods your being with raw magical energy, granting you access to its infinite reserves of &lt;LSTag Type="ActionResource" Tooltip="SorceryPoint"&gt;Sorcery Points&lt;/LSTag&gt;.
+// data "Description" "h27ad4a5fg8ebeg4b8egb71dg81a7d073b070;1"
 // While your Metamagic ability is active, the amulet floods your being with raw magical energy, allowing you to draw upon its infinite reserves of &lt;LSTag Type="ActionResource" Tooltip="SorceryPoint"&gt;Sorcery Points&lt;/LSTag&gt;. You can only use this effect once per turn and you take [1] each time you use it.
 data "Description" "h591efe33gb1f1g42f4gbafcg8f2377d5eaf3;1"
 // data "DescriptionParams" ""
 data "DescriptionParams" "DealDamage(1d8,Force)"
-// data "EnabledConditions" "HasActionResource('SorceryPoint', 1, 0, false, false, context.Source) and (HasStatus('CC_METAMAGIC_CAREFUL',context.Source) or HasStatus('CC_METAMAGIC_DISTANT',context.Source) or HasStatus('CC_METAMAGIC_EXTENDED',context.Source) or HasStatus('CC_METAMAGIC_HEIGHTENED',context.Source) or HasStatus('CC_METAMAGIC_QUICKENED',context.Source) or HasStatus('CC_METAMAGIC_SUBTLE',context.Source) or HasStatus('CC_METAMAGIC_TWINNED',context.Source)) and not HasStatus('CC_SORCERER_ENDLESSWELL_USED')"
-data "EnabledConditions" "HasActionResource('SorceryPoint', 1, 0, false, false, context.Source) and (HasStatus('CC_METAMAGIC_CAREFUL',context.Source) or HasStatus('CC_METAMAGIC_DISTANT',context.Source) or HasStatus('CC_METAMAGIC_EXTENDED',context.Source) or HasStatus('CC_METAMAGIC_HEIGHTENED',context.Source) or HasStatus('CC_METAMAGIC_QUICKENED',context.Source) or HasStatus('CC_METAMAGIC_SUBTLE',context.Source) or HasStatus('CC_METAMAGIC_TWINNED',context.Source) or HasStatus('CHT_CC_METAMAGIC_SEEKING',context.Source) or HasStatus('METAMAGIC_EMPOWERED',context.Source) or HasStatus('METAMAGIC_TRANSMUTED_SPELL',context.Source)) and not HasStatus('CHT_CC_SORCERER_ENDLESSWELL_USED')"
+// data "Icon" "Action_Monster_Bombardement_ProjectileStrike"
+// data "Properties" "Highlighted;ToggledDefaultAddToHotbar;IsToggled;OncePerTurn"
+// data "EnabledConditions" "HasActionResource('SorceryPoint', 1, 0, false, false, context.Source) and (HasStatus('CC_METAMAGIC_CAREFUL',context.Source) or HasStatus('CC_METAMAGIC_DISTANT',context.Source) or HasStatus('CC_METAMAGIC_EXTENDED',context.Source) or HasStatus('CC_METAMAGIC_HEIGHTENED',context.Source) or HasStatus('CC_METAMAGIC_QUICKENED',context.Source) or HasStatus('CC_METAMAGIC_SUBTLE',context.Source) or HasStatus('CC_METAMAGIC_TWINNED',context.Source) or HasStatus('CC_METAMAGIC_SEEKING',context.Source) or HasStatus('METAMAGIC_EMPOWERED',context.Source) or HasStatus('METAMAGIC_TRANSMUTED_SPELL',context.Source)) and not HasStatus('CC_SORCERER_ENDLESSWELL_USED')"
+// data "EnabledContext" "OnCastResolved;OnActionResourcesChanged;OnStatusApplied;OnStatusRemoved"
+// data "Conditions" "(IsSpell() or IsCantrip()) and (IsSpellOfSchool(SpellSchool.Abjuration) or IsSpellOfSchool(SpellSchool.Divination) or IsSpellOfSchool(SpellSchool.Necromancy) or IsSpellOfSchool(SpellSchool.Enchantment) or IsSpellOfSchool(SpellSchool.Illusion) or IsSpellOfSchool(SpellSchool.Transmutation) and HasStatus('CC_SORCERER_FREE_CAST',context.Source)) and (HasStatus('CC_METAMAGIC_CAREFUL',context.Source) or HasStatus('CC_METAMAGIC_DISTANT',context.Source) or HasStatus('CC_METAMAGIC_EXTENDED',context.Source) or HasStatus('CC_METAMAGIC_TWINNED',context.Source) or HasStatus('CC_METAMAGIC_HEIGHTENED',context.Source) or HasStatus('CC_METAMAGIC_QUICKENED',context.Source) or HasStatus('CC_METAMAGIC_SUBTLE',context.Source))"
+// data "StatsFunctors" ""
+// data "StatsFunctorContext" ""
 // data "ToggleOnFunctors" "ApplyStatus(CC_SORCERER_ENDLESSWELL_TRACKER,100,-1);IF(HasStatus('CC_SORCERER_FREE_CAST_TECHNICAL', context.Source)):ApplyStatus(CC_SORCERER_FREE_CAST,100,-1)"
-data "ToggleOnFunctors" "ApplyStatus(CHT_CC_SORCERER_ENDLESSWELL_TRACKER,100,-1);IF(HasStatus('CC_SORCERER_FREE_CAST_TECHNICAL', context.Source)):ApplyStatus(CC_SORCERER_FREE_CAST,100,-1)"
 // data "ToggleOffFunctors" "RemoveStatus(CC_SORCERER_FREE_CAST);RemoveStatus(CC_SORCERER_ENDLESSWELL_TRACKER)"
-data "ToggleOffFunctors" "RemoveStatus(CC_SORCERER_FREE_CAST);RemoveStatus(CHT_CC_SORCERER_ENDLESSWELL_TRACKER)"
+// data "ToggleOnEffect" "VFX_Spells_Cast_Sorcerer_Metamagic_Empowered_HeadFX_01:Dummy_HeadFX"
+// data "ToggleOffContext" "OnCastResolved"
 
-new entry "CHT_CC_SORCERER_ENDLESSWELL_TRACKER"
+new entry "CC_SORCERER_ENDLESSWELL_TRACKER"
 type "StatusData"
 data "StatusType" "BOOST"
-data "StackId" "CHT_CC_SORCERER_ENDLESSWELL_TRACKER"
-data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;ApplyToDead;"
-data "RemoveEvents" "OnSpellCast"
-data "RemoveConditions" "HasStatus('CC_SORCERER_FREE_CAST',context.Source)"
-data "OnRemoveFunctors" "IF(HasStatus('CC_SORCERER_FREE_CAST',context.Source)):ApplyStatus(CHT_CC_SORCERER_ENDLESSWELL_USED,100,1);IF(HasStatus('CC_SORCERER_FREE_CAST',context.Source)):DealDamage(SELF,1d8,Force)"
-
-new entry "CHT_CC_SORCERER_ENDLESSWELL_USED"
-type "StatusData"
-data "StatusType" "BOOST"
-data "StackId" "CHT_CC_SORCERER_ENDLESSWELL_USED"
-data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;ApplyToDead"
-
-// ==================== Preventing damage rider sources ====================
-new entry "CC_CharismaticForce_Passive"
-type "PassiveData"
-using "CC_CharismaticForce_Passive"
-// data "StatsFunctorContext" "OnDamage"
-// data "Conditions" "IsSpell()"
-// data "StatsFunctors" "IF(HasDamageDoneForType(DamageType.Force)):DealDamage(CharismaModifier/2, Force);IF(HasDamageDoneForType(DamageType.Radiant)):DealDamage(CharismaModifier/2, Radiant);IF(HasDamageDoneForType(DamageType.Psychic)):DealDamage(CharismaModifier/2, Psychic)"
-data "StatsFunctors" "IF(HasDamageDoneForType(DamageType.Force)):DealDamage(CharismaModifier/2, Force,Magical,,0,,true,true);IF(HasDamageDoneForType(DamageType.Radiant)):DealDamage(CharismaModifier/2, Radiant,Magical,,0,,true,true);IF(HasDamageDoneForType(DamageType.Psychic)):DealDamage(CharismaModifier/2, Psychic,Magical,,0,,true,true)"
+using "CC_SORCERER_ENDLESSWELL_TRACKER"
+// data "StackId" "CC_SORCERER_ENDLESSWELL_TRACKER"
+// data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;ApplyToDead;"
+// data "RemoveEvents" "OnSpellCast"
+// data "RemoveConditions" "HasStatus('CC_SORCERER_FREE_CAST',context.Source)"
+// data "OnRemoveFunctors" "IF(HasStatus('CC_SORCERER_FREE_CAST',context.Source)):ApplyStatus(CC_SORCERER_ENDLESSWELL_USED,100,1)"
+data "OnRemoveFunctors" "IF(HasStatus('CC_SORCERER_FREE_CAST',context.Source)):ApplyStatus(CC_SORCERER_ENDLESSWELL_USED,100,1);IF(HasStatus('CC_SORCERER_FREE_CAST',context.Source)):DealDamage(SELF,1d8,Force,Magical)"
 
 // ==================================== Faith and Fortitude - Cleric Equipment ====================================
 
-// Staff of Radiant Authority
-// Compelling Presence: fix to only target enemies (previously all creatures)
-new entry "Shout_Authority"
-type "SpellData"
-data "SpellType" "Shout"
-using "Shout_Authority"
-// data "TargetConditions" "Character()"
-data "TargetConditions" "Character() and Enemy() and not (Self() or Ally())"
-// Unleash a wave of shimmering light that washes over all enemies around you. Each creature affected must make a DC15 &lt;LSTag Tooltip="Wisdom"&gt;Wisdom&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or becomed &lt;LSTag Type="Status" Tooltip="CHARMED"&gt;Charmed&lt;/LSTag&gt;.
-data "Description" "h9fc4a74agacb9g434fgb239gaedf61413fb0;1"
-
-// Starlight Circlet
+// ==================================== FF - Starlight Circlet
 // Celestial Spark: remove Channel Divinity cost
 new entry "Shout_CelestialSpark"
 type "SpellData"
 data "SpellType" "Shout"
 using "Shout_CelestialSpark"
+// data "SpellProperties" "GROUND:SurfaceChange(Daylight)"
+// data "Cooldown" "OncePerShortRestPerItem"
+// data "AreaRadius" "5"
+// data "SpellRoll" "not SavingThrow(Ability.Constitution, SourceSpellDC())"
+// data "SpellSuccess" "DealDamage(2d8+Level,Lightning,Magical)"
+// data "SpellFail" "DealDamage((2d8+Level)/2,Lightning,Magical)"
+// data "TargetConditions" "Enemy() and Character()"
+// data "Icon" "Action_LightningBlast"
+// Celestial Spark
+// data "DisplayName" "hadbcf1e2ga2cag4888g9246g4a0b7b4893d1;1"
+// You can use your &lt;LSTag Type="ActionResource" Tooltip="ChannelDivinity"&gt;Channel Divinity&lt;/LSTag&gt; to unleash a spark of celestial lightning in a [2] radius around you. Each creature in the area must make a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; saving throw or take [1]. On save, Targets still take half damage.
+// data "Description" "hadbcf1e2ga2cag4888g9246g4a0b7b4893d2;1"
+// Unleash a spark of celestial lightning in a [1] radius around you. Each creature in the area must make a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or take [2]. On a save, targets still take half damage.
+data "Description" "haf57e852g0c4bg46d3gafcage13b1fb3a1cf;1"
+// data "DescriptionParams" "DealDamage(2d8+Level,Lightning);Distance(5)"
+// data "ExtraDescription" "hfd245a26g1d44g486fga0c7g9ba1f2f2b891;2"
+// data "TooltipDamageList" "DealDamage(2d8+Level,Lightning)"
+// data "TooltipAttackSave" "Constitution"
+// data "TooltipOnSave" "f762efbb-f8f1-493e-b248-2de1567b4bd2"
+// data "PrepareSound" "CrSpell_Prepare_ElementalAir_Whirlwind"
+// data "PrepareLoopSound" "CrSpell_Loop_ElementalAir_Whirlwind"
+// data "CastSound" "CrSpell_Cast_ElementalAir_Whirlwind"
+// data "TargetSound" "CrSpell_Impact_ElementalAir_Whirlwind"
+// data "CastTextEvent" "Cast"
 // data "UseCosts" "ActionPoint:1;ChannelDivinity:1"
 data "UseCosts" "ActionPoint:1"
+// data "SpellAnimation" "5e57443f-284e-47b2-915e-5b6417db269c,,;d8b7f668-db2b-43b0-9707-5da2ed2cf27e,,;7521e279-1bb3-4105-b32d-8206234836a3,,;d172e037-7041-4352-9a20-5f4b185f9ef1,,;5bcdefbb-2194-46c2-ac77-0b2d8472a5f7,,;,,;5fdb66be-7506-411a-a7ea-c4783288aac8,,;,,;,,"
+// data "VerbalIntent" "Damage"
+// data "SpellStyleGroup" "Class"
+// data "HitAnimationType" "MagicalDamage_Electric"
+// data "PrepareEffect" "422dbee2-0256-4db0-bcd4-312f9ebce4eb"
+// data "CastEffect" "69f9d133-00be-4784-83cc-ceb20d408c6f"
+// data "TargetEffect" "a7c99310-90e6-472e-8af3-4963a535f347"
+// data "DamageType" "Lightning"
 
-// Ring of the Twilight Cleric
-// Empowering Twilight: add once per turn limit to passive
-new entry "MAG_Twilight_Damage_Passive"
-type "PassiveData"
-using "MAG_Twilight_Damage_Passive"
-// Once per turn, when you deal damage with a spell, it deals an additional [1] damage. This damage bonus can only trigger once per spell.
-data "Description" "h4e5d482eg5d16g4f25gac29gf0f4a26e143b;1"
-// data "Properties" "OncePerAttack"
-data "Properties" "OncePerAttack;OncePerTurn"
+// ==================================== FF - Staff of Radiant Authority
+// Compelling Presence: fix to only target enemies (previously all creatures)
+new entry "Shout_Authority"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_Authority"
+// data "Cooldown" "OncePerRestPerItem"
+// data "AreaRadius" "18"
+// data "SpellRoll" "not SavingThrow(Ability.Wisdom, 15, AdvantageOnCharmed())"
+// data "SpellSuccess" "ApplyStatus(CHARMED,100,2)"
+// data "TargetConditions" "Character()"
+data "TargetConditions" "Character() and Enemy() and not (Self() or Ally())"
+// data "Icon" "Spell_Enchantment_DominatePerson"
+// Compelling Presence
+// data "DisplayName" "hadbcf1e2ga2cag4888g9246g4a0b7b4893d5;1"
+// You can unleash a wave of shimmering light that washes over all creatures within a [1] radius of you. Each creature affected must make a &lt;LSTag Tooltip="Wisdom"&gt;Wisdom&lt;/LSTag&gt; saving throw of 15 or becomed &lt;LSTag Type="Status" Tooltip="CHARMED"&gt;Charmed&lt;/LSTag&gt;.
+// data "Description" "hadbcf1e2ga2cag4888g9246g4a0b7b4893d6;1"
+// Unleash a wave of shimmering light that washes over all enemies around you. Each creature affected must make a DC15 &lt;LSTag Tooltip="Wisdom"&gt;Wisdom&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or becomed &lt;LSTag Type="Status" Tooltip="CHARMED"&gt;Charmed&lt;/LSTag&gt;.
+data "Description" "h9fc4a74agacb9g434fgb239gaedf61413fb0;1"
+// data "DescriptionParams" "Distance(18)"
+// data "TooltipAttackSave" "Wisdom"
+// data "TooltipStatusApply" "ApplyStatus(CHARMED,100,2)"
+// data "PrepareSound" "Action_Prepare_Warlock_FeyPresenceCharmed"
+// data "PrepareLoopSound" "Action_Loop_Warlock_FeyPresenceCharmed"
+// data "CastSound" "Action_Cast_Warlock_FeyPresenceCharmed"
+// data "TargetSound" "Action_Impact_Warlock_FeyPresenceCharmed"
+// data "CastTextEvent" "Cast"
+// data "UseCosts" "ActionPoint:1"
+// data "SpellAnimation" "554a18f7-952e-494a-b301-7702a85d4bc9,,;,,;af94aac1-d8eb-4ccb-9520-694ade11b61c,,;f5db4001-b136-4c48-9aa4-026c4a7dd3b7,,;22dfbbf4-f417-4c84-b39e-2039315961e6,,;,,;5bfbe9f9-4fc3-4f26-b112-43d404db6a89,,;,,;,,"
+// data "VerbalIntent" "Control"
+// data "SpellStyleGroup" "Class"
+// data "SpellFlags" "IsHarmful"
+// data "PrepareEffect" "d7ff6074-0dee-46eb-84c2-fed6118b0cc3"
+// data "CastEffect" "448df455-3d8e-40b1-9fcb-dfb8ff8ca26d"
+// data "TargetEffect" "00e2f380-36c8-42e7-81b5-0f80d200566b"
 
-// Pendant of Divine Duality
+// ==================================== FF - Pendant of Divine Duality
 // Cure Wounds: increase heal to be 4d6 to be in line with personal healing spell buffs
+// TODO: Maybe change this for myself to be in line with DIQ, fine for now as I aint tweaked healing spells how I wanted to
+
 new entry "Target_CureWounds_DivineDuality"
 type "SpellData"
 data "SpellType" "Target"
 using "Target_CureWounds_DivineDuality"
-//data "SpellProperties" "RegainHitPoints(2d8+SpellCastingAbilityModifier)"
+// data "Level" "2"
+// data "SpellSchool" "Evocation"
+// data "Cooldown" "OncePerRest"
+// data "SpellProperties" "RegainHitPoints(2d8+SpellCastingAbilityModifier)"
 data "SpellProperties" "RegainHitPoints(4d6+SpellCastingAbilityModifier)"
+// data "TargetRadius" "1.5"
+// data "TargetConditions" "Character() and not Dead() and not Tagged('UNDEAD') and not Tagged('CONSTRUCT')"
+// data "Icon" "Spell_Evocation_CureWounds"
+// data "DisplayName" "h9ba64edbge50ag4346gaf0egae2bfd63c7ac;1"
+// data "Description" "h2f60bd3fg2adbg49e8gae4bgd6758a67a547;3"
 // data "TooltipDamageList" "RegainHitPoints(2d8+SpellCastingAbilityModifier)"
 data "TooltipDamageList" "RegainHitPoints(4d6+SpellCastingAbilityModifier)"
+// data "TooltipUpcastDescription" "ef4fc937-9b23-4fcc-a67f-7706f86cfa44"
+// data "TooltipUpcastDescriptionParams" "RegainHitPoints(1d8)"
+// data "TooltipPermanentWarnings" "662e013d-e5cb-4669-9a4b-771636b24aa2"
+// data "CastSound" "Spell_Cast_Healing_CureWounds_L1to3"
+// data "TargetSound" "Spell_Impact_Healing_CureWounds_L1to3"
+// data "PreviewCursor" "Cast"
+// data "CastTextEvent" "Cast"
+// data "CycleConditions" "Ally() and not Dead() and not Tagged('UNDEAD')"
+// data "UseCosts" "ActionPoint:1"
+// data "SpellAnimation" "414bbf02-2918-4f01-83fb-1ddc7a588d88,,;,,;454e3439-19f2-4c42-8773-e18cf4ee233a,,;ccdf11dc-08f7-4d7f-bca9-55cfcc8f94bd,,;0c5dcc83-fa78-41da-b6a5-440b5ea30936,,;,,;bea988a0-2ec5-40d8-a67e-ffbd7454bc53,,;4156d364-d2c0-4a01-908c-3552f78f434d,,;6f0a29b6-0ae8-4ebf-a1e4-8069c4a6ad16,,"
+// data "VerbalIntent" "Healing"
+// data "SpellFlags" "HasVerbalComponent;IsSpell;HasHighGroundRangeExtension;IsMelee"
+// data "HitAnimationType" "MagicalNonDamage"
+// data "MemoryCost" ""
+// data "PrepareEffect" "96a51ac8-2e7e-4718-bb62-dcfd18964a02"
+// data "CastEffect" "ce5a1256-d5c8-45b5-98fc-ee9a16e3673c"
+// data "TargetEffect" "d16a93f4-ddb5-4175-9b3f-22eced19ff02"
 
 // Branding Smite: having it inherit from the vanilla spell for compatibility with mods that change it (and also so it inherits Honour Mode changes)
+// TODO: Custom on miss tooltip
 new entry "Target_Smite_Branding_DivineDuality"
 type "SpellData"
 data "SpellType" "Target"
+// using "Target_MainHandAttack"
 using "Target_Smite_Branding"
+// data "Level" "2"
+// data "SpellSchool" "Evocation"
+// data "SpellContainerID" ""
+// data "HitCosts" "BonusActionPoint:1"
 data "HitCosts" "BonusActionPoint:1"
+// data "Cooldown" "OncePerRest"
 data "Cooldown" "OncePerRest"
+// data "SpellRoll" "Attack(AttackType.MeleeWeaponAttack)"
+// data "SpellSuccess" "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType); ExecuteWeaponFunctors(MainHand); DealDamage(2d6,Radiant,Magical); ApplyStatus(BRANDING_SMITE, 100, 10)"
+// data "Icon" "Spell_Evocation_BrandingSmite_Melee"
+// data "DisplayName" "h068874e5g9a88g407agb446g4ea55149367b;2"
+// data "Description" "hf44d4aedgce78g4700gb024gfc7d53df20c2;3"
+// data "TooltipDamageList" "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType);DealDamage(2d6,Radiant)"
+// data "TooltipAttackSave" "MeleeWeaponAttack;Constitution"
+// data "TooltipStatusApply" "ApplyStatus(BRANDING_SMITE, 100, 10)"
+// data "TooltipUpcastDescription" "66388a6f-44dd-4c9f-a9e7-910c50e70755"
+// data "TooltipUpcastDescriptionParams" "DealDamage(1d6,Radiant)"
+// data "CastSound" "Spell_Cast_Damage_BrandingSmiteMelee_L1to3"
+// data "DualWieldingUseCosts" ""
+// data "SpellAnimation" "71369b20-18f1-4d33-89ad-a99b10f0444c,,;48beee2b-7124-4fa1-b820-dab4d89198d4,,;bcecc5ce-e7c9-4391-b4b6-5f93872ba2e6,,;9add032c-e500-4e88-a2ea-ef6c905bd656,,;3b9da8d4-3eff-43bd-9eaa-1c13fba0045e,,;d9feef5a-3726-4e23-95e5-6ec295efdc96,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+// data "DualWieldingSpellAnimation" "71369b20-18f1-4d33-89ad-a99b10f0444c,,;48beee2b-7124-4fa1-b820-dab4d89198d4,,;bcecc5ce-e7c9-4391-b4b6-5f93872ba2e6,,;9add032c-e500-4e88-a2ea-ef6c905bd656,,;3b9da8d4-3eff-43bd-9eaa-1c13fba0045e,,;d9feef5a-3726-4e23-95e5-6ec295efdc96,,;0b07883a-08b8-43b6-ac18-84dc9e84ff50,,;,,;,,"
+// data "VerbalIntent" "Damage"
+// data "SpellFlags" "IsSpell;HasVerbalComponent;IsMelee;IsHarmful"
+// data "HitAnimationType" "MagicalDamage_External"
+// data "MemoryCost" ""
+// data "PrepareEffect" "3dd8cb62-d04e-449c-bd94-ed59f472ec5a"
+// data "CastEffect" "da03ffe6-2e75-4070-be9d-a637666f2e9e"
+// data "TargetEffect" "efbd2c87-105c-46da-8501-8a47a85d20f9"
+// data "DamageType" "Radiant"
 
-// Life-Weaver Crossbow
-// Sacred Bolt: increase radius to 2m (previously 1.5m), heal changed to 2d6 (previously 1d10+Cleric level) and damage changed to 1d10 (previously (1d10+Cleric level)/2); add damage/healing to spell tooltip
+// ==================================== FF - Life-Weaver Crossbow
+// Sacred Bolt: Heal changed to 2d6 (previously 1d6+Cleric level) and damage changed to 1d10 (previously (1d6+Cleric level)/2)
 new entry "Projectile_LifeWeaver_Heal"
 type "SpellData"
 data "SpellType" "Projectile"
 using "Projectile_LifeWeaver_Heal"
-// data "SpellProperties" "IF(Ally()):RegainHitPoints(1d10+ClassLevel(Cleric));IF(Enemy()):DealDamage((1d10+ClassLevel(Cleric)/2),Radiant,Magical)"
+// data "SpellProperties" "IF(Ally()):RegainHitPoints(1d6+ClassLevel(Cleric));IF(Enemy()):DealDamage((1d6+ClassLevel(Cleric)/2),Radiant,Magical)"
 data "SpellProperties" "IF(Ally()):RegainHitPoints(2d6);IF(Enemy()):DealDamage(1d10,Radiant,Magical)"
+// data "TargetRadius" "18"
+// data "AreaRadius" "3"
+// data "ExplodeRadius" "3"
+// data "TargetConditions" "Character() and not Dead() and not Item() and not Self()"
+// Sacred Bolt
+// data "DisplayName" "h5f627f3fg53e6g465dga432g22f61eb1bbc10;1"
+// You fire a bolt of radiant energy, upon hitting its target it can healing your allies for [1] + Cleric Level and deal half that in Radiant damage to your enemies in a [2] radius.
+// data "Description" "h5f627f3fg53e6g465dga432g22f61eb1bbc11;1"
 // Fire a bolt of radiant energy which explodes in a [1] radius upon hitting its target. All allies hit are healed for [2] while enemies hit take [3].
 data "Description" "h2ae5cb4dgee20g4a83ga91fg3b2aa77224dd;1"
-// data "DescriptionParams" "RegainHitPoints(1d10);Distance(3)"
+// data "DescriptionParams" "RegainHitPoints(1d6);Distance(3)"
 data "DescriptionParams" "Distance(3);RegainHitPoints(2d6);DealDamage(1d10,Radiant)"
-// data "TooltipDamageList" ""
+// data "TooltipDamageList" "DealDamage(1d6,Radiant);RegainHitPoints(1d6)"
 data "TooltipDamageList" "DealDamage(1d10,Radiant);RegainHitPoints(2d6)"
+// data "PreviewCursor" "Bow"
+// data "ProjectileCount" "1"
+// data "Trajectories" "8646984b-91d6-47b8-afd5-0a3eebe3d447"
+// data "Icon" "Spell_Evocation_BrandingSmite_Ranged"
+// data "PrepareSound" "Action_Prepare_Cleric_DivineIntervention_Healing"
+// data "PrepareLoopSound" "Action_Loop_Cleric_DivineIntervention_Healing"
+// data "CastSound" "Action_Cast_Cleric_DivineStrikeRanged"
+// data "TargetSound" "Action_Impact_RadianceOfTheDawn"
+// data "UseCosts" "BonusActionPoint:1"
+// data "Cooldown" "OncePerRest"
+// data "SpellAnimation" "73afb4e5-8cfe-4479-95cf-16889597fee3,,;7e67bfd0-2fc2-4d10-bed5-cfda9e660de5,,;eb054308-7fce-4b85-bf4c-7a0031fda7ac,,;0b0dc35b-4953-45c0-a9eb-8d3fef5e798a,,;6ec808e1-e128-44ef-9361-a713bf86de8f,,;b2e9c771-3497-444c-b360-23b4441985a1,,;f920a0a6-f257-4ce4-8d17-2dcaa7bb7bbb,,;,,;,,"
+// data "DualWieldingSpellAnimation" "73afb4e5-8cfe-4479-95cf-16889597fee3,,;7e67bfd0-2fc2-4d10-bed5-cfda9e660de5,,;eb054308-7fce-4b85-bf4c-7a0031fda7ac,,:4a789a60-04b8-4a26-b476-65cf26ca558b,,;a11b8bcb-ba24-417a-aa86-4e4379c41ee2,,;6ec808e1-e128-44ef-9361-a713bf86de8f,,;b2e9c771-3497-444c-b360-23b4441985a1,,;f920a0a6-f257-4ce4-8d17-2dcaa7bb7bbb,,;,,;,,"
+// data "VerbalIntent" "Healing"
+// data "SpellFlags" "IsSpell;HasHighGroundRangeExtension;RangeIgnoreVerticalThreshold;IsHarmful"
+// data "PrepareEffect" "33d4ba61-8c76-4138-ac49-c33d279fb9c9"
+// data "CastEffect" "1b458190-cd91-4cca-a048-6ecefedc2cf2"
+// data "HitEffect" "5f874fdf-33ad-4a19-a9ed-33abb8e675c7"
+// data "Sheathing" "Ranged"
 
-// Staff of Healing
+// ==================================== FF - Staff of Healing
 // Cure Wounds: override inheritance to inherit from vanilla level 4 spell so it's compatible with mods that change Cure Wounds without manually editing the values here
 new entry "Target_Cleric_CureWounds_Four"
 type "SpellData"
 data "SpellType" "Target"
 // using "Target_CureWounds"
 using "Target_CureWounds_4"
+// data "Level" "4"
+// data "SpellProperties" "RegainHitPoints(4d8+SpellCastingAbilityModifier)"
+// data "DescriptionParams" "RegainHitPoints(4d8+SpellCastingAbilityModifier)"
+// data "TooltipDamageList" "RegainHitPoints(4d8+SpellCastingAbilityModifier)"
 data "UseCosts" "ActionPoint:1"
+data "MemoryCost" ""
 data "Cooldown" "OncePerRest"
+// data "PowerLevel" "4"
 data "RootSpellID" ""
 
-// Symbol of Hope
-// Hope’s Radiance: make AoE heal trigger around the caster instead of the healed target(s) - prevents it from stacking when healing multiple allies who are close together
+// ==================================== FF - Symbol of Hope
+// Hope’s Radiance: Now functions with level 7-9 spell slots
 new entry "SoH_AoE_Heal"
 type "PassiveData"
 using "SoH_AoE_Heal"
+// data "Properties" "Highlighted"
+// data "DisplayName" "h5f627f3fg53e6g465dga432g22f61eb1bbc4;1"
+// When you cast a healing spell of 1st level or higher, it heals all allies within [1] of you for [2] per &lt;LSTag Tooltip="SpellSlot"&gt;spell slot&lt;/LSTag&gt; level.
+// data "Description" "h5f627f3fg53e6g465dga432g22f61eb1bbc3;1"
 // Your healing spells heal all allies in a [1] radius around you for [2] per &lt;LSTag Tooltip="SpellSlot"&gt;Spell Slot&lt;/LSTag&gt; level.
 data "Description" "h9d28baedgb6f7g4795g97ffgc04c6925e39d;1"
-data "Properties" "OncePerAttack"
-// data "Conditions" "Character() and not Enemy()"
-data "Conditions" ""
-// data "StatsFunctors" "IF(SpellPowerLevelEqualTo(1)):ApplyStatus(SYMBOL_HOPE_HEAL_1,100,0);IF(SpellPowerLevelEqualTo(2)):ApplyStatus(SYMBOL_HOPE_HEAL_2,100,0);IF(SpellPowerLevelEqualTo(3)):ApplyStatus(SYMBOL_HOPE_HEAL_3,100,0);IF(SpellPowerLevelEqualTo(4)):ApplyStatus(SYMBOL_HOPE_HEAL_4,100,0);IF(SpellPowerLevelEqualTo(5)):ApplyStatus(SYMBOL_HOPE_HEAL_5,100,0);IF(SpellPowerLevelEqualTo(6)):ApplyStatus(SYMBOL_HOPE_HEAL_6,100,0)"
-data "StatsFunctors" "IF(SpellPowerLevelEqualTo(1)):ApplyStatus(SELF,SYMBOL_HOPE_HEAL_1,100,0);IF(SpellPowerLevelEqualTo(2)):ApplyStatus(SELF,SYMBOL_HOPE_HEAL_2,100,0);IF(SpellPowerLevelEqualTo(3)):ApplyStatus(SELF,SYMBOL_HOPE_HEAL_3,100,0);IF(SpellPowerLevelEqualTo(4)):ApplyStatus(SELF,SYMBOL_HOPE_HEAL_4,100,0);IF(SpellPowerLevelEqualTo(5)):ApplyStatus(SELF,SYMBOL_HOPE_HEAL_5,100,0);IF(SpellPowerLevelEqualTo(6)):ApplyStatus(SELF,SYMBOL_HOPE_HEAL_6,100,0)"
+// data "DescriptionParams" "Distance(3);RegainHitPoints(1d4)"
+// data "Properties" "OncePerAttack"
+// data "StatsFunctorContext" "OnHeal"
+// data "Conditions" ""
+// data "StatsFunctors" "IF(SpellPowerLevelEqualTo(1)):ApplyStatus(SELF,SYMBOL_HOPE_HEAL_1,100,0);IF(SpellPowerLevelEqualTo(2)):ApplyStatus(SELF,SYMBOL_HOPE_HEAL_2,100,0);IF(SpellPowerLevelEqualTo(3)):ApplyStatus(SELF,SYMBOL_HOPE_HEAL_3,100,0);IF(SpellPowerLevelEqualTo(4)):ApplyStatus(SELF,SYMBOL_HOPE_HEAL_4,100,0);IF(SpellPowerLevelEqualTo(5)):ApplyStatus(SELF,SYMBOL_HOPE_HEAL_5,100,0);IF(SpellPowerLevelEqualTo(6)):ApplyStatus(SELF,SYMBOL_HOPE_HEAL_6,100,0)"
+data "StatsFunctors" "IF(SpellPowerLevelEqualTo(1)):ApplyStatus(SELF,SYMBOL_HOPE_HEAL_1,100,0);IF(SpellPowerLevelEqualTo(2)):ApplyStatus(SELF,SYMBOL_HOPE_HEAL_2,100,0);IF(SpellPowerLevelEqualTo(3)):ApplyStatus(SELF,SYMBOL_HOPE_HEAL_3,100,0);IF(SpellPowerLevelEqualTo(4)):ApplyStatus(SELF,SYMBOL_HOPE_HEAL_4,100,0);IF(SpellPowerLevelEqualTo(5)):ApplyStatus(SELF,SYMBOL_HOPE_HEAL_5,100,0);IF(SpellPowerLevelEqualTo(6)):ApplyStatus(SELF,SYMBOL_HOPE_HEAL_6,100,0);IF(SpellPowerLevelEqualTo(7)):ApplyStatus(SELF,GOON_SYMBOL_HOPE_HEAL_7,100,0);IF(SpellPowerLevelEqualTo(8)):ApplyStatus(SELF,GOON_SYMBOL_HOPE_HEAL_8,100,0);;IF(SpellPowerLevelEqualTo(9)):ApplyStatus(SELF,GOON_SYMBOL_HOPE_HEAL_9,100,0)"
 
-new entry "Projectile_SoH_Heal"
+new entry "GOON_SYMBOL_HOPE_HEAL_7"
+type "StatusData"
+data "StatusType" "BOOST"
+using "SYMBOL_HOPE_HEAL_1"
+data "OnApplyFunctors" "CreateExplosion(Goon_Projectile_SoH_Heal_7)"
+
+new entry "Goon_Projectile_SoH_Heal_7"
 type "SpellData"
 data "SpellType" "Projectile"
 using "Projectile_SoH_Heal"
-// data "TargetConditions" "Character() and not Enemy()"
-data "TargetConditions" "Character() and Ally() and not Dead()"
+data "SpellProperties" "RegainHitPoints(7d4)"
+data "VerbalIntent" "Healing"
 
-// Helm of Luminous Devotion
+new entry "GOON_SYMBOL_HOPE_HEAL_8"
+type "StatusData"
+data "StatusType" "BOOST"
+using "SYMBOL_HOPE_HEAL_1"
+data "OnApplyFunctors" "CreateExplosion(Goon_Projectile_SoH_Heal_8)"
+
+new entry "Goon_Projectile_SoH_Heal_8"
+type "SpellData"
+data "SpellType" "Projectile"
+using "Projectile_SoH_Heal"
+data "SpellProperties" "RegainHitPoints(8d4)"
+data "VerbalIntent" "Healing"
+
+new entry "GOON_SYMBOL_HOPE_HEAL_9"
+type "StatusData"
+data "StatusType" "BOOST"
+using "SYMBOL_HOPE_HEAL_1"
+data "OnApplyFunctors" "CreateExplosion(Goon_Projectile_SoH_Heal_9)"
+
+new entry "Goon_Projectile_SoH_Heal_9"
+type "SpellData"
+data "SpellType" "Projectile"
+using "Projectile_SoH_Heal"
+data "SpellProperties" "RegainHitPoints(9d4)"
+data "VerbalIntent" "Healing"
+
+// ==================================== FF - Helm of Luminous Devotion
 // Divine Retribution: remove Channel Divinity cost
 new entry "Shout_DivineRetribution"
 type "SpellData"
-data "SpellType" "Shout"
+// using "Shout_RadianceOfTheDawn"
 using "Shout_DivineRetribution"
+// data "SpellType" "Shout"
+// data "Cooldown" "OncePerShortRest"
+// data "SpellProperties" "GROUND:SurfaceChange(Daylight)"
+// data "AreaRadius" "9"
+// data "SpellRoll" "not SavingThrow(Ability.Constitution, 13) or (Tagged('ALIGN_EVIL') and not SavingThrow(Ability.Constitution, 17))"
+// data "SpellSuccess" "IF(not Tagged('ALIGN_GOOD')):DealDamage(4d8,Radiant,Magical); IF(Tagged('ALIGN_GOOD')):DealDamage(2d8,Radiant,Magical)"
+// data "SpellFail" "IF(not Tagged('ALIGN_GOOD')):DealDamage((4d8)/2,Radiant,Magical); IF(Tagged('ALIGN_GOOD')):DealDamage((2d8)/2,Radiant,Magical)"
+// data "TargetConditions" "Character() and not Ally()"
+// data "Icon" "Spell_Abjuration_BeaconOfHope"
+// Divine Retribution
+// data "DisplayName" "h154deae1gb7aag4b5fgbb28g0286ae978da7;1"
+// Channeling the unwavering faith of a fallen holy warrior, unleashing a radiant blast upon creatures within [1] of you and dealing [2]. The targets must make a Constitution saving throw. Evil creatures have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on the &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;, and Good creatures take half damage.
+// data "Description" "h154deae1gb7aag4b5fgbb28g0286ae978da8;1"
+// data "DescriptionParams" "Distance(9);DealDamage(4d8,Radiant)"
+// data "ExtraDescription" "hfd245a26g1d44g486fga0c7g9ba1f2f2b891;2"
+// data "TooltipDamageList" "DealDamage(4d8,Radiant)"
+// data "TooltipAttackSave" "Constitution"
+// data "TooltipOnSave" "f762efbb-f8f1-493e-b248-2de1567b4bd2"
+// data "PrepareSound" "Spell_Prepare_Damage_Radiant_Gen_L1to3"
+// data "PrepareLoopSound" "Spell_Prepare_Damage_Radiant_Gen_L1to3_Loop"
+// data "CastSound" "Action_Cast_RadianceOfTheDawn"
+// data "TargetSound" "Action_Impact_RadianceOfTheDawn"
+// data "CastTextEvent" "Cast"
 // data "UseCosts" "ActionPoint:1;ChannelDivinity:1"
 data "UseCosts" "ActionPoint:1"
+// data "SpellAnimation" "2f0d97b9-4a1f-4bf3-a3c2-32efb563d601,,;,,;70ddfd63-fc3f-45f4-b067-75389b85d540,,;90face3a-6607-4b3d-87e6-c6090b069160,,;57e449b3-b712-4508-afcf-f2e91dc473f6,,;,,;84f3727f-aabc-4e34-bf31-c6cd0160bec9,,;,,;,,"
+// data "VerbalIntent" "Healing"
+// data "SpellStyleGroup" ""
+// data "SpellFlags" "HasVerbalComponent"
+// data "HitAnimationType" "MagicalNonDamage"
+// data "PrepareEffect" "c218f05b-1e12-4298-beff-e4d33a5fa5a5"
+// data "CastEffect" "11b177e1-ccd8-495d-ad9a-5547a138f540"
+// data "TargetEffect" "78ab57f2-edce-4697-8be4-7bf7c2e76f92"
+// data "DamageType" "Radiant"
 
-// Ring of the Guiding Star
+// ==================================== FF - Ring of the Guiding Star
 // Aura of the Heavens: decrease weapon damage bonus and damage reduction to Wisdom modifier minus 1 (previously full Wisdom modifier)
 new entry "MAG_StarAura_Ring_Passive"
 type "PassiveData"
 using "MAG_StarAura_Ring_Passive"
+// Aura of the Heavens
+// data "DisplayName" "h154deae1gb7aag4b5fgbb28g0286ae978da35;1"
+// The cleric and any nearby allies deal an additional [1] to damage dealt with melee weapons, and all damage is reduced equal to the clerics &lt;LSTag Tooltip="Wisdom"&gt;Wisdom&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;.
+// data "Description" "h154deae1gb7aag4b5fgbb28g0286ae978da36;1"
 // data "DescriptionParams" "DealDamage(max(1,WisdomModifier), MainMeleeWeaponDamageType);DamageReduction(All, Flat, Cause.WisdomModifier)"
 data "DescriptionParams" "DealDamage(max(1,WisdomModifier-1), MainMeleeWeaponDamageType);DamageReduction(All, Flat, Cause.WisdomModifier-1)"
+// You must toggle this on in order to activate this condition.
+// data "ExtraDescription" "hd81671ebg63a5g46b1gabadg070e4c768835;2"
+// data "Icon" "Action_Legendary_Offensive"
+// data "Properties" "IsToggled"
+// data "ToggleOnFunctors" "ApplyStatus(AURA_OF_STAR, 100, -1)"
+// data "ToggleOffFunctors" "RemoveStatus(AURA_OF_STAR)"
 
 new entry "AURA_OF_STAR"
 type "StatusData"
 data "StatusType" "BOOST"
 using "AURA_OF_STAR"
+// Aura of the Heavens
+// data "DisplayName" "h154deae1gb7aag4b5fgbb28g0286ae978da35;1"
+// The cleric and any nearby allies deal an additional [1] to damage dealt with melee weapons, and all damage is reduced equal to the clerics &lt;LSTag Tooltip="Wisdom"&gt;Wisdom&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;.
+// data "Description" "h154deae1gb7aag4b5fgbb28g0286ae978da36;1"
 // The wearer and allies within [1] deal an additional [2] damage with &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;melee weapon attacks&lt;/LSTag&gt;, and all damage received is reduced by [3]. This bonus is equal to the wearer's &lt;LSTag Tooltip="Wisdom"&gt;Wisdom&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; minus 1.
 data "Description" "h53b6245cg0039g4ae4gb0a4ga32e05e3d00d;1"
 // data "DescriptionParams" "DealDamage(max(1,Cause.WisdomModifier), MainMeleeWeaponDamageType);DamageReduction(All, Flat, Cause.WisdomModifier)"
 data "DescriptionParams" "Distance(3);DealDamage(max(1,Cause.WisdomModifier-1), MainMeleeWeaponDamageType);max(1,Cause.WisdomModifier-1)"
+// data "Icon" "Action_Legendary_Offensive"
+// data "StackId" "AURA_OF_STAR"
+// data "StackPriority" "10"
+// data "AuraRadius" "3"
+// data "AuraStatuses" "IF(not Self() and not Dead() and not Item() and not Enemy()):ApplyStatus(AURA_OF_STAR_BUFF)"
 // data "Boosts" "IF(IsMeleeAttack()):CharacterWeaponDamage(max(1, Cause.WisdomModifier));DamageReduction(All, Flat, Cause.WisdomModifier)"
 data "Boosts" "IF(IsMeleeAttack()):CharacterWeaponDamage(max(1, Cause.WisdomModifier-1));DamageReduction(All, Flat, Cause.WisdomModifier-1)"
+// data "StatusPropertyFlags" "ApplyToDead;IgnoreResting;DisableCombatlog"
+// data "StatusGroups" "SG_RemoveOnRespec"
 
 new entry "AURA_OF_STAR_BUFF"
 type "StatusData"
 data "StatusType" "BOOST"
 using "AURA_OF_STAR_BUFF"
+// Aura of the Heavens
+// data "DisplayName" "h154deae1gb7aag4b5fgbb28g0286ae978da35;1"
+// Deal an additional [1] to damage dealt with melee weapons, and all damage is reduced equal to the clerics &lt;LSTag Tooltip="Wisdom"&gt;Wisdom&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;.
+// data "Description" "h154deae1gb7aag4b5fgbb28g0286ae978da37;1"
 // Deal an additional [1] damage with &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;melee weapon attacks&lt;/LSTag&gt; and take [1] less damage from all sources.
 data "Description" "h722e318bg002cg47cdg9391g88ba87f298a0;1"
 // data "DescriptionParams" "DealDamage(max(1,Cause.WisdomModifier), MainMeleeWeaponDamageType);DamageReduction(All, Flat, Cause.WisdomModifier)"
 data "DescriptionParams" "DealDamage(max(1,Cause.WisdomModifier-1), MainMeleeWeaponDamageType);max(1,Cause.WisdomModifier-1)"
+// data "Icon" "Action_Legendary_Offensive"
+// data "StackId" "AURA_OF_STAR"
+// data "StackPriority" "5"
 // data "Boosts" "IF(IsMeleeAttack()):CharacterWeaponDamage(max(1, Cause.WisdomModifier));DamageReduction(All, Flat, Cause.WisdomModifier)"
 data "Boosts" "IF(IsMeleeAttack()):CharacterWeaponDamage(max(1, Cause.WisdomModifier-1));DamageReduction(All, Flat, Cause.WisdomModifier-1)"
+// data "StatusPropertyFlags" "IgnoreResting;DisableCombatlog"
+// data "StatusGroups" "SG_RemoveOnRespec"
+// data "ApplyEffect" "d21494e5-5c30-4a69-85ef-75a785e71105"
+// data "EndEffect" "a5c11e94-efa3-4998-a76b-fc12502ea565"
 
 // ==================================== Grove and Growl - Druid Equipment ====================================
 
-// Feywild Ring: replace +1 spell save DC with +1 Wisdom; fix for not being able to be Helped when downed with ring equipped
+// ==================================== GG - Feywild Ring
+// Replaced +1 spell save DC with +1 Wisdom; fix for not being able to be Helped when downed with ring equipped
 new entry "DruidEquipmentAct1_Feywilds_Kiss"
 type "Armor"
+// using "_Ring_Magic"
 using "DruidEquipmentAct1_Feywilds_Kiss"
+// data "RootTemplate" "03973eb2-3d33-4699-984a-ac805af66bc4"
+// data "Rarity" "Rare"
 // data "Boosts" ""
 data "Boosts" "Ability(Wisdom, 1)"
 // data "PassivesOnEquip" "FeywildsKiss_DeathSavingThrow;MAG_SpellSaveDC_Enchantment_Lesser_Passive"
 data "PassivesOnEquip" "FeywildsKiss_DeathSavingThrow"
+// data "Weight" "0.05"
+// data "ValueUUID" "94356ef2-bb14-4595-88cf-86f544ef12eb"
+// data "ComboCategory" "d2"
+// data "ValueScale" "1"
+// data "ValueRounding" "1"
+// data "ValueLevel" "2"
+// data "Unique" "1"
 
-// Oakheart Talisman
-// Stoneskin Awakening: change tooltip to reflect changes made by Syrchalis spell rebalance
+new entry "Tut_DruidEquipmentAct1_Feywilds_Kiss"
+type "Armor"
+// using "_Ring_Magic"
+using "Tut_DruidEquipmentAct1_Feywilds_Kiss"
+// data "RootTemplate" "03973eb2-3d33-4699-984a-ac805af66bc4"
+// data "Rarity" "Rare"
+// data "Boosts" ""
+data "Boosts" "Ability(Wisdom, 1)"
+// data "PassivesOnEquip" "FeywildsKiss_DeathSavingThrow;MAG_SpellSaveDC_Enchantment_Lesser_Passive"
+data "PassivesOnEquip" "FeywildsKiss_DeathSavingThrow"
+// data "Weight" "0.05"
+// data "ValueUUID" "94356ef2-bb14-4595-88cf-86f544ef12eb"
+// data "ComboCategory" "d2"
+// data "ValueScale" "1"
+// data "ValueRounding" "1"
+// data "ValueLevel" "2"
+// data "Unique" ""
+
+// ==================================== GG - Oakheart Talisman
+// Stoneskin Awakening: change tooltip to appropriately hyperlink to the Stoneskin condition.
 new entry "Target_GG_Two_Stoneskin"
 type "SpellData"
 data "SpellType" "Target"
+// using "Target_Stoneskin"
 using "Target_GG_Two_Stoneskin"
-// Grant a protective stonelike hide to all allies in the targeted area, giving them &lt;LSTag Tooltip="Resistant"&gt;Resistance&lt;/LSTag&gt; to Bludgeoning, Piercing, and Slashing damage but reducing their &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; by [1].
+// Stoneskin Awakening
+// data "DisplayName" "h904aabeega160g4ca4g8a76ge834b2888d27;1"
+// Grant a protective stonelike hide to all allies in the targeted area, gaining &lt;LSTag Tooltip="Resistant"&gt;Resistance&lt;/LSTag&gt; to non-magical Bludgeoning, Piercing, and Slashing damage.
+// data "Description" "h904aabeega160g4ca4g8a76ge834b2888d28;1"
+// Grant &lt;LSTag Type="Status" Tooltip="STONESKIN"&gt;Stoneskin&lt;/LSTag&gt; to all allies in the targeted area.
 data "Description" "h1742594fg6591g4e55gb2d1ge96b8b4d4737;1"
-// data "DescriptionParams" ""
-data "DescriptionParams" "Distance(3)"
+// data "Level" ""
+// data "SpellSchool" "Abjuration"
+// data "SpellProperties" "ApplyStatus(STONESKIN,100,3)"
+// data "TargetRadius" ""
+// data "AreaRadius" "5"
+// data "TargetConditions" "Character() and Ally() and not Enemy()"
+// data "TooltipStatusApply" "ApplyStatus(STONESKIN,100,3)"
+// data "CycleConditions" "Ally() and not Dead()"
+// data "UseCosts" "BonusActionPoint:1"
+// data "Cooldown" "OncePerShortRestPerItem"
+// data "SpellFlags" "HasVerbalComponent;HasSomaticComponent;IsSpell;IsMelee"
+// data "MemoryCost" ""
 
-// Staff of the Ancient Guardian: decrease spell save DC bonus to +2 (previously +3) (using an existing vanilla passive)
+// ==================================== GG - Staff of the Ancient Guardian
+// Decreased spell save DC bonus to +2 (previously +3) (using an existing vanilla passive)
 new entry "DruidEquipmentAct3_Staff_of_the_Ancient_Guardian"
 type "Weapon"
+// using "WPN_Quarterstaff_1"
 using "DruidEquipmentAct3_Staff_of_the_Ancient_Guardian"
+// data "RootTemplate" "c940962a-7fee-44e1-be0a-6f9569d5ea5b"
+// data "Rarity" "Legendary"
+// data "Damage Type" "Bludgeoning"
+// data "DefaultBoosts" "WeaponProperty(Magical);WeaponEnchantment(3)"
+// data "Boosts" "UnlockSpell(Target_GG_Three_ConjureWoodlandBeings);UnlockSpell(Shout_GG_Three_GuardianRepulse)"
 // data "PassivesOnEquip" "GG_Three_SpellSaveDC_Passive"
 data "PassivesOnEquip" "MAG_SpellSaveDC_Enchantment_Passive"
+// data "UseConditions" "CanUseDruidEquipmentAThree()"
+// data "Weight" "1.8"
+// data "ValueUUID" "d24c441f-7ebe-4229-8522-cf34c257ff20"
+// data "ComboCategory" "d4"
+// data "ValueScale" "1"
+// data "ValueRounding" "1"
+// data "ValueLevel" "10"
+// data "Unique" "1"
 
-// ==================== Preventing damage rider sources ====================
-new entry "GG_Three_IncreasedElementalDamage_Passive"
-type "PassiveData"
-using "GG_Three_IncreasedElementalDamage_Passive"
-// data "StatsFunctorContext" "OnDamage"
-// data "Conditions" "IsSpell()"
-// data "StatsFunctors" "IF(HasDamageDoneForType(DamageType.Thunder)):DealDamage(1d6, Thunder);IF(HasDamageDoneForType(DamageType.Lightning)):DealDamage(1d6, Lightning);IF(HasDamageDoneForType(DamageType.Cold)):DealDamage(1d6, Cold)"
-data "StatsFunctors" "IF(HasDamageDoneForType(DamageType.Thunder)):DealDamage(1d6, Thunder,Magical,,0,,true,true);IF(HasDamageDoneForType(DamageType.Lightning)):DealDamage(1d6, Lightning,Magical,,0,,true,true);IF(HasDamageDoneForType(DamageType.Cold)):DealDamage(1d6, Cold,Magical,,0,,true,true)"
+new entry "Tut_DruidEquipmentAct3_Staff_of_the_Ancient_Guardian"
+type "Weapon"
+// using "WPN_Quarterstaff_1"
+using "Tut_DruidEquipmentAct3_Staff_of_the_Ancient_Guardian"
+// data "RootTemplate" "c940962a-7fee-44e1-be0a-6f9569d5ea5b"
+// data "Rarity" "Legendary"
+// data "Damage Type" "Bludgeoning"
+// data "DefaultBoosts" "WeaponProperty(Magical);WeaponEnchantment(3)"
+// data "Boosts" "UnlockSpell(Target_GG_Three_ConjureWoodlandBeings);UnlockSpell(Shout_GG_Three_GuardianRepulse)"
+// data "PassivesOnEquip" "GG_Three_SpellSaveDC_Passive"
+data "PassivesOnEquip" "MAG_SpellSaveDC_Enchantment_Passive"
+// data "UseConditions" "CanUseDruidEquipmentAThree()"
+// data "Weight" "1.8"
+// data "ValueUUID" "d24c441f-7ebe-4229-8522-cf34c257ff20"
+// data "ComboCategory" "d4"
+// data "ValueScale" "1"
+// data "ValueRounding" "1"
+// data "ValueLevel" "10"
+// data "Unique" ""
 
+// ==================================== GG - Ring of the Stormspeaker
+// Kiss of the Weaver: honour DRS
 new entry "Target_GG_One_WeaversEdge"
 type "SpellData"
 data "SpellType" "Target"
+// using "Target_EnsnaringStrike"
 using "Target_GG_One_WeaversEdge"
+// data "SpellContainerID" ""
+// data "Cooldown" "OncePerShortRestPerItem"
 // data "SpellSuccess" "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType); ExecuteWeaponFunctors(MainHand); ApplyStatus(WEB,100,2, , , ,not SavingThrow(Ability.Strength, SourceSpellDC(), AdvantageOnRestrained(),DisadvantageOnRestrained()));DealDamage(1d4,Poison,Magical)"
 data "SpellSuccess" "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType); ExecuteWeaponFunctors(MainHand); ApplyStatus(WEB,100,2, , , ,not SavingThrow(Ability.Strength, SourceSpellDC(), AdvantageOnRestrained(),DisadvantageOnRestrained()));DealDamage(1d4,Poison,Magical,,0,,true,false)"
+// data "Icon" "Action_Mag_EnsnaringStrands"
+// Kiss of the Weaver
+// data "DisplayName" "h81fabb63g0e34g4497g891cgcc0c575648a22;1"
+// Lashes out with a venomous strike, dealing and additional [1] on top of your weapon damage and &lt;LSTag Type="Status" Tooltip="WEB"&gt;Enwebbing&lt;/LSTag&gt; the target in shimmering webs for 2 turns.
+// data "Description" "h81fabb63g0e34g4497g891cgcc0c575648a23;1"
+// data "DescriptionParams" "DealDamage(1d4,Poison)"
+// data "TooltipStatusApply" "ApplyStatus(WEB,100,2)"
+// data "TooltipDamageList" "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType);DealDamage(1d4,Poison)"
+// data "TooltipAttackSave" "MeleeWeaponAttack;Strength"
+// data "TooltipUpcastDescription" ""
+// data "TooltipUpcastDescriptionParams" ""
+// data "CastSound" "Action_Cast_Item_EnsnaringWeb"
+// data "TargetSound" "Action_Impact_Item_EnsnaringWeb"
+// data "HitCosts" ""
+// data "SpellFlags" "HasVerbalComponent;IsSpell;IsMelee;IsHarmful"
+// data "PrepareEffect" "7e50664b-053d-423b-9a18-f326d126a7a9"
+// data "CastEffect" "6feffb50-dcb7-4bcf-8122-781914ccacb2"
+// data "TargetEffect" "5e186a18-1de1-4e0b-a1cf-3648c688dbd2"
 
 // ==================================== Might and Metal - Fighter Equipment  ====================================
 
-// Ring of Razor's Edge: change rarity to Very Rare (previously Uncommon)
+// ==================================== MM - Ring of Razor's Edge
+
+// Change rarity to Very Rare (previously Uncommon)
 // Edge of Defiance: make wearer take 2 additional damage from Slashing damage
 new entry "MM_Fighter_Equipment_Ring_of_Razors_Edge"
 type "Armor"
+// using "_Ring_Magic"
 using "MM_Fighter_Equipment_Ring_of_Razors_Edge"
+// data "RootTemplate" "0351d14c-d1a5-4d44-9b75-94b845e5a0e5"
 // data "Rarity" "Uncommon"
 data "Rarity" "VeryRare"
+// data "Boosts" ""
+// data "PassivesOnEquip" "MM_EdgeOfDefiance_Passive"
+// data "Weight" "0.05"
+// data "ValueUUID" "cdc711a8-7fed-48c5-8fac-e260cefc671f"
+// data "ComboCategory" "d1"
+// data "ValueScale" "1"
+// data "ValueRounding" "1"
+// data "ValueLevel" "5"
+// data "Unique" "1"
+
+new entry "Tut_MM_Fighter_Equipment_Ring_of_Razors_Edge"
+type "Armor"
+// using "_Ring_Magic"
+using "Tut_MM_Fighter_Equipment_Ring_of_Razors_Edge"
+// data "RootTemplate" "0351d14c-d1a5-4d44-9b75-94b845e5a0e5"
+// data "Rarity" "Uncommon"
+data "Rarity" "VeryRare"
+// data "Boosts" ""
+// data "PassivesOnEquip" "MM_EdgeOfDefiance_Passive"
+// data "Weight" "0.05"
+// data "ValueUUID" "cdc711a8-7fed-48c5-8fac-e260cefc671f"
+// data "ComboCategory" "d1"
+// data "ValueScale" "1"
+// data "ValueRounding" "1"
+// data "ValueLevel" "5"
+// data "Unique" ""
 
 new entry "MM_EdgeOfDefiance_Passive"
 type "PassiveData"
@@ -499,41 +946,14 @@ data "DescriptionParams" "DealDamage(2,Slashing)"
 // data "Boosts" "IgnoreResistance(Slashing, Resistant)"
 data "Boosts" "IgnoreResistance(Slashing, Resistant);IF(IsDamageTypeSlashing()):DamageTakenBonus(2,Slashing,false)"
 
-// Battleaxe of the Sundering Blow
-// Sundering Impact: increase duration of Sundered to 3 turns (previously 2) remove vulnerability from all physical damage from Sundered status and increase AC penalty to -4
-new entry "MM_SunderingImpact_Passive"
-type "PassiveData"
-using "MM_SunderingImpact_Passive"
-// Attacks with this weapon have a [1]% chance to apply &lt;LSTag Type="Status" Tooltip="MM_SUNDERED"&gt;Sundered&lt;/LSTag&gt; for 3 turns.
-data "Description" "h6481da05gffefg4991gbd33gd0eba9b2c9cc;1"
-// data "DescriptionParams" "25;2"
-data "DescriptionParams" "25"
-// data "StatsFunctors" "IF(RollDieAgainstDC(DiceType.d100,75)):ApplyStatus(MM_SUNDERED,100,2)"
-data "StatsFunctors" "IF(RollDieAgainstDC(DiceType.d100,76)):ApplyStatus(MM_SUNDERED,100,3)"
-
-new entry "MM_SUNDERED"
-type "StatusData"
-data "StatusType" "BOOST"
-using "MM_SUNDERED"
-// Entity has it's &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; reduced by -[1].
-data "Description" "h4a348116g3a9ag4246ga3e2g9dacba24b5a9;1"
-// data "DescriptionParams" "2"
-data "DescriptionParams" "4"
-// data "Boosts" "AC(-2);Resistance(Piercing, Vulnerable);Resistance(Slashing, Vulnerable);Resistance(Bludgeoning, Vulnerable)"
-data "Boosts" "AC(-4)"
-
-// ==================== Preventing damage rider sources ====================
-new entry "MM_SanguineFeast_Passive"
-type "PassiveData"
-using "MM_SanguineFeast_Passive"
-// data "StatsFunctorContext" "OnDamage"
-// data "Conditions" "AttackedWithPassiveSourceWeapon() and HasStatus('BLEEDING', context.Target)"
-// data "StatsFunctors" "DealDamage(1d4,Necrotic,Magical)"
-data "StatsFunctors" "DealDamage(1d4,Necrotic,Magical,,0,,true,false)"
+// ==================================== MM - Gauntlets of the Battle Fury
+// Fury's Flurry: removed DRS from weapon attack
 
 // new entry "MM_FuryFlurry_Passive"
 // type "PassiveData"
+// Fury's Flurry
 // data "DisplayName" "h22892942gd938g469dg96bag67bafebbd049;1"
+// Your &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;melee weapon attacks&lt;/LSTag&gt; have a [2]% chance to trigger an immediate, additional &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;melee weapon attack&lt;/LSTag&gt;.
 // data "Description" "h22892942gd938g469dg96bag67bafebbd050;1"
 // data "DescriptionParams" "DealDamage(MainMeleeWeapon,MainMeleeWeaponDamageType);15"
 // data "Icon" "PassiveFeature_SavageAttacker"
@@ -547,54 +967,91 @@ new entry "MM_FURY_FLURRY_CHECK"
 type "StatusData"
 data "StatusType" "BOOST"
 using "MM_FURY_FLURRY_CHECK"
+// Fury's Flurry
+// data "DisplayName" "h22892942gd938g469dg96bag67bafebbd049;1"
+// data "StatusPropertyFlags" "DisableOverhead;DisablePortraitIndicator;DisableCombatlog"
+// data "OnApplyRoll" "Attack(AttackType.MeleeWeaponAttack)"
 // data "OnApplySuccess" "DealDamage(max(1,MainMeleeWeapon), MainMeleeWeaponDamageType);ExecuteWeaponFunctors(MainHand)"
 data "OnApplySuccess" "DealDamage(max(1,MainMeleeWeapon), MainMeleeWeaponDamageType,Magical,,0,,true,true);ExecuteWeaponFunctors(MainHand)"
 
+// ==================================== MM - Battleaxe of the Sundering Blow
+// Sundering Impact: Fixed application DC math
+// Sundered: Fixed description
+new entry "MM_SunderingImpact_Passive"
+type "PassiveData"
+using "MM_SunderingImpact_Passive"
+// Sundering Impact
+// data "DisplayName" "h22892942gd938g469dg96bag67bafebbd074;1"
+// Attacks with this weapon have a [1]% chance to apply &lt;LSTag Type="Status" Tooltip="MM_SUNDERED"&gt;Sundered&lt;/LSTag&gt; for [2] turns.
+// data "Description" "h22892942gd938g469dg96bag67bafebbd075;1"
+// data "DescriptionParams" "25;3"
+// data "Icon" "Action_Monster_GortashMachine_ShieldCapacitor_Brokenl"
+// data "StatsFunctorContext" "OnAttack"
+// data "Conditions" "AttackedWithPassiveSourceWeapon() and HasDamageEffectFlag(DamageFlags.Hit)"
+// data "StatsFunctors" "IF(RollDieAgainstDC(DiceType.d100,75)):ApplyStatus(MM_SUNDERED,100,3)"
+data "StatsFunctors" "IF(RollDieAgainstDC(DiceType.d100,76)):ApplyStatus(MM_SUNDERED,100,3)"
+
+new entry "MM_SUNDERED"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MM_SUNDERED"
+// Sundered
+// data "DisplayName" "h22892942gd938g469dg96bag67bafebbd076;1"
+// The affected entity has it's &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; reduced by -[1].
+// data "Description" "h22892942gd938g469dg96bag67bafebbd077;1"
+// Entity has it's &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; reduced by -[1].
+data "Description" "h4a348116g3a9ag4246ga3e2g9dacba24b5a9;1"
+// data "DescriptionParams" "2"
+data "DescriptionParams" "4"
+// data "Icon" "Action_Monster_GortashMachine_ShieldCapacitor_Brokenl"
+// data "StackId" "MM_SUNDERED"
+// data "FormatColor" "Gray"
+// data "Boosts" "AC(-4)"
+
 // ==================================== Oath and Order - Paladin Equipment ====================================
 
-// Holy Avenger's Longsword
-// Bastion of Resolve: decrease saving throw bonus to +3 (previously +4)
-new entry "OO_BastionResolve_Passive"
-type "PassiveData"
-using "OO_BastionResolve_Passive"
-// data "DescriptionParams" "4;Distance(4.5)"
-data "DescriptionParams" "3;Distance(4.5)"
-
-new entry "OO_BASTION_RESOLVE"
-type "StatusData"
-data "StatusType" "BOOST"
-using "OO_BASTION_RESOLVE"
-// data "DescriptionParams" "4;Distance(4.5)"
-data "DescriptionParams" "3;Distance(4.5)"
-
-new entry "OO_BASTION_RESOLVE_BUFF"
-type "StatusData"
-data "StatusType" "BOOST"
-using "OO_BASTION_RESOLVE_BUFF"
-// data "DescriptionParams" "Distance(4.5);4"
-data "DescriptionParams" "Distance(4.5);3"
-// data "Boosts" "RollBonus(SavingThrow, 4);RollBonus(DeathSavingThrow, 4)"
-data "Boosts" "RollBonus(SavingThrow, 3);RollBonus(DeathSavingThrow, 3)"
-
-// Holy Symbol of Everlight
+// ==================================== OO - Holy Symbol of Everlight
 // Aura of Everlight: now gives attack roll bonus of +1 and reduces crit threshold by 1 for yourself and allies within aura (previously caused yourself and allies to regain max hp when healed and have advantage on death saving throws)
 new entry "OO_EverlightAura_Passive"
 type "PassiveData"
 using "OO_EverlightAura_Passive"
+// Aura of Everlight
+// data "DisplayName" "h3732ac76g59ffg4bf0gb0e3gb69f06c6c056;1"
+// The symbol emits light in a [1] radius, dispelling any darkness, yourself and all allies who are within this aura will regain the maximum hit points possible when healed and gain &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on Death &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.
+// data "Description" "h3732ac76g59ffg4bf0gb0e3gb69f06c6c057;1"
 // The symbol emits light in a [1] radius, dispelling any darkness. You and all allies who are within this aura reduce the number needed to &lt;LSTag Tooltip="AttackRoll"&gt;roll&lt;/LSTag&gt; a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; while attacking by [2], and gain a +[3] bonus to Attack Rolls.
 data "Description" "he509020fg6bccg4e96gb99eg754d87840ebc;1"
 // data "DescriptionParams" "Distance(15)"
 data "DescriptionParams" "Distance(15);1;1"
+// data "Icon" "Spell_Abjuration_BeaconOfHope"
+// data "Properties" "ToggledDefaultOn;IsToggled;ToggledDefaultAddToHotbar"
+// data "ToggleOnFunctors" "ApplyStatus(OO_EVERLIGHT_AURA, 100, -1)"
+// data "ToggleOffFunctors" "RemoveStatus(OO_EVERLIGHT_AURA)"
 
 new entry "OO_EVERLIGHT_AURA"
 type "StatusData"
 data "StatusType" "BOOST"
 using "OO_EVERLIGHT_AURA"
+// Aura of Everlight
+// data "DisplayName" "h3732ac76g59ffg4bf0gb0e3gb69f06c6c056;1"
+// The symbol emits light in a [1] radius, dispelling any darkness, yourself and all allies who are within this aura will regain the maximum hit points possible when healed and gain &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on Death &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.
+// data "Description" "h3732ac76g59ffg4bf0gb0e3gb69f06c6c057;1"
+// The symbol emits light in a [1] radius, dispelling any darkness. You and all allies who are within this aura reduce the number needed to &lt;LSTag Tooltip="AttackRoll"&gt;roll&lt;/LSTag&gt; a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; while attacking by [2], and gain a +[3] bonus to Attack Rolls.
 data "Description" "he509020fg6bccg4e96gb99eg754d87840ebc;1"
 // data "DescriptionParams" "Distance(15)"
 data "DescriptionParams" "Distance(15);1;1"
+// data "Icon" "Spell_Abjuration_BeaconOfHope"
+// data "FormatColor" "Gold"
+// data "SoundLoop" "Spell_Status_Utility_Daylight"
+// data "SoundStop" "Spell_Status_Utility_Daylight_Stop"
+// data "StackId" "DAYLIGHT"
 // data "Boosts" "GameplayLight(15,false,0.1,true);MaximizeHealing(Incoming);Advantage(DeathSavingThrow)"
 data "Boosts" "GameplayLight(15,false,0.1,true);ReduceCriticalAttackThreshold(1);RollBonus(Attack,1)"
+// data "AuraRadius" "15"
+// data "AuraStatuses" "IF(Ally() and not Tagged('INANIMATE')):ApplyStatus(OO_EVERLIGHT_BUFF)"
+// data "StatusPropertyFlags" "RemoveOnLongRest"
+// data "StatusGroups" "SG_Light"
+// data "StatusEffect" "33b7386f-4737-49ba-a3b7-019d194ea5ad"
 
 new entry "OO_EVERLIGHT_BUFF"
 type "StatusData"
@@ -607,7 +1064,30 @@ data "DescriptionParams" "1;1"
 // data "Boosts" "MaximizeHealing(Incoming);Advantage(DeathSavingThrow)"
 data "Boosts" "ReduceCriticalAttackThreshold(1);RollBonus(Attack,1)"
 
-// Cloak of Sacred Power
+new entry "OO_EVERLIGHT_BUFF"
+type "StatusData"
+data "StatusType" "BOOST"
+using "OO_EVERLIGHT_BUFF"
+// Bastion of Resolve
+// data "DisplayName" "h3732ac76g59ffg4bf0gb0e3gb69f06c6c045;1"
+// While within the Aura of Everlight you recieve the maximum amount of hit points possible when healed, and gain &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on Death &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.
+// data "Description" "h3732ac76g59ffg4bf0gb0e3gb69f06c6c063;1"
+// While within the Aura of Everlight, the number you need to &lt;LSTag Tooltip="AttackRoll"&gt;roll&lt;/LSTag&gt; a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; while attacking is reduced by [1] and you gain a +[2] bonus to Attack Rolls.
+data "Description" "h375b9345gc6dfg4ad2g84feg8138584be909;1"
+// data "DescriptionParams" ""
+data "DescriptionParams" "1;1"
+// data "Icon" "Spell_Abjuration_BeaconOfHope"
+// data "FormatColor" "Gold"
+// data "StackId" "OO_EVERLIGHT_AURA"
+// data "StackPriority" "5"
+// data "Boosts" "MaximizeHealing(Incoming);Advantage(DeathSavingThrow)"
+data "Boosts" "ReduceCriticalAttackThreshold(1);RollBonus(Attack,1)"
+// data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog"
+// data "StatusGroups" "SG_RemoveOnRespec"
+// data "ApplyEffect" "d21494e5-5c30-4a69-85ef-75a785e71105"
+// data "EndEffect" "a5c11e94-efa3-4998-a76b-fc12502ea565"
+
+// ==================================== OO - Cloak of Sacred Power
 // Sacred Sustenance: increase chance of not expending a Channel Oath charge to 50% (previously 40%)
 new entry "OO_SacredSustenance_Passive"
 type "PassiveData"
@@ -619,338 +1099,286 @@ data "DescriptionParams" "50"
 // data "StatsFunctors" "IF(RollDieAgainstDC(DiceType.d100,60)):ApplyStatus(SELF,OO_RESTORE_OATH,100,0)"
 data "StatsFunctors" "IF(RollDieAgainstDC(DiceType.d100,51)):ApplyStatus(SELF,OO_RESTORE_OATH,100,0)"
 
-// ==================== Preventing damage rider sources ====================
-new entry "OO_RadiantCondemnation_Passive"
+new entry "OO_SacredSustenance_Passive"
 type "PassiveData"
-using "OO_RadiantCondemnation_Passive"
-// data "StatsFunctorContext" "OnDamage"
-// data "Conditions" "IsAttack() and (Tagged('UNDEAD') or Tagged('FIEND') or Tagged('MONSTROSITY') or Tagged('ABERRATION'))"
-// data "StatsFunctors" "DealDamage(ClassLevel(Paladin), Radiant)"
-data "StatsFunctors" "DealDamage(ClassLevel(Paladin), Radiant,Magical,,0,,true,false)"
-
-new entry "OO_EmboldenedSmite_Passive"
-type "PassiveData"
-using "OO_EmboldenedSmite_Passive"
-// data "StatsFunctorContext" "OnDamage"
-// data "Conditions" "IsAttack() and OOIsDivineSmite()"
-// data "StatsFunctors" "DealDamage(1d4,Radiant,Magical)"
-data "StatsFunctors" "DealDamage(1d4,Radiant,Magical,,0,,true,true)"
-
-new entry "OO_AvengerFury_Passive"
-type "PassiveData"
-using "OO_AvengerFury_Passive"
-// data "StatsFunctorContext" "OnDamage"
-// data "Conditions" "AttackedWithPassiveSourceWeapon()"
-// data "StatsFunctors" "IF(not Tagged('FIEND',context.Target) and not Tagged('UNDEAD',context.Target)):DealDamage(1d8,Radiant);IF(Tagged('FIEND',context.Target) or Tagged('UNDEAD',context.Target)):DealDamage(2d8,Radiant)"
-data "StatsFunctors" "IF(not Tagged('FIEND',context.Target) and not Tagged('UNDEAD',context.Target)):DealDamage(1d8,Radiant,Magical,,0,,true,false);IF(Tagged('FIEND',context.Target) or Tagged('UNDEAD',context.Target)):DealDamage(2d8,Radiant,Magical,,0,,true,false)"
+using "OO_SacredSustenance_Passive"
+// Sacred Sustenance
+// data "DisplayName" "h3732ac76g59ffg4bf0gb0e3gb69f06c6c069;1"
+// When you use &lt;LSTag Type="ActionResource" Tooltip="ChannelOath"&gt;Channel Oath&lt;/LSTag&gt;, there is a [1]% chance that you do not expend the use.
+// data "Description" "h3732ac76g59ffg4bf0gb0e3gb69f06c6c070;1"
+// When you use your &lt;LSTag Type="ActionResource" Tooltip="ChannelOath"&gt;Channel Oath&lt;/LSTag&gt;, you have a [1]% chance to not expend the use.
+data "Description" "h8a98533bgddbfg43b4g8790ge0dfe7d3b236;1"
+// data "DescriptionParams" "40"
+data "DescriptionParams" "50"
+// data "Icon" "Action_Paladin_EternalDevotion"
+// data "Properties" "Highlighted;OncePerAttack"
+// data "StatsFunctorContext" "OnCast;OnAttack"
+// data "Conditions" "HasUseCosts('ChannelOath', true)"
+// data "StatsFunctors" "IF(RollDieAgainstDC(DiceType.d100,60)):ApplyStatus(SELF,OO_RESTORE_OATH,100,0)"
+data "StatsFunctors" "IF(RollDieAgainstDC(DiceType.d100,51)):ApplyStatus(SELF,OO_RESTORE_OATH,100,0)"
 
 // ==================================== Pact and Power - Warlock Equipment  ====================================
 
-// Shortbow of the Binding Vow: 
+// ==================================== PP - Shortbow of the Binding Vow
 // Chains of Submission: decrease duration to 2 turns (previously 3)
 new entry "PP_Target_ChainsOfSubmission"
 type "SpellData"
 data "SpellType" "Target"
 using "PP_Target_ChainsOfSubmission"
+// data "Level" "2"
+// data "SpellSchool" "Enchantment"
+// data "Cooldown" "OncePerRestPerItem"
+// data "TargetRadius" "18"
+// data "SpellRoll" "not SavingThrow(Ability.Wisdom, SourceSpellDC())"
 // data "SpellSuccess" "ApplyStatus(PP_CHAINS_OF_SUBMISSION,100,3)"
 data "SpellSuccess" "ApplyStatus(PP_CHAINS_OF_SUBMISSION,100,2)"
+// data "SpellFail" "ApplyStatus(SAVED_AGAINST_HOSTILE_SPELL,100,0)"
+// data "TargetConditions" "not Item() and not Self() and Character() and Tagged('HUMANOID') and not Tagged('UNDEAD') and not IsDowned() and not Dead() and not Ally() and not (not Player(context.Source) and IsCrowdControlled(context.Target))"
+// data "Icon" "Spell_Enchantment_HoldPerson"
+// data "DisplayName" "ha6cae9a4g3186g4872gaac9g04ef68e7f003;1"
+// data "Description" "ha6cae9a4g3186g4872gaac9g04ef68e7f069;1"
+// data "DescriptionParams" "Distance(3)"
+// data "TooltipAttackSave" "Wisdom"
 // data "TooltipStatusApply" "ApplyStatus(PP_CHAINS_OF_SUBMISSION,100,3)"
 data "TooltipStatusApply" "ApplyStatus(PP_CHAINS_OF_SUBMISSION,100,2)"
+// data "TooltipUpcastDescription" "04cc3403-f67a-4747-b49e-a1802cc7a6ad"
+// data "PrepareSound" "Spell_Prepare_Control_Gen_L1to3_01"
+// data "PrepareLoopSound" "Spell_Prepare_Control_Gen_L1to3_01_Loop"
+// data "CastSound" "Spell_Cast_Control_HoldPerson_L1to3"
+// data "TargetSound" "Spell_Impact_Control_HoldPerson_L1to3"
+// data "VocalComponentSound" "Vocal_Component_Paralyze"
+// data "CastTextEvent" "Cast"
+// data "CycleConditions" "Enemy() and not Dead()"
+// data "UseCosts" "ActionPoint:1"
+// data "SpellAnimation" "554a18f7-952e-494a-b301-7702a85d4bc9,,;,,;3e441d3f-11f9-432d-877c-c0ba4d92c74a,,;8b7ae969-2a04-4720-9685-3bde54c18ffe,,;22dfbbf4-f417-4c84-b39e-2039315961e6,,;,,;5bfbe9f9-4fc3-4f26-b112-43d404db6a89,,;,,;,,"
+// data "VerbalIntent" "Control"
+// data "SpellFlags" "HasVerbalComponent;HasSomaticComponent;IsSpell;HasHighGroundRangeExtension;IsConcentration;IsHarmful;IgnorePreviouslyPickedEntities"
+// data "RechargeValues" "5-6"
+// data "HitAnimationType" "None"
+// data "MemoryCost" ""
+// data "PrepareEffect" "bcdca947-b1ba-475f-8e3b-9ac850da90fa"
+// data "CastEffect" "d2ef6b50-243f-478d-85c6-892086a1477e"
+// data "TargetEffect" "e1b340b6-78a9-413a-bb7e-8299848238ae"
 
 // Shortbow of the Pact Keeper: remove +1 spell save DC
 new entry "PP_PactEmpoweredAim_Passive"
 type "PassiveData"
+// using "MAG_ArcaneEnchantment_Passive"
 using "PP_PactEmpoweredAim_Passive"
+// Pact-Empowered Aim
+// data "DisplayName" "ha6cae9a4g3186g4872gaac9g04ef68e7f019;1"
+// The pact imbued in the shortbow sharpens your aim and strengthens your resolve. You gain a +[1] bonus to &lt;LSTag Tooltip="AttackRoll"&gt;Spell Attack Rolls&lt;/LSTag&gt; and &lt;LSTag Tooltip="SpellDifficultyClass"&gt;Spell Save DC&lt;/LSTag&gt;.
+// data "Description" "ha6cae9a4g3186g4872gaac9g04ef68e7f020;1"
 // You gain a +[1] bonus to &lt;LSTag Tooltip="AttackRoll"&gt;Spell Attack Rolls&lt;/LSTag&gt;.
 data "Description" "ha0576cf2gf337g4329g8477g9e9d1c865044;1"
+// data "DescriptionParams" "1"
 // data "Boosts" "SpellSaveDC(1);RollBonus(MeleeSpellAttack, 1);RollBonus(RangedSpellAttack,1)"
 data "Boosts" "RollBonus(MeleeSpellAttack, 1);RollBonus(RangedSpellAttack,1)"
 
-// Amulet of the Eternal Hunger
+// ==================================== PP - Amulet of the Eternal Hunger
 // Insatiable: decrease damage to 2d8 (previously 2d10) and decrease AC bonus to half your Charisma modifier, rounded down, up to max of +4 AC (previously was equal to full Charisma modifier)
 new entry "PP_Insatiable_Passive"
 type "PassiveData"
 using "PP_Insatiable_Passive"
+// Insatiable
+// data "DisplayName" "ha6cae9a4g3186g4872gaac9g04ef68e7f067;1"
+// The amulet's hunger claws at your very being, demanding sacrifice for its power. At the start of combat, you suffer [1] but gain an armor of shadowy energy, increasing your &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; equal to your Charisma modifier up to a max of +5 until combat ends.
+// data "Description" "ha6cae9a4g3186g4872gaac9g04ef68e7f068;1"
 // 	The amulet's hunger claws at your very being, demanding sacrifice for its power. At the start of combat, you suffer [1] but become armoued with shadowy energy. Until combat ends, you gain a bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; equal to half your Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;, rounded up, up to a max of +4.
 data "Description" "hb84c60b9g49afg49eagafc1g894388e1c278;1"
+// data "DescriptionParams" "DealDamage(2d10,Necrotic)"
+// data "Icon" "Action_Monster_Bulette_Bite"
+// data "StatsFunctorContext" "OnCombatStarted"
+// data "StatsFunctors" "ApplyStatus(SELF,PP_INSATIABLE,100,-1)"
 
 new entry "PP_Insatiable_Buff_Passive"
 type "PassiveData"
 using "PP_Insatiable_Buff_Passive"
+// Hunger's Maw
+// data "DisplayName" "ha6cae9a4g3186g4872gaac9g04ef68e7f110;1"
+// The amulet's insatiable hunger sinks its teeth into you, forging a shield of dark power from your stolen life force, granting you &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; equal to your Charisma modifier up to a max of 5.
+// data "Description" "ha6cae9a4g3186g4872gaac9g04ef68e7f111;1"
 // The amulet's insatiable hunger sinks its teeth into you, forging a shield of dark power from your stolen life force. Until combat ends, you have a bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; equal to half your Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;, rounded up, up to a max of +4.
 data "Description" "h612819fcge6d0g4d57gb472g9c8de5025616;1"
-// data "DescriptionParams" "DealDamage(2d10,Necrotic)"
+// data "DescriptionParams" ""
 data "DescriptionParams" "DealDamage(2d8,Necrotic)"
-// data "Boosts" "IF(ConditionResult(context.Source.Charisma == 12) or ConditionResult(context.Source.Charisma == 13)):AC(1);IF(ConditionResult(context.Source.Charisma  == 14) or ConditionResult(context.Source.Charisma  == 15)):AC(2);IF(ConditionResult(context.Source.Charisma  == 16) or ConditionResult(context.Source.Charisma  == 17)):AC(3);IF(ConditionResult(context.Source.Charisma  == 18) or ConditionResult(context.Source.Charisma  == 19)):AC(4);IF(ConditionResult(context.Source.Charisma  >= 20)):AC(5)
+// data "Icon" "Action_Monster_NetherBrain_PsychicOppression"
+// data "Boosts" "IF(ConditionResult(context.Source.Charisma == 12) or ConditionResult(context.Source.Charisma == 13)):AC(1);IF(ConditionResult(context.Source.Charisma  == 14) or ConditionResult(context.Source.Charisma  == 15)):AC(2);IF(ConditionResult(context.Source.Charisma  == 16) or ConditionResult(context.Source.Charisma  == 17)):AC(3);IF(ConditionResult(context.Source.Charisma  == 18) or ConditionResult(context.Source.Charisma  == 19)):AC(4);IF(ConditionResult(context.Source.Charisma  >= 20)):AC(5)"
 data "Boosts" "IF(ConditionResult(context.Source.Charisma >= 12) and ConditionResult(context.Source.Charisma <= 15)):AC(1);IF(ConditionResult(context.Source.Charisma  >= 16) and ConditionResult(context.Source.Charisma  <= 19)):AC(2);IF(ConditionResult(context.Source.Charisma  >= 20) and ConditionResult(context.Source.Charisma  <= 23)):AC(3);IF(ConditionResult(context.Source.Charisma  >= 24)):AC(4)"
 
 new entry "PP_INSATIABLE"
 type "StatusData"
 data "StatusType" "BOOST"
 using "PP_INSATIABLE"
-// The amulet's insatiable hunger sinks its teeth into you, forging a shield of dark power from your stolen life force. Until combat ends, you have a bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; equal to half your Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;, rounded up, up to a max of +4.</content>
+// Hunger's Maw
+// data "DisplayName" "ha6cae9a4g3186g4872gaac9g04ef68e7f110;1"
+// The amulet's insatiable hunger sinks its teeth into you, forging a shield of dark power from your stolen life force, granting you &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; equal to your Charisma modifier up to a max of 5.
+// data "Description" "ha6cae9a4g3186g4872gaac9g04ef68e7f111;1"
+// The amulet's insatiable hunger sinks its teeth into you, forging a shield of dark power from your stolen life force. Until combat ends, you have a bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; equal to half your Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;, rounded up, up to a max of +4.
 data "Description" "h612819fcge6d0g4d57gb472g9c8de5025616;1"
+// data "DescriptionParams" ""
+// data "Icon" "Action_Monster_NetherBrain_PsychicOppression"
+// data "StackId" "PP_INSATIABLE"
+// data "Passives" "PP_Insatiable_Buff_Passive"
 // data "OnApplyFunctors" "DealDamage(SELF,2d10,Necrotic)"
 data "OnApplyFunctors" "DealDamage(SELF,2d8,Necrotic)"
+// data "RemoveEvents" "OnCombatEnded"
+// data "SoundLoop" "Misc_Status_BalthazarSpectralForm_Loop_MO"
+// data "SoundStop" "Misc_Status_BalthazarSpectralForm_Loop_MO_Stop"
+// data "ApplyEffect" "b74aff30-474a-4ec6-a024-a63de3be137d"
+// data "StatusEffect" "de26d2a6-f81d-41a9-89b0-88df3c916a28"
 
-// Soulknife of the Everlasting Pact
-// Echoes of the Eternal Pact: [Pact of the Tome]: decrease damage to 1d8 (previously 2d4) and fix DRS
+// ==================================== PP - Soulknife of the Everlasting Pact
+// Echoes of the Eternal Pact: [Pact of the Tome]: Description cleanup
 new entry "PP_EverlastingPact_Text_Passive"
 type "PassiveData"
 using "PP_EverlastingPact_Text_Passive"
-data "Description" "h3775309cgc80cg41a8g9aaag251b9565f3c5;1"
+// Echoes of the Eternal Pact
+// data "DisplayName" "ha6cae9a4g3186g4872gaac9g04ef68e7f051;1"
+// The dagger resonates with the eternal nature of your pact, granting you unique benefits that reflect your chosen pact.&lt;br&gt;&lt;br&gt;&lt;LSTag Type="Passive" Tooltip="PactOfTheBlade"&gt;Pact of the Blade&lt;/LSTag&gt; - While &lt;LSTag Type="Status" Tooltip="PACT_BLADE"&gt;Pact Weapon&lt;/LSTag&gt; or &lt;LSTag Type="Status" Tooltip="HEXBLADE_BIND"&gt;Hexed Weapon&lt;/LSTag&gt; is active, your weapon deals an additional [1] and you gain &lt;LSTag Tooltip="Resistance"&gt;Resistance&lt;/LSTag&gt; to Psychic damage. (This effect can only occur once per turn.)&lt;br&gt;&lt;br&gt;&lt;LSTag Type="Passive" Tooltip="PactOfTheChain"&gt;Pact of the Chain&lt;/LSTag&gt; - Your familiars within [5] gain an additional +[2] to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; and &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;, in addition to &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt; equal to twice your warlock level.&lt;br&gt;&lt;br&gt;&lt;LSTag Type="Passive" Tooltip="PactOfTheTome"&gt;Pact of the Tome&lt;/LSTag&gt; - You gain +[3] to spell attack rolls and spell save DC, your cantrips also deal an additonal [4]. (This effect can only occur once per turn.)
+// data "Description" "ha6cae9a4g3186g4872gaac9g04ef68e7f052;1"
 // The dagger resonates with the eternal nature of your pact, granting you unique benefits that reflect your chosen pact.&lt;br&gt;&lt;br&gt;&lt;LSTag Type="Passive" Tooltip="PactOfTheBlade"&gt;Pact of the Blade&lt;/LSTag&gt; - While &lt;LSTag Type="Status" Tooltip="PACT_BLADE"&gt;Pact Weapon&lt;/LSTag&gt; is active, your weapon deals an additional [1] and you gain &lt;LSTag Tooltip="Resistance"&gt;Resistance&lt;/LSTag&gt; to Psychic damage. This effect can only occur once per turn.&lt;br&gt;&lt;br&gt;&lt;LSTag Type="Passive" Tooltip="PactOfTheChain"&gt;Pact of the Chain&lt;/LSTag&gt; - Your familiars gain an additional +[2] to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; and &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;, in addition to &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt; equal to twice your Warlock level.&lt;br&gt;&lt;br&gt;&lt;LSTag Type="Passive" Tooltip="PactOfTheTome"&gt;Pact of the Tome&lt;/LSTag&gt; - You gain +[3] to spell &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; and &lt;LSTag Tooltip="SpellDifficultyClass"&gt;Spell Save DC&lt;/LSTag&gt;, and your cantrips also deal an additonal [4]. This effect can only occur once per turn.
 // data "DescriptionParams" "DealDamage(2d6,Psychic);2;2;DealDamage(2d4,Psychic);Distance(18)"
-data "DescriptionParams" "DealDamage(2d6,Psychic);2;2;DealDamage(1d8,Psychic)"
+data "Description" "h3775309cgc80cg41a8g9aaag251b9565f3c5;1"
+// data "DescriptionParams" "DealDamage(2d6,Psychic);2;2;DealDamage(1d8,Psychic)"
 
-new entry "PP_EP_Tome_Passive" 
-type "PassiveData"
-using "PP_EP_Tome_Passive"
-// data "StatsFunctorContext" "OnDamage"
-// data "Conditions" "HasPassive('PactOfTheTome',context.Source)"
-// data "StatsFunctors" "IF(IsSpell() and IsCantrip()):DealDamage(2d4,Psychic)"
-data "StatsFunctors" "IF(IsSpell() and IsCantrip()):DealDamage(1d8,Psychic,Magical,,0,,true,false)"
-
-// Visage of the Inner Demon
-// Demonic Surge: decrease cooldown to per short rest (previously once per combat)
-new entry "PP_Shout_DemonicSurge"
-type "SpellData"
-data "SpellType" "Shout"
-using "PP_Shout_DemonicSurge"
-//data "Cooldown" "OncePerCombat"
-data "Cooldown" "OncePerShortRestPerItem"
-
-// ==================== Preventing damage rider sources ====================
+// ==================================== PP - Boots of the Shadowed Pact
+// Shadowfell Infusion: Now accounts for levels 7-9 upcasting of Arms of Hadar
 new entry "PP_Shadowfell_Infusion_Passive"
 type "PassiveData"
 using "PP_Shadowfell_Infusion_Passive"
+// Shadowfell Infusion
+// data "DisplayName" "ha6cae9a4g3186g4872gaac9g04ef68e7f009;1"
+// When you cast &lt;LSTag Type="Spell" Tooltip="Shout_ArmsOfHadar"&gt;Arms of Hadar&lt;/LSTag&gt;, the tendrils of shadow lash out with increased ferocity, dealing an additional [1].
+// data "Description" "ha6cae9a4g3186g4872gaac9g04ef68e7f010;1"
+// data "DescriptionParams" "DealDamage(1d4,Necrotic)"
+// data "Icon" "Spell_Conjuration_ArmsOfHadar"
+// data "Properties" "Highlighted;DisplayBoostInTooltip"
 // data "StatsFunctorContext" "OnDamage"
-// data "Conditions" "SpellId('Shout_ArmsOfHadar') or SpellId('Shout_ArmsOfHadar_2') or SpellId('Shout_ArmsOfHadar_3') or SpellId('Shout_ArmsOfHadar_4') or SpellId('Shout_ArmsOfHadar_5') or SpellId('Shout_ArmsOfHadar_6')"
-// data "StatsFunctors" "DealDamage(1d4,Necrotic,Magical)"
-data "StatsFunctors" "DealDamage(1d4,Necrotic,Magical,,0,,true,true)"
-
-new entry "PP_SurgeOfBrimstone_Buff"
-type "PassiveData"
-using "PP_SurgeOfBrimstone_Buff"
-// data "StatsFunctorContext" "OnCastResolved;OnDamage"
-// data "Conditions" "IsSpell() and (HasDamageDoneForType(DamageType.Fire) or HasDamageDoneForType(DamageType.Necrotic))"
-// data "StatsFunctors" "IF(HasDamageDoneForType(DamageType.Fire)):DealDamage(2d4,Fire,Magical);IF(HasDamageDoneForType(DamageType.Necrotic)):DealDamage(2d4,Necrotic,Magical);IF(HasDamageDoneForType(DamageType.Fire)):RemoveStatus(SELF,PP_SURGE_BRIMSTONE);IF(HasDamageDoneForType(DamageType.Necrotic)):RemoveStatus(SELF,PP_SURGE_BRIMSTONE)"
-data "StatsFunctors" "IF(HasDamageDoneForType(DamageType.Fire)):DealDamage(2d4,Fire,Magical,,0,,true,true);IF(HasDamageDoneForType(DamageType.Necrotic)):DealDamage(2d4,Necrotic,Magical,,0,,true,true);IF(HasDamageDoneForType(DamageType.Fire)):RemoveStatus(SELF,PP_SURGE_BRIMSTONE);IF(HasDamageDoneForType(DamageType.Necrotic)):RemoveStatus(SELF,PP_SURGE_BRIMSTONE)"
-
-new entry "PP_FeastOnTheWounded_Passive"
-type "PassiveData"
-using "PP_FeastOnTheWounded_Passive"
-// data "StatsFunctorContext" "OnDamage"
-// data "Conditions" "IsAttack() and HasHPPercentageWithoutTemporaryHPEqualOrLessThan(99, context.Target)"
-// data "StatsFunctors" "DealDamage(1d8,Necrotic)"
-data "StatsFunctors" "DealDamage(1d8,Necrotic,Magical,,0,,true,false)"
+data "Conditions" "SpellId('Shout_ArmsOfHadar') or SpellId('Shout_ArmsOfHadar_2') or SpellId('Shout_ArmsOfHadar_3') or SpellId('Shout_ArmsOfHadar_4') or SpellId('Shout_ArmsOfHadar_5') or SpellId('Shout_ArmsOfHadar_6') or SpellId('Shout_ArmsOfHadar_7') or SpellId('Shout_ArmsOfHadar_8') or SpellId('Shout_ArmsOfHadar_9')"
+// data "StatsFunctors" "DealDamage(1d4,Necrotic,Magical,,0,,true,true)"
 
 // ==================================== Rage and Resilience - Barbarian Equipment ====================================
 
-// Horn of Valhalla
-// Blood of the Aesir: decrease max hp increase to 3 hp per Barbarian level (previously 6 per Barbarian level)
-new entry "RR_VALHALLA_HP_01"
-type "StatusData"
-data "StatusType" "BOOST"
-using "RR_VALHALLA_HP_01"
-// The horn awakens the divine blood within you. While &lt;LSTag Type="Status" Tooltip="RAGE"&gt;Raging&lt;/LSTag&gt;, your maximum &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt; are increased by [1] for each of your Barbarian levels.
-data "Description" "h657c6de4ga3f8g4d2fg8798g779f4687b653;1"
-// data "DescriptionParams" ""
-data "DescriptionParams" "3"
-// data "Boosts" "IncreaseMaxHP(6)"
-data "Boosts" "IncreaseMaxHP(3)"
+// ==================================== RR - Gauntlets of the Titan's Grip
+// Grip of the Titans: Fixed description's displayed damage ; increased the functionality across two-handed/heavy weapons.
 
-new entry "RR_VALHALLA_HP_02"
-type "StatusData"
-data "StatusType" "BOOST"
-using "RR_VALHALLA_HP_02"
-data "Boosts" "IncreaseMaxHP(6)"
-
-new entry "RR_VALHALLA_HP_03"
-type "StatusData"
-data "StatusType" "BOOST"
-using "RR_VALHALLA_HP_03"
-data "Boosts" "IncreaseMaxHP(9)"
-
-new entry "RR_VALHALLA_HP_04"
-type "StatusData"
-data "StatusType" "BOOST"
-using "RR_VALHALLA_HP_04"
-data "Boosts" "IncreaseMaxHP(12)"
-
-new entry "RR_VALHALLA_HP_05"
-type "StatusData"
-data "StatusType" "BOOST"
-using "RR_VALHALLA_HP_05"
-data "Boosts" "IncreaseMaxHP(15)"
-
-new entry "RR_VALHALLA_HP_06"
-type "StatusData"
-data "StatusType" "BOOST"
-using "RR_VALHALLA_HP_06"
-data "Boosts" "IncreaseMaxHP(18)"
-
-new entry "RR_VALHALLA_HP_07"
-type "StatusData"
-data "StatusType" "BOOST"
-using "RR_VALHALLA_HP_07"
-data "Boosts" "IncreaseMaxHP(21)"
-
-new entry "RR_VALHALLA_HP_08"
-type "StatusData"
-data "StatusType" "BOOST"
-using "RR_VALHALLA_HP_08"
-data "Boosts" "IncreaseMaxHP(24)"
-
-new entry "RR_VALHALLA_HP_09"
-type "StatusData"
-data "StatusType" "BOOST"
-using "RR_VALHALLA_HP_09"
-data "Boosts" "IncreaseMaxHP(27)"
-
-new entry "RR_VALHALLA_HP_10"
-type "StatusData"
-data "StatusType" "BOOST"
-using "RR_VALHALLA_HP_10"
-data "Boosts" "IncreaseMaxHP(30)"
-
-new entry "RR_VALHALLA_HP_11"
-type "StatusData"
-data "StatusType" "BOOST"
-using "RR_VALHALLA_HP_11"
-data "Boosts" "IncreaseMaxHP(33)"
-
-new entry "RR_VALHALLA_HP_12"
-type "StatusData"
-data "StatusType" "BOOST"
-using "RR_VALHALLA_HP_12"
-data "Boosts" "IncreaseMaxHP(36)"
-
-new entry "RR_VALHALLA_HP_13"
-type "StatusData"
-data "StatusType" "BOOST"
-using "RR_VALHALLA_HP_13"
-data "Boosts" "IncreaseMaxHP(39)"
-
-new entry "RR_VALHALLA_HP_14"
-type "StatusData"
-data "StatusType" "BOOST"
-using "RR_VALHALLA_HP_14"
-data "Boosts" "IncreaseMaxHP(42)"
-
-new entry "RR_VALHALLA_HP_15"
-type "StatusData"
-data "StatusType" "BOOST"
-using "RR_VALHALLA_HP_15"
-data "Boosts" "IncreaseMaxHP(45)"
-
-new entry "RR_VALHALLA_HP_16"
-type "StatusData"
-data "StatusType" "BOOST"
-using "RR_VALHALLA_HP_16"
-data "Boosts" "IncreaseMaxHP(48)"
-
-new entry "RR_VALHALLA_HP_17"
-type "StatusData"
-data "StatusType" "BOOST"
-using "RR_VALHALLA_HP_17"
-data "Boosts" "IncreaseMaxHP(51)"
-
-new entry "RR_VALHALLA_HP_18"
-type "StatusData"
-data "StatusType" "BOOST"
-using "RR_VALHALLA_HP_18"
-data "Boosts" "IncreaseMaxHP(54)"
-
-new entry "RR_VALHALLA_HP_19"
-type "StatusData"
-data "StatusType" "BOOST"
-using "RR_VALHALLA_HP_19"
-data "Boosts" "IncreaseMaxHP(57)"
-
-new entry "RR_VALHALLA_HP_20"
-type "StatusData"
-data "StatusType" "BOOST"
-using "RR_VALHALLA_HP_20"
-data "Boosts" "IncreaseMaxHP(60)"
-
-// Gauntlets of the Titan's Grip
-// Grip of the Titans: decrease bonus Force damage to 1d6 (previously 2d4)
 new entry "RR_Titan_Grip_Passive"
 type "PassiveData"
 using "RR_Titan_Grip_Passive"
+// data "DisplayName" "h8d32f6b2g3ee5g45c1gacb7gebb38311b080;1"
+// Your grip becomes that of a titan. While wielding a greatsword, greataxe, greatclub, or maul, your &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;melee weapon attack&lt;/LSTag&gt; deal an additional [1].
+// data "Description" "h8d32f6b2g3ee5g45c1gacb7gebb38311b081;1"
+// Your grip becomes that of a titan. While wielding a &lt;LSTag Tooltip="Heavy"&gt;Heavy Weapon&lt;/LSTag&gt;, glaive, greataxe, greatsword, greatclub, halberd, maul, or pike, your &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;melee weapon attacks&lt;/LSTag&gt; deal an additional [1].
+data "Description" "h3f523f49g8b71g486bga366g4dbe51df09b4;1"
 // data "DescriptionParams" "DealDamage(2d4,Force)"
 data "DescriptionParams" "DealDamage(1d6,Force)"
-// data "Boosts" " IF(IsMeleeWeaponAttack() and (Tagged('WPN_GREATAXE', GetAttackWeapon(context.Source)) or Tagged('WPN_GREATCLUB', GetAttackWeapon(context.Source)) or Tagged('WPN_GREATSWORD', GetAttackWeapon(context.Source)) or Tagged('WPN_MAUL', GetAttackWeapon(context.Source)))):DamageBonus(2d4,Force)"
-data "Boosts" " IF(IsMeleeWeaponAttack() and (Tagged('WPN_GREATAXE', GetAttackWeapon(context.Source)) or Tagged('WPN_GREATCLUB', GetAttackWeapon(context.Source)) or Tagged('WPN_GREATSWORD', GetAttackWeapon(context.Source)) or Tagged('WPN_MAUL', GetAttackWeapon(context.Source)))):DamageBonus(1d6,Force)"
+// data "Icon" "Action_Zombie_Slam"
+// data "Properties" "Highlighted"
+// data "Boosts" "IF(IsMeleeWeaponAttack() and (Tagged('WPN_GREATAXE', GetAttackWeapon(context.Source)) or Tagged('WPN_GREATCLUB', GetAttackWeapon(context.Source)) or Tagged('WPN_GREATSWORD', GetAttackWeapon(context.Source)) or Tagged('WPN_MAUL', GetAttackWeapon(context.Source)))):DamageBonus(1d6,Force)"
+data "Boosts" " IF(IsMeleeWeaponAttack() and (HasWeaponProperty(WeaponProperties.Heavy, GetAttackWeapon(context.Source)) or Tagged('WPN_GLAIVE', GetAttackWeapon(context.Source)) or Tagged('WPN_GREATAXE', GetAttackWeapon(context.Source)) or Tagged('WPN_GREATSWORD', GetAttackWeapon(context.Source)) or Tagged('WPN_GREATCLUB', GetAttackWeapon(context.Source)) or Tagged('WPN_HALBERD', GetAttackWeapon(context.Source)) or Tagged('WPN_MAUL', GetAttackWeapon(context.Source)) or Tagged('WPN_PIKE', GetAttackWeapon(context.Source)))):DamageBonus(1d6,Force)"
 
-// Ring of the Berserker's Might
-// Berserker’s Strength: change damage bonus to half Strength modifier (previously half Barbarian level) and add once per turn cooldown
+// ==================================== RR - Ring of the Berserker's Might
+// Berserker’s Strength: change damage bonus to half Strength modifier (previously half Barbarian level)
 new entry "RR_BerserkerStrength_Passive"
 type "PassiveData"
 using "RR_BerserkerStrength_Passive"
-// Add half of your Strength &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; (rounded down) to your weapon attack damage. This effect can only occur once per turn.
+// Berserker's Strength
+// data "DisplayName" "h8d32f6b2g3ee5g45c1gacb7gebb38311b035;1"
+// Add half of your Barbarian Level to your weapon attack damage.
+// data "Description" "h8d32f6b2g3ee5g45c1gacb7gebb38311b036;1"
+// Add half of your Strength &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; (rounded down) to your weapon attack damage.
 data "Description" "hd756051egcb0bg45f3g90e7g9cff52d9e567;1"
-// data "Properties" "Highlighted"
-data "Properties" "Highlighted;OncePerTurn"
-// data "StatsFunctors" "IF(IsWeaponAttack()):DealDamage(ClassLevel(Barbarian)/2,MainWeaponDamageType)"
-data "StatsFunctors" ""
+// data "Icon" "Action_Slam"
+// data "Properties" "Highlighted;OncePerTurn"
 // data "StatsFunctorContext" "OnDamage"
 data "StatsFunctorContext" ""
 // data "Conditions" "not Dead()"
 data "Conditions" ""
-// data "Boosts" ""
+// data "StatsFunctors" "IF(IsWeaponAttack()):DealDamage(ClassLevel(Barbarian)/2,MainWeaponDamageType)"
+data "StatsFunctors" ""
 data "Boosts" "IF(IsWeaponAttack()):DamageBonus(StrengthModifier/2)"
 
-// ==================== Preventing damage rider sources ====================
-new entry "RR_PrimalFury_Fire_Passive"
+// ==================================== RR - The Wrathful Maul
+// Wrathful Ascent: Fixed description.
+new entry "RR_Wrathful_Ascent_Passive"
 type "PassiveData"
-using "RR_PrimalFury_Fire_Passive"
+using "RR_Wrathful_Ascent_Passive"
+// Wrathful Ascent
+// data "DisplayName" "h8d32f6b2g3ee5g45c1gacb7gebb38311b013;1"
+// While &lt;LSTag Type="Status" Tooltip="RAGE"&gt;Raging&lt;/LSTag&gt;, and you deal damage with this weapon, You gain [1] turn of &lt;LSTag Type="Status" Tooltip="MAG_VIOLENCE"&gt;Wrath&lt;/LSTag&gt;.
+// data "Description" "h8d32f6b2g3ee5g45c1gacb7gebb38311b014;1"
+// While &lt;LSTag Type="Status" Tooltip="RAGE"&gt;Raging&lt;/LSTag&gt;, when you damage a hostile creature you gain [1] turn of &lt;LSTag Type="Status" Tooltip="MAG_VIOLENCE"&gt;Wrath&lt;/LSTag&gt;.
+data "Description" "h0d93cd45g89a2g4c1cgbdf5gbc87c4c4b893;1"
+// data "DescriptionParams" "1"
+// data "Icon" "Action_MagicItem_BludgeonTheWeak"
+// data "Properties" "OncePerTurn"
 // data "StatsFunctorContext" "OnDamage"
-// data "Conditions" "AttackedWithPassiveSourceWeapon() and HasHPPercentageWithoutTemporaryHPEqualOrLessThan(50, context.Target)"
-// data "StatsFunctors" "DealDamage(1d6,Fire,Magical)"
-data "StatsFunctors" "DealDamage(1d6,Fire,Magical,,0,,true,false)"
-
-new entry "RR_MountainKing_Strength_Passive"
-type "PassiveData"
-using "RR_MountainKing_Strength_Passive"
-// data "StatsFunctorContext" "OnDamage"
-// data "Conditions" "not Dead()"
-// data "StatsFunctors" "IF(IsMeleeWeaponAttack()):DealDamage(StrengthModifier/2,MainWeaponDamageType)"
-data "StatsFunctors" "IF(IsMeleeWeaponAttack()):DealDamage(StrengthModifier/2,MainWeaponDamageType,Magical,,0,,true,true)"
-
-new entry "RR_MountainKing_Attk_Passive"
-type "PassiveData"
-using "RR_MountainKing_Attk_Passive"
-// data "StatsFunctorContext" "OnDamage"
-// data "Conditions" "not Dead() and SizeEqualOrGreater(Size.Large)"
-// data "StatsFunctors" "IF(IsWeaponAttack()):DealDamage(1d6,MainWeaponDamageType)"
-data "StatsFunctors" "IF(IsWeaponAttack()):DealDamage(1d6,MainWeaponDamageType,Magical,,0,,true,true)"
+// data "Conditions" "Enemy() and RRHasRageActive()"
+// data "StatsFunctors" "ApplyStatus(SELF,MAG_VIOLENCE,100, 1);ApplyStatus(SELF,MAG_VIOLENCE_DURATION_TECHNICAL, 100, 1)"
 
 // ==================================== Song and Steel - Bard Equipment ====================================
 
-// Visage of Vanishing Laughter: 
+// ==================================== SS - Visage of Vanishing Laughter
 // Charismatic Focus: decrease spell attack roll and spell save DC bonus to +2 (previously +3)
 new entry "SS_CharismaticFocus"
 type "PassiveData"
 using "SS_CharismaticFocus"
+// Charismatic Focus
+// data "DisplayName" "hdf5efdf7g51abg4d28g9ea7g5173ebe8dd83;1"
+// The mask amplifies your magical presence, granting you a +[1] bonus to your &lt;LSTag Tooltip="AttackRoll"&gt;Spell Attack Rolls&lt;/LSTag&gt; and &lt;LSTag Tooltip="SpellDifficultyClass"&gt;Spell Save DC&lt;/LSTag&gt;.
+// data "Description" "hdf5efdf7g51abg4d28g9ea7g5173ebe8dd84;1"
 // data "DescriptionParams" "3"
 data "DescriptionParams" "2"
+// data "Icon" "Action_Bard_RestoreBardicInspiration"
 // data "Boosts" "SpellSaveDC(3);RollBonus(MeleeSpellAttack, 3);RollBonus(RangedSpellAttack,3)"
 data "Boosts" "RollBonus(MeleeSpellAttack, 2);RollBonus(RangedSpellAttack,2);SpellSaveDC(2)"
 
 // ==================================== Unarmed and Upgraded - Monk Equipment ====================================
 
-// Vestment of the Ascended Fist: change Unarmoured Defence passive to only give +1 extra AC (previously +3)
+// ==================================== UU - Vestment of the Ascended Fist
+// Unarmoured Defence: only gives +1 extra AC (previously +3)
 new entry "MonkEquipmentAct3_Vestment_of_the_Ascended_Fist"
 type "Armor"
+// using "ARM_Cloth_Body_2"
 using "MonkEquipmentAct3_Vestment_of_the_Ascended_Fist"
+// data "RootTemplate" "1b899406-c01d-4d4f-b948-c32f4be4cddc"
+// data "Rarity" "Legendary"
+// data "ArmorClass" "10"
+// data "ValueUUID" "a57433fc-8be8-4efb-ac6b-a625b3bdcd18"
+// data "ComboCategory" "d4"
+// data "Weight" "1.8"
+// data "ValueScale" "1"
+// data "ValueRounding" "1"
+// data "ValueLevel" "8"
+// data "Boosts" "UnlockSpell(Shout_Ascended_Fist_DamageBuff)"
 // data "PassivesOnEquip" "UnarmoredDefense_Monk_AscendedFist;MAG_Monk_StunningStrike_Reaction_Passive"
 data "PassivesOnEquip" "UnarmoredDefense_Monk_ShatteredSun;MAG_Monk_StunningStrike_Reaction_Passive"
+// data "UseConditions" "UUCanUseMonkEquipment()"
+// data "Unique" "1"
+
+new entry "Tut_MonkEquipmentAct3_Vestment_of_the_Ascended_Fist"
+type "Armor"
+// using "ARM_Cloth_Body_2"
+using "Tut_MonkEquipmentAct3_Vestment_of_the_Ascended_Fist"
+// data "RootTemplate" "1b899406-c01d-4d4f-b948-c32f4be4cddc"
+// data "Rarity" "Legendary"
+// data "ArmorClass" "10"
+// data "ValueUUID" "a57433fc-8be8-4efb-ac6b-a625b3bdcd18"
+// data "ComboCategory" "d4"
+// data "Weight" "1.8"
+// data "ValueScale" "1"
+// data "ValueRounding" "1"
+// data "ValueLevel" "8"
+// data "Boosts" "UnlockSpell(Shout_Ascended_Fist_DamageBuff)"
+// data "PassivesOnEquip" "UnarmoredDefense_Monk_AscendedFist;MAG_Monk_StunningStrike_Reaction_Passive"
+data "PassivesOnEquip" "UnarmoredDefense_Monk_ShatteredSun;MAG_Monk_StunningStrike_Reaction_Passive"
+// data "UseConditions" "UUCanUseMonkEquipment()"
+// data "Unique" ""
 
 // ==================================== Veil and Venom - Rogue Equipment ====================================
 
-// Ring of the Assassin's Mark
+// ==================================== VV - Ring of the Assassin's Mark
 // Mark for Death: rebalanced
 // Nerfs: only gives advantage to caster (previously all attackers), critical hits against marked target deal an additional 2d8 damage (previously instantly killed)
 // Buffs: short rest cooldown (previously long rest), can be cast against all enemies (previously couldn't target basically any bosses in Honour Mode), lasts for 10 turns (previously 5 turns)
@@ -958,44 +1386,79 @@ new entry "VV_AssassinMark"
 type "SpellData"
 data "SpellType" "Target"
 using "VV_AssassinMark"
+// data "Level" "3"
 // data "Cooldown" "OncePerRestPerItem"
 data "Cooldown" "OncePerShortRestPerItem"
-// data "TargetConditions" "Character() and not Self() and not Tagged('BLOCK_BOSS_DISTURBANCES') and not Tagged('LOW_HOUSEOFHOPE_IDENTIFY_RAPHAEL') and not Tagged('ACT3_WYR_GORTASH') and not Tagged('ACT3_LOW_VICONIA') and not Tagged('ACT3_LOW_CAZADOR') and not Tagged('LOW_RAMAZITHSTOWER_MISTYSTEP_HELPER') and not HasStatus('LEGENDARYACTION_STATUS')"
+// data "SpellSchool" "Enchantment"
+// data "TargetRadius" "1.5"
+// data "TargetConditions" "Character() and not Self() and not Tagged('BLOCK_BOSS_DISTURBANCES') and not HasPassive('LOW_GithProdigy_PsionicSkin') and not Tagged('LOW_HOUSEOFHOPE_IDENTIFY_RAPHAEL') and not Tagged('ACT3_WYR_GORTASH') and not Tagged('ACT3_LOW_VICONIA') and not Tagged('ACT3_LOW_CAZADOR') and not Tagged('LOW_RAMAZITHSTOWER_MISTYSTEP_HELPER') and not Tagged('APOSTLE_OF_MYRKUL') and not HasStatus('LEGENDARYACTION_STATUS') and not HasStatus('AI_HELPER_DRAGON_POSITION_AURA') and not HasStatus('AI_HELPER_DRAGON_POSITION')"
 data "TargetConditions" "Character() and Enemy() and not Self()"
+// data "SpellRoll" "not SavingThrow(Ability.Constitution,ManeuverSaveDC()+1)"
 // data "SpellSuccess" "ApplyStatus(VV_ASSASSINS_MARK, 100, 5)"
 data "SpellSuccess" "ApplyStatus(VV_ASSASSINS_MARK, 100, 10)"
-// data "SpellRoll" "not SavingThrow(Ability.Constitution,17)"
-data "SpellRoll" "not SavingThrow(Ability.Constitution,ManeuverSaveDC()+1)"
+// data "SpellFail" "ApplyStatus(SAVED_AGAINST_HOSTILE_SPELL, 100, 0)"
+// data "Icon" "PassiveFeature_HuntersMark"
+// Mark for Death
+// data "DisplayName" "hc44613eaga609g44b7ga9b8g4c942a15d040;1"
+// As a &lt;LSTag Type="ActionResource" Tooltip="BonusActionPoint"&gt;bonus action&lt;/LSTag&gt;, you can touch a creature within [1], marking them for death. The target must make a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;. On a failed save, the &lt;LSTag Type="Status" Tooltip="VV_ASSASSINS_MARK"&gt;Mark of Death&lt;/LSTag&gt; is applied for [2] turns. All attacks have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; against the marked creature. If the wearer lands a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; on the marked creature, it dies instantly. (Long Rest Cooldown)<
+// data "Description" "hc44613eaga609g44b7ga9b8g4c942a15d042;1"
 // Touch a creature within [1] and force them to make a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;. On a failed save, the &lt;LSTag Type="Status" Tooltip="VV_ASSASSINS_MARK"&gt;Mark of Death&lt;/LSTag&gt; is applied on them for 10 turns. Your attacks have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; against the marked creature and your &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hits&lt;/LSTag&gt; against the marked creature deal an additional [2] damage.
 data "Description" "h90480a70ge388g4634g99c0g3bd030201c35;1"
-// data "DescriptionParams" "Distance(1.5)"
+// data "DescriptionParams" "Distance(1.5);5"
 data "DescriptionParams" "Distance(1.5);1d8"
-// data "TooltipStatusApply" "ApplyStatus(VV_ASSASSINS_MARK, 100, 5)"
+// data "TooltipStatusApply" "ApplyStatus(VV_ASSASSINS_MARK,100,5)"
 data "TooltipStatusApply" "ApplyStatus(VV_ASSASSINS_MARK, 100, 10)"
+// data "CastSound" "Spell_Cast_Debuff_HuntersMark_L1to3"
+// data "TargetSound" "Spell_Impact_Debuff_HuntersMark_L1to3"
+// data "VocalComponentSound" "Vocal_Component_HuntersMark"
+// data "CastTextEvent" "Cast"
+// data "CycleConditions" "Enemy() and not Dead()"
+// data "UseCosts" "BonusActionPoint:1"
+// data "SpellAnimation" "9313094a-bae2-454f-9701-f920d0e8e98d,,;,,;3e441d3f-11f9-432d-877c-c0ba4d92c74a,,;8b7ae969-2a04-4720-9685-3bde54c18ffe,,;808fdfab-2e6c-472e-b3c4-19ce4a719d9d,,;,,;ea745d30-eb87-447f-b190-c81298e27d9c,,;,,;,,"
+// data "VerbalIntent" "Debuff"
+// data "SpellStyleGroup" ""
+// data "SpellFlags" "HasVerbalComponent;HasSomaticComponent;IsConcentration;IsSpell;IsHarmful"
+// data "MemoryCost" ""
+// data "PrepareEffect" "de6dddd8-8a32-4db1-a521-70706648a83b"
+// data "CastEffect" "2e44371c-a637-4cab-a120-3088b3d83369"
+// data "TargetEffect" "7537e8f0-1897-4a66-83fe-7f58e9dbd12e"
 
 new entry "VV_AssassinsMark_Passive"
 type "PassiveData"
 using "VV_AssassinsMark_Passive"
+// Mark for Death
+// data "DisplayName" "hc44613eaga609g44b7ga9b8g4c942a15d040;1"
+// data "Icon" "PassiveFeature_HuntersMark"
+// data "Properties" "IsHidden"
 // data "StatsFunctorContext" "OnDamage"
 data "StatsFunctorContext" ""
 // data "Conditions" "IsCritical() and HasStatus('VV_ASSASSINS_MARK')"
 data "Conditions" ""
 // data "StatsFunctors" "Kill()"
 data "StatsFunctors" ""
-// data "Boosts" ""
 data "Boosts" "IF(HasStatus('VV_ASSASSINS_MARK', context.Target, context.Source) and IsCritical() and not IsCriticalMiss()):DamageBonus(1d8)"
 
 new entry "VV_ASSASSINS_MARK"
 type "StatusData"
 data "StatusType" "BOOST"
 using "VV_ASSASSINS_MARK"
+// Mark of Death
+// data "DisplayName" "hc44613eaga609g44b7ga9b8g4c942a15d041;1"
+// This creature has been marked for death. All attacks against it have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;. If the caster that applied this mark lands a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; against the marked target, it dies instantly.
+// data "Description" "hc44613eaga609g44b7ga9b8g4c942a15d043;1"
 // This creature has been marked for death. The caster who applied this mark's attacks against it have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; and their &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hits&lt;/LSTag&gt; against the marked target deal an additional [1] damage.
 data "Description" "h68b16d5bg49f1g4eeagb311ga57fe566450d;1"
 data "DescriptionParams" "1d8"
+// data "Icon" "PassiveFeature_Generic_Death"
 // data "Boosts" "Advantage(AttackTarget)"
 data "Boosts" "SourceAdvantageOnAttack()"
+// data "SoundStart" "Spell_Status_HuntersMark_MO"
+// data "SoundLoop" "Spell_Status_HuntersMark_MO_Stop"
+// data "StatusPropertyFlags" "InitiateCombat;BringIntoCombat"
+// data "ApplyEffect" "5a259bdd-10d5-453a-9aee-1e85a986baf4"
+// data "StatusEffect" "0d122bff-6d13-4373-a807-b8663d48559e"
 
-// The Backstabber's Blade
+// ==================================== VV - The Backstabber's Blade
 // Heartstopper: increase save DC to 18 (previously 16) and decrease damage to 1d8 Necrotic per every 2 Rogue levels (previously 1d6 per every Rogue level)
 new entry "VV_Target_Heartstopper"
 type "SpellData"
@@ -1016,83 +1479,37 @@ data "ExtraDescription" "ha25d0fa5g0cedg42bcg9540geab3d36f2899;2"
 // data "TooltipDamageList" "DealDamage(1d6, Necrotic)"
 data "TooltipDamageList" "DealDamage(1d8, Necrotic)"
 
-// Bracers of Flying Daggers
-// Hidden Mechanics: decrease throw damage bonus to 1d8 (previously 2d4)
+// ==================================== VV - Bracers of Flying Daggers
+// Hidden Mechanics: fixed description damage.
 new entry "VV_Dagger_Specialist_Passive"
 type "PassiveData"
 using "VV_Dagger_Specialist_Passive"
+// Hidden Mechanisms
+// data "DisplayName" "hc44613eaga609g44b7ga9b8g4c942a15d082;1"
+// The bracers enhance your grip and throwing technique, you deal an additional [1] with Throw Attacks.
+// data "Description" "hc44613eaga609g44b7ga9b8g4c942a15d084;1"
 // data "DescriptionParams" "2d4"
 data "DescriptionParams" "1d8"
-// data "Boosts" "EntityThrowDamage(2d4)"
-data "Boosts" "EntityThrowDamage(1d8)"
-
-// ==================== Preventing damage rider sources ====================
-new entry "VV_WhisperWind_Passive"
-type "PassiveData"
-using "VV_WhisperWind_Passive"
-// data "StatsFunctorContext" "OnDamage"
-// data "Conditions" "AttackedWithPassiveSourceWeapon()"
-// data "StatsFunctors" "IF(RollDieAgainstDC(DiceType.d100,85)):DealDamage(1d6,Psychic,Magical)"
-data "StatsFunctors" "IF(RollDieAgainstDC(DiceType.d100,85)):DealDamage(1d6,Psychic,Magical,,0,,true,false)"
-
-new entry "VV_NineLives_Passive"
-type "PassiveData"
-using "VV_NineLives_Passive"
-// data "StatsFunctorContext" "OnDamage"
-// data "Conditions" "AttackedWithPassiveSourceWeapon() and IsCritical()"
-// data "StatsFunctors" "IF(not SavingThrow(Ability.Constitution,17)):DealDamage(4d6,Necrotic);RegainHitPoints(SELF,(DamageDone)/2)"
-data "StatsFunctors" "IF(not SavingThrow(Ability.Constitution,17)):DealDamage(4d6,Necrotic,Magical,,0,,true,false);RegainHitPoints(SELF,(DamageDone)/2)"
-
-new entry "VV_BackstabBlade_Assassinate_Passive"
-type "PassiveData"
-using "VV_BackstabBlade_Assassinate_Passive"
-// data "StatsFunctorContext" "OnDamage"
-// data "Conditions" "not FacingMe() and HasDamageEffectFlag(DamageFlags.Hit) and SpellId('Target_SneakAttack')"
-// data "StatsFunctors" "DealDamage(2d6, Psychic,Magical)"
-data "StatsFunctors" "DealDamage(2d6, Psychic,Magical,,0,,true,false)"
-
-new entry "VV_AssassinsEye_Passive"
-type "PassiveData"
-using "VV_AssassinsEye_Passive"
-// data "StatsFunctorContext" "OnDamage"
-// data "Conditions" "not FacingMe() and HasDamageEffectFlag(DamageFlags.Hit) and IsMeleeWeaponAttack()"
-// data "StatsFunctors" "DealDamage(1d6, MainMeleeWeaponDamageType)"
-data "StatsFunctors" "DealDamage(1d6, MainMeleeWeaponDamageType,Magical,,0,,true,true)"
-
-new entry "VV_LightningReflexes_Passive"
-type "PassiveData"
-using "VV_LightningReflexes_Passive"
-// data "StatsFunctorContext" "OnDamage"
-// data "Conditions" "IsMeleeWeaponAttack() and HasDamageEffectFlag(DamageFlags.Hit)"
-// data "StatsFunctors" "DealDamage(ProficiencyBonus, Lightning)"
-data "StatsFunctors" "DealDamage(ProficiencyBonus, Lightning,Magical,,0,,true,false)"
-
-new entry "VV_Nightwhisper_Passive"
-type "PassiveData"
-using "VV_Nightwhisper_Passive"
-// data "StatsFunctorContext" "OnDamage"
-// data "Conditions" "not FacingMe() and IsMeleeWeaponAttack()"
-// data "StatsFunctors" "IF(not SavingThrow(Ability.Wisdom, 15)):DealDamage(2d4, Psychic,Magical)"
-data "StatsFunctors" "IF(not SavingThrow(Ability.Wisdom, 15)):DealDamage(2d4, Psychic,Magical,,0,,true,false)"
+// data "Properties" "Highlighted"
+// data "Icon" "PassiveFeature_ReliableTalent"
+// data "Boosts" "EntityThrowDamage(1d8)"
 
 // ==================================== Wands and Weave - Wizard Equipment ====================================
 
-// Hood of the Archmage: change Intelligence bonus to give +2 Intelligence instead, with max of 22 (previously set Intelligence to 20)
-new entry "WW_Wizard_Equipment_Hood_of_the_Archmage"
-type "Armor"
-using "WW_Wizard_Equipment_Hood_of_the_Archmage"
-// data "Boosts" "AbilityOverrideMinimum(Intelligence, 20)"
-data "Boosts" "Ability(Intelligence,2,22)"
-
-// Boots of the Shifting Elements
+// ==================================== WW - Boots of the Shifting Elements
 // Shifting Elements: can only be triggered in combat as tooltip states and now only has 60% chance to receive the buff (previously 100% chance) + rebalance of some effects
 new entry "WW_ShiftingElements"
 type "PassiveData"
 using "WW_ShiftingElements"
-// While in combat and you deal damage with a spell, you have a [1]% chance of being granted a boon for [2] turn based on the damage type dealt. This can only occur once per turn.&lt;br&gt;&lt;br&gt;Acid: &lt;LSTag Type="Status" Tooltip="WW_ACIDIC_FORM"&gt;Acidic Form&lt;/LSTag&gt;&lt;br&gt;Thunder: &lt;LSTag Type="Status" Tooltip="BLUR"&gt;Blurred&lt;/LSTag&gt;&lt;br&gt;Necrotic: &lt;LSTag Type="Status" Tooltip="FALSE_LIFE"&gt;False Life&lt;/LSTag&gt;&lt;br&gt;Fire: &lt;LSTag Type="Status" Tooltip="MAG_FIRE_HEAT"&gt;Heat&lt;/LSTag&gt; (for [3] turns)&lt;br&gt;Lightning: &lt;LSTag Type="Status" Tooltip="MAG_CHARGED_LIGHTNING"&gt;Lightning Charges&lt;/LSTag&gt;&lt;br&gt;Cold: &lt;LSTag Type="Status" Tooltip="ARMOR_OF_AGATHYS"&gt;Armor of Agathys&lt;/LSTag&gt;&lt;br&gt;Psychic: &lt;LSTag Type="Status" Tooltip="MIRROR_IMAGE_1"&gt;Mirror Image&lt;/LSTag&gt;&lt;br&gt;Poison: &lt;LSTag Type="Status" Tooltip="WW_ENVENOMED_VITALITY"&gt;Envenomed Vitality&lt;/LSTag&gt;&lt;br&gt;Radiant: &lt;LSTag Type="Status" Tooltip="CHT_WW_SHIELD_OF_FAITH"&gt;Shield of Faith&lt;/LSTag&gt;&lt;br&gt;Force: &lt;LSTag Type="Status" Tooltip="WW_FORCE_EXPLOSION_BOOTS"&gt;Forceful Repercussion&lt;/LSTag&gt;
+// Shifting Elements
+// data "DisplayName" "h941a2a1agcc5ag4161gb947g4797cc56ab57;1"
+// While in combat, you are granted a boon for 1 turn based on the spell damage type dealt. This can only occur once per turn.&lt;br&gt;&lt;br&gt;Acid:&lt;LSTag Type="Status" Tooltip="WW_ACIDIC_FORM"&gt;Acidic Form&lt;/LSTag&gt;&lt;br&gt;Thunder:&lt;LSTag Type="Status" Tooltip="BLUR"&gt;Blurred&lt;/LSTag&gt;&lt;br&gt;Necrotic:&lt;LSTag Type="Status" Tooltip="FALSE_LIFE"&gt;False Life&lt;/LSTag&gt;&lt;br&gt;Fire:&lt;LSTag Type="Status" Tooltip="MAG_FIRE_HEAT"&gt;Heat&lt;/LSTag&gt;&lt;br&gt;Lightning:&lt;LSTag Type="Status" Tooltip="MAG_CHARGED_LIGHTNING"&gt;Lightning Charges&lt;/LSTag&gt;&lt;br&gt;Cold:&lt;LSTag Type="Status" Tooltip="ARMOR_OF_AGATHYS"&gt;Armor of Agathys&lt;/LSTag&gt;&lt;br&gt;Psychic:&lt;LSTag Type="Status" Tooltip="MIRROR_IMAGE_1"&gt;Mirror Image&lt;/LSTag&gt;&lt;br&gt;Poison:&lt;LSTag Type="Status" Tooltip="WW_ENVENOMED_VITALITY"&gt;Envenomed Vitality&lt;/LSTag&gt;&lt;br&gt;Radiant:&lt;LSTag Type="Status" Tooltip="SHIELD_OF_FAITH"&gt;Shield of Faith&lt;/LSTag&gt;&lt;br&gt;Force:&lt;LSTag Type="Status" Tooltip="WW_FORCE_EXPLOSION_BOOTS"&gt;Forceful Repercussion&lt;/LSTag&gt;
+// data "Description" "h941a2a1agcc5ag4161gb947g4797cc56ab58;1"
+// While in combat and you deal damage with a spell, you have a [1]% chance of being granted a boon for [2] turn based on the damage type dealt. This can only occur once per turn.&lt;br&gt;&lt;br&gt;Acid: &lt;LSTag Type="Status" Tooltip="WW_ACIDIC_FORM"&gt;Acidic Form&lt;/LSTag&gt;&lt;br&gt;Thunder: &lt;LSTag Type="Status" Tooltip="BLUR"&gt;Blurred&lt;/LSTag&gt;&lt;br&gt;Necrotic: &lt;LSTag Type="Status" Tooltip="FALSE_LIFE"&gt;False Life&lt;/LSTag&gt;&lt;br&gt;Fire: &lt;LSTag Type="Status" Tooltip="MAG_FIRE_HEAT"&gt;Heat&lt;/LSTag&gt; (for [3] turns)&lt;br&gt;Lightning: &lt;LSTag Type="Status" Tooltip="MAG_CHARGED_LIGHTNING"&gt;Lightning Charges&lt;/LSTag&gt;&lt;br&gt;Cold: &lt;LSTag Type="Status" Tooltip="ARMOR_OF_AGATHYS"&gt;Armor of Agathys&lt;/LSTag&gt;&lt;br&gt;Psychic: &lt;LSTag Type="Status" Tooltip="MIRROR_IMAGE_1"&gt;Mirror Image&lt;/LSTag&gt;&lt;br&gt;Poison: &lt;LSTag Type="Status" Tooltip="WW_ENVENOMED_VITALITY"&gt;Envenomed Vitality&lt;/LSTag&gt;&lt;br&gt;Radiant: &lt;LSTag Type="Status" Tooltip="CHT_WW_SHIELD_OF_FAITH"&gt;Shield of Faith&lt;/LSTag&gt;&lt;br&gt;Force: &lt;LSTag Type="Status" Tooltip="WW_FORCE_EXPLOSION_BOOTS"&gt;Forceful Repercussion&lt;/LSTag&gt;.
 data "Description" "h439e891bgfd50g42bdgb086g2a116ba17d6f;1"
-// data "DescriptionParams" ""
 data "DescriptionParams" "60;1;3"
+// data "Properties" "Highlighted;OncePerTurn"
+// data "StatsFunctorContext" "OnAttack"
 // data "Conditions" "TotalAttackDamageDoneGreaterThan(0) and (IsSpell() or IsCantrip())"
 data "Conditions" "TotalAttackDamageDoneGreaterThan(0) and (IsSpell() or IsCantrip()) and Combat()"
 // data "StatsFunctors" "IF(HasAttackDamageDoneForType(DamageType.Acid)):ApplyStatus(SWAP,WW_ACIDIC_FORM,100,1);IF(HasAttackDamageDoneForType(DamageType.Thunder)):ApplyStatus(SWAP,BLUR,100,1);IF(HasAttackDamageDoneForType(DamageType.Necrotic)):ApplyStatus(SWAP,FALSE_LIFE,100,1);IF(HasAttackDamageDoneForType(DamageType.Fire)):ApplyStatus(SWAP,MAG_FIRE_HEAT,100,3);IF(HasAttackDamageDoneForType(DamageType.Lightning)):ApplyStatus(SWAP,MAG_CHARGED_LIGHTNING,100,1);IF(HasAttackDamageDoneForType(DamageType.Cold)):ApplyStatus(SWAP,WW_ARMOR_OF_AGATHYS,100,1);IF(HasAttackDamageDoneForType(DamageType.Psychic)):ApplyStatus(SWAP,MIRROR_IMAGE_1,100,1);IF(HasAttackDamageDoneForType(DamageType.Poison)):ApplyStatus(SWAP,WW_ENVENOMED_VITALITY,100,1);IF(HasAttackDamageDoneForType(DamageType.Radiant)):ApplyStatus(SWAP,SHIELD_OF_FAITH,100,1);IF(HasAttackDamageDoneForType(DamageType.Force)):CreateExplosion(WW_Projectile_Force_Boots)"
@@ -1116,12 +1533,3 @@ type "StatusData"
 data "StatusType" "BOOST"
 using "SHIELD_OF_FAITH"
 data "StackId" "CHT_WW_SHIELD_OF_FAITH"
-
-// ==================== Preventing damage rider sources ====================
-new entry "WW_ArcRepeater_Crit_Passive"
-type "PassiveData"
-using "WW_ArcRepeater_Crit_Passive"
-// data "StatsFunctorContext" "OnDamage"
-// data "Conditions" "IsSpell() and IsCritical()"
-// data "StatsFunctors" "DealDamage(1d8, Force,Magical);ApplyStatus(SELF, WW_ARC_REPEATER_CRIT, 100, -1)"
-data "StatsFunctors" "DealDamage(1d8, Force,Magical,,0,,true,false);ApplyStatus(SELF, WW_ARC_REPEATER_CRIT, 100, -1)"
