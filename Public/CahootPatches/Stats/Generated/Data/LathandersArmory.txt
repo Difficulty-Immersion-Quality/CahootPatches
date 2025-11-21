@@ -291,9 +291,9 @@ new entry "CHT_LathanderShield_Light"
 type "PassiveData"
 // Dawn's Light
 data "DisplayName" "h8626ba6cgeafcg40b2gb104ge678bd0f9993;1"
-// The shield shines with the light of the sun, dispelling darkness in a [1] radius. All enemies in this light take an additional [2] damage from all sources. You can toggle this effect off.
+// The shield shines with the light of the sun, dispelling darkness in a [1] radius. All enemies in this light have their &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; reduced by [2]. You can toggle this effect off.
 data "Description" "h967da47dg1d7bg42acgac30gdcce189354bf;1"
-data "DescriptionParams" "Distance(6);DealDamage(1,Radiant)"
+data "DescriptionParams" "Distance(6);1"
 data "Icon" "CSS_Lathander_Daylight_Icon"
 data "Properties" "IsToggled;ToggledDefaultOn;ToggledDefaultAddToHotbar"
 data "ToggleOnFunctors" "ApplyEquipmentStatus(OffHand,CHT_DAYLIGHT_MINI_SHIELD,100,-1);ApplyStatus(CHT_LATHANDERSHIELD_LIGHT_AURA,100,-1)"
@@ -325,9 +325,9 @@ type "StatusData"
 data "StatusType" "BOOST"
 // Dawn's Light
 data "DisplayName" "h93dc2b51g6c42g4065ga0a3ga305ffa68389;1"
-// Enemies within [1] take an additional [2] from all sources.
+// Enemies within [1] have their &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; reduced by [2].
 data "Description" "h966250dag3eb5g4009g9262gac682bc48a42;1"
-data "DescriptionParams" "Distance(6);DealDamage(1,Radiant)"
+data "DescriptionParams" "Distance(6);1"
 data "Icon" "CSS_Lathander_Daylight_Icon"
 data "StackId" "CHT_LATHANDERSHIELD_LIGHT_AURA"
 data "AuraRadius" "6"
@@ -337,15 +337,15 @@ data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead"
 new entry "CHT_LATHANDERSHIELD_LIGHT_DEBUFF"
 type "StatusData"
 data "StatusType" "BOOST"
-// Searing Dawn
+// Illuminated
 data "DisplayName" "h70f3e09eg5d8bg4a8cgb1ecgc204475b6f86;1"
-// Affected entity takes an additional [1] from all sources.
+// Affected entity has a -[1] penalty to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;.
 data "Description" "h2069bfb6gf07bg4cf2gbf9eg443ff5f8f6cf;1"
-data "DescriptionParams" "DealDamage(1,Radiant)"
+data "DescriptionParams" "1"
 data "Icon" "GenericIcon_Intent_Debuff"
 data "StackId" "CHT_LATHANDERSHIELD_LIGHT_DEBUFF"
 data "StackPriority" "5"
-data "Boosts" "DamageTakenBonus(1,Radiant,False)"
+data "Boosts" "AC(-1)"
 data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog"
 data "ManagedStatusEffectType" "Negative"
 
