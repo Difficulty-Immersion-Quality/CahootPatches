@@ -1,0 +1,36 @@
+// Copied from Sinbad's repository with slight modifications: https://github.com/mikeshardmind/bg3modding/blob/main/Mods/StartingEquip/Mods/StartingEquip/Story/RawFiles/Goals/mikeshardmind_startingequip.txt
+
+Version 1
+SubGoalCombiner SGC_AND
+
+INITSECTION
+
+NOT DB_mikeshardmind_StartingEquip((CHARACTER)NULL_00000000-0000-0000-0000-000000000000);
+
+KBSECTION
+
+IF
+LevelGameplayReady(_Level, _IsEditor)
+AND
+_Level != "SYS_CC_I"
+AND
+DB_Avatars(_Character)
+AND
+NOT DB_mikeshardmind_StartingEquip(_Character)
+THEN
+TemplateAddTo(TOOL_Hospital_Surgery_Kit_B_55fb2f34-00d7-4149-8b52-e189e05ba0ca, _Character, 3, 0);
+DB_mikeshardmind_StartingEquip(_Character);
+
+PROC
+PROC_GLO_PartyMembers_Add((CHARACTER)_Origin,(CHARACTER)_Player)
+AND
+DB_PartOfTheTeam(_Origin)
+AND
+NOT DB_mikeshardmind_StartingEquip(_Origin)
+THEN
+TemplateAddTo(TOOL_Hospital_Surgery_Kit_B_55fb2f34-00d7-4149-8b52-e189e05ba0ca, _Origin, 3, 0);
+DB_mikeshardmind_StartingEquip(_Origin);
+
+EXITSECTION
+
+ENDEXITSECTION
