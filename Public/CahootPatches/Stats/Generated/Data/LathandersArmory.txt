@@ -451,12 +451,14 @@ type "StatusData"
 data "StatusType" "BOOST"
 data "StackId" "CHT_LATHANDERCLOAK_CYCLE_ATTACK_TECHNICAL"
 data "StatusPropertyFlags" "DisableCombatlog;DisablePortraitIndicator;DisableOverhead;FreezeDuration"
+data "RemoveEvents" "OnCombatEnded"
 
 new entry "CHT_LATHANDERCLOAK_CYCLE_ARMOUR_TECHNICAL"
 type "StatusData"
 data "StatusType" "BOOST"
 data "StackId" "CHT_LATHANDERCLOAK_CYCLE_ARMOUR_TECHNICAL"
 data "StatusPropertyFlags" "DisableCombatlog;DisablePortraitIndicator;DisableOverhead;FreezeDuration"
+data "RemoveEvents" "OnCombatEnded"
 
 // ================================= Signet of the Yellow God =================================
 // Complete rework
