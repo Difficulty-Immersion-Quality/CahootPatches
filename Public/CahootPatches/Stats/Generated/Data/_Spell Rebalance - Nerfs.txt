@@ -164,7 +164,7 @@ new entry "GLOBE_OF_INVULNERABILITY_AURA"
 type "StatusData"
 data "StatusType" "BOOST"
 using "GLOBE_OF_INVULNERABILITY_AURA"
-data "DisplayName" "hb1daa1c3gb3c9g44dfg9f85gee0d2fca7059;1"
+data "DisplayName" "hb215306agc1f7g4859g9489gad8337fcfca8;1"
 
 new entry "GLOBE_OF_INVULNERABILITY"
 type "StatusData"
