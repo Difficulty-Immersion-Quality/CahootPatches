@@ -899,8 +899,53 @@ data "SpellSuccess" "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType); Exe
 
 // ==================================== Might and Metal - Fighter Equipment  ====================================
 
-// ==================================== MM - Ring of Razor's Edge
+// ==================================== MM - Boost of the Unbreakable Stance
+// Unbreakable Stance: remove +1 attack roll
 
+new entry "MM_Unbreakable_Stance_Passive"
+type "PassiveData"
+using "MM_Unbreakable_Stance_Passive"
+// data "DisplayName" "h22892942gd938g469dg96bag67bafebbd027;1"
+// data "Description" "h22892942gd938g469dg96bag67bafebbd028;1"
+// If two or more enemies surround you at the start of your turn, you gain +[1] &lt;LSTag Tooltip="ArmourClass"&gt;AC&lt;/LSTag&gt; for 1 turn.
+data "Description" "hacde07fdgc25dg4595g8596gcecb8d532509;1"
+// data "DescriptionParams" "2;1"
+data "DescriptionParams" "2"
+// data "Icon" "Spell_Abjuration_Resistance"
+// data "StatsFunctorContext" "OnCombatStarted"
+// data "StatsFunctors" "ApplyStatus(SELF, MM_UNBREAKABLE_STANCE, 100, -1)"
+
+new entry "MM_UNBREAKABLE_STANCE"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MM_UNBREAKABLE_STANCE"
+// data "DisplayName" "h22892942gd938g469dg96bag67bafebbd027;1"
+// data "Description" "h22892942gd938g469dg96bag67bafebbd114;1"
+// You've braced yourself against the press of enemies. Gain a +[1] bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;.
+data "Description" "hd869bd56g4690g4135ga4b4g394b405a527a;1"
+// data "DescriptionParams" "2;1"
+data "DescriptionParams" "2"
+// data "Icon" "Spell_Abjuration_Resistance"
+// data "RemoveEvents" "OnCombatEnded"
+// data "RemoveConditions" "not Combat()"
+// data "TickType" "StartTurn"
+// data "TickFunctors" "IF(HasEnemyWithinRange('SG_Incapacitated',3,nil,2)):ApplyStatus(MM_UNBREAKABLE_STANCE_TECH,100,1)"
+// data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+
+new entry "MM_UNBREAKABLE_STANCE_TECH"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MM_UNBREAKABLE_STANCE_TECH"
+// data "DisplayName" "h22892942gd938g469dg96bag67bafebbd027;1"
+// data "Description" "h22892942gd938g469dg96bag67bafebbd114;1"
+data "Description" "hd869bd56g4690g4135ga4b4g394b405a527a;1"
+// data "DescriptionParams" "2;1"
+data "DescriptionParams" "2"
+// data "Icon" "Spell_Abjuration_Resistance"
+// data "Boosts" "RollBonus(Attack, 1);AC(2)"
+data "Boosts" "AC(2)"
+
+// ==================================== MM - Ring of Razor's Edge
 // Change rarity to Very Rare (previously Uncommon)
 // Edge of Defiance: make wearer take 2 additional damage from Slashing damage
 new entry "MM_Fighter_Equipment_Ring_of_Razors_Edge"

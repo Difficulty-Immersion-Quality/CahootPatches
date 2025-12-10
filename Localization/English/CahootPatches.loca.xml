@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿﻿<?xml version="1.0" encoding="utf-8"?>
 <contentList>
 	<!-- Misc patches -->
 	<content contentuid="h5a6970b0g1f2dg4060g9e88g4ecc1899c571" version="1">Deal additional Radiant damage equal to your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt;. On a hit, light erupts on the target, forcing it to make a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or be &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blinded&lt;/LSTag&gt; for [1] turns.</content>
@@ -85,6 +85,10 @@
 	<content contentuid="h0f467088g08c2g4154g8af4gb9cdcc3b4fb3" version="1">Cause a creature to start dancing, making it unable to take &lt;LSTag Tooltip="Action"&gt;action&lt;/LSTag&gt; or move. Its attackers have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;. The target can make a &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; every turn and upon taking damage to break free.</content>
 	<content contentuid="h644f1487gc26dg40e7gacaag5e3899554a3d" version="1">Once per &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;, if you are below [1] &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt; and take damage, you gain [2] &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt;.</content>
 	<content contentuid="h10121987ga23fg4f5ega399g49fd9728dab9" version="1">You gain a +[1] bonus to Intelligence and Wisdom &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; and are immune to being &lt;LSTag Type="Status" Tooltip="CHARMED"&gt;Charmed&lt;/LSTag&gt;.</content>
+
+	<!-- PhalarAluveRework -->
+	<content contentuid="hf21d176ege20eg44eeg944egaf503d8983d6" version="1">When you hit a creature in melee, you &lt;LSTag Type="Status" Tooltip="MAG_HARPERS_SINGING_SWORD_DISTRACTED"&gt;Distract&lt;/LSTag&gt; it and gain 1 stack of &lt;LSTag Type="Status" Tooltip="MAG_MOMENTUM"&gt;Momentum&lt;/LSTag&gt; if you succeed a &lt;LSTag Tooltip="Performance"&gt;Performance&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt;. If your Intelligence or Wisdom &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; is higher than your Charisma Modifier, you can substitute it for Performance Checks.</content>
+	<content contentuid="hf8e82c23ga004g4430g8433g56b33548b882" version="1">You gain 1 stack of &lt;LSTag Type="Status" Tooltip="MAG_MOMENTUM"&gt;Momentum&lt;/LSTag&gt; each turn.</content>
 
 	<!-- CollegeOfTheMoons -->
 	<content contentuid="h612a9a67g4e62g4bd8g8e48g561d1ca7b52c" version="1">Tale of Life</content>
@@ -190,6 +194,8 @@
 	<content contentuid="hc5666798gffb7g4686ga6f1g90e9438720a8" version="1">You gain a +[1] bonus to &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; against spells.</content>
 	<content contentuid="h1742594fg6591g4e55gb2d1ge96b8b4d4737" version="1">Grant &lt;LSTag Type="Status" Tooltip="STONESKIN"&gt;Stoneskin&lt;/LSTag&gt; to all allies in the targeted area.</content>
 	<!-- Might and Metal - Fighter Equipment  -->
+	<content contentuid="hacde07fdgc25dg4595g8596gcecb8d532509" version="1">If two or more enemies surround you at the start of your turn, you gain +[1] &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; for 1 turn.</content>
+	<content contentuid="hd869bd56g4690g4135ga4b4g394b405a527a" version="1">You've braced yourself against the press of enemies. Gain a +[1] bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;.</content>
 	<content contentuid="h3732ac76g59ffg4bf0gb0e3gb69f06c6c072" version="1">Your next &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;melee weapon attack&lt;/LSTag&gt; will deal an extra [1]. If the target fails a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;, they will also be &lt;LSTag Type="Status" Tooltip="STUNNED"&gt;Stunned&lt;/LSTag&gt; for 1 turn.</content>
 	<content contentuid="haa7baf4ag72aeg41fag9528g99aa711823f7" version="1">Your attacks ignore &lt;LSTag Tooltip="Resistant"&gt;Resistance&lt;/LSTag&gt; to Slashing damage, but you take an additional [1] damage when you take Slashing damage.</content>
 	<content contentuid="he304e98fgb937g4a67g841bga62fd80ce711" version="1">Landing a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; with a weapon attack fuels your aggression, causing your next weapon attack to deal an additional [1]. This effect can only occur once per turn.</content>
