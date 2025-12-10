@@ -899,7 +899,7 @@ data "SpellSuccess" "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType); Exe
 
 // ==================================== Might and Metal - Fighter Equipment  ====================================
 
-// ==================================== MM - Boost of the Unbreakable Stance
+// ==================================== MM - Boots of the Unbreakable Stance
 // Unbreakable Stance: remove +1 attack roll
 
 new entry "MM_Unbreakable_Stance_Passive"

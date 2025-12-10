@@ -48,3 +48,18 @@ function CHT_StatusADurationLessThanOrEqualStatusBDuration(entity, stringStatusN
     local entity = entity or context.Target
     return ConditionResult(GetStatusDuration(stringStatusNameA, entity) <= GetStatusDuration(stringStatusNameB, entity))
 end
+
+function CHT_WisdomGreaterThanCharisma(entity)
+    local entity = entity or context.Source
+    return (entity.Wisdom > entity.Charisma)
+end
+
+function CHT_WisdomGreaterThanIntelligence(entity)
+    local entity = entity or context.Source
+    return (entity.Wisdom > entity.Intelligence)
+end
+
+function CHT_IntelligenceGreaterThanCharisma(entity)
+    local entity = entity or context.Source
+    return (entity.Intelligence > entity.Charisma)
+end
