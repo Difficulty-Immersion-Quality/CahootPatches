@@ -899,6 +899,26 @@ data "SpellSuccess" "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType); Exe
 
 // ==================================== Might and Metal - Fighter Equipment  ====================================
 
+// MM - Helm of the Stalwart Defender
+// Stalwart Defense: prevent from stacking
+
+new entry "MM_STALWART_DEFENSE"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MM_STALWART_DEFENSE"
+// data "DisplayName" "h22892942gd938g469dg96bag67bafebbd032;1"
+// data "Description" "h22892942gd938g469dg96bag67bafebbd045;1"
+// data "DescriptionParams" "Distance(3);1"
+// data "StackId" ""
+data "StackId" "MM_STALWART_DEFENSE"
+// data "Icon" "Action_Monster_Duergar_MindMastery"
+// data "RemoveEvents" "OnCombatEnded"
+// data "RemoveConditions" "not Combat()"
+// data "TickType" "StartTurn"
+// data "TickFunctors" "IF(HasAllyWithinRange('SG_Incapacitated',3)):ApplyStatus(MM_STALWART_DEFENSE_TECH,100,1)"
+// data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+
+
 // ==================================== MM - Boots of the Unbreakable Stance
 // Unbreakable Stance: remove +1 attack roll
 
