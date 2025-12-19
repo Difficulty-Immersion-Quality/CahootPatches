@@ -899,7 +899,7 @@ data "SpellSuccess" "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType); Exe
 
 // ==================================== Might and Metal - Fighter Equipment  ====================================
 
-// MM - Helm of the Stalwart Defender
+// ==================================== MM - Helm of the Stalwart Defender
 // Stalwart Defense: prevent from stacking
 
 new entry "MM_STALWART_DEFENSE"
@@ -921,11 +921,12 @@ data "StackId" "MM_STALWART_DEFENSE"
 
 // ==================================== MM - Boots of the Unbreakable Stance
 // Unbreakable Stance: remove +1 attack roll
-
 new entry "MM_Unbreakable_Stance_Passive"
 type "PassiveData"
 using "MM_Unbreakable_Stance_Passive"
+// Unbreakable Stance
 // data "DisplayName" "h22892942gd938g469dg96bag67bafebbd027;1"
+// If two or more enemies surround you at the start of your turn, you gain +[1] &lt;LSTag Tooltip="ArmourClass"&gt;AC&lt;/LSTag&gt; and +[2] to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;.
 // data "Description" "h22892942gd938g469dg96bag67bafebbd028;1"
 // If two or more enemies surround you at the start of your turn, you gain +[1] &lt;LSTag Tooltip="ArmourClass"&gt;AC&lt;/LSTag&gt; for 1 turn.
 data "Description" "hacde07fdgc25dg4595g8596gcecb8d532509;1"
@@ -939,7 +940,9 @@ new entry "MM_UNBREAKABLE_STANCE"
 type "StatusData"
 data "StatusType" "BOOST"
 using "MM_UNBREAKABLE_STANCE"
+// Unbreakable Stance
 // data "DisplayName" "h22892942gd938g469dg96bag67bafebbd027;1"
+// You've braced yourself against the press of enemies. Gain +[1] AC and +[2] to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;.
 // data "Description" "h22892942gd938g469dg96bag67bafebbd114;1"
 // You've braced yourself against the press of enemies. Gain a +[1] bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;.
 data "Description" "hd869bd56g4690g4135ga4b4g394b405a527a;1"
@@ -956,8 +959,11 @@ new entry "MM_UNBREAKABLE_STANCE_TECH"
 type "StatusData"
 data "StatusType" "BOOST"
 using "MM_UNBREAKABLE_STANCE_TECH"
+// Unbreakable Stance
 // data "DisplayName" "h22892942gd938g469dg96bag67bafebbd027;1"
+// You've braced yourself against the press of enemies. Gain +[1] AC and +[2] to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;.
 // data "Description" "h22892942gd938g469dg96bag67bafebbd114;1"
+// You've braced yourself against the press of enemies. Gain a +[1] bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;.
 data "Description" "hd869bd56g4690g4135ga4b4g394b405a527a;1"
 // data "DescriptionParams" "2;1"
 data "DescriptionParams" "2"
