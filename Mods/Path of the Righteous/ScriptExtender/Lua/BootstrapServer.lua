@@ -495,6 +495,11 @@ Ext.Osiris.RegisterListener("QuestUpdateUnlocked", 3, "after", function(characte
         stopFreeGnomes = 1
         print("SIAEL - Gnomes were saved and returned to myconid circle.")
         TemplateAddTo("54f1f1bf-68c1-4244-9c09-bf65144ecc15",GetHostCharacter(),1,1)
+    --Gondians - Ended Tyranny
+    elseif topLevelQuestID == "LOW_SaveGondians" and (stateID == "FinalConfrontation_SidedWithGondians_Peaceful" or stateID == "FinalConfrontation_SidedWithGondians_Combat") and stopGondians == 0 then
+        stopGondians = 1
+        print("SIAEL - The Gondians were saved.")
+        TemplateAddTo("1876bcea-98f7-4c20-94af-566736524a41",GetHostCharacter(),1,1)
     end
 end)
 
