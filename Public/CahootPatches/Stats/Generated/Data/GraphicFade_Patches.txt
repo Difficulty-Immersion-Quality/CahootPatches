@@ -345,12 +345,6 @@ using "CC_FORGOTTEN_POWER"
 // data "OnApplyFunctors" "IF(RollDieAgainstDC(DiceType.d100,81)):RestoreResource(SorceryPoint,1,0);IF(RollDieAgainstDC(DiceType.d100,86)):RestoreResource(SorceryPoint,2,0);IF(RollDieAgainstDC(DiceType.d100,91)):RestoreResource(SorceryPoint,3,0);IF(RollDieAgainstDC(DiceType.d100,96)):RestoreResource(SorceryPoint,4,0);IF(RollDieAgainstDC(DiceType.d100,98)):RestoreResource(SorceryPoint,5,0)"
 data "OnApplyFunctors" "IF(RollDieAgainstDC(DiceType.d100,81)):RestoreResource(SorceryPoint,1,0);IF(RollDieAgainstDC(DiceType.d100,86)):RestoreResource(SorceryPoint,2,0);IF(RollDieAgainstDC(DiceType.d100,91)):RestoreResource(SorceryPoint,3,0);IF(RollDieAgainstDC(DiceType.d100,96)):RestoreResource(SorceryPoint,4,0);IF(RollDieAgainstDC(DiceType.d100,98)):RestoreResource(SorceryPoint,5,0)"
 
-// ==================================== CC - Pouch of Sorcerous Sand & Amulet of the Infinite Wellspring
-// Bug Fix: CC_Meta_Transmuted doesn't exist?
-new entry "CC_Meta_Transmuted"
-type "PassiveData"
-data "Properties" "IsHidden"
-
 // ==================================== CC - Amulet of the Infinite Wellspring
 // Endless Well: Added 1d8 Force self-damage each time you use it
 new entry "CC_EndlessWell_Passive"
@@ -1072,8 +1066,7 @@ using "MM_SUNDERED"
 // data "Description" "h22892942gd938g469dg96bag67bafebbd077;1"
 // Entity has it's &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; reduced by -[1].
 data "Description" "h4a348116g3a9ag4246ga3e2g9dacba24b5a9;1"
-// data "DescriptionParams" "2"
-data "DescriptionParams" "4"
+// data "DescriptionParams" "4"
 // data "Icon" "Action_Monster_GortashMachine_ShieldCapacitor_Brokenl"
 // data "StackId" "MM_SUNDERED"
 // data "FormatColor" "Gray"
@@ -1342,8 +1335,7 @@ using "RR_Titan_Grip_Passive"
 // data "Description" "h8d32f6b2g3ee5g45c1gacb7gebb38311b081;1"
 // Your grip becomes that of a titan. While wielding a &lt;LSTag Tooltip="Heavy"&gt;Heavy Weapon&lt;/LSTag&gt;, glaive, greataxe, greatsword, greatclub, halberd, maul, or pike, your &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;melee weapon attacks&lt;/LSTag&gt; deal an additional [1].
 data "Description" "h3f523f49g8b71g486bga366g4dbe51df09b4;1"
-// data "DescriptionParams" "DealDamage(2d4,Force)"
-data "DescriptionParams" "DealDamage(1d6,Force)"
+// data "DescriptionParams" "DealDamage(1d6,Force)"
 // data "Icon" "Action_Zombie_Slam"
 // data "Properties" "Highlighted"
 // data "Boosts" "IF(IsMeleeWeaponAttack() and (Tagged('WPN_GREATAXE', GetAttackWeapon(context.Source)) or Tagged('WPN_GREATCLUB', GetAttackWeapon(context.Source)) or Tagged('WPN_GREATSWORD', GetAttackWeapon(context.Source)) or Tagged('WPN_MAUL', GetAttackWeapon(context.Source)))):DamageBonus(1d6,Force)"
@@ -1549,21 +1541,6 @@ data "DescriptionParams" "DealDamage(1d8, Necrotic)"
 data "ExtraDescription" "ha25d0fa5g0cedg42bcg9540geab3d36f2899;2"
 // data "TooltipDamageList" "DealDamage(1d6, Necrotic)"
 data "TooltipDamageList" "DealDamage(1d8, Necrotic)"
-
-// ==================================== VV - Bracers of Flying Daggers
-// Hidden Mechanics: fixed description damage.
-new entry "VV_Dagger_Specialist_Passive"
-type "PassiveData"
-using "VV_Dagger_Specialist_Passive"
-// Hidden Mechanisms
-// data "DisplayName" "hc44613eaga609g44b7ga9b8g4c942a15d082;1"
-// The bracers enhance your grip and throwing technique, you deal an additional [1] with Throw Attacks.
-// data "Description" "hc44613eaga609g44b7ga9b8g4c942a15d084;1"
-// data "DescriptionParams" "2d4"
-data "DescriptionParams" "1d8"
-// data "Properties" "Highlighted"
-// data "Icon" "PassiveFeature_ReliableTalent"
-// data "Boosts" "EntityThrowDamage(1d8)"
 
 // ==================================== Wands and Weave - Wizard Equipment ====================================
 
