@@ -362,7 +362,7 @@ using "MAG_BG_Harmonium_Halberd"
 data "Boosts" "Ability(Strength, 3, 23);Ability(Intelligence, -1);Ability(Wisdom, -1)"
 
 // ========================== Hellbeard Halberd ==========================
-// Infernal Weapon: fix passive not displayed on weapon and Poisoned saving throw not shown in combat log, and change Poisoned save DC to manoeuver DC + 2 (not that strong because many NPCs are immune to Poisoned anyway)
+// Infernal Weapon: fix passive not displayed on weapon (and change passive's name to Infernal Weapon to be consistent with the status name) and Poisoned saving throw not shown in combat log. Change Poisoned save DC to manoeuver DC + 2 (not that strong because many NPCs are immune to Poisoned anyway)
 new entry "MAG_Infernal_Hellbeard_Halberd"
 type "Weapon"
 // using "WPN_Halberd_2"
@@ -373,11 +373,28 @@ data "PassivesOnEquip" "MAG_Infernal_Weapon_Passive"
 // data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
 // data "Unique" "1"
 
+new entry "MAG_INFERNAL_WEAPON"
+type "StatusData"
+data "StatusType" "BOOST"
+// using "DIPPED_POISON"
+using "MAG_INFERNAL_WEAPON"
+// // Infernal Weapon
+// data "DisplayName" "h6816720eg3126g4738gabb9g87c8001186a6;2"
+// // On a hit, the affected entity deals an additional [1] and can possibly <LSTag Type="Status" Tooltip="POISONED">Poison</LSTag> its target. 
+// data "Description" "h39186345gdb1eg4965g82ccg354ce3573fbd;3"
+// data "DescriptionParams" "DealDamage(6,Poison)"
+// data "Icon" "GenericIcon_DamageType_Poison"
+// data "StackId" "MAG_INFERNAL_WEAPON"
+// data "Boosts" "WeaponDamage(6, Poison)"
+// data "Passives" "MAG_Infernal_Weapon_Passive"
+data "Passives" ""
+// data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;IgnoreResting"
+// data "StatusEffect" "11f94ff7-9c1b-431a-a26b-99e157026dee"
+
 new entry "MAG_Infernal_Weapon_Passive"
 type "PassiveData"
 using "MAG_Infernal_Weapon_Passive"
-// // Malebolge Stinger
-// data "DisplayName" "h9e579063gc086g4828g8837g5b3067d8554d;1"
+data "DisplayName" "h6816720eg3126g4738gabb9g87c8001186a6;1"
 // On a hit, possibly &lt;LSTag Type="Status" Tooltip="POISONED"&gt;Poison&lt;/LSTag&gt; the target for [1] turns.
 data "Description" "hee198837gc22ag42dcg8ed5g24964b5c3051;1"
 // data "DescriptionParams" ""
@@ -442,6 +459,42 @@ data "StatsFunctors" "RegainHitPoints(SELF, 2d4)"
 // ===============================================================================
 //                                       Maces  
 // ===============================================================================
+
+// ========================== Handmaiden's Mace ==========================
+// Handmaiden's Poison: fix passive not displayed on weapon and Poisoned saving throw not shown in combat log, and change Poisoned save DC to manoeuver DC + 3 (same fix as for Hellbeard Halberd)
+new entry "MAG_Viconia_Mace"
+type "Weapon"
+// using "WPN_Mace_2"
+using "MAG_Viconia_Mace"
+// data "RootTemplate" "c31d6b30-2377-4e3c-a602-d5d527defc11"
+// data "ValueUUID" "81764c3c-c7a9-49a7-b145-d31ffd5aebe1"
+// data "Rarity" "VeryRare"
+// data "Boosts" "AbilityOverrideMinimum(Strength, 18)"
+// data "Unique" "1"
+// data "PassivesOnEquip" ""
+data "PassivesOnEquip" "CHT_Handmaidens_Mace_Poison_Passive"
+
+// This technically isn't needed because inheriting from MAG_INFERNAL_WEAPON will also inherit the removal of the Passives field, but putting this here for clarity
+new entry "MAG_POISON_POISON_WEAPON"
+type "StatusData"
+data "StatusType" "BOOST"
+// using "MAG_INFERNAL_WEAPON"
+using "MAG_POISON_POISON_WEAPON"
+// // Handmaiden's Poison
+// data "DisplayName" "haf10d50dg1adbg4ec8g93beg733ce9a1255c;1"
+// data "DescriptionParams" "DealDamage(1d6,Poison)"
+// data "StackId" "MAG_POISON_POISON_WEAPON"
+// data "Boosts" "WeaponDamage(1d6, Poison)"
+// data "Passives" "MAG_Infernal_Weapon_Passive"
+data "Passives" ""
+
+new entry "CHT_Handmaidens_Mace_Poison_Passive"
+type "PassiveData"
+using "MAG_Infernal_Weapon_Passive"
+// Handmaiden's Poison
+data "DisplayName" "h14fe814egad07g4df8g94b6ge7fd9fc2a7d6;1"
+// data "StatsFunctors" "IF(not SavingThrow(Ability.Constitution,ManeuverSaveDC()+2,AdvantageOnPoisoned())):ApplyStatus(POISONED, 100, 2)"
+data "StatsFunctors" "IF(not SavingThrow(Ability.Constitution,ManeuverSaveDC()+3,AdvantageOnPoisoned())):ApplyStatus(POISONED, 100, 2)"
 
 // ========================== Devotee's Mace ==========================
 // Gains +2 spell save DC
@@ -604,6 +657,32 @@ data "Description" "h4f9480b1gfa10g405dgad9eg611bd8bafda8;1"
 // ===============================================================================
 //                                       Sickles  
 // ===============================================================================
+
+// ========================== Wavemother's Sickle ==========================
+// New custom passive: possibly apply Wet to targets on attacks with the weapon
+new entry "MAG_LC_Umberlee_Cold_Sickle"
+type "Weapon"
+// using "WPN_Sickle_1"
+using "MAG_LC_Umberlee_Cold_Sickle"
+// data "RootTemplate" "5b4b10cd-089f-4675-8392-5bfa6749d79c"
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "Rarity" "Rare"
+// data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical)"
+// data "PassivesOnEquip" "MAG_LC_Umberlee_Cold_Sickle_Passive"
+data "PassivesOnEquip" "MAG_LC_Umberlee_Cold_Sickle_Passive;CHT_Umberlee_Cold_Sickle_Wet_Passive"
+// data "Unique" "1"
+
+new entry "CHT_Umberlee_Cold_Sickle_Wet_Passive"
+type "PassiveData"
+// Ocean's Embrace
+data "DisplayName" "hbc6544ecg7a80g4662gabbeg8f06e1676276;1"
+// On a hit, possibly apply &lt;LSTag Type="Status" Tooltip="WET"&gt;Wet&lt;/LSTag&gt; to the target for [1] turns.
+data "Description" "hf8d48c1dg0639g4215gbf7ag80e2b2ac7239;1"
+data "DescriptionParams" "2"
+data "TooltipSave" "Constitution"
+data "StatsFunctorContext" "OnDamage"
+data "Conditions" "AttackedWithPassiveSourceWeapon()"
+data "StatsFunctors" "IF(not SavingThrow(Ability.Constitution,ManeuverSaveDC()+2)):ApplyStatus(WET, 100, 2)"
 
 // ===============================================================================
 //                                       Tridents  

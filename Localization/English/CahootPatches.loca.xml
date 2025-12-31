@@ -57,7 +57,10 @@
 	<content contentuid="hee198837gc22ag42dcg8ed5g24964b5c3051" version="1">On a hit, possibly &lt;LSTag Type="Status" Tooltip="POISONED"&gt;Poison&lt;/LSTag&gt; the target for [1] turns.</content>
 	<content contentuid="he2d43d3fgad58g494aga871g19b279fa1556" version="1">Unholy Exchange</content>
 	<content contentuid="h5c3a0a65g4cd2g420fga96ag5a5a6e65701e" version="1">When you deal a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; or killing blow with[1], you regain [2].</content>
+	<content contentuid="h14fe814egad07g4df8g94b6ge7fd9fc2a7d6" version="1">Handmaiden's Poison</content>
 	<content contentuid="h4f9480b1gfa10g405dgad9eg611bd8bafda8" version="1">Instead of its Strength or Dexterity &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;, the wielder adds their &lt;LSTag Tooltip="SpellcastingAbilityModifier"&gt;Spellcasting Ability Modifier&lt;/LSTag&gt; to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; with this weapon.</content>
+	<content contentuid="hbc6544ecg7a80g4662gabbeg8f06e1676276" version="1">Ocean's Embrace</content>
+	<content contentuid="hf8d48c1dg0639g4215gbf7ag80e2b2ac7239" version="1">On a hit, possibly apply &lt;LSTag Type="Status" Tooltip="WET"&gt;Wet&lt;/LSTag&gt; to the target for [1] turns.</content>
 	<content contentuid="h1eaa6c44gd9c5g4a00g9d81g5c5710f2f995" version="1">Arcane Accuracy</content>
 	<content contentuid="h280ef7c0g07a5g49a3g8dffg3a0177848e21" version="1">You gain a +[1] bonus to Spell &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;.</content>
 	<content contentuid="hd29c21bag2717g4989gae2cg661187f6fb36" version="1">Raging Storm</content>
@@ -86,6 +89,18 @@
 	<content contentuid="h0f467088g08c2g4154g8af4gb9cdcc3b4fb3" version="1">Cause a creature to start dancing, making it unable to take &lt;LSTag Tooltip="Action"&gt;action&lt;/LSTag&gt; or move. Its attackers have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;. The target can make a &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; every turn and upon taking damage to break free.</content>
 	<content contentuid="h644f1487gc26dg40e7gacaag5e3899554a3d" version="1">Once per &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;, if you are below [1] &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt; and take damage, you gain [2] &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt;.</content>
 	<content contentuid="h10121987ga23fg4f5ega399g49fd9728dab9" version="1">You gain a +[1] bonus to Intelligence and Wisdom &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; and are immune to being &lt;LSTag Type="Status" Tooltip="CHARMED"&gt;Charmed&lt;/LSTag&gt;.</content>
+
+	<!-- Ultimate Cut Content Restoration Mod -->
+	<content contentuid="h40e40101gc226g446cga12eg5737aa50c999" version="1">Glacial Oppression</content>
+	<content contentuid="h20b4e380g4b2dg41c1gbd42g6885f5014043" version="1">When you deal[1], you inflict &lt;LSTag Type="Status" Tooltip="MAG_FROST"&gt;Encrusted with Frost&lt;/LSTag&gt; to the target for [2] turns.</content>
+	<content contentuid="h950dea13g30d2g4cc2g9e1ag1885c3c6ec96" version="1">When the wearer has [1] &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt; or less, they have &lt;LSTag Tooltip="Resistant"&gt;Resistance&lt;/LSTag&gt; to[2].</content>
+	<content contentuid="hcadeb12dgcbf0g4afdga4d9ga723a1561e41" version="1">Aquatic Renewal</content>
+	<content contentuid="hb1738bb9g4117g4ab6g8cebg26d7d4a0453d" version="1">If you are standing in a water surface at the start of their turn, heal for [1].</content>
+	<content contentuid="haa54aaf3g8ea5g4493g8d4bg021857f58821" version="1">Spellshield</content>
+	<content contentuid="ha41e3e8fg169cg416bga726gf6a56dc2fea9" version="1">At the start of combat, you gain &lt;LSTag Type="Status" Tooltip="CHT_ROBEOFSPELLRESISTANCE_RESISTANCE"&gt;Spell Resistance&lt;/LSTag&gt; for 1 turn.</content>
+	<content contentuid="h7c61450fg5695g416eg90c6g46fb38306410" version="1">Dangerous Charm </content>
+	<content contentuid="h8c9d8ee8gf810g4ba9g803cgbb2f7b7f7d73" version="1">When you charm a creature, you gain &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on your next &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt;.</content>
+	<content contentuid="h86d13385gd358g4086g9f86gfb0347661242" version="1">Next &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt; has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;.</content>
 
 	<!-- PhalarAluveRework -->
 	<content contentuid="hf21d176ege20eg44eeg944egaf503d8983d6" version="1">When you hit a creature in melee, you &lt;LSTag Type="Status" Tooltip="MAG_HARPERS_SINGING_SWORD_DISTRACTED"&gt;Distract&lt;/LSTag&gt; it and gain 1 stack of &lt;LSTag Type="Status" Tooltip="MAG_MOMENTUM"&gt;Momentum&lt;/LSTag&gt; if you succeed a &lt;LSTag Tooltip="Performance"&gt;Performance&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt;. If your Intelligence or Wisdom &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; is higher than your Charisma Modifier, you can substitute it for Performance Checks.</content>

@@ -2,7 +2,390 @@
 //                                       Weapons  
 // ===============================================================================
 
+// ========================== Infernal Longsword ==========================
+// Infernal Weapon: fix passive not displayed on weapon (and change passive's name to Infernal Weapon to be consistent with the status name) and Poisoned saving throw not shown in combat log, and change Poisoned save DC to manoeuver DC + 2 (same fix as for Hellbeard Halberd in vanilla gear rebalance file; all functionality changes are inherited from Hellbeard Halberd's changes)
+
+new entry "MAG_Infernal_Longsword"
+type "Weapon"
+// using "WPN_Longsword_1"
+using "MAG_Infernal_Longsword"
+// data "RootTemplate" "e1c37edf-ad63-44a5-8fd4-44687169747e"
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "Rarity" "Rare"
+// data "PassivesOnEquip" "MAG_InfernalWeapon_Lesser_WeaponBoost_Passive"
+data "PassivesOnEquip" "MAG_InfernalWeapon_Lesser_WeaponBoost_Passive;MAG_Infernal_Weapon_Passive"
+
+// ========================== Moonblade ==========================
+// Increase rarity to Rare, add +2 weapon enchant, and add 1d4 Radiant damage
+new entry "Quest_SCL_Moonblade"
+type "Weapon"
+// using "WPN_Longsword_1"
+using "Quest_SCL_Moonblade"
+// data "Rarity" "Uncommon"
+data "Rarity" "Rare"
+// data "DefaultBoosts" "WeaponProperty(Magical)"
+data "DefaultBoosts" "WeaponProperty(Magical);WeaponEnchantment(2);WeaponDamage(1d4,Radiant)"
+// data "Boosts" "RollBonus(MeleeWeaponAttack,1);"
+// data "Unique" "1"
+// data "Weapon Properties" "Versatile;Melee;Dippable;Magical"
+
+// ========================== Steadfast Maul ==========================
+// Steadfast Strike: decrease cooldown to per combat
+new entry "Target_MAG_WeaponAction_SteadfastStrike"
+type "SpellData"
+data "SpellType" "Target"
+// using "Target_Slash_New"
+using "Target_MAG_WeaponAction_SteadfastStrike"
+// data "Cooldown" "OncePerShortRest"
+data "Cooldown" "OncePerCombat"
+// data "SpellSuccess" "DealDamage(MainMeleeWeapon+ProficiencyBonus, MainMeleeWeaponDamageType); ExecuteWeaponFunctors(MainHand);"
+// data "Icon" "Action_Mag_SteadfastStrike"
+// // Steadfast Strike
+// data "DisplayName" "haf422f0bgd263g4566g90aeg55eb8d84159e;2"
+// // Slam into a foe, preventing them (and yourself) from being moved involuntarily. 
+// data "Description" "hf52471a7gd458g438dga0d4g4cda54d55b7d;2"
+// data "DescriptionParams" ""
+// // Deal additional damage equal to your <LSTag Tooltip="ProficiencyBonus">Proficiency Bonus</LSTag>.
+// data "ExtraDescription" "ha07faa27g952bg404ega6cfg2175e1a4e75a;1"
+// data "TooltipDamageList" "DealDamage(MainMeleeWeapon+ProficiencyBonus, MainMeleeWeaponDamageType);"
+// data "TooltipAttackSave" "MeleeWeaponAttack"
+// data "TooltipStatusApply" ""
+// data "PrepareEffect" "55fbddc3-c086-420b-8888-90cf2a5c9305"
+// data "TargetEffect" "a72594a0-d7b1-4c0c-a98f-dc7d70bc55ec"
+
+// ========================== Infernal Warhammer ==========================
+// Infernal Weapon: fix passive not displayed on weapon (and change passive's name to Infernal Weapon to be consistent with the status name) and Poisoned saving throw not shown in combat log, and change Poisoned save DC to manoeuver DC + 2 (same fix as for Hellbeard Halberd in vanilla gear rebalance file; all functionality changes are inherited from Hellbeard Halberd's changes)
+new entry "MAG_Infernal_Warhammer"
+type "Weapon"
+// using "WPN_Warhammer_1"
+using "MAG_Infernal_Warhammer"
+// data "RootTemplate" "855f49c9-5724-4df9-a23d-0af82116af76"
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "Rarity" "Rare"
+// data "PassivesOnEquip" "MAG_InfernalWeapon_Lesser_WeaponBoost_Passive"
+data "PassivesOnEquip" "MAG_InfernalWeapon_Lesser_WeaponBoost_Passive;MAG_Infernal_Weapon_Passive"
+
+// ========================== Allandra's Whelm ==========================
+// New custom passive: inflict Encrusted with Frost when dealing cold damage
+new entry "MAG_LC_Frigid_Trident"
+type "Weapon"
+// using "WPN_Trident_2"
+using "MAG_LC_Frigid_Trident"
+// data "RootTemplate" "503d3d60-8798-4c65-bec1-347392733c86"
+// data "ValueUUID" "9b6a4ab2-323b-4030-89ab-030252bb6214"
+// data "BoostsOnEquipMainHand" "UnlockSpell(Rush_SpringAttack);UnlockSpell(Target_PiercingThrust);UnlockSpell(Target_CripplingStrike);UnlockSpell(Target_MAG_WeaponAction_FrigidBlade)"
+// data "PassivesOnEquip" ""
+data "PassivesOnEquip" "CHT_Frigid_Trident_Passive"
+// data "Unique" "1"
+
+new entry "CHT_Frigid_Trident_Passive"
+type "PassiveData"
+// Glacial Oppression
+data "DisplayName" "h40e40101gc226g446cga12eg5737aa50c999;1"
+// When you deal[1], you inflict &lt;LSTag Type="Status" Tooltip="MAG_FROST"&gt;Encrusted with Frost&lt;/LSTag&gt; to the target for [2] turns.
+data "Description" "h20b4e380g4b2dg41c1gbd42g6885f5014043;1"
+data "DescriptionParams" "DealDamage(,Cold);2"
+data "StatsFunctorContext" "OnDamage"
+data "Conditions" "HasDamageDoneForType(DamageType.Cold) and not Ally() and not Dead()"
+data "StatsFunctors" "ApplyStatus(MAG_FROST,100,2)"
 
 // ===============================================================================
 //                                       Armour  
 // ===============================================================================
+
+// ========================== Headband of Intellect ==========================
+// Change to increase Intelligence by +4 with a cap of 24 (using the Relative Ability Boost Items mod, where I nerfed the Warped Headband of Intellect to provide +2 Intelligence with a cap of 22)
+new entry "ARM_HeadbandOfIntellect"
+type "Armor"
+// using "_Head_Magic_Circlet"
+using "ARM_HeadbandOfIntellect"
+// data "RootTemplate" "8779b30f-dc6f-4264-b7af-9dc0eff51bb0"
+// data "ValueLevel" "6"
+// data "ValueUUID" "a229f048-70b0-4b0c-88cb-29b5c6bdb2d0"
+// data "Rarity" "Rare"
+// data "Boosts" "AbilityOverrideMinimum(Intelligence,19)"
+data "Boosts" "Ability(Intelligence,4,24,true)"
+
+// ========================== Gloves of Fire Resistance ==========================
+// Chilling Grace: increase hp threshold to 80%
+new entry "MAG_LowHP_ResistanceFire_Passive"
+type "PassiveData"
+using "MAG_LowHP_ResistanceFire_Passive"
+// // Chilling Grace
+// data "DisplayName" "h1c85bcf0g946ag4861gbe55gd6d725a5258a;3"
+// When the wearer has [1] &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt; or less, they have &lt;LSTag Tooltip="Resistant"&gt;Resistance&lt;/LSTag&gt; to[2].
+data "Description" "h950dea13g30d2g4cc2g9e1ag1885c3c6ec96;1"
+// data "DescriptionParams" ""
+data "DescriptionParams" "80%;DealDamage(,Fire)"
+// data "StatsFunctorContext" "OnDamaged;OnHealed;OnStatusApplied;OnStatusRemoved"
+// data "StatsFunctors" "IF(HasHPPercentageEqualOrLessThan(50, context.Target) and not HasStatus('MAG_FIRE_RESISTANCE')):ApplyStatus(MAG_FIRE_RESISTANCE,100,-1);IF(HasHPPercentageMoreThan(50, context.Target)):RemoveStatus(MAG_FIRE_RESISTANCE)"
+data "StatsFunctors" "IF(HasHPPercentageEqualOrLessThan(80, context.Target) and not HasStatus('MAG_FIRE_RESISTANCE')):ApplyStatus(MAG_FIRE_RESISTANCE,100,-1);IF(HasHPPercentageMoreThan(80, context.Target)):RemoveStatus(MAG_FIRE_RESISTANCE)"
+
+new entry "MAG_LOW_HP_RESISTANCE_FIRE_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MAG_LOW_HP_RESISTANCE_FIRE_TECHNICAL"
+// // %%% EMPTY
+// data "DisplayName" "h96464570g5fceg443dgbbc8g2670d82ed6c7;2"
+// data "StackId" "MAG_LOW_HP_RESISTANCE_FIRE_TECHNICAL"
+// data "TickType" ""
+// data "Boosts" ""
+// data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;ApplyToDead;IgnoreResting"
+// data "OnApplyFunctors" "IF(HasHPPercentageEqualOrLessThan(50, context.Target)):ApplyStatus(MAG_FIRE_RESISTANCE,100,-1)"
+data "OnApplyFunctors" "IF(HasHPPercentageEqualOrLessThan(80, context.Target)):ApplyStatus(MAG_FIRE_RESISTANCE,100,-1)"
+// data "OnRemoveFunctors" "RemoveStatus(MAG_FIRE_RESISTANCE)"
+
+// ========================== Vampiric Gloves ==========================
+// Vampiric Touch: increase spell level to 4 and decrease cooldown to once per combat
+new entry "Target_MAG_Vampiric_Touch"
+type "SpellData"
+data "SpellType" "Target"
+// using "Target_VampiricTouch"
+using "Target_VampiricTouch_4"
+// data "RootSpellID" "Target_VampiricTouch"
+data "RootSpellID" ""
+// data "Cooldown" "OncePerRestPerItem"
+data "Cooldown" "OncePerCombat"
+data "UseCosts" "ActionPoint:1"
+
+// ========================== Wavemother's Boots ==========================
+// Watery Rejuvenation: change into a separate passive and increase heal amount so it stacks with the same passive already on Wavemother's Robe
+new entry "MAG_LC_Umberlee_Regeneration_Boots"
+type "Armor"
+// using "_Foot_Magic"
+using "MAG_LC_Umberlee_Regeneration_Boots"
+// data "RootTemplate" "a1eb910c-0090-4c50-a1cb-a35cbe8c80f2"
+// data "ValueUUID" "a229f048-70b0-4b0c-88cb-29b5c6bdb2d0"
+// data "Rarity" "Rare"
+// data "PassivesOnEquip" "MAG_LC_Umberlee_Regeneration_Boots_Passive"
+data "PassivesOnEquip" "CHT_MAG_LC_Umberlee_Regeneration_Boots_Passive"
+// data "StatusOnEquip" "WATER_SURFACE_REGENERATION"
+data "StatusOnEquip" "CHT_UMBERLEE_BOOTS_WATER_SURFACE_REGENERATION"
+// data "MinAmount" "1"
+// data "MaxAmount" "1"
+// data "Priority" "1"
+// data "Unique" "1"
+// data "MinLevel" "1"
+
+new entry "CHT_MAG_LC_Umberlee_Regeneration_Boots_Passive"
+type "PassiveData"
+// Aquatic Renewal
+data "DisplayName" "hcadeb12dgcbf0g4afdga4d9ga723a1561e41;1"
+// If you are standing in a water surface at the start of their turn, heal for [1].
+data "Description" "hb1738bb9g4117g4ab6g8cebg26d7d4a0453d;2"
+data "DescriptionParams" "RegainHitPoints(1d10)"
+
+new entry "CHT_UMBERLEE_BOOTS_WATER_SURFACE_REGENERATION"
+type "StatusData"
+data "StatusType" "BOOST"
+using "WATER_SURFACE_REGENERATION"
+data "DisplayName" "hcadeb12dgcbf0g4afdga4d9ga723a1561e41;1"
+// // As long as it remains in water, affected entity regains [1].
+// data "Description" "hb34a71bdg99f8g410cg9f6dg382d8e16e189;1"
+// data "DescriptionParams" "RegainHitPoints(1d4)"
+data "DescriptionParams" "RegainHitPoints(1d10)"
+// data "StackId" "WATER_SURFACE_REGENERATION"
+data "StackId" "CHT_UMBERLEE_BOOTS_WATER_SURFACE_REGENERATION"
+// data "TickFunctors" "IF(TurnBased() and not HasStatus('DOWNED') and not Dead() and InSurface('SurfaceWater') or InSurface('SurfaceWaterElectrified')):RegainHitPoints(1d4)"
+data "TickFunctors" "IF(TurnBased() and not HasStatus('DOWNED') and not Dead() and InSurface('SurfaceWater') or InSurface('SurfaceWaterElectrified')):RegainHitPoints(1d10)"
+
+// ========================== Robe of Spell Resistance ==========================
+// New custom passive that grants spell resistance for 1 turn at the start of combat
+// Decrease saving throw bonus on item to +1
+new entry "MAG_OfSpellResistance_Robe"
+type "Armor"
+// using "_Armor_Magic_Robe"
+using "MAG_OfSpellResistance_Robe"
+// data "RootTemplate" "c3309d8f-8cff-4418-b064-bca8bd77700c"
+// data "ValueUUID" "240eb257-ef20-4877-89bd-6956b4b7c41a"
+// data "Rarity" "Rare"
+// data "Boosts" "RollBonus(SavingThrow,2)"
+data "Boosts" "RollBonus(SavingThrow,1)"
+// data "PassivesOnEquip" ""
+data "PassivesOnEquip" "CHT_RobeOfSpellResistance_Passive"
+// data "Unique" "1"
+
+new entry "CHT_RobeOfSpellResistance_Passive"
+type "PassiveData"
+// Spellshield
+data "DisplayName" "haa54aaf3g8ea5g4493g8d4bg021857f58821;1"
+// At the start of combat, you gain &lt;LSTag Type="Status" Tooltip="CHT_ROBEOFSPELLRESISTANCE_RESISTANCE"&gt;Spell Resistance&lt;/LSTag&gt; for 1 round.
+data "Description" "ha41e3e8fg169cg416bga726gf6a56dc2fea9;1"
+data "Properties" "OncePerCombat"
+data "StatsFunctorContext" "OnTurn"
+data "Conditions" "Combat()"
+data "StatsFunctors" "ApplyStatus(CHT_ROBEOFSPELLRESISTANCE_RESISTANCE,100,1)"
+
+new entry "CHT_ROBEOFSPELLRESISTANCE_RESISTANCE"
+type "StatusData"
+data "StatusType" "BOOST"
+data "DisplayName" "haa54aaf3g8ea5g4493g8d4bg021857f58821;1"
+// Has &lt;LSTag Tooltip="Resistant"&gt;Resistance&lt;/LSTag&gt; to all damage from spells.
+data "Description" "h05760fbdga5a0g4a4eg9e75g3f889bf42aa8;1"
+data "Icon" "PassiveFeature_AbsorbElements"
+data "StackId" "CHT_ROBEOFSPELLRESISTANCE_RESISTANCE"
+data "TickType" "EndRound"
+data "Boosts" "SpellResistance(Resistant)"
+
+// ========================== Dauntless Amulet ==========================
+// Add +1 Intelligence
+new entry "MAG_LC_Cyric_FearImmunity_Amulet"
+type "Armor"
+// using "_Amulet_Magic"
+using "MAG_LC_Cyric_FearImmunity_Amulet"
+// data "RootTemplate" "a67c7aa5-7b3f-4222-a655-6e4217d3b8e6"
+// data "ValueUUID" "7da97bda-6776-4796-8b0b-d3b96ff3c9fb"
+// data "Rarity" "Rare"
+// data "Boosts" "RollBonus(SavingThrow, 1, Intelligence)"
+data "Boosts" "RollBonus(SavingThrow, 1, Intelligence);Ability(Intelligence,1,22,true)"
+// data "PassivesOnEquip" "MAG_LC_Cyric_FearImmunity_Amulet_Passive"
+// data "Unique" "1"
+
+// ========================== Treacleflow Amulet ==========================
+// Rampart Aura: also decreases AC by 1 (including for wearer)
+new entry "MAG_ZOC_RampartAura_Amulet_Passive"
+type "PassiveData"
+using "MAG_ZOC_RampartAura_Amulet_Passive"
+// // Rampart Aura
+// data "DisplayName" "hfb08e2abg4829g43d4g8745ge78ba26bf4cd;2"
+// Requires &lt;LSTag Type="Status" Tooltip="MAG_ZOC_FORCE_CONDUIT"&gt;Force Conduit&lt;/LSTag&gt; to remain active. All entities with or in this aura have their &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; halved and their &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; reduced by [1].
+data "Description" "XXX;1"
+// data "DescriptionParams" ""
+data "DescriptionParams" "1"
+// // You must toggle this on in order to activate this condition.
+// data "ExtraDescription" "hd81671ebg63a5g46b1gabadg070e4c768835;2"
+// data "Icon" "PassiveFeature_RampartAura"
+// data "EnabledConditions" "HasStatus('MAG_ZOC_FORCE_CONDUIT')"
+// data "EnabledContext" "OnStatusApplied;OnStatusRemoved"
+// data "Properties" "IsToggled"
+// data "ToggleOnFunctors" "ApplyStatus(MAG_RAMPART_AURA, 100, -1)"
+// data "ToggleOffFunctors" "RemoveStatus(MAG_RAMPART_AURA)"
+
+new entry "MAG_RAMPART_AURA"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MAG_RAMPART_AURA"
+// // Rampart Aura
+// data "DisplayName" "h9a777251gb81eg4776gb64ag680b61f6bb60;2"
+// All entities with or in this aura have their &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; halved and their &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; reduced by [1].
+data "Description" "XXX;1"
+// data "DescriptionParams" ""
+data "DescriptionParams" "1"
+// data "Icon" "PassiveFeature_RampartAura"
+// data "SoundStart" "MAG_Status_RampartAura_Start"
+// data "SoundLoop" "MAG_Status_RampartAura_MO"
+// data "SoundStop" "MAG_Status_RampartAura_End"
+// data "StackId" "MAG_RAMPART_AURA"
+// data "AuraRadius" "6"
+// data "AuraStatuses" "IF(Character() and not Dead()):ApplyStatus(MAG_RAMPART_AURA_DIFFICULT_TERRAIN)"
+// data "TickType" "StartTurn"
+// data "Boosts" "ActionResourceConsumeMultiplier(Movement, 2,0);MovementSpeedLimit(Walk)"
+data "Boosts" "ActionResourceConsumeMultiplier(Movement, 2,0);MovementSpeedLimit(Walk);AC(-1)"
+// data "StatusPropertyFlags" "InitiateCombat;BringIntoCombat"
+// data "StatusEffect" "72ec4474-76b3-457d-93e2-3f05bf534118"
+
+new entry "MAG_RAMPART_AURA_DIFFICULT_TERRAIN"
+type "StatusData"
+data "StatusType" "BOOST"
+// using "DIFFICULT_TERRAIN"
+using "MAG_RAMPART_AURA_DIFFICULT_TERRAIN"
+// data "Boosts" "ActionResourceConsumeMultiplier(Movement, 2,0);MovementSpeedLimit(Walk)"
+data "Boosts" "ActionResourceConsumeMultiplier(Movement, 2,0);MovementSpeedLimit(Walk);AC(-1)"
+// data "StatusPropertyFlags" "DisableCombatlog"
+
+// ========================== Lofty Sorcerer's Amulet ==========================
+// Lofty Sorcery: increase Sorcery Points given to +3
+new entry "MAG_OfGreaterSorcery_Amulet_Passive"
+type "PassiveData"
+using "MAG_OfGreaterSorcery_Amulet_Passive"
+// // Lofty Sorcery
+// data "DisplayName" "h7c83b0d5ge7bcg4629g86f5gdad60949d6c5;4"
+// // The amulet taps deep into your magical bloodline to increase your <LSTag Type="ActionResource" Tooltip="SorceryPoint">Sorcery Points</LSTag> by [1].
+// data "Description" "h53b69c54gd181g4b14ga825g83284e1979cf;6"
+// data "DescriptionParams" "1"
+data "DescriptionParams" "3"
+// data "StatsFunctorContext" "OnCast;OnAttack;OnCastResolved"
+// data "Conditions" "HasUseCosts('SorceryPoint', true)"
+// data "StatsFunctors" "ApplyStatus(SELF, MAG_GREATER_SORCERY_TRACKER, 100, -1);ApplyEquipmentStatus(Amulet, MAG_GREATER_SORCERY_DEPLETED_TECHNICAL, 100, -1)"
+
+new entry "MAG_GREATER_SORCERY_SORCERY_POINT"
+type "StatusData"
+data "StatusType" "BOOST"
+// using "MAG_GREATER_SORCERY_TECHNICAL"
+using "MAG_GREATER_SORCERY_SORCERY_POINT"
+data "StackId" "MAG_GREATER_SORCERY_SORCERY_POINT"
+// data "Boosts" "ActionResource(SorceryPoint, 1, 0)"
+data "Boosts" "ActionResource(SorceryPoint, 3, 0)"
+// data "OnApplyFunctors" ""
+// data "OnRemoveFunctors" ""
+
+// ========================== Synaptic Needle Amulet ==========================
+// Mind Tax: slightly increase damage and temp hp
+new entry "Target_MAG_Illithid_MindTax"
+type "SpellData"
+data "SpellType" "Target"
+// using "Target_CharmPerson"
+using "Target_MAG_Illithid_MindTax"
+// data "Level" ""
+// data "SpellSchool" ""
+// data "Cooldown" "OncePerShortRestPerItem"
+// data "SpellProperties" "DealDamage(1d10, Psychic); ApplyStatus(SELF, MAG_TEMPORARY_HP_8, 100, -1)"
+data "SpellProperties" "DealDamage(2d8, Psychic); ApplyStatus(SELF, MAG_TEMPORARY_HP_10, 100, -1)"
+// data "SpellRoll" ""
+// data "SpellSuccess" ""
+// data "TargetConditions" "(HasStatus('SG_Charmed') or HasStatus('SG_Frightened')) and not Self() and Character() and not (not Player(context.Source) and IsCrowdControlled(context.Target)) "
+// data "Icon" "Action_Mag_Illithid_MindTax"
+// // Mind Tax
+// data "DisplayName" "hb3b011a2g49d7g4204g989agd81aef46efc6;2"
+// // Cleave into a <LSTag Type="Status" Tooltip="CHARMED">Charmed</LSTag> or <LSTag Type="Status" Tooltip="FRIGHTENED">Frightened</LSTag> foe's brain tissue and invigorate your body.
+// data "Description" "hacf0c0d8g9a6bg46c0g9912g09eeed730849;5"
+// data "ExtraDescription" ""
+// data "TooltipDamageList" "DealDamage(1d10, Psychic);GainTemporaryHitPoints(7)"
+data "TooltipDamageList" "DealDamage(2d8, Psychic);GainTemporaryHitPoints(10)"
+// data "TooltipAttackSave" ""
+// data "TooltipStatusApply" ""
+// data "TooltipUpcastDescription" ""
+// data "TooltipPermanentWarnings" "8892b93b-721f-4b99-b9b4-05ac25aadb33"
+// data "CastSound" "Action_Cast_Item_MindTax"
+// data "TargetSound" "Action_Impact_Item_MindTax"
+// data "UseCosts" "BonusActionPoint:1"
+// data "TargetEffect" "94d9a253-c1a4-4f5d-bb56-9c40611cfc00"
+
+// ========================== Beguiling Ring ==========================
+// New custom passive: when you charm a creature, gain advantage on your next attack roll
+new entry "MAG_Illithid_CharmPerson_Ring"
+type "Armor"
+// using "_Ring_Magic"
+using "MAG_Illithid_CharmPerson_Ring"
+// data "RootTemplate" "931bdffe-0a36-4645-89f9-5ea7ec2eeb7f"
+// data "ValueUUID" "94356ef2-bb14-4595-88cf-86f544ef12eb"
+// data "Rarity" "Rare"
+// data "Boosts" "UnlockSpell(Target_MAG_Illithid_CharmPerson)"
+// data "PassivesOnEquip" ""
+data "PassivesOnEquip" "CHT_Illithid_CharmPerson_Ring_Passive"
+// data "Unique" "1"
+
+new entry "CHT_Illithid_CharmPerson_Ring_Passive"
+type "PassiveData"
+// Dangerous Charm 
+data "DisplayName" "h7c61450fg5695g416eg90c6g46fb38306410;1"
+// When you charm a creature, you gain &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on your next &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt;.
+data "Description" "h8c9d8ee8gf810g4ba9g803cgbb2f7b7f7d73;1"
+data "Icon" "PassiveFeature_InstinctiveCharm"
+data "EnabledContext" "OnCast"
+data "StatsFunctorContext" "OnStatusApply"
+data "Conditions" "HasStatus('SG_Charmed')"
+data "StatsFunctors" "ApplyStatus(SELF,CHT_ILLITHID_CHARMPERSON_RING_ADVANTAGE,100,-1)"
+
+new entry "CHT_ILLITHID_CHARMPERSON_RING_ADVANTAGE"
+type "StatusData"
+data "StatusType" "BOOST"
+data "DisplayName" "h7c61450fg5695g416eg90c6g46fb38306410;1"
+// Next &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt; has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;.
+data "Description" "h86d13385gd358g4086g9f86gfb0347661242;1"
+data "Icon" "PassiveFeature_InstinctiveCharm"
+data "StackId" "CHT_ILLITHID_CHARMPERSON_RING_ADVANTAGE"
+data "TickType" "EndTurn"
+data "Boosts" "Advantage(AttackRoll)"
+data "RemoveConditions" "IsAttack()"
+data "RemoveEvents" "OnAttack"
