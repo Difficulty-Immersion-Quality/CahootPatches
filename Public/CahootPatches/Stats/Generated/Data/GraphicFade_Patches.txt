@@ -383,6 +383,26 @@ data "OnRemoveFunctors" "IF(HasStatus('CC_SORCERER_FREE_CAST',context.Source)):A
 
 // ==================================== Faith and Fortitude - Cleric Equipment ====================================
 
+// ==================================== FF - Grove Protector's Mantle
+// Echoing Vitality: remove annoying VFX
+new entry "MAG_CLERIC_TEMP_HP"
+type "StatusData"
+data "StatusType" "BOOST"
+// using "MAG_CHARISMA_CASTER_TEMP_HP"
+using "MAG_CLERIC_TEMP_HP"
+// data "DisplayName" "hadbcf1e2ga2cag4888g9246g4a0b7b4893d10;1"
+// data "Description" "hadbcf1e2ga2cag4888g9246g4a0b7b4893d9;1"
+// data "DescriptionParams" "GainTemporaryHitPoints(ClassLevel(Cleric))"
+// data "Icon" "Spell_Evocation_AuraOfVitality_Activate"
+// data "StackId" "MAG_CLERIC_TEMP_HP"
+// data "Boosts" "TemporaryHP(ClassLevel(Cleric))"
+// data "RemoveConditions" "not HasTemporaryHP()"
+// data "RemoveEvents" "OnDamage"
+// data "ManagedStatusEffectType" "Positive"
+// data "ManagedStatusEffectGroup" ""
+// data "StatusEffect" "9e94a963-ef5e-410d-b12a-6fae12fbe83b"
+data "StatusEffect" ""
+
 // ==================================== FF - Starlight Circlet
 // Celestial Spark: remove Channel Divinity cost
 new entry "Shout_CelestialSpark"
