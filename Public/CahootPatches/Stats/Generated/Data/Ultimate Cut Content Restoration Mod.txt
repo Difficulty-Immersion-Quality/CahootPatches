@@ -173,7 +173,7 @@ type "PassiveData"
 data "DisplayName" "hcadeb12dgcbf0g4afdga4d9ga723a1561e41;1"
 // If you are standing in a water surface at the start of their turn, heal for [1].
 data "Description" "hb1738bb9g4117g4ab6g8cebg26d7d4a0453d;2"
-data "DescriptionParams" "RegainHitPoints(1d10)"
+data "DescriptionParams" "RegainHitPoints(1d8)"
 
 new entry "CHT_UMBERLEE_BOOTS_WATER_SURFACE_REGENERATION"
 type "StatusData"
@@ -183,11 +183,11 @@ data "DisplayName" "hcadeb12dgcbf0g4afdga4d9ga723a1561e41;1"
 // // As long as it remains in water, affected entity regains [1].
 // data "Description" "hb34a71bdg99f8g410cg9f6dg382d8e16e189;1"
 // data "DescriptionParams" "RegainHitPoints(1d4)"
-data "DescriptionParams" "RegainHitPoints(1d10)"
+data "DescriptionParams" "RegainHitPoints(1d8)"
 // data "StackId" "WATER_SURFACE_REGENERATION"
 data "StackId" "CHT_UMBERLEE_BOOTS_WATER_SURFACE_REGENERATION"
 // data "TickFunctors" "IF(TurnBased() and not HasStatus('DOWNED') and not Dead() and InSurface('SurfaceWater') or InSurface('SurfaceWaterElectrified')):RegainHitPoints(1d4)"
-data "TickFunctors" "IF(TurnBased() and not HasStatus('DOWNED') and not Dead() and InSurface('SurfaceWater') or InSurface('SurfaceWaterElectrified')):RegainHitPoints(1d10)"
+data "TickFunctors" "IF(TurnBased() and not HasStatus('DOWNED') and not Dead() and InSurface('SurfaceWater') or InSurface('SurfaceWaterElectrified')):RegainHitPoints(1d8)"
 
 // ========================== Robe of Spell Resistance ==========================
 // New custom passive that grants spell resistance for 1 turn at the start of combat
@@ -249,7 +249,7 @@ using "MAG_ZOC_RampartAura_Amulet_Passive"
 // // Rampart Aura
 // data "DisplayName" "hfb08e2abg4829g43d4g8745ge78ba26bf4cd;2"
 // Requires &lt;LSTag Type="Status" Tooltip="MAG_ZOC_FORCE_CONDUIT"&gt;Force Conduit&lt;/LSTag&gt; to remain active. All entities with or in this aura have their &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; halved and their &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; reduced by [1].
-data "Description" "XXX;1"
+data "Description" "hf1ce3706ea4811f08de90242ac120002f931;1"
 // data "DescriptionParams" ""
 data "DescriptionParams" "1"
 // // You must toggle this on in order to activate this condition.
@@ -268,7 +268,7 @@ using "MAG_RAMPART_AURA"
 // // Rampart Aura
 // data "DisplayName" "h9a777251gb81eg4776gb64ag680b61f6bb60;2"
 // All entities with or in this aura have their &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; halved and their &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; reduced by [1].
-data "Description" "XXX;1"
+data "Description" "h019b8eb821217034b0bd690ce66be503de58;1"
 // data "DescriptionParams" ""
 data "DescriptionParams" "1"
 // data "Icon" "PassiveFeature_RampartAura"
