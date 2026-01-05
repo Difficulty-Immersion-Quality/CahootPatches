@@ -522,6 +522,19 @@ data "OnTickSuccess" ""
 data "OnTickFail" ""
 data "StatusGroups" "SG_Unconscious;SG_Condition;SG_Sleeping;SG_Sleeping_Magical"
 
+// ==================================== Shield of Faith ====================================
+// Remove concentration and decrease duration to 10 turns. Upcasting still does nothing (considered some effects but decided they were too strong).
+new entry "Target_ShieldOfFaith"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_ShieldOfFaith"
+// data "SpellProperties" "ApplyStatus(SHIELD_OF_FAITH,100,-1)"
+data "SpellProperties" "ApplyStatus(SHIELD_OF_FAITH,100,10)"
+// data "TooltipStatusApply" "ApplyStatus(SHIELD_OF_FAITH,100,-1)"
+data "TooltipStatusApply" "ApplyStatus(SHIELD_OF_FAITH,100,10)"
+// data "SpellFlags" "HasVerbalComponent;HasSomaticComponent;IsConcentration;IsSpell"
+data "SpellFlags" "HasVerbalComponent;HasSomaticComponent;IsSpell"
+
 // ==================================== Lesser Restoration ====================================
 // Change cost to bonus action
 new entry "Target_LesserRestoration"
