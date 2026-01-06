@@ -98,6 +98,8 @@
 	<content contentuid="hb1738bb9g4117g4ab6g8cebg26d7d4a0453d" version="1">If you are standing in a water surface at the start of their turn, heal for [1].</content>
 	<content contentuid="haa54aaf3g8ea5g4493g8d4bg021857f58821" version="1">Spellshield</content>
 	<content contentuid="ha41e3e8fg169cg416bga726gf6a56dc2fea9" version="1">At the start of combat, you gain &lt;LSTag Type="Status" Tooltip="CHT_ROBEOFSPELLRESISTANCE_RESISTANCE"&gt;Spell Resistance&lt;/LSTag&gt; for 1 turn.</content>
+	<content contentuid="hf1ce3706ea4811f08de90242ac120002f931" version="1">Requires &lt;LSTag Type="Status" Tooltip="MAG_ZOC_FORCE_CONDUIT"&gt;Force Conduit&lt;/LSTag&gt; to remain active. All entities with or in this aura have their &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; halved and their &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; reduced by [1].</content>
+	<content contentuid="h019b8eb821217034b0bd690ce66be503de58" version="1">All entities with or in this aura have their &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; halved and their &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; reduced by [1].</content>
 	<content contentuid="h7c61450fg5695g416eg90c6g46fb38306410" version="1">Dangerous Charm </content>
 	<content contentuid="h8c9d8ee8gf810g4ba9g803cgbb2f7b7f7d73" version="1">When you charm a creature, you gain &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on your next &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt;.</content>
 	<content contentuid="h86d13385gd358g4086g9f86gfb0347661242" version="1">Next &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt; has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;.</content>
