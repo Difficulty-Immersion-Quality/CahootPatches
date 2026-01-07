@@ -1201,6 +1201,25 @@ data "DescriptionParams" "50"
 // data "StatsFunctors" "IF(RollDieAgainstDC(DiceType.d100,60)):ApplyStatus(SELF,OO_RESTORE_OATH,100,0)"
 data "StatsFunctors" "IF(RollDieAgainstDC(DiceType.d100,51)):ApplyStatus(SELF,OO_RESTORE_OATH,100,0)"
 
+// ==================================== OO - Shield of Sacred Ire
+// Ire's Reflection: change to only proc interrupt when hit by an enemy
+
+new entry "OO_Interrupt_IreReflection"
+type "InterruptData"
+using "OO_Interrupt_IreReflection"
+// data "DisplayName" "h3732ac76g59ffg4bf0gb0e3gb69f06c6c073;1"
+// data "Description" "h3732ac76g59ffg4bf0gb0e3gb69f06c6c075;1"
+// data "Icon" "Spell_Evocation_SacredFlame"
+// data "InterruptContext" "OnCastHit"
+// data "InterruptContextScope" "Self"
+// data "Container" "YesNoDecision"
+// data "Conditions" "IsAbleToReact(context.Observer) and not DistanceToEntityGreaterThan(18, context.ObserverPosition, context.Target) and not Ally(context.Source,context.Observer) and HasLastAttackTriggered()"
+data "Conditions" "IsAbleToReact(context.Observer) and not DistanceToEntityGreaterThan(18, context.ObserverPosition, context.Target) and Enemy(context.Source,context.Observer) and HasLastAttackTriggered()"
+// data "Properties" "UseSpell(SWAP,OO_Target_IreReflection,true,true,true);"
+// data "Cost" "ReactionActionPoint:1"
+// data "Cooldown" "OncePerTurn"
+// data "InterruptDefaultValue" "Enabled"
+
 // ==================================== Pact and Power - Warlock Equipment  ====================================
 
 // ==================================== PP - Shortbow of the Binding Vow

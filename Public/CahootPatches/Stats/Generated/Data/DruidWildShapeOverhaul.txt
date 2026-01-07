@@ -15,4 +15,5 @@ type "SpellData"
 data "SpellType" "Target"
 using "WSO_Target_Rupture_Owlbear"
 data "TargetConditions" "not Self() and not Ally() and not Dead() and not Item()"
+// Rupture the earth, causing debris to tear through all nearby enemies, dealing [1], and an additional [1] to knocked &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt; creatures.
 data "Description" "h0d6e0466g0aaag4592gb35bgbd5f749da35d"
