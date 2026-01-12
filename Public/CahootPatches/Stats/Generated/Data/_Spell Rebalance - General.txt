@@ -1,5 +1,5 @@
 // ==================================== Colour Spray ====================================
-// Now a Constitution saving throw instead of being successful based off target hp, and range is increased to 8m. Upcasting has no effect.
+// Now a Constitution saving throw instead of being successful based off target hp. Upcasting has no effect.
 
 // Not self-inheriting to overwrite Syrchalis changes
 new entry "Zone_ColorSpray"
@@ -40,10 +40,8 @@ data "VocalComponentSound" "Vocal_Component_Blind"
 data "PreviewCursor" "Cast"
 data "CastTextEvent" "Cast"
 data "Shape" "Cone"
-// data "FrontOffset" "-2"
-data "FrontOffset" "0"
-// data "Range" "5"
-data "Range" "8"
+data "FrontOffset" "-2"
+data "Range" "5"
 data "Angle" "60"
 data "CycleConditions" "Enemy() and not Dead()"
 data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:1"
@@ -369,7 +367,7 @@ data "RootSpellID" "Projectile_GuidingBolt"
 data "PowerLevel" "9"
 
 // ==================================== Sleep ====================================
-// Now targets a 2m AoE with a Wisdom saving throw, instead of being based off hp. Targets who fail fall asleep for 1 turn, and at the end of their next turn, make another saving throw. If they fail the second one, they fall asleep for 9 more turns. Upcasting has no effect.
+// Now targets a 2m AoE with a Wisdom saving throw, instead of being based off hp. Targets who fail fall asleep for 1 turn, and at the end of their next turn, make another saving throw. If they fail the second one, they fall asleep for 9 more turns. Targets above 50% hp have advantage on the initial saving throw. Upcasting has no effect.
 
 // Not self-inheriting to overwrite Syrchalis changes
 new entry "Target_Sleep"
@@ -384,7 +382,7 @@ data "TargetRadius" "9"
 // data "AreaRadius" ""
 data "AreaRadius" "2"
 // data "SpellRoll" ""
-data "SpellRoll" "not SavingThrow(Ability.Wisdom, SourceSpellDC())"
+data "SpellRoll" "not SavingThrow(Ability.Wisdom, SourceSpellDC(),HasHPPercentageMoreThan(50,context.Target))"
 // data "SpellSuccess" ""
 data "SpellSuccess" "ApplyStatus(CHT_SLEEP,100,1)"
 // data "TargetConditions" "not HasHPMoreThan(24) and not HasStatus('SG_Unconscious') and not Dead() and Character() and not Ally() and not Tagged('UNDEAD') and not (not Player(context.Source) and IsCrowdControlled(context.Target)) and not IsImmuneToStatus('SLEEP')"
@@ -400,6 +398,11 @@ data "DisplayName" "h95c2ff11g3ad2g42f4gb44dg7781a86101dc;1"
 data "Description" "h3df437c5gd5c4g4aacg8aabg0f7bcef06ce7;1"
 // data "DescriptionParams" "RegainHitPoints(24)"
 data "DescriptionParams" "Distance(2)"
+// data "ExtraDescription" ""
+// Targets above [1] &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt; have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on the initial &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.
+data "ExtraDescription" "h7f6df589gc8abg428bg9666g0e03b0d07f08;1"
+// data "ExtraDescriptionParams" ""
+data "ExtraDescriptionParams" "50%"
 // data "TooltipAttackSave" ""
 data "TooltipAttackSave" "Wisdom"
 // data "TooltipStatusApply" "ApplyStatus(SLEEP,100,2)"
@@ -1691,7 +1694,7 @@ data "PsychicResistance" "Immune"
 
 // ==================================== Banishing Smite ====================================
 // Removes concentration (same as Syrchalis) and instead of flat hp threshold for Banish, it's always a Charisma saving throw. Enemies under 50% hp have disadvantage on the saving throw
-// Can't include the cancel Banish spell from the Syrchalis mod as this requires a saving throw to Banish (and hence isn't an automatic banish, which means you can automatically give the cancel Banish spell)
+// Can't include the cancel Banish spell from the Syrchalis mod as this requires a saving throw to Banish (and hence isn't an automatic banish, which means you can't automatically give the cancel Banish spell)
 
 new entry "Target_Smite_Banishing"
 type "SpellData"
