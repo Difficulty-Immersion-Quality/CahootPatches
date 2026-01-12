@@ -400,7 +400,7 @@ using "CONJURE_VOLLEY_PIERCING_FAIL"
 data "OnApplyFunctors" "DealDamage(8d8/2,Piercing,Magical)"
 
 // ============================ Raise Dead ============================
-// Remove out of combat requirement. Resurrected entity comes back with full hp, and the attack roll/ability check/saving throw penalty is completely removed after a long rest
+// Remove out of combat requirement. Resurrected entity comes back with full hp and a smaller penalty, and the attack roll/ability check/saving throw penalty is completely removed after a long rest. Add once per combat cooldown.
 
 new entry "Target_RaiseDead"
 type "SpellData"
@@ -414,7 +414,7 @@ data "DescriptionParams" "RegainHitPoints(,)"
 // Coming back from the dead is an ordeal. The creature has a -[1] penalty to all &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;, &lt;LSTag Tooltip="AbilityCheck"&gt;Ability Checks&lt;/LSTag&gt; and &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;. This penalty is removed after a &lt;LSTag Tooltip="LongRest"&gt;Long Rest&lt;/LSTag&gt;.
 data "ExtraDescription" "h4d520542gb2bdg440eg833fg04db8167f449;1"
 // data "ExtraDescriptionParams" ""
-data "ExtraDescriptionParams" "4"
+data "ExtraDescriptionParams" "3"
 // data "Requirements" "!Combat"
 data "Requirements" ""
 // data "Cooldown" ""
@@ -424,9 +424,11 @@ new entry "RAISE_DEAD"
 type "StatusData"
 data "StatusType" "BOOST"
 using "RAISE_DEAD"
-//his entity was raised from the dead and receives a -[1] penalty to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;, &lt;LSTag Tooltip="AbilityCheck"&gt;Ability Checks&lt;/LSTag&gt; and &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.
+// This entity was raised from the dead and receives a -[1] penalty to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;, &lt;LSTag Tooltip="AbilityCheck"&gt;Ability Checks&lt;/LSTag&gt; and &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.
 data "Description" "h4a084863g69a3g43dega18dg7b894d898b16;1"
-data "DescriptionParams" "4"
+data "DescriptionParams" "3"
+// data "Boosts" "RollBonus(SkillCheck,-4);RollBonus(RawAbility,-4);RollBonus(Attack,-4);RollBonus(SavingThrow,-4)"
+data "Boosts" "RollBonus(SkillCheck,-3);RollBonus(RawAbility,-3);RollBonus(Attack,-3);RollBonus(SavingThrow,-3)"
 // data "OnRemoveFunctors" "ApplyStatus(RAISE_DEAD_2,100,-1)"
 data "OnRemoveFunctors" ""
 // data "StatusPropertyFlags" "ApplyToDead;IgnoreResting;DisableOverhead;DisableCombatlog"
