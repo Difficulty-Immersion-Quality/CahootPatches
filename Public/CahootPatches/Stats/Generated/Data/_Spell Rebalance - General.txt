@@ -617,7 +617,7 @@ using "Shout_MAG_DarkJusticiarArmor_Lesser_ShieldOfFaith"
 data "TooltipPermanentWarnings" ""
 
 // ==================================== Magic Weapon ====================================
-// Remove concentration, decrease duration to 10 turns, and increase attack roll and damage boosts to +2
+// Remove concentration, decrease duration to 10 turns, now bonus action cost, and increase attack roll and damage boosts to +2
 
 // Spells
 new entry "Target_MagicWeapon"
@@ -650,7 +650,8 @@ data "TooltipUpcastDescriptionParams" "3;4"
 // data "VocalComponentSound" "Vocal_Component_EnchantWeapon"
 // data "PreviewCursor" "Cast"
 // data "CastTextEvent" "Cast"
-// data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:2"
+data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:2"
+// data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:2"
 // data "SpellAnimation" "554a18f7-952e-494a-b301-7702a85d4bc9,,;,,;a4da186a-0872-461e-ae5e-93d5b32b9bef,,;527ca082-4ffa-4edb-a23f-5e7fa798a6ce,,;22dfbbf4-f417-4c84-b39e-2039315961e6,,;,,;5bfbe9f9-4fc3-4f26-b112-43d404db6a89,,;499b7945-9eff-40a2-9911-73b8963108e4,,;1d3a29f0-9409-462e-81cd-3f24944f63ca,,"
 // data "VerbalIntent" "Buff"
 // data "SpellFlags" "IsSpell;HasVerbalComponent;HasSomaticComponent;IsConcentration;IsMelee"
@@ -677,6 +678,7 @@ data "TooltipUpcastDescriptionParams" "3;4"
 // data "PrepareSound" "Spell_Prepare_Buff_Gen_L1to3_01"
 // data "PrepareLoopSound" "Spell_Prepare_Buff_Gen_L1to3_01_Loop"
 // data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:4"
+data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:4"
 // data "RootSpellID" "Target_MagicWeapon"
 // data "PowerLevel" "4"
 
@@ -690,6 +692,7 @@ data "TooltipUpcastDescription" "2f2cccbc-67c5-47fb-88d6-6fc6a0f021a0"
 // data "TooltipUpcastDescriptionParams" "2;3"
 data "TooltipUpcastDescriptionParams" "3;4"
 // data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:5"
+data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:5"
 // data "RootSpellID" "Target_MagicWeapon"
 // data "PowerLevel" "5"
 
@@ -708,6 +711,7 @@ data "TooltipUpcastDescriptionParams" "3;4"
 // data "PrepareSound" "Spell_Prepare_Buff_Gen_L1to3_01"
 // data "PrepareLoopSound" "Spell_Prepare_Buff_Gen_L1to3_01_Loop"
 // data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:6"
+data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:6"
 // data "RootSpellID" "Target_MagicWeapon"
 // data "PowerLevel" "6"
 
@@ -723,6 +727,7 @@ data "DescriptionParams" "4"
 // data "TooltipStatusApply" "ApplyStatus(MAGIC_WEAPON_6,100,-1)"
 data "TooltipStatusApply" "ApplyStatus(MAGIC_WEAPON_6,100,10)"
 // data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:7"
+data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:7"
 // data "RootSpellID" "Target_MagicWeapon"
 // data "PowerLevel" "7"
 
@@ -738,6 +743,7 @@ data "DescriptionParams" "4"
 // data "TooltipStatusApply" "ApplyStatus(MAGIC_WEAPON_6,100,-1)"
 data "TooltipStatusApply" "ApplyStatus(MAGIC_WEAPON_6,100,10)"
 // data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:8"
+data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:8"
 // data "RootSpellID" "Target_MagicWeapon"
 // data "PowerLevel" "8"
 
@@ -753,6 +759,7 @@ data "DescriptionParams" "4"
 // data "TooltipStatusApply" "ApplyStatus(MAGIC_WEAPON_6,100,-1)"
 data "TooltipStatusApply" "ApplyStatus(MAGIC_WEAPON_6,100,10)"
 // data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:9"
+data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:9"
 // data "RootSpellID" "Target_MagicWeapon"
 // data "PowerLevel" "9"
 
@@ -991,7 +998,7 @@ using "Shout_CrusadersMantle"
 data "UseCosts" "BonusActionPoint:1"
 
 // ==================================== Elemental Weapon ====================================
-// Remove concentration, decrease duration to 10 turns, increase attack roll bonus to +2 and increase damage bonus to 1d8
+// Remove concentration, decrease duration to 10 turns, now bonus action, increase attack roll bonus to +2 and increase damage bonus to 1d8
 
 // Spells
 new entry "Target_ElementalWeapon"
@@ -1013,6 +1020,7 @@ data "DescriptionParams" "2;1d8"
 // data "PreviewCursor" "Cast"
 // data "CastTextEvent" "Cast"
 // data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:3"
+data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:3"
 // data "SpellAnimation" "dd86aa43-8189-4d9f-9a5c-454b5fe4a197,,;,,;89b3c338-a117-454c-b34a-2473e5a8bcc5,,;b3253cb1-b621-4c3b-a93d-efb5ed6b2af1,,;cc5b0caf-3ed1-4711-a50d-11dc3f1fdc6a,,;,,;1715b877-4512-472e-9bd0-fd568a112e90,,;,,;,,"
 // data "VerbalIntent" "Utility"
 // data "SpellFlags" "HasVerbalComponent;HasSomaticComponent;IsConcentration;IsSpell;IsMelee;IsLinkedSpellContainer"
@@ -1169,6 +1177,7 @@ data "TooltipUpcastDescription" "011ce27f-27c5-4cd8-982f-30e83791bb27"
 // data "TooltipUpcastDescriptionParams" "1;DealDamage(1d4,Acid)"
 data "TooltipUpcastDescriptionParams" "1;DealDamage(1d8,Acid);2;DealDamage(2d8,Acid)"
 // data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:5"
+data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:5"
 // data "RootSpellID" "Target_ElementalWeapon_Acid"
 // data "PowerLevel" "5"
 
@@ -1188,6 +1197,7 @@ data "TooltipUpcastDescription" "011ce27f-27c5-4cd8-982f-30e83791bb27"
 // data "TooltipUpcastDescriptionParams" "1;DealDamage(1d4,Cold)"
 data "TooltipUpcastDescriptionParams" "1;DealDamage(1d8,Cold);2;DealDamage(2d8,Cold)"
 // data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:5"
+data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:5"
 // data "RootSpellID" "Target_ElementalWeapon_Cold"
 // data "PowerLevel" "5"
 
@@ -1207,6 +1217,7 @@ data "TooltipUpcastDescription" "011ce27f-27c5-4cd8-982f-30e83791bb27"
 // data "TooltipUpcastDescriptionParams" "1;DealDamage(1d4,Fire)"
 data "TooltipUpcastDescriptionParams" "1;DealDamage(1d8,Fire);2;DealDamage(2d8,Fire)"
 // data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:5"
+data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:5"
 // data "RootSpellID" "Target_ElementalWeapon_Fire"
 // data "PowerLevel" "5"
 
@@ -1226,6 +1237,7 @@ data "TooltipUpcastDescription" "011ce27f-27c5-4cd8-982f-30e83791bb27"
 // data "TooltipUpcastDescriptionParams" "1;DealDamage(1d4,Lightning)"
 data "TooltipUpcastDescriptionParams" "1;DealDamage(1d8,Lightning);2;DealDamage(2d8,Lightning)"
 // data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:5"
+data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:5"
 // data "RootSpellID" "Target_ElementalWeapon_Lightning"
 // data "PowerLevel" "5"
 
@@ -1245,6 +1257,7 @@ data "TooltipUpcastDescription" "011ce27f-27c5-4cd8-982f-30e83791bb27"
 // data "TooltipUpcastDescriptionParams" "1;DealDamage(1d4,Thunder)"
 data "TooltipUpcastDescriptionParams" "1;DealDamage(1d8,Thunder);2;DealDamage(2d8,Thunder)"
 // data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:5"
+data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:5"
 // data "RootSpellID" "Target_ElementalWeapon_Thunder"
 // data "PowerLevel" "5"
 
@@ -1260,6 +1273,7 @@ data "SpellProperties" "IF(Item() and not HasPassive('RAW_OnTurnTracker',context
 // data "TooltipStatusApply" "ApplyStatus(ELEMENTAL_WEAPON_ACID_7, 100, -1)"
 data "TooltipStatusApply" "ApplyStatus(ELEMENTAL_WEAPON_ACID_7, 100, 10)"
 // data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:7"
+data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:7"
 // data "RootSpellID" "Target_ElementalWeapon_Acid"
 // data "PowerLevel" "7"
 
@@ -1275,6 +1289,7 @@ data "SpellProperties" "IF(Item() and not HasPassive('RAW_OnTurnTracker',context
 // data "TooltipStatusApply" "ApplyStatus(ELEMENTAL_WEAPON_COLD_7, 100, -1)"
 data "TooltipStatusApply" "ApplyStatus(ELEMENTAL_WEAPON_COLD_7, 100, 10)"
 // data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:7"
+data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:7"
 // data "RootSpellID" "Target_ElementalWeapon_Cold"
 // data "PowerLevel" "7"
 
@@ -1290,6 +1305,7 @@ data "SpellProperties" "IF(Item() and not HasPassive('RAW_OnTurnTracker',context
 // data "TooltipStatusApply" "ApplyStatus(ELEMENTAL_WEAPON_FIRE_7, 100, -1)"
 data "TooltipStatusApply" "ApplyStatus(ELEMENTAL_WEAPON_FIRE_7, 100, 10)"
 // data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:7"
+data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:7"
 // data "RootSpellID" "Target_ElementalWeapon_Fire"
 // data "PowerLevel" "7"
 
@@ -1305,6 +1321,7 @@ data "SpellProperties" "IF(Item() and not HasPassive('RAW_OnTurnTracker',context
 // data "TooltipStatusApply" "ApplyStatus(ELEMENTAL_WEAPON_LIGHTNING_7, 100, -1)"
 data "TooltipStatusApply" "ApplyStatus(ELEMENTAL_WEAPON_LIGHTNING_7, 100, 10)"
 // data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:7"
+data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:7"
 // data "RootSpellID" "Target_ElementalWeapon_Lightning"
 // data "PowerLevel" "7"
 
@@ -1320,6 +1337,7 @@ data "SpellProperties" "IF(Item() and not HasPassive('RAW_OnTurnTracker',context
 // data "TooltipStatusApply" "ApplyStatus(ELEMENTAL_WEAPON_THUNDER_7, 100, -1)"
 data "TooltipStatusApply" "ApplyStatus(ELEMENTAL_WEAPON_THUNDER_7, 100, 10)"
 // data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:7"
+data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:7"
 // data "RootSpellID" "Target_ElementalWeapon_Thunder"
 // data "PowerLevel" "7"
 
@@ -1335,6 +1353,7 @@ data "SpellProperties" "IF(Item() and not HasPassive('RAW_OnTurnTracker',context
 // data "TooltipStatusApply" "ApplyStatus(ELEMENTAL_WEAPON_ACID_7, 100, -1)"
 data "TooltipStatusApply" "ApplyStatus(ELEMENTAL_WEAPON_ACID_7, 100, 10)"
 // data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:8"
+data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:8"
 // data "RootSpellID" "Target_ElementalWeapon_Acid"
 // data "PowerLevel" "8"
 
@@ -1350,6 +1369,7 @@ data "SpellProperties" "IF(Item() and not HasPassive('RAW_OnTurnTracker',context
 // data "TooltipStatusApply" "ApplyStatus(ELEMENTAL_WEAPON_COLD_7, 100, -1)"
 data "TooltipStatusApply" "ApplyStatus(ELEMENTAL_WEAPON_COLD_7, 100, 10)"
 // data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:8"
+data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:8"
 // data "RootSpellID" "Target_ElementalWeapon_Cold"
 // data "PowerLevel" "8"
 
@@ -1365,6 +1385,7 @@ data "SpellProperties" "IF(Item() and not HasPassive('RAW_OnTurnTracker',context
 // data "TooltipStatusApply" "ApplyStatus(ELEMENTAL_WEAPON_FIRE_7, 100, -1)"
 data "TooltipStatusApply" "ApplyStatus(ELEMENTAL_WEAPON_FIRE_7, 100, 10)"
 // data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:8"
+data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:8"
 // data "RootSpellID" "Target_ElementalWeapon_Fire"
 // data "PowerLevel" "8"
 
@@ -1380,6 +1401,7 @@ data "SpellProperties" "IF(Item() and not HasPassive('RAW_OnTurnTracker',context
 // data "TooltipStatusApply" "ApplyStatus(ELEMENTAL_WEAPON_LIGHTNING_7, 100, -1)"
 data "TooltipStatusApply" "ApplyStatus(ELEMENTAL_WEAPON_LIGHTNING_7, 100, 10)"
 // data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:8"
+data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:8"
 // data "RootSpellID" "Target_ElementalWeapon_Lightning"
 // data "PowerLevel" "8"
 
@@ -1395,6 +1417,7 @@ data "SpellProperties" "IF(Item() and not HasPassive('RAW_OnTurnTracker',context
 // data "TooltipStatusApply" "ApplyStatus(ELEMENTAL_WEAPON_THUNDER_7, 100, -1)"
 data "TooltipStatusApply" "ApplyStatus(ELEMENTAL_WEAPON_THUNDER_7, 100, 10)"
 // data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:8"
+data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:8"
 // data "RootSpellID" "Target_ElementalWeapon_Thunder"
 // data "PowerLevel" "8"
 
@@ -1410,6 +1433,7 @@ data "SpellProperties" "IF(Item() and not HasPassive('RAW_OnTurnTracker',context
 // data "TooltipStatusApply" "ApplyStatus(ELEMENTAL_WEAPON_ACID_7, 100, -1)"
 data "TooltipStatusApply" "ApplyStatus(ELEMENTAL_WEAPON_ACID_7, 100, 10)"
 // data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:9"
+data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:9"
 // data "RootSpellID" "Target_ElementalWeapon_Acid"
 // data "PowerLevel" "9"
 
@@ -1425,6 +1449,7 @@ data "SpellProperties" "IF(Item() and not HasPassive('RAW_OnTurnTracker',context
 // data "TooltipStatusApply" "ApplyStatus(ELEMENTAL_WEAPON_COLD_7, 100, -1)"
 data "TooltipStatusApply" "ApplyStatus(ELEMENTAL_WEAPON_COLD_7, 100, 10)"
 // data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:9"
+data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:9"
 // data "RootSpellID" "Target_ElementalWeapon_Cold"
 // data "PowerLevel" "9"
 
@@ -1440,6 +1465,7 @@ data "SpellProperties" "IF(Item() and not HasPassive('RAW_OnTurnTracker',context
 // data "TooltipStatusApply" "ApplyStatus(ELEMENTAL_WEAPON_FIRE_7, 100, -1)"
 data "TooltipStatusApply" "ApplyStatus(ELEMENTAL_WEAPON_FIRE_7, 100, 10)"
 // data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:9"
+data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:9"
 // data "RootSpellID" "Target_ElementalWeapon_Fire"
 // data "PowerLevel" "9"
 
@@ -1455,6 +1481,7 @@ data "SpellProperties" "IF(Item() and not HasPassive('RAW_OnTurnTracker',context
 // data "TooltipStatusApply" "ApplyStatus(ELEMENTAL_WEAPON_LIGHTNING_7, 100, -1)"
 data "TooltipStatusApply" "ApplyStatus(ELEMENTAL_WEAPON_LIGHTNING_7, 100, 10)"
 // data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:9"
+data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:9"
 // data "RootSpellID" "Target_ElementalWeapon_Lightning"
 // data "PowerLevel" "9"
 
@@ -1470,6 +1497,7 @@ data "SpellProperties" "IF(Item() and not HasPassive('RAW_OnTurnTracker',context
 // data "TooltipStatusApply" "ApplyStatus(ELEMENTAL_WEAPON_THUNDER_7, 100, -1)"
 data "TooltipStatusApply" "ApplyStatus(ELEMENTAL_WEAPON_THUNDER_7, 100, 10)"
 // data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:9"
+data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:9"
 // data "RootSpellID" "Target_ElementalWeapon_Thunder"
 // data "PowerLevel" "9"
 
