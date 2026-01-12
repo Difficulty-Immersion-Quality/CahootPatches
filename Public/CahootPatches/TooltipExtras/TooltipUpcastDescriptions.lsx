@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<save>
+    <version major="4" minor="8" revision="0" build="0"/>
+    <region id="TooltipUpcastDescriptions">
+        <node id="root">
+            <children>
+                <node id="TooltipUpcastDescriptions">
+                    <attribute id="Name" type="FixedString" value="Magic Weapon"/>
+                    <!-- Casting this spell using a 4th or 5h level spell slot will increase the bonus by [1], and a 6th level or higher spell slot will increase it by [2]. -->
+                    <attribute id="Text" type="TranslatedString" handle="h29b1728dg212bg4a3dga5f5g26dbabb2cb46" version="1"/>
+                    <attribute id="UUID" type="guid" value="2f2cccbc-67c5-47fb-88d6-6fc6a0f021a0"/>
+                </node>
+                <node id="TooltipUpcastDescriptions">
+                    <attribute id="Name" type="FixedString" value="Elemental Weapon"/>
+                    <!-- Casting this spell using a 5th or 6th level spell slot will increase the &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt; bonus by [1] and deal an additional [2], and a 7th level or higher spell slot will increase the &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt; bonus by [3] and deal an additional [4]. -->
+                    <attribute id="Text" type="TranslatedString" handle="h252c6579g4680g4526ga3b9gbe7b9e53f204" version="1"/>
+                    <attribute id="UUID" type="guid" value="011ce27f-27c5-4cd8-982f-30e83791bb27"/>
+                </node>
+            </children>
+        </node>
+    </region>
+</save>

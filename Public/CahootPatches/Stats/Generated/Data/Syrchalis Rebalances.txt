@@ -2,27 +2,6 @@
 //                                                                       Spells
 // ======================================================================================================================================
 
-// =============================================== Shield of Faith ===============================================
-// Overwrite these changes that the mod made
-
-new entry "Target_ShieldOfFaith"
-type "SpellData"
-data "SpellType" "Target"
-using "Target_ShieldOfFaith"
-// data "MaximumTargets" "1"
-data "MaximumTargets" ""
-// data "TooltipPermanentWarnings" "375fe7a4-7a8a-4bbe-812c-0af9584c0740"
-data "TooltipPermanentWarnings" ""
-
-new entry "Shout_MAG_DarkJusticiarArmor_ShieldOfFaith"
-type "SpellData"
-data "SpellType" "Target"
-using "Shout_MAG_DarkJusticiarArmor_ShieldOfFaith"
-// data "MaximumTargets" "1"
-data "MaximumTargets" ""
-// data "TooltipPermanentWarnings" "375fe7a4-7a8a-4bbe-812c-0af9584c0740"
-data "TooltipPermanentWarnings" ""
-
 // =============================================== Arms of Hadar ===============================================
 
 new entry "Shout_ArmsOfHadar_7"
