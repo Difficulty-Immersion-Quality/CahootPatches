@@ -73,7 +73,7 @@ data "SpellProperties" "RegainHitPoints(18d6+SpellCastingAbilityModifier)"
 data "TooltipDamageList" "RegainHitPoints(18d6+SpellCastingAbilityModifier)"
 data "TooltipUpcastDescriptionParams" "RegainHitPoints(2d6)"
 
-// Healing Word: now 1d6 + 1d6 per upcast (previously 1d4 + 1d4 per upcaste)
+// Healing Word: now 1d6 + 1d6 per upcast (previously 1d4 + 1d4 per upcast)
 new entry "Target_HealingWord"
 type "SpellData"
 data "SpellType" "Target"

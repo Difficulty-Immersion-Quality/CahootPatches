@@ -314,6 +314,40 @@ data "StackPriority" "51"
 data "Boosts" "TemporaryHP(51);Advantage(SavingThrow,Wisdom)"
 data "DescriptionParams" "GainTemporaryHitPoints(51)"
 
+// ============================ Water Walk ============================
+// Increase duration to long rest (spell isn't changed in Chiz's 5e spells Adjustments)
+
+new entry "Shout_WaterWalk"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_WaterWalk"
+// data "Level" "3"
+// data "SpellSchool" "Transmutation"
+// data "SpellProperties" "ApplyStatus(WATER_WALK,100,600)"
+data "SpellProperties" "ApplyStatus(WATER_WALK,100,-1)"
+// data "AreaRadius" "9"
+// data "TargetConditions" "Character() and Ally() and EXP_CanSee()"
+// data "Icon" "Spell_Transmutation_WaterWalk"
+// data "DisplayName" "hd348c657g6866g492eg8756g003ee1c4d369;1"
+// data "Description" "h15260388gdfe0g44ddg8125g822201172639;1"
+// data "ExtraDescription" "hfa118a5agcabeg45e3g9aa6g1df58d6834b4;1"
+// data "PreviewCursor" "Cast"
+// data "CastTextEvent" "Cast"
+// data "TooltipStatusApply" "ApplyStatus(WATER_WALK,100,600)"
+data "TooltipStatusApply" "ApplyStatus(WATER_WALK,100,-1)"
+// data "TooltipUpcastDescription" "6ff1780a-855a-414c-a8bf-811251537206"
+// data "CastSound" "Spell_Cast_Utility_CreateWater_L1to3"
+// data "VocalComponentSound" "Vocal_Component_CreateWater"
+// data "TargetSound" "Spell_Impact_Utility_CreateWater_L1to3"
+// data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:3"
+// data "SpellAnimation" "dd86aa43-8189-4d9f-9a5c-454b5fe4a197,,;,,;09ae2f11-f5b4-42f5-ae16-687a5b57d500,,;10caea0e-c949-4d91-8ab7-3b50019dd054,,;cc5b0caf-3ed1-4711-a50d-11dc3f1fdc6a,,;,,;1715b877-4512-472e-9bd0-fd568a112e90,,;,,;,,"
+// data "VerbalIntent" "Utility"
+// data "SpellFlags" "HasVerbalComponent;HasSomaticComponent;IsSpell"
+// data "MemoryCost" "1"
+// data "PrepareEffect" "7121a488-7c9a-4ba1-a585-f79aaa77e97c"
+// data "CastEffect" "b50decc3-5f93-4467-8d3a-aa8b01fc915e"
+// data "RitualCosts" "ActionPoint:1"
+
 // ============================ Conjure Volley ============================
 // Change damage to magical
 
