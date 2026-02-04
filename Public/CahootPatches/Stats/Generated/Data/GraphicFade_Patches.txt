@@ -57,7 +57,6 @@ using "RangerEquipmentAIO_Vinewoven_Shortbow"
 // data "Rarity" "Rare"
 // data "Damage Type" "Piercing"
 // data "DefaultBoosts" "WeaponEnchantment(1)"
-data "DefaultBoosts" "WeaponEnchantment(1);IF(IsRangedWeaponAttack()):WeaponDamage(max(1,DexterityModifier)/2)"
 // data "Boosts" ""
 // data "PassivesOnEquip" "BB_Vinewoven_Passive"
 data "PassivesOnEquip" "BB_Vinewoven_Passive;Goon_BB_Vinewoven_Damage_Passive"
@@ -77,7 +76,6 @@ using "Tut_RangerEquipmentAIO_Vinewoven_Shortbow"
 // data "Rarity" "Rare"
 // data "Damage Type" "Piercing"
 // data "DefaultBoosts" "WeaponEnchantment(1)"
-data "DefaultBoosts" "WeaponEnchantment(1);IF(IsRangedWeaponAttack()):WeaponDamage(max(1,DexterityModifier)/2)"
 // data "Boosts" ""
 // data "PassivesOnEquip" "BB_Vinewoven_Passive"
 data "PassivesOnEquip" "BB_Vinewoven_Passive;Goon_BB_Vinewoven_Damage_Passive"
@@ -111,6 +109,7 @@ type "PassiveData"
 data "DisplayName" "hf382fc66gb266g4a14g99efgdf6e830bf845;1"
 // This weapon deals additional damage equal to half your Dexterity &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;.
 data "Description" "h80b5489bga092g4de7ga178g40cfbe9b8ddc;1"
+data "Boosts" "IF(IsRangedWeaponAttack()):DamageBonus(max(1,DexterityModifier)/2)"
 
 // ==================================== Chaos and Control - Sorcerer Equipment ====================================
 
