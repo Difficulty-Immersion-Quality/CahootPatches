@@ -7,3 +7,119 @@ add equipmentgroup
 add equipment entry "WPN_Goblin_Scimitar"
 // add equipmentgroup
 // add equipment entry "Siael_POTR_Shield_D"
+
+// ==================================== Mayrina and Brothers Edits ====================================
+// Don't need another magical weapon here
+// TODO: Look at their original equipment if it's even a thing
+
+new equipment "Blacksmith Brother "
+add initialweaponset "Melee"
+// add equipmentgroup
+// add equipment entry "FOR_Village_Blacksmith_FineSword"
+add equipmentgroup
+add equipment entry "WPN_Longsword"
+
+// new equipment "Farmer brother"
+// add initialweaponset "Melee"
+// add equipmentgroup
+// add equipment entry "WPN_Pitchfork"
+
+// ==================================== Zevlor Redone - The Exiled Hellrider Commander ====================================
+// Points to a patched item, making him wear clothing
+
+new equipment "DEN_TieflingLeader"
+add initialweaponset "Melee"
+// add equipmentgroup
+// add equipment entry "WPN_Longsword"
+add equipmentgroup
+add equipment entry "WPN_Greatsword_Pact"
+add equipmentgroup
+add equipment entry "WPN_HeavyCrossbow"
+// add equipmentgroup
+// add equipment entry "ARM_ScaleMail_Body"
+add equipmentgroup
+add equipment entry "ARM_Plate_Body"
+
+new equipment "Zevlor Equipment Set"
+add initialweaponset "Melee"
+add equipmentgroup
+add equipment entry "WPN_Greatsword_Pact"
+// add equipmentgroup
+// add equipment entry "WPN_HeavyCrossbow_1"
+add equipmentgroup
+add equipment entry "WPN_HeavyCrossbow"
+// add equipmentgroup
+// add equipment entry "AARDI_ARM_Loyalty_Threads_Charming"
+add equipmentgroup
+add equipment entry "ARM_Plate_Body"
+
+// ==================================== Commander Voss Redone - Mha stil'na forjun inyeri ====================================
+// He should absolutely not have the proper Silver Sword in these entries
+
+new equipment "EQ_GLO_Voss"
+add initialweaponset "Melee"
+add equipmentgroup
+add equipment entry "MAG_GreaterSilver_Greatsword"
+add equipmentgroup
+add equipment entry "ARM_HalfPlate_Body_Githyanki"
+add equipmentgroup
+add equipment entry "WPN_HeavyCrossbow_Gith"
+
+new equipment "SCL_Voss"
+add initialweaponset "Melee"
+add equipmentgroup
+add equipment entry "MAG_Primeval_Silver_Longsword"
+add equipmentgroup
+add equipment entry "ARM_Leather_Body"
+
+// new equipment "SCL_Voss"
+// add initialweaponset "Melee"
+// add equipmentgroup
+// add equipment entry "MAG_GreaterSilver_Greatsword"
+// add equipmentgroup
+// add equipment entry "ARM_Leather_Body"
+
+new equipment "EQ_END_VossLostGreatsword"
+add initialweaponset "Melee"
+add equipmentgroup
+add equipment entry "MAG_Primeval_Silver_Longsword"
+add equipmentgroup
+add equipment entry "ARM_HalfPlate_Body_Githyanki"
+add equipmentgroup
+add equipment entry "WPN_HeavyCrossbow_Gith"
+
+// new equipment "EQ_END_VossLostGreatsword"
+// add initialweaponset "Melee"
+// add equipmentgroup
+// add equipment entry "MAG_GreaterSilver_Greatsword"
+// add equipmentgroup
+// add equipment entry "ARM_HalfPlate_Body_Githyanki"
+// add equipmentgroup
+// add equipment entry "WPN_HeavyCrossbow_Gith"
+
+// ==================================== Anders Crew Redone - True Paladins of Tyr ====================================
+// No robes in the regular version
+// Too early to be throwing around too many magic items if it can be helped.
+
+// new equipment "EQP_Dagger_Robe"
+// add initialweaponset "Melee"
+// add equipmentgroup
+// add equipment entry "WPN_Dagger"
+// add equipmentgroup
+// add equipment entry "ARM_Robe_Body"
+
+// new equipment "Cyrel Equipment"
+// add initialweaponset "Melee"
+// add equipmentgroup
+// add equipment entry "WPN_Quarterstaff_1"
+// add equipmentgroup
+// add equipment entry "ORI_Wyll_Infernal_Robe"
+
+new equipment "Cyrel Equipment"
+add initialweaponset "Melee"
+// add equipmentgroup
+// add equipment entry "WPN_Quarterstaff_1"
+add equipmentgroup
+add equipment entry "WPN_Dagger"
+add equipmentgroup
+add equipment entry "ARM_Robe_Body"
