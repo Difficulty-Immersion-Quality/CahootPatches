@@ -382,26 +382,6 @@ data "OnRemoveFunctors" "IF(HasStatus('CC_SORCERER_FREE_CAST',context.Source)):A
 
 // ==================================== Faith and Fortitude - Cleric Equipment ====================================
 
-// ==================================== FF - Grove Protector's Mantle
-// Echoing Vitality: remove annoying VFX
-new entry "MAG_CLERIC_TEMP_HP"
-type "StatusData"
-data "StatusType" "BOOST"
-// using "MAG_CHARISMA_CASTER_TEMP_HP"
-using "MAG_CLERIC_TEMP_HP"
-// data "DisplayName" "hadbcf1e2ga2cag4888g9246g4a0b7b4893d10;1"
-// data "Description" "hadbcf1e2ga2cag4888g9246g4a0b7b4893d9;1"
-// data "DescriptionParams" "GainTemporaryHitPoints(ClassLevel(Cleric))"
-// data "Icon" "Spell_Evocation_AuraOfVitality_Activate"
-// data "StackId" "MAG_CLERIC_TEMP_HP"
-// data "Boosts" "TemporaryHP(ClassLevel(Cleric))"
-// data "RemoveConditions" "not HasTemporaryHP()"
-// data "RemoveEvents" "OnDamage"
-// data "ManagedStatusEffectType" "Positive"
-// data "ManagedStatusEffectGroup" ""
-// data "StatusEffect" "9e94a963-ef5e-410d-b12a-6fae12fbe83b"
-data "StatusEffect" ""
-
 // ==================================== FF - Starlight Circlet
 // Celestial Spark: remove Channel Divinity cost
 new entry "Shout_CelestialSpark"
@@ -568,7 +548,7 @@ data "SpellProperties" "IF(Ally()):RegainHitPoints(2d6);IF(Enemy()):DealDamage(1
 // data "TargetConditions" "Character() and not Dead() and not Item() and not Self()"
 // Sacred Bolt
 // data "DisplayName" "h5f627f3fg53e6g465dga432g22f61eb1bbc10;1"
-// You fire a bolt of radiant energy, upon hitting its target it can healing your allies for [1] + Cleric Level and deal half that in Radiant damage to your enemies in a [2] radius.
+// You fire a bolt of radiant energy, upon hitting its target it can heal your allies for [1] + Cleric Level and deal half that in Radiant damage to your enemies in a [2] radius.
 // data "Description" "h5f627f3fg53e6g465dga432g22f61eb1bbc11;1"
 // Fire a bolt of radiant energy which explodes in a [1] radius upon hitting its target. All allies hit are healed for [2] while enemies hit take [3].
 data "Description" "h2ae5cb4dgee20g4a83ga91fg3b2aa77224dd;1"
