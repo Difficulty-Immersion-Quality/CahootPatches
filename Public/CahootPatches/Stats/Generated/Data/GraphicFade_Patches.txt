@@ -144,6 +144,19 @@ data "SpellProperties" "IF(CharismaModifier=1 or CharismaModifier=2):RestoreReso
 // ==================================== CC - Gloves of the Arcanist’s Gambit
 // Sorcerous Wager passive: nerfed to only give +1 bonus for every two spell levels used (previously +1 bonus for every spell level used)
 
+new entry "CC_SorcerousWager_Passive"
+type "PassiveData"
+using "CC_SorcerousWager_Passive"
+// data "DisplayName" "h27ad4a5fg8ebeg4b8egb71dg81a7d073b032;1"
+// When you cast a spell and spend at least 1 &lt;LSTag Type="ActionResource" Tooltip="SorceryPoint"&gt;Sorcery Point&lt;/LSTag&gt;, you gain a bonus to your &lt;LSTag Tooltip="AttackRoll"&gt;Spell Attack Rolls&lt;/LSTag&gt; and &lt;LSTag Tooltip="SpellDifficultyClass"&gt;Spell Save DC&lt;/LSTag&gt; equal to half the spell level cast, rounded up. This bonus lasts until the end of your next turn. This effect can only occur once per turn.
+data "Description" "h00ccd4e2g61a2g49d0g9f76g3df8d72168a1;1"
+// data "Icon" "Action_Mag_SpellSlotRestoration"
+// data "Properties" "Highlighted;OncePerTurn"
+// data "StatsFunctorContext" "OnCast"
+// data "Conditions" "IsSpell() and HasUseCosts('SorceryPoint', true) and not IsCantrip()"
+// data "StatsFunctors" "IF(SpellPowerLevelEqualTo(1)):ApplyStatus(SELF,CC_SORCEROUS_WAGER_ONE,100, 1);IF(SpellPowerLevelEqualTo(2)):ApplyStatus(SELF,CC_SORCEROUS_WAGER_TWO,100, 1);IF(SpellPowerLevelEqualTo(3)):ApplyStatus(SELF,CC_SORCEROUS_WAGER_THREE,100, 1);IF(SpellPowerLevelEqualTo(4)):ApplyStatus(SELF,CC_SORCEROUS_WAGER_FOUR,100, 1);IF(SpellPowerLevelEqualTo(5)):ApplyStatus(SELF,CC_SORCEROUS_WAGER_FIVE,100, 1);IF(SpellPowerLevelEqualTo(6)):ApplyStatus(SELF,CC_SORCEROUS_WAGER_SIX,100, 1);IF(SpellPowerLevelEqualTo(7)):ApplyStatus(SELF,CC_SORCEROUS_WAGER_SEVEN,100, 1);IF(SpellPowerLevelEqualTo(8)):ApplyStatus(SELF,CC_SORCEROUS_WAGER_EIGHT,100, 1);IF(SpellPowerLevelEqualTo(9)):ApplyStatus(SELF,CC_SORCEROUS_WAGER_NINE,100, 1)"
+data "StatsFunctors" "IF(SpellPowerLevelEqualTo(1)):ApplyStatus(SELF,CC_SORCEROUS_WAGER_ONE,100, 2);IF(SpellPowerLevelEqualTo(2)):ApplyStatus(SELF,CC_SORCEROUS_WAGER_TWO,100, 2);IF(SpellPowerLevelEqualTo(3)):ApplyStatus(SELF,CC_SORCEROUS_WAGER_THREE,100, 2);IF(SpellPowerLevelEqualTo(4)):ApplyStatus(SELF,CC_SORCEROUS_WAGER_FOUR,100, 2);IF(SpellPowerLevelEqualTo(5)):ApplyStatus(SELF,CC_SORCEROUS_WAGER_FIVE,100, 2);IF(SpellPowerLevelEqualTo(6)):ApplyStatus(SELF,CC_SORCEROUS_WAGER_SIX,100, 2);IF(SpellPowerLevelEqualTo(7)):ApplyStatus(SELF,CC_SORCEROUS_WAGER_SEVEN,100, 2);IF(SpellPowerLevelEqualTo(8)):ApplyStatus(SELF,CC_SORCEROUS_WAGER_EIGHT,100, 2);IF(SpellPowerLevelEqualTo(9)):ApplyStatus(SELF,CC_SORCEROUS_WAGER_NINE,100, 2)"
+
 new entry "CC_SORCEROUS_WAGER_ONE"
 type "StatusData"
 data "StatusType" "BOOST"
@@ -152,7 +165,6 @@ using "CC_SORCEROUS_WAGER_ONE"
 // data "DisplayName" "h27ad4a5fg8ebeg4b8egb71dg81a7d073b032;1"
 // Affected entity has a +[1] bonus to its spell &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; and spell &lt;LSTag Tooltip="DifficultyClass"&gt;Difficulty Class&lt;/LSTag&gt;.
 // data "Description" "h27ad4a5fg8ebeg4b8egb71dg81a7d073b034;1"
-// 	When you cast a spell and spend at least 1 &lt;LSTag Type="ActionResource" Tooltip="SorceryPoint"&gt;Sorcery Point&lt;/LSTag&gt;, you gain a bonus to your &lt;LSTag Tooltip="AttackRoll"&gt;Spell Attack Rolls&lt;/LSTag&gt; and &lt;LSTag Tooltip="SpellDifficultyClass"&gt;Spell Save DC&lt;/LSTag&gt; equal to half the spell level cast, rounded up. This bonus lasts 1 turn. This effect can only occur once per turn.
 data "Description" "h00ccd4e2g61a2g49d0g9f76g3df8d72168a1;1"
 // data "DescriptionParams" "1"
 // data "Icon" "Action_Mag_SpellSlotRestoration"
@@ -161,6 +173,8 @@ data "Description" "h00ccd4e2g61a2g49d0g9f76g3df8d72168a1;1"
 // data "StackId" "CC_SORCEROUS_WAGER_ONE"
 // data "Boosts" "RollBonus(MeleeSpellAttack,1);RollBonus(RangedSpellAttack, 1);SpellSaveDC(1)"
 // data "StatusEffect" "b3e7fa61-37d7-4696-bf6e-31b46beba46b"
+// data "TickType" ""
+data "TickType" "EndTurn"
 
 new entry "CC_SORCEROUS_WAGER_TWO"
 type "StatusData"
