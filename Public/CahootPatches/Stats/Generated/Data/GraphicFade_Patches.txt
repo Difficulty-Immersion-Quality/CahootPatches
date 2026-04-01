@@ -147,7 +147,10 @@ data "SpellProperties" "IF(CharismaModifier=1 or CharismaModifier=2):RestoreReso
 new entry "CC_SorcerousWager_Passive"
 type "PassiveData"
 using "CC_SorcerousWager_Passive"
+// Sorcerous Wager
 // data "DisplayName" "h27ad4a5fg8ebeg4b8egb71dg81a7d073b032;1"
+// Whenever you cast a spell and expend a &lt;LSTag Type="ActionResource" Tooltip="SorceryPoint"&gt;Sorcery Point&lt;/LSTag&gt;, you gain a bonus to your &lt;LSTag Tooltip="AttackRoll"&gt;Spell Attack Rolls&lt;/LSTag&gt; and &lt;LSTag Tooltip="SpellDifficultyClass"&gt;Spell Save DC&lt;/LSTag&gt; equal to the spell level cast. This bonus lasts 1 turn. (Once per turn).
+// data "Description" "h27ad4a5fg8ebeg4b8egb71dg81a7d073b033;1"
 // When you cast a spell and spend at least 1 &lt;LSTag Type="ActionResource" Tooltip="SorceryPoint"&gt;Sorcery Point&lt;/LSTag&gt;, you gain a bonus to your &lt;LSTag Tooltip="AttackRoll"&gt;Spell Attack Rolls&lt;/LSTag&gt; and &lt;LSTag Tooltip="SpellDifficultyClass"&gt;Spell Save DC&lt;/LSTag&gt; equal to half the spell level cast, rounded up. This bonus lasts until the end of your next turn. This effect can only occur once per turn.
 data "Description" "h00ccd4e2g61a2g49d0g9f76g3df8d72168a1;1"
 // data "Icon" "Action_Mag_SpellSlotRestoration"
@@ -165,6 +168,7 @@ using "CC_SORCEROUS_WAGER_ONE"
 // data "DisplayName" "h27ad4a5fg8ebeg4b8egb71dg81a7d073b032;1"
 // Affected entity has a +[1] bonus to its spell &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; and spell &lt;LSTag Tooltip="DifficultyClass"&gt;Difficulty Class&lt;/LSTag&gt;.
 // data "Description" "h27ad4a5fg8ebeg4b8egb71dg81a7d073b034;1"
+// When you cast a spell and spend at least 1 &lt;LSTag Type="ActionResource" Tooltip="SorceryPoint"&gt;Sorcery Point&lt;/LSTag&gt;, you gain a bonus to your &lt;LSTag Tooltip="AttackRoll"&gt;Spell Attack Rolls&lt;/LSTag&gt; and &lt;LSTag Tooltip="SpellDifficultyClass"&gt;Spell Save DC&lt;/LSTag&gt; equal to half the spell level cast, rounded up. This bonus lasts until the end of your next turn. This effect can only occur once per turn.
 data "Description" "h00ccd4e2g61a2g49d0g9f76g3df8d72168a1;1"
 // data "DescriptionParams" "1"
 // data "Icon" "Action_Mag_SpellSlotRestoration"
