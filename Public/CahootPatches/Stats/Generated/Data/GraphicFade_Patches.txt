@@ -908,6 +908,22 @@ data "SpellSuccess" "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType); Exe
 // data "CastEffect" "6feffb50-dcb7-4bcf-8122-781914ccacb2"
 // data "TargetEffect" "5e186a18-1de1-4e0b-a1cf-3648c688dbd2"
 
+// ==================================== GG - Helm of the Wildwood
+// Expanded druid polymorph check.
+
+new entry "GG_One_Wildshape_TempHP_Passive"
+type "PassiveData"
+using "GG_One_Wildshape_TempHP_Passive"
+// Wildwood's Resilience
+// data "DisplayName" "h81fabb63g0e34g4497g891cgcc0c575648a6;1"
+// Gain &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt; equal to your Druid level when entering &lt;LSTag Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt; and reduce all incoming damage by 1 while you have these &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt;.
+// data "Description" "h81fabb63g0e34g4497g891cgcc0c575648a7;1"
+// data "DescriptionParams" "TemporaryHP(ClassLevel(Druid));DamageReduction(All, Flat, 1)"
+// data "TooltipPermanentWarnings" "8892b93b-721f-4b99-b9b4-05ac25aadb33"
+// data "StatsFunctorContext" "OnStatusApplied"
+// data "StatsFunctors" "IF(StatusHasStatusGroup(context.StatusId, 'SG_Polymorph_BeastShape') or StatusId('WILDSHAPE_STARRY_ARCHER_PLAYER') or StatusId('WILDSHAPE_STARRY_CHALICE_PLAYER') or StatusId('WILDSHAPE_STARRY_DRAGON_PLAYER')):ApplyStatus(GG_ONE_WILDSHAPE_TEMP_HP, 100, -1)"
+data "StatsFunctors" "IF(Goon_IsDruidWildshapeOrStatus()):ApplyStatus(GG_ONE_WILDSHAPE_TEMP_HP, 100, -1)"
+
 // ==================================== Might and Metal - Fighter Equipment  ====================================
 
 // ==================================== MM - Helm of the Stalwart Defender
