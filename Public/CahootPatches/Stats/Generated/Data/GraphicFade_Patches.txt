@@ -1597,19 +1597,22 @@ data "TooltipDamageList" "DealDamage(1d8, Necrotic)"
 // ==================================== Wands and Weave - Wizard Equipment ====================================
 
 // ==================================== WW - Robe of the Arcane Duelist
-// Arcane Momentum: improve tooltip
+// Arcane Momentum: conditions made more robust, as to catch all melee weapon attacks that are also spells.
 new entry "WW_GainArcaneAcuityOnDamage_Passive"
 type "PassiveData"
 using "WW_GainArcaneAcuityOnDamage_Passive"
+// Arcane Momentum
 // data "DisplayName" "h941a2a1agcc5ag4161gb947g4797cc56ab14;1"
-// You gain &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt; for [1] turns when you deal damage with a spell or &lt;LSTag Tooltip="Cantrip"&gt;cantrip&lt;/LSTag&gt; that has a range of [2] or less.
+// When the wearer deals damage with a &lt;LSTag Tooltip="MeleeSpellAttack"&gt;Melee Spell Attack&lt;/LSTag&gt;, gain [1] turns of &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt;.
+// data "Description" "h941a2a1agcc5ag4161gb947g4797cc56ab15;1"
+// When the wearer deals damage with a &lt;LSTag Tooltip="MeleeSpellAttack"&gt;Melee Spell Attack&lt;/LSTag&gt; or a &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;Melee Weapon Attack&lt;/LSTag&gt; that is also a spell, gain [1] turns of &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt;.
 data "Description" "h8cf49e5dg153cg4c5fg818bgaa4f69a9489e;1"
-// data "DescriptionParams" ""
-data "DescriptionParams" "2;Distance(5)"
+// data "DescriptionParams" "2"
+// data "Properties" "OncePerAttack"
 // data "StatsFunctorContext" "OnDamage"
-// data "Conditions" "IsSpell() and Enemy() and HasSpellRangeEqualOrLessThan(5, context.Source) and TotalDamageDoneGreaterThan(0)"
+// data "Conditions" "(IsMeleeSpellAttack() or WWMeleeSpellAttackCheck()) and Enemy() and TotalDamageDoneGreaterThan(0)"
+data "Conditions" "(IsMeleeSpellAttack() or (IsMeleeWeaponAttack() and IsSpell())) and Enemy() and TotalDamageDoneGreaterThan(0)"
 // data "StatsFunctors" "ApplyStatus(SELF, MAG_GISH_ARCANE_ACUITY, 100, 2);ApplyStatus(SELF, MAG_GISH_ARCANE_ACUITY_DURATION_TECHNICAL, 100, 1)"
-
 
 // ==================================== WW - Boots of the Shifting Elements
 // Shifting Elements: can only be triggered in combat as tooltip states and now only has 60% chance to receive the buff (previously 100% chance) + rebalance of some effects
