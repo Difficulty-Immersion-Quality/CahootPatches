@@ -91,18 +91,18 @@ data "Icon" "ATT_Spell_Evocation_Sunburst"
 // data "StatsFunctors" "IF(not SavingThrow(Ability.Wisdom,14,AdvantageOnTurned())):ApplyStatus(TURNED,100,1)"
 data "StatsFunctors" ""
 
-// Bane of Evil: decreases critical hit threshold by 2 against specified types instead of always guaranteeing critical hits, and only works for attacks with the weapon
+// Bane of Evil: effects only work for attacks with the weapon. Crit threshold is reduced by 1 instead of 3.
 new entry "Siael_POTR_Sword_P4"
 type "PassiveData"
 using "Siael_POTR_Sword_P4"
-// Your &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; threshold is reduced by [1] when attacking Undead, Fiends, Feys, Monstrosities and Aberrations with this weapon.
+// When you attack Undead, Fiends, Feys, Monstrosities or Aberrations with this weapon, your &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; cannot roll below [1] and the number you need to roll for a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; is reduced by [2].
 data "Description" "h9ba5d93bgf277g4ca4gb3cfg5ecc7e6f2e99;1"
 // data "DescriptionParams" ""
-data "DescriptionParams" "2"
+data "DescriptionParams" "3;1"
 // data "BoostConditions" ""
 data "BoostConditions" "AttackedWithPassiveSourceWeapon() and (Tagged('UNDEAD') or Tagged('UNDEAD_BEAST') or Tagged('FIEND') or Tagged('FEY') or Tagged('MONSTROSITY') or Tagged('ABERRATION'))"
-// data "Boosts" "IF(Tagged('UNDEAD') or Tagged('UNDEAD_BEAST') or Tagged('FIEND') or Tagged('FEY') or Tagged('MONSTROSITY') or Tagged('ABERRATION')):MinimumRollResult(Attack,20)"
-data "Boosts" "ReduceCriticalAttackThreshold(2)"
+// data "Boosts" "IF(Tagged('UNDEAD') or Tagged('UNDEAD_BEAST') or Tagged('FIEND') or Tagged('FEY') or Tagged('MONSTROSITY') or Tagged('ABERRATION')):MinimumRollResult(Attack,3);IF(Tagged('UNDEAD') or Tagged('UNDEAD_BEAST') or Tagged('FIEND') or Tagged('FEY') or Tagged('MONSTROSITY') or Tagged('ABERRATION')):ReduceCriticalAttackThreshold(3)"
+data "Boosts" "MinimumRollResult(Attack,3);ReduceCriticalAttackThreshold(1)"
 
 // ================================== Shield ==================================
 // Remove entirely from set
@@ -201,7 +201,7 @@ type "PassiveData"
 using "Siael_POTR_Head_P3"
 // You can't be &lt;LSTag Type="Status" Tooltip="SURPRISED"&gt;Surprised&lt;/LSTag&gt;, &lt;LSTag Type="Status" Tooltip="FRIGHTENED"&gt;Frightened&lt;/LSTag&gt;, nor afflicted with other emotion-altering conditions. You have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; to maintain your &lt;LSTag Tooltip="Concentration"&gt;Concentration&lt;/LSTag&gt;.
 data "Description" "h9c7edde5gdedbg4f39g82a8g3296260bab9d;1"
-//data "Boosts" "StatusImmunity(SURPRISED);StatusImmunity(SG_Frightened);StatusImmunity(SG_Fleeing);StatusImmunity(SG_Charmed);ConcentrationIgnoreDamage(Abjuration);ConcentrationIgnoreDamage(Conjuration);ConcentrationIgnoreDamage(Divination);ConcentrationIgnoreDamage(Enchantment);ConcentrationIgnoreDamage(Evocation);ConcentrationIgnoreDamage(Illusion);ConcentrationIgnoreDamage(Necromancy);ConcentrationIgnoreDamage(Transmutation);ConcentrationIgnoreDamage();Advantage(Concentration)"
+// data "Boosts" "StatusImmunity(SURPRISED);StatusImmunity(SG_Frightened);StatusImmunity(SG_Fleeing);StatusImmunity(SG_Charmed);Advantage(Concentration);IF(HasStatus('SIAEL_POTR_RIGHTEOUS_L')):ConcentrationIgnoreDamage(Abjuration);IF(HasStatus('SIAEL_POTR_RIGHTEOUS_L')):ConcentrationIgnoreDamage(Conjuration);IF(HasStatus('SIAEL_POTR_RIGHTEOUS_L')):ConcentrationIgnoreDamage(Divination);IF(HasStatus('SIAEL_POTR_RIGHTEOUS_L')):ConcentrationIgnoreDamage(Enchantment);IF(HasStatus('SIAEL_POTR_RIGHTEOUS_L')):ConcentrationIgnoreDamage(Evocation);IF(HasStatus('SIAEL_POTR_RIGHTEOUS_L')):ConcentrationIgnoreDamage(Illusion);IF(HasStatus('SIAEL_POTR_RIGHTEOUS_L')):ConcentrationIgnoreDamage(Necromancy);IF(HasStatus('SIAEL_POTR_RIGHTEOUS_L')):ConcentrationIgnoreDamage(Transmutation);IF(HasStatus('SIAEL_POTR_RIGHTEOUS_L')):ConcentrationIgnoreDamage()"
 data "Boosts" "StatusImmunity(SURPRISED);StatusImmunity(SG_Frightened);StatusImmunity(SG_Fleeing);StatusImmunity(SG_Charmed);Advantage(Concentration)"
 
 // ================================== Gloves ==================================
@@ -249,19 +249,6 @@ using "Siael_POTR_Cape_P2"
 data "Description" "h4999001dg0b36g4b77g868dgfbcfe458f1f2;1"
 // data "Boosts" "UnlockSpellVariant(SpellId('Shout_CrusadersMantle') or SpellId('PoU_UnholyMantle'),ModifyUseCosts(Replace,ActionPoint,0,0,ActionPoint),ModifyTooltipDescription())"
 data "Boosts" "UnlockSpellVariant(SpellId('Shout_CrusadersMantle') or SpellId('PoU_UnholyMantle'),ModifyUseCosts(Replace,ActionPoint,0,0,ActionPoint),ModifyTooltipDescription());UnlockSpellVariant(SpellId('Shout_CrusadersMantle') or SpellId('PoU_UnholyMantle'),ModifyUseCosts(Replace,BonusActionPoint,0,0,BonusActionPoint),ModifyTooltipDescription())"
-
-// Celestial Haste: rename to be different from vanilla spell, decrease movement speed bonus to 3m, and remove extra bonus action
-new entry "Siael_POTR_Cape_P3"
-type "PassiveData"
-using "Siael_POTR_Cape_P3"
-// Divine Alacrity
-data "DisplayName" "hc0020ecbg621eg40f3g92e3gccc16999657a;1"
-// Your &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; is increased by [1] and you gain an additional &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;reaction&lt;/LSTag&gt;.
-data "Description" "ha9cbe3f8g840fg4228ga294g44b3ce182b2b;1"
-// data "DescriptionParams" "Distance(4.5)"
-data "DescriptionParams" "Distance(3)"
-// data "Boosts" "ActionResource(Movement,4.5,0);ActionResource(BonusActionPoint,1,0);ActionResource(ReactionActionPoint,1,0)"
-data "Boosts" "ActionResource(Movement,3,0);ActionResource(ReactionActionPoint,1,0)"
 
 // ================================== Amulet ==================================
 
@@ -514,7 +501,7 @@ data "Description" "ha3eb39a4gc393g44d4gb5c9gd9ab4477cc78;1"
 // data "DescriptionParams" "12"
 data "DescriptionParams" ""
 // data "TickFunctors" "IF(Tagged('UNDEAD') or Tagged('UNDEAD_BEAST') or Tagged('FIEND') or Tagged('FEY') or Tagged('MONSTROSITY') or Tagged('ABERRATION')):ApplyStatus(MAG_RADIANT_RADIATING_ORB,100,2);IF(Tagged('UNDEAD') or Tagged('UNDEAD_BEAST') or Tagged('FIEND') or Tagged('FEY') or Tagged('MONSTROSITY') or Tagged('ABERRATION')):ApplyStatus(SIAEL_POTR_RJ_TECHNICAL,100,0)"
-data "TickFunctors" "IF(Tagged('UNDEAD') or Tagged('UNDEAD_BEAST') or Tagged('FIEND') or Tagged('FEY') or Tagged('MONSTROSITY') or Tagged('ABERRATION')):ApplyStatus(MAG_RADIANT_RADIATING_ORB,100,2)"
+data "TickFunctors" "IF(Tagged('UNDEAD') or Tagged('UNDEAD_BEAST') or Tagged('FIEND') or Tagged('FEY') or Tagged('MONSTROSITY') or Tagged('ABERRATION')):ApplyStatus(MAG_RADIANT_RADIATING_ORB,100,1)"
 
 // ================================== Mercy + Resolve sets: Luminous Sermon ==================================
 // Clarify tooltip

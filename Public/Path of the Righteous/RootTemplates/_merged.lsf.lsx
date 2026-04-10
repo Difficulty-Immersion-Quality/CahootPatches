@@ -11,7 +11,7 @@
 					<attribute id="MapKey" type="FixedString" value="1a1d095f-cc53-4aa7-a65c-06bf08a53e42" />
 					<attribute id="Name" type="LSString" value="Siael_POTR_Sword_D" />
 					<attribute id="Stats" type="FixedString" value="Siael_POTR_Sword_D" />
-					<attribute id="Icon" type="FixedString" value="Item_WPN_HUM_Longsword_Broken_A" />
+					<attribute id="Icon" type="FixedString" value="Siael_POTR_Sword_0" />
 					<attribute id="LevelName" type="FixedString" value="" />
 					<attribute id="Type" type="FixedString" value="item" />
 					<attribute id="ParentTemplateId" type="FixedString" value="1865323f-b428-4791-a0a9-578841e57463" />
@@ -33,7 +33,7 @@
 					<attribute id="MapKey" type="FixedString" value="8dba5984-6a91-4ddf-8a8d-c2238aad2108" />
 					<attribute id="Name" type="LSString" value="Siael_POTR_Sword_R" />
 					<attribute id="Stats" type="FixedString" value="Siael_POTR_Sword_R" />
-					<attribute id="Icon" type="FixedString" value="Item_WPN_HUM_Longsword_A_2" />
+					<attribute id="Icon" type="FixedString" value="Siael_POTR_Sword_1" />
 					<attribute id="LevelName" type="FixedString" value="" />
 					<attribute id="Type" type="FixedString" value="item" />
 					<attribute id="ParentTemplateId" type="FixedString" value="1865323f-b428-4791-a0a9-578841e57463" />
@@ -55,7 +55,7 @@
 					<attribute id="MapKey" type="FixedString" value="8e979de0-dd0f-44de-8248-d466945376d4" />
 					<attribute id="Name" type="LSString" value="Siael_POTR_Sword_V" />
 					<attribute id="Stats" type="FixedString" value="Siael_POTR_Sword_V" />
-					<attribute id="Icon" type="FixedString" value="Item_MAG_Primeval_Silver_Longsword_GLOW" />
+					<attribute id="Icon" type="FixedString" value="Siael_POTR_Sword_2" />
 					<attribute id="LevelName" type="FixedString" value="" />
 					<attribute id="Type" type="FixedString" value="item" />
 					<attribute id="ParentTemplateId" type="FixedString" value="1865323f-b428-4791-a0a9-578841e57463" />
@@ -5284,7 +5284,7 @@
 					<attribute id="MapKey" type="FixedString" value="f5e73745-56fe-4491-acef-6b04ca4250ee" />
 					<attribute id="Name" type="LSString" value="Siael_POTR_Shield_D" />
 					<attribute id="Stats" type="FixedString" value="Siael_POTR_Shield_D" />
-					<attribute id="Icon" type="FixedString" value="Item_WPN_HUM_Shield_DeathKnight" />
+					<attribute id="Icon" type="FixedString" value="Siael_POTR_Shield_0" />
 					<attribute id="LevelName" type="FixedString" value="" />
 					<attribute id="Type" type="FixedString" value="item" />
 					<attribute id="ParentTemplateId" type="FixedString" value="5b8fe99f-56d9-48a8-a9d0-8290ebae6461" />
@@ -5296,7 +5296,7 @@
 					<attribute id="MapKey" type="FixedString" value="d9965a8b-a971-4ceb-8469-b4f659908466" />
 					<attribute id="Name" type="LSString" value="Siael_POTR_Shield_R" />
 					<attribute id="Stats" type="FixedString" value="Siael_POTR_Shield_R" />
-					<attribute id="Icon" type="FixedString" value="Item_WPN_HUM_Shield_DeathKnight" />
+					<attribute id="Icon" type="FixedString" value="Siael_POTR_Shield_1" />
 					<attribute id="LevelName" type="FixedString" value="" />
 					<attribute id="Type" type="FixedString" value="item" />
 					<attribute id="ParentTemplateId" type="FixedString" value="5b8fe99f-56d9-48a8-a9d0-8290ebae6461" />
@@ -5308,7 +5308,7 @@
 					<attribute id="MapKey" type="FixedString" value="2a02d378-3134-4196-9b94-355604d3c5da" />
 					<attribute id="Name" type="LSString" value="Siael_POTR_Shield_V" />
 					<attribute id="Stats" type="FixedString" value="Siael_POTR_Shield_V" />
-					<attribute id="Icon" type="FixedString" value="Item_WPN_HUM_Shield_DeathKnight_MAG" />
+					<attribute id="Icon" type="FixedString" value="Siael_POTR_Shield_2" />
 					<attribute id="LevelName" type="FixedString" value="" />
 					<attribute id="Type" type="FixedString" value="item" />
 					<attribute id="ParentTemplateId" type="FixedString" value="5b8fe99f-56d9-48a8-a9d0-8290ebae6461" />
@@ -5320,7 +5320,7 @@
 					<attribute id="MapKey" type="FixedString" value="2d809d9c-c825-466a-91f0-2da79f4ef963" />
 					<attribute id="Name" type="LSString" value="Siael_POTR_Shield_L" />
 					<attribute id="Stats" type="FixedString" value="Siael_POTR_Shield_L" />
-					<attribute id="Icon" type="FixedString" value="Item_WPN_HUM_Shield_DeathKnight_MAG" />
+					<attribute id="Icon" type="FixedString" value="Siael_POTR_Shield_3" />
 					<attribute id="LevelName" type="FixedString" value="" />
 					<attribute id="Type" type="FixedString" value="item" />
 					<attribute id="ParentTemplateId" type="FixedString" value="5b8fe99f-56d9-48a8-a9d0-8290ebae6461" />
@@ -5332,7 +5332,7 @@
 					<attribute id="MapKey" type="FixedString" value="addcb0b3-c828-47d0-a597-196d9f99ee73" />
 					<attribute id="Name" type="LSString" value="Siael_POTR_Ring1_D" />
 					<attribute id="Stats" type="FixedString" value="Siael_POTR_Ring1_D" />
-					<attribute id="Icon" type="FixedString" value="Item_LOOT_GEN_Ring_C_Gold_A_1" />
+					<attribute id="Icon" type="FixedString" value="Siael_POTR_Ring1_0" />
 					<attribute id="LevelName" type="FixedString" value="" />
 					<attribute id="Type" type="FixedString" value="item" />
 					<attribute id="ParentTemplateId" type="FixedString" value="5cbedb00-e900-439e-9035-50ab581fc5b9" />
@@ -5344,7 +5344,7 @@
 					<attribute id="MapKey" type="FixedString" value="94ec2c7c-dc62-4a2c-850a-ee2b445dda07" />
 					<attribute id="Name" type="LSString" value="Siael_POTR_Ring1_R" />
 					<attribute id="Stats" type="FixedString" value="Siael_POTR_Ring1_R" />
-					<attribute id="Icon" type="FixedString" value="Item_LOOT_GEN_Ring_C_Gold_A_1" />
+					<attribute id="Icon" type="FixedString" value="Siael_POTR_Ring1_1" />
 					<attribute id="LevelName" type="FixedString" value="" />
 					<attribute id="Type" type="FixedString" value="item" />
 					<attribute id="ParentTemplateId" type="FixedString" value="5cbedb00-e900-439e-9035-50ab581fc5b9" />
@@ -5356,7 +5356,7 @@
 					<attribute id="MapKey" type="FixedString" value="4349f5d5-38f0-436a-85ca-aed98801446e" />
 					<attribute id="Name" type="LSString" value="Siael_POTR_Ring1_V" />
 					<attribute id="Stats" type="FixedString" value="Siael_POTR_Ring1_V" />
-					<attribute id="Icon" type="FixedString" value="Item_LOOT_GEN_Ring_C_Gold_A_1" />
+					<attribute id="Icon" type="FixedString" value="Siael_POTR_Ring1_2" />
 					<attribute id="LevelName" type="FixedString" value="" />
 					<attribute id="Type" type="FixedString" value="item" />
 					<attribute id="ParentTemplateId" type="FixedString" value="5cbedb00-e900-439e-9035-50ab581fc5b9" />
@@ -5368,7 +5368,7 @@
 					<attribute id="MapKey" type="FixedString" value="7e73cbd8-331d-4ef6-a96c-ca5f930cb830" />
 					<attribute id="Name" type="LSString" value="Siael_POTR_Ring1_L" />
 					<attribute id="Stats" type="FixedString" value="Siael_POTR_Ring1_L" />
-					<attribute id="Icon" type="FixedString" value="Item_LOOT_GEN_Ring_C_Gold_A_1" />
+					<attribute id="Icon" type="FixedString" value="Siael_POTR_Ring1_3" />
 					<attribute id="LevelName" type="FixedString" value="" />
 					<attribute id="Type" type="FixedString" value="item" />
 					<attribute id="ParentTemplateId" type="FixedString" value="5cbedb00-e900-439e-9035-50ab581fc5b9" />
@@ -5380,7 +5380,7 @@
 					<attribute id="MapKey" type="FixedString" value="6e1672b1-daf7-491d-a89b-429bbba087e6" />
 					<attribute id="Name" type="LSString" value="Siael_POTR_Ring2_D" />
 					<attribute id="Stats" type="FixedString" value="Siael_POTR_Ring2_D" />
-					<attribute id="Icon" type="FixedString" value="Item_LOOT_GEN_Ring_A_Gem_A_Gold_1" />
+					<attribute id="Icon" type="FixedString" value="Siael_POTR_Ring2_0" />
 					<attribute id="LevelName" type="FixedString" value="" />
 					<attribute id="Type" type="FixedString" value="item" />
 					<attribute id="ParentTemplateId" type="FixedString" value="5cbedb00-e900-439e-9035-50ab581fc5b9" />
@@ -5392,7 +5392,7 @@
 					<attribute id="MapKey" type="FixedString" value="4d4f6335-e543-47af-a354-8b768a3dbd68" />
 					<attribute id="Name" type="LSString" value="Siael_POTR_Ring2_R" />
 					<attribute id="Stats" type="FixedString" value="Siael_POTR_Ring2_R" />
-					<attribute id="Icon" type="FixedString" value="Item_LOOT_GEN_Ring_A_Gem_A_Gold_1" />
+					<attribute id="Icon" type="FixedString" value="Siael_POTR_Ring2_1" />
 					<attribute id="LevelName" type="FixedString" value="" />
 					<attribute id="Type" type="FixedString" value="item" />
 					<attribute id="ParentTemplateId" type="FixedString" value="5cbedb00-e900-439e-9035-50ab581fc5b9" />
@@ -5404,7 +5404,7 @@
 					<attribute id="MapKey" type="FixedString" value="be62a0e9-789b-4e89-bf1b-df1be81946bc" />
 					<attribute id="Name" type="LSString" value="Siael_POTR_Ring2_V" />
 					<attribute id="Stats" type="FixedString" value="Siael_POTR_Ring2_V" />
-					<attribute id="Icon" type="FixedString" value="Item_LOOT_GEN_Ring_A_Gem_A_Gold_1" />
+					<attribute id="Icon" type="FixedString" value="Siael_POTR_Ring2_2" />
 					<attribute id="LevelName" type="FixedString" value="" />
 					<attribute id="Type" type="FixedString" value="item" />
 					<attribute id="ParentTemplateId" type="FixedString" value="5cbedb00-e900-439e-9035-50ab581fc5b9" />
@@ -5416,7 +5416,7 @@
 					<attribute id="MapKey" type="FixedString" value="fd0f1e10-def5-48af-b24d-e42f73e517ad" />
 					<attribute id="Name" type="LSString" value="Siael_POTR_Ring2_L" />
 					<attribute id="Stats" type="FixedString" value="Siael_POTR_Ring2_L" />
-					<attribute id="Icon" type="FixedString" value="Item_LOOT_GEN_Ring_A_Gem_A_Gold_1" />
+					<attribute id="Icon" type="FixedString" value="Siael_POTR_Ring2_3" />
 					<attribute id="LevelName" type="FixedString" value="" />
 					<attribute id="Type" type="FixedString" value="item" />
 					<attribute id="ParentTemplateId" type="FixedString" value="5cbedb00-e900-439e-9035-50ab581fc5b9" />
@@ -5428,7 +5428,7 @@
 					<attribute id="MapKey" type="FixedString" value="3538aea3-5da0-4ee8-8592-4d58c933f495" />
 					<attribute id="Name" type="LSString" value="Siael_POTR_Amulet_D" />
 					<attribute id="Stats" type="FixedString" value="Siael_POTR_Amulet_D" />
-					<attribute id="Icon" type="FixedString" value="Item_MAG_ofGreaterHealth_Amulet" />
+					<attribute id="Icon" type="FixedString" value="Siael_POTR_Amulet_0" />
 					<attribute id="DropSound" type="FixedString" value="8891f42c-f66e-b87a-d0b7-6f2de68489a8" />
 					<attribute id="Flag" type="int32" value="0" />
 					<attribute id="ImpactSound" type="FixedString" value="fa6145a3-f95d-60a9-9583-ba601bc3a583" />
@@ -5480,7 +5480,7 @@
 					<attribute id="MapKey" type="FixedString" value="7f56f65b-090a-44a4-97db-97506d5d3382" />
 					<attribute id="Name" type="LSString" value="Siael_POTR_Amulet_R" />
 					<attribute id="Stats" type="FixedString" value="Siael_POTR_Amulet_R" />
-					<attribute id="Icon" type="FixedString" value="Item_MAG_ofGreaterHealth_Amulet" />
+					<attribute id="Icon" type="FixedString" value="Siael_POTR_Amulet_1" />
 					<attribute id="LevelName" type="FixedString" value="" />
 					<attribute id="ParentTemplateId" type="FixedString" value="3538aea3-5da0-4ee8-8592-4d58c933f495" />
 					<attribute id="Type" type="FixedString" value="item" />
@@ -5492,7 +5492,7 @@
 					<attribute id="MapKey" type="FixedString" value="fcd13b9e-960e-4780-a8e7-9095d02591bf" />
 					<attribute id="Name" type="LSString" value="Siael_POTR_Amulet_V" />
 					<attribute id="Stats" type="FixedString" value="Siael_POTR_Amulet_V" />
-					<attribute id="Icon" type="FixedString" value="Item_MAG_ofGreaterHealth_Amulet" />
+					<attribute id="Icon" type="FixedString" value="Siael_POTR_Amulet_2" />
 					<attribute id="LevelName" type="FixedString" value="" />
 					<attribute id="ParentTemplateId" type="FixedString" value="3538aea3-5da0-4ee8-8592-4d58c933f495" />
 					<attribute id="Type" type="FixedString" value="item" />
@@ -5504,7 +5504,7 @@
 					<attribute id="MapKey" type="FixedString" value="08ab1c02-3798-49f5-a002-930ce661b262" />
 					<attribute id="Name" type="LSString" value="Siael_POTR_Amulet_L" />
 					<attribute id="Stats" type="FixedString" value="Siael_POTR_Amulet_L" />
-					<attribute id="Icon" type="FixedString" value="Item_MAG_ofGreaterHealth_Amulet" />
+					<attribute id="Icon" type="FixedString" value="Siael_POTR_Amulet_3" />
 					<attribute id="LevelName" type="FixedString" value="" />
 					<attribute id="ParentTemplateId" type="FixedString" value="3538aea3-5da0-4ee8-8592-4d58c933f495" />
 					<attribute id="Type" type="FixedString" value="item" />
@@ -5516,7 +5516,7 @@
 					<attribute id="MapKey" type="FixedString" value="b9df0884-3ce0-4b32-aea8-bc1a1f5ca69d" />
 					<attribute id="Name" type="LSString" value="Siael_POTR_Trinket_D" />
 					<attribute id="Stats" type="FixedString" value="Siael_POTR_Trinket_D" />
-					<attribute id="Icon" type="FixedString" value="Item_CONS_Potion_Rare_A" />
+					<attribute id="Icon" type="FixedString" value="Siael_POTR_Trinket_0" />
 					<attribute id="LevelName" type="FixedString" value="" />
 					<attribute id="ParentTemplateId" type="FixedString" value="277257bc-38f5-4c51-be13-32498e8cbd3d" />
 					<attribute id="PhysicsTemplate" type="FixedString" value="d81d7c1d-ff72-a642-0433-779a99f64325" />
@@ -5564,7 +5564,7 @@
 					<attribute id="MapKey" type="FixedString" value="252e4225-1a83-4c7b-b3da-66dfccb640c7" />
 					<attribute id="Name" type="LSString" value="Siael_POTR_Trinket_R" />
 					<attribute id="Stats" type="FixedString" value="Siael_POTR_Trinket_R" />
-					<attribute id="Icon" type="FixedString" value="Item_CONS_Potion_Rare_A" />
+					<attribute id="Icon" type="FixedString" value="Siael_POTR_Trinket_1" />
 					<attribute id="LevelName" type="FixedString" value="" />
 					<attribute id="ParentTemplateId" type="FixedString" value="b9df0884-3ce0-4b32-aea8-bc1a1f5ca69d" />
 					<attribute id="Type" type="FixedString" value="item" />
@@ -5576,7 +5576,7 @@
 					<attribute id="MapKey" type="FixedString" value="97a8a49a-5592-4792-9487-34bbfbe6693a" />
 					<attribute id="Name" type="LSString" value="Siael_POTR_Trinket_V" />
 					<attribute id="Stats" type="FixedString" value="Siael_POTR_Trinket_V" />
-					<attribute id="Icon" type="FixedString" value="Item_CONS_Potion_Rare_A_Bronze" />
+					<attribute id="Icon" type="FixedString" value="Siael_POTR_Trinket_2" />
 					<attribute id="LevelName" type="FixedString" value="" />
 					<attribute id="ParentTemplateId" type="FixedString" value="b9df0884-3ce0-4b32-aea8-bc1a1f5ca69d" />
 					<attribute id="VisualTemplate" type="FixedString" value="abb472c0-eb24-22d6-e3cb-665c95d30c44" />
@@ -5589,7 +5589,7 @@
 					<attribute id="MapKey" type="FixedString" value="b41fb5a7-a965-4dfa-bc48-36a3c49e537a" />
 					<attribute id="Name" type="LSString" value="Siael_POTR_Trinket_L" />
 					<attribute id="Stats" type="FixedString" value="Siael_POTR_Trinket_L" />
-					<attribute id="Icon" type="FixedString" value="Item_CONS_Potion_Of_Fire_Breath" />
+					<attribute id="Icon" type="FixedString" value="Siael_POTR_Trinket_3" />
 					<attribute id="LevelName" type="FixedString" value="" />
 					<attribute id="ParentTemplateId" type="FixedString" value="b9df0884-3ce0-4b32-aea8-bc1a1f5ca69d" />
 					<attribute id="VisualTemplate" type="FixedString" value="abb472c0-eb24-22d6-e3cb-665c95d30c44" />

@@ -25,6 +25,8 @@ Ext.Vars.RegisterModVariable("60b7b37b-c006-4775-bda2-6ebb726acc12", "justice", 
 Ext.Vars.RegisterModVariable("60b7b37b-c006-4775-bda2-6ebb726acc12", "chest", {Server = true, Client = false, SyncToClient = false})
 ---@diagnostic disable-next-line: redundant-parameter
 Ext.Vars.RegisterModVariable("60b7b37b-c006-4775-bda2-6ebb726acc12", "stalwart", {Server = true, Client = false, SyncToClient = false})
+---@diagnostic disable-next-line: redundant-parameter
+Ext.Vars.RegisterModVariable("60b7b37b-c006-4775-bda2-6ebb726acc12", "lathander", {Server = true, Client = false, SyncToClient = false})
 
 --Ring 1 purification handler
 Ext.Osiris.RegisterListener("StatusApplied", 4, "after", function(object, status, causee, storyActionID)
@@ -198,39 +200,49 @@ Ext.Osiris.RegisterListener("StatusRemoved", 4, "after", function(object, status
     if status == "SIAEL_POTR_CURSE" then
         local template = GetTemplate(object)
         local x,y,z = GetPosition(object)
-        RequestDelete(object)
         if template == "Siael_POTR_Sword_D_1a1d095f-cc53-4aa7-a65c-06bf08a53e42" then
             --Osi.Transform(object,"8dba5984-6a91-4ddf-8a8d-c2238aad2108","")
+            RequestDelete(object)
             CreateAt("8dba5984-6a91-4ddf-8a8d-c2238aad2108",x,y,z,0,0,"")
         elseif template == "Siael_POTR_Gauntlets_D_b13fb5e5-9d07-4f5e-853b-dbe0567c6ce8" then
             --Osi.Transform(object,"91d768aa-fac7-421a-927d-c6fa28625d73","")
+            RequestDelete(object)
             CreateAt("91d768aa-fac7-421a-927d-c6fa28625d73",x,y,z,0,0,"")
         elseif template == "Siael_POTR_Boots_D_beaf5421-f696-4a9a-bc79-84af1037c978" then
             --Osi.Transform(object,"e0cb79a9-f19a-4416-b7a4-7cf09aa4e1c6","")
+            RequestDelete(object)
             CreateAt("e0cb79a9-f19a-4416-b7a4-7cf09aa4e1c6",x,y,z,0,0,"")
         elseif template == "Siael_POTR_Armor_D_5c5a9832-5ae1-4b00-b9b0-f015e18a449c" then
             --Osi.Transform(object,"2fefb133-39c6-49f3-8cf6-040eae5b43f0","")
+            RequestDelete(object)
             CreateAt("2fefb133-39c6-49f3-8cf6-040eae5b43f0",x,y,z,0,0,"")
         elseif template == "Siael_POTR_Head_D_01c426eb-f692-4832-8e3e-f14f36a39254" then
             --Osi.Transform(object,"40215888-0d3c-4e7c-8092-6014bb1d378b","")
+            RequestDelete(object)
             CreateAt("40215888-0d3c-4e7c-8092-6014bb1d378b",x,y,z,0,0,"")
         elseif template == "Siael_POTR_Cape_D_67bfce50-5f00-4b00-8221-df9537859fe4" then
             --Osi.Transform(object,"69e54126-15cd-4ba0-8f01-4e7cd74972a1","")
+            RequestDelete(object)
             CreateAt("69e54126-15cd-4ba0-8f01-4e7cd74972a1",x,y,z,0,0,"")
         elseif template == "Siael_POTR_Shield_D_f5e73745-56fe-4491-acef-6b04ca4250ee" then
             --Osi.Transform(object,"d9965a8b-a971-4ceb-8469-b4f659908466","")
+            RequestDelete(object)
             CreateAt("d9965a8b-a971-4ceb-8469-b4f659908466",x,y,z,0,0,"")
         elseif template == "Siael_POTR_Ring1_D_addcb0b3-c828-47d0-a597-196d9f99ee73" then
             --Osi.Transform(object,"94ec2c7c-dc62-4a2c-850a-ee2b445dda07","")
+            RequestDelete(object)
             CreateAt("94ec2c7c-dc62-4a2c-850a-ee2b445dda07",x,y,z,0,0,"")
         elseif template == "Siael_POTR_Ring2_D_6e1672b1-daf7-491d-a89b-429bbba087e6" then
             --Osi.Transform(object,"4d4f6335-e543-47af-a354-8b768a3dbd68","")
+            RequestDelete(object)
             CreateAt("4d4f6335-e543-47af-a354-8b768a3dbd68",x,y,z,0,0,"")
         elseif template == "Siael_POTR_Amulet_D_3538aea3-5da0-4ee8-8592-4d58c933f495" then
             --Osi.Transform(object,"7f56f65b-090a-44a4-97db-97506d5d3382","")
+            RequestDelete(object)
             CreateAt("7f56f65b-090a-44a4-97db-97506d5d3382",x,y,z,0,0,"")
         elseif template == "Siael_POTR_Trinket_D_b9df0884-3ce0-4b32-aea8-bc1a1f5ca69d" then
             --Osi.Transform(object,"252e4225-1a83-4c7b-b3da-66dfccb640c7","")
+            RequestDelete(object)
             CreateAt("252e4225-1a83-4c7b-b3da-66dfccb640c7",x,y,z,0,0,"")
         end
     end
@@ -411,7 +423,7 @@ Ext.Osiris.RegisterListener("QuestUpdateUnlocked", 3, "after", function(characte
         print("SIAEL - Adamantine Forge used.")
         TemplateAddTo("26bb3e6f-efa6-4c8b-9fc2-34d0739e6eff",GetHostCharacter(),1,1)
     --Moonrise Jailbreak - Cheerful Reunion
-    elseif topLevelQuestID == "HAV_SaveTieflingPrisoners" and (stateID == "RescueSuccess" or stateID == "AllEscaped" or stateID == "BoatAllEscaped" or stateID == "AllEscapedHav") and stopMoonrise == 0 then
+    elseif topLevelQuestID == "HAV_SaveTieflingPrisoners" and (stateID == "RescueSuccess" or stateID == "AllEscaped" or stateID == "BoatAllEscaped" or stateID == "AllEscapedHav" or stateID == "BoatAllEscapedHav" or stateID == "GotBardBigReward") and stopMoonrise == 0 then
         stopMoonrise = 1
         print("SIAEL - All Moonrise prisonners were freed.")
         TemplateAddTo("6b91bdb7-3f58-4bb6-ab6b-a8250752c035",GetHostCharacter(),1,1)
@@ -505,10 +517,10 @@ end)
 
 --Blood of Lathander - Brilliant Devotion
 Ext.Osiris.RegisterListener("AddedTo", 3, "after", function(object, inventoryHolder, addType)
-    if object == "S_CRE_BloodOfLathander_e26f0c19-6185-43a7-b7f7-7155b936c59c" and GetFlag("f6ee5634-6b15-40d5-9a12-52d2d689055f",GetHostCharacter()) == 0 and GetFlag("CRE_Lance_State_Disarmed_a17b9bbd-43e1-4ba2-8f88-a33ecdb07a96",GetHostCharacter()) == 1 then
+    if object == "S_CRE_BloodOfLathander_e26f0c19-6185-43a7-b7f7-7155b936c59c" and Ext.Vars.GetModVariables("60b7b37b-c006-4775-bda2-6ebb726acc12").lathander ~= 1 and GetFlag("CRE_Lance_State_Disarmed_a17b9bbd-43e1-4ba2-8f88-a33ecdb07a96",GetHostCharacter()) == 1 then
         print("SIAEL - The Blood of Lathander was found without destroying the monastery.")
         TemplateAddTo("70429483-15c6-4a04-9bba-046b086e2a70",GetHostCharacter(),1,1)
-        SetFlag("f6ee5634-6b15-40d5-9a12-52d2d689055f")
+        Ext.Vars.GetModVariables("60b7b37b-c006-4775-bda2-6ebb726acc12")["lathander"] = 1
     end
 end)
 
@@ -1061,6 +1073,35 @@ Ext.Osiris.RegisterListener("StatusApplied", 4, "after", function(object, status
         end
         if GetTemplate(GetEquippedItem(object,"MusicalInstrument")) == trinket2 or GetTemplate(GetEquippedItem(object,"MusicalInstrument")) == trinket3 then
             Unequip(object,GetEquippedItem(object,"MusicalInstrument"))
+        end
+    end
+end)
+
+Ext.Osiris.RegisterListener("StatusApplied", 4, "after", function(object, status, causee, storyActionID)
+    if status == "SIAEL_POTR_HEAD_CHECK_P" then
+        local baseDCuuid = "d437a563-add4-4e4d-a280-7b1e2dc710"
+        local DC
+        if HasActiveStatus(object,"SIAEL_POTR_HEAD_STACKS") == 0 then
+            DC = 10
+        else
+            DC = 10 + 3 * GetStatusTurns(object,"SIAEL_POTR_HEAD_STACKS")
+        end
+        local DCuuid = baseDCuuid .. DC
+        RequestPassiveRoll(object,"","SkillCheck","Insight",DCuuid,0,"SIAEL_POTR_HEAD_CHECK_P")
+    end
+end)
+
+Ext.Osiris.RegisterListener("RollResult", 6, "after", function(eventName, roller, rollSubject, resultType, isActiveRoll, criticality)
+    if eventName == "SIAEL_POTR_HEAD_CHECK_P" then
+        if resultType == 1 then
+            if criticality == 0 then
+                ApplyStatus(roller,"SIAEL_POTR_HEAD_STACKS",6)
+            end
+        else
+            RemoveStatus(roller,"SIAEL_POTR_HEAD_P1")
+            RemoveStatus(roller,"SIAEL_POTR_HEAD_P2")
+            RemoveStatus(roller,"SIAEL_POTR_HEAD_P3")
+            ApplyStatus(roller,"SIAEL_POTR_HEAD_CD",-1)
         end
     end
 end)
