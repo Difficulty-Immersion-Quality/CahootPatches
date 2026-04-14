@@ -908,6 +908,22 @@ data "SpellSuccess" "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType); Exe
 // data "CastEffect" "6feffb50-dcb7-4bcf-8122-781914ccacb2"
 // data "TargetEffect" "5e186a18-1de1-4e0b-a1cf-3648c688dbd2"
 
+// ==================================== GG - Helm of the Wildwood
+// Expanded druid polymorph check.
+
+new entry "GG_One_Wildshape_TempHP_Passive"
+type "PassiveData"
+using "GG_One_Wildshape_TempHP_Passive"
+// Wildwood's Resilience
+// data "DisplayName" "h81fabb63g0e34g4497g891cgcc0c575648a6;1"
+// Gain &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt; equal to your Druid level when entering &lt;LSTag Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt; and reduce all incoming damage by 1 while you have these &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt;.
+// data "Description" "h81fabb63g0e34g4497g891cgcc0c575648a7;1"
+// data "DescriptionParams" "TemporaryHP(ClassLevel(Druid));DamageReduction(All, Flat, 1)"
+// data "TooltipPermanentWarnings" "8892b93b-721f-4b99-b9b4-05ac25aadb33"
+// data "StatsFunctorContext" "OnStatusApplied"
+// data "StatsFunctors" "IF(StatusHasStatusGroup(context.StatusId, 'SG_Polymorph_BeastShape') or StatusId('WILDSHAPE_STARRY_ARCHER_PLAYER') or StatusId('WILDSHAPE_STARRY_CHALICE_PLAYER') or StatusId('WILDSHAPE_STARRY_DRAGON_PLAYER')):ApplyStatus(GG_ONE_WILDSHAPE_TEMP_HP, 100, -1)"
+data "StatsFunctors" "IF(Goon_IsDruidWildshapeOrStatus()):ApplyStatus(GG_ONE_WILDSHAPE_TEMP_HP, 100, -1)"
+
 // ==================================== Might and Metal - Fighter Equipment  ====================================
 
 // ==================================== MM - Helm of the Stalwart Defender
@@ -1581,19 +1597,22 @@ data "TooltipDamageList" "DealDamage(1d8, Necrotic)"
 // ==================================== Wands and Weave - Wizard Equipment ====================================
 
 // ==================================== WW - Robe of the Arcane Duelist
-// Arcane Momentum: improve tooltip
+// Arcane Momentum: conditions made more robust, as to catch all melee weapon attacks that are also spells.
 new entry "WW_GainArcaneAcuityOnDamage_Passive"
 type "PassiveData"
 using "WW_GainArcaneAcuityOnDamage_Passive"
+// Arcane Momentum
 // data "DisplayName" "h941a2a1agcc5ag4161gb947g4797cc56ab14;1"
-// You gain &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt; for [1] turns when you deal damage with a spell or &lt;LSTag Tooltip="Cantrip"&gt;cantrip&lt;/LSTag&gt; that has a range of [2] or less.
+// When the wearer deals damage with a &lt;LSTag Tooltip="MeleeSpellAttack"&gt;Melee Spell Attack&lt;/LSTag&gt;, gain [1] turns of &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt;.
+// data "Description" "h941a2a1agcc5ag4161gb947g4797cc56ab15;1"
+// When the wearer deals damage with a &lt;LSTag Tooltip="MeleeSpellAttack"&gt;Melee Spell Attack&lt;/LSTag&gt; or a &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;Melee Weapon Attack&lt;/LSTag&gt; that is also a spell, gain [1] turns of &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt;.
 data "Description" "h8cf49e5dg153cg4c5fg818bgaa4f69a9489e;1"
-// data "DescriptionParams" ""
-data "DescriptionParams" "2;Distance(5)"
+// data "DescriptionParams" "2"
+// data "Properties" "OncePerAttack"
 // data "StatsFunctorContext" "OnDamage"
-// data "Conditions" "IsSpell() and Enemy() and HasSpellRangeEqualOrLessThan(5, context.Source) and TotalDamageDoneGreaterThan(0)"
+// data "Conditions" "(IsMeleeSpellAttack() or WWMeleeSpellAttackCheck()) and Enemy() and TotalDamageDoneGreaterThan(0)"
+data "Conditions" "(IsMeleeSpellAttack() or (IsMeleeWeaponAttack() and IsSpell())) and Enemy() and TotalDamageDoneGreaterThan(0)"
 // data "StatsFunctors" "ApplyStatus(SELF, MAG_GISH_ARCANE_ACUITY, 100, 2);ApplyStatus(SELF, MAG_GISH_ARCANE_ACUITY_DURATION_TECHNICAL, 100, 1)"
-
 
 // ==================================== WW - Boots of the Shifting Elements
 // Shifting Elements: can only be triggered in combat as tooltip states and now only has 60% chance to receive the buff (previously 100% chance) + rebalance of some effects
