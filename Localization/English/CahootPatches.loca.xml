@@ -113,40 +113,8 @@
 	<content contentuid="hf21d176ege20eg44eeg944egaf503d8983d6" version="1">When you hit a creature in melee, you &lt;LSTag Type="Status" Tooltip="MAG_HARPERS_SINGING_SWORD_DISTRACTED"&gt;Distract&lt;/LSTag&gt; it and gain 1 stack of &lt;LSTag Type="Status" Tooltip="MAG_MOMENTUM"&gt;Momentum&lt;/LSTag&gt; if you succeed a &lt;LSTag Tooltip="Performance"&gt;Performance&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt;. If your Intelligence or Wisdom &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; is higher than your Charisma Modifier, you can substitute it for Performance Checks.</content>
 	<content contentuid="hf8e82c23ga004g4430g8433g56b33548b882" version="1">You gain 1 stack of &lt;LSTag Type="Status" Tooltip="MAG_MOMENTUM"&gt;Momentum&lt;/LSTag&gt; each turn.</content>
 
-	<!-- CollegeOfTheMoons -->
-	<content contentuid="h612a9a67g4e62g4bd8g8e48g561d1ca7b52c" version="1">Tale of Life</content>
-	<content contentuid="h1baf6296g9ab7g498dg8987g648be6df9198" version="1">You invoke a tale of vitality and thriving earth. When you restore &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt; to a creature with a spell, you can expend a &lt;LSTag Type="ActionResource" Tooltip="BardicInspiration"&gt;Bardic Inspiration&lt;/LSTag&gt; die to increase the amount of hit points restored by [1].</content>
-	<content contentuid="h1444e6e0gf500g4318g9255g611a22c2ccc3" version="1">Tale of Life</content>
-	<content contentuid="hd05ed4cbg8967g4ba2g895agc294b5e683cf" version="1">When you restore &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt; to a creature with a spell, you can increase the amount of hit points restored by [1].</content>
-	<content contentuid="h85f54b42g4976g461cgb9e0g681ac841a32f" version="1">Tale of Life</content>
-	<content contentuid="heeb4f9ccg3b79g4642gb57fgc58cc63f01e5" version="1">When you restore &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt; to a creature with a spell, you can increase the amount of hit points restored by [1].</content>
-	<content contentuid="h1a1f17a9g9de0g4026gaa38g377037a2cffa" version="1">You invoke a tale of mystery and secrets. When you give a creature a &lt;LSTag Type="Status" Tooltip="BARDIC_INSPIRATION"&gt;Bardic Inspiration&lt;/LSTag&gt; die, you can take the &lt;LSTag Type="Spell" Tooltip="Shout_Disengage"&gt;Disengage&lt;/LSTag&gt; or &lt;LSTag Type="Spell" Tooltip="Shout_Hide"&gt;Hide&lt;/LSTag&gt; action for free.</content>
-	<content contentuid="h92ade126g6d35g4c64gb5d1gc3f8284cdbf7" version="1">Tale of Gloam: Disengage or Hide</content>
-	<content contentuid="h4959b942g8d01g4db9gae59g70ede43940d4" version="1">You can take the &lt;LSTag Type="Spell" Tooltip="Shout_Disengage"&gt;Disengage&lt;/LSTag&gt; or &lt;LSTag Type="Spell" Tooltip="Shout_Hide"&gt;Hide&lt;/LSTag&gt; action for free.</content>
-	<content contentuid="hb49d617egbe40g4900ga73bg0c0a281266b0" version="1">You invoke a tale of merriment and fey guile. You can cast &lt;LSTag Type="Spell" Tooltip="CHT_Target_TaleMirth"&gt;Tale of Mirth: Mocking Words&lt;/LSTag&gt;.</content>
-	<content contentuid="he196a8feg7489g4413g878cgad8e7a969872" version="1">Tale of Mirth: Mocking Words</content>
-	<content contentuid="h310dfd0dgf6cbg49f5g9c10g97f08613fde0" version="1">Choose one creature you can see. The creature must subtract an amount equal to a roll of your &lt;LSTag Type="ActionResource" Tooltip="BardicInspiration"&gt;Bardic Inspiration&lt;/LSTag&gt; dice from the next &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; it makes before the start of your next turn.</content>
-	<content contentuid="h636593b4g3894g4fb9g81f1gf316dafa5fe7" version="1">Tale of Mirth: Mocking Words</content>
-	<content contentuid="h779c5aebgd744g4de9g8796gdb492d2e5dc8" version="1">Affected entity has a penalty equal to the duration indicated to the next &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; it makes before the start of your next turn.</content>
-	<content contentuid="h06ac9548g00f0g4fd4g881ag48f969cfec9a" version="1">Call down a beam of light that damages any enemy or heals any ally that enters the beam or starts its turn in the light. You can use an action to move the beam [1].</content>
-	<content contentuid="h0ac2e4b1g9fa8g4704g9d83ga8dd7cd25e42" version="1">Move Blessing of the Moonwells: Moonbeam</content>
-	<content contentuid="h53866138g0fffg43c7g9175g2b5b22eb5f4e" version="1">Move the beam of moonlight up to [1]. The beam of light damages any enemy and heals any ally that enters the beam or starts its turn in the light.</content>
-	<content contentuid="h5b03bb0fga085g4bfcg84a0g783214c9eac1" version="1">Blessing of the Moonwells: Moonbeam</content>	
-	<content contentuid="h475fcb37gae10g421fg96c6gcb1b193a61ac" version="1">Ghostly flames engulf any creature that enters this silvery light or starts its turn inside the light, dealing [1] to enemies and healing allies for [2]. On a successful save, enemies still take half damage.</content>
-	<content contentuid="hfa4973c9g8411g4606g85ccg6490052ece8f" version="1">Creature is engulfed by ghostly flames that heal for [1] per turn.</content>
-
 	<!-- Oath of Heroism -->
 	<content contentuid="h52343558g1d56g490cgb2a7g3cc03ebf5119" version="1">Augment your athleticism with divine favour. Your &lt;LSTag Tooltip="Strength"&gt;Strength&lt;/LSTag&gt; increases by [1] and you gain &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on all &lt;LSTag Tooltip="Acrobatics"&gt;Acrobatics&lt;/LSTag&gt; and &lt;LSTag Tooltip="Athletics"&gt;Athletics&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityCheck"&gt;Checks&lt;/LSTag&gt;.</content>
-
-	<!-- Oath_Glory -->
-	<content contentuid="hcf98525dg3750g4337g8a17gf5705dc119ec" version="1">Channel your Oath to guide yourself or an ally. Enemies have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="OpportunityAttack"&gt;Opportunity Attacks&lt;/LSTag&gt; against your target and the number they need to roll a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; is reduced by 1.</content>
-	<content contentuid="h81043278g8482g4408gbe0egf7a82c6374a7" version="1">As part of your Divine Smite feature, you may channel your Oath to give yourself and all allies within [1] &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt; equal to your &lt;LSTag Tooltip="Charisma"&gt;Charisma&lt;/LSTag&gt; &lt;LSTag Tooltip="Modifier"&gt;Modifier&lt;/LSTag&gt; plus Paladin Level.</content>
-	<content contentuid="ha31aa544g2296g45e2ga1d8g1f9aef0fdaed" version="1">You and your allies within [1] have their &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; increased by [2]. The aura disappears if you fall Unconscious.</content>
-	<content contentuid="he9d4598cgde4eg4441gaa15g3a00a91e9fef" version="1">You and your allies within [1] have their &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; increased by [2]. The aura disappears if you fall Unconscious.</content>
-	<content contentuid="hd39b8906g6d88g41a7ga0acg1aafa9228ad7" version="1">You and your allies within [1] have their &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; increased by [2]. The aura disappears if you fall Unconscious.</content>
-	<content contentuid="h7c30fc40gc2d9g426agb346g120d0c37662b" version="1">&lt;LSTag Tooltip="MovementSpeed"&gt;Movement speed&lt;/LSTag&gt; increases by [1] if entity starts its turn within [2] of the spellcaster.</content>
-	<content contentuid="h9918abc2gd3afg42aeg95a5g58eaa6eb2f20" version="1">&lt;LSTag Tooltip="MovementSpeed"&gt;Movement speed&lt;/LSTag&gt; increases by [1] if entity starts its turn within [2] of the spellcaster.</content>
-	<content contentuid="hc8920e27gbe44g4a6bgb944g317fa8f7dae3" version="1">&lt;LSTag Tooltip="MovementSpeed"&gt;Movement speed&lt;/LSTag&gt; increases by [1] if entity starts its turn within [2] of the spellcaster.</content>
 
 	<!-- Justicar -->
 	<content contentuid="h2fdc0e99g77bcg4a87g8805gdbf140338574" version="1">Choose a creature you can see within [1] and mark it as a foe of your god. While marked, the number you need to roll for a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; on an &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt; against the target is reduced by [2].</content>
@@ -264,47 +232,6 @@
 	<content contentuid="hc06b2ac8g385fg4cb6gbd01g09fdd3a76351" version="1">Gained [1] &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt;</content>		
 	<content contentuid="hadd1d9a8gdeb7g4fa6g820eg2a482306bd34" version="1">You utter a final incantation, channeling the destructive energies of Netheril through your very being. The ancient runes upon the staff ignite with a flash as you unleash a devastating wave of force energy, obliterating yourself and dealing [1] to all creatures within a [2] radius. At character level 12, this damage increases to [3].</content>
 	
-	<!-- Custom edits to Sun Prince armour set from LathanderArmory -->
-	<!-- Sun-Kissed Headband -->
-	<content contentuid="hbdd109a0g530fg4ec0g9fc3g9393344d87b7" version="1">Light Through The Darkness</content>
-	<content contentuid="hbb0ef3b1g74afg42c5gb6a5g37d95a771fc0" version="1">The wearer can see in the dark up to [1] and cannot be &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blinded&lt;/LSTag&gt;.</content>
-	<content contentuid="h68fe24b2g26a6g4c89ga41fg8858a2266d56" version="1">Proud and Regal</content>
-	<content contentuid="haa7fc38age2d0g455ag8f50g56cb92ff1a3a" version="1">The wearer gains a +[1] bonus to &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;, equal to its &lt;LSTag Tooltip="Charisma"&gt;Charisma&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; minus 1.</content>
-	<!-- Solar Flair -->
-	<content contentuid="h5a9310ecgbf14g48dcgaa52g1f82be414a25" version="1">Sunlit Alacrity</content>
-	<content contentuid="he8021633gbdf0g4ff1ga0ccg85cee8c18145" version="1">While illuminated by a light source, the number you need to roll a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; while attacking is reduced by [1], and when you deal damage with a weapon attack, you regain [2] of &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt;.</content>
-	<content contentuid="hdf479e61g5a73g42ffgbf99g73af78cf65ff" version="1">Solar Strike</content>
-	<content contentuid="h93fc8fedg2eb4g4f1cg83f4g434a1eff477b" version="1">Call down a pillar of divine fire from the sun itself. Enemies hit take [1] and [2], while allies hit are &lt;LSTag Type="Status" Tooltip="BLESS"&gt;Blessed&lt;/LSTag&gt; for [3] turns. </content>
-	<!-- Sun Prince's Breastplate -->
-	<content contentuid="h956267beg5b90g4fb0g8d9ag37d3c667dc0b" version="1">Divine Plate</content>
-	<content contentuid="h6f2f3c56gcca2g4200gacf2g0f4fe19300cb" version="1">All incoming damage is reduced by [1].</content>
-	<content contentuid="h5f5a1f8bg4a6bg4cdbg90b0g9390a0779a65" version="1">Might of the Valiant</content>
-	<content contentuid="hc59cecb5g67bcg4cc5gb0fdg8c0a0e3b1157" version="1">When you deal damage with a &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;melee weapon attack&lt;/LSTag&gt;, you make an Athletics &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt; against your target's passive skill &lt;LSTag Tooltip="DifficultyClass"&gt;DC&lt;/LSTag&gt; using the higher of their Athletics or Acrobatics. On a success, you knock your target &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt;. This effect can only occur once every 2 turns.</content>
-	<content contentuid="h11cd871dge7ccg4a63ga636g6b1bd3bae67b" version="1">Might of the Valient: Used</content>
-	<content contentuid="h0118fe3ag911ag4bcfg9ab9gbde6320f5d4d" version="1">You have already successfully &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Proned&lt;/LSTag&gt; a target and must wait until you are able to trigger this effect again.</content>	
-	<content contentuid="hf6509047g23f0g4d38g9e1fga0806635a498" version="1">Triumphant Glory</content>
-	<content contentuid="h7afc671dg68d1g46d8g8c8dgb51179a25eac" version="1">You gain [1] each turn, your &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;melee weapon attacks&lt;/LSTag&gt; deal additional Radiant damage equal to your &lt;LSTag Tooltip="Charisma"&gt;Charisma&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;, and you gain a +[2] bonus to &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.</content>
-	<content contentuid="h96459909gf0a6g48a3g9d07g1623b705d8c3" version="1">Triumphant Glory</content>
-	<content contentuid="h89d25ce0g0c13g49e7gba5bgc5a565909c54" version="1">Entity receives [1] each turn, its &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;melee weapon attacks&lt;/LSTag&gt; deal additional Radiant damage equal to its &lt;LSTag Tooltip="Charisma"&gt;Charisma&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;, and has a +[2] bonus to &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.</content>
-	<content contentuid="h7a9846ddg85dbg4ff5gaa98g49d1ffb13426" version="1">Triumphant Glory</content>
-
-	<!-- Sun Prince's Gauntlets -->
-	<content contentuid="h6026c0dbgd603g4af7g962cg144f90394d38" version="1">Improved Critical</content>
-	<content contentuid="h30e09bf3g8b2fg4516ga3adg8d82c3611c80" version="1">The number you need to roll a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; while attacking is reduced by 1. This effect can stack.</content>
-	<content contentuid="h3edf603cg3036g4707gb8c0g4d5c6055f42c" version="1">Radiant Impulse</content>
-	<content contentuid="h7083df0ag8046g49c5gac84gee7fe161ae0d" version="1">Your &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hits&lt;/LSTag&gt; create a [1] &lt;LSTag Type="Spell" Tooltip="Projectile_MAG_Radiant_RadiatingOrb_Explosion"&gt;Radiant Shockwave&lt;/LSTag&gt;.</content>
-	<!-- Sun Prince's Greaves -->
-	<content contentuid="hdb1c5208gb0d4g44f6ga941g282038250dda" version="1">Athletic Burst</content>
-	<content contentuid="h35a80f66gb4a9g410ega7f5gc1669f2fcc5a" version="1">At the start of combat, you gain &lt;LSTag Type="Status" Tooltip="CHT_ATHLETEBOOTS_BUFF"&gt;Dawn's Inspiration&lt;/LSTag&gt; for [1] turns.</content>
-	<content contentuid="h876a15b4gc810g4526g89e3gbba2526bc7b3" version="1">Dawn's Inspiration</content>
-	<content contentuid="h23790c9bg0422g425cga4ebgf2df2734f85a" version="1">Entity's &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; and &lt;LSTag Type="Spell" Tooltip="Projectile_Jump"&gt;Jump&lt;/LSTag&gt; distance are increased by [1].</content>
-	<content contentuid="h17df2739g3b8bg4a71g80f9g6f1919260277" version="1">Heroic Strikes</content>
-	<content contentuid="h7250c066gd409g4c40g8269g2fd1d0f0e582" version="1">When you are surrounded by [1] or more enemies, you gain a +[2] bonus to your Smite spells' &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;.</content>
-	<!-- <content contentuid="hbc339d5fgf43fg4d10gb0c0g5df97f1304d0" version="1">Purifying Flames</content>
-	<content contentuid="h73e4b34cg487cg4106gaedeg72354b96a465" version="1">You gain &lt;LSTag Tooltip="Resistant"&gt;Resistance&lt;/LSTag&gt; to Radiant damage and Fire damage and are &lt;LSTag Tooltip="Immune"&gt;Immune&lt;/LSTag&gt; to &lt;LSTag Type="Status" Tooltip="BURNING"&gt;Burning&lt;/LSTag&gt;. When standing in a fire surface, you take [1] less damage from all sources.</content>
-	<content contentuid="hadb5b6ecgde30g4f50gbf58gc635147da568" version="1">Consecrated Ground</content>
-	<content contentuid="h9a23c5e4g05d7g4bf5g93dfg85f1fe6b96b6" version="1">Teleport to an area you can see and reappear in a blast of sacred flame that deals [1] and [2] to enemies in a [2] radius and leaves behind a &lt;LSTag Type="Status" Tooltip="BURNING_HOLY"&gt;Holy Fire&lt;/LSTag&gt; surface for [3] turns.</content> -->
-	
 	<!-- LathanderArmory -->
 	<content contentuid="hce421159g0407g470fg85deg6fc73d6c24bc" version="1">Whenever the wearer is healed, they receive an additional [1] of healing.</content>
 	<content contentuid="h126b80cag2a41g49f4g8e8cgeb9af860b211" version="1">Dawnburst Charge</content>
@@ -420,11 +347,6 @@ data "Description" "h23e8164fg653fg4f8bg892cgfcf764d6d9fd;1"</content>
 
 	<!-- CritfisherRing -->
 	<!-- "MAG_ImprovedGoonerCritical" --> <content contentuid="hb4e340afgd8a7g4a70g9cb4g1a122d1d128f" version="1">The number you need to &lt;LSTag Tooltip="AttackRoll"&gt;roll&lt;/LSTag&gt; a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; while attacking is reduced by [1]. This effect can stack.</content>
-
-	<!-- Cloaks of Faerun -->
-	<!-- <content contentuid="he1f00503g0dccg4a2eg9e31ga572de2a975a" version="1">Whenever the wearer succeeds on a &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; against a spell, they regain [1]. This effect can only occur once per turn.</content>
-	<content contentuid="hc2a1827agb2ecg4892g9b89g3ccffe8dc776" version="1">Whenever you deal Fire damage to an enemy, you gain [1] turns of &lt;LSTag Type="Status" Tooltip="MAG_FIRE_HEAT"&gt;Heat&lt;/LSTag&gt;.</content>
-	<content contentuid="h03436fd0gc4a9g4122g8b67g7546fcd668fe" version="1">When you heal a creature, it gains the effect of &lt;LSTag Type="Status" Tooltip="SANCTUARY"&gt;Sanctuary&lt;/LSTag&gt; for 1 turn.</content> -->
 	
 	<!-- 5e Monk Subclasses Combined -->
 	<content contentuid="h5b953896gee9cg4bb8gb06cg72ebc7adb6ab" version="1">Hurl a searing bolt of magical radiance. After making this attack, your next attack will also deal an additional [1].</content>
@@ -435,57 +357,6 @@ data "Description" "h23e8164fg653fg4f8bg892cgfcf764d6d9fd;1"</content>
 	<content contentuid="h9c860331ga782g439egb42fgf9c9c95aa26c" version="1">Hurl an orb of light that erupts into a devastating explosion, dealing [1] to all targets and &lt;LSTag Type="Status" Tooltip="CHT_SEARING_SUNBURST"&gt;Blinds&lt;/LSTag&gt; targets who fail a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.</content>
 	<content contentuid="h20a4a86bg182cg42ddgb2abg4254aa0762dc" version="1">Become wreathed in, or extinguish, a magical aura that shines light to a radius of [1], grants you a +[2] bonus to your &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;, and can damage creatures that make melee attacks against you.</content>
 	<content contentuid="hcd63c206gd620g4e1dga766ge9f75ff928cb" version="1">Entity emits an aura of light with a radius of [1] and has a +[2] bonus to its &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;.</content>
-	
-	<!-- The Celestial -->
-	<content contentuid="h27795dcdg5513g4de4g8400g899b06949cc5" version="1">Your link to the Celestial allows you to serve as a conduit for radiant energy. You have &lt;LSTag Tooltip="Resistant"&gt;Resistance&lt;/LSTag&gt; to Radiant damage, and once per turn, when you hit a target with a weapon attack, you can deal additional[1] equal to your Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;.</content>
-	<content contentuid="hd5708b57g98bbg463egaf2eg2a36bbcb003b" version="1">Radiant Soul</content>
-	<content contentuid="h80c7df12g1905g46efgbc84gb3408bb96229" version="1">Deal additional[1] equal to your &lt;LSTag Tooltip="Charisma"&gt;Charisma&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; to this target.</content>
-
-	<!-- SkillActions -->
-	<content contentuid="hc4be2689gaf69g4801g8851g60e5ceab8bc6" version="1">Skill Actions</content>
-	<content contentuid="h3c26d22dge432g48d7g989dg02c3a963530e" version="1">Additional common actions based on skill proficiency.</content>
-	<!-- <content contentuid="hb8b0b891gc7c1g4604g8946gf442e53d7365" version="1">Shove (Trip)</content> -->
-	<content contentuid="h6fd82a18gc4b8g4aa8g8b89g80c616ffbf41" version="1">Make an Athletics &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt; against a target's Athletics or Acrobatics. On a success, the target is knocked &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt;. Usable only if you have Athletics &lt;LSTag Tooltip="Proficiency"&gt;proficiency&lt;/LSTag&gt;.</content>
-	<!-- <content contentuid="hdccba7d2g171fg4cf0ga6d5g5ab26cf06d60" version="1">Swap Places</content> -->
-	<content contentuid="hafa55388ga927g41ccgb700g822093c4a4b2" version="1">Make an Acrobatics &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt; against a target's Athletics. On a success, you swap places. Always succeeds on allies. Usable only if you have Acrobatics &lt;LSTag Tooltip="Proficiency"&gt;proficiency&lt;/LSTag&gt;.</content>
-	<!-- <content contentuid="h2e0d970ag2617g43d2gbf5dg4dbce8672ac6" version="1">Feint</content> -->
-	<content contentuid="h83ecee38ge720g4dd4gaeb4g2b5b204386ba" version="1">Make a Sleight of Hand &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt; against a target's Perception. On a success, the target becomes &lt;LSTag Type="Status" Tooltip="OFF_BALANCED"&gt;Off Balanced&lt;/LSTag&gt;. Usable only if you have Sleight of Hand &lt;LSTag Tooltip="Proficiency"&gt;proficiency&lt;/LSTag&gt;.</content>
-	<!-- <content contentuid="hab28b00aga22bg45d5ga0cfg076a078b4a96" version="1">Quick Hide</content> -->
-	<content contentuid="hc64b6a59gc5cag490fg9f3bg7eaeeec59899" version="1">Quickly hide in combat. Usable only if you have Stealth &lt;LSTag Tooltip="Proficiency"&gt;proficiency&lt;/LSTag&gt;.</content>
-	<!-- <content contentuid="h348431b7gbba2g42bdg98c0g48bd84d1b893" version="1">Recall Knowledge (Arcana)</content> -->
-	<content contentuid="h2c3b4c91g4f2bg44e8ga7d2gc1cc3ba7236b" version="1">Make a DC 15 Arcana &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt; against an Aberration, Construct, Monstrosity or Ooze. On a success, the target has &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on its &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;. Usable only if you have Arcana &lt;LSTag Tooltip="Proficiency"&gt;proficiency&lt;/LSTag&gt;.</content>
-	<!-- <content contentuid="h2e60c781gccb4g40e6g8b45g29dfb11e0740" version="1">Recall Knowledge (History)</content> -->
-	<content contentuid="h2e329645g9535g42f5ga56ag6d99dd7baf42" version="1">Make a DC 15 History &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt; against a Humanoid, Dragon or Giant. On a success, the target has &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on its &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;. Usable only if you have History &lt;LSTag Tooltip="Proficiency"&gt;proficiency&lt;/LSTag&gt;.</content>
-	<!-- <content contentuid="h0ba7791bg41a6g4dd8g8825gb925c0000826" version="1">Recall Knowledge (Nature)</content> -->
-	<content contentuid="h1cff5f8bg119ag4ce8gaf68g5d3abc8216d1" version="1">Make a DC 15 Nature &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt; against a Beast, Elemental, Fey or Plant. On a success, the target has &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on its &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;. Usable only if you have Nature &lt;LSTag Tooltip="Proficiency"&gt;proficiency&lt;/LSTag&gt;.</content>
-	<!-- <content contentuid="had2b6f82ga1aag4d18g8880g8cec89b84c30" version="1">Recall Knowledge (Religion)</content> -->
-	<content contentuid="h48e08b94g9926g4deegaf31gdf1e53c2aa58" version="1">Make a DC 15 Religion &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt; against a Celestial, Fiend or Undead. On a success, the target has &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on its &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;. Usable only if you have Religion &lt;LSTag Tooltip="Proficiency"&gt;proficiency&lt;/LSTag&gt;.</content>
-	<!-- <content contentuid="h70f68dcdge26ag4a7ag9281g6b2b93b2f329" version="1">Knowledge Recalled</content> -->
-	<content contentuid="hcfa9c3eag02b6g4232g941egc8fd8e957996" version="1">You have recalled knowledge about this creature. It has &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; against you.</content>
-	<!-- <content contentuid="ha2f67183g6820g402dgbe32g9cd14ea0d23f" version="1">Find Weak Spot (Investigation)</content> -->
-	<content contentuid="hd4b3fc10g2b71g4a77g90a7gef55b73e3300" version="1">Make an Investigation &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt; against a target's Stealth. On a success, the next &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt; against the target will be made with &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;. Usable only if you have Investigation &lt;LSTag Tooltip="Proficiency"&gt;proficiency&lt;/LSTag&gt;.</content>
-	<!-- <content contentuid="h5ae8771dg1f4ag4622ga375g59113317609c" version="1">Weakness Spotted</content> -->
-	<content contentuid="h7129d384gb479g4cadg8076g26e3caf0fb4a" version="1">The next &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt; against the target will be made with &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;.</content>
-	<!-- <content contentuid="h572a0352g0058g4114ga7b8g2292c0034189" version="1">Handle Animal</content> -->
-	<content contentuid="h35bcc50cge1d1g48f5g8b69g04ef0cca0e9d" version="1">Make an Animal Handling &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt; against a Beast's Insight. On a success, the beast becomes &lt;LSTag Type="Status" Tooltip="DOMINATE_BEAST"&gt;Dominated&lt;/LSTag&gt; by you for a short moment. The target must have an Intelligence of 6 or less. Usable only if you have Animal Handling &lt;LSTag Tooltip="Proficiency"&gt;proficiency&lt;/LSTag&gt;.</content>
-	<!-- <content contentuid="hd91393f9gefdbg44efga61ag1108ab9ad657" version="1">Predict</content> -->
-	<content contentuid="ha55ff626gc306g4e34gb302g79783593f865" version="1">Make an Insight &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt; against a target's Deception. On a success, the target has &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on its &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;. Usable only if you have Insight &lt;LSTag Tooltip="Proficiency"&gt;proficiency&lt;/LSTag&gt;.</content>
-	<!-- <content contentuid="hdce7d6b0g2961g423cgb2efga3e47989a3b4" version="1">Predicted</content> -->
-	<content contentuid="hfe152d84g9489g44ecg9e7bg012c2082e950" version="1">You have predicted your opponent's next move. Its next &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; will be made with &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt;.</content>
-	<!-- <content contentuid="h5bcdb4c0g0488g4d6fgbc45g960b7fa0ac87" version="1">Perform First Aid</content> -->
-	<content contentuid="h75e55557gd606g4a80g89b4g884b9ed2ad08" version="1">Make a DC 15 Medicine &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt; on an ally. The ally recovers [1] plus [2] on a success, and half as many &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt; on a failed &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt;. Usable only if you have Medicine &lt;LSTag Tooltip="Proficiency"&gt;proficiency&lt;/LSTag&gt;.</content>
-	<!-- Seek (Perception) -->
-	<content contentuid="hf99aa5ceg4640g474dg9d8bg71e5db7541ef" version="1">Search for &lt;LSTag Type="Status" Tooltip="INVISIBLE"&gt;Invisible&lt;/LSTag&gt; creatures, possibly revealing them to others. Only usable if you have Perception &lt;LSTag Tooltip="Proficiency"&gt;proficiency&lt;/LSTag&gt;.</content>
-	<!-- <content contentuid="hf9a5f42dg77c6g4aceg9c33ga067563ec30a" version="1">Find Weak Spot (Survival)</content> -->
-	<content contentuid="hfc14517cg8d62g4937g87b4gf67f4d58c281" version="1">Make a Survival &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt; against a target's Survival. On a success, the next &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt; against the target will be made with &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;. Usable only if you have Survival &lt;LSTag Tooltip="Proficiency"&gt;proficiency&lt;/LSTag&gt;.</content>
-	<!-- <content contentuid="hc7e19669g4ae7g4d3eg8dcfg18714376ee77" version="1">Deceive</content> -->
-	<content contentuid="h3dc04fb0gd06ag4bfdga012g1bcea23414c0" version="1">Make a Deception &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt; against a target's Insight. On a success, the target becomes &lt;LSTag Type="Status" Tooltip="CONFUSION"&gt;Confused&lt;/LSTag&gt;. The target must have an Intelligence of 7 or more. Usable only if you have Deception &lt;LSTag Tooltip="Proficiency"&gt;proficiency&lt;/LSTag&gt;.</content>
-	<!-- <content contentuid="h69b651a3gdcc1g41d1g8450gcf2908afaa86" version="1">Intimidate</content> -->
-	<content contentuid="hf897a25eg03dfg43b8gb78dgdd99c4a0fab9" version="1">Make an Intimidation &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt; against a target's Insight. On a success, the target becomes &lt;LSTag Type="Status" Tooltip="FRIGHTENED"&gt;Frightened&lt;/LSTag&gt;. Usable only if you have Intimidation &lt;LSTag Tooltip="Proficiency"&gt;proficiency&lt;/LSTag&gt;.</content>
-	<!-- <content contentuid="h79233fadg4297g497dg8aabga64c4137d8d3" version="1">Persuade</content> -->
-	<content contentuid="h0c1de080gf647g46b4gbfabg7509e826ce4f" version="1">Make a Deception &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt; against a target's Insight. On a success, the target becomes &lt;LSTag Type="Status" Tooltip="CHARMED"&gt;Charmed&lt;/LSTag&gt;. The target must have an Intelligence of 7 or more. Usable only if you have Persuasion &lt;LSTag Tooltip="Proficiency"&gt;proficiency&lt;/LSTag&gt;.</content>
-		<!-- <content contentuid="h03f44418g860ag4633g8cb4gd0fbe5a0d9ae" version="1">Taunt</content> -->
-	<content contentuid="h14be31b7gcfdag44c9g8d85gd88b613697ba" version="1">Make a Performance &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt; against a target's Insight. On a success, the target is &lt;LSTag Type="Status" Tooltip="TAUNTED"&gt;compelled&lt;/LSTag&gt; to attack you. Usable only if you have Performance &lt;LSTag Tooltip="Proficiency"&gt;proficiency&lt;/LSTag&gt;.</content>
 	
 	<!-- D100 Wild Magic -->
 	<content contentuid="h0ca3e880gf148g47ddg8059g146b25c45142" version="1">Wild Magic: See Invisibility</content>
@@ -699,7 +570,4 @@ data "Description" "h23e8164fg653fg4f8bg892cgfcf764d6d9fd;1"</content>
 
 	<!-- Community Library -->
 	<!-- "CL_Passive_OneDnD_MartialArts" --> <content contentuid="h6d9c9b01g05ebg4a09g86e9g685b27ce3fac" version="1">&lt;LSTag Tooltip="AttackRoll"&gt;Attacks&lt;/LSTag&gt; with &lt;LSTag Tooltip="MonkWeapon"&gt;Monk Weapons&lt;/LSTag&gt; and unarmed attacks deal [1], unless their normal damage is higher and scale with your &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; instead of your &lt;LSTag Tooltip="Strength"&gt;Strength&lt;/LSTag&gt; if your Dexterity is higher. In addition, you can make &lt;LSTag Type="Spell" Tooltip="CL_Target_OneDnD_MartialArts_UnarmedStrike_BonusAction"&gt;Unarmed Strikes&lt;/LSTag&gt; as a &lt;LSTag Type="ActionResource" Tooltip="BonusActionPoint"&gt;bonus action&lt;/LSTag&gt;.</content>
-
-	<!-- Extra Encounters and Minibosses -->
-	<content contentuid="h83023045g5c2eg4c09gb3fag9b494f900bb1" version="1">Filliron is too drunk to feel anything, making him &lt;LSTag Tooltip="Resistant"&gt;Resistant&lt;/LSTag&gt; to all damage. Upon sobering up, he will become &lt;LSTag Type="Status" Tooltip="RAGE"&gt;Enraged&lt;/LSTag&gt;.</content>
 </contentList>
