@@ -1,9 +1,11 @@
 // ================================ Overwriting tutorial chest ================================
 
-// Adding 2 health potions (vanilla) + bags from Bags Bags Bags
+// Adding 2 health potions (vanilla) + injury kits from Grit & Glory + bags from Bags Bags Bags
 new treasuretable "TUT_Chest_Potions"
 new subtable "2,1"
 object category "I_OBJ_Potion_Healing",1,0,0,0,0,0,0,0
+new subtable "3,1"
+object category "I_Goon_OBJ_Injury_Kit_B",1,0,0,0,0,0,0,0
 new subtable "1,1"
 object category "I_OBJ_LIA_BagsBag",1,0,0,0,0,0,0,0
 
