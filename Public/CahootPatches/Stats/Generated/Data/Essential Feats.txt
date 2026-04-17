@@ -1,0 +1,88 @@
+// ======================= Deadly Alacrity =======================
+
+// Edit loca
+new entry "SYR_Feat_DeadlyAlacrity_Passive"
+type "PassiveData"
+using "SYR_Feat_DeadlyAlacrity_Passive"
+// data "DisplayName" "h1650ad3fg8d72g41fdg8874g560655fcd691;1"
+// The number you need to roll for a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; is reduced by 1. When you hit a target with an &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt; you regain [1] of &lt;LSTag Tooltip="MovementSpeed"&gt;Movement&lt;/LSTag&gt;, if you &lt;LSTag Tooltip="CriticalHit"&gt;Critically Hit&lt;/LSTag&gt; or strike a killing blow regain [2] instead.
+// data "Description" "h6a9068a8g4132g4a5eg8fa7g4777d44a4ee7;1"
+// The number you need to roll for a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; is reduced by 1. When you hit a target with an &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt;, you regain [1] of &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt;. If you &lt;LSTag Tooltip="CriticalHit"&gt;Critically Hit&lt;/LSTag&gt; or strike a killing blow, you regain [2] instead.
+data "Description" "h71fc36b8g0e9ag4e65g90aeg8f5e8ed9e72c;1"
+// data "DescriptionParams" "Distance(1);Distance(3)"
+// data "Icon" "PassiveFeature_GrimHarvest"
+// data "Properties" "Highlighted;OncePerAttack"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "IsAttack() and TotalDamageDoneGreaterThan(0)"
+// data "StatsFunctors" "IF(IsCritical() or IsKillingBlow()):RestoreResource(SELF,Movement,3,0);IF(IsHit() and not IsCritical() and not IsKillingBlow()):RestoreResource(SELF,Movement,1,0)"
+// data "Boosts" "ReduceCriticalAttackThreshold(1)"
+
+// ======================= Telekinesis =======================
+
+// Loca edits
+new entry "SYR_Target_Telekinetic_Push"
+type "SpellData"
+data "SpellType" "Target"
+using "SYR_Target_Telekinetic_Push"
+// data "Cooldown" "OncePerTurnNoRealtime"
+// data "SpellProperties" ""
+// data "SpellRoll" "Item() or Dead() or SpellAutoResolveOnAlly(Ability.Strength,SYR_TelekineticShoveDC(),true)"
+// data "SpellSuccess" "IF(not Ally()):Force(3+LevelMapValue(StandardProficiencyBonusScale),OriginToTarget,Aggressive);IF(Ally()):Force(3+LevelMapValue(StandardProficiencyBonusScale),OriginToTarget,Friendly)"
+// data "TargetRadius" "18"
+// data "TargetConditions" "Character() and not Self() and not Dead() and not Grounded()"
+// data "Icon" "SYR_Spell_Telekinetic_Shove"
+// data "DisplayName" "h20e7b7a7g3965g44a6gb6cfg38af3792c331;1"
+// Shove a creature telekinetically. Shove distance is based on your proficiency bonus, currently [1]m.
+// data "Description" "hbd048b9ag2558g4f9bg9081g47d6086c50a3;1
+// Shove a creature telekinetically. Shove distance is based on your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt;, currently [1]m.
+data "Description" "h18a0b190gb0d7g44fegbbc1g2dc5b5d4cb4c;1
+// data "DescriptionParams" "3+LevelMapValue(StandardProficiencyBonusScale)"
+// data "TooltipAttackSave" "Strength"
+// data "TooltipStatusApply" ""
+// data "CastSound" "Spell_Cast_Tadpole_PsionicPull_L1to3"
+// data "TargetSound" "Spell_Impact_Tadpole_PsionicPull_L1to3"
+// data "CastTextEvent" "Cast"
+// data "CycleConditions" "Enemy() and not Dead()"
+// data "UseCosts" "BonusActionPoint:1"
+// data "SpellAnimation" "3ff87abf-1ea1-4c32-aadf-c822d74c7dc0,,;,,;5e7e63e1-0e69-46e7-ade7-fe3dadcc9184,,;e9ad50df-e7f1-43a0-b782-4c08f92b0f5a,,;d8925ce4-d6d9-400c-92f5-ad772ef7f178,,;,,;eadedcce-d01b-4fbb-a1ae-d218f13aa5d6,,;,,;,,"
+// data "VerbalIntent" "Utility"
+// data "PrepareEffect" "282bad87-4462-4c2e-a264-84ee0e725065"
+// data "CastEffect" "456933cc-f8c3-42d9-ae4c-622d83391cc6"
+// data "TargetEffect" "aafee3d2-0f5b-42b7-a91c-1397fb58dd25"
+// data "BeamEffect" "7c5bb7d7-2549-4232-bc03-c97f57ff18a1"
+// data "SpellFlags" "HasSomaticComponent;HasHighGroundRangeExtension;RangeIgnoreVerticalThreshold;IsHarmful;AddFallDamageOnLand"
+
+new entry "SYR_Target_Telekinetic_Pull"
+type "SpellData"
+data "SpellType" "Target"
+// using "SYR_Target_Telekinetic_Push"
+using "SYR_Target_Telekinetic_Pull"
+// data "SpellSuccess" "IF(not Ally()):Force(-(3+LevelMapValue(StandardProficiencyBonusScale)),OriginToTarget,Aggressive,true,false);IF(Ally()):Force(-(3+LevelMapValue(StandardProficiencyBonusScale)),OriginToTarget,Friendly,true,false)"
+// data "Icon" "SYR_Spell_Telekinetic_Pull"
+// Pull a creature telekinetically. Pull distance is based on your proficiency bonus, currently [1]m.
+// data "DisplayName" "hb73718b0g83a0g4d07ga3fcg1aa13bc6fdfc;1"
+// data "Description" "hbcd0bfc0g6ef6g4ffdgb863g381548f626fa;1"
+// Shove a creature telekinetically. Shove distance is based on your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt;, currently [1]m.
+data "Description" "h330d4e29g5fc9g431cga5b1g382b3381a235;1"
+// data "DescriptionParams" "3+LevelMapValue(StandardProficiencyBonusScale)"
+// data "SpellAnimation" "3ff87abf-1ea1-4c32-aadf-c822d74c7dc0,,;,,;ad12e2fa-1b15-4fcd-884f-38ba82d7e50e,,;5ee4c893-0149-4d08-a1f7-c4fe633530ba,,;d8925ce4-d6d9-400c-92f5-ad772ef7f178,,;,,;eadedcce-d01b-4fbb-a1ae-d218f13aa5d6,,;,,;,,"
+
+// ======================= War Magic =======================
+
+// Remove restriction on Booming Blade and make the bonus action attack always deal half weapon damage
+new entry "SYR_Feat_WarMagic_AltSpell_Passive"
+type "PassiveData"
+using "SYR_Feat_WarMagic_AltSpell_Passive"
+// data "DisplayName" "hf7afd1a7g16cag43dbg82aagb2eea0dbff66;1"
+// After casting a spell or cantrip you can make a basic attack as a &lt;LSTag Type="Image" Info="TutorialBonusActionFilter"/&gt; &lt;LSTag Type="ActionResource" Tooltip="BonusActionPoint"&gt;bonus action&lt;/LSTag&gt;. This attack deals half damage.&lt;br&gt;&lt;br&gt;Starting at level 5 you can make any attack as extra attack and it deals full damage.&lt;br&gt;&lt;br&gt;&lt;LSTag Type="Image" Info="SoftWarning"/&gt;War Magic does not activate from Booming Blade.
+// data "Description" "ha1426ab2g0a65g4abcg9495g596d4527780f;1"
+// After casting a spell or cantrip, you can make a basic attack as a Tooltip="BonusActionPoint"&gt;bonus action&lt;/LSTag&gt;. This attack deals half damage.
+data "Description" "h6429ddb5g7eb7g46c0gacbbgf4bd25bf782d;1"
+// data "Icon" "PassiveFeature_WarMagic"
+// data "Properties" "Highlighted"
+// data "StatsFunctorContext" "OnCast"
+// data "Conditions" "HasSpellFlag(SpellFlags.Spell)and HasUseCosts('ActionPoint', true) and HasActionResource('BonusActionPoint', 1, 0, false, false, context.Source)"
+data "Conditions" "HasSpellFlag(SpellFlags.Spell) and not SpellId('Target_BoomingBlade_ClassSpell') and HasUseCosts('ActionPoint', true) and HasActionResource('BonusActionPoint', 1, 0, false, false, context.Source)"
+// data "StatsFunctors" "IF(not CharacterLevelGreaterThan(4,context.Source)):ApplyStatus(SYR_FEAT_WARMAGIC_BASIC_STATUS,100,1);IF(CharacterLevelGreaterThan(4,context.Source)):ApplyStatus(SYR_FEAT_WARMAGIC_ADVANCED_STATUS,100,1)"
+data "StatsFunctors" "ApplyStatus(SYR_FEAT_WARMAGIC_BASIC_STATUS,100,1)"
+
