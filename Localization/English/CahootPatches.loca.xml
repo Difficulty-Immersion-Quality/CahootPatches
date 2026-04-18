@@ -317,6 +317,8 @@
 	<content contentuid="hf36c4758ga7b5g4394g8bf5g35fe68ca689f" version="1">Your heals restore additional[1] equal to the higher of your &lt;LSTag Tooltip="Charisma"&gt;Charisma&lt;/LSTag&gt; or &lt;LSTag Tooltip="Wisdom"&gt;Wisdom&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;.</content>
 	<content contentuid="he03c77d5g5191g488eg8f42g567e9cd4dd15" version="1">When you cast a Smite, the number you need to &lt;LSTag Tooltip="AttackRoll"&gt;roll&lt;/LSTag&gt; a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; is reduced by [1].</content>
 	<content contentuid="h16d15aa8gfcf1g4483g8e94g10802d89091c" version="1">This creature takes [1] (equal to a quarter of your level) if it starts its turn in sunlight.</content>	
+	<content contentuid="hd9672f7bg803fg4118g8f66g4dccdfed1a8a" version="1">Add a quarter of your level to any[1] you inflict on foes affected by &lt;LSTag Type="Status" Tooltip="MAG_RADIANT_RADIATING_ORB"&gt;Radiating Orb&lt;/LSTag&gt; or &lt;LSTag Type="Status" Tooltip="BURNING_HOLY"&gt;Holy Flame&lt;/LSTag&gt;.</content>
+	<content contentuid="he2bf40cdgc1e3g4a85gb4a9g0bc075ea1193" version="1">When you cure a negative condition on a creature, it gains the effect of &lt;LSTag Type="Status" Tooltip="BLADE_WARD"&gt;Blade Ward&lt;/LSTag&gt; for 2 turns.</content>
 	<content contentuid="ha2bd34e5gdd91g4af8g8b9ege817d4788255" version="1">When you use your &lt;LSTag Type="ActionResource" Tooltip="ChannelOath"&gt;Channel Oath&lt;/LSTag&gt; spells, the number you need to &lt;LSTag Tooltip="AttackRoll"&gt;roll&lt;/LSTag&gt; a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; on your next weapon attack is reduced by [1].</content>
 	<content contentuid="h83fbc0c8gda9bg4fa4g8a88gbaaca101a64e" version="1">Zealous Oath</content>
 	<content contentuid="h1d8b2879gd8b8g47d4ga8f6gea8778924b30" version="1">The number you need to &lt;LSTag Tooltip="AttackRoll"&gt;roll&lt;/LSTag&gt; a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; on your next weapon attack is reduced by [1].</content>
@@ -328,23 +330,23 @@
 	<content contentuid="h4a4d9e03g03cag4ecag92a1g0f538906293e" version="1">The damage you deal with weapon attacks is increased by [1] for every turn remaining.</content>
 	<content contentuid="h8c080cc9gd4e3g4be3g9c9eg3d5becc22c2a" version="1">Apotheosis: End</content>
 	<content contentuid="hd550e7e3gd110g4941g85abgd71586a136f4" version="1">Put an end to your stance. This will remove all weapon damage bonuses from Apotheosis.</content>
+	<content contentuid="h9b85b3d7g10ffg4117g9b23g710724449424" version="1">Foes within your Paladin aura receive &lt;LSTag Type="Status" Tooltip="MAG_RADIANT_RADIATING_ORB"&gt;Radiating Orb&lt;/LSTag&gt; for 1 turn.</content>
 	<content contentuid="hfc444f7eg5502g4f0bgbfacg42ae59b02790" version="1">Heretic's Pyre</content>
-	<content contentuid="h9b50b1b3g6cedg4369ga183gcc209bdf3327" version="1">When you deal[1] to an enemy Undead, Fiend, Fey, Monstrosity or Aberration that can't be &lt;LSTag Type="Status" Tooltip="TURNED"&gt;Turned&lt;/LSTag&gt;, inflict &lt;LSTag Type="Status" Tooltip="BURNING_HOLY"&gt;Holy Flame&lt;/LSTag&gt; to it for 3 turns. This effect can occur per turn per target.</content>
+	<content contentuid="h9b50b1b3g6cedg4369ga183gcc209bdf3327" version="1">When you deal[1] to an enemy Undead, Fiend, Fey, Monstrosity or Aberration that can't be &lt;LSTag Type="Status" Tooltip="TURNED"&gt;Turned&lt;/LSTag&gt;, inflict &lt;LSTag Type="Status" Tooltip="BURNING_HOLY"&gt;Holy Flame&lt;/LSTag&gt; to it for 1 turn.</content>
+	<content contentuid="h3760758eg6d33g43b1gbd0dg314c0d76d9c9" version="1">When you heal a creature, foes within [1] of it are set ablaze with &lt;LSTag Type="Status" Tooltip="BURNING_HOLY"&gt;Holy Flame&lt;/LSTag&gt; for 1 turn.</content>
 	<content contentuid="hcb5dd19cg44bcg44deg8f9cg70ee9017ac18" version="1">Your &lt;LSTag Type="Spell" Tooltip="Target_SacredFlame"&gt;Sacred Flame&lt;/LSTag&gt; inflicts &lt;LSfTag Type="Status" Tooltip="BURNING_HOLY"&gt;Holy Flame&lt;/LSTag&gt; for [1] turns.</content>
 	<content contentuid="hc524b30bgc295g44e4g8639g8741f9e20b61" version="1">You can't be stopped by mundane means and are immune to being &lt;LSTag Type="Status" Tooltip="PETRIFIED"&gt;Petrified&lt;/LSTag&gt;, &lt;LSTag Type="Status" Tooltip="RESTRAINED"&gt;Restrained&lt;/LSTag&gt; or being made &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt;.</content>
 	<content contentuid="hc40f46d4ga454g4acdg97b5g3e42f9d5e4f1" version="1">Whenever you heal[1], inflict &lt;LSTag Type="Status" Tooltip="MAG_RADIANT_RADIATING_ORB"&gt;Radiating Orb&lt;/LSTag&gt; to every foe within [2] for 2 turns. Each enemy can only be affected once per turn.</content>
 	<content contentuid="ha3eb39a4gc393g44d4gb5c9gd9ab4477cc78" version="1">At the beginning of your turn, enemy Undead, Fiends, Feys, Monstrosities and Aberrations within your Paladin Aura are affected by &lt;LSTag Type="Status" Tooltip="MAG_RADIANT_RADIATING_ORB"&gt;Radiating Orb&lt;/LSTag&gt; for 1 turn.</content>
-	<content contentuid="h725fecfcgc0b8g4b91g9dedg525ce619d6ef" version="1">Cast a ray of light, dealing [1].</content>
+	<content contentuid="h725fecfcgc0b8g4b91g9dedg525ce619d6ef" version="1">Cast a ray of light, dealing[1] and burning them with &lt;LSTag Type="Status" Tooltip="BURNING_HOLY"&gt;Holy Fire&lt;/LSTag&gt; for [2] turn.</content>
 	<content contentuid="h3f326ccfg4236g4d88g8a6eg7c0318249887" version="1">Your oath grants you even more intense power. 
 You can cast &lt;LSTag Type="Spell" Tooltip="Siael_POTR_Cantrip"&gt;Last Judgement&lt;/LSTag&gt;, and it functions with effects from the set that use &lt;LSTag Type="Spell" Tooltip="Target_SacredFlame"&gt;Sacred Flame&lt;/LSTag&gt;.
 Moreover, &lt;LSTag Type="Status" Tooltip="BURNING_HOLY"&gt;Holy Flame&lt;/LSTag&gt; that you inflict deals an additional [1] per remaining turn of it.
 
 You still benefit from &lt;LSTag Type="Passive" Tooltip="Siael_POTR_Righteous_R"&gt;Noble Knight&lt;/LSTag&gt;.</content>
-	
 	<content contentuid="h23e8164fg653fg4f8bg892cgfcf764d6d9fd" version="1">Your celestial presence is almighty. Foes within your Paladin aura take an additional [1] whenever they take[2].
 	
-You still benefit from &lt;LSTag Type="Passive" Tooltip="Siael_POTR_Righteous"&gt;The Righteous&lt;/LSTag&gt;.
-data "Description" "h23e8164fg653fg4f8bg892cgfcf764d6d9fd;1"</content>
+You still benefit from &lt;LSTag Type="Passive" Tooltip="Siael_POTR_Righteous"&gt;The Righteous&lt;/LSTag&gt;.</content>
 	<content contentuid="h4695d505g041dg4999ga53bg64d3d0aa1885" version="1">Entity takes an additional [1] whenever it takes[2].</content>
 
 	<!-- CritfisherRing -->

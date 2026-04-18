@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <save>
-	<version major="4" minor="0" revision="9" build="328" lslib_meta="v1,bswap_guids" />
-	<region id="Templates">
-		<node id="Templates">
-			<children>
+    <version major="4" minor="0" revision="9" build="328" lslib_meta="v1,bswap_guids" />
+    <region id="Templates">
+        <node id="Templates">
+            <children>
                 <node id="GameObjects">
                     <attribute id="Description" type="TranslatedString" handle="h131ed16dgdbffg47a3gb790g070613f7f70d" version="4" />
                     <attribute id="DisplayName" type="TranslatedString" handle="h50d2f74cg74f8g4672g8997gdb221462aad7" version="1" />
@@ -128,8 +128,8 @@
                             </children>
                         </node>
                     </children>
-                </node>			
+                </node>
             </children>
-		</node>
-	</region>
+        </node>
+    </region>
 </save>
