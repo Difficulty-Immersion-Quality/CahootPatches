@@ -734,6 +734,35 @@ using "MAG_Tyrrant_Warhammer"
 // data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical)"
 data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);WeaponDamage(1d4,Radiant)"
 
+// ========================== Orphic Hammer ==========================
+// Add 1d6 Force damage and attacks with the weapon break concentration
+new entry "LOW_OrphicHammer"
+type "Weapon"
+using "LOW_OrphicHammer"
+// using "WPN_Warhammer_2"
+// data "RootTemplate" "9ff968d4-08ff-4da1-a288-959ac8d7abe1"
+// data "ValueUUID" "81764c3c-c7a9-49a7-b145-d31ffd5aebe1"
+// data "Rarity" "Legendary"
+// data "WeaponFunctors" "IF(Tagged('ACT3_END_ORPHEUS_SHACKLES')):ApplyStatus(END_ORPHICHAMMER_BREAKSHACKLES)"
+// data "DefaultBoosts" "WeaponEnchantment(3);WeaponProperty(Magical)"
+data "DefaultBoosts" "WeaponEnchantment(3);WeaponProperty(Magical);WeaponDamage(1d6,Force)"
+// data "Boosts" "UnlockSpell(Target_MAG_OrphicHammer_ChainBreaker)"
+// data "PassivesOnEquip" "MAG_SpellResistance_Passive"
+data "PassivesOnEquip" "MAG_SpellResistance_Passive;CHT_OrphicHammer_Concentration_Passive"
+// data "Unique" "1"
+// data "Weapon Properties" "Melee;Dippable;Versatile;Thrown"
+
+new entry "CHT_OrphicHammer_Concentration_Passive"
+type "PassiveData"
+// Sunder the Weave
+data "DisplayName" "h8d56c802gb7b8g4d04g978fg89bdd7bbf953;1"
+// Enemies hit by this weapon will always have their &lt;LSTag Tooltip="Concentration"&gt;Concentration&lt;/LSTag&gt; broken.
+data "Description" "h83abb2a1g53b0g42begaeebgf30ff5588706;1"
+data "Icon" "Spell_Abjuration_DispelMagic"
+data "StatsFunctorContext" "OnDamage"
+data "Conditions" "AttackedWithPassiveSourceWeapon() and Enemy() and IsConcentrating(context.Target)"
+data "StatsFunctors" "BreakConcentration(context.Target)"
+
 // ============================================================================================================================ Ranged Weapons ============================================================================================================================
 
 // ===============================================================================

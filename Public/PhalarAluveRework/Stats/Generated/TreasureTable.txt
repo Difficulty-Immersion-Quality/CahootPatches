@@ -1,0 +1,27 @@
+// new treasuretable "CRE_TreasuryVault_3_Treasure"
+// CanMerge 1
+// new subtable "-1"
+// object category "I_OBJ_MusicBox_PhalarAluve_v2",1,0,0,0,0,0,0,0
+
+// new treasuretable "SCL_InterrogationTable_Hidden_Chest"
+// CanMerge 1
+// new subtable "-1"
+// object category "I_OBJ_MusicBox_PhalarAluve_v2",1,0,0,0,0,0,0,0
+
+new treasuretable "Legendary_Trident_Treasure"
+CanMerge 1
+new subtable "-1"
+object category "I_OBJ_MusicBox_PhalarAluve_v3",1,0,0,0,0,0,0,0
+
+// new treasuretable "TUT_Chest_Potions"
+// CanMerge 1
+// new subtable "-1"
+// object category "I_OBJ_MusicBox_PhalarAluve_v2",1,0,0,0,0,0,0,0
+// new subtable "-1"
+// object category "I_OBJ_MusicBox_PhalarAluve_v3",1,0,0,0,0,0,0,0
+
+// NEW: move Very Rare upgrade item to Act 2
+new treasuretable "SCL_InterrogationTable_Hidden_Chest"
+CanMerge 1
+new subtable "1,1"
+object category "I_OBJ_MusicBox_PhalarAluve_v2",1,0,0,0,0,0,0,0

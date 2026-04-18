@@ -72,6 +72,8 @@
 	<content contentuid="h2ec6e766g1a1fg4322gb759ge3bdf534501d" version="1">When you inflict a condition upon a hostile target, they suffer [1] turns of &lt;LSTag Type="Status" Tooltip="MAG_THUNDER_REVERBERATION"&gt;Reverberation&lt;/LSTag&gt;. When you deal spell damage to a target with &lt;LSTag Type="Status" Tooltip="MAG_THUNDER_REVERBERATION"&gt;Reverberation&lt;/LSTag&gt;, it must make a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; against your &lt;LSTag Tooltip="SpellDifficultyClass"&gt;Spell Save DC&lt;/LSTag&gt; or become &lt;LSTag Type="Status" Tooltip="DAZED"&gt;Dazed&lt;/LSTag&gt; for [2] turns.</content>
 	<content contentuid="h45deef2cg817cg44d0gbcb3gace58ab899e9" version="1">Chill of the Waves</content>
 	<content contentuid="h2fd69e81ge0dfg4188g9501g9ae4c8ee3d16" version="1">Pierce a creature with your trident, dealing additional[1] and possibly &lt;LSTag Type="Status" Tooltip="CHILLED"&gt;Chilling&lt;/LSTag&gt; it.</content>
+	<content contentuid="h8d56c802gb7b8g4d04g978fg89bdd7bbf953" version="1">Sunder the Weave</content>
+	<content contentuid="h83abb2a1g53b0g42begaeebgf30ff5588706" version="1">Enemies hit by this weapon will always have their &lt;LSTag Tooltip="Concentration"&gt;Concentration&lt;/LSTag&gt; broken.</content>
 	<content contentuid="h0b4b9f6cg32b7g49d5ga2c0gf4ba55b65778" version="1">Attacks with this weapon against Aberrations, Monstrosities, and Undead gain a +[1] to &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt; and Damage rolls.</content>
 
 	<!-- Gear rebalances - Armour -->
