@@ -17,7 +17,7 @@ data "Description" "h71fc36b8g0e9ag4e65g90aeg8f5e8ed9e72c;1"
 // data "StatsFunctors" "IF(IsCritical() or IsKillingBlow()):RestoreResource(SELF,Movement,3,0);IF(IsHit() and not IsCritical() and not IsKillingBlow()):RestoreResource(SELF,Movement,1,0)"
 // data "Boosts" "ReduceCriticalAttackThreshold(1)"
 
-// ======================= Telekinesis =======================
+// ======================= Telekinetic =======================
 
 // Loca edits
 new entry "SYR_Target_Telekinetic_Push"
