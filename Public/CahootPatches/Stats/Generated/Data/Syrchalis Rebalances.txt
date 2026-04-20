@@ -2626,6 +2626,23 @@ using "Projectile_CursedTome_Dethrone"
 data "Cooldown" "OncePerShortRest"
 
 // =============================================== Disintegrate ===============================================
+// Revert to pre-1.0.8 version of the spell, where the only change was doing half damage on a save
+
+new entry "Projectile_Disintegrate"
+type "SpellData"
+data "SpellType" "Projectile"
+using "Projectile_Disintegrate"
+// data "SpellRoll" "Attack(AttackType.RangedSpellAttack)"
+data "SpellRoll" "not SavingThrow(Ability.Dexterity, SourceSpellDC())"
+// data "SpellSuccess" "DealDamage(10d6+40,Force,Magical);SpawnExtraProjectiles(SYR_Projectile_Disintegrate_Extra)"
+data "SpellSuccess" "DealDamage(10d6+40,Force,Magical)"
+// data "SpellFail" "ApplyStatus(SAVED_AGAINST_HOSTILE_SPELL, 100, 0);SpawnExtraProjectiles(SYR_Projectile_Disintegrate_Extra)"
+data "SpellFail" "DealDamage((10d6+40)/2,Force,Magical)"
+// data "Description" "hdb8df6c1g9133g4b4bga813g09e80e095e83;1"
+// If the target fails a Dexterity <LSTag Tooltip="SavingThrow">Saving Throw</LSTag>, and the [1] reduces it to 0 <LSTag Tooltip="HitPoints">hit points</LSTag>, it disintegrates into a crumbly ash.
+data "Description" "hf2c5bc49g0667g4ca0g8b1fgc108d714c258;5"
+// data "TooltipOnSave" ""
+data "TooltipOnSave" "f762efbb-f8f1-493e-b248-2de1567b4bd2"
 
 new entry "Projectile_Disintegrate_7"
 type "SpellData"
