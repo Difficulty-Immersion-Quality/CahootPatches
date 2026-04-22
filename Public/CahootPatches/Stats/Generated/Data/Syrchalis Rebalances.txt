@@ -155,6 +155,28 @@ data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:9"
 data "RootSpellID" "Shout_Blur"
 data "PowerLevel" "9"
 
+// Inheritances
+new entry "Shout_Blur_Githyanki"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_Blur_Githyanki"
+// data "UseCosts" "ActionPoint:1"
+data "UseCosts" "BonusActionPoint:1"
+
+new entry "Shout_MOO_BloodPotion_Blur"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_MOO_BloodPotion_Blur"
+// data "UseCosts" "ActionPoint:1"
+data "UseCosts" "BonusActionPoint:1"
+
+new entry "Shout_MAG_FlamingFist_ScoutRing_Blur"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_MAG_FlamingFist_ScoutRing_Blur"
+// data "UseCosts" "ActionPoint:1"
+data "UseCosts" "BonusActionPoint:1"
+
 // =============================================== Crown of Madness ===============================================
 
 new entry "Target_CrownOfMadness_7"
@@ -1194,6 +1216,21 @@ data "RootSpellID" "SYR_Shout_Blink_Unstable"
 data "SpellContainerID" "Shout_Blink_9"
 data "PowerLevel" "9"
 
+// Inheritances
+new entry "Shout_MAG_Blink"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_MAG_Blink"
+// data "UseCosts" "ActionPoint:1"
+data "UseCosts" "BonusActionPoint:1"
+
+new entry "SS_Shout_Blink"
+type "SpellData"
+data "SpellType" "Shout"
+using "SS_Shout_Blink"
+// data "UseCosts" "ActionPoint:1"
+data "UseCosts" "BonusActionPoint:1"
+
 // =============================================== Lightning Arrow ===============================================
 
 new entry "Projectile_LightningArrow_7"
@@ -1688,6 +1725,28 @@ using "Teleportation_DimensionDoor"
 data "UseCosts" "BonusActionPoint:1;SpellSlotsGroup:1:1:9"
 data "RootSpellID" "Teleportation_DimensionDoor"
 data "PowerLevel" "9"
+
+// Inheritances
+new entry "Teleportation_END_Orpheus_DimensionDoor"
+type "SpellData"
+data "SpellType" "Teleportation"
+using "Teleportation_END_Orpheus_DimensionDoor"
+// data "UseCosts" "ActionPoint:1;KiPoint:2"
+data "UseCosts" "BonusActionPoint:1;KiPoint:2"
+
+new entry "Teleportation_MAG_Dolor_DimensionDoor"
+type "SpellData"
+data "SpellType" "Teleportation"
+using "Teleportation_MAG_Dolor_DimensionDoor"
+// data "UseCosts" "ActionPoint:1"
+data "UseCosts" "BonusActionPoint:1"
+
+new entry "SS_Teleportation_DimensionDoor"
+type "SpellData"
+data "SpellType" "Teleportation"
+using "SS_Teleportation_DimensionDoor"
+// data "UseCosts" "ActionPoint:1"
+data "UseCosts" "BonusActionPoint:1"
 
 // =============================================== Fire Shield ===============================================
 
