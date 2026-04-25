@@ -324,15 +324,6 @@ data "Cooldown" "OncePerCombat"
 // data "UseCosts" "ActionPoint:1"
 data "UseCosts" "BonusActionPoint:1"
 
-// ========================== Spacehunt Boots ==========================
-// Dimension Door: cost changed to bonus action to be consistent with changes to the spell
-new entry "Teleportation_MAG_Dolor_DimensionDoor"
-type "SpellData"
-data "SpellType" "Shout"
-using "Teleportation_MAG_Dolor_DimensionDoor"
-// data "UseCosts" "ActionPoint:1"
-data "UseCosts" "BonusActionPoint:1"
-
 // ========================== Blackguard's Greaves ==========================
 // Rarity increased to Very Rare and replaced Longstrider with new separate passive
 new entry "MAG_OB_Paladin_DeathKnight_Boots"
@@ -399,15 +390,6 @@ data "Boosts" "AC(1)"
 // ===============================================================================
 //                                       Amulets  
 // ===============================================================================
-
-// ========================== Amulet of Silvanus ==========================
-// Lesser Restoration: cost changed to bonus action to be consistent with changes to the spell
-new entry "Target_DEN_BearReward_LesserRestoration"
-type "SpellData"
-data "SpellType" "Target"
-using "Target_DEN_BearReward_LesserRestoration"
-// data "UseCosts" "ActionPoint:1"
-data "UseCosts" "BonusActionPoint:1"
 
 // ========================== Komira's Locket ==========================
 // Add special nerfed version of Otto's Irresistible Dance:
@@ -497,24 +479,6 @@ using "UNI_MassHealRing"
 data "Rarity" "Rare"
 // data "ValueUUID" "cdc711a8-7fed-48c5-8fac-e260cefc671f"
 data "ValueUUID" "94356ef2-bb14-4595-88cf-86f544ef12eb"
-
-// ========================== Ring of Blink ==========================
-// Blink: cost changed to bonus action to be consistent with changes to the spell
-new entry "Shout_MAG_Blink"
-type "SpellData"
-data "SpellType" "Shout"
-using "Shout_MAG_Blink"
-// data "UseCosts" "ActionPoint:1"
-data "UseCosts" "BonusActionPoint:1"
-
-// ========================== Shifting Corpus Ring ==========================
-// Blur: cost changed to bonus action to be consistent with changes to the spell
-new entry "Shout_MAG_FlamingFist_ScoutRing_Blur"
-type "SpellData"
-data "SpellType" "Shout"
-using "Shout_MAG_FlamingFist_ScoutRing_Blur"
-// data "UseCosts" "ActionPoint:1"
-data "UseCosts" "BonusActionPoint:1"
 
 // ===============================================================================
 //                                       Shields  

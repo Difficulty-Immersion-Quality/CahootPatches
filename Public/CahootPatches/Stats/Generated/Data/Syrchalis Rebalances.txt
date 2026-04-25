@@ -360,6 +360,14 @@ using "Target_LesserRestoration"
 // data "RitualCosts" "ActionPoint:1"
 data "RitualCosts" ""
 
+// Inheritances
+new entry "Target_DEN_BearReward_LesserRestoration"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_DEN_BearReward_LesserRestoration"
+// data "UseCosts" "ActionPoint:1"
+data "UseCosts" "BonusActionPoint:1"
+
 // =============================================== Hunger of Hadar ===============================================
 // Remove upcast changes made by Rebalance - Level 3 Spells by overwriting with vanilla entries
 
