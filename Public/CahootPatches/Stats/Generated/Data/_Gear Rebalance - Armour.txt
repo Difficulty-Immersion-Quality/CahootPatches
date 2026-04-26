@@ -245,7 +245,19 @@ data "SpellProperties" "IF(HasAnyExtraAttack(context.Source)):ApplyStatus(MAG_MA
 data "DescriptionParams" "DealDamage(3d6, Piercing)"
 
 // ========================== Stalker Gloves ==========================
-// Skullduggery Attack: fix not working with Rakish Sneak Attack + add compatibility for Book of Rogues by IncogneatoBurrito, fix DRS, increase damage to 1d6
+// Seldom Caught Unawares: upgrade to +2 initiative version
+new entry "MAG_Stalker_Gloves"
+type "Armor"
+// using "ARM_Gloves_Leather"
+using "MAG_Stalker_Gloves"
+// data "RootTemplate" "dd99248c-fe42-4d07-9861-853e9291ea51"
+// data "ValueUUID" "a229f048-70b0-4b0c-88cb-29b5c6bdb2d0"
+// data "Rarity" "Rare"
+// data "PassivesOnEquip" "MAG_InitiativeBonus_1_Passive;MAG_ForcefulSneakAttack_Passive"
+data "PassivesOnEquip" "MAG_InitiativeBonus_2_Passive;MAG_ForcefulSneakAttack_Passive"
+// data "Unique" "1"
+
+// Skullduggery Attack: fix not working with Rakish Sneak Attack + add compatibility for Book of Rogues by IncogneatoBurrito, fix DRS
 new entry "MAG_ForcefulSneakAttack_Passive"
 type "PassiveData"
 using "MAG_ForcefulSneakAttack_Passive"
@@ -254,12 +266,10 @@ using "MAG_ForcefulSneakAttack_Passive"
 // // Your <LSTag Type="Spell" Tooltip="Target_Sneak_Attack">Sneak Attack</LSTag> deals an additional [1].
 // data "Description" "hfa1c8818g9301g48afgba5ege06d5bd04fbf;1"
 // data "DescriptionParams" "DealDamage(1d4, Force)"
-data "DescriptionParams" "DealDamage(1d6, Force)"
 // data "StatsFunctorContext" "OnDamage"
 // data "Conditions" "SpellId('Target_SneakAttack') or SpellId('Projectile_SneakAttack') or SpellId('Interrupt_SneakAttack')"
 data "Conditions" "SpellId('Target_SneakAttack') or SpellId('Projectile_SneakAttack') or SpellId('Target_SneakAttack_Rakish') or SpellId('Projectile_SneakAttack_Rakish') or SpellId('Target_SneakAttack_Insightful') or SpellId('Projectile_SneakAttack_Insightful') or SpellId('Target_SneakAttack_Phantom') or SpellId('Projectile_SneakAttack_Phantom') or SpellId('Target_SneakAttack_SuddenStrike') or SpellId('Projectile_SneakAttack_SuddenStrike') or SpellId('Target_SneakAttack_BonusSuddenStrike') or SpellId('Projectile_SneakAttack_BonusSuddenStrike') or SpellId('Target_SneakAttack_Soulknife')"
 // data "StatsFunctors" "DealDamage(1d4, Force,Magical)"
-data "StatsFunctors" "DealDamage(1d6,Force,Magical,,0,,true,true)"
 
 // ========================== Blackguard's Gauntlets ==========================
 // Rarity increased to Very Rare
