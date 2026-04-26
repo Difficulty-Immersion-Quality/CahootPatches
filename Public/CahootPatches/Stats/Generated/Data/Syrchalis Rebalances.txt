@@ -361,10 +361,12 @@ using "Target_LesserRestoration"
 data "RitualCosts" ""
 
 // Inheritances
+// Amulet of Silvanus: also overriding Syrchalis' gear rebalance mod that changes the cooldown from short rest to per combat
 new entry "Target_DEN_BearReward_LesserRestoration"
 type "SpellData"
 data "SpellType" "Target"
 using "Target_DEN_BearReward_LesserRestoration"
+data "Cooldown" "OncePerShortRestPerItem"
 // data "UseCosts" "ActionPoint:1"
 data "UseCosts" "BonusActionPoint:1"
 
