@@ -407,7 +407,7 @@ You still benefit from &lt;LSTag Type="Passive" Tooltip="Siael_POTR_Righteous"&g
 	<content contentuid="h9c860331ga782g439egb42fgf9c9c95aa26c" version="1">Hurl an orb of light that erupts into a devastating explosion, dealing [1] to all targets and &lt;LSTag Type="Status" Tooltip="CHT_SEARING_SUNBURST"&gt;Blinds&lt;/LSTag&gt; targets who fail a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.</content>
 	<content contentuid="h20a4a86bg182cg42ddgb2abg4254aa0762dc" version="1">Become wreathed in, or extinguish, a magical aura that shines light to a radius of [1], grants you a +[2] bonus to your &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;, and can damage creatures that make melee attacks against you.</content>
 	<content contentuid="hcd63c206gd620g4e1dga766ge9f75ff928cb" version="1">Entity emits an aura of light with a radius of [1] and has a +[2] bonus to its &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;.</content>
-	<!-- D100 Wild Magic -->
+    <!-- D100 Wild Magic: 1-10 -->
 	<content contentuid="h0ca3e880gf148g47ddg8059g146b25c45142" version="1">Wild Magic: See Invisibility</content>
 	<content contentuid="h43cf36feg43f8g4d06g92c8g1d79db0e6a8f" version="1">You gain &lt;LSTag Type="Spell" Tooltip="Shout_SeeInvisibility"&gt;See Invisibility&lt;/LSTag&gt;.</content>
 	<content contentuid="h2cbe6eeeg8368g4c46g84afgc46c230e2d9d" version="1">Wild Magic: Fireball</content>
@@ -430,6 +430,7 @@ You still benefit from &lt;LSTag Type="Passive" Tooltip="Siael_POTR_Righteous"&g
 	<content contentuid="ha623363fgd8a3g4a7dga3dfg0aefc217095e" version="1">Suffers &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on all &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.</content>
 	<content contentuid="h7292f61bg7ac3g4b67g8c51g0c1b3fe6966a" version="1">Wild Magic: Faerie Fire</content>
 	<content contentuid="h0cfb43d8g3b0dg4f25g9818gea9fadbf6549" version="1">Cast &lt;LSTag Type="Spell" Tooltip="Target_FaerieFire"&gt;Faerie Fire&lt;/LSTag&gt; centered on yourself.</content>
+	<!-- D100 Wild Magic: 11-20 -->
 	<content contentuid="h41ab8688g8ddeg4e9cgb1cage6d0595461a0" version="1">Wild Magic: Summon Spectator</content>
 	<content contentuid="h7e7787d3g92e6g4dc8g8d00g951d1d752611" version="1">You have summoned a hostile spectator!</content>
 	<content contentuid="h0ad08809gdcc2g4033g9402g1786f4038db2" version="1">Wild Magic: Mind Sanctuary</content>
@@ -439,7 +440,8 @@ You still benefit from &lt;LSTag Type="Passive" Tooltip="Siael_POTR_Righteous"&g
 	<content contentuid="hfa0f925fgd4e3g41ccg94c1ga5f57ec84589" version="1">Wild Magic: Banished</content>
 	<content contentuid="h52c57a87gb39eg41f4g9e47gdda36e1e42af" version="1">You are &lt;LSTag Type="Status" Tooltip="BANISHED"&gt;Banish&lt;/LSTag&gt; to another plane of existence.</content>
 	<content contentuid="h3aaf2b53g7795g4fa1g9111gfe0a0f63d035" version="1">Wild Magic: Maximum Damage</content>
-	<content contentuid="h5dd2285cg4349g4e91g84c2gf163feb73f70" version="1">The next spell that hits does maximum damage.</content>
+	<content contentuid="h5dd2285cg4349g4e91g84c2gf163feb73f70" version="1">Your next spell that hits can deal maximum damage, at the cost of a &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;reaction&lt;/LSTag&gt;.</content>
+	<content contentuid="hf2107c62g33c7g4785g9b3cgfee6fb236c67" version="1">Unleash the surge, causing your spell to deal maximum damage.</content>
 	<content contentuid="h5b4e767ag6647g4829ga608g8387c5ccca0d" version="1">Wild Magic: Static Shock</content>
 	<content contentuid="h97d9c295ge4cbg4fd4gbfdeg0298d2435981" version="1">You become charged with a massive amount of static electricity. When a creature hits you with a melee &lt;LSTag Tooltip="AttackRoll"&gt;attacks&lt;/LSTag&gt;, you deal [1] to them.</content>
 	<content contentuid="h0b736525g983ag4b79gb67bg891505c5b0fd" version="1">Wild Magic: Healed</content>
@@ -450,6 +452,7 @@ You still benefit from &lt;LSTag Type="Passive" Tooltip="Siael_POTR_Righteous"&g
 	<content contentuid="haffb8549g78f2g49e0g915cg6065153a9e53" version="1">Any creature that hits you with a melee &lt;LSTag Tooltip="AttackRoll"&gt;attacks&lt;/LSTag&gt; is pushed back by [1].</content>
 	<content contentuid="h13b69f5eg6b07g426bgb644g82ab0cfe5b47" version="1">Wild Magic: Hearty</content>
 	<content contentuid="hfe910756gd4ebg4223gafc0g581b131e28de" version="1">You have advantage on all &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; and &lt;LSTag Tooltip="AbilityCheck"&gt;Ability Checks&lt;/LSTag&gt;.</content>
+	<!-- D100 Wild Magic: 21-30 -->
 	<content contentuid="hce5107adgc347g4887g80eag96e893dad0bc" version="1">Wild Magic: Mass Blink</content>
 	<content contentuid="hc39525ccgef38g4e1eg8d92ged0936bc0395" version="1">Yourself and all allies within [1] of the &lt;LSTag Type="Spell" Tooltip="Shout__WildMagic"&gt;Wild Magic Surge&lt;/LSTag&gt; may be &lt;LSTag Type="Status" Tooltip="BLINK"&gt;Blinked&lt;/LSTag&gt; out of existence at the end of their turns.</content>
 	<content contentuid="h325abc74gb8d8g447ag9ddagab5694f20b03" version="1">Wild Magic: Mass Friends</content>
@@ -470,6 +473,7 @@ You still benefit from &lt;LSTag Type="Passive" Tooltip="Siael_POTR_Righteous"&g
 	<content contentuid="h7d83c01fg2447g4555ga1efg6f57da5820e0" version="1">You are &lt;LSTag Tooltip="Resistant"&gt;Resistant&lt;/LSTag&gt; against Bludgeoning, Piercing, and Slashing damage.</content>
 	<content contentuid="h18b28b83g364bg432cg8195g8e1c56897aeb" version="1">Wild Magic: Mass Poison</content>
 	<content contentuid="h5b515f01gfcabg4435gbf92g9ba34dc127f0" version="1">All other creatures within [1] of the &lt;LSTag Type="Spell" Tooltip="Shout__WildMagic"&gt;Wild Magic Surge&lt;/LSTag&gt; must succeed on a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or becomed &lt;LSTag Type="Status" Tooltip="POISONED"&gt;Poisoned&lt;/LSTag&gt;.</content>
+	<!-- D100 Wild Magic: 31-40 -->
 	<content contentuid="h635be352g248eg4e05g918dg4dab3ecdc9cc" version="1">Wild Magic: Blinding Glow</content>
 	<content contentuid="hb4962c31gc86cg4f5bgb81bgbfa278dbe79e" version="1">You glow brightly in a [1]. Enemies within [2] of you become &lt;LSTag Type="Status" Tooltip="WILD_MAGIC_ATTEMPT_BLINDNESS"&gt;Blinded&lt;/LSTag&gt;. When this &lt;LSTag Type="Status" Tooltip="WILD_MAGIC_ATTEMPT_BLINDNESS"&gt;Blindness&lt;/LSTag&gt; is removed from a creature they become &lt;LSTag Tooltip="Immune"&gt;Immune&lt;/LSTag&gt; to it.</content>
 	<content contentuid="h3423d012g6e4fg4ed9gb6dbg5e02ba5034c6" version="1">Wild Magic: Polymorphed</content>
@@ -490,6 +494,7 @@ You still benefit from &lt;LSTag Type="Passive" Tooltip="Siael_POTR_Righteous"&g
 	<content contentuid="h18e0d27ag1a76g45e1gb7eeg63a028a4c043" version="1">You become &lt;LSTag Type="Status" Tooltip="INVISIBLE"&gt;Invisible&lt;/LSTag&gt;.</content>
 	<content contentuid="h9a70aea9g94eag41aeg9ccfg8176b30a718e" version="1">Wild Magic: Revivify</content>
 	<content contentuid="h9f4ef2b8gcbcag42d7gbe7bg593d974bdcf9" version="1">You are able to cast &lt;LSTag Type="Spell" Tooltip="Teleportation_Revivify"&gt;Revivify&lt;/LSTag&gt; until your next &lt;LSTag Tooltip="LongRest"&gt;Long Rest&lt;/LSTag&gt;.</content>
+	<!-- D100 Wild Magic: 41-50 -->
 	<content contentuid="ha0892563g39deg4279g932ag096b41826470" version="1">Wild Magic: Big!</content>
 	<content contentuid="he0bc6e2eg8727g4710g8956g3876752ef1db" version="1">All creatures within [1] of the &lt;LSTag Type="Spell" Tooltip="Shout__WildMagic"&gt;Wild Magic Surge&lt;/LSTag&gt; become &lt;LSTag Type="Status" Tooltip="ENLARGE"&gt;Enlarged&lt;/LSTag&gt;. They gain &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="Strength"&gt;Strength&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityCheck"&gt;Ability Checks&lt;/LSTag&gt; and &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;, their weapon &lt;LSTag Tooltip="AttackRoll"&gt;attacks&lt;/LSTag&gt; deal an additional 1d4 damage.</content>
 	<content contentuid="hdd477f8dg6cc0g4e73g94a6g0340f455bb0a" version="1">Wild Magic: Small!</content>
@@ -512,6 +517,7 @@ You still benefit from &lt;LSTag Type="Passive" Tooltip="Siael_POTR_Righteous"&g
 	<content contentuid="hf2f1fb3ega394g47beg86c2g1326a75fc26b" version="1">All mundane locks within [1] of the &lt;LSTag Type="Spell" Tooltip="Shout__WildMagic"&gt;Wild Magic Surge&lt;/LSTag&gt; are unlocked.</content>
 	<content contentuid="h4859c7d0g71b5g4354gacfbgb4b59782595a" version="1">Wild Magic: Summon Menagerie</content>
 	<content contentuid="h2b5db7acg8a47g4a28g9d35gabbe1ef50f59" version="1">You have summoned a menagerie of familiars.</content>
+	<!-- D100 Wild Magic: 51-60 -->
 	<content contentuid="heac65eb1g6c26g4dccg929bgab36f66b5342" version="1">Wild Magic: Critical Hits</content>
 	<content contentuid="h5bd8c8d1g7d30g4774g86d1g29fd401f7bd5" version="1">All of your &lt;LSTag Tooltip="AttackRoll"&gt;Attacks&lt;/LSTag&gt; are &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hits&lt;/LSTag&gt;.</content>
 	<content contentuid="hce512b66gfc3ag4564ga1f9gfd6addde2c50" version="1">Wild Magic: Mind Readers</content>
@@ -547,6 +553,7 @@ You still benefit from &lt;LSTag Type="Passive" Tooltip="Siael_POTR_Righteous"&g
 	<content contentuid="h4d0abd72gc828g4f26gb569g64fd1c097b1d" version="1">All creatures within [1] of the &lt;LSTag Type="Spell" Tooltip="Shout__WildMagic"&gt;Wild Magic Surge&lt;/LSTag&gt; must succeed a &lt;LSTag Tooltip="Wisdom"&gt;Wisdom&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or become &lt;LSTag Type="Status" Tooltip="FEARED"&gt;Fearful&lt;/LSTag&gt; and &lt;LSTag Type="Status" Tooltip="DISARM"&gt;Disarmed&lt;/LSTag&gt;.</content>
 	<content contentuid="h0d1b5ee0gd41fg49f9gb92cg340e6b885b24" version="1">Wild Magic: Crabs</content>
 	<content contentuid="he9c6965egb929g4562g9015g6e081d481e17" version="1">You have summoned six hostile crabs.</content>
+	<!-- D100 Wild Magic: 61-70 -->
 	<content contentuid="hb9d8d168ge4bcg404bg973fgda138e203c65" version="1">Wild Magic: Summon Bob</content>
 	<content contentuid="hd44656aag5076g45c8g904fgd89ccb1eb83c" version="1">You have summoned Bob the Friendly Zombie.</content>
 	<content contentuid="h91db38b3g615cg4ca2g8b66gbadb8f63d04f" version="1">Bob the Friendly Zombie</content>
@@ -592,6 +599,7 @@ You still benefit from &lt;LSTag Type="Passive" Tooltip="Siael_POTR_Righteous"&g
 	<content contentuid="h246e388fg3190g43feg8a3cg3ab3964fa54a" version="1">All other creatures within [1] of the &lt;LSTag Type="Spell" Tooltip="Shout__WildMagic"&gt;Wild Magic Surge&lt;/LSTag&gt; are &lt;LSTag Type="Status" Tooltip="DISARMED"&gt;Disarmed&lt;/LSTag&gt;.</content>
 	<content contentuid="h47edfa3agbecdg47bfga79dg52f8f8b40092" version="1">Wild Magic: Mass Charm</content>
 	<content contentuid="h8083e6dag0a33g4489ga893g53e1e34eb26d" version="1">All enemies within [1] of the &lt;LSTag Type="Spell" Tooltip="Shout__WildMagic"&gt;Wild Magic Surge&lt;/LSTag&gt; must succeed a &lt;LSTag Tooltip="Wisdom"&gt;Wisdom&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or become &lt;LSTag Type="Status" Tooltip="CHARMED"&gt;Charmed&lt;/LSTag&gt;.</content>
+	<!-- D100 Wild Magic: 71-80 -->
 	<content contentuid="hfcef7684g5eceg4bcag9caeg5d91f4a176ec" version="1">Wild Magic: A Helpful Hand</content>
 	<content contentuid="hdd6bd479ga761g480eg8bf9g2942ed29bc41" version="1">All allies within [1] of the &lt;LSTag Type="Spell" Tooltip="Shout__WildMagic"&gt;Wild Magic Surge&lt;/LSTag&gt; are &lt;LSTag Type="Spell" Tooltip="Target_Help"&gt;Helped&lt;/LSTag&gt;.</content>
 	<content contentuid="hbe2ddba7ge3e1g489bga00fg9bb965c0af7d" version="1">Wild Magic: Freedom of Movement</content>
