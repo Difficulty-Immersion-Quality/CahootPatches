@@ -2826,12 +2826,63 @@ data "PowerLevel" "9"
 //                                                                       Gear
 // ======================================================================================================================================
 
+// =============================================== Ring of Colour Spray ===============================================
+// Colour Spray: revert changes turning it into a reaction
+new entry "DEN_HarpyMeal_NestRing"
+type "Armor"
+using "DEN_HarpyMeal_NestRing"
+// data "Boosts" "UnlockInterrupt(Interrupt_SYR_RingOfColourSpray_Reaction)"
+data "Boosts" "UnlockSpell(Zone_DEN_ColorSpray_HarpyMeal_NestRing)"
+// data "PassivesOnEquip" "SYR_RingOfColourSpray_Passive;"
+data "PassivesOnEquip" ""
+
 // =============================================== Frost Prince ===============================================
 // Twin Ice Knife: add short rest cooldown 
-
 new entry "Projectile_MAG_IceKnife"
 type "SpellData"
 data "SpellType" "Projectile"
 using "Projectile_MAG_IceKnife"
 // data "Cooldown" ""
 data "Cooldown" "OncePerShortRestPerItem"
+
+// =============================================== Fireheart ===============================================
+// Fervent Flames: revert back to vanilla (because modded version is bugged and OP). No longer able to reapply itself with its own Heat damage
+new entry "MAG_Fire_HeatOnTakingFireDamage_Amulet_Passive"
+type "PassiveData"
+// Fervent Flames
+data "DisplayName" "hb42bace7g894fg4889gb6deg6d646e1037e3;2"
+// Whenever you take Fire damage dealt by another creature, you gain 2 turns of <LSTag Type="Status" Tooltip="MAG_FIRE_HEAT">Heat</LSTag>.
+data "Description" "ha1d79473g85fcg4f61g8cc6g97d84d881aac;8"
+data "Properties" "OncePerTurn"
+data "StatsFunctorContext" "OnDamaged"
+// data "Conditions" "IsDamageTypeFire() and not Self()"
+data "Conditions" "IsDamageTypeFire() and not Self() and (IsAttack() or IsSavingThrow());"
+data "StatsFunctors" "IF(not HasStatus('MAG_FIRE_HEAT_ONCE_TECHNICAL')):ApplyStatus(MAG_FIRE_HEAT_CHARGE_UP_TECHNICAL,100, 0);ApplyStatus(MAG_FIRE_HEAT, 100, 2);ApplyStatus(MAG_FIRE_HEAT_ONCE_TECHNICAL, 100, 0);ApplyStatus(MAG_FIRE_HEAT_DURATION_TECHNICAL, 100, 1)"
+
+// =============================================== Holy Lance Helmet ===============================================
+// Smite the Graceless: reduce the saving throw DC by 2, but increase damage to 2
+new entry "MAG_Radiant_Radiating_Helmet_Passive"
+type "PassiveData"
+using "MAG_Radiant_Radiating_Helmet_Passive"
+// data "DescriptionParams" "DealDamage(LevelMapValue(SYR_WeakScalingFlatDamage), Radiant)"
+data "DescriptionParams" "DealDamage(2, Radiant)"
+
+new entry "MAG_SMITE_THE_GRACELSS_DAMAGE"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MAG_SMITE_THE_GRACELSS_DAMAGE"
+// data "OnApplyRoll" "not SavingThrow(Ability.Dexterity, SYR_Rebalance_HighScalingDC())"
+data "OnApplyRoll" "not SavingThrow(Ability.Dexterity, SYR_Rebalance_MidScalingDC())"
+// data "OnApplySuccess" "DealDamage(LevelMapValue(SYR_WeakScalingFlatDamage), Radiant,Magical);ApplyStatus(MAG_RADIANT_RADIANT_BLAST_TECHNICAL, 100, 0)"
+data "OnApplySuccess" "DealDamage(2, Radiant,Magical);ApplyStatus(MAG_RADIANT_RADIANT_BLAST_TECHNICAL, 100, 0)"
+
+// =============================================== Hat of the Sharp Caster ===============================================
+// Sharp Mind: fix syntax error causing Boosts to always register as true
+new entry "SYR_HatOfTheSharpCaster_Passive"
+type "PassiveData"
+using "SYR_HatOfTheSharpCaster_Passive"
+// data "DisplayName" "hf67bd9ccgbce3g8cf7ge085g13165f2092b4;1"
+// data "Description" "h0023eda8g81cdg677fg6ce1g77d81eee2ef9;2"
+// data "DescriptionParams" "20;18"
+// data "Boosts" "IF(ConditionResult(context.Source.Wisdom => 20) or ConditionResult(context.Source.Charisma => 20)):AbilityOverrideMinimum(Intelligence,18);"
+data "Boosts" "IF(ConditionResult(context.Source.Wisdom >= 20) or ConditionResult(context.Source.Charisma >= 20)):AbilityOverrideMinimum(Intelligence,18)"
