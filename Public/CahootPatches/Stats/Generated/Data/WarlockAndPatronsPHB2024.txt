@@ -1,4 +1,45 @@
-// ========================== The Celestial ==========================
+// ========================== Invocations ==========================
+
+// Lifedrinker: base heal die decreased to d4 (in LevelMapValues)
+new entry "Lifedrinker"
+type "PassiveData"
+using "Lifedrinker"
+// data "DisplayName" "h5da2c190g4ae3gb1b0g8418g0137532f5a77;1"
+// data "Description" "h7b3ae4d3g0591gf4fagcc15g9dfcc0f0fdfd;2"
+// Once per turn, an attack made with your weapon deals an additional [1], [2] or [3]. Additionally, once per &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;, you can heal yourself for [4] plus [5] after you have sucessfully hit an opponent with your weapon.
+data "Description" "he64944e0g7fa8g4086g9b40g12c799d0f12b;1"
+// data "DescriptionParams" "DealDamage(1d6,Necrotic);DealDamage(1d6,Radiant);DealDamage(1d6,Psychic);RegainHitPoints(LevelMapValue(LifedrinkerHealMap)+ConstitutionModifier)"
+data "DescriptionParams" "DealDamage(1d6,Necrotic);DealDamage(1d6,Radiant);DealDamage(1d6,Psychic);RegainHitPoints(LevelMapValue(LifedrinkerHealMap));RegainHitPoints(ConstitutionModfiier)"
+// data "ExtraDescription" "h19d54ca8gea56ga34fg6b8ag5ff369838513;2"
+// data "Properties" "Highlighted"
+// data "StatsFunctorContext" "OnCreate"
+// data "Conditions" "HasPassive('Lifedrinker',context,Source) and not HasStatus('LIFEDRINKER_UNLOCK',context.Source);"
+// data "StatsFunctors" "ApplyStatus(SELF,LIFEDRINKER_UNLOCK,100,-1)"
+
+new entry "Interrupt_LifedrinkerHeal"
+type "InterruptData"
+using "Interrupt_LifedrinkerHeal"
+// data "DisplayName" "hd11f2572gf6f5gcac5g556cg37f9d2b64547;1"
+// data "Description" "hf871e00agd10cg99a9ga7feg10a8a99f254a;2"
+// After landing an attack with your Pact or Bound weapon, you can drain the life essence of the target to heal yourself for [1] plus [2].
+data "Description" "h334d0a2bg361ag4790g8971g14f76837c3df;1"
+// data "DescriptionParams" "RegainHitPoints(LevelMapValue(LifedrinkerHealMap)+ConstitutionModifier)"
+data "DescriptionParams" "RegainHitPoints(LevelMapValue(LifedrinkerHealMap));RegainHitPoints(ConstitutionModfiier)"
+// data "ExtraDescription" "h5fc670f3g251egfbb2gc123g4f8f2ff65c22;1"
+// data "Icon" "PassiveFeature_Lifedrinker"
+// data "InterruptContext" "OnCastHit"
+// data "InterruptContextScope" "Self"
+// data "Container" "YesNoDecision"
+// data "Conditions" "IsAbleToReact(context.Observer) and not Self() and not Item() and Self(context.Source,context.Observer) and HasDamageEffectFlag(DamageFlags.Hit) and IsWeaponAttack() and WPHB2024_AttackedWithPactWeapon() and not AnyEntityIsItem();"
+// data "Properties" "ApplyStatus(SWAP,LIFEDRINKER_HEAL,100,0);ApplyStatus(PASSIVE_HEX,100,0);"
+// data "Cost" "LifedrinkerCharge:1;"
+// data "Stack" "Lifedrinker"
+// data "InterruptDefaultValue" "Ask;Enabled"
+// data "EnableCondition" "HasActionResource('LifedrinkerCharge', 1, 0, false) and not HasStatus('SG_Polymorph') or HasAnyStatus({'SG_Disguise','WILDSHAPE_STARRY_ARCHER_PLAYER','WILDSHAPE_STARRY_CHALICE_PLAYER','WILDSHAPE_STARRY_DRAGON_PLAYER'});"
+// data "EnableContext" "OnStatusApplied;OnStatusRemoved;OnActionResourcesChanged"
+// data "InterruptFlags" "InterruptWhileInvisible"
+
+// ========================== Subclass: The Celestial ==========================
 
 // Radiant Soul: no longer requires damage being from a cantrip or spell (to function better with Pact of the Blade builds)
 new entry "Celestial_RadiantSoul1"

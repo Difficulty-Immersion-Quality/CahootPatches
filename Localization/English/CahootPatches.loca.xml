@@ -700,6 +700,8 @@ You still benefit from &lt;LSTag Type="Passive" Tooltip="Siael_POTR_Righteous"&g
 	<content contentuid="h434207f7g8135g444fgaa52g30cafa4ec3e5" version="1">You have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; to maintain &lt;LSTag Tooltip="Concentration"&gt;Concentration&lt;/LSTag&gt;.&lt;br&gt;&lt;br&gt;You can also use a &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;Reaction&lt;/LSTag&gt; to cast a spell when a hostile creature's movement provokes an &lt;LSTag Tooltip="OpportunityAttack"&gt;Opportunity Attack&lt;/LSTag&gt; from you.</content>
 
 	<!-- WarlockAndPatronsPHB2024 -->
+	<content contentuid="he64944e0g7fa8g4086g9b40g12c799d0f12b" version="1">Once per turn, an attack made with your weapon deals an additional [1], [2] or [3]. Additionally, once per &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;, you can heal yourself for [4] plus [5] after you have sucessfully hit an opponent with your weapon.</content>
+	<content contentuid="h334d0a2bg361ag4790g8971g14f76837c3df" version="1">After landing an attack with your Pact or Bound weapon, you can drain the life essence of the target to heal yourself for [1] plus [2].</content>
 	<content contentuid="he4bab66dg62c5g4849g90dagbbaf17e4a454" version="1">You gain &lt;LSTag Tooltip="Resistant"&gt;Resistance&lt;/LSTag&gt; to[1]. Once per turn, when you inflict[2] or[3], you add your Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; to the damage roll.</content>
 
 	<content contentuid="XXXX" version="1">XXXX</content>

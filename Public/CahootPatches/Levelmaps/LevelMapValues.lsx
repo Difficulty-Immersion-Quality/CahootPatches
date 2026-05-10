@@ -138,6 +138,32 @@
 					<attribute id="PreferredClassUUID" type="guid" value="e8b1eab0-ef11-40a2-8a0b-cee8d062bf2a"/>
 					<attribute id="UUID" type="guid" value="de259bcb-1da9-4df6-b9c5-067ccc335a05"/>
 				</node>
+                <node id="LevelMapSeries">
+                    <attribute id="FallbackValue" type="LSString" value="2d4"/>
+                    <attribute id="Level1" type="LSString" value="2d4"/>
+                    <attribute id="Level10" type="LSString" value="2d4"/>
+                    <attribute id="Level11" type="LSString" value="2d4"/>
+                    <attribute id="Level12" type="LSString" value="2d4"/>
+                    <attribute id="Level13" type="LSString" value="3d4"/>
+                    <attribute id="Level14" type="LSString" value="3d4"/>
+                    <attribute id="Level15" type="LSString" value="3d4"/>
+                    <attribute id="Level16" type="LSString" value="3d4"/>
+                    <attribute id="Level17" type="LSString" value="4d4"/>
+                    <attribute id="Level18" type="LSString" value="4d4"/>
+                    <attribute id="Level19" type="LSString" value="4d4"/>
+                    <attribute id="Level2" type="LSString" value="2d4"/>
+                    <attribute id="Level20" type="LSString" value="5d4"/>
+                    <attribute id="Level3" type="LSString" value="2d4"/>
+                    <attribute id="Level4" type="LSString" value="2d4"/>
+                    <attribute id="Level5" type="LSString" value="2d4"/>
+                    <attribute id="Level6" type="LSString" value="2d4"/>
+                    <attribute id="Level7" type="LSString" value="2d4"/>
+                    <attribute id="Level8" type="LSString" value="2d4"/>
+                    <attribute id="Level9" type="LSString" value="2d4"/>
+                    <attribute id="Name" type="FixedString" value="LifedrinkerHealMap"/>
+                    <attribute id="PreferredClassUUID" type="guid" value="b4225a4b-4bbe-4d97-9e3c-4719dbd1487c"/>
+                    <attribute id="UUID" type="guid" value="ceac314b-bf28-4402-a2f0-0f5ea5bc558f"/>
+                </node>
 			</children>
 		</node>
 	</region>
