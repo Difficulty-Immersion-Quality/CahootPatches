@@ -1,0 +1,29 @@
+// ========================== The Celestial ==========================
+
+// Radiant Soul: no longer requires damage being from a cantrip or spell (to function better with Pact of the Blade builds)
+new entry "Celestial_RadiantSoul1"
+type "PassiveData"
+using "Celestial_RadiantSoul1"
+// data "DisplayName" "h2664447fg4f71gf79fgddf2g2f8635b7cc95;1"
+// data "Description" "hc1b96e1cgddc1ga6a4gd174gc550365fd7b4;1"
+// You gain &lt;LSTag Tooltip="Resistant"&gt;Resistance&lt;/LSTag&gt; to[1]. Once per turn, when you inflict[2] or[3], you add your Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; to the damage roll.
+data "Description" "he4bab66dg62c5g4849g90dagbbaf17e4a454;1"
+// data "DescriptionParams" ""
+data "DescriptionParams" "DealDamage(,Radiant);DealDamage(,Radiant)DealDamage(,Fire)"
+// data "Icon" "GenericIcon_DamageType_Radiant"
+// data "Properties" "Highlighted"
+// data "Boosts" "Resistance(Radiant, Resistant);"
+
+new entry "Celestial_RadiantSoul2"
+type "PassiveData"
+// using "Celestial_RadiantSoul1"
+using "Celestial_RadiantSoul2"
+// data "Properties" "OncePerTurn;OncePerAttack"
+data "Properties" "OncePerTurn;OncePerAttack;IsHidden"
+// data "BoostContext" "OnCreate;OnStatusApplied;OnStatusRemoved"
+// data "Boosts" "IF((IsCantrip() or IsSpell()) and (HasDamageDoneForType(DamageType.Radiant) or HasDamageDoneForType(DamageType.Fire)) and not HasStatus('RADIANT_SOUL_BLOCKED',context.Source)):DamageBonus(max(1,CharismaModifier));"
+data "Boosts" "IF((HasDamageDoneForType(DamageType.Radiant) or HasDamageDoneForType(DamageType.Fire)) and not HasStatus('RADIANT_SOUL_BLOCKED',context.Source)):DamageBonus(max(1,CharismaModifier))"
+// data "StatsFunctorContext" "OnDamage"
+// data "Conditions" "(IsCantrip() or IsSpell()) and (HasDamageDoneForType(DamageType.Radiant) or HasDamageDoneForType(DamageType.Fire)) and not HasStatus('RADIANT_SOUL_BLOCKED',context.Source);"
+data "Conditions" "(HasDamageDoneForType(DamageType.Radiant) or HasDamageDoneForType(DamageType.Fire)) and not HasStatus('RADIANT_SOUL_BLOCKED',context.Source)"
+// data "StatsFunctors" "ApplyStatus(SELF,RADIANT_SOUL_BLOCKED,100,1)"
