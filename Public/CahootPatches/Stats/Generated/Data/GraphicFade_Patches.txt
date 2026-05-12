@@ -4852,20 +4852,7 @@ data "DescriptionParams" "DealDamage(1d4,Radiant)"
 data "StatsFunctors" "DealDamage(SWAP, 1d4, Radiant,Magical)"
 
 // ==================================== FATE - Abyssal Anchor
-// Decrease Cold damage to 1d4
-new entry "WPN_FATE_ActOne_LegendaryTrident"
-type "Weapon"
-// using "WPN_Trident_2"
-using "WPN_FATE_ActOne_LegendaryTrident"
-// data "RootTemplate" "f884dcaa-5179-4e16-8e68-c0ff313f7868"
-// data "ValueUUID" "d24c441f-7ebe-4229-8522-cf34c257ff20"
-// data "Rarity" "Legendary"
-// data "DefaultBoosts" "WeaponEnchantment(3);WeaponProperty(Magical);WeaponDamage(1d6, Cold);"
-data "DefaultBoosts" "WeaponEnchantment(3);WeaponProperty(Magical);WeaponDamage(1d4, Cold);"
-// data "PassivesOnEquip" "FATE_ActOne_LegendaryTrident_Passive_01;FATE_ActOne_LegendaryTrident_Passive_02;FATE_ActOne_LegendaryTrident_Passive_03;"
-// data "Unique" "1"
-
-// The Bends: improve loca
+// The Bends: remove Piercing vulnerability from status
 new entry "FATE_ActOne_LegendaryTrident_Passive_02"
 type "PassiveData"
 using "FATE_ActOne_LegendaryTrident_Passive_02"
@@ -4877,6 +4864,21 @@ data "Description" "h6b391d19g2735g43a5ga8e1gaea4ae711b5c;1"
 // data "StatsFunctorContext" "OnDamage"
 // data "Conditions" "AttackedWithPassiveSourceWeapon() and IsCritical();"
 // data "StatsFunctors" "ApplyStatus(FATE_THE_BENDS, 100, 2)"
+
+new entry "FATE_THE_BENDS"
+type "StatusData"
+data "StatusType" "BOOST"
+using "FATE_THE_BENDS"
+// data "DisplayName" "h5f2ca71eg1c62gbaffg5ecdgf9ef75cb5f8f;1"
+// data "Description" "h6cc067aeg0e9bg44eeg1e45geccb08d7b097;1"
+//Phantom ocean pressure crushes this creature's lungs and joints. They are &lt;LSTag Tooltip="Vulnerable"&gt;Vulnerable&lt;/LSTag&gt; to[1] and their &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; is halved.
+data "Description" "h24cd0bafg160bg4cdagb26fg83ae397451b2;1"
+// data "DescriptionParams" "DealDamage(,Cold);DealDamage(,Piercing)"
+data "DescriptionParams" "DealDamage(,Cold)"
+// data "FormatColor" "Water"
+// data "StackId" "FATE_THE_BENDS"
+// data "Boosts" "Resistance(Cold, Vulnerable);Resistance(Piercing, Vulnerable);ActionResourceConsumeMultiplier(Movement, 2,0);MovementSpeedLimit(Walk);"
+data "Boosts" "Resistance(Cold, Vulnerable);ctionResourceConsumeMultiplier(Movement, 2,0);MovementSpeedLimit(Walk);"
 
 // ==================================== FATE - Tuning Fork of the Lucid Mind
 // Lucid Frequency: remove bonus to spell save DC
