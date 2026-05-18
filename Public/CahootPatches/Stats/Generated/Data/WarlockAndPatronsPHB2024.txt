@@ -47,7 +47,6 @@ using "LIFEDRINKER_HEAL"
 // data "OnApplyFunctors" "RegainHitPoints(LevelMapValue(LifedrinkerHealMap)+ConstitutionModifier);"
 data "OnApplyFunctors" "RegainHitPoints(LevelMapValue(LifedrinkerHealMap))"
 
-
 // ========================== Subclass: The Celestial ==========================
 
 // Radiant Soul: no longer requires damage being from a cantrip or spell (to function better with Pact of the Blade builds)
