@@ -2846,8 +2846,8 @@ using "Projectile_MAG_IceKnife"
 data "Cooldown" "OncePerShortRestPerItem"
 
 // =============================================== Fireheart ===============================================
-// Fervent Flames: revert back to vanilla (because modded version is bugged and OP). No longer able to reapply itself with its own Heat damage
-new entry "MAG_Fire_HeatOnTakingFireDamage_Amulet_Passive"
+// Fervent Flames: revert back to vanilla (because modded version is bugged and OP). No longer able to reapply itself with its own Heat damage. NOTE: mod swaps Fervent Flames to the custom SYR_Fireheart_Amulet_Passive passive, with the vanilla MAG_Fire_HeatOnTakingFireDamage_Amulet_Passive passive instead adding damage to Fire spells 
+new entry "SYR_Fireheart_Amulet_Passive"
 type "PassiveData"
 // Fervent Flames
 data "DisplayName" "hb42bace7g894fg4889gb6deg6d646e1037e3;2"
@@ -2858,23 +2858,6 @@ data "StatsFunctorContext" "OnDamaged"
 // data "Conditions" "IsDamageTypeFire() and not Self()"
 data "Conditions" "IsDamageTypeFire() and not Self() and (IsAttack() or IsSavingThrow());"
 data "StatsFunctors" "IF(not HasStatus('MAG_FIRE_HEAT_ONCE_TECHNICAL')):ApplyStatus(MAG_FIRE_HEAT_CHARGE_UP_TECHNICAL,100, 0);ApplyStatus(MAG_FIRE_HEAT, 100, 2);ApplyStatus(MAG_FIRE_HEAT_ONCE_TECHNICAL, 100, 0);ApplyStatus(MAG_FIRE_HEAT_DURATION_TECHNICAL, 100, 1)"
-
-// =============================================== Holy Lance Helmet ===============================================
-// Smite the Graceless: reduce the saving throw DC by 2, but increase damage to 2
-new entry "MAG_Radiant_Radiating_Helmet_Passive"
-type "PassiveData"
-using "MAG_Radiant_Radiating_Helmet_Passive"
-// data "DescriptionParams" "DealDamage(LevelMapValue(SYR_WeakScalingFlatDamage), Radiant)"
-data "DescriptionParams" "DealDamage(2, Radiant)"
-
-new entry "MAG_SMITE_THE_GRACELSS_DAMAGE"
-type "StatusData"
-data "StatusType" "BOOST"
-using "MAG_SMITE_THE_GRACELSS_DAMAGE"
-// data "OnApplyRoll" "not SavingThrow(Ability.Dexterity, SYR_Rebalance_HighScalingDC())"
-data "OnApplyRoll" "not SavingThrow(Ability.Dexterity, SYR_Rebalance_MidScalingDC())"
-// data "OnApplySuccess" "DealDamage(LevelMapValue(SYR_WeakScalingFlatDamage), Radiant,Magical);ApplyStatus(MAG_RADIANT_RADIANT_BLAST_TECHNICAL, 100, 0)"
-data "OnApplySuccess" "DealDamage(2, Radiant,Magical);ApplyStatus(MAG_RADIANT_RADIANT_BLAST_TECHNICAL, 100, 0)"
 
 // =============================================== Hat of the Sharp Caster ===============================================
 // Sharp Mind: fix syntax error causing Boosts to always register as true
