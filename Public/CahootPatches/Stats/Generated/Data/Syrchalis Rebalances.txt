@@ -2869,3 +2869,14 @@ using "SYR_HatOfTheSharpCaster_Passive"
 // data "DescriptionParams" "20;18"
 // data "Boosts" "IF(ConditionResult(context.Source.Wisdom => 20) or ConditionResult(context.Source.Charisma => 20)):AbilityOverrideMinimum(Intelligence,18);"
 data "Boosts" "IF(ConditionResult(context.Source.Wisdom >= 20) or ConditionResult(context.Source.Charisma >= 20)):AbilityOverrideMinimum(Intelligence,18)"
+
+// ======================================================================================================================================
+//                                                                       Common Conditions
+// ======================================================================================================================================
+// Arcane Synergy: undo the mod's change to it (including vanilla bug fix so it now affects throwing)
+new entry "MAG_GISH_ARCANE_SYNERGY"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MAG_GISH_ARCANE_SYNERGY"
+// data "Boosts" "IF(IsWeaponAttack()):CharacterWeaponDamage(max(0,SpellCastingAbilityModifier))"
+data "Boosts" "CharacterWeaponDamage(max(0,SpellCastingAbilityModifier))"
