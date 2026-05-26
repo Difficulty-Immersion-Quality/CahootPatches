@@ -733,7 +733,7 @@ using "CC_FORGOTTEN_POWER"
 data "OnApplyFunctors" "IF(RollDieAgainstDC(DiceType.d100,81)):RestoreResource(SorceryPoint,1,0);IF(RollDieAgainstDC(DiceType.d100,86)):RestoreResource(SorceryPoint,2,0);IF(RollDieAgainstDC(DiceType.d100,91)):RestoreResource(SorceryPoint,3,0);IF(RollDieAgainstDC(DiceType.d100,96)):RestoreResource(SorceryPoint,4,0);IF(RollDieAgainstDC(DiceType.d100,98)):RestoreResource(SorceryPoint,5,0)"
 
 // ==================================== CC - Amulet of the Infinite Wellspring
-// Endless Well: Added 1d10 Force self-damage each time you use it
+// Endless Well: Added 1d12 Force self-damage each time you use it
 new entry "CC_EndlessWell_Passive"
 type "PassiveData"
 using "CC_EndlessWell_Passive"
@@ -744,7 +744,7 @@ using "CC_EndlessWell_Passive"
 // While your Metamagic ability is active, the amulet floods your being with raw magical energy, allowing you to draw upon its infinite reserves of &lt;LSTag Type="ActionResource" Tooltip="SorceryPoint"&gt;Sorcery Points&lt;/LSTag&gt;. You can only use this effect once per turn and you take [1] every time you use it.
 data "Description" "h591efe33gb1f1g42f4gbafcg8f2377d5eaf3;1"
 // data "DescriptionParams" ""
-data "DescriptionParams" "DealDamage(1d10,Force)"
+data "DescriptionParams" "DealDamage(1d12,Force)"
 // data "Icon" "Action_Monster_Bombardement_ProjectileStrike"
 // data "Properties" "Highlighted;ToggledDefaultAddToHotbar;IsToggled;OncePerTurn"
 // data "EnabledConditions" "HasActionResource('SorceryPoint', 1, 0, false, false, context.Source) and (HasStatus('CC_METAMAGIC_CAREFUL',context.Source) or HasStatus('CC_METAMAGIC_DISTANT',context.Source) or HasStatus('CC_METAMAGIC_EXTENDED',context.Source) or HasStatus('CC_METAMAGIC_HEIGHTENED',context.Source) or HasStatus('CC_METAMAGIC_QUICKENED',context.Source) or HasStatus('CC_METAMAGIC_SUBTLE',context.Source) or HasStatus('CC_METAMAGIC_TWINNED',context.Source) or HasStatus('CC_METAMAGIC_SEEKING',context.Source) or HasStatus('METAMAGIC_EMPOWERED',context.Source) or HasStatus('METAMAGIC_TRANSMUTED_SPELL',context.Source)) and not HasStatus('CC_SORCERER_ENDLESSWELL_USED')"
@@ -766,7 +766,7 @@ using "CC_SORCERER_ENDLESSWELL_TRACKER"
 // data "RemoveEvents" "OnSpellCast"
 // data "RemoveConditions" "HasStatus('CC_SORCERER_FREE_CAST',context.Source)"
 // data "OnRemoveFunctors" "IF(HasStatus('CC_SORCERER_FREE_CAST',context.Source)):ApplyStatus(CC_SORCERER_ENDLESSWELL_USED,100,1)"
-data "OnRemoveFunctors" "IF(HasStatus('CC_SORCERER_FREE_CAST',context.Source)):ApplyStatus(CC_SORCERER_ENDLESSWELL_USED,100,1);IF(HasStatus('CC_SORCERER_FREE_CAST',context.Source)):DealDamage(SELF,1d10,Force,Magical,,0,,false,false)"
+data "OnRemoveFunctors" "IF(HasStatus('CC_SORCERER_FREE_CAST',context.Source)):ApplyStatus(CC_SORCERER_ENDLESSWELL_USED,100,1);IF(HasStatus('CC_SORCERER_FREE_CAST',context.Source)):DealDamage(SELF,1d12,Force,Magical,,0,,false,false)"
 
 // ==================================== CC - Sphere of Controlled Chaos
 // Chaos Ball: decrease damage per element to 1d4 and streamline loca
@@ -2605,13 +2605,13 @@ data "Boosts" "ReduceCriticalAttackThreshold(1);RollBonus(Attack,1)"
 // data "ApplyEffect" "d21494e5-5c30-4a69-85ef-75a785e71105"
 // data "EndEffect" "a5c11e94-efa3-4998-a76b-fc12502ea565"
 
-// Sunburst Shock: fix LSTag
+// Sunburst Shock: add saving throw to Blind
 new entry "OO_SunburstShock_Passive"
 type "PassiveData"
 using "OO_SunburstShock_Passive"
 // data "DisplayName" "h3732ac76g59ffg4bf0gb0e3gb69f06c6c058;1"
 // data "Description" "h3732ac76g59ffg4bf0gb0e3gb69f06c6c059;1"
-// When the user expends a &lt;LSTag Type="ActionResource" Tooltip="LayOnHandsCharge"&gt;Lay on Hands&lt;/LSTag&gt; charge, a flash of light emits from the caster that &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blinds&lt;/LSTag&gt; any enemies within [1] for [2] turns.
+// When the user expends a &lt;LSTag Type="ActionResource" Tooltip="LayOnHandsCharge"&gt;Lay on Hands&lt;/LSTag&gt; charge, a flash of light emits from the caster that requires all foes in [1] to make a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or be &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blinded&lt;/LSTag&gt; for [2] turns.
 data "Description" "hffb23215g55abg40d1gae88g74c599efff80;1"
 // data "DescriptionParams" "Distance(3)"
 data "DescriptionParams" "Distance(3);2"
@@ -2620,6 +2620,39 @@ data "DescriptionParams" "Distance(3);2"
 // data "StatsFunctorContext" "OnCast"
 // data "Conditions" "SpellId('Target_LayOnHands_SmallHeal') or SpellId('Target_LayOnHands_BigHeal') or SpellId('Target_LayOnHands_Cure')"
 // data "StatsFunctors" "CreateExplosion(OO_Projectile_SunburstShock)"
+
+new entry "OO_Projectile_SunburstShock"
+type "SpellData"
+data "SpellType" "Projectile"
+using "OO_Projectile_SunburstShock"
+// data "Level" "1"
+// data "SpellSchool" "Evocation"
+// data "ExplodeRadius" "3"
+// data "SpellProperties" "AOE:ApplyStatus(BLINDED, 100, 2)"
+data "SpellProperties" ""
+// data "SpellRoll" ""
+data "SpellRoll" "not SavingThrow(Ability.Constitution, SourceSpellDC())"
+// data "SpellSuccess" ""
+data "SpellSuccess" "AOE:ApplyStatus(BLINDED,100,2)"
+// data "TargetConditions" "not Self() and not Dead() and not Ally()"
+data "TargetConditions" "Character() and not Self() and not Dead() and Enemy()"
+// data "Trajectories" "c63c4527-1bdf-4635-ad59-7d7e2f666fa3"
+// data "Icon" "PassiveFeature_Generic_Light"
+// data "DisplayName" "h3732ac76g59ffg4bf0gb0e3gb69f06c6c058;1"
+// data "Description" ";1"
+// data "TooltipStatusApply" "ApplyStatus(BLINDED,100,2)"
+// data "TooltipAttackSave" ""
+data "TooltipAttackSave" "Constitution"
+// data "CastSound" "Spell_Cast_Damage_Radiant_GuidingBolt_L1to3"
+// data "CycleConditions" "Enemy() and not Dead()"
+// data "SpellAnimation" "3ff87abf-1ea1-4c32-aadf-c822d74c7dc0,,;,,;38cdb41c-2eec-4e03-bb31-83cff0346c35,,;85414f5f-b448-4dda-9370-1b6c4b38b561,,;d8925ce4-d6d9-400c-92f5-ad772ef7f178,,;,,;eadedcce-d01b-4fbb-a1ae-d218f13aa5d6,,;,,;,,"
+// data "VerbalIntent" "Damage"
+// data "SpellFlags" "HasSomaticComponent;HasVerbalComponent;IsSpell;HasHighGroundRangeExtension;RangeIgnoreVerticalThreshold;IsHarmful"
+// data "HitAnimationType" "MagicalDamage_External"
+// data "CastEffect" "79a465b8-6054-47f8-92e4-9c340f96dd77"
+// data "TargetEffect" "aec6edb7-b1ae-4e42-808e-4968b9783242"
+// data "HitEffect" "d7941630-009c-442f-bc1c-650b2691ced6"
+// data "DamageType" "Radiant"
 
 // ==================================== OO - Cloak of Sacred Power
 // Sacred Sustenance: increase chance of not expending a Channel Oath charge to 50% (previously 40%)
@@ -3093,58 +3126,103 @@ data "DescriptionParams" "DealDamage(1d6,Necrotic)"
 // data "StatusEffect" "3e8e0b61-ec48-4465-86a4-49dc60986d73"
 
 // ==================================== PP - Amulet of the Eternal Hunger
-// Insatiable: decrease damage to 2d8 (previously 2d10) and decrease AC bonus to half your Charisma modifier, rounded down, up to max of +4 AC (previously was equal to full Charisma modifier)
-new entry "PP_Insatiable_Passive"
-type "PassiveData"
-using "PP_Insatiable_Passive"
-// Insatiable
-// data "DisplayName" "ha6cae9a4g3186g4872gaac9g04ef68e7f067;1"
-// The amulet's hunger claws at your very being, demanding sacrifice for its power. At the start of combat, you suffer [1] but gain an armor of shadowy energy, increasing your &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; equal to your Charisma modifier up to a max of +5 until combat ends.
-// data "Description" "ha6cae9a4g3186g4872gaac9g04ef68e7f068;1"
-// 	The amulet's hunger claws at your very being, demanding sacrifice for its power. At the start of combat, you suffer [1] but become armoued with shadowy energy. Until combat ends, you gain a bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; equal to half your Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;, rounded up, up to a max of +4.
-data "Description" "hb84c60b9g49afg49eagafc1g894388e1c278;1"
-// data "DescriptionParams" "DealDamage(2d10,Necrotic)"
-data "DescriptionParams" "DealDamage(2d8,Necrotic)"
-// data "Icon" "Action_Monster_Bulette_Bite"
-// data "StatsFunctorContext" "OnCombatStarted"
-// data "StatsFunctors" "ApplyStatus(SELF,PP_INSATIABLE,100,-1)"
+// Rarity decreased to Very Rare
+// Insatiable: passive removed
+new entry "PP_Warlock_Equipment_Amulet_of_the_Eternal_Hunger"
+type "Armor"
+// using "_Amulet_Magic"
+using "_Amulet_Magic"
+// data "RootTemplate" "902f94ff-cac5-4090-aebb-56ae2256f8f9"
+// data "Rarity" "Legendary"
+data "Rarity" "VeryRare"
+// data "Boosts" ""
+// data "PassivesOnEquip" "PP_Devour_Essence_Passive;PP_Insatiable_Passive"
+data "PassivesOnEquip" "PP_Devour_Essence_Passive"
+// data "UseConditions" "CanUseWarlockEquipmentAIO()"
+data "UseConditions" ""
+// data "Weight" "0.05"
+// data "ValueUUID" "589981db-3c73-421f-9c2f-afca259e499d"
+data "ValueUUID" "ccaceafa-6dc1-41c7-bd43-db6d4da8a3d8"
+// data "ComboCategory" "d4"
+// data "ValueScale" "1"
+// data "ValueRounding" "1"
+// data "ValueLevel" "11"
+// data "Unique" "1"
 
-new entry "PP_Insatiable_Buff_Passive"
-type "PassiveData"
-using "PP_Insatiable_Buff_Passive"
-// Hunger's Maw
-// data "DisplayName" "ha6cae9a4g3186g4872gaac9g04ef68e7f110;1"
-// The amulet's insatiable hunger sinks its teeth into you, forging a shield of dark power from your stolen life force, granting you &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; equal to your Charisma modifier up to a max of 5.
-// data "Description" "ha6cae9a4g3186g4872gaac9g04ef68e7f111;1"
-// The amulet's insatiable hunger sinks its teeth into you, forging a shield of dark power from your stolen life force. Until combat ends, you have a bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; equal to half your Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;, rounded up, up to a max of +4.
-data "Description" "h612819fcge6d0g4d57gb472g9c8de5025616;1"
-// data "DescriptionParams" ""
-data "DescriptionParams" "DealDamage(2d8,Necrotic)"
-// data "Icon" "Action_Monster_NetherBrain_PsychicOppression"
-// data "Boosts" "IF(ConditionResult(context.Source.Charisma == 12) or ConditionResult(context.Source.Charisma == 13)):AC(1);IF(ConditionResult(context.Source.Charisma  == 14) or ConditionResult(context.Source.Charisma  == 15)):AC(2);IF(ConditionResult(context.Source.Charisma  == 16) or ConditionResult(context.Source.Charisma  == 17)):AC(3);IF(ConditionResult(context.Source.Charisma  == 18) or ConditionResult(context.Source.Charisma  == 19)):AC(4);IF(ConditionResult(context.Source.Charisma  >= 20)):AC(5)"
-data "Boosts" "IF(ConditionResult(context.Source.Charisma >= 12) and ConditionResult(context.Source.Charisma <= 15)):AC(1);IF(ConditionResult(context.Source.Charisma >= 16) and ConditionResult(context.Source.Charisma <= 19)):AC(2);IF(ConditionResult(context.Source.Charisma >= 20) and ConditionResult(context.Source.Charisma <= 23)):AC(3);IF(ConditionResult(context.Source.Charisma >= 24)):AC(4)"
+new entry "Tut_PP_Warlock_Equipment_Amulet_of_the_Eternal_Hunger"
+type "Armor"
+// using "_Amulet_Magic"
+using "_Amulet_Magic"
+// data "RootTemplate" "902f94ff-cac5-4090-aebb-56ae2256f8f9"
+// data "Rarity" "Legendary"
+data "Rarity" "VeryRare"
+// data "Boosts" ""
+// data "PassivesOnEquip" "PP_Devour_Essence_Passive;PP_Insatiable_Passive"
+data "PassivesOnEquip" "PP_Devour_Essence_Passive"
+// data "UseConditions" "CanUseWarlockEquipmentAIO()"
+data "UseConditions" ""
+// data "Weight" "0.05"
+// data "ValueUUID" "589981db-3c73-421f-9c2f-afca259e499d"
+data "ValueUUID" "ccaceafa-6dc1-41c7-bd43-db6d4da8a3d8"
+// data "ComboCategory" "d4"
+// data "ValueScale" "1"
+// data "ValueRounding" "1"
+// data "ValueLevel" "11"
+// data "Unique" "1"
 
-new entry "PP_INSATIABLE"
-type "StatusData"
-data "StatusType" "BOOST"
-using "PP_INSATIABLE"
-// Hunger's Maw
-// data "DisplayName" "ha6cae9a4g3186g4872gaac9g04ef68e7f110;1"
-// The amulet's insatiable hunger sinks its teeth into you, forging a shield of dark power from your stolen life force, granting you &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; equal to your Charisma modifier up to a max of 5.
-// data "Description" "ha6cae9a4g3186g4872gaac9g04ef68e7f111;1"
-// The amulet's insatiable hunger sinks its teeth into you, forging a shield of dark power from your stolen life force. Until combat ends, you have a bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; equal to half your Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;, rounded up, up to a max of +4.
-data "Description" "h612819fcge6d0g4d57gb472g9c8de5025616;1"
-// data "DescriptionParams" ""
-// data "Icon" "Action_Monster_NetherBrain_PsychicOppression"
-// data "StackId" "PP_INSATIABLE"
-// data "Passives" "PP_Insatiable_Buff_Passive"
-// data "OnApplyFunctors" "DealDamage(SELF,2d10,Necrotic)"
-data "OnApplyFunctors" "DealDamage(SELF,2d8,Necrotic)"
-// data "RemoveEvents" "OnCombatEnded"
-// data "SoundLoop" "Misc_Status_BalthazarSpectralForm_Loop_MO"
-// data "SoundStop" "Misc_Status_BalthazarSpectralForm_Loop_MO_Stop"
-// data "ApplyEffect" "b74aff30-474a-4ec6-a024-a63de3be137d"
-// data "StatusEffect" "de26d2a6-f81d-41a9-89b0-88df3c916a28"
+// Deprecated nerf
+// // Insatiable: decrease damage to 2d8 (previously 2d10) and decrease AC bonus to half your Charisma modifier, rounded down, up to max of +4 AC (previously was equal to full Charisma modifier)
+// new entry "PP_Insatiable_Passive"
+// type "PassiveData"
+// using "PP_Insatiable_Passive"
+// // Insatiable
+// // data "DisplayName" "ha6cae9a4g3186g4872gaac9g04ef68e7f067;1"
+// // The amulet's hunger claws at your very being, demanding sacrifice for its power. At the start of combat, you suffer [1] but gain an armor of shadowy energy, increasing your &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; equal to your Charisma modifier up to a max of +5 until combat ends.
+// // data "Description" "ha6cae9a4g3186g4872gaac9g04ef68e7f068;1"
+// // 	The amulet's hunger claws at your very being, demanding sacrifice for its power. At the start of combat, you suffer [1] but become armoued with shadowy energy. Until combat ends, you gain a bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; equal to half your Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;, rounded up, up to a max of +4.
+// data "Description" "hb84c60b9g49afg49eagafc1g894388e1c278;1"
+// // data "DescriptionParams" "DealDamage(2d10,Necrotic)"
+// data "DescriptionParams" "DealDamage(2d8,Necrotic)"
+// // data "Icon" "Action_Monster_Bulette_Bite"
+// // data "StatsFunctorContext" "OnCombatStarted"
+// // data "StatsFunctors" "ApplyStatus(SELF,PP_INSATIABLE,100,-1)"
+
+// new entry "PP_Insatiable_Buff_Passive"
+// type "PassiveData"
+// using "PP_Insatiable_Buff_Passive"
+// // Hunger's Maw
+// // data "DisplayName" "ha6cae9a4g3186g4872gaac9g04ef68e7f110;1"
+// // The amulet's insatiable hunger sinks its teeth into you, forging a shield of dark power from your stolen life force, granting you &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; equal to your Charisma modifier up to a max of 5.
+// // data "Description" "ha6cae9a4g3186g4872gaac9g04ef68e7f111;1"
+// // The amulet's insatiable hunger sinks its teeth into you, forging a shield of dark power from your stolen life force. Until combat ends, you have a bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; equal to half your Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;, rounded up, up to a max of +4.
+// data "Description" "h612819fcge6d0g4d57gb472g9c8de5025616;1"
+// // data "DescriptionParams" ""
+// data "DescriptionParams" "DealDamage(2d8,Necrotic)"
+// // data "Icon" "Action_Monster_NetherBrain_PsychicOppression"
+// // data "Boosts" "IF(ConditionResult(context.Source.Charisma == 12) or ConditionResult(context.Source.Charisma == 13)):AC(1);IF(ConditionResult(context.Source.Charisma  == 14) or ConditionResult(context.Source.Charisma  == 15)):AC(2);IF(ConditionResult(context.Source.Charisma  == 16) or ConditionResult(context.Source.Charisma  == 17)):AC(3);IF(ConditionResult(context.Source.Charisma  == 18) or ConditionResult(context.Source.Charisma  == 19)):AC(4);IF(ConditionResult(context.Source.Charisma  >= 20)):AC(5)"
+// data "Boosts" "IF(ConditionResult(context.Source.Charisma >= 12) and ConditionResult(context.Source.Charisma <= 15)):AC(1);IF(ConditionResult(context.Source.Charisma >= 16) and ConditionResult(context.Source.Charisma <= 19)):AC(2);IF(ConditionResult(context.Source.Charisma >= 20) and ConditionResult(context.Source.Charisma <= 23)):AC(3);IF(ConditionResult(context.Source.Charisma >= 24)):AC(4)"
+
+// new entry "PP_INSATIABLE"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// using "PP_INSATIABLE"
+// // Hunger's Maw
+// // data "DisplayName" "ha6cae9a4g3186g4872gaac9g04ef68e7f110;1"
+// // The amulet's insatiable hunger sinks its teeth into you, forging a shield of dark power from your stolen life force, granting you &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; equal to your Charisma modifier up to a max of 5.
+// // data "Description" "ha6cae9a4g3186g4872gaac9g04ef68e7f111;1"
+// // The amulet's insatiable hunger sinks its teeth into you, forging a shield of dark power from your stolen life force. Until combat ends, you have a bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; equal to half your Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;, rounded up, up to a max of +4.
+// data "Description" "h612819fcge6d0g4d57gb472g9c8de5025616;1"
+// // data "DescriptionParams" ""
+// // data "Icon" "Action_Monster_NetherBrain_PsychicOppression"
+// // data "StackId" "PP_INSATIABLE"
+// // data "Passives" "PP_Insatiable_Buff_Passive"
+// // data "OnApplyFunctors" "DealDamage(SELF,2d10,Necrotic)"
+// data "OnApplyFunctors" "DealDamage(SELF,2d8,Necrotic)"
+// // data "RemoveEvents" "OnCombatEnded"
+// // data "SoundLoop" "Misc_Status_BalthazarSpectralForm_Loop_MO"
+// // data "SoundStop" "Misc_Status_BalthazarSpectralForm_Loop_MO_Stop"
+// // data "ApplyEffect" "b74aff30-474a-4ec6-a024-a63de3be137d"
+// // data "StatusEffect" "de26d2a6-f81d-41a9-89b0-88df3c916a28"
 
 // ==================================== PP - Soulknife of the Everlasting Pact
 // Echoes of the Eternal Pact:
@@ -3406,7 +3484,7 @@ data "StatsFunctors" "IF(IsWeaponAttack()):DealDamage(1d4,MainWeaponDamageType,M
 data "Boosts" "IF(SizeEqualOrGreater(Size.Large)):RollBonus(Attack,1d4)"
 
 // ==================================== RR - Amulet of the Avatar of War
-// Avatar of War: decrease damage reduction to 1 and movement increase to 4.5m
+// Avatar of War: decrease damage reduction to 1 and movement increase to 3m
 new entry "RR_AmuletOfWar_Passive"
 type "PassiveData"
 using "RR_AmuletOfWar_Passive"
@@ -3415,7 +3493,7 @@ using "RR_AmuletOfWar_Passive"
 // You become a raging embodiment of war itself. While &lt;LSTag Type="Status" Tooltip="RAGE"&gt;Raging&lt;/LSTag&gt;, you add half of your Strength &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; to damage dealt with &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;melee weapon attacks&lt;/LSTag&gt;, and all damage taken is reduced by [1]. Your &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; is also doubled.
 data "Description" "hd34e0a77g226dg4182g8935g5fd17077b5f1;1"
 // data "DescriptionParams" ""
-data "DescriptionParams" "1;Distance(4.5)"
+data "DescriptionParams" "1;Distance(3)"
 // data "Icon" "PassiveFeature_WarGodsBlessing"
 // data "StatsFunctorContext" "OnStatusApply"
 // data "Conditions" "StatusHasStatusGroup(context.StatusId, 'SG_Rage')"
@@ -3430,7 +3508,7 @@ using "RR_AVATAR_OF_WAR"
 // data "StackId" "RR_AVATAR_OF_WAR"
 // data "TickType" "StartTurn"
 // data "Boosts" "ActionResourceMultiplier(Movement,200,0)"
-data "Boosts" "ActionResource(Movement,4.5,0)"
+data "Boosts" "ActionResource(Movement,3,0)"
 // data "Passives" "RR_AmuletOfWar_DamageReduction_Passive"
 // data "RemoveConditions" "not RRHasRageActive()"
 // data "RemoveEvents" "OnStatusRemoved"
