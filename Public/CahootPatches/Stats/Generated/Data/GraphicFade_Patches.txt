@@ -705,6 +705,19 @@ data "DescriptionParams" "1"
 // data "Boosts" "SpellSaveDC(2);AC(2)"
 data "Boosts" "SpellSaveDC(1);AC(1)"
 
+// ==================================== CC - Cape of the Fluctuating Ward
+// Flux Shield: fixed status not being applied when equipping the item while meeting the criteria
+new entry "CC_FluxShield_Passive"
+type "PassiveData"
+using "CC_FluxShield_Passive"
+// data "DisplayName" "h27ad4a5fg8ebeg4b8egb71dg81a7d073b084;1"
+// data "Description" "h27ad4a5fg8ebeg4b8egb71dg81a7d073b085;1"
+// data "Icon" "Action_Monster_GortashMachine_ShieldCapacitor"
+// data "Properties" "Highlighted"
+// data "StatsFunctorContext" "OnActionResourcesChanged"
+data "StatsFunctorContext" "OnActionResourcesChanged;OnCreate"
+// data "StatsFunctors" "IF(not HasActionResource('SorceryPoint',2,0,false,true)):RemoveStatus(SELF,CC_FLUX_SHIELD);IF(HasActionResource('SorceryPoint',2,0,false,true) and not HasStatus('CC_FLUX_SHIELD')):ApplyStatus(CC_FLUX_SHIELD,100,-1)"
+
 // ==================================== CC - Grimoire of the First Sorcerer
 // Resilient Soul: decreasing CON saving throw bonus to half your CHA modifier
 new entry "CC_ResilientSoul_Passive"
