@@ -398,6 +398,7 @@ local stopMurders = 0
 local stopDribbles = 0
 local stopIronThrone = 0
 local stopFreeGnomes = 0
+local stopDowry = 0
 local qst = ""
 local state = ""
 --Objective detector - Quests
@@ -473,10 +474,10 @@ Ext.Osiris.RegisterListener("QuestUpdateUnlocked", 3, "after", function(characte
         print("SIAEL - The Shadow Curse was lifted.")
         TemplateAddTo("c8104249-bd0a-401d-90ed-482d6c07b635",GetHostCharacter(),1,1)
     --Arfur - Preserved Plush
-    elseif topLevelQuestID == "WYR_Donations" and stateID == "LearnedPassword_ArfurConfessed" and stopArfur == 0 then
-        stopArfur = 1
-        print("SIAEL - Arfur was exposed.")
-        TemplateAddTo("d558a5d5-a18b-464f-a091-433cdbccc18c",GetHostCharacter(),1,1)
+    --elseif topLevelQuestID == "WYR_Donations" and stateID == "LearnedPassword_ArfurConfessed" and stopArfur == 0 then
+        --stopArfur = 1
+        --print("SIAEL - Arfur was exposed.")
+        --TemplateAddTo("d558a5d5-a18b-464f-a091-433cdbccc18c",GetHostCharacter(),1,1)
     --Valeria - Bhaalspawn Helmet
     elseif topLevelQuestID == "GLO_GatherYourAllies" and stateID == "ValeriaPromisesSupport" and stopValeria == 0 then
         stopValeria = 1
@@ -512,6 +513,10 @@ Ext.Osiris.RegisterListener("QuestUpdateUnlocked", 3, "after", function(characte
         stopGondians = 1
         print("SIAEL - The Gondians were saved.")
         TemplateAddTo("1876bcea-98f7-4c20-94af-566736524a41",GetHostCharacter(),1,1)
+    elseif topLevelQuestID == "TOP_QUEST_ID: PLA_StuckHalfElf" and stateID == "ReturnedGold" and stopDowry == 0 then
+        stopDowry = 1
+        print("SIAEL - The gold dowry was returned")
+        TemplateAddTo("d558a5d5-a18b-464f-a091-433cdbccc18c",GetHostCharacter(),1,1)
     end
 end)
 
@@ -801,7 +806,7 @@ local function FullSet(character)
     cape = HasPassive(character,'Siael_POTR_Cape_P2')
     shield = HasPassive(character,'Siael_POTR_Shield_P1_V')
     ringA = HasPassive(character,'Siael_POTR_Ring1_P1_V') + HasPassive(character,'Siael_POTR_Ring1_P1_L')
-    ringB = HasPassive(character,'Siael_POTR_Ring2_P2')
+    ringB = HasPassive(character,'Siael_POTR_Ring2_P2') + HasPassive(character,'Siael_POTR_Ring2_P2_L')
     amulet = HasPassive(character,'Siael_POTR_Amulet_P1_V')
     trinket = HasPassive(character,'Siael_POTR_Trinket_P2')
 

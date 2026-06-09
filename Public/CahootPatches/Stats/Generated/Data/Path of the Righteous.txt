@@ -321,14 +321,47 @@ data "Boosts" ""
 // data "TickFunctors" "IF(IsInSunlight(context.Target) or HasStatus('SUNLIGHT_FROM_SPELL_TECHNICAL',context.Target)):DealDamage(Cause.Level/2,Radiant,Magical)"
 data "TickFunctors" "IF(IsInSunlight(context.Target) or HasStatus('SUNLIGHT_FROM_SPELL_TECHNICAL',context.Target)):DealDamage(Cause.Level/4,Radiant,Magical)"
 
+// =================================================================================
 // ================================== Set Bonuses ==================================
+// =================================================================================
 
-// ================================== Justice set: Zealous Oath ==================================
+// ================================== Subsets ==================================
+
+// ================================== Wrath set: Radiant Ire 
+// Add once per turn cooldown
+new entry "Siael_POTR_Wrath"
+type "PassiveData"
+using "Siael_POTR_Wrath"
+// Add a quarter of your level to any[1] you inflict on foes affected by &lt;LSTag Type="Status" Tooltip="MAG_RADIANT_RADIATING_ORB"&gt;Radiating Orb&lt;/LSTag&gt; or &lt;LSTag Type="Status" Tooltip="BURNING_HOLY"&gt;Holy Flame&lt;/LSTag&gt;. This effect can only occur once per turn.
+data "Description" "hd9672f7bg803fg4118g8f66g4dccdfed1a8a;1"
+// data "Properties" "Highlighted"
+data "Properties" "Highlighted;OncePerTurn"
+
+// ================================== Mercy set: Carer's Aegis 
+// Remove heals from being able to proc the passive (only works from curing negative conditions now)
+new entry "SIAEL_POTR_MERCY"
+type "StatusData"
+data "StatusType" "BOOST"
+using "SIAEL_POTR_MERCY"
+data "StackType" "Ignore"
+// data "Passives" "Siael_POTR_Mercy;Siael_POTR_Mercy_2"
+data "Passives" "Siael_POTR_Mercy_2"
+
+new entry "Siael_POTR_Mercy_2"
+type "PassiveData"
+using "Siael_POTR_Mercy_2"
+// When you cure a negative condition on a creature, it gains the effect of &lt;LSTag Type="Status" Tooltip="BLADE_WARD"&gt;Blade Ward&lt;/LSTag&gt; for 2 turns.
+data "Description" "he2bf40cdgc1e3g4a85gb4a9g0bc075ea1193;1"
+// data "Properties" "IsHidden;OncePerAttack"
+data "Properties" "Highlighted;OncePerAttack"
+
+
+// ================================== Justice set: Zealous Oath 
 // Reworked to temporarily decrease your critical hit threshold after casting a Channel Oath spell instead of giving Lay on Hand charges
 new entry "Siael_POTR_Justice"
 type "PassiveData"
 using "Siael_POTR_Justice"
-// When you use your &lt;LSTag Type="ActionResource" Tooltip="ChannelOath"&gt;Channel Oath&lt;/LSTag&gt; spells, the number you need to &lt;LSTag Tooltip="AttackRoll"&gt;roll&lt;/LSTag&gt; a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; on your next weapon attack is reduced by [1]
+// When you use your &lt;LSTag Type="ActionResource" Tooltip="ChannelOath"&gt;Channel Oath&lt;/LSTag&gt; spells, the number you need to &lt;LSTag Tooltip="AttackRoll"&gt;roll&lt;/LSTag&gt; a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; on your next weapon attack is reduced by [1].
 data "Description" "ha2bd34e5gdd91g4af8g8b9ege817d4788255;1"
 // data "DescriptionParams" ""
 data "DescriptionParams" "5"
@@ -358,7 +391,7 @@ data "RemoveEvents" "OnAttack"
 data "RemoveConditions" "IsWeaponAttack()"
 data "StatusEffect" "1870a2ff-96a1-45c7-91ac-de1a1c922afe"
 
-// ================================== Protection set: King of the Hill ==================================
+// ================================== Protection set: King of the Hill 
 // Completely reworked from a tank spell (as the set no longer has a shield) to a more selfish and offensive-oriented spell
 new entry "Siael_POTR_Protection"
 type "PassiveData"
@@ -437,129 +470,262 @@ data "Description" "hd550e7e3gd110g4941g85abgd71586a136f4;1"
 // data "SpellProperties" "RemoveStatus(SELF,SIAEL_POTR_PROTECTION_ACTIVE)"
 data "SpellProperties" "RemoveStatus(SELF,SIAEL_POTR_PROTECTION_ACTIVE);RemoveStatus(SELF,CHT_POTR_PROTECTION_CRIT_REDUCTION)"
 
-// ================================== Wrath + Justice sets: Heretic Pyre ==================================
-// Loca edits
-new entry "Siael_POTR_WJ"
+// ================================== Resolve set: Enlightenment 
+// Decrease Radiating Orb duration to 1 turn
+new entry "Siael_POTR_Resolve"
 type "PassiveData"
-using "Siael_POTR_WJ"
-// Heretic's Pyre
-data "DisplayName" "hfc444f7eg5502g4f0bgbfacg42ae59b02790;1"
-// When you deal[1] to an enemy Undead, Fiend, Fey, Monstrosity or Aberration that can't be &lt;LSTag Type="Status" Tooltip="TURNED"&gt;Turned&lt;/LSTag&gt;, inflict &lt;LSTag Type="Status" Tooltip="BURNING_HOLY"&gt;Holy Flame&lt;/LSTag&gt; to it for 3 turns. This effect can occur per turn per target.
-data "Description" "h9b50b1b3g6cedg4369ga183gcc209bdf3327;1"
+using "Siael_POTR_Resolve"
+// Foes within your Paladin aura receive &lt;LSTag Type="Status" Tooltip="MAG_RADIANT_RADIATING_ORB"&gt;Radiating Orb&lt;/LSTag&gt; for 1 turn.
+data "Description" "h9b85b3d7g10ffg4117g9b23g710724449424;1"
 
-// ================================== Wrath + Resolve Sets: Burn the Foul ==================================
-// Decrease Holy Fire duration to 2 turns
-new entry "Siael_POTR_WR"
-type "PassiveData"
-using "Siael_POTR_WR"
-// Your &lt;LSTag Type="Spell" Tooltip="Target_SacredFlame"&gt;Sacred Flame&lt;/LSTag&gt; inflicts &lt;LSTag Type="Status" Tooltip="BURNING_HOLY"&gt;Holy Flame&lt;/LSTag&gt; for [1] turns.
-data "Description" "hcb5dd19cg44bcg44deg8f9cg70ee9017ac18;1"
-// data "DescriptionParams" ""
-data "DescriptionParams" "2"
-// data "StatsFunctors" "ApplyStatus(BURNING_HOLY,100,3)"
-data "StatsFunctors" "ApplyStatus(BURNING_HOLY,100,2)"
-
-// ================================== Protection + Resolve sets: Unstoppable Courage ==================================
-// Remove paralyzed from immunities
-new entry "Siael_POTR_PR"
-type "PassiveData"
-using "Siael_POTR_PR"
-// You can't be stopped by mundane means and are immune to being &lt;LSTag Type="Status" Tooltip="PETRIFIED"&gt;Petrified&lt;/LSTag&gt;, &lt;LSTag Type="Status" Tooltip="RESTRAINED"&gt;Restrained&lt;/LSTag&gt; or being made &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt;.
-data "Description" "hc524b30bgc295g44e4g8639g8741f9e20b61;1"
-// data "Boosts" "StatusImmunity(SG_Paralyzed);StatusImmunity(SG_Petrified);StatusImmunity(SG_Prone);StatusImmunity(SG_Restrained)"
-data "Boosts" "StatusImmunity(SG_Petrified);StatusImmunity(SG_Prone);StatusImmunity(SG_Restrained)"
-
-// ================================== Protection + Mercy sets: Sacred Watch ==================================
-// Nerf heal to always 1d4 instead of d4 cantrip scaling
-new entry "Siael_POTR_PM"
-type "PassiveData"
-using "Siael_POTR_PM"
-// data "DescriptionParams" "RegainHitPoints(LevelMapValue(D4Cantrip))"
-data "DescriptionParams" "RegainHitPoints(LevelMapValue(1d4))"
-
-new entry "Siael_POTR_PM_Target"
-type "PassiveData"
-using "Siael_POTR_PM_Target"
-// data "StatsFunctors" "ApplyStatus(SIAEL_POTR_PM_STACK,100,1);RegainHitPoints(LevelMapValue(D4Cantrip));IF(StatusDurationEqualOrMoreThan(context.Target,'SIAEL_POTR_PM_STACK',2)):ApplyStatus(SIAEL_POTR_PM_STOP,100,1)"
-data "StatsFunctors" "ApplyStatus(SIAEL_POTR_PM_STACK,100,1);RegainHitPoints(LevelMapValue(1d4));IF(StatusDurationEqualOrMoreThan(context.Target,'SIAEL_POTR_PM_STACK',2)):ApplyStatus(SIAEL_POTR_PM_STOP,100,1)"
-
-// ================================== Justice + Resolve sets: Trial by Radiance ==================================
-// Decrease Radiating Orb duration to 1 turn and remove chance to Turn enemies
-new entry "Siael_POTR_RJ"
-type "PassiveData"
-using "Siael_POTR_RJ"
-// At the beginning of your turn, enemy Undead, Fiends, Feys, Monstrosities and Aberrations within your Paladin Aura are affected by &lt;LSTag Type="Status" Tooltip="MAG_RADIANT_RADIATING_ORB"&gt;Radiating Orb&lt;/LSTag&gt; for 1 turn.
-data "Description" "ha3eb39a4gc393g44d4gb5c9gd9ab4477cc78;1"
-// data "DescriptionParams" "12"
-data "DescriptionParams" ""
-
-new entry "SIAEL_POTR_RJ_EFFECT"
+new entry "SIAEL_POTR_RESOLVE_EFFECT"
 type "StatusData"
 data "StatusType" "BOOST"
-using "SIAEL_POTR_RJ_EFFECT"
-data "Description" "ha3eb39a4gc393g44d4gb5c9gd9ab4477cc78;1"
-// data "DescriptionParams" "12"
-data "DescriptionParams" ""
-// data "TickFunctors" "IF(Tagged('UNDEAD') or Tagged('UNDEAD_BEAST') or Tagged('FIEND') or Tagged('FEY') or Tagged('MONSTROSITY') or Tagged('ABERRATION')):ApplyStatus(MAG_RADIANT_RADIATING_ORB,100,2);IF(Tagged('UNDEAD') or Tagged('UNDEAD_BEAST') or Tagged('FIEND') or Tagged('FEY') or Tagged('MONSTROSITY') or Tagged('ABERRATION')):ApplyStatus(SIAEL_POTR_RJ_TECHNICAL,100,0)"
-data "TickFunctors" "IF(Tagged('UNDEAD') or Tagged('UNDEAD_BEAST') or Tagged('FIEND') or Tagged('FEY') or Tagged('MONSTROSITY') or Tagged('ABERRATION')):ApplyStatus(MAG_RADIANT_RADIATING_ORB,100,1)"
+using "SIAEL_POTR_RESOLVE_EFFECT"
+// data "OnApplyFunctors" "ApplyStatus(MAG_RADIANT_RADIATING_ORB,100,2)"
+data "OnApplyFunctors" "ApplyStatus(MAG_RADIANT_RADIATING_ORB,100,1)"
+// data "TickFunctors" "ApplyStatus(MAG_RADIANT_RADIATING_ORB,100,2)"
+data "TickFunctors" "ApplyStatus(MAG_RADIANT_RADIATING_ORB,100,1)"
 
-// ================================== Mercy + Resolve sets: Luminous Sermon ==================================
-// Clarify tooltip
-new entry "Siael_POTR_MR"
-type "PassiveData"
-using "Siael_POTR_MR"
-// Whenever you heal[1], inflict &lt;LSTag Type="Status" Tooltip="MAG_RADIANT_RADIATING_ORB"&gt;Radiating Orb&lt;/LSTag&gt; to every foe within [2] for 2 turns. Each enemy can only be affected once per turn.
-data "Description" "hc40f46d4ga454g4acdg97b5g3e42f9d5e4f1;1"
+// ================================== Subset combinations ==================================
+// Disable all subset combo bonuses.
 
-new entry "Siael_POTR_MR_Explosion"
-type "SpellData"
-data "SpellType" "Projectile"
-using "Siael_POTR_MR_Explosion"
-// Whenever you heal[1], inflict &lt;LSTag Type="Status" Tooltip="MAG_RADIANT_RADIATING_ORB"&gt;Radiating Orb&lt;/LSTag&gt; to every foe within [2] for 2 turns. Each enemy can only be affected once per turn.
-data "Description" "hc40f46d4ga454g4acdg97b5g3e42f9d5e4f1;1"
+new entry "SIAEL_POTR_WP"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackType" "Ignore"
+// data "Passives" "Siael_POTR_WP"
+// data "Boosts" "UnlockInterrupt(Siael_POTR_WP_React)"
+data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
 
-// ================================== Mercy + Justice sets: Resplendant Oath ==================================
-// Nerf heal to always 1d6 instead of d6 cantrip scaling
-new entry "Siael_POTR_MJ"
-type "PassiveData"
-using "Siael_POTR_MJ"
-// data "DescriptionParams" "Distance(9);RegainHitPoints(LevelMapValue(D6Cantrip))"
-data "DescriptionParams" "Distance(9);RegainHitPoints(LevelMapValue(1d6))"
+new entry "SIAEL_POTR_WM"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackType" "Ignore"
+// data "Passives" "Siael_POTR_WM"
+data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
 
-new entry "Siael_POTR_MJ_Exp"
-type "SpellData"
-data "SpellType" "Projectile"
-using "Siael_POTR_MJ_Exp"
-// data "DescriptionParams" "Distance(9);RegainHitPoints(LevelMapValue(D6Cantrip))"
-data "DescriptionParams" "Distance(9);RegainHitPoints(LevelMapValue(1d6))"
-// data "SpellProperties" "IF(Ally() and HasHPPercentageEqualOrLessThan(50)):ApplyStatus(SIAEL_POTR_MJ_HP,100,-1);IF(Ally()):RegainHitPoints(LevelMapValue(D6Cantrip));IF(not Ally()):ApplyStatus(BURNING_HOLY,100,2)"
-data "SpellProperties" "IF(Ally() and HasHPPercentageEqualOrLessThan(50)):ApplyStatus(SIAEL_POTR_MJ_HP,100,-1);IF(Ally()):RegainHitPoints(LevelMapValue(1d6));IF(not Ally()):ApplyStatus(BURNING_HOLY,100,2)"
+new entry "SIAEL_POTR_WR"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackType" "Ignore"
+// data "Passives" "Siael_POTR_WR"
+data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
 
-// ================================== Full Very Rare set ================================== 
-// Loca edit
+new entry "SIAEL_POTR_WJ"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackType" "Ignore"
+// data "Passives" "Siael_POTR_WJ"
+data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
+
+new entry "SIAEL_POTR_PM"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackType" "Ignore"
+// data "Passives" "Siael_POTR_PM"
+data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
+data "OnRemoveFunctors" "RemoveStatus(SIAEL_POTR_PM_AURA)"
+
+new entry "SIAEL_POTR_PR"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackType" "Ignore"
+// data "Passives" "Siael_POTR_PR"
+data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
+
+new entry "SIAEL_POTR_PJ"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackType" "Ignore"
+// data "Passives" "Siael_POTR_PJ"
+data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
+
+new entry "SIAEL_POTR_MR"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackType" "Ignore"
+// data "Passives" "Siael_POTR_MR"
+data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
+
+new entry "SIAEL_POTR_MJ"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackType" "Ignore"
+// data "Passives" "Siael_POTR_MJ"
+data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
+
+new entry "SIAEL_POTR_RJ"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackType" "Ignore"
+// data "Passives" "Siael_POTR_RJ"
+data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator;IgnoreResting;ApplyToDead"
+
+// // ================================== Wrath + Justice sets: Heretic's Pyre 
+// // Decrease duration of Holy Fire to 1 turn
+// new entry "Siael_POTR_WJ"
+// type "PassiveData"
+// using "Siael_POTR_WJ"
+// // Heretic's Pyre
+// data "DisplayName" "hfc444f7eg5502g4f0bgbfacg42ae59b02790;1"
+// // When you deal[1] to an enemy Undead, Fiend, Fey, Monstrosity or Aberration that can't be &lt;LSTag Type="Status" Tooltip="TURNED"&gt;Turned&lt;/LSTag&gt;, inflict &lt;LSTag Type="Status" Tooltip="BURNING_HOLY"&gt;Holy Flame&lt;/LSTag&gt; to it for 1 turn.
+// data "Description" "h9b50b1b3g6cedg4369ga183gcc209bdf3327;1"
+// // data "StatsFunctors" "ApplyStatus(SIAEL_POTR_WJ_CHECK,100,1);ApplyStatus(BURNING_HOLY,100,3)"
+// data "StatsFunctors" "ApplyStatus(SIAEL_POTR_WJ_CHECK,100,1);ApplyStatus(BURNING_HOLY,100,1)"
+
+// // ================================== Wrath + Mercy sets: Cleansing Flames 
+// // Decrease Holy Fire duration to 1 turn
+// new entry "Siael_POTR_WM"
+// type "PassiveData"
+// using "Siael_POTR_WM"
+// // When you heal a creature, foes within [1] of it are set ablaze with &lt;LSTag Type="Status" Tooltip="BURNING_HOLY"&gt;Holy Flame&lt;/LSTag&gt; for 1 turn.
+// data "Description" "h3760758eg6d33g43b1gbd0dg314c0d76d9c9;1"
+
+// new entry "Siael_POTR_WM_Exp"
+// type "SpellData"
+// data "SpellType" "Projectile"
+// using "Siael_POTR_WM_Exp"
+// // When you heal a creature, foes within [1] of it are set ablaze with &lt;LSTag Type="Status" Tooltip="BURNING_HOLY"&gt;Holy Flame&lt;/LSTag&gt; for 1 turn.
+// data "Description" "h3760758eg6d33g43b1gbd0dg314c0d76d9c9;1"
+// data "DescriptionParams" "Distance(3)"
+// data "SpellProperties" "ApplyStatus(BURNING_HOLY,100,1);ApplyStatus(SIAEL_POTR_WM_CHECK,100,1)"
+
+// // ================================== Wrath + Resolve Sets: Burn the Foul 
+// // Decrease Holy Fire duration to 2 turns
+// new entry "Siael_POTR_WR"
+// type "PassiveData"
+// using "Siael_POTR_WR"
+// // Your &lt;LSTag Type="Spell" Tooltip="Target_SacredFlame"&gt;Sacred Flame&lt;/LSTag&gt; inflicts &lt;LSTag Type="Status" Tooltip="BURNING_HOLY"&gt;Holy Flame&lt;/LSTag&gt; for [1] turns.
+// data "Description" "hcb5dd19cg44bcg44deg8f9cg70ee9017ac18;1"
+// // data "DescriptionParams" ""
+// data "DescriptionParams" "2"
+// // data "StatsFunctors" "ApplyStatus(BURNING_HOLY,100,3)"
+// data "StatsFunctors" "ApplyStatus(BURNING_HOLY,100,2)"
+
+// // ================================== Protection + Resolve sets: Unstoppable Courage 
+// // Remove paralyzed from immunities
+// new entry "Siael_POTR_PR"
+// type "PassiveData"
+// using "Siael_POTR_PR"
+// // You can't be stopped by mundane means and are immune to being &lt;LSTag Type="Status" Tooltip="PETRIFIED"&gt;Petrified&lt;/LSTag&gt;, &lt;LSTag Type="Status" Tooltip="RESTRAINED"&gt;Restrained&lt;/LSTag&gt; or being made &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt;.
+// data "Description" "hc524b30bgc295g44e4g8639g8741f9e20b61;1"
+// // data "Boosts" "StatusImmunity(SG_Paralyzed);StatusImmunity(SG_Petrified);StatusImmunity(SG_Prone);StatusImmunity(SG_Restrained)"
+// data "Boosts" "StatusImmunity(SG_Petrified);StatusImmunity(SG_Prone);StatusImmunity(SG_Restrained)"
+
+// // ================================== Protection + Mercy sets: Sacred Watch 
+// // Nerf heal to always 1d4 instead of d4 cantrip scaling
+// new entry "Siael_POTR_PM"
+// type "PassiveData"
+// using "Siael_POTR_PM"
+// // data "DescriptionParams" "RegainHitPoints(LevelMapValue(D4Cantrip))"
+// data "DescriptionParams" "RegainHitPoints(LevelMapValue(1d4))"
+
+// new entry "Siael_POTR_PM_Target"
+// type "PassiveData"
+// using "Siael_POTR_PM_Target"
+// // data "StatsFunctors" "ApplyStatus(SIAEL_POTR_PM_STACK,100,1);RegainHitPoints(LevelMapValue(D4Cantrip));IF(StatusDurationEqualOrMoreThan(context.Target,'SIAEL_POTR_PM_STACK',2)):ApplyStatus(SIAEL_POTR_PM_STOP,100,1)"
+// data "StatsFunctors" "ApplyStatus(SIAEL_POTR_PM_STACK,100,1);RegainHitPoints(LevelMapValue(1d4));IF(StatusDurationEqualOrMoreThan(context.Target,'SIAEL_POTR_PM_STACK',2)):ApplyStatus(SIAEL_POTR_PM_STOP,100,1)"
+
+// // ================================== Justice + Resolve sets: Trial by Radiance 
+// // Decrease Radiating Orb duration to 1 turn and remove chance to Turn enemies
+// new entry "Siael_POTR_RJ"
+// type "PassiveData"
+// using "Siael_POTR_RJ"
+// // At the beginning of your turn, enemy Undead, Fiends, Feys, Monstrosities and Aberrations within your Paladin Aura are affected by &lt;LSTag Type="Status" Tooltip="MAG_RADIANT_RADIATING_ORB"&gt;Radiating Orb&lt;/LSTag&gt; for 1 turn.
+// data "Description" "ha3eb39a4gc393g44d4gb5c9gd9ab4477cc78;1"
+// // data "DescriptionParams" "12"
+// data "DescriptionParams" ""
+
+// new entry "SIAEL_POTR_RJ_EFFECT"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// using "SIAEL_POTR_RJ_EFFECT"
+// data "Description" "ha3eb39a4gc393g44d4gb5c9gd9ab4477cc78;1"
+// // data "DescriptionParams" "12"
+// data "DescriptionParams" ""
+// // data "TickFunctors" "IF(Tagged('UNDEAD') or Tagged('UNDEAD_BEAST') or Tagged('FIEND') or Tagged('FEY') or Tagged('MONSTROSITY') or Tagged('ABERRATION')):ApplyStatus(MAG_RADIANT_RADIATING_ORB,100,2);IF(Tagged('UNDEAD') or Tagged('UNDEAD_BEAST') or Tagged('FIEND') or Tagged('FEY') or Tagged('MONSTROSITY') or Tagged('ABERRATION')):ApplyStatus(SIAEL_POTR_RJ_TECHNICAL,100,0)"
+// data "TickFunctors" "IF(Tagged('UNDEAD') or Tagged('UNDEAD_BEAST') or Tagged('FIEND') or Tagged('FEY') or Tagged('MONSTROSITY') or Tagged('ABERRATION')):ApplyStatus(MAG_RADIANT_RADIATING_ORB,100,1)"
+
+// // ================================== Mercy + Resolve sets: Luminous Sermon 
+// // Clarify tooltip
+// new entry "Siael_POTR_MR"
+// type "PassiveData"
+// using "Siael_POTR_MR"
+// // Whenever you heal[1], inflict &lt;LSTag Type="Status" Tooltip="MAG_RADIANT_RADIATING_ORB"&gt;Radiating Orb&lt;/LSTag&gt; to every foe within [2] for 2 turns. Each enemy can only be affected once per turn.
+// data "Description" "hc40f46d4ga454g4acdg97b5g3e42f9d5e4f1;1"
+
+// new entry "Siael_POTR_MR_Explosion"
+// type "SpellData"
+// data "SpellType" "Projectile"
+// using "Siael_POTR_MR_Explosion"
+// // Whenever you heal[1], inflict &lt;LSTag Type="Status" Tooltip="MAG_RADIANT_RADIATING_ORB"&gt;Radiating Orb&lt;/LSTag&gt; to every foe within [2] for 2 turns. Each enemy can only be affected once per turn.
+// data "Description" "hc40f46d4ga454g4acdg97b5g3e42f9d5e4f1;1"
+
+// // ================================== Mercy + Justice sets: Resplendant Oath 
+// // Nerf heal to always 1d6 instead of d6 cantrip scaling
+// new entry "Siael_POTR_MJ"
+// type "PassiveData"
+// using "Siael_POTR_MJ"
+// // data "DescriptionParams" "Distance(9);RegainHitPoints(LevelMapValue(D6Cantrip))"
+// data "DescriptionParams" "Distance(9);RegainHitPoints(LevelMapValue(1d6))"
+
+// new entry "Siael_POTR_MJ_Exp"
+// type "SpellData"
+// data "SpellType" "Projectile"
+// using "Siael_POTR_MJ_Exp"
+// // data "DescriptionParams" "Distance(9);RegainHitPoints(LevelMapValue(D6Cantrip))"
+// data "DescriptionParams" "Distance(9);RegainHitPoints(LevelMapValue(1d6))"
+// // data "SpellProperties" "IF(Ally() and HasHPPercentageEqualOrLessThan(50)):ApplyStatus(SIAEL_POTR_MJ_HP,100,-1);IF(Ally()):RegainHitPoints(LevelMapValue(D6Cantrip));IF(not Ally()):ApplyStatus(BURNING_HOLY,100,2)"
+// data "SpellProperties" "IF(Ally() and HasHPPercentageEqualOrLessThan(50)):ApplyStatus(SIAEL_POTR_MJ_HP,100,-1);IF(Ally()):RegainHitPoints(LevelMapValue(1d6));IF(not Ally()):ApplyStatus(BURNING_HOLY,100,2)"
+
+// ================================== Full sets ==================================
+
+// ================================== Full Very Rare set: The Righteous  
+// Passive: loca edit
 new entry "Siael_POTR_Righteous"
 type "PassiveData"
 using "Siael_POTR_Righteous"
 // Your oath grants you even more intense power. You can cast &lt;LSTag Type="Spell" Tooltip="Siael_POTR_Cantrip"&gt;Last Judgement&lt;/LSTag&gt;, and it functions with effects from the set that use &lt;LSTag Type="Spell" Tooltip="Target_SacredFlame"&gt;Sacred Flame&lt;/LSTag&gt;. Moreover, &lt;LSTag Type="Status" Tooltip="BURNING_HOLY"&gt;Holy Flame&lt;/LSTag&gt; that you inflict deals an additional [1] per remaining turn of it. You still benefit from &lt;LSTag Type="Passive" Tooltip="Siael_POTR_Righteous_R"&gt;Noble Knight&lt;/LSTag&gt;.
 data "Description" "h3f326ccfg4236g4d88g8a6eg7c0318249887;1"
 
-// Last Judgement loca edit
+// Last Judgement: change cost to an action, now inflicts Holy Fire for 1 turn
 new entry "Siael_POTR_Cantrip"
 type "SpellData"
 data "SpellType" "Projectile"
 using "Siael_POTR_Cantrip"
-// Cast a ray of light, dealing [1].
+// Cast a ray of light, dealing[1] and burning them with &lt;LSTag Type="Status" Tooltip="BURNING_HOLY"&gt;Holy Fire&lt;/LSTag&gt; for [2] turn.
 data "Description" "h725fecfcgc0b8g4b91g9dedg525ce619d6ef;1"
+// data "DescriptionParams" "DealDamage(LevelMapValue(D10Cantrip),Radiant)"
+data "DescriptionParams" "DealDamage(,Radiant);1"
+// data "SpellSuccess" "DealDamage(LevelMapValue(D10Cantrip),Radiant)"
+data "SpellSuccess" "DealDamage(LevelMapValue(D10Cantrip),Radiant);ApplyStatus(BURNING_HOLY,100,1)"
+// data "TooltipStatusApply" ""
+data "TooltipStatusApply" "ApplyStatus(BURNING_HOLY,100,1)"
+// data "UseCosts" "BonusActionPoint:1"
+data "UseCosts" "ActionPoint:1"
 
-// ================================== Full Legendary set ==================================
-// Change from applying Vulnerability to Radiant damage to just causing foes to take extra 1d8 damage when they take Radiant damage
+// ================================== Full Legendary set 
+// Change from applying Vulnerability to Radiant damage to just causing foes to take extra 1d4 damage when they take Radiant damage. Remove permanent Detect Evil and Good.
 new entry "Siael_POTR_Righteous_L"
 type "PassiveData"
 using "Siael_POTR_Righteous_L"
-// Your celestial presence is almighty. Foes within your Paladin aura take an additional [1] whenever they take[2]. You still benefit from &lt;LSTag Type="Passive" Tooltip="Siael_POTR_Righteous"&gt;The Righteous&lt;/LSTag&gt;.
+// Your celestial presence is almighty. Foes within your Paladin aura take an additional [1] whenever they take[2].
+	
+// You still benefit from &lt;LSTag Type="Passive" Tooltip="Siael_POTR_Righteous"&gt;The Righteous&lt;/LSTag&gt;.
 data "Description" "h23e8164fg653fg4f8bg892cgfcf764d6d9fd;1"
 // data "DescriptionParams" "DealDamage(,Radiant)"
-data "DescriptionParams" "DealDamage(1d8,Radiant);DealDamage(,Radiant)"
+data "DescriptionParams" "DealDamage(1d4,Radiant);DealDamage(,Radiant)"
+
+new entry "SIAEL_POTR_FULL_AURA"
+type "StatusData"
+data "StatusType" "BOOST"
+// using "AURA_OF_COURAGE"
+using "SIAEL_POTR_FULL_AURA"
+// data "OnApplyFunctors" "ApplyStatus(DETECT_EVIL_GOOD,100,-1)"
+data "OnApplyFunctors" ""
+// data "OnRemoveFunctors" "RemoveStatus(DETECT_EVIL_GOOD)"
+data "OnRemoveFunctors" ""
 
 new entry "SIAEL_POTR_RAD_VULN"
 type "StatusData"
@@ -568,6 +734,6 @@ using "SIAEL_POTR_RAD_VULN"
 // Entity takes an additional [1] whenever it takes[2].
 data "Description" "h4695d505g041dg4999ga53bg64d3d0aa1885;1"
 // data "DescriptionParams" "DealDamage(1d4,Radiant)"
-data "DescriptionParams" "DealDamage(1d8,Radiant);DealDamage(,Radiant)"
+data "DescriptionParams" "DealDamage(1d4,Radiant);DealDamage(,Radiant)"
 // data "Boosts" "Resistance(Radiant,Vulnerable)"
-data "Boosts" "IF(HasDamageDoneForType(DamageType.Radiant)):DamageTakenBonus(1d8, Radiant, False)"
+data "Boosts" "IF(HasDamageDoneForType(DamageType.Radiant)):DamageTakenBonus(1d4, Radiant, False)"
