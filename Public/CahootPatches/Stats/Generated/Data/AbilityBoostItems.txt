@@ -1,0 +1,13 @@
+// Headband of Intellect: decrease INT boost from +4 to +2
+
+new entry "FOR_OgresForHire_HeadbandOfIntellect"
+type "Armor"
+// using "ARM_HeadbandOfIntellect"
+using "FOR_OgresForHire_HeadbandOfIntellect"
+// data "RootTemplate" "8f4876f1-44d9-4bb8-802e-907c6b0a0dba"
+// data "ItemGroup" ""
+// data "ValueScale" "0.7"
+// data "Rarity" "Rare"
+// data "Boosts" "Ability(Intelligence, 4, 22, true)"
+data "Boosts" "Ability(Intelligence, 2, 22, true)"
+// data "Unique" "1"

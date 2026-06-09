@@ -651,7 +651,7 @@ data "TargetConditions" "Self()"
 data "DisplayName" "h3aaf2b53g7795g4fa1g9111gfe0a0f63d035"
 // The next spell that hits does the maximum damage.
 // data "Description" "hddbb66efg97deg41e4g8819gc09f2fc0c89d"
-// The next spell that hits does maximum damage.
+// Your next spell that hits can deal maximum damage, at the cost of a &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;reaction&lt;/LSTag&gt;.
 data "Description" "h5dd2285cg4349g4e91g84c2gf163feb73f70;1"
 data "Icon" "statIcon_WildMagicD100_MaxSpellDamage"
 data "TooltipStatusApply" "ApplyStatus(WILD_MAGIC_UNLOCK_MAX_SPELL_DAMAGE,100,2)"
@@ -663,7 +663,7 @@ data "StatusType" "BOOST"
 data "DisplayName" "h3aaf2b53g7795g4fa1g9111gfe0a0f63d035"
 // The next spell that hits does the maximum damage.
 // data "Description" "hddbb66efg97deg41e4g8819gc09f2fc0c89d"
-// The next spell that hits does maximum damage.
+// Your next spell that hits can deal maximum damage, at the cost of a &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;reaction&lt;/LSTag&gt;.
 data "Description" "h5dd2285cg4349g4e91g84c2gf163feb73f70;1"
 data "Icon" "statIcon_WildMagicD100_MaxSpellDamage"
 data "Passives" "WildMagic_MaxSpellDamage"
@@ -675,36 +675,47 @@ data "StatusType" "BOOST"
 data "DisplayName" "h3aaf2b53g7795g4fa1g9111gfe0a0f63d035"
 // The next spell that hits does the maximum damage.
 // data "Description" "hddbb66efg97deg41e4g8819gc09f2fc0c89d"
-// The next spell that hits does maximum damage.
+// Your next spell that hits can deal maximum damage, at the cost of a &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;reaction&lt;/LSTag&gt;.
 data "Description" "h5dd2285cg4349g4e91g84c2gf163feb73f70;1"
-data "Icon" ""
+// data "Icon" ""
+data "Icon" "statIcon_WildMagicD100_MaxSpellDamage"
 data "Boosts" "MinimumRollResult(Damage,20)"
 data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
 
 new entry "WildMagic_MaxSpellDamage"
 type "PassiveData"
-data "DisplayName" ""
-data "Description" ""
-data "Icon" ""
+// data "DisplayName" ""
+// Wild Magic: Maximum Damage
+data "DisplayName" "h3aaf2b53g7795g4fa1g9111gfe0a0f63d035"
+// data "Description" ""
+// Your next spell that hits can deal maximum damage, at the cost of a &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;reaction&lt;/LSTag&gt;.
+data "Description" "h5dd2285cg4349g4e91g84c2gf163feb73f70;1"
+// data "Icon" ""
+data "Icon" "statIcon_WildMagicD100_MaxSpellDamage"
 data "Properties" "IsHidden"
 data "Boosts" "UnlockInterrupt(Interrupt_MaxSpellDamage)"
 data "StatsFunctorContext" "OnCastResolved"
 data "StatsFunctors" "RemoveStatus(WILD_MAGIC_MAX_SPELL_DAMAGE)"
 
-// BUG: What the?
 new entry "Interrupt_MaxSpellDamage"
 type "InterruptData"
-data "DisplayName" ";1"
-data "Description" ";1"
-data "Icon" ""
+// data "DisplayName" ""
+// Wild Magic: Maximum Damage
+data "DisplayName" "h3aaf2b53g7795g4fa1g9111gfe0a0f63d035"
+// data "Description" ""
+// Unleash the surge, causing your spell to deal maximum damage.
+data "Description" "hf2107c62g33c7g4785g9b3cgfee6fb236c67;1"
+// data "Icon" ""
+data "Icon" "statIcon_WildMagicD100_MaxSpellDamage"
 data "InterruptContext" "OnSpellCast"
 data "InterruptContextScope" "Self"
 data "Container" "YesNoDecision"
-data "Conditions" "Self(context.Source,context.Observer) and (SpellDamageTypeIs(DamageType.Acid) or SpellDamageTypeIs(DamageType.Thunder) or SpellDamageTypeIs(DamageType.Necrotic) or SpellDamageTypeIs(DamageType.Fire) or SpellDamageTypeIs(DamageType.Lightning) or SpellDamageTypeIs(DamageType.Cold) or SpellDamageTypeIs(DamageType.Psychic) or SpellDamageTypeIs(DamageType.Poison) or SpellDamageTypeIs(DamageType.Radiant) or SpellDamageTypeIs(DamageType.Force)) and not AnyEntityIsItem()"
+// data "Conditions" "Self(context.Source,context.Observer) and (SpellDamageTypeIs(DamageType.Acid) or SpellDamageTypeIs(DamageType.Thunder) or SpellDamageTypeIs(DamageType.Necrotic) or SpellDamageTypeIs(DamageType.Fire) or SpellDamageTypeIs(DamageType.Lightning) or SpellDamageTypeIs(DamageType.Cold) or SpellDamageTypeIs(DamageType.Psychic) or SpellDamageTypeIs(DamageType.Poison) or SpellDamageTypeIs(DamageType.Radiant) or SpellDamageTypeIs(DamageType.Force)) and not AnyEntityIsItem()"
+data "Conditions" "Self(context.Source,context.Observer) and IsSpell() and HasFunctor(StatsFunctorType.DealDamage) and not AnyEntityIsItem()"
 data "Properties" "ApplyStatus(OBSERVER_OBSERVER,WILD_MAGIC_MAX_SPELL_DAMAGE,100,1)"
 data "Cost" "ReactionActionPoint:1"
 data "InterruptDefaultValue" "Ask;Enabled"
-data "EnableContext" "OnStatusApplied"
+// data "EnableContext" "OnStatusApplied"
 
 // ==================================== 16: Wild Magic: Static Shock ====================================
 
