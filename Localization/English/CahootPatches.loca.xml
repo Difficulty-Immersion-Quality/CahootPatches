@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <contentList>
-	<!-- _Gear Rebalance - Armour -->
+<!-- ==================================== _Gear Rebalance - Armour ==================================== -->
 	<content contentuid="h6daa1f68g238fg4043gafa3gdb62220b9646" version="1">Estival Heat</content>
 	<content contentuid="h7a9a490cg01d8g4206g87cdg792c747676dc" version="1">When you deal[1], deal an extra [2]. This bonus damage only applies once per attack. The damage bonus for subsequent hits or to secondary targets in the same attack is reduced to [3].</content>
 	<content contentuid="h84baf36bgb84ag452dga0efg4e9dc7ee1185" version="1">On a successful &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; against a foe's spell, deal [1] (equal to double your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt;) to them.</content>
@@ -20,7 +20,7 @@
 	<content contentuid="h644f1487gc26dg40e7gacaag5e3899554a3d" version="1">Once per &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;, if you are below [1] &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt; and take damage, you gain [2] &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt;.</content>
 	<content contentuid="h10121987ga23fg4f5ega399g49fd9728dab9" version="1">You gain a +[1] bonus to Intelligence and Wisdom &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; and are immune to being &lt;LSTag Type="Status" Tooltip="CHARMED"&gt;Charmed&lt;/LSTag&gt;.</content>
 
-	<!-- _Gear Rebalance - Weapons -->
+<!-- ==================================== _Gear Rebalance - Weapons ==================================== -->
 	<content contentuid="h9a8cca28gab4eg4972g9746gbe35bc63f252" version="1">Imbue the Drakethroat Glaive with elemental power. It receives a +[1] bonus to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;, and deals an additional [2] damage of your choice. Hits with the weapon have a chance of inflicting a condition corresponding to the elemental type on the target.</content>
 	<content contentuid="h7f2828fbg8bd6g4377gb2fbgbaed441d6e39" version="1">Imbue your weapon with a corrosive might. It receives a +[1] bonus to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; and deals an additional [2]. Hits with this weapon will cover the target in &lt;LSTag Type="Status" Tooltip="ACID"&gt;Acid&lt;/LSTag&gt; for [3] turns if they fail a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.</content>
 	<content contentuid="hfe25a4d2g4bc9g44f2gb35ag97dc11b605c2" version="1">Imbue your weapon with an icy might. It receives a +[1] bonus to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; and deals an additional [2]. Hits with this weapon will inflict &lt;LSTag Type="Status" Tooltip="MAG_FROST"&gt;Encrusted with Frost&lt;/LSTag&gt; on the target for [3] turns if they fail a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.</content>
@@ -59,12 +59,12 @@
 	<content contentuid="h83abb2a1g53b0g42begaeebgf30ff5588706" version="1">Enemies hit by this weapon will always have their &lt;LSTag Tooltip="Concentration"&gt;Concentration&lt;/LSTag&gt; broken.</content>
 	<content contentuid="h0b4b9f6cg32b7g49d5ga2c0gf4ba55b65778" version="1">Attacks with this weapon against Aberrations, Monstrosities, and Undead gain a +[1] to &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt; and Damage rolls.</content>
 
-	<!-- _Misc Patches -->
+<!-- ==================================== _Misc Patches ==================================== -->
 	<content contentuid="h5a6970b0g1f2dg4060g9e88g4ecc1899c571" version="1">Deal additional Radiant damage equal to your &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt;. On a hit, light erupts on the target, forcing it to make a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or be &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blinded&lt;/LSTag&gt; for [1] turns.</content>
 	<content contentuid="hf583b6a7g93e9g4024g849fge9c76241e0ab" version="1">When you hit a target with a &lt;LSTag Tooltip="MeleeSpellAttack"&gt;Melee Spell Attack&lt;/LSTag&gt; or a &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;Melee Weapon Attack&lt;/LSTag&gt; that is also a spell, you gain [2] turns of &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt;.</content>
 	<content contentuid="h892bd340gceb6g4493g8223g0ea12783f411" version="1">When a weapon &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt; inflicts a condition, the wielder gains &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt; for [1] turns.</content>
 
-	<!-- _Spell Rebalance - General -->
+<!-- ==================================== _Spell Rebalance - General ==================================== -->
 	<content contentuid="h15141f8eg4c7fg4294g9a7bg80bf5a1e4378" version="1">Project a cone of colorful lights. Targets must succeed a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or be &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blinded&lt;/LSTag&gt; for [1] turns.</content>
 	<content contentuid="h3df437c5gd5c4g4aacg8aabg0f7bcef06ce7" version="1">Try to put all enemies in a [1] radius circle. Targets must succeed a Wisdom &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or fall &lt;LSTag Type="Status" Tooltip="CHT_SLEEP"&gt;asleep&lt;/LSTag&gt; until the end of their next turn. If a target fails another Wisdom &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; at the end of its turn after waking up, the target falls asleep again. The spell ends on a target if it takes damage or someone within [1] of it takes an action to shake it out of the spell's effect.</content>
 	<content contentuid="h7f6df589gc8abg428bg9666g0e03b0d07f08" version="1"> Targets above [1] &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt; have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on the initial &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.</content>
@@ -75,7 +75,7 @@
 	<content contentuid="h252c6579g4680g4526ga3b9gbe7b9e53f204" version="1">Casting this spell using a 5th or 6th level spell slot will increase the &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt; bonus by [1] and deal an additional [2], and a 7th level or higher spell slot will increase the &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt; bonus by [3] and deal an additional [4].</content>
 	<content contentuid="h40d9f9acg6f95g470cg9e79gf48a34be3649" version="1">Your weapon crackles with force as your strike, &lt;LSTag Type="Status" Tooltip="BANISHED"&gt;Banishing&lt;/LSTag&gt; your target if they fail a Charisma &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;. If the attack reduces them to less than [1] &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt;, then they make the Saving Throw with &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt;.</content>
 
-	<!-- _Spell Rebalance - Nerfs  -->
+<!-- ==================================== _Spell Rebalance - Nerfs ==================================== -->
 	<content contentuid="h0711cc83g6c6bg4fa2ga6f3g452f7389fda0" version="4">When you are about to be hit by an enemy, increase your &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; by 4. You take no damage from &lt;LSTag Type="Spell" Tooltip="Projectile_MagicMissile"&gt;Magic Missile&lt;/LSTag&gt;.</content>
 	<content contentuid="h39e94ee1g0aa0g4b7ag806bg7f88310410f8" version="1">When you are about to be hit by an enemy, increase your &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; by 4. You take no damage from &lt;LSTag Type="Spell" Tooltip="Projectile_MagicMissile"&gt;Magic Missile&lt;/LSTag&gt;.</content>
 	<content contentuid="hbb62bd84ge3bfg45a5g8600g5a279f0658ab" version="1">Immune to &lt;LSTag Type="Spell" Tooltip="Projectile_MagicMissile"&gt;Magic Missile&lt;/LSTag&gt;. &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; is increased by 4.</content>
@@ -95,7 +95,7 @@
 	<content contentuid="hd2f87513gc329g4d7fgb424gca0aa6b32932" version="1">Affected entity is &lt;LSTag Tooltip="Resistant"&gt;Resistant&lt;/LSTag&gt; to all damage and all incoming damage is reduced further by [1]. Entity has a +[2] bonus to all &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.</content>
 	<content contentuid="h3a97bad3g3ec1g4a12gb249g511e9201d740" version="1">Scroll of Globe of Protection</content>
 
-	<!-- 5e Spells -->
+<!-- ==================================== 5e Spells ==================================== -->
 	<content contentuid="hcab94b97g25acg43d6g8d4ag40c3ac313601" version="1">Create a [1] radius area of magical energy. Celestial, elemental, fiend, fey and undead creatures have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; against targets within the area, targets within the area can’t be &lt;LSTag Type="Status" Tooltip="CHARMED"&gt;Charmed&lt;/LSTag&gt;, &lt;LSTag Type="Status" Tooltip="FRIGHTENED"&gt;Frightened&lt;/LSTag&gt;, or &lt;LSTag Type="Status" Tooltip="LOW_GHOST_POSSESSED"&gt;Possessed&lt;/LSTag&gt; by the creatures, and the creatures cannot enter the area by nonmagical means.</content>
 	<content contentuid="h8fbd23b3g8fcfg4b23g95cbge11b53b51400" version="1">If the creatures try to teleport or fly into the area, they must succeed on a &lt;LSTag Tooltip="Charisma"&gt;Charisma&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or they are pushed [1] out of the circle.</content>
 	<content contentuid="h38571638g79a7g4ae6g8380g34d54cf06253" version="1">Three creatures in the area gain [1] and have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on Wisdom &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;. If hit by an attack, an affected creature has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on its next &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt; during combat.</content>
@@ -108,21 +108,21 @@
 	<content contentuid="h4d520542gb2bdg440eg833fg04db8167f449" version="1">Coming back from the dead is an ordeal. The creature has a -[1] penalty to all &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;, &lt;LSTag Tooltip="AbilityCheck"&gt;Ability Checks&lt;/LSTag&gt; and &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;. This penalty is removed after a &lt;LSTag Tooltip="LongRest"&gt;Long Rest&lt;/LSTag&gt;.</content>
 	<content contentuid="h4a084863g69a3g43dega18dg7b894d898b16" version="1">This entity was raised from the dead and receives a -[1] penalty to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;, &lt;LSTag Tooltip="AbilityCheck"&gt;Ability Checks&lt;/LSTag&gt; and &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.</content>
 
-	<!-- AdvancedTTSpells -->
+<!-- ==================================== AdvancedTTSpells ==================================== -->
 	<content contentuid="h47af5db9g9ba8g4a63g8e1ag84d5a7040e3f" version="1">Allies make this &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; with &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; and Undead make it with &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt;. </content>
 	<content contentuid="h75759cf1gcc89g4addg8146g8c71ff913d26" version="1">Utter a word of power that can compel one creature to die. If the target has [1] &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt; or fewer, it dies instantly. Otherwise, it takes [2].</content>
 
-	<!-- BookOfSorcerers_NexusVersion -->
+<!-- ==================================== BookOfSorcerers_NexusVersion ==================================== -->
 	<content contentuid="h2b5a3b41g94aegbeffgf1b7gdd731243a31a" version="1">When you or a creature within [1] of you casts a spell that restores &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt;, increase the amount restored by triple the spell's level.</content>
 
-	<!-- Community Library -->
+<!-- ==================================== Community Library ==================================== -->
 	<!-- "CL_Passive_OneDnD_MartialArts" -->
 	<content contentuid="h6d9c9b01g05ebg4a09g86e9g685b27ce3fac" version="1">&lt;LSTag Tooltip="AttackRoll"&gt;Attacks&lt;/LSTag&gt; with &lt;LSTag Tooltip="MonkWeapon"&gt;Monk Weapons&lt;/LSTag&gt; and unarmed attacks deal [1], unless their normal damage is higher and scale with your &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; instead of your &lt;LSTag Tooltip="Strength"&gt;Strength&lt;/LSTag&gt; if your Dexterity is higher. In addition, you can make &lt;LSTag Type="Spell" Tooltip="CL_Target_OneDnD_MartialArts_UnarmedStrike_BonusAction"&gt;Unarmed Strikes&lt;/LSTag&gt; as a &lt;LSTag Type="ActionResource" Tooltip="BonusActionPoint"&gt;bonus action&lt;/LSTag&gt;.</content>
 
-	<!-- CritfisherRing -->
+<!-- ==================================== CritfisherRing ==================================== -->
 	<!-- "MAG_ImprovedGoonerCritical" -->
 	<content contentuid="hb4e340afgd8a7g4a70g9cb4g1a122d1d128f" version="1">The number you need to &lt;LSTag Tooltip="AttackRoll"&gt;roll&lt;/LSTag&gt; a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; while attacking is reduced by [1]. This effect can stack.</content>
-
+<!-- ==================================== d100 Wild Magic ==================================== -->
     <!-- d100 Wild Magic: 1-10 -->
 	<content contentuid="h0ca3e880gf148g47ddg8059g146b25c45142" version="1">Wild Magic: See Invisibility</content>
 	<content contentuid="h43cf36feg43f8g4d06g92c8g1d79db0e6a8f" version="1">You gain &lt;LSTag Type="Spell" Tooltip="Shout_SeeInvisibility"&gt;See Invisibility&lt;/LSTag&gt;.</content>
@@ -337,10 +337,10 @@
 	<content contentuid="hea82684bg9595g4b2fgbccagbd45ada7c601" version="1">Wild Magic: Mass Polymorph</content>
 	<content contentuid="hd76df7e9g78ceg4d25g88c2ge9ebd0ed3097" version="1">All enemies within [1] of the &lt;LSTag Type="Spell" Tooltip="Shout__WildMagic"&gt;Wild Magic Surge&lt;/LSTag&gt; must succeed a &lt;LSTag Tooltip="Wisdom"&gt;Wisdom&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; &lt;LSTag Type="Status" Tooltip="POLYMORPH_SHEEP"&gt;Polymorphed&lt;/LSTag&gt; into sheep.</content>
 
-	<!-- DruidWildShapeOverhaul -->
+	<!-- ==================================== DruidWildShapeOverhaul ==================================== -->
 	<content contentuid="h0d6e0466g0aaag4592gb35bgbd5f749da35d" version="1">Rupture the earth, causing debris to tear through all nearby enemies, dealing [1], and an additional [1] to knocked &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt; creatures.</content>
 
-	<!-- DrKekyll_GrapplerFeat -->
+<!-- ==================================== DrKekyll_GrapplerFeat ==================================== -->
 	<!-- "CHT_Grappler_Strength" -->
 	<content contentuid="h06eabbb4ge455g431dga467g0e334497e3c0" version="1">Grappler</content>
 	<!-- "Grappler" -->
@@ -362,8 +362,8 @@
 	<!-- "SYR_Feat_WarMagic_AltSpell_Passive" -->
 	<content contentuid="h6429ddb5g7eb7g46c0gacbbgf4bd25bf782d" version="1">After casting a spell or cantrip, you can make a basic attack as a &lt;LSTag Type="ActionResource" Tooltip="BonusActionPoint"&gt;bonus action&lt;/LSTag&gt;. This attack deals half damage.</content>
 
-	<!-- GraphicFade_Patches -->
-	<!-- Beast and Bow - Ranger Equipment -->
+<!-- ==================================== GraphicFade_Patches ==================================== -->
+<!-- ==================================== GraphicFade_Patches: Beast and Bow - Ranger Equipment -->
 	<content contentuid="hf8e38a56g14d3g4618ga72eg81740718836b" version="1">Your beast companions gains a +[1] to their &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; and you have a +[2] bonus to Initiative Rolls.</content>
 	<content contentuid="h829b8f58g7d0bg4358gb914g83ad676fe3e4" version="1">Your &lt;LSTag Tooltip="RangedWeaponAttack"&gt;ranged weapon attacks&lt;/LSTag&gt; that &lt;LSTag Tooltip="CriticalHit"&gt;Critically Hit&lt;/LSTag&gt; will &lt;LSTag Type="Status" Tooltip="DISARMED"&gt;Disarm&lt;/LSTag&gt; the target.</content>
 	<content contentuid="hc8f41164g3c43g4c0fga181gea776245b317" version="1">Attacks with this weapon &lt;LSTag Type="Status" Tooltip="ENSNARED"&gt;Ensnare&lt;/LSTag&gt; your target for 1 turn if they fail a Dexterity &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.</content>
@@ -375,7 +375,7 @@
 	<content contentuid="hbaa13258g27deg4d42g86begba2b85c594d0" version="1">Mark a creature, causing them to take an extra [1] damage from all sources.</content>
 	<content contentuid="h29c8e5dbg9951g4987ga181g2fae3408e7bf" version="1">You and your allies within [1] of you gain &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="RangedWeaponAttack"&gt;ranged weapon attacks&lt;/LSTag&gt;.</content>
 	<content contentuid="haf9095edg7152g4e1eg9bcdg2b67df9eb195" version="1">Entity has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="RangedWeaponAttack"&gt;ranged weapon attacks&lt;/LSTag&gt;.</content>
-	<!-- Chaos and Control - Sorcerer Equipment -->
+<!-- ==================================== GraphicFade_Patches: Chaos and Control - Sorcerer Equipment -->
 	<content contentuid="h92f3f36dg904cg4c60ga6c6gde60eb3f527d" version="1">Activate the staff to gain &lt;LSTag Type="ActionResource" Tooltip="SorceryPoint"&gt;Sorcery Points&lt;/LSTag&gt; equal to half your Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;, rounded up.</content>
 	<content contentuid="hdd79ab3cg4fe4g4958g9fbag08b3898bbcff" version="1">While not wearing armour, you add half your Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;, rounded up, to your &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;.</content>
 	<content contentuid="hbb550f9fg886bg4fcag91f1g617f1d881dca" version="1">When you cast a spell of 3rd level or higher during combat, you gain &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on spell &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; for [1] turns. This effect can only occur once per &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;.</content>
@@ -389,7 +389,7 @@
 	<content contentuid="hc6b46909g0870g4e75gb58cg9aedebda684c" version="1">After using at least 1 &lt;LSTag Type="ActionResource" Tooltip="SorceryPoint"&gt;Sorcery Point&lt;/LSTag&gt;, you have a [1]% chance to restore 1 Sorcery Point.</content>
 	<content contentuid="h591efe33gb1f1g42f4gbafcg8f2377d5eaf3" version="1">While your Metamagic ability is active, the amulet floods your being with raw magical energy, allowing you to draw upon its infinite reserves of &lt;LSTag Type="ActionResource" Tooltip="SorceryPoint"&gt;Sorcery Points&lt;/LSTag&gt;. You can only use this effect once per turn and you take [1] every time you use it.</content>
 	<content contentuid="h45e6dc84g9c81g4e9cg8738g7513be688a4b" version="1">You hurl a Chaosball from your fingers that explodes with elemental energy upon contact.</content>
-	<!-- Faith and Fortitude - Cleric Equipment -->
+<!-- ==================================== GraphicFade_Patches: Faith and Fortitude - Cleric Equipment -->
 	<content contentuid="h9fc4a74agacb9g434fgb239gaedf61413fb0" version="1">Unleash a wave of shimmering light that washes over all enemies around you. Each creature affected must make a DC15 &lt;LSTag Tooltip="Wisdom"&gt;Wisdom&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or becomed &lt;LSTag Type="Status" Tooltip="CHARMED"&gt;Charmed&lt;/LSTag&gt;.</content>
 	<content contentuid="haf57e852g0c4bg46d3gafcage13b1fb3a1cf" version="1">Unleash a spark of celestial lightning around you.</content>
 	<content contentuid="h2ae5cb4dgee20g4a83ga91fg3b2aa77224dd" version="1">Fire a bolt of radiant energy which explodes in a [1] radius upon hitting its target. All allies hit are healed for [2] while enemies hit take [3].</content>
@@ -402,7 +402,7 @@
 	<content contentuid="h53b6245cg0039g4ae4gb0a4ga32e05e3d00d" version="1">The wearer and allies within [1] gain a bonus to damage done with &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;melee weapon attacks&lt;/LSTag&gt; and reduce all damage taken by an amount equal to half the wearer's &lt;LSTag Tooltip="Wisdom"&gt;Wisdom&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; (minimum of 1).</content>
 	<content contentuid="h722e318bg002cg47cdg9391g88ba87f298a0" version="1">Entity deals an additional [1] damage with &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;melee weapon attacks&lt;/LSTag&gt; and takes [2] less damage from all sources.</content>
 	<content contentuid="h595e5c39gcf93g478cg845eg5b112955d529" version="1">Unleash a radiant blast upon nearby creatures. Evil creatures have &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on the &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.</content>
-	<!-- Grove and Growl - Druid Equipment -->
+<!-- ==================================== GraphicFade_Patches: Grove and Growl - Druid Equipment -->
 	<content contentuid="h7e3f5eeeg76b8g46e8g91c7gab91d757627b" version="1">When &lt;LSTag Tooltip="Shout_WildShape"&gt;Wild Shaped&lt;/LSTag&gt; and Obscured, you gain a +[1] bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;.</content>
 	<content contentuid="h7ae2f90fgd1afg4315gbb8eg3dcb7476cd4b" version="1">You gain a +[1] bonus to &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; against spells.</content>
 	<content contentuid="h95ee3dadg6d7cg4a0fgac88g3ceee1a77d7d" version="1">When you cast &lt;LSTag Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt; in combat, heal all allies in a [1] radius for [2]. Allies who receive the initial heal will be healed for another [3] in [4] turns.</content>
@@ -415,7 +415,7 @@
 	<content contentuid="h164a7596gc55fg4c46gbff7g16daf078584b" version="1">When in combat and you start your turn on a &lt;LSTag Type="Status" Tooltip="PLANT_GROWTH"&gt;Plant Growth Surface&lt;/LSTag&gt; or &lt;LSTag Type="Status" Tooltip="DIFFICULT_TERRAIN_VINES"&gt;Vine Surface&lt;/LSTag&gt;, regain [1].</content>
 	<content contentuid="hacdc5638gc392g455ega0cagd1e40a71ac7a" version="1">Call upon the ancient power of nature to shield yourself and allies. Each ally within [1] of you gains [2]. When these &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt; are lost, enemies within [3] must make a Strength &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or be pushed back [4] and become &lt;LSTag Type="Status" Tooltip="GG_THREE_STAGGERED"&gt;Staggered&lt;/LSTag&gt;.</content>
 	<content contentuid="h70099305ga54cg4812ga74fg2c5fe92340bd" version="1">Shielded by the ancient power of nature, you gain &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt;. When you lose your &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit point&lt;/LSTag&gt;, enemies within [1] must make a Strength &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or be pushed back [2] and become &lt;LSTag Type="Status" Tooltip="GG_THREE_STAGGERED"&gt;Staggered&lt;/LSTag&gt;.</content>
-	<!-- Might and Metal - Fighter Equipment  -->
+<!-- ==================================== GraphicFade_Patches: Might and Metal - Fighter Equipment  -->
 	<content contentuid="h56caa5bcg08e0g4ecfg8addgc07f5543f530" version="1">Once per &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;, you can use a &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;reaction&lt;/LSTag&gt; to deflect an incoming &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;melee weapon attack&lt;/LSTag&gt;, reducing its damage by [1] + your &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; Modifier.</content>
 	<content contentuid="hacde07fdgc25dg4595g8596gcecb8d532509" version="1">If two or more enemies surround you at the start of your turn, you gain +[1] &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; for 1 turn.</content>
 	<content contentuid="hc654153fg238ag4c07gb064g9f2fe14abd89" version="1">Taunt one creature you can see, forcing it to become &lt;LSTag Type="Status" Tooltip="MM_FIXATED"&gt;Fixated&lt;/LSTag&gt; on you.</content>
@@ -433,7 +433,7 @@
 	<content contentuid="h6e1d8108g48abg4a12gaaf0g5b0dac164e17" version="1">An explosion of lightning deals [1] to all foes within a [2] radius, &lt;LSTag Type="Status" Tooltip="SHOCKED"&gt;Shocking&lt;/LSTag&gt; them and knocking them &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt;.</content>
 	<content contentuid="hd2bcb539g3195g4258g8e48g6f7d7cc258a8" version="1">When your take damage below [1] &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt;, your &lt;LSTag Tooltip="ArmourClass"&gt;Armour&lt;/LSTag&gt; increases by +[2], you become immune to &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hits&lt;/LSTag&gt;, and the first creature each turn that makes a melee attack against you is knocked back [3].</content>
 	<content contentuid="h777f5cdcgf160g4d42ga7adg561efd2ec221" version="1">Your &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; is increased by [1], you become immune to &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hits&lt;/LSTag&gt;, and the first melee attacker each turn is pushed back [2].</content>
-	<!-- Oath and Order - Paladin Equipment -->
+<!-- ==================================== GraphicFade_Patches: Oath and Order - Paladin Equipment -->
 	<content contentuid="hfdf05148gb835g4d00g8613g951a1f10123e" version="1">When you cast &lt;LSTag Type="Spell" Tooltip="Target_Smite_Divine"&gt;Divine Smite&lt;/LSTag&gt;, you gain &lt;LSTag Type="Status" Tooltip="OO_HEAVENLY_HASTE"&gt;Heavenly Haste&lt;/LSTag&gt; for [1] turn. This effect can only occur once per combat.</content>
 	<content contentuid="hfabded7bg1dc6g4de7g9e06gf5a726ed4ae1" version="1">Call upon your deity to bring forth a divine cataclysm upon all nearby enemies.</content>
 	<content contentuid="h8bcc78afg91f5g43a0gb1b8g35bb3147623a" version="1">Your weapon attacks deal an additional [1] to creatures affected by &lt;LSTag Type="Status" Tooltip="MAG_RADIANT_RADIATING_ORB"&gt;Radiating Orb&lt;/LSTag&gt;.</content>
@@ -441,7 +441,7 @@
 	<content contentuid="h375b9345gc6dfg4ad2g84feg8138584be909" version="1">While within the Aura of Everlight, the number you need to &lt;LSTag Tooltip="AttackRoll"&gt;roll&lt;/LSTag&gt; a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; while attacking is reduced by [1] and you gain a +[2] bonus to Attack Rolls.</content>
 	<content contentuid="hffb23215g55abg40d1gae88g74c599efff80" version="1">When the user expends a &lt;LSTag Type="ActionResource" Tooltip="LayOnHandsCharge"&gt;Lay on Hands&lt;/LSTag&gt; charge, a flash of light emits from the caster that requires all foes in [1] to make a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or be &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blinded&lt;/LSTag&gt; for [2] turns.</content>
 	<content contentuid="h8a98533bgddbfg43b4g8790ge0dfe7d3b236" version="1">When you use your &lt;LSTag Type="ActionResource" Tooltip="ChannelOath"&gt;Channel Oath&lt;/LSTag&gt;, you have a [1]% chance to not expend the use.</content>
-	<!-- Pact and Power - Warlock Equipment  -->
+<!-- ==================================== GraphicFade_Patches: Pact and Power - Warlock Equipment  -->
 	<content contentuid="h0c66dd31g5ccag442bga91ag2918b1ccf668" version="1">You gain a +[1] bonus to &lt;LSTag Tooltip="AbilityCheck"&gt;Ability Checks&lt;/LSTag&gt;.</content>
 	<content contentuid="h3e729d81g1a4cg4f53gbeceg6ccae13d2f25" version="1">Ethereal chains bind a Humanoid targe, holding them immobile and unable to move, act or react. Attacks from within [1] are always &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hits&lt;/LSTag&gt;.</content>
 	<content contentuid="hb71079d2g1932g4ffbgb667geb8ffc8d38ab" version="1">Enemies in a [1] radius suffer a [2] penalty to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; and &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;, and will take [3] if they start their turn in the aura.</content>
@@ -458,7 +458,7 @@
 	<content contentuid="h3775309cgc80cg41a8g9aaag251b9565f3c5" version="1">The dagger resonates with the eternal nature of your pact, granting you unique benefits that reflect your chosen pact.&lt;br&gt;&lt;br&gt;&lt;LSTag Type="Passive" Tooltip="PactOfTheBlade"&gt;Pact of the Blade&lt;/LSTag&gt; - While &lt;LSTag Type="Status" Tooltip="PACT_BLADE"&gt;Pact Weapon&lt;/LSTag&gt; is active, your weapon deals an additional [1] and you gain &lt;LSTag Tooltip="Resistance"&gt;Resistance&lt;/LSTag&gt; to Psychic damage. The bonus damage can only occur once per turn.&lt;br&gt;&lt;br&gt;&lt;LSTag Type="Passive" Tooltip="PactOfTheChain"&gt;Pact of the Chain&lt;/LSTag&gt; - Your familiars gain an additional +[2] to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; and &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;, in addition to &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt; equal to twice your Warlock level.&lt;br&gt;&lt;br&gt;&lt;LSTag Type="Passive" Tooltip="PactOfTheTome"&gt;Pact of the Tome&lt;/LSTag&gt; - You gain +[3] to spell &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; and &lt;LSTag Tooltip="SpellDifficultyClass"&gt;Spell Save DC&lt;/LSTag&gt;, and your cantrips also deal an additonal [4]. The bonus damage can only occur once per turn.</content>
 	<content contentuid="h173af925gc4d4g4349g962egbd3edb2fbbd9" version="1">When your life force dwindles below [1], unleash a wave of necrotic energy in a [2] radius that deals [3] to nearby creatures, with allies taking half damage. This effect can only occur once per &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;.</content>
 	<content contentuid="hd74d9b13g8cf8g4b42gb478g981c42673107" version="1">Your &lt;LSTag Type="Spell" Tooltip="Projectile_EldritchBlast"&gt;Eldritch Blasts&lt;/LSTag&gt; have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on their &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;.</content>
-	<!-- Rage and Resilience - Barbarian Equipment -->
+<!-- ==================================== GraphicFade_Patches: Rage and Resilience - Barbarian Equipment -->
 	<content contentuid="h5c6a40bfg91c3g443eg8dd9g62eeacc96023" version="1">When you enter &lt;LSTag Type="Status" Tooltip="RAGE"&gt;Rage&lt;/LSTag&gt;, add your Strength &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; twice instead of once to the damage of your next &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;melee weapon attack&lt;/LSTag&gt;.</content>
 	<content contentuid="he5ade18eg9d40g48f9gb6bcgce9f6c667d0b" version="1">Berserker's Strength</content>
 	<content contentuid="hd99dc633g1f39g4b20gb582g66f8d8c110a1" version="1">Add your Strength &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; twice instead of once to the damage of your next &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;melee weapon attack&lt;/LSTag&gt;.</content>
@@ -467,7 +467,7 @@
 	<content contentuid="h40fa8086gc103g4de5gbac9g1df04b7d255b" version="1">When you unleash your fury, your allies share in your resilience. You and all allies within [1] gain &lt;LSTag Type="Status" Tooltip="RR_TITAN_FORT_BUFF_ALLY"&gt;Resilient Rage&lt;/LSTag&gt; for [2] turns.</content>
 	<content contentuid="hd34e0a77g226dg4182g8935g5fd17077b5f1" version="1">You become a raging embodiment of war itself. While &lt;LSTag Type="Status" Tooltip="RAGE"&gt;Raging&lt;/LSTag&gt;, you add half of your Strength &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; to damage dealt with &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;melee weapon attacks&lt;/LSTag&gt;, and all damage taken is reduced by [1]. Your &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; is also increased by [2].</content>
 	<content contentuid="hc29664bbgcbb2g444bgbe2agd6dc91ec0021" version="1">Attacks with this weapon have a [1] chance of erupting a clap of thunder, dealing [2] to all creatures within [3]. You can toggle this effect off.</content>
-	<!-- Song and Steel - Bard Equipment  -->
+<!-- ==================================== GraphicFade_Patches: Song and Steel - Bard Equipment  -->
 	<content contentuid="h0368d169gfee8g4757g8463ge1b082bc7371" version="1">Possibly deal[1] equal to your weapon's damage plus your Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;.</content>
 	<content contentuid="hc8ca1ee4g1e34g4dafg83efg739930f7ce94" version="1">Weave a spell of inspiration to grant yourself or an ally a +[1] bonus to all &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.</content>
 	<content contentuid="hfb84f3degd564g4853g8bb5g28981c228e63" version="1">Entity has a +[1] bonus to all &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.</content>
@@ -478,7 +478,7 @@
 	<content contentuid="h10a1c8d5g3f99g4384ga45eg253cd29d9b5b" version="1">The music invigorates you, granting you &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt;. While you still have these temporary hit points, our weapon attack deal an additional [1].</content>
 	<content contentuid="h8fd45ce3g5d7bg47e3g9387g80358f341b93" version="1">Unleash a devastating wave of thunderous energy, inflicting &lt;LSTag Type="Status" Tooltip="MAG_THUNDER_REVERBERATION"&gt;Reverberation&lt;/LSTag&gt; on targets.</content>
 	<content contentuid="hd77333e8g282eg47a0gba22g31b2541a4661" version="1">When you take damage, you can use a &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;reaction&lt;/LSTag&gt; to vanish from sight, becoming &lt;LSTag Type="Status" Tooltip="INVISIBLE"&gt;Invisible&lt;/LSTag&gt;. On your next turn, you can cast &lt;LSTag Type="Spell" Tooltip="Target_MistyStep"&gt;Misty Step&lt;/LSTag&gt;, though this will break your invisibility.</content>
-	<!-- Unarmed and Upgraded - Monk Equipment -->
+<!-- ==================================== GraphicFade_Patches: Unarmed and Upgraded - Monk Equipment -->
 	<content contentuid="hbe8919d4gfd98g4818g94fag0b294d02574c" version="1">Targets struck by this weapon must make a DC [1] Strength &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or be &lt;LSTag Type="Status" Tooltip="ENSNARED"&gt;Ensnared&lt;/LSTag&gt; for [2] turns.</content>
 	<content contentuid="h5889d042gc648g46a3g8b5cgb0dd49171f3d" version="1">You gain a +[1] bonus to your damage and &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; with unarmed attacks.</content>
 	<content contentuid="ha44e0419g678cg48fcg8fd5g3a08ab5fe659" version="1">Forcefully binds the target to you, reducing both your and the target's &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; to 0. While bound, the target takes [1] per turn and is unable to cast spells with verbal components.</content>
@@ -489,7 +489,7 @@
 	<content contentuid="h1c6fa75fg2956g4d8egaed6gad3fd45af867" version="1">Whenever a creature within melee range attacks you and misses, you can retaliate with a &lt;LSTag Type="Spell" Tooltip="Target_StunningStrike"&gt;Stunning Strike&lt;/LSTag&gt;.</content>
 	<content contentuid="h8bee503cgfcc8g4ea1gbd89gacf4a66155da" version="1">Your unarmed strikes deal an additional [1]. This damage can only trigger once per attack.</content>
 	<content contentuid="hceab7817gfedeg4937g8fd4ge2eeb2d93b3f" version="1">When you hit a creature with an unarmed attack, they must succeed on a DC [1] &lt;LSTag Tooltip="Strength"&gt;Strength&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or be sent &lt;LSTag Type="Status" Tooltip="MAG_ATTACK_DEBUFF"&gt;Reeling&lt;/LSTag&gt; for [2] turns.</content>
-	<!-- Veil and Venom - Rogue Equipment  -->
+<!-- ==================================== GraphicFade_Patches: Veil and Venom - Rogue Equipment  -->
 	<content contentuid="h90480a70ge388g4634g99c0g3bd030201c35" version="1">&lt;LSTag Type="Status" Tooltip="VV_ASSASSINS_MARK"&gt;Mark&lt;/LSTag&gt; a creature for death. Your attacks have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; against them and your &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hits&lt;/LSTag&gt; against the marked creature deal an additional [1] damage.</content>
 	<content contentuid="h68b16d5bg49f1g4eeagb311ga57fe566450d" version="1">This creature has been marked for death. The caster who applied this mark has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="AttackRoll"&gt;attacks&lt;/LSTag&gt; against the marked target and deals an additional [1] damage on &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hits&lt;/LSTag&gt; against the marked target.</content>
 	<content contentuid="hc44613eaga609g44b7ga9b8g4c942a15d084" version="1">You gain a [1] bonus to throw damage.</content>
@@ -498,7 +498,7 @@
 	<content contentuid="h6eda3314g183fg4dd0g9be5g8357725d7826" version="1">When you land a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; with this weapon, the target must make a Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or take [1], healing you for half the damage dealt. This effect is toggled and once spent, this effect refreshed after a &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;.</content>
 	<content contentuid="h29ec4ce4g7030g4d91ga4efgdeb0d376c127" version="1">Attempt to pierce a target's heart, dealing [1] for every two Rogue levels you have.</content>
 	<content contentuid="h58b6b6e7gb35fg499dga233g0c3f45fc94c1" version="1">Meld with the shadows, teleporting up to [1] to an area of dim light or darkness and granting you &lt;LSTag Type="Status" Tooltip="VV_SHADOW_MELD"&gt;Shrouding Shadow&lt;/LSTag&gt;.</content>
-	<!-- Wands and Weave - Wizard Equipment  -->
+<!-- ==================================== GraphicFade_Patches: Wands and Weave - Wizard Equipment  -->
 	<content contentuid="h8cf49e5dg153cg4c5fg818bgaa4f69a9489e" version="1">When the wearer deals damage with a &lt;LSTag Tooltip="MeleeSpellAttack"&gt;Melee Spell Attack&lt;/LSTag&gt; or a &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;Melee Weapon Attack&lt;/LSTag&gt; that is also a spell, gain [1] turns of &lt;LSTag Type="Status" Tooltip="MAG_GISH_ARCANE_ACUITY"&gt;Arcane Acuity&lt;/LSTag&gt;.</content>
 	<content contentuid="h73cc541fgdb06g4bd6g8266g6135495e8449" version="1">When you deal[1] to a creature, a fire surface erupts around it in a [2] radius. Your[3] spells also deal an additional [2]. This bonus damage only applies once per attack.</content>
 	<content contentuid="h5f03de22gc497g4f11g9becg5b857c8e7c05" version="1">When you make a &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; to maintain &lt;LSTag Tooltip="Concentration"&gt;Concentration&lt;/LSTag&gt; on a spell, a roll result of [1] or lower is considered a [2].</content>
@@ -509,7 +509,7 @@
 	<content contentuid="ha6d314c9g9b82g4ed6gbe10g768cc7802e6a" version="1">When you roll a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; with a spell, deal an additional [1]. You also gain [2].</content>
 	<content contentuid="hcbe9798fg9c27g48d5ga7acg9a8877f085f0" version="1">When you cast a spell, you have a chance to regain the &lt;LSTag Tooltip="SpellSlot"&gt;spell slot&lt;/LSTag&gt; used. Spells cast with higher-level spell slots have a lower chance to regain the spell slot. This effect can only occur once per turn.</content>
 	<content contentuid="h5fe38971g46a1g4ad9gbf56gf969e6daeb5f" version="1">Utter a final incantation, channeling the destructive energies of Netheril through your very being to obliterate yourself and deal [1] to all nearby creatures. At level 12, this damage increases to [2].</content>
-	<!-- Fade's Assorted Treasure Expansion -->
+<!-- ==================================== GraphicFade_Patches: Fade's Assorted Treasure Expansion -->
     <content contentuid="h114a224ag9bceg4277gbaebg9c0017f3beb0" version="1">You gain a +[1] bonus to your first &lt;LSTag Tooltip="RangedWeaponAttack"&gt;ranged weapon Attack Roll&lt;/LSTag&gt; each turn.</content>
 	<content contentuid="h6a80edacg9f65g4133g8dd9g5fd6c6994d27" version="1">This weapon deals an additional [1] but suffers a -[2] penalty to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;.</content>
 
@@ -541,7 +541,7 @@
 	<content contentuid="hd2138dd3ge3a0g474ag8662gf0a9a4d503c2" version="1">Once per turn, after casting a healing spell that costs an &lt;LSTag Type="ActionResource" Tooltip="ActionPoint"&gt;Action&lt;/LSTag&gt;, your next healing spell that costs an &lt;LSTag Type="ActionResource" Tooltip="ActionPoint"&gt;Action&lt;/LSTag&gt; is cast as a &lt;LSTag Type="ActionResource" Tooltip="BonusActionPoint"&gt;Bonus Action&lt;/LSTag&gt; instead.</content>
 	<content contentuid="h7187395eg7039g4528g8518g806d89a87b51" version="1">Consume [1] &lt;LSTag Type="Status" Tooltip="MAG_CHARGED_LIGHTNING"&gt;Lightning Charges&lt;/LSTag&gt; to teleport to an unoccupied space you can see within [2]. Upon arrival, you deal[3] to all creatures in a [4] radius, &lt;LSTag Type="Status" Tooltip="SHOCKED"&gt;Shocking&lt;/LSTag&gt; them for [5] turns.</content>
 
-	<!-- HelmArmory -->
+<!-- ==================================== HelmArmory ==================================== -->
 	<content contentuid="ha910c197g7b7ag443dga5cagace2a219dde8" version="1">You gain a +3 bonus to Initiative Rolls and have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on Perception &lt;LSTag Tooltip="AbilityCheck"&gt;Checks&lt;/LSTag&gt;.</content>
 	<content contentuid="h5259232cg94bcg4f1fg86cag49bd2775aea0" version="1">You gain an additional +[1] to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; when &lt;LSTag Type="Status" Tooltip="SHIELD_OF_FAITH"&gt;Shield of Faith&lt;/LSTag&gt; is active.</content>
 	<content contentuid="h96487335ga28eg4d11ga040g3988f3187acc" version="1">Faithguard</content>
@@ -549,11 +549,11 @@
 	<content contentuid="h02da00cdgac67g45f4g8516g806b0ee900b7" version="1">Landing an attack on a target heals allies for [1] in a [2] radius around you. This effect can only occur once per turn.</content>
 	<content contentuid="h26e9271ag521dg49begb54eg511971cdde17" version="1">You have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; against spells. This weapon deals an additional [1] to targets &lt;LSTag Tooltip="Concentration"&gt;Concentrating&lt;/LSTag&gt; on a spell.</content>
 
-	<!-- Justicar -->
+<!-- ==================================== Justicar ==================================== -->
 	<content contentuid="h2fdc0e99g77bcg4a87g8805gdbf140338574" version="1">Choose a creature you can see within [1] and mark it as a foe of your god. While marked, the number you need to roll for a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; on an &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt; against the target is reduced by [2].</content>
 	<content contentuid="h2fdc0e99g77bcg4a87g8805gdbf140338574" version="1">Dawn's Wrath</content>
 
-	<!-- LathanderArmory -->
+<!-- ==================================== LathanderArmory ==================================== -->
 	<content contentuid="hce421159g0407g470fg85deg6fc73d6c24bc" version="1">Whenever the wearer is healed, they receive an additional [1] of healing.</content>
 	<content contentuid="h126b80cag2a41g49f4g8e8cgeb9af860b211" version="1">Dawnburst Charge</content>
 	<content contentuid="h368de0d1g3fbcg4b78g9e20gc1762094ad40" version="1">Rush forward in a flash of light, damaging all enemies in your path and possibly &lt;LSTag Type="Status" Tooltip="BLINDED"&gt;Blind&lt;/LSTag&gt; them.</content>
@@ -590,7 +590,7 @@
 	<content contentuid="hdc403143g6e63g4889g81fdgbd26a11ac6bc" version="1">Dawn's Determination</content>
 	<content contentuid="hb2c8c827ge535g4357g9f0cg588a29a5a4bb" version="1">If you roll a 1 on an &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt; or damage roll while illuminated, you can reroll the die and must use the new roll.</content>
 
-	<!-- Monk Subclasses 5e Combined -->
+<!-- ==================================== Monk Subclasses 5e Combined ==================================== -->
 	<content contentuid="h5b953896gee9cg4bb8gb06cg72ebc7adb6ab" version="1">Hurl a searing bolt of magical radiance. After making this attack, your next attack will also deal an additional [1].</content>
 	<content contentuid="h4c650077gb444g4974g8a95g4b48cdc10abe" version="1">This attack's &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt; and damage roll use your Wisdom &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; instead of your Dexterity Modifier. When you use this attack as part of your Attack action on your turn, you may spend 1 &lt;LSTag Type="ActionResource" Tooltip="KiPoint"&gt;ki point&lt;/LSTag&gt; to attack twice more with it as a &lt;LSTag Tooltip="BonusAction"&gt;bonus action&lt;/LSTag&gt;.</content>
 	<content contentuid="h1d5be7f4gd982g495cg814fg2a1f88143030" version="1">Radiant Soul</content>
@@ -600,13 +600,13 @@
 	<content contentuid="h20a4a86bg182cg42ddgb2abg4254aa0762dc" version="1">Become wreathed in, or extinguish, a magical aura that shines light to a radius of [1], grants you a +[2] bonus to your &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;, and can damage creatures that make melee attacks against you.</content>
 	<content contentuid="hcd63c206gd620g4e1dga766ge9f75ff928cb" version="1">Entity emits an aura of light with a radius of [1] and has a +[2] bonus to its &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;.</content>
 
-	<!-- Morninglord's Morningstar -->
+<!-- ==================================== Morninglord's Morningstar ==================================== -->
 	<content contentuid="h37fed4e7g3a46g45c5ga034ga5c35e9eceb2" version="1">The wielder of this weapon is always &lt;LSTag Tooltip="Proficiency"&gt;Proficient&lt;/LSTag&gt; with it and adds half its &lt;LSTag Tooltip="SpellcastingAbilityModifier"&gt;Spellcasting Ability&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; and damage rolls with the weapon. &lt;br&gt;&lt;br&gt;This weapon deals additional[1] equal to the wielder's &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt; against Fiends and Undead.</content>
 
-	<!-- Oath of Heroism -->
+<!-- ==================================== Oath of Heroism ==================================== -->
 	<content contentuid="h52343558g1d56g490cgb2a7g3cc03ebf5119" version="1">Augment your athleticism with divine favour. Your &lt;LSTag Tooltip="Strength"&gt;Strength&lt;/LSTag&gt; increases by [1] and you gain &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on all &lt;LSTag Tooltip="Acrobatics"&gt;Acrobatics&lt;/LSTag&gt; and &lt;LSTag Tooltip="Athletics"&gt;Athletics&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityCheck"&gt;Checks&lt;/LSTag&gt;.</content>
 
-	<!-- Path of the Righteous -->
+<!-- ==================================== Path of the Righteous ==================================== -->
 	<content contentuid="h40b1f521gcf1eg4fe0g9f81gbf4ee8d32f33" version="1">&lt;LSTag Type="Passive" Tooltip="Siael_POTR_Wrath"&gt;Wrath of the Righteous Set&lt;/LSTag&gt;: 1/3
 &lt;LSTag Type="Passive" Tooltip="Siael_POTR_Righteous"&gt;Path of the Righteous Set&lt;/LSTag&gt;: 1/10</content>
 	<content contentuid="h500445c2g0052g45e3gae22gf6642b989977" version="1">&lt;LSTag Type="Passive" Tooltip="Siael_POTR_Protection"&gt;Protection of the Righteous Set&lt;/LSTag&gt;: 1/1
@@ -676,11 +676,11 @@ You still benefit from &lt;LSTag Type="Passive" Tooltip="Siael_POTR_Righteous_R"
 You still benefit from &lt;LSTag Type="Passive" Tooltip="Siael_POTR_Righteous"&gt;The Righteous&lt;/LSTag&gt;.</content>
 	<content contentuid="h4695d505g041dg4999ga53bg64d3d0aa1885" version="1">Entity takes an additional [1] whenever it takes[2].</content>
 
-	<!-- PhalarAluveRework -->
+<!-- ==================================== PhalarAluveRework ==================================== -->
 	<content contentuid="hf21d176ege20eg44eeg944egaf503d8983d6" version="1">When you hit a creature in melee, you &lt;LSTag Type="Status" Tooltip="MAG_HARPERS_SINGING_SWORD_DISTRACTED"&gt;Distract&lt;/LSTag&gt; it and gain 1 stack of &lt;LSTag Type="Status" Tooltip="MAG_MOMENTUM"&gt;Momentum&lt;/LSTag&gt; if you succeed a &lt;LSTag Tooltip="Performance"&gt;Performance&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityCheck"&gt;Check&lt;/LSTag&gt;. If your Intelligence or Wisdom &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; is higher than your Charisma Modifier, you can substitute it for Performance Checks.</content>
 	<content contentuid="hf8e82c23ga004g4430g8433g56b33548b882" version="1">You gain 1 stack of &lt;LSTag Type="Status" Tooltip="MAG_MOMENTUM"&gt;Momentum&lt;/LSTag&gt; each turn.</content>
 
-	<!-- Ultimate Cut Content Restoration Mod -->
+<!-- ==================================== Ultimate Cut Content Restoration Mod ==================================== -->
 	<content contentuid="h40e40101gc226g446cga12eg5737aa50c999" version="1">Glacial Oppression</content>
 	<content contentuid="h20b4e380g4b2dg41c1gbd42g6885f5014043" version="1">When you deal[1], you inflict &lt;LSTag Type="Status" Tooltip="MAG_FROST"&gt;Encrusted with Frost&lt;/LSTag&gt; to the target for [2] turns.</content>
 	<content contentuid="h950dea13g30d2g4cc2g9e1ag1885c3c6ec96" version="1">When the wearer has [1] &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt; or less, they have &lt;LSTag Tooltip="Resistant"&gt;Resistance&lt;/LSTag&gt; to[2].</content>
@@ -694,19 +694,16 @@ You still benefit from &lt;LSTag Type="Passive" Tooltip="Siael_POTR_Righteous"&g
 	<content contentuid="h8c9d8ee8gf810g4ba9g803cgbb2f7b7f7d73" version="1">When you charm a creature, you gain &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on your next &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt;.</content>
 	<content contentuid="h86d13385gd358g4086g9f86gfb0347661242" version="1">Next &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt; has &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt;.</content>
 
-	<!-- War Caster (2024 and 2014)	 -->
+<!-- ==================================== War Caster (2024 and 2014) ==================================== -->
 	<!-- FeatDescription: "WarCaster" -->
 	<content contentuid="h6cee28687ca14f85a43334b0112a50d7ae73" version="1">War Caster</content>
-	<!-- FeatDescription: "WarCaster" -->
 	<content contentuid="h434207f7g8135g444fgaa52g30cafa4ec3e5" version="1">You have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; to maintain &lt;LSTag Tooltip="Concentration"&gt;Concentration&lt;/LSTag&gt;.&lt;br&gt;&lt;br&gt;You can also use a &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;Reaction&lt;/LSTag&gt; to cast a spell when a hostile creature's movement provokes an &lt;LSTag Tooltip="OpportunityAttack"&gt;Opportunity Attack&lt;/LSTag&gt; from you.</content>
 
-	<!-- WarlockAndPatronsPHB2024 -->
+<!-- ==================================== WarlockAndPatronsPHB2024 ==================================== -->
 	<content contentuid="he64944e0g7fa8g4086g9b40g12c799d0f12b" version="1">Once per turn, an attack made with your weapon deals an additional [1], [2] or [3]. Additionally, once per &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;, you can heal yourself for [4] after you have sucessfully hit an opponent with your weapon.</content>
 	<content contentuid="h334d0a2bg361ag4790g8971g14f76837c3df" version="1">After landing an attack with your Pact or Bound weapon, you can drain the life essence of the target to heal yourself for [1].</content>
 	<content contentuid="he4bab66dg62c5g4849g90dagbbaf17e4a454" version="1">You gain &lt;LSTag Tooltip="Resistant"&gt;Resistance&lt;/LSTag&gt; to[1]. Once per turn, when you inflict[2] or[3], you add your Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; to the damage roll.</content>
 
-	<content contentuid="XXXX" version="1">XXXX</content>
-	<content contentuid="XXXX" version="1">XXXX</content>
 	<content contentuid="XXXX" version="1">XXXX</content>
 	<content contentuid="XXXX" version="1">XXXX</content>
 	<content contentuid="XXXX" version="1">XXXX</content>
