@@ -514,7 +514,8 @@ Ext.Osiris.RegisterListener("QuestUpdateUnlocked", 3, "after", function(characte
             stopGondians = 1
             print("SIAEL - The Gondians were saved.")
             TemplateAddTo("1876bcea-98f7-4c20-94af-566736524a41",GetHostCharacter(),1,1)
-        elseif topLevelQuestID == "TOP_QUEST_ID: PLA_StuckHalfElf" and stateID == "ReturnedGold" and stopDowry == 0 then
+        --Dowry - Pious Generosity
+        elseif topLevelQuestID == "PLA_StuckHalfElf" and stateID == "ReturnedGold" and stopDowry == 0 then
             stopDowry = 1
             print("SIAEL - The gold dowry was returned")
             TemplateAddTo("d558a5d5-a18b-464f-a091-433cdbccc18c",GetHostCharacter(),1,1)
