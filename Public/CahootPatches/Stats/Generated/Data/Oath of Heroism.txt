@@ -18,6 +18,8 @@ using "Shout_LHB_Heroism_PeerlessAthlete"
 // data "Description" "LHB_PeerlessAthlete_Description;1"
 // Augment your athleticism with divine favour. Your &lt;LSTag Tooltip="Strength"&gt;Strength&lt;/LSTag&gt; increases by [1] and you gain &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on all &lt;LSTag Tooltip="Acrobatics"&gt;Acrobatics&lt;/LSTag&gt; and &lt;LSTag Tooltip="Athletics"&gt;Athletics&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityCheck"&gt;Checks&lt;/LSTag&gt;.
 data "Description" "h52343558g1d56g490cgb2a7g3cc03ebf5119;1"
+// data "DescriptionParams" ""
+data "DescriptionParams" "2"
 // data "SpellProperties" "ApplyStatus(LHB_HEROISM_PEERLESSATHLETE,100,100)"
 data "SpellProperties" "ApplyStatus(LHB_HEROISM_PEERLESSATHLETE,100,10)"
 // data "TooltipStatusApply" "ApplyStatus(LHB_HEROISM_PEERLESSATHLETE,100,100)"

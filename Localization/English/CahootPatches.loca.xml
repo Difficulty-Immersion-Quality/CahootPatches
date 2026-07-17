@@ -590,6 +590,10 @@
 	<content contentuid="hdc403143g6e63g4889g81fdgbd26a11ac6bc" version="1">Dawn's Determination</content>
 	<content contentuid="hb2c8c827ge535g4357g9f0cg588a29a5a4bb" version="1">If you roll a 1 on an &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt; or damage roll while illuminated, you can reroll the die and must use the new roll.</content>
 
+	<!-- Lightbringer Reforged -->
+	<content contentuid="hbcddf26eg7d65g443dga22dg5050bcbd738b" version="1">Deals an additional [1] to Fiends and Undead.</content>
+	<content contentuid="h75841102gdf74g40a4ga3b8gfe3e7535e432" version="1">Deals an additional [1] to &lt;LSTag Type="Status" Tooltip="FRIGHTENED"&gt;Frightened&lt;/LSTag&gt; targets.</content>
+
 	<!-- Monk Subclasses 5e Combined -->
 	<content contentuid="h5b953896gee9cg4bb8gb06cg72ebc7adb6ab" version="1">Hurl a searing bolt of magical radiance. After making this attack, your next attack will also deal an additional [1].</content>
 	<content contentuid="h4c650077gb444g4974g8a95g4b48cdc10abe" version="1">This attack's &lt;LSTag Tooltip="AttackRoll"&gt;Attack Roll&lt;/LSTag&gt; and damage roll use your Wisdom &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; instead of your Dexterity Modifier. When you use this attack as part of your Attack action on your turn, you may spend 1 &lt;LSTag Type="ActionResource" Tooltip="KiPoint"&gt;ki point&lt;/LSTag&gt; to attack twice more with it as a &lt;LSTag Tooltip="BonusAction"&gt;bonus action&lt;/LSTag&gt;.</content>

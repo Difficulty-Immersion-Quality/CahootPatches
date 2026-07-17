@@ -1,7 +1,7 @@
 // ==================================== Paladin ====================================
 
 // ==================================== Lay on Hands
-// Lesser Healing and Cure variant snow cost a bonus action
+// Lesser Healing and Cure variants now cost a bonus action
 new entry "Target_LayOnHands"
 type "SpellData"
 data "SpellType" "Target"
