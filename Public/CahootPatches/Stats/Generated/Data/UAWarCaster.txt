@@ -1,0 +1,43 @@
+// ========================== War Caster: Concentration ==========================
+// Amend passive description to add the ability score improvements
+
+new entry "WarCaster_Bonuses"
+type "PassiveData"
+using "WarCaster_Bonuses"
+// You have <LSTag Tooltip="Advantage">Advantage</LSTag> on <LSTag Tooltip="SavingThrow">Saving Throws</LSTag> to maintain <LSTag Tooltip="Concentration">Concentration</LSTag> on a spell. Your &lt;LSTag Tooltip="Intelligence"&gt;Intelligence&lt;/LSTag&gt;, &lt;LSTag Tooltip="Wisdom"&gt;Wisdom&lt;/LSTag&gt;, or &lt;LSTag Tooltip="Charisma"&gt;Charisma&lt;/LSTag&gt; score is increased by 1.
+data "Description" "h6cee28687ca14f85a43334b0112a50d7ae74;1"
+
+// ========================== Ability score improvements through passives ==========================
+
+new entry "WarCaster_Intelligence"
+type "PassiveData"
+// War Caster: Intelligence
+data "DisplayName" "h6cee28687ca14f85a43334b0112a50d7ae75;1"
+// Increase your &lt;LSTag Tooltip="Intelligence"&gt;Intelligence&lt;/LSTag&gt; by [1].
+data "Description" "h6cee28687ca14f85a43334b0112a50d7ae76;1"
+data "DescriptionParams" "1"
+data "Icon" "GenericIcon_Intent_Buff"
+data "Properties" "IsHidden"
+data "Boosts" "Ability(Intelligence, 1)"
+
+new entry "WarCaster_Wisdom"
+type "PassiveData"
+// War Caster: Wisdom
+data "DisplayName" "h6cee28687ca14f85a43334b0112a50d7ae77;1"
+// Increase your &lt;LSTag Tooltip="Wisdom"&gt;Wisdom&lt;/LSTag&gt; by [1].
+data "Description" "h6cee28687ca14f85a43334b0112a50d7ae78;1"
+data "DescriptionParams" "1"
+data "Icon" "GenericIcon_Intent_Buff"
+data "Properties" "IsHidden"
+data "Boosts" "Ability(Wisdom, 1)"
+
+new entry "WarCaster_Charisma"
+type "PassiveData"
+// War Caster: Charisma
+data "DisplayName" "h6cee28687ca14f85a43334b0112a50d7ae79;1"
+// Increase your &lt;LSTag Tooltip="Charisma"&gt;Charisma&lt;/LSTag&gt; by [1].
+data "Description" "h6cee28687ca14f85a43334b0112a50d7ae80;1"
+data "DescriptionParams" "1"
+data "Icon" "GenericIcon_Intent_Buff"
+data "Properties" "IsHidden"
+data "Boosts" "Ability(Charisma, 1)"

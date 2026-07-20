@@ -9,6 +9,7 @@
 					<attribute id="Name" type="FixedString" value="WarCaster"/>
 					<!-- <attribute id="PassivesAdded" type="LSString" value="WarCaster_Bonuses;UAWarCaster_Reactions_2014"/> -->
 					<attribute id="PassivesAdded" type="LSString" value="WarCaster_Bonuses;UAWarCaster_Reactions_UA2"/>
+                    <attribute id="Selectors" type="LSString" value="SelectPassives(019f7fab-8297-74f1-a009-8a5495316847,1)"/>
 					<attribute id="UUID" type="guid" value="ed4e367d-d136-4285-abac-077147e84cf2"/>
 				</node>
 

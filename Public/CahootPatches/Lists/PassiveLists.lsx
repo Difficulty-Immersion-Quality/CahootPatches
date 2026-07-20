@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<save>
+  <version major="4" minor="0" revision="9" build="328" />
+  <region id="PassiveLists">
+    <node id="root">
+      <children>
+        <node id="PassiveList">
+            <attribute id="Name" type="FixedString" value="War Caster Caster ASI Passives" />
+            <attribute id="Passives" type="LSString" value="WarCaster_Intelligence,WarCaster_Wisdom,WarCaster_Charisma" />
+            <attribute id="UUID" type="guid" value="019f7fab-8297-74f1-a009-8a5495316847" />
+        </node>
+      </children>
+    </node>
+  </region>
+</save>
