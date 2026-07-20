@@ -9,91 +9,103 @@
 										<attribute id="Name" type="FixedString" value="SYR_Alchemist"/>
 										<attribute id="PassivesAdded" type="LSString" value="SYR_Feat_Alchemist_Passive;SYR_Feat_Alchemist_Throw_Unlock"/>
 										<attribute id="Selectors" type="LSString" value="SelectAbilities(da75dffa-ba64-4da8-8d8a-e9723b87a7da,1,1)"/>
+										<attribute id="Selectors" type="LSString" value="SelectPassives(53aeabbc-e32d-4146-a258-81a6e5d92348,1)"/>
 										<attribute id="UUID" type="guid" value="24996ff6-f883-4c7d-929e-e561618529a5"/>
 								</node> -->
 								<node id="Feat">
 										<attribute id="Name" type="FixedString" value="SYR_DeadlyAlacrity"/>
 										<attribute id="PassivesAdded" type="LSString" value="SYR_Feat_DeadlyAlacrity_Passive"/>
-										<attribute id="Selectors" type="LSString" value="SelectAbilities(404cecb5-77e7-404a-b7ce-1f9427bab6f1,1,1)"/>
+										<!-- <attribute id="Selectors" type="LSString" value="SelectAbilities(404cecb5-77e7-404a-b7ce-1f9427bab6f1,1,1)"/> -->
+										<attribute id="Selectors" type="LSString" value="SelectPassives(7c8e906a-d7dc-48ba-8fea-81999efc4fdc,1)"/>
 										<attribute id="UUID" type="guid" value="173e3489-1346-42d5-b5d9-a147443418a5"/>
 								</node>
 								<node id="Feat">
                     <attribute id="CanBeTakenMultipleTimes" type="bool" value="true"/>
 										<attribute id="Name" type="FixedString" value="SYR_EldritchAdept"/>
-										<attribute id="Selectors" type="LSString" value="SelectAbilities(6d64a5f2-c26a-4af9-8957-7370ff51f0de,1,1);SelectPassives(ae25190d-8513-40aa-9e7a-d2d57202b6a3,1,SYR_EldritchAdept)"/>
+										<!-- <attribute id="Selectors" type="LSString" value="SelectAbilities(6d64a5f2-c26a-4af9-8957-7370ff51f0de,1,1);SelectPassives(ae25190d-8513-40aa-9e7a-d2d57202b6a3,1,SYR_EldritchAdept)"/> -->
+										<attribute id="Selectors" type="LSString" value="SelectPassives(210b63b8-005c-448f-be4c-3021ea0b0ec1,1);SelectPassives(ae25190d-8513-40aa-9e7a-d2d57202b6a3,1,SYR_EldritchAdept)"/>
 										<attribute id="UUID" type="guid" value="8d0d3732-995d-43c3-ba07-dce6cc3e6223"/>
 								</node>
 								<node id="Feat">
                     <attribute id="CanBeTakenMultipleTimes" type="bool" value="true"/>
 										<attribute id="Name" type="FixedString" value="SYR_FightingInitiate"/>
-										<attribute id="Selectors" type="LSString" value="SelectAbilities(499230af-5946-4680-a7ee-4d76d421f2ef,1,1,LightlyArmoredASI);SelectPassives(da3203d8-750a-4de1-b8eb-1eccfccddf46,1,FightingStyle)"/>
+										<!-- <attribute id="Selectors" type="LSString" value="SelectAbilities(499230af-5946-4680-a7ee-4d76d421f2ef,1,1,LightlyArmoredASI);SelectPassives(da3203d8-750a-4de1-b8eb-1eccfccddf46,1,FightingStyle)"/> -->
+										<attribute id="Selectors" type="LSString" value="SelectPassives(29858201-5af2-4e8f-9da5-7510a58ec908,1);SelectPassives(da3203d8-750a-4de1-b8eb-1eccfccddf46,1,FightingStyle)"/>
 										<attribute id="UUID" type="guid" value="b88ae850-ef8e-46c1-8953-28ba9050eb5b"/>
 								</node>
 								<node id="Feat">
 										<attribute id="Name" type="FixedString" value="SYR_FeyTouched"/>
 										<attribute id="PassivesAdded" type="LSString" value="SYR_Feat_FeyTouched_Passive"/>
-										<attribute id="Selectors" type="LSString" value="SelectAbilities(6d64a5f2-c26a-4af9-8957-7370ff51f0de,1,1);SelectSpells(f5c93d29-7c1d-42f5-b3b7-d586b38670d6,1,0,SYR_FeyTouched,,None,AlwaysPrepared,UntilShortRest)"/>
+										<!-- <attribute id="Selectors" type="LSString" value="SelectAbilities(6d64a5f2-c26a-4af9-8957-7370ff51f0de,1,1);SelectSpells(f5c93d29-7c1d-42f5-b3b7-d586b38670d6,1,0,SYR_FeyTouched,,None,AlwaysPrepared,UntilShortRest)"/> -->
+										<attribute id="Selectors" type="LSString" value="SelectPassives(6312c544-74d1-48d1-a25c-bff67f9a53f6,1);SelectSpells(f5c93d29-7c1d-42f5-b3b7-d586b38670d6,1,0,SYR_FeyTouched,,None,AlwaysPrepared,UntilShortRest)"/>
 										<attribute id="UUID" type="guid" value="843558fc-cf92-4435-9015-fcbea721240d"/>
 								</node>
 								<node id="Feat">
 										<attribute id="Name" type="FixedString" value="SYR_HeavenTouched"/>
 										<attribute id="PassivesAdded" type="LSString" value="SYR_Feat_HeavenTouched_Passive"/>
-										<attribute id="Selectors" type="LSString" value="SelectAbilities(6d64a5f2-c26a-4af9-8957-7370ff51f0de,1,1);SelectSpells(56bc6683-8ec7-4d2d-91d4-0458e25e46ce,1,0,SYR_HeavenTouched,,None,AlwaysPrepared,UntilShortRest)"/>
+										<!-- <attribute id="Selectors" type="LSString" value="SelectAbilities(6d64a5f2-c26a-4af9-8957-7370ff51f0de,1,1);SelectSpells(56bc6683-8ec7-4d2d-91d4-0458e25e46ce,1,0,SYR_HeavenTouched,,None,AlwaysPrepared,UntilShortRest)"/> -->
+										<attribute id="Selectors" type="LSString" value="SelectPassives(ccb08bbd-905f-4b6f-bdb6-c1c83c521c05,1);SelectSpells(56bc6683-8ec7-4d2d-91d4-0458e25e46ce,1,0,SYR_HeavenTouched,,None,AlwaysPrepared,UntilShortRest)"/>
 										<attribute id="UUID" type="guid" value="deaace39-cefe-40f6-aff8-8bffd714c695"/>
 								</node>
 								<node id="Feat">
 										<attribute id="Name" type="FixedString" value="SYR_HellTouched"/>
 										<attribute id="PassivesAdded" type="LSString" value="SYR_Feat_HellTouched_Passive"/>
-										<attribute id="Selectors" type="LSString" value="SelectAbilities(6d64a5f2-c26a-4af9-8957-7370ff51f0de,1,1);SelectSpells(dd835ff0-6381-4059-b227-e83a67489f61,1,0,SYR_HellTouched,,None,AlwaysPrepared,UntilShortRest)"/>
+										<!-- <attribute id="Selectors" type="LSString" value="SelectAbilities(6d64a5f2-c26a-4af9-8957-7370ff51f0de,1,1);SelectSpells(dd835ff0-6381-4059-b227-e83a67489f61,1,0,SYR_HellTouched,,None,AlwaysPrepared,UntilShortRest)"/> -->
+										<attribute id="Selectors" type="LSString" value="SelectPassives(04cf7cad-3b04-4e68-ab02-9cd3713fcd58,1);SelectSpells(dd835ff0-6381-4059-b227-e83a67489f61,1,0,SYR_HellTouched,,None,AlwaysPrepared,UntilShortRest)"/>
 										<attribute id="UUID" type="guid" value="576a0a7b-db0e-42b5-9725-8e76eb5d760b"/>
 								</node>
 								<node id="Feat">
 										<attribute id="Name" type="FixedString" value="SYR_LightArmorMaster"/>
 										<attribute id="PassivesAdded" type="LSString" value="SYR_Feat_LightArmorMaster_Passive"/>
-										<attribute id="Selectors" type="LSString" value="SelectAbilities(499230af-5946-4680-a7ee-4d76d421f2ef,1,1,LightlyArmoredASI)"/>
+										<!-- <attribute id="Selectors" type="LSString" value="SelectAbilities(499230af-5946-4680-a7ee-4d76d421f2ef,1,1,LightlyArmoredASI)"/> -->
+										<attribute id="Selectors" type="LSString" value="SelectPassives(e4321008-3796-4a25-8b48-1aff63a8d6e1,1)"/>
 										<attribute id="UUID" type="guid" value="259e9f88-cb1d-478c-9229-d4fec0538725"/>
 								</node>
 								<node id="Feat">
                     <attribute id="CanBeTakenMultipleTimes" type="bool" value="true"/>
 										<attribute id="Name" type="FixedString" value="SYR_MetamagicAdept"/>
 										<attribute id="PassivesAdded" type="LSString" value="SYR_Feat_MetamagicAdept_Passive"/>
-										<attribute id="Selectors" type="LSString" value="SelectAbilities(6d64a5f2-c26a-4af9-8957-7370ff51f0de,1,1);SelectPassives(c3506532-36eb-4d18-823e-497a537a9619,2,SYR_MetamagicAdept)"/>
+										<!-- <attribute id="Selectors" type="LSString" value="SelectAbilities(6d64a5f2-c26a-4af9-8957-7370ff51f0de,1,1);SelectPassives(c3506532-36eb-4d18-823e-497a537a9619,2,SYR_MetamagicAdept)"/> -->
+										<attribute id="Selectors" type="LSString" value="SelectPassives(75d5c1f1-43dc-49b5-93b7-bd273fcf4990,1);SelectPassives(c3506532-36eb-4d18-823e-497a537a9619,2,SYR_MetamagicAdept)"/>
 										<attribute id="UUID" type="guid" value="9e5537b5-e1f9-4a3c-8dd5-1216cdc0d174"/>
 								</node>
 								<node id="Feat">
 										<attribute id="Name" type="FixedString" value="SYR_NimbleFingers"/>
 										<attribute id="PassivesAdded" type="LSString" value="SYR_Feat_NimbleFingers_Passive"/>
-										<attribute id="Selectors" type="LSString" value="SelectAbilities(e0b75d8b-4fe1-46aa-936d-98a326217c73,1,1)"/>
+										<!-- <attribute id="Selectors" type="LSString" value="SelectAbilities(e0b75d8b-4fe1-46aa-936d-98a326217c73,1,1)"/> -->
 										<attribute id="UUID" type="guid" value="7e9950b5-03f6-4db2-9b4e-046b9599011e"/>
 								</node>
 								<node id="Feat">
 										<attribute id="Name" type="FixedString" value="SYR_ShadowTouched"/>
 										<attribute id="PassivesAdded" type="LSString" value="SYR_Feat_ShadowTouched_Passive"/>
-										<attribute id="Selectors" type="LSString" value="SelectAbilities(6d64a5f2-c26a-4af9-8957-7370ff51f0de,1,1);SelectSpells(b13ce3b7-2370-4c2b-8fdf-b4d59b850644,1,0,SYR_ShadowTouched,,None,AlwaysPrepared,UntilShortRest)"/>
+										<!-- <attribute id="Selectors" type="LSString" value="SelectAbilities(6d64a5f2-c26a-4af9-8957-7370ff51f0de,1,1);SelectSpells(b13ce3b7-2370-4c2b-8fdf-b4d59b850644,1,0,SYR_ShadowTouched,,None,AlwaysPrepared,UntilShortRest)"/> -->
+										<attribute id="Selectors" type="LSString" value="SelectPassives(0eccb780-2e74-416a-bff3-c11ed049bac6,1);SelectSpells(b13ce3b7-2370-4c2b-8fdf-b4d59b850644,1,0,SYR_ShadowTouched,,None,AlwaysPrepared,UntilShortRest)"/>
 										<attribute id="UUID" type="guid" value="80f4391b-f842-4e01-807e-dd92eb08802d"/>
 								</node>
 								<node id="Feat">
 										<attribute id="Name" type="FixedString" value="SYR_SkillExpert"/>
 										<attribute id="PassivesAdded" type="LSString" value="SYR_Feat_SkillExpert_Passive"/>
-										<attribute id="Selectors" type="LSString" value="SelectAbilities(b9149c8e-52c8-46e5-9cb6-fc39301c05fe,1,1,FeatASI);SelectSkills(f974ebd6-3725-4b90-bb5c-2b647d41615d,1,SYR_SkilledSkills);SelectPassives(00474869-4f7b-44c3-adb0-44ccb8d515ca,1,SYR_SkillExpert)"/>
+										<!-- <attribute id="Selectors" type="LSString" value="SelectAbilities(b9149c8e-52c8-46e5-9cb6-fc39301c05fe,1,1,FeatASI);SelectSkills(f974ebd6-3725-4b90-bb5c-2b647d41615d,1,SYR_SkilledSkills);SelectPassives(00474869-4f7b-44c3-adb0-44ccb8d515ca,1,SYR_SkillExpert)"/> -->
+										<attribute id="Selectors" type="LSString" value="SelectPassives(480aee33-e4ae-4bf0-baf5-95241af21a9c,1);SelectSkills(f974ebd6-3725-4b90-bb5c-2b647d41615d,1,SYR_SkilledSkills);SelectPassives(00474869-4f7b-44c3-adb0-44ccb8d515ca,1,SYR_SkillExpert)"/>
 										<attribute id="UUID" type="guid" value="bacbe48a-4119-44c5-b30d-2019d18b1534"/>
 								</node>
-								<node id="Feat">
+								<!-- <node id="Feat">
 										<attribute id="Name" type="FixedString" value="SYR_ThiefsApprentice"/>
 										<attribute id="PassivesAdded" type="LSString" value="SYR_Feat_ThiefsApprentice_Passive;SYR_Feat_ThiefsApprentice_Hide_Unlock"/>
 										<attribute id="UUID" type="guid" value="426fb3ee-0ba7-42a9-8a3d-7ccf8de7cd64"/>
-								</node>
+								</node> -->
 								<node id="Feat">
 										<attribute id="Name" type="FixedString" value="SYR_Telekinetic"/>
 										<attribute id="PassivesAdded" type="LSString" value="SYR_Feat_Telekinetic_Passive;SYR_Feat_Telekinetic_Dummy"/>
-										<attribute id="Selectors" type="LSString" value="SelectAbilities(6d64a5f2-c26a-4af9-8957-7370ff51f0de,1,1)"/>
+										<!-- <attribute id="Selectors" type="LSString" value="SelectAbilities(6d64a5f2-c26a-4af9-8957-7370ff51f0de,1,1)"/> -->
+										<attribute id="Selectors" type="LSString" value="SelectPassives(25a50b84-07fb-4ecf-bf6e-2ec323e1fbcb,1)"/>
 										<attribute id="UUID" type="guid" value="4346b432-ed03-4f51-b09b-b91946f3e6f7"/>
 								</node>
-								<node id="Feat">
+								<!-- <node id="Feat">
 										<attribute id="Name" type="FixedString" value="SYR_WarMagic"/>
 										<attribute id="PassivesAdded" type="LSString" value="SYR_Feat_WarMagic_AltSpell_Passive"/>
 										<attribute id="UUID" type="guid" value="86a3cd8b-4ef0-4f9e-b6d2-b03f14209062"/>
-								</node>
+								</node> -->
 						</children>
 				</node>
 		</region>
