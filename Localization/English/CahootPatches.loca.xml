@@ -118,6 +118,10 @@
 	<!-- BookOfSorcerers_NexusVersion -->
 	<content contentuid="h2b5a3b41g94aegbeffgf1b7gdd731243a31a" version="1">When you or a creature within [1] of you casts a spell that restores &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt;, increase the amount restored by triple the spell's level.</content>
 
+	<!-- CelestialMightAasimar -->
+	<content contentuid="hbef9e7dcg90e2g45a5gadaeg450fb6de6d03" version="1">Searing light temporarily radiates from your eyes and mouth, shedding a bright light for [1]. At the end of each of your turns, each foe within [1] of you takes [2].&lt;br&gt;&lt;br&gt;Once on each of your turns, you can deal an extra [2] when you deal damage with an attack or a spell.</content>
+	<content contentuid="hac6c958agc9f0g4ac2gb8b7gd216dd6316b0" version="1">Searing light radiates from you, lighting up the darkness and dealing [1] to all foes within [2] of you at the end of your turns.</content>
+
 	<!-- Community Library -->
 	<!-- "CL_Passive_OneDnD_MartialArts" -->
 	<content contentuid="h6d9c9b01g05ebg4a09g86e9g685b27ce3fac" version="1">&lt;LSTag Tooltip="AttackRoll"&gt;Attacks&lt;/LSTag&gt; with &lt;LSTag Tooltip="MonkWeapon"&gt;Monk Weapons&lt;/LSTag&gt; and unarmed attacks deal [1], unless their normal damage is higher and scale with your &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; instead of your &lt;LSTag Tooltip="Strength"&gt;Strength&lt;/LSTag&gt; if your Dexterity is higher. In addition, you can make &lt;LSTag Type="Spell" Tooltip="CL_Target_OneDnD_MartialArts_UnarmedStrike_BonusAction"&gt;Unarmed Strikes&lt;/LSTag&gt; as a &lt;LSTag Type="ActionResource" Tooltip="BonusActionPoint"&gt;bonus action&lt;/LSTag&gt;.</content>
