@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<save>
+  <version major="4" minor="0" revision="9" build="328" />
+  <region id="SpellLists">
+    <node id="root">
+      <children>
+        <node id="SpellList">
+                    <attribute id="Comment" type="LSString" value="Misty Step" />
+                    <attribute id="Spells" type="LSString" value="Target_MistyStep" />
+                    <attribute id="UUID" type="guid" value="33fd0f64-c65c-48b4-a921-b013a1e2d086" />
+                </node>
+        <node id="SpellList">
+                    <attribute id="Comment" type="LSString" value="Divination/Enchantment Level 1 Spells" />
+                    <!-- <attribute id="Spells" type="LSString" value="Target_HuntersMark;Shout_SpeakWithAnimals;Target_AnimalFriendship;Target_Bane;Target_Bless;Target_CharmPerson;Target_Command_Container;Target_CompelledDuel;Target_DissonantWhispers;Target_Heroism;Target_Hex;Target_Sleep;Target_HideousLaughter" /> -->
+                    <attribute id="Spells" type="LSString" value="Target_AnimalFriendship;Target_Bane;Target_BeastBond;Target_Bless;Target_CharmPerson;Target_Command_Container;Target_CompelledDuel;Shout_DetectEvilAndGood;Shout_DetectMagic;Target_DissonantWhispers;Target_GiftOfAlacrity;Target_Heroism;Target_Hex;Target_IdInsinuation;Target_Sleep;Target_HideousLaughter;Target_HuntersMark;Shout_SpeakWithAnimals" />
+                    <attribute id="UUID" type="guid" value="f5c93d29-7c1d-42f5-b3b7-d586b38670d6" />
+                </node>
+        <node id="SpellList">
+                    <attribute id="Comment" type="LSString" value="Sanctuary" />
+                    <attribute id="Spells" type="LSString" value="Target_Sanctuary" />
+                    <attribute id="UUID" type="guid" value="fc3edd34-2e9f-4eaa-9db0-a3a2abb4c6d7" />
+                </node>
+        <node id="SpellList">
+                    <attribute id="Comment" type="LSString" value="Abjuration/Transmuation Level 1 Spells" />
+                    <!-- <attribute id="Spells" type="LSString" value="Shout_ArmorOfAgathys;Target_CreateDestroyWater;Shout_ExpeditiousRetreat;Shout_FeatherFall;Target_Goodberry;Target_Jump;Target_Longstrider;Target_MageArmor;Target_ProtectionFromEvilAndGood;Shout_SYR_Shield_HeavenTouched;Target_ShieldOfFaith" /> -->
+                    <attribute id="Spells" type="LSString" value="Shout_AbsorbElements;Shout_ArmorOfAgathys;Throw_Catapult;Target_CreateDestroyWater;Shout_ExpeditiousRetreat;Shout_FeatherFall;Target_Goodberry;Target_Jump;Target_Longstrider;Target_MageArmor;Target_ProtectionFromEvilAndGood;Shout_SYR_Shield_HeavenTouched;Target_ShieldOfFaith;Target_Snare;Shout_ZephyrStrike" />
+                    <attribute id="UUID" type="guid" value="56bc6683-8ec7-4d2d-91d4-0458e25e46ce" />
+                </node>
+        <node id="SpellList">
+                    <attribute id="Comment" type="LSString" value="Hellish Rebuke" />
+                    <attribute id="Spells" type="LSString" value="SYR_Shout_HellTouched_HellishRebuke" />
+                    <attribute id="UUID" type="guid" value="4dac0a31-6e48-44ee-9947-5978d1609150" />
+                </node>
+        <node id="SpellList">
+                    <attribute id="Comment" type="LSString" value="Harmful Conjuration/Evocation Level 1 Spells" />
+                    <!-- <attribute id="Spells" type="LSString" value="Shout_ArmsOfHadar;Zone_BurningHands;Projectile_ChromaticOrb;Projectile_EnsnaringStrike_Container;Target_Entangle;Target_FaerieFire;Target_FogCloud;Target_Grease;Projectile_HailOfThorns;Projectile_IceKnife;Projectile_GuidingBolt;Projectile_MagicMissile;Zone_Thunderwave;Projectile_WitchBolt" /> -->
+                    <attribute id="Spells" type="LSString" value="Shout_ArmsOfHadar;Zone_BurningHands;Zone_CausticBrew;Target_ChaosBolt;Projectile_ChromaticOrb;Shout_EarthTremor;Projectile_EnsnaringStrike_Container;Target_Entangle;Target_FaerieFire;Zone_FrostFingers;Target_FogCloud;Target_Grease;Projectile_GuidingBolt;Projectile_HailOfThorns;Projectile_IceKnife;Projectile_MagicMissile_Jim;Projectile_MagicMissile;Zone_Thunderwave;Projectile_WitchBolt" />
+                    <attribute id="UUID" type="guid" value="dd835ff0-6381-4059-b227-e83a67489f61" />
+                </node>
+        <node id="SpellList">
+                    <attribute id="Comment" type="LSString" value="Invisibility" />
+                    <attribute id="Spells" type="LSString" value="Target_Invisibility" />
+                    <attribute id="UUID" type="guid" value="35a992f9-da29-4c72-a589-02e0bf7bfdda" />
+                </node>
+        <node id="SpellList">
+                    <attribute id="Comment" type="LSString" value="Illusion/Necromancy Level 1+2 Spells" />
+                    <!-- <attribute id="Spells" type="LSString" value="Shout_DisguiseSelf;Target_Blindness;Shout_Blur;Shout_FalseLife_2;Target_InflictWounds_2;Shout_MirrorImage;Target_PhantasmalForce;Projectile_RayOfEnfeeblement;Projectile_RayOfSickness_2;Shout_ShadowBlade_Class;Target_Silence" /> -->
+                    <attribute id="Spells" type="LSString" value="Shout_AlterSelf;Shout_DisguiseSelf;Target_Blindness;Shout_Blur;Target_CauseFear;Shout_FalseLife_2;Target_GentleRepose;Target_InflictWounds_2;Shout_MirrorImage;Target_NathairsMischief;Target_PhantasmalForce;Projectile_RayOfEnfeeblement;Projectile_RayOfSickness_2;Shout_ShadowBlade_Class;Target_Silence;Target_ValkranaBoneLiquefaction;Projectile_ValkranaShadowfellSalvo;Target_Valkrana_SkeletalLemmings;Target_ValkranaSoulSecret;Target_WitherAndBloom" />
+                    <attribute id="UUID" type="guid" value="b13ce3b7-2370-4c2b-8fdf-b4d59b850644" />
+                </node>
+      </children>
+    </node>
+  </region>
+</save>

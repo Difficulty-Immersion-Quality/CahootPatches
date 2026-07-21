@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<save>
+  <version major="4" minor="0" revision="9" build="328" />
+  <region id="PassiveLists">
+    <node id="root">
+      <children>
+        <node id="PassiveList">
+            <attribute id="Passives" type="LSString" value="SYR_Feat_Expertise_Athletics,SYR_Feat_Expertise_Acrobatics,SYR_Feat_Expertise_AnimalHandling,SYR_Feat_Expertise_Arcana,SYR_Feat_Expertise_Deception,SYR_Feat_Expertise_History,SYR_Feat_Expertise_Insight,SYR_Feat_Expertise_Intimidation,SYR_Feat_Expertise_Investigation,SYR_Feat_Expertise_Medicine,SYR_Feat_Expertise_Nature,SYR_Feat_Expertise_Perception,SYR_Feat_Expertise_Performance,SYR_Feat_Expertise_Persuasion,SYR_Feat_Expertise_Religion,SYR_Feat_Expertise_Sleight_Of_Hand,SYR_Feat_Expertise_Stealth,SYR_Feat_Expertise_Survival" />
+            <attribute id="UUID" type="guid" value="00474869-4f7b-44c3-adb0-44ccb8d515ca" />
+        </node>
+        <node id="PassiveList">
+            <!-- <attribute id="Passives" type="LSString" value="AgonizingBlast,ArmorOfShadows,BeastSpeech,BeguilingInfluence,DevilsSight,FiendishVigor,MaskOfManyFaces,RepellingBlast" /> -->
+            <attribute id="Passives" type="LSString" value="AgonizingBlast,ArmorOfShadows,AscendantStep,AspectOfTheMoon_Warlock,BeastSpeech,BeguilingInfluence,CloakOfFlies,DevilsSight,EldritchMind,EldritchPhysique,FiendishVigor,GazeOfTwoMinds,LanceOfLethargy,MaskOfManyFaces,RepellingBlast,WitchSight_PHB2024" />
+            <attribute id="UUID" type="guid" value="ae25190d-8513-40aa-9e7a-d2d57202b6a3" />
+        </node>
+      </children>
+    </node>
+  </region>
+</save>
