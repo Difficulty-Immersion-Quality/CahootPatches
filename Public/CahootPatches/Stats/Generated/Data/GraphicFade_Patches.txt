@@ -409,23 +409,6 @@ data "SpellProperties" "IF(CharismaModifier=1 or CharismaModifier=2):RestoreReso
 // data "PrepareEffect" "af787096-8656-4495-a6ce-cbd376578069"
 // data "CastEffect" "b7fb4cd6-971f-44c0-9447-378092d36b63"
 
-// ==================================== CC - Pendant of Arcane Augmentation
-// Augmented Defense: decrease AC bonus to half CHA modifier
-new entry "CC_AugmentedDefense_Passive"
-type "PassiveData"
-using "CC_AugmentedDefense_Passive"
-// data "DisplayName" "h27ad4a5fg8ebeg4b8egb71dg81a7d073b011;1"
-// While not wearing armour, you add your Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; to your &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;, up to a maximum of +5.
-// data "Description" "h27ad4a5fg8ebeg4b8egb71dg81a7d073b012;1"
-// While not wearing armour, you add half your Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;, rounded up, to your &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;.
-data "Description" "hdd79ab3cg4fe4g4958g9fbag08b3898bbcff;1"
-// data "Icon" "PassiveFeature_ShieldMaster_Dodge"
-// data "Properties" "Highlighted"
-// data "BoostContext" "OnEquip;OnCreate"
-// data "BoostConditions" "not WearingArmor(context.Source)"
-// data "Boosts" "IF(ConditionResult(context.Source.Charisma == 12) or ConditionResult(context.Source.Charisma == 13)):AC(1);IF(ConditionResult(context.Source.Charisma  == 14) or ConditionResult(context.Source.Charisma  == 15)):AC(2);IF(ConditionResult(context.Source.Charisma  == 16) or ConditionResult(context.Source.Charisma  == 17)):AC(3);IF(ConditionResult(context.Source.Charisma  == 18) or ConditionResult(context.Source.Charisma  == 19)):AC(4);IF(ConditionResult(context.Source.Charisma  >= 20)):AC(5)"
-data "Boosts" "IF(CharismaGreaterThan(11,context.Source) and not CharismaGreaterThan(15,context.Source)):AC(1);IF(CharismaGreaterThan(15,context.Source) and not CharismaGreaterThan(19,context.Source)):AC(2);IF(CharismaGreaterThan(19,context.Source) and not CharismaGreaterThan(23,context.Source)):AC(3);IF(CharismaGreaterThan(23,context.Source) and not CharismaGreaterThan(27,context.Source)):AC(4);IF(CharismaGreaterThan(27,context.Source)):AC(5)"
-
 // ==================================== CC - Quarterstaff of the Twisted Weave
 // Twisting Weave: fix loca
 new entry "CC_TwistingWeave_Passive"
@@ -712,11 +695,12 @@ type "PassiveData"
 using "CC_FluxShield_Passive"
 // data "DisplayName" "h27ad4a5fg8ebeg4b8egb71dg81a7d073b084;1"
 // data "Description" "h27ad4a5fg8ebeg4b8egb71dg81a7d073b085;1"
+// data "DescriptionParams" "4;2"
 // data "Icon" "Action_Monster_GortashMachine_ShieldCapacitor"
 // data "Properties" "Highlighted"
 // data "StatsFunctorContext" "OnActionResourcesChanged"
 data "StatsFunctorContext" "OnActionResourcesChanged;OnCreate"
-// data "StatsFunctors" "IF(not HasActionResource('SorceryPoint',2,0,false,true)):RemoveStatus(SELF,CC_FLUX_SHIELD);IF(HasActionResource('SorceryPoint',2,0,false,true) and not HasStatus('CC_FLUX_SHIELD')):ApplyStatus(CC_FLUX_SHIELD,100,-1)"
+// data "StatsFunctors" "IF(not HasActionResource('SorceryPoint',4,0,false,true)):RemoveStatus(SELF,CC_FLUX_SHIELD);IF(HasActionResource('SorceryPoint',4,0,false,true) and not HasStatus('CC_FLUX_SHIELD')):ApplyStatus(CC_FLUX_SHIELD,100,-1)"
 
 // ==================================== CC - Grimoire of the First Sorcerer
 // Resilient Soul: decreasing CON saving throw bonus to half your CHA modifier
@@ -746,43 +730,47 @@ using "CC_FORGOTTEN_POWER"
 data "OnApplyFunctors" "IF(RollDieAgainstDC(DiceType.d100,81)):RestoreResource(SorceryPoint,1,0);IF(RollDieAgainstDC(DiceType.d100,86)):RestoreResource(SorceryPoint,2,0);IF(RollDieAgainstDC(DiceType.d100,91)):RestoreResource(SorceryPoint,3,0);IF(RollDieAgainstDC(DiceType.d100,96)):RestoreResource(SorceryPoint,4,0);IF(RollDieAgainstDC(DiceType.d100,98)):RestoreResource(SorceryPoint,5,0)"
 
 // ==================================== CC - Amulet of the Infinite Wellspring
-// Endless Well: Added 1d12 Force self-damage each time you use it
-new entry "CC_EndlessWell_Passive"
-type "PassiveData"
-using "CC_EndlessWell_Passive"
-// The Endless Well
-// data "DisplayName" "h27ad4a5fg8ebeg4b8egb71dg81a7d073b069;1"
-// While your Metamagic ability is active, the amulet floods your being with raw magical energy, granting you access to its infinite reserves of &lt;LSTag Type="ActionResource" Tooltip="SorceryPoint"&gt;Sorcery Points&lt;/LSTag&gt;.
-// data "Description" "h27ad4a5fg8ebeg4b8egb71dg81a7d073b070;1"
-// While your Metamagic ability is active, the amulet floods your being with raw magical energy, allowing you to draw upon its infinite reserves of &lt;LSTag Type="ActionResource" Tooltip="SorceryPoint"&gt;Sorcery Points&lt;/LSTag&gt;. You can only use this effect once per turn and you take [1] every time you use it.
-data "Description" "h591efe33gb1f1g42f4gbafcg8f2377d5eaf3;1"
-// data "DescriptionParams" ""
-data "DescriptionParams" "DealDamage(1d12,Force)"
-// data "Icon" "Action_Monster_Bombardement_ProjectileStrike"
-// data "Properties" "Highlighted;ToggledDefaultAddToHotbar;IsToggled;OncePerTurn"
-// data "EnabledConditions" "HasActionResource('SorceryPoint', 1, 0, false, false, context.Source) and (HasStatus('CC_METAMAGIC_CAREFUL',context.Source) or HasStatus('CC_METAMAGIC_DISTANT',context.Source) or HasStatus('CC_METAMAGIC_EXTENDED',context.Source) or HasStatus('CC_METAMAGIC_HEIGHTENED',context.Source) or HasStatus('CC_METAMAGIC_QUICKENED',context.Source) or HasStatus('CC_METAMAGIC_SUBTLE',context.Source) or HasStatus('CC_METAMAGIC_TWINNED',context.Source) or HasStatus('CC_METAMAGIC_SEEKING',context.Source) or HasStatus('METAMAGIC_EMPOWERED',context.Source) or HasStatus('METAMAGIC_TRANSMUTED_SPELL',context.Source)) and not HasStatus('CC_SORCERER_ENDLESSWELL_USED')"
-// data "EnabledContext" "OnCastResolved;OnActionResourcesChanged;OnStatusApplied;OnStatusRemoved"
-// data "Conditions" "(IsSpell() or IsCantrip()) and (IsSpellOfSchool(SpellSchool.Abjuration) or IsSpellOfSchool(SpellSchool.Divination) or IsSpellOfSchool(SpellSchool.Necromancy) or IsSpellOfSchool(SpellSchool.Enchantment) or IsSpellOfSchool(SpellSchool.Illusion) or IsSpellOfSchool(SpellSchool.Transmutation) and HasStatus('CC_SORCERER_FREE_CAST',context.Source)) and (HasStatus('CC_METAMAGIC_CAREFUL',context.Source) or HasStatus('CC_METAMAGIC_DISTANT',context.Source) or HasStatus('CC_METAMAGIC_EXTENDED',context.Source) or HasStatus('CC_METAMAGIC_TWINNED',context.Source) or HasStatus('CC_METAMAGIC_HEIGHTENED',context.Source) or HasStatus('CC_METAMAGIC_QUICKENED',context.Source) or HasStatus('CC_METAMAGIC_SUBTLE',context.Source))"
-// data "StatsFunctors" ""
-// data "StatsFunctorContext" ""
-// data "ToggleOnFunctors" "ApplyStatus(CC_SORCERER_ENDLESSWELL_TRACKER,100,-1);IF(HasStatus('CC_SORCERER_FREE_CAST_TECHNICAL', context.Source)):ApplyStatus(CC_SORCERER_FREE_CAST,100,-1)"
-// data "ToggleOffFunctors" "RemoveStatus(CC_SORCERER_FREE_CAST);RemoveStatus(CC_SORCERER_ENDLESSWELL_TRACKER)"
-// data "ToggleOnEffect" "VFX_Spells_Cast_Sorcerer_Metamagic_Empowered_HeadFX_01:Dummy_HeadFX"
-// data "ToggleOffContext" "OnCastResolved"
+// Endless Well: decrease spell save DC and spell attack roll bonus to +1
+new entry "CC_Sorcerer_Equipment_Amulet_of_the_Infinite_Wellspring"
+type "Armor"
+// using "_Amulet_Magic"
+using "CC_Sorcerer_Equipment_Amulet_of_the_Infinite_Wellspring"
+// data "RootTemplate" "15996aa6-5888-4fa9-8797-e3d75d4c517d"
+// data "Rarity" "Legendary"
+// data "Boosts" ""
+// data "PassivesOnEquip" "CC_EndlessWell_Passive;MAG_ArcaneEnchantment_Passive"
+data "PassivesOnEquip" "CC_EndlessWell_Passive;MAG_ArcaneEnchantment_Lesser_Passive"
+// data "StatusOnEquip" "CC_SORCERER_FREE_CAST_TECHNICAL"
+// data "UseConditions" "CanUseSorcererEquipmentAIO()"
+// data "Weight" "0.05"
+// data "ValueUUID" "589981db-3c73-421f-9c2f-afca259e499d"
+// data "ComboCategory" "d4"
+// data "ValueScale" "1"
+// data "ValueRounding" "1"
+// data "ValueLevel" "11"
+// data "Unique" ""
 
-new entry "CC_SORCERER_ENDLESSWELL_TRACKER"
-type "StatusData"
-data "StatusType" "BOOST"
-using "CC_SORCERER_ENDLESSWELL_TRACKER"
-// data "StackId" "CC_SORCERER_ENDLESSWELL_TRACKER"
-// data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;ApplyToDead;"
-// data "RemoveEvents" "OnSpellCast"
-// data "RemoveConditions" "HasStatus('CC_SORCERER_FREE_CAST',context.Source)"
-// data "OnRemoveFunctors" "IF(HasStatus('CC_SORCERER_FREE_CAST',context.Source)):ApplyStatus(CC_SORCERER_ENDLESSWELL_USED,100,1)"
-data "OnRemoveFunctors" "IF(HasStatus('CC_SORCERER_FREE_CAST',context.Source)):ApplyStatus(CC_SORCERER_ENDLESSWELL_USED,100,1);IF(HasStatus('CC_SORCERER_FREE_CAST',context.Source)):DealDamage(SELF,1d12,Force,Magical,,0,,false,false)"
+new entry "Tut_CC_Sorcerer_Equipment_Amulet_of_the_Infinite_Wellspring"
+type "Armor"
+// using "_Amulet_Magic"
+using "Tut_CC_Sorcerer_Equipment_Amulet_of_the_Infinite_Wellspring"
+// data "RootTemplate" "15996aa6-5888-4fa9-8797-e3d75d4c517d"
+// data "Rarity" "Legendary"
+// data "Boosts" ""
+// data "PassivesOnEquip" "CC_EndlessWell_Passive;MAG_ArcaneEnchantment_Passive"
+data "PassivesOnEquip" "CC_EndlessWell_Passive;MAG_ArcaneEnchantment_Lesser_Passive"
+// data "StatusOnEquip" "CC_SORCERER_FREE_CAST_TECHNICAL"
+// data "UseConditions" "CanUseSorcererEquipmentAIO()"
+// data "Weight" "0.05"
+// data "ValueUUID" "589981db-3c73-421f-9c2f-afca259e499d"
+// data "ComboCategory" "d4"
+// data "ValueScale" "1"
+// data "ValueRounding" "1"
+// data "ValueLevel" "11"
+// data "Unique" ""
 
 // ==================================== CC - Sphere of Controlled Chaos
-// Chaos Ball: decrease damage per element to 1d4 and streamline loca
+// Chaos Ball: streamline loca
 new entry "CC_Projectile_Chaosball"
 type "SpellData"
 data "SpellType" "Projectile"
@@ -796,7 +784,7 @@ using "CC_Projectile_Chaosball"
 data "Description" "h45e6dc84g9c81g4e9cg8738g7513be688a4b;1"
 // data "DescriptionParams" "DealDamage(1d6,Fire);DealDamage(1d6,Lightning);DealDamage(1d6,Acid);DealDamage(1d6,Force);DealDamage(1d6,Cold);DealDamage(1d6,Thunder);DealDamage(1d6,Poison);DealDamage(1d6,Psychic)"
 // data "ExtraDescription" "hc03e8eaagdca1g423dgb096gae39e3a975f2;1"
-// data "Cooldown" "OncePerCombat"
+// data "Cooldown" "OncePerShortRestPerItem"
 // data "SpellProperties" "GROUND:SurfaceChange(Ignite);GROUND:SurfaceChange(Melt)"
 // data "TargetFloor" "-1"
 // data "TargetRadius" "18"
@@ -804,14 +792,11 @@ data "Description" "h45e6dc84g9c81g4e9cg8738g7513be688a4b;1"
 // data "ExplodeRadius" "4"
 // data "SpellRoll" "not SavingThrow(Ability.Dexterity, SourceSpellDC())"
 // data "SpellSuccess" "DealDamage(1d6,Fire,Magical);DealDamage(1d6,Lightning,Magical);DealDamage(1d6,Acid,Magical);DealDamage(1d6,Force,Magical);DealDamage(1d6,Cold,Magical);DealDamage(1d6,Thunder,Magical);DealDamage(1d6,Poison,Magical);DealDamage(1d6,Psychic,Magical)"
-data "SpellSuccess" "DealDamage(1d4,Fire,Magical);DealDamage(1d4,Lightning,Magical);DealDamage(1d4,Acid,Magical);DealDamage(1d4,Force,Magical);DealDamage(1d4,Cold,Magical);DealDamage(1d4,Thunder,Magical);DealDamage(1d4,Poison,Magical);DealDamage(1d4,Psychic,Magical)"
 // data "SpellFail" "DealDamage(1d6/2,Fire,Magical);DealDamage(1d6/2,Lightning,Magical);DealDamage(1d6/2,Acid,Magical);DealDamage(1d6/2,Force,Magical);DealDamage(1d6/2,Cold,Magical);DealDamage(1d6/2,Thunder,Magical);DealDamage(1d6/2,Poison,Magical);DealDamage(1d6/2,Psychic,Magical)"
-data "SpellFail" "DealDamage(1d4/2,Fire,Magical);DealDamage(1d4/2,Lightning,Magical);DealDamage(1d4/2,Acid,Magical);DealDamage(1d4/2,Force,Magical);DealDamage(1d4/2,Cold,Magical);DealDamage(1d4/2,Thunder,Magical);DealDamage(1d4/2,Poison,Magical);DealDamage(1d4/2,Psychic,Magical)"
 // data "TargetConditions" "not (HasPassive('SculptSpells', context.Source) and Ally())"
 // data "ProjectileCount" "1"
 // data "Trajectories" "f5855e43-2e8f-4971-b8c2-7faa36e3381b"
 // data "TooltipDamageList" "DealDamage(1d6,Fire,Magical);DealDamage(1d6,Lightning,Magical);DealDamage(1d6,Acid,Magical);DealDamage(1d6,Force,Magical);DealDamage(1d6,Cold,Magical);DealDamage(1d6,Thunder,Magical);DealDamage(1d6,Poison,Magical);DealDamage(1d6,Psychic,Magical)"
-data "TooltipDamageList" "DealDamage(1d4,Fire,Magical);DealDamage(1d4,Lightning,Magical);DealDamage(1d4,Acid,Magical);DealDamage(1d4,Force,Magical);DealDamage(1d4,Cold,Magical);DealDamage(1d4,Thunder,Magical);DealDamage(1d4,Poison,Magical);DealDamage(1d4,Psychic,Magical)"
 // data "TooltipAttackSave" "Dexterity"
 // data "TooltipOnSave" "f762efbb-f8f1-493e-b248-2de1567b4bd2"
 // data "CastSound" "Spell_Cast_Damage_Fireball_L5"
@@ -1165,7 +1150,7 @@ using "Target_Lifespark"
 // data "Description" "h5f627f3fg53e6g465dga432g22f61eb1bbc2;1"
 // Protect a creature from death. The next time damage would reduce it to 0 &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt;, it regains [2]. Allies within [1] of it also regain [3].
 data "Description" "h66ff040eg887ag4c57g9fccgaad6fbdd63cd;1"
-// data "DescriptionParams" "Distance(9);RegainHitPoints(1d8);RegainHitPoints(1d4)"
+// data "DescriptionParams" "Distance(9);RegainHitPoints(2d6);RegainHitPoints(1d6)"
 // data "TooltipStatusApply" "ApplyStatus(LIFE_SPARK_DOWNED,100,-1)"
 data "TooltipStatusApply" "ApplyStatus(LIFE_SPARK,100,-1)"
 // data "PrepareSound" "Spell_Prepare_Damage_Lightning_Ensnaringshot"
@@ -1247,13 +1232,13 @@ data "SpellProperties" "RegainHitPoints(9d4)"
 data "VerbalIntent" "Healing"
 
 // ==================================== FF - Ring of the Guiding Star
-// Aura of the Heavens: decrease weapon damage bonus and damage reduction to half WIS modifier
+// Aura of the Heavens: decrease weapon damage bonus to half WIS modifier
 new entry "MAG_StarAura_Ring_Passive"
 type "PassiveData"
 using "MAG_StarAura_Ring_Passive"
 // Aura of the Heavens
 // data "DisplayName" "h154deae1gb7aag4b5fgbb28g0286ae978da35;1"
-// The cleric and any nearby allies deal an additional [1] to damage dealt with melee weapons, and all damage is reduced equal to the clerics &lt;LSTag Tooltip="Wisdom"&gt;Wisdom&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;.
+// You and nearby allies deal an additional [1] with melee weapon attacks, and reduce all incoming damage by an amount equal to half your &lt;LSTag Tooltip="Wisdom"&gt;Wisdom&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;.
 // data "Description" "h154deae1gb7aag4b5fgbb28g0286ae978da36;1"
 // You and all allies within [1] gain a bonus to damage done with &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;melee weapon attacks&lt;/LSTag&gt; and reduce all damage taken by an amount equal to half your &lt;LSTag Tooltip="Wisdom"&gt;Wisdom&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; (minimum of 1).
 data "Description" "he7f178ceg8861g47d1g8fc7gdb285b109708;1"
@@ -1272,7 +1257,7 @@ data "StatusType" "BOOST"
 using "AURA_OF_STAR"
 // Aura of the Heavens
 // data "DisplayName" "h154deae1gb7aag4b5fgbb28g0286ae978da35;1"
-// The cleric and any nearby allies deal an additional [1] to damage dealt with melee weapons, and all damage is reduced equal to the clerics &lt;LSTag Tooltip="Wisdom"&gt;Wisdom&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;.
+// You and nearby allies deal an additional [1] with melee weapon attacks, and reduce all incoming damage by an amount equal to half your &lt;LSTag Tooltip="Wisdom"&gt;Wisdom&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;.
 // data "Description" "h154deae1gb7aag4b5fgbb28g0286ae978da36;1"
 // The wearer and allies within [1] gain a bonus to damage done with &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;melee weapon attacks&lt;/LSTag&gt; and reduce all damage taken by an amount equal to half the wearer's &lt;LSTag Tooltip="Wisdom"&gt;Wisdom&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; (minimum of 1).
 data "Description" "h53b6245cg0039g4ae4gb0a4ga32e05e3d00d;1"
@@ -1283,7 +1268,7 @@ data "DescriptionParams" "Distance(3)"
 // data "StackPriority" "10"
 // data "AuraRadius" "3"
 // data "AuraStatuses" "IF(not Self() and not Dead() and not Item() and not Enemy()):ApplyStatus(AURA_OF_STAR_BUFF)"
-// data "Boosts" "IF(IsMeleeAttack()):CharacterWeaponDamage(max(1, Cause.WisdomModifier));DamageReduction(All, Flat, Cause.WisdomModifier)"
+// data "Boosts" "IF(IsMeleeAttack()):CharacterWeaponDamage(max(1, Cause.WisdomModifier));DamageReduction(All, Flat, Cause.WisdomModifier/2)"
 data "Boosts" "IF(IsMeleeAttack()):CharacterWeaponDamage(max(1, Cause.WisdomModifier/2));DamageReduction(All, Flat, max(1,Cause.WisdomModifier/2))"
 // data "StatusPropertyFlags" "ApplyToDead;IgnoreResting;DisableCombatlog"
 // data "StatusGroups" "SG_RemoveOnRespec"
@@ -1294,7 +1279,7 @@ data "StatusType" "BOOST"
 using "AURA_OF_STAR_BUFF"
 // Aura of the Heavens
 // data "DisplayName" "h154deae1gb7aag4b5fgbb28g0286ae978da35;1"
-// Deal an additional [1] to damage dealt with melee weapons, and all damage is reduced equal to the clerics &lt;LSTag Tooltip="Wisdom"&gt;Wisdom&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;.
+// Deal an additional [1] to damage dealt with melee weapons, and all damage is reduced equal to half the clerics &lt;LSTag Tooltip="Wisdom"&gt;Wisdom&lt;/LSTag&gt; &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;.
 // data "Description" "h154deae1gb7aag4b5fgbb28g0286ae978da37;1"
 // Deal an additional [1] damage with &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;melee weapon attacks&lt;/LSTag&gt; and take [1] less damage from all sources.
 data "Description" "h722e318bg002cg47cdg9391g88ba87f298a0;1"
@@ -1303,7 +1288,7 @@ data "DescriptionParams" "DealDamage(max(1,Cause.WisdomModifier/2), MainMeleeWea
 // data "Icon" "Action_Legendary_Offensive"
 // data "StackId" "AURA_OF_STAR"
 // data "StackPriority" "5"
-// data "Boosts" "IF(IsMeleeAttack()):CharacterWeaponDamage(max(1, Cause.WisdomModifier));DamageReduction(All, Flat, Cause.WisdomModifier)"
+// data "Boosts" "IF(IsMeleeAttack()):CharacterWeaponDamage(max(1, Cause.WisdomModifier));DamageReduction(All, Flat, Cause.WisdomModifier/2)"
 data "Boosts" "IF(IsMeleeAttack()):CharacterWeaponDamage(max(1, Cause.WisdomModifier/2));DamageReduction(All, Flat, Cause.WisdomModifier/2)"
 // data "StatusPropertyFlags" "IgnoreResting;DisableCombatlog"
 // data "StatusGroups" "SG_RemoveOnRespec"
@@ -1578,14 +1563,13 @@ type "PassiveData"
 using "GG_One_Wildshape_TempHP_Passive"
 // Wildwood's Resilience
 // data "DisplayName" "h81fabb63g0e34g4497g891cgcc0c575648a6;1"
-// Gain &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt; equal to your Druid level when entering &lt;LSTag Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt; and reduce all incoming damage by 1 while you have these &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt;.
+// When you enter &lt;LSTag Tooltip="Shout_WildShape"&gt;Wild Shape&lt;/LSTag&gt;, you gain &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt; equal to twice your Druid Level. While you have these &lt;LSTag Tooltip="TemporaryHitPoints"&gt;temporary hit points&lt;/LSTag&gt;, all incoming damage is reduced by 1.
 // data "Description" "h81fabb63g0e34g4497g891cgcc0c575648a7;1"
-// data "DescriptionParams" "TemporaryHP(ClassLevel(Druid));DamageReduction(All, Flat, 1)"
+// data "DescriptionParams" "TemporaryHP(ClassLevel(Druid)*2);DamageReduction(All, Flat, 1)"
 // data "TooltipPermanentWarnings" "8892b93b-721f-4b99-b9b4-05ac25aadb33"
 // data "StatsFunctorContext" "OnStatusApplied"
 // data "StatsFunctors" "IF(StatusHasStatusGroup(context.StatusId, 'SG_Polymorph_BeastShape') or StatusId('WILDSHAPE_STARRY_ARCHER_PLAYER') or StatusId('WILDSHAPE_STARRY_CHALICE_PLAYER') or StatusId('WILDSHAPE_STARRY_DRAGON_PLAYER')):ApplyStatus(GG_ONE_WILDSHAPE_TEMP_HP, 100, -1)"
 data "StatsFunctors" "IF(Goon_IsDruidWildshapeOrStatus()):ApplyStatus(GG_ONE_WILDSHAPE_TEMP_HP, 100, -1)"
-
 
 // ==================================== GG - Barnacle Bulwark
 // Echoes from the Abyss: rework from a 1-turn version of Globe of Invulnerability to instead only provide resistance to all entities inside
@@ -1638,7 +1622,7 @@ using "GG_Three_IncreasedElementalDamage_Passive"
 // data "DescriptionParams" "DealDamage(,Lightning);DealDamage(,Thunder);DealDamage(,Cold);1d6"
 data "DescriptionParams" "DealDamage(,Lightning);DealDamage(,Thunder);DealDamage(,Cold);1d4"
 // data "Icon" "GG_Three_WrathSky_Icon"
-// data "Properties" "OncePerAttack"
+// data "Properties" "OncePerAttack;OncePerTurn"
 // data "BoostContext" "OnDamage"
 // data "BoostConditions" "IsSpell()"
 // data "Boosts" "IF(HasDamageDoneForType(DamageType.Thunder)):DamageBonus(1d6, Thunder);IF(HasDamageDoneForType(DamageType.Lightning)):DamageBonus(1d6, Lightning);IF(HasDamageDoneForType(DamageType.Cold)):DamageBonus(1d6, Cold)"
@@ -2445,7 +2429,7 @@ data "RemoveConditions" "HasHPPercentageWithoutTemporaryHPEqualOrMoreThan(75)"
 // ==================================== Oath and Order - Paladin Equipment ====================================
 
 // ==================================== OO - Gauntlets of Celestial Haste
-// Heavenly Haste: decrease Heavenly Haste duration to 1 turn
+// Heavenly Haste: decrease Heavenly Haste duration to 1 turn and decrease cooldown to per combat
 new entry "OO_HeavenlyHaste_Passive"
 type "PassiveData"
 using "OO_HeavenlyHaste_Passive"
@@ -2457,7 +2441,8 @@ data "Description" "hfdf05148gb835g4d00g8613g951a1f10123e;1"
 data "DescriptionParams" "1"
 // data "TooltipPermanentWarnings" "7dc85386-daf9-431b-98a1-fec748865565"
 // data "Icon" "Spell_Transmutation_Haste"
-// data "Properties" "Highlighted;OncePerCombat"
+// data "Properties" "Highlighted;OncePerShortRest"
+data "Properties" "Highlighted;OncePerCombat"
 // data "StatsFunctorContext" "OnCast;OnAttack"
 // data "Conditions" "IsAttack() and OOIsDivineSmite()"
 // data "StatsFunctors" "ApplyStatus(SELF,OO_HEAVENLY_HASTE,100,2)"
@@ -4534,7 +4519,7 @@ data "DescriptionParams" "DealDamage(1d10)"
 // data "Properties" "OncePerTurn"
 // data "Icon" "PassiveAction_OpportunityAttack"
 // data "StatsFunctorContext" "OnDamage"
-// data "Conditions" "not FacingMe() and HasDamageEffectFlag(DamageFlags.Hit) and SpellId('Target_SneakAttack')"
+// data "Conditions" "not FacingMe() and HasDamageEffectFlag(DamageFlags.Hit) and (SpellId('Target_SneakAttack') or SpellId('Target_SneakAttack_Rakish'))"
 // data "StatsFunctors" "DealDamage(2d6, Psychic,Magical,,0,,true,false)"
 data "StatsFunctors" "DealDamage(1d10, Psychic,Magical,,0,,true,false)"
 
