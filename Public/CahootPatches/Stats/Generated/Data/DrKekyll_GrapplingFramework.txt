@@ -1,0 +1,21 @@
+// Grappled: also has -1 penalty to AC and DEX saving throws
+new entry "GRAPPLED"
+type "StatusData"
+data "StatusType" "BOOST"
+using "GRAPPLED"
+// data "Icon" "Status_Grappled"
+// data "DisplayName" "h1904b1ebg290eg4d39ga116g1ae6405a8e35;1"
+// Movement speed reduced to 0.
+// data "Description" "h42a708c6g4f84g4ed4ga144g117a3b4634eb;1"
+// &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; reduced to 0. Has a -[1] penalty to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; and Dexterity &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.
+data "Description" "h90745f89gef34g4bf9g865eg43cd3a1bf573;1"
+// data "DescriptionParams" ""
+data "DescriptionParams" "1"
+// data "AuraRadius" "2"
+// data "AuraStatuses" "TARGET:IF(HasStatus('GRAPPLING') and HasStatus('GRAPPLED',context.Source,context.Target)):ApplyStatus(GRAPPLING_TECHNICAL)"
+// data "Boosts" "ActionResourceMultiplier(Movement,0,0);UnlockSpell(Target_BreakGrapple)"
+data "Boosts" "ActionResourceMultiplier(Movement,0,0);UnlockSpell(Target_BreakGrapple);AC(-1);RollBonus(SavingThrow,-1,Dexterity)"
+// data "RemoveEvents" "OnStatusRemoved;OnStatusApplied;OnTurn"
+// data "RemoveConditions" "(not HasStatus('GRAPPLED_TECHNICAL',context.Target,context.Source) and not HasStatus('MOVING_GRAPPLED_TARGET',context.Source)) or Tagged('GASEOUS_FORM') or Tagged('CANT_SHOVE_THROW') or not CanGrappleTargetSize() or (IsStatusEvent(StatusEvent.OnTurn) and Ally())"
+// data "StatusGroups" "SG_Condition"
+// data "StillAnimationType" "Snared"
