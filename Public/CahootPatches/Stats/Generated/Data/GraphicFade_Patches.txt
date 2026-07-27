@@ -873,7 +873,7 @@ data "TargetConditions" "Character() and Enemy() and not (Self() or Ally())"
 // data "DisplayName" "hadbcf1e2ga2cag4888g9246g4a0b7b4893d5;1"
 // You can unleash a wave of shimmering light that washes over all creatures within a [1] radius of you. Each creature affected must make a &lt;LSTag Tooltip="Wisdom"&gt;Wisdom&lt;/LSTag&gt; saving throw of 15 or becomed &lt;LSTag Type="Status" Tooltip="CHARMED"&gt;Charmed&lt;/LSTag&gt;.
 // data "Description" "hadbcf1e2ga2cag4888g9246g4a0b7b4893d6;1"
-// Unleash a wave of shimmering light that washes over all enemies around you. Each creature affected must make a DC15 &lt;LSTag Tooltip="Wisdom"&gt;Wisdom&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt; or becomed &lt;LSTag Type="Status" Tooltip="CHARMED"&gt;Charmed&lt;/LSTag&gt;.
+// Unleash a wave of shimmering light that possibly &lt;LSTag Type="Status" Tooltip="CHARMED"&gt;Charms&lt;/LSTag&gt; nearby enemies.
 data "Description" "h9fc4a74agacb9g434fgb239gaedf61413fb0;1"
 // data "DescriptionParams" "Distance(18)"
 // data "TooltipAttackSave" "Wisdom"
@@ -1955,7 +1955,7 @@ using "MM_UNBREAKABLE_STANCE"
 // data "DisplayName" "h22892942gd938g469dg96bag67bafebbd027;1"
 // You've braced yourself against the press of enemies. Gain +[1] AC and +[2] to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;.
 // data "Description" "h22892942gd938g469dg96bag67bafebbd114;1"
-// You've braced yourself against the press of enemies. Gain a +[1] bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;.
+// Gained a +[1] bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;.
 data "Description" "hd869bd56g4690g4135ga4b4g394b405a527a;1"
 // data "DescriptionParams" "2;1"
 data "DescriptionParams" "2"
@@ -1974,7 +1974,7 @@ using "MM_UNBREAKABLE_STANCE_TECH"
 // data "DisplayName" "h22892942gd938g469dg96bag67bafebbd027;1"
 // You've braced yourself against the press of enemies. Gain +[1] AC and +[2] to &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;.
 // data "Description" "h22892942gd938g469dg96bag67bafebbd114;1"
-// You've braced yourself against the press of enemies. Gain a +[1] bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;.
+// Gained a +[1] bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt;.
 data "Description" "hd869bd56g4690g4135ga4b4g394b405a527a;1"
 // data "DescriptionParams" "2;1"
 data "DescriptionParams" "2"
@@ -2174,7 +2174,7 @@ using "MM_SUNDERED"
 // data "DisplayName" "h22892942gd938g469dg96bag67bafebbd076;1"
 // The affected entity has it's &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; reduced by -[1].
 // data "Description" "h22892942gd938g469dg96bag67bafebbd077;1"
-// Entity has it's &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; reduced by -[1].
+// Entity has its &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; reduced by -[1].
 data "Description" "h4a348116g3a9ag4246ga3e2g9dacba24b5a9;1"
 // data "DescriptionParams" "4"
 // data "Icon" "Action_Monster_GortashMachine_ShieldCapacitor_Brokenl"
@@ -2535,7 +2535,7 @@ using "OO_EverlightAura_Passive"
 // data "DisplayName" "h3732ac76g59ffg4bf0gb0e3gb69f06c6c056;1"
 // The symbol emits light in a [1] radius, dispelling any darkness, yourself and all allies who are within this aura will regain the maximum hit points possible when healed and gain &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on Death &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.
 // data "Description" "h3732ac76g59ffg4bf0gb0e3gb69f06c6c057;1"
-// The symbol emits light in a [1] radius, dispelling any darkness. You and all allies who are within this aura reduce the number needed to &lt;LSTag Tooltip="AttackRoll"&gt;roll&lt;/LSTag&gt; a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; while attacking by [2], and gain a +[3] bonus to Attack Rolls.
+// Emits light in a [1] radius, dispelling any darkness. You and all allies who are within this aura reduce the number needed to &lt;LSTag Tooltip="AttackRoll"&gt;roll&lt;/LSTag&gt; a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; while attacking by [2], and gain a +[3] bonus to Attack Rolls.
 data "Description" "he509020fg6bccg4e96gb99eg754d87840ebc;1"
 // data "DescriptionParams" "Distance(15)"
 data "DescriptionParams" "Distance(15);1;1"
@@ -2781,7 +2781,7 @@ data "SpellSuccess" "ApplyStatus(PP_CHAINS_OF_SUBMISSION,100,2)"
 // data "Icon" "Spell_Enchantment_HoldPerson"
 // data "DisplayName" "ha6cae9a4g3186g4872gaac9g04ef68e7f003;1"
 // data "Description" "ha6cae9a4g3186g4872gaac9g04ef68e7f069;1"
-// Ethereal chains bind a Humanoid targe, holding them immobile and unable to move, act or react. Attacks from within [1] are always &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hits&lt;/LSTag&gt;.
+// Ethereal chains bind a Humanoid target, holding them immobile and unable to move, act or react. Attacks from within [1] are always &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hits&lt;/LSTag&gt;.
 data "Description" "h3e729d81g1a4cg4f53gbeceg6ccae13d2f25;1"
 // data "DescriptionParams" "Distance(3)"
 // data "TooltipAttackSave" "Wisdom"
@@ -3168,60 +3168,6 @@ data "ValueUUID" "ccaceafa-6dc1-41c7-bd43-db6d4da8a3d8"
 // data "ValueLevel" "11"
 // data "Unique" "1"
 
-// Deprecated nerf
-// // Insatiable: decrease damage to 2d8 (previously 2d10) and decrease AC bonus to half your Charisma modifier, rounded down, up to max of +4 AC (previously was equal to full Charisma modifier)
-// new entry "PP_Insatiable_Passive"
-// type "PassiveData"
-// using "PP_Insatiable_Passive"
-// // Insatiable
-// // data "DisplayName" "ha6cae9a4g3186g4872gaac9g04ef68e7f067;1"
-// // The amulet's hunger claws at your very being, demanding sacrifice for its power. At the start of combat, you suffer [1] but gain an armor of shadowy energy, increasing your &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; equal to your Charisma modifier up to a max of +5 until combat ends.
-// // data "Description" "ha6cae9a4g3186g4872gaac9g04ef68e7f068;1"
-// // 	The amulet's hunger claws at your very being, demanding sacrifice for its power. At the start of combat, you suffer [1] but become armoued with shadowy energy. Until combat ends, you gain a bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; equal to half your Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;, rounded up, up to a max of +4.
-// data "Description" "hb84c60b9g49afg49eagafc1g894388e1c278;1"
-// // data "DescriptionParams" "DealDamage(2d10,Necrotic)"
-// data "DescriptionParams" "DealDamage(2d8,Necrotic)"
-// // data "Icon" "Action_Monster_Bulette_Bite"
-// // data "StatsFunctorContext" "OnCombatStarted"
-// // data "StatsFunctors" "ApplyStatus(SELF,PP_INSATIABLE,100,-1)"
-
-// new entry "PP_Insatiable_Buff_Passive"
-// type "PassiveData"
-// using "PP_Insatiable_Buff_Passive"
-// // Hunger's Maw
-// // data "DisplayName" "ha6cae9a4g3186g4872gaac9g04ef68e7f110;1"
-// // The amulet's insatiable hunger sinks its teeth into you, forging a shield of dark power from your stolen life force, granting you &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; equal to your Charisma modifier up to a max of 5.
-// // data "Description" "ha6cae9a4g3186g4872gaac9g04ef68e7f111;1"
-// // The amulet's insatiable hunger sinks its teeth into you, forging a shield of dark power from your stolen life force. Until combat ends, you have a bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; equal to half your Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;, rounded up, up to a max of +4.
-// data "Description" "h612819fcge6d0g4d57gb472g9c8de5025616;1"
-// // data "DescriptionParams" ""
-// data "DescriptionParams" "DealDamage(2d8,Necrotic)"
-// // data "Icon" "Action_Monster_NetherBrain_PsychicOppression"
-// // data "Boosts" "IF(ConditionResult(context.Source.Charisma == 12) or ConditionResult(context.Source.Charisma == 13)):AC(1);IF(ConditionResult(context.Source.Charisma  == 14) or ConditionResult(context.Source.Charisma  == 15)):AC(2);IF(ConditionResult(context.Source.Charisma  == 16) or ConditionResult(context.Source.Charisma  == 17)):AC(3);IF(ConditionResult(context.Source.Charisma  == 18) or ConditionResult(context.Source.Charisma  == 19)):AC(4);IF(ConditionResult(context.Source.Charisma  >= 20)):AC(5)"
-// data "Boosts" "IF(ConditionResult(context.Source.Charisma >= 12) and ConditionResult(context.Source.Charisma <= 15)):AC(1);IF(ConditionResult(context.Source.Charisma >= 16) and ConditionResult(context.Source.Charisma <= 19)):AC(2);IF(ConditionResult(context.Source.Charisma >= 20) and ConditionResult(context.Source.Charisma <= 23)):AC(3);IF(ConditionResult(context.Source.Charisma >= 24)):AC(4)"
-
-// new entry "PP_INSATIABLE"
-// type "StatusData"
-// data "StatusType" "BOOST"
-// using "PP_INSATIABLE"
-// // Hunger's Maw
-// // data "DisplayName" "ha6cae9a4g3186g4872gaac9g04ef68e7f110;1"
-// // The amulet's insatiable hunger sinks its teeth into you, forging a shield of dark power from your stolen life force, granting you &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; equal to your Charisma modifier up to a max of 5.
-// // data "Description" "ha6cae9a4g3186g4872gaac9g04ef68e7f111;1"
-// // The amulet's insatiable hunger sinks its teeth into you, forging a shield of dark power from your stolen life force. Until combat ends, you have a bonus to &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; equal to half your Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;, rounded up, up to a max of +4.
-// data "Description" "h612819fcge6d0g4d57gb472g9c8de5025616;1"
-// // data "DescriptionParams" ""
-// // data "Icon" "Action_Monster_NetherBrain_PsychicOppression"
-// // data "StackId" "PP_INSATIABLE"
-// // data "Passives" "PP_Insatiable_Buff_Passive"
-// // data "OnApplyFunctors" "DealDamage(SELF,2d10,Necrotic)"
-// data "OnApplyFunctors" "DealDamage(SELF,2d8,Necrotic)"
-// // data "RemoveEvents" "OnCombatEnded"
-// // data "SoundLoop" "Misc_Status_BalthazarSpectralForm_Loop_MO"
-// // data "SoundStop" "Misc_Status_BalthazarSpectralForm_Loop_MO_Stop"
-// // data "ApplyEffect" "b74aff30-474a-4ec6-a024-a63de3be137d"
-// // data "StatusEffect" "de26d2a6-f81d-41a9-89b0-88df3c916a28"
-
 // ==================================== PP - Soulknife of the Everlasting Pact
 // Echoes of the Eternal Pact:
 // [Pact of the Blade]: decrease damage to 1d8
@@ -3281,7 +3227,7 @@ type "PassiveData"
 using "PP_Desperate_Renewal_Passive"
 // data "DisplayName" "ha6cae9a4g3186g4872gaac9g04ef68e7f063;1"
 // data "Description" "ha6cae9a4g3186g4872gaac9g04ef68e7f064;1"
-// When your life force dwindles below [1], unleash a wave of necrotic energy in a [2] radius that deals [3] to nearby creatures, with allies taking half damage. This effect can only occur once per &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;.
+// When your &lt;LSTag Tooltip="HitPoints"&gt;hit points&lt;/LSTag&gt; drop below [1], unleash a wave of necrotic energy in a [2] radius that deals [3] to nearby creatures, with allies taking half damage. This effect can only occur once per &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt;.
 data "Description" "h173af925gc4d4g4349g962egbd3edb2fbbd9;1"
 // data "DescriptionParams" "Distance(5);DealDamage(2d8,Necrotic)"
 data "DescriptionParams" "40%;Distance(5);DealDamage(2d8,Necrotic)"
@@ -3421,7 +3367,7 @@ using "RR_Titan_Grip_Passive"
 // data "DisplayName" "h8d32f6b2g3ee5g45c1gacb7gebb38311b080;1"
 // Your grip becomes that of a titan. While wielding a greatsword, greataxe, greatclub, or maul, your &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;melee weapon attack&lt;/LSTag&gt; deal an additional [1].
 // data "Description" "h8d32f6b2g3ee5g45c1gacb7gebb38311b081;1"
-// Your grip becomes that of a titan. While wielding a &lt;LSTag Tooltip="Heavy"&gt;Heavy Weapon&lt;/LSTag&gt;, glaive, greataxe, greatsword, greatclub, halberd, maul, or pike, your &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;melee weapon attacks&lt;/LSTag&gt; deal an additional [1].
+// While wielding a &lt;LSTag Tooltip="Heavy"&gt;Heavy Weapon&lt;/LSTag&gt;, glaive, greataxe, greatsword, greatclub, halberd, maul, or pike, your &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;melee weapon attacks&lt;/LSTag&gt; deal an additional [1].
 data "Description" "h3f523f49g8b71g486bga366g4dbe51df09b4;1"
 // data "DescriptionParams" "DealDamage(1d6,Force)"
 // data "Icon" "Action_Zombie_Slam"
@@ -3436,6 +3382,7 @@ type "PassiveData"
 using "RR_Titan_Fortitude_Passive"
 // data "DisplayName" "h8d32f6b2g3ee5g45c1gacb7gebb38311b082;1"
 // data "Description" "h8d32f6b2g3ee5g45c1gacb7gebb38311b083;1"
+// When you enter &lt;LSTag Type="Status" Tooltip="RAGE"&gt;Rage&lt;/LSTag&gt;, you and all allies within [1] gain &lt;LSTag Type="Status" Tooltip="RR_TITAN_FORT_BUFF_ALLY"&gt;Resilient Rage&lt;/LSTag&gt; for [2] turns.
 data "Description" "h40fa8086gc103g4de5gbac9g1df04b7d255b;1"
 // data "DescriptionParams" "Distance(5)"
 data "DescriptionParams" "Distance(5);3"
@@ -3488,7 +3435,7 @@ type "PassiveData"
 using "RR_AmuletOfWar_Passive"
 // data "DisplayName" "h8d32f6b2g3ee5g45c1gacb7gebb38311b094;1"
 // data "Description" "h8d32f6b2g3ee5g45c1gacb7gebb38311b095;1"
-// You become a raging embodiment of war itself. While &lt;LSTag Type="Status" Tooltip="RAGE"&gt;Raging&lt;/LSTag&gt;, you add half of your Strength &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; to damage dealt with &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;melee weapon attacks&lt;/LSTag&gt;, and all damage taken is reduced by [1]. Your &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; is also doubled.
+// While &lt;LSTag Type="Status" Tooltip="RAGE"&gt;Raging&lt;/LSTag&gt;, you add half of your Strength &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; to damage dealt with &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;melee weapon attacks&lt;/LSTag&gt;, and all damage taken is reduced by [1]. Your &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; is also doubled.
 data "Description" "hd34e0a77g226dg4182g8935g5fd17077b5f1;1"
 // data "DescriptionParams" ""
 data "DescriptionParams" "1;Distance(3)"
@@ -4122,7 +4069,7 @@ type "InterruptData"
 using "Interrupt_Shield_Monk"
 // data "DisplayName" "h030cfbceg6228g4604ga04dg17d9ad402a27;1"
 // data "Description" "h030cfbceg6228g4604ga04dg17d9ad402a29;1"
-// The mask grants a glimpse of the future. When you are about to be hit by an enemy, increase your &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; by [1] for the rest of your turn.
+// When you are about to be hit by an enemy, increase your &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; by [1] for the rest of your turn.
 data "Description" "Xh5dbad148gd6e2g404bgab0fgf618d1c4947eXX;1"
 // data "DescriptionParams" ""
 data "DescriptionParams" "3"
@@ -4147,7 +4094,7 @@ using "Shout_StrikingStaff_ForceDamage"
 // data "Icon" "Action_WildMagic_Barbarian_WeaponInfusion"
 // data "DisplayName" "h030cfbceg6228g4604ga04dg17d9ad402a23;4"
 // data "Description" "h030cfbceg6228g4604ga04dg17d9ad402a24;2"
-// Your strikes resonate with unseen energy. Your weapon and unarmed attacks deal an extra [1].
+// Your weapon and unarmed attacks deal an extra [1].
 data "Description" "hf223c85bge4f5g4984gacf1g56ab749be317;1"
 // data "DescriptionParams" "DealDamage(1d6, Force)"
 data "DescriptionParams" "DealDamage(1d4, Force)"
@@ -4243,7 +4190,7 @@ type "PassiveData"
 using "MAG_Monk_StunningStrike_Reaction_Passive"
 // data "DisplayName" "h030cfbceg6228g4604ga04dg17d9ad402a11;2"
 // data "Description" "h030cfbceg6228g4604ga04dg17d9ad402a12;3"
-// You have honed your reflexes to a superhuman degree. Whenever a creature within melee range attacks you and misses, you can retaliate with a &lt;LSTag Type="Spell" Tooltip="Target_StunningStrike"&gt;Stunning Strike&lt;/LSTag&gt;.<
+// Whenever a creature within melee range attacks you and misses, you can retaliate with a &lt;LSTag Type="Spell" Tooltip="Target_StunningStrike"&gt;Stunning Strike&lt;/LSTag&gt;.<
 data "Description" "h0456685fg8b15g4ccagbfabg11d989521338;1"
 // data "TooltipUseCosts" "KiPoint:1"
 data "TooltipUseCosts" "ReactionActionPoint;KiPoint:2"
@@ -5097,7 +5044,7 @@ type "PassiveData"
 using "FATE_TuningFork_Passive"
 // data "DisplayName" "h5e878027g58d4g047egd837g91ed26fe5519;1"
 // data "Description" "h18f9ae42g214egf0feg651agb6a5d8766fe6;1"
-// The hum of the tuning fork drowns out distractions. You gain a +[1] bonus to &lt;LSTag Tooltip="AttackRoll"&gt;Spell Attack Rolls&lt;/LSTag&gt;.
+// You gain a +[1] bonus to &lt;LSTag Tooltip="AttackRoll"&gt;Spell Attack Rolls&lt;/LSTag&gt;.
 data "Description" "h11fdc510g9d0ag45f7g81e2gd286d6d03e5b;1"
 // data "DescriptionParams" "1"
 // data "Boosts" "SpellSaveDC(1);RollBonus(MeleeSpellAttack, 1);RollBonus(RangedSpellAttack,1);"
