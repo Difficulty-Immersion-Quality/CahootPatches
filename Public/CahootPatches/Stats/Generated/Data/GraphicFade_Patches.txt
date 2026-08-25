@@ -4966,20 +4966,6 @@ data "Description" "h4bc33065gc31dg4660g9025ga592e6b3a90d;1"
 data "DescriptionParams" "3;2"
 
 // ==================================== FATE - Cuirass of the Stone Kings
-// Decrease AC to 19
-new entry "FATE_StoneKing_DwarfPlate"
-type "Armor"
-// using "ARM_Plate_Body_2"
-using "FATE_StoneKing_DwarfPlate"
-// data "RootTemplate" "2128ff11-56ac-4120-a200-2d49f8db252e"
-// data "ValueUUID" "adfdafe5-f4da-4c64-a1e6-a33d626437d2"
-// data "Rarity" "VeryRare"
-// data "PassivesOnEquip" "FATE_StoneKing_DwarfPlate_Passive_01;FATE_StoneKing_DwarfPlate_Passive_02;"
-// data "Unique" "1"
-// data "MinLevel" "1"
-// data "ArmorClass" "20"
-data "ArmorClass" "19"
-
 // Ancestral Plating: decrease damage reduction to 1
 new entry "FATE_StoneKing_DwarfPlate_Passive_01"
 type "PassiveData"
