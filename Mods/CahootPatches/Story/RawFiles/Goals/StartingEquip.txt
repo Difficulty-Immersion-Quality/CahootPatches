@@ -5,7 +5,7 @@ SubGoalCombiner SGC_AND
 
 INITSECTION
 
-NOT DB_mikeshardmind_StartingEquip((CHARACTER)NULL_00000000-0000-0000-0000-000000000000);
+NOT DB_CHT_StartingEquip((CHARACTER)NULL_00000000-0000-0000-0000-000000000000);
 
 KBSECTION
 
@@ -16,20 +16,38 @@ _Level != "SYS_CC_I"
 AND
 DB_Avatars(_Character)
 AND
-NOT DB_mikeshardmind_StartingEquip(_Character)
+NOT DB_CHT_StartingEquip(_Character)
 THEN
 TemplateAddTo(TOOL_Hospital_Surgery_Kit_B_55fb2f34-00d7-4149-8b52-e189e05ba0ca, _Character, 3, 0);
-DB_mikeshardmind_StartingEquip(_Character);
+TemplateAddTo(CONT_GEN_LIA_PotionPouch_1cd6e5ba-a27c-4b1e-91de-724105946f5f, _Character, 1, 0);
+TemplateAddTo(CONT_GEN_LIA_ScrollCase_38cc1292-4b83-4288-8db4-98e1d5b82b1c, _Character, 1, 0);
+TemplateAddTo(CONT_GEN_LIA_Arrows_c8b08a44-7385-4c8b-b11a-c28adaf8ca10, _Character, 1, 0);
+TemplateAddTo(CONT_GEN_LIA_GrenadeSatchel_d36cdb48-5d94-46cc-81d3-c53ed5b59429, _Character, 1, 0);
+TemplateAddTo(CONT_GEN_LIA_Books_174020dd-4f32-4701-937e-32a1889d6f32, _Character, 1, 0);
+TemplateAddTo(CONT_GEN_LIA_BitsAndBobs_53fbc1c8-2aef-45ad-a22b-471515fb0027, _Character, 1, 0);
+TemplateAddTo(CONT_GEN_LIA_Poisons_97788c3e-1b3d-474a-a030-6414315c6a50, _Character, 1, 0);
+TemplateAddTo(CONT_GEN_LIA_QuestItems_07382994-148e-494f-9bd8-d184d0bce0bd, _Character, 1, 0);
+TemplateAddTo(CONT_GEN_LIA_Gear_00fe5be6-8071-4633-bb17-aaef5a0d570d, _Character, 1, 0);
+DB_CHT_StartingEquip(_Character);
 
 PROC
 PROC_GLO_PartyMembers_Add((CHARACTER)_Origin,(CHARACTER)_Player)
 AND
 DB_PartOfTheTeam(_Origin)
 AND
-NOT DB_mikeshardmind_StartingEquip(_Origin)
+NOT DB_CHT_StartingEquip(_Origin)
 THEN
 TemplateAddTo(TOOL_Hospital_Surgery_Kit_B_55fb2f34-00d7-4149-8b52-e189e05ba0ca, _Origin, 3, 0);
-DB_mikeshardmind_StartingEquip(_Origin);
+TemplateAddTo(CONT_GEN_LIA_PotionPouch_1cd6e5ba-a27c-4b1e-91de-724105946f5f, _Origin, 1, 0);
+TemplateAddTo(CONT_GEN_LIA_ScrollCase_38cc1292-4b83-4288-8db4-98e1d5b82b1c, _Origin, 1, 0);
+TemplateAddTo(CONT_GEN_LIA_Arrows_c8b08a44-7385-4c8b-b11a-c28adaf8ca10, _Origin, 1, 0);
+TemplateAddTo(CONT_GEN_LIA_GrenadeSatchel_d36cdb48-5d94-46cc-81d3-c53ed5b59429, _Origin, 1, 0);
+TemplateAddTo(CONT_GEN_LIA_Books_174020dd-4f32-4701-937e-32a1889d6f32, _Origin, 1, 0);
+TemplateAddTo(CONT_GEN_LIA_BitsAndBobs_53fbc1c8-2aef-45ad-a22b-471515fb0027, _Origin, 1, 0);
+TemplateAddTo(CONT_GEN_LIA_Poisons_97788c3e-1b3d-474a-a030-6414315c6a50, _Origin, 1, 0);
+TemplateAddTo(CONT_GEN_LIA_QuestItems_07382994-148e-494f-9bd8-d184d0bce0bd, _Origin, 1, 0);
+TemplateAddTo(CONT_GEN_LIA_Gear_00fe5be6-8071-4633-bb17-aaef5a0d570d, _Origin, 1, 0);
+DB_CHT_StartingEquip(_Origin);
 
 EXITSECTION
 

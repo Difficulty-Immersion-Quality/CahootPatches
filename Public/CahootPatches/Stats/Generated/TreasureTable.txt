@@ -1,6 +1,53 @@
-// ================================ Overwriting tutorial chest ================================
+// ================================ Bags Bags Bags ================================
 
-// Adding 2 health potions (vanilla) + injury kits from Grit & Glory + bags from Bags Bags Bags
+// Parent bag: remove the bags that are automatically given to party members
+new treasuretable "LIA_Treasure_Bags"
+new subtable "1,1"
+object category "I_OBJ_LIA_JewelleryCase",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_OBJ_LIA_PotionPouch",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_OBJ_LIA_ScrollCase",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_OBJ_LIA_ArmorBag",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_OBJ_LIA_BootsBag",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_OBJ_LIA_CloakBag",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_OBJ_LIA_GlovesBag",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_OBJ_LIA_HelmBag",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_OBJ_LIA_ShieldBag",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_OBJ_LIA_WeaponBag",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_OBJ_LIA_Arrows",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_OBJ_LIA_Books",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_OBJ_LIA_ClothesBundle",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_OBJ_LIA_BitsAndBobs",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_OBJ_LIA_GrenadeSatchel",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_OBJ_LIA_Keepsakes",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_OBJ_LIA_Poisons",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_OBJ_LIA_DyeSack",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_OBJ_LIA_Gear",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_OBJ_LIA_QuestItems",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_OBJ_LIA_Valuables",1,0,0,0,0,0,0,0
+
+// ================================ Tutorial Chest ================================
+
+// Overwrite so it gives 2 health potions (vanilla) + 3 injury kits from Grit & Glory + parent bag from Bags Bags Bags
 new treasuretable "TUT_Chest_Potions"
 new subtable "2,1"
 object category "I_OBJ_Potion_Healing",1,0,0,0,0,0,0,0
@@ -9,7 +56,7 @@ object category "I_Goon_OBJ_Injury_Kit_B",1,0,0,0,0,0,0,0
 new subtable "1,1"
 object category "I_OBJ_LIA_BagsBag",1,0,0,0,0,0,0,0
 
-// ================================ Adding level 7-9 scrolls to more locations ================================
+// ================================ Level 7-9 Scrolls ================================
 
 // The treasure tables already added by SecretScrolls
 // new treasuretable "LOW_CountingHouse_HighSecurityVault_8"
