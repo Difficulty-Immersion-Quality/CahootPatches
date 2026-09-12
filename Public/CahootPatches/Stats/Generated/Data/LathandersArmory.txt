@@ -332,6 +332,7 @@ data "Icon" "CSS_Lathander_Daylight_Icon"
 data "StackId" "CHT_LATHANDERSHIELD_LIGHT_AURA"
 data "AuraRadius" "6"
 data "AuraStatuses" "IF(Enemy() and not Self() and Character()):ApplyStatus(CHT_LATHANDERSHIELD_LIGHT_DEBUFF)"
+data "AuraFlags" "IgnoreItems"
 data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead"
 
 new entry "CHT_LATHANDERSHIELD_LIGHT_DEBUFF"

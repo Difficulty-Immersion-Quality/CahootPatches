@@ -4,7 +4,6 @@
 
 // ========================== Infernal Longsword ==========================
 // Infernal Weapon: fix passive not displayed on weapon (and change passive's name to Infernal Weapon to be consistent with the status name) and Poisoned saving throw not shown in combat log, and change Poisoned save DC to manoeuver DC + 2 (same fix as for Hellbeard Halberd in vanilla gear rebalance file; all functionality changes are inherited from Hellbeard Halberd's changes)
-
 new entry "MAG_Infernal_Longsword"
 type "Weapon"
 // using "WPN_Longsword_1"
