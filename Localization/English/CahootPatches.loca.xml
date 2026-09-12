@@ -136,7 +136,7 @@
 	<content contentuid="h2cbe6eeeg8368g4c46g84afgc46c230e2d9d" version="1">Wild Magic: Fireball</content>
 	<content contentuid="hfee6f9bfg15a7g4db3ga28fge2d249835146" version="1">You cast &lt;LSTag Type="Spell" Tooltip="Projectile_Fireball"&gt;Fireball&lt;/LSTag&gt; centered on yourself.</content>
 	<content contentuid="hab6f9152gb0b1g4ecbgb55egfebba7fceadf" version="1">Wild Magic: Forceful</content>
-	<content contentuid="hbd92e037g06bdg435bg985cgbf5102bfb584" version="1">Your spells deal an additionl [1] per spell level.</content>
+	<content contentuid="h84db8c68g6956g475fgbbbagcd7abf777517" version="1">Your spells deal an additionl [1] per spell level.</content>
 	<content contentuid="h6be6d972g551eg4a57ga049g7f4dd0c9e6c7" version="1">Your weapon &lt;LSTag Tooltip="AttackRoll"&gt;attacks&lt;/LSTag&gt; deal an additional [1].</content>
 	<content contentuid="h45a67863g5884g41fcg862eg52398836e9d9" version="1">Wild Magic: Cheese</content>
 	<content contentuid="hec40970bgd59eg4925g98f0g1f95e02dedde" version="1">You are &lt;LSTag Type="Status" Tooltip="POLYMORPH_CHEESE"&gt;Polymorphed&lt;/LSTag&gt; into cheese.</content>
@@ -145,7 +145,7 @@
 	<content contentuid="h9a9a1fe3gd042g4711gb628g624b5ea75b15" version="1">Wild Magic: Dependable Healing</content>
 	<content contentuid="h82a9735bgc36ag47f5g9041g2fb78cd4ddfe" version="1">At the start of your turn regain [1].</content>
 	<content contentuid="h2ff02ed6gec76g4a3dga453gb7d5077024a3" version="1">Wild Magic: Incapacitated</content>
-	<content contentuid="he2198ab3g189fg417ag88cag40589a6b514e" version="1">You are &lt;LSTag Type="Status" Tooltip="INCAPACITATED"&gt;Incapacitated&lt;/LSTag&gt;.</content>
+	<content contentuid="h3c752a5cge156g4fffg8cdfg77893b0eeac9" version="1">You are &lt;LSTag Type="Status" Tooltip="INCAPACITATED"&gt;Incapacitated&lt;/LSTag&gt;.</content>
 	<content contentuid="hc8b6c61dg8407g44fbgb305g1e8fadb580af" version="1">Wild Magic: Greased</content>
 	<content contentuid="h871c2279g9255g4942g8139gb3680d414a2f" version="1">You cast &lt;LSTag Type="Spell" Tooltip="Target_Grease"&gt;Grease&lt;/LSTag&gt; centered on yourself.</content>
 	<content contentuid="h76393369g02b2g4952g8f71g642ec8f417b2" version="1">Wild Magic: Bad Saving Rolls</content>
@@ -155,7 +155,7 @@
 	<content contentuid="h0cfb43d8g3b0dg4f25g9818gea9fadbf6549" version="1">Cast &lt;LSTag Type="Spell" Tooltip="Target_FaerieFire"&gt;Faerie Fire&lt;/LSTag&gt; centered on yourself.</content>
 	<!-- d100 Wild Magic: 11-20 -->
 	<content contentuid="h41ab8688g8ddeg4e9cgb1cage6d0595461a0" version="1">Wild Magic: Summon Spectator</content>
-	<content contentuid="h7e7787d3g92e6g4dc8g8d00g951d1d752611" version="1">You have summoned a hostile spectator!</content>
+	<content contentuid="h335c78a9g3d50g43bdg8a3bgf792ec0c85e0" version="1">You have summoned a hostile spectator!</content>
 	<content contentuid="h0ad08809gdcc2g4033g9402g1786f4038db2" version="1">Wild Magic: Mind Sanctuary</content>
 	<content contentuid="hcd4ed877gbaadg4c74ga13ag30c4b6d3fcaa" version="1">You have summoned a &lt;LSTag Type="Status" Tooltip="TAD_MIND_SANCTUARY_AURA"&gt;Mind Sanctuary Bubble&lt;/LSTag&gt; centered on yourself and can use &lt;LSTag Type="ActionResource" Tooltip="ActionPoint"&gt;Actions&lt;/LSTag&gt; and &lt;LSTag Type="ActionResource" Tooltip="BonusActionPoint"&gt;Bonus Actions&lt;/LSTag&gt; interchangeably.</content>
 	<content contentuid="h5c58d200g24f2g4bc9gb212gd5be82c62271" version="1">Wild Magic: Curse of Truth</content>
@@ -166,7 +166,7 @@
 	<content contentuid="h5dd2285cg4349g4e91g84c2gf163feb73f70" version="1">Your next spell that hits can deal maximum damage, at the cost of a &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;reaction&lt;/LSTag&gt;.</content>
 	<content contentuid="hf2107c62g33c7g4785g9b3cgfee6fb236c67" version="1">Unleash the surge, causing your spell to deal maximum damage.</content>
 	<content contentuid="h5b4e767ag6647g4829ga608g8387c5ccca0d" version="1">Wild Magic: Static Shock</content>
-	<content contentuid="h97d9c295ge4cbg4fd4gbfdeg0298d2435981" version="1">You become charged with a massive amount of static electricity. When a creature hits you with a melee &lt;LSTag Tooltip="AttackRoll"&gt;attacks&lt;/LSTag&gt;, you deal [1] to them.</content>
+	<content contentuid="h6b8cccdbg823eg4edega9f4gc79870717dd0" version="1">You become charged with a massive amount of static electricity. When a creature hits you with a melee &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt;, you deal [1] to them.</content>
 	<content contentuid="h0b736525g983ag4b79gb67bg891505c5b0fd" version="1">Wild Magic: Healed</content>
 	<content contentuid="h1797a59bgf7b6g4390ga8e2g169a02598d7e" version="1">You regain [1].</content>
 	<content contentuid="h8ceddebcg1127g4aacgb3f8ge3a469b362b8" version="1">Wild Magic: Charmed</content>
@@ -727,8 +727,6 @@ You still benefit from &lt;LSTag Type="Passive" Tooltip="Siael_POTR_Righteous"&g
 	<!-- WarlockAndPatronsPHB2024 -->
 	<content contentuid="he4bab66dg62c5g4849g90dagbbaf17e4a454" version="1">You gain &lt;LSTag Tooltip="Resistant"&gt;Resistance&lt;/LSTag&gt; to[1]. Once per turn, when you inflict[2] or[3], you add your Charisma &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; to the damage roll.</content>
 
-	<content contentuid="XXXX" version="1">XXXX</content>
-	<content contentuid="XXXX" version="1">XXXX</content>
 	<content contentuid="XXXX" version="1">XXXX</content>
 	<content contentuid="XXXX" version="1">XXXX</content>
 	<content contentuid="XXXX" version="1">XXXX</content>
