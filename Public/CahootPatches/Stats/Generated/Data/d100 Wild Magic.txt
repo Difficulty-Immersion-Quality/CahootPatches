@@ -120,7 +120,7 @@ data "DisplayName" "hab6f9152gb0b1g4ecbgb55egfebba7fceadf;1"
 // When you cast a spell of first level or higher, add 1d4 force damage to the damage roll. Add a additional 1d4 for each spell level above 1. Lasts for 3 turns.
 // data "Description" "hbd92e037g06bdg435bg985cgbf5102bfb584;3"
 // Your spells deal an additionl [1] per spell level.
-data "Description" "hbd92e037g06bdg435bg985cgbf5102bfb584;3"
+data "Description" "h84db8c68g6956g475fgbbbagcd7abf777517;1"
 data "TooltipStatusApply" "ApplyStatus(WILD_MAGIC_MAGIC_MISSILE_TARGET,100,3)"
 data "CastSound" "Spell_Cast_Sorcerer_Wildmagic_Heal"
 data "SpellAnimation" ",,;,,;6d8a2fc2-a069-4a27-9907-653a1dce0ae0,,;f204c26e-21ba-4693-85fc-98759493c988,,;,,;,,;,,;,,;,,"
@@ -135,7 +135,7 @@ data "DisplayName" "hab6f9152gb0b1g4ecbgb55egfebba7fceadf;1"
 // When you cast a spell of first level or higher, add 1d4 force damage to the damage roll. Add a additional 1d4 for each spell level above 1. Lasts for 3 turns.
 // data "Description" "hbd92e037g06bdg435bg985cgbf5102bfb584;3"
 // Your spells deal an additionl [1] per spell level.
-data "Description" "hbd92e037g06bdg435bg985cgbf5102bfb584;3"
+data "Description" "h84db8c68g6956g475fgbbbagcd7abf777517;1"
 data "Icon" "statIcon_WildMagicD100_MagicMissileTarget"
 data "SoundLoop" "Spell_Status_WildMagic_Heal_MO"
 data "SoundStop" "Spell_Status_WildMagic_Heal_MO_Stop"
@@ -402,8 +402,10 @@ data "TargetConditions" "Self()"
 // data "DisplayName" "he1742bddg42a5g49e3g96c0g18ab13b948db"
 // Wild Magic: Incapacitated
 data "DisplayName" "h2ff02ed6gec76g4a3dga453gb7d5077024a3;1"
+// Your are Incapactiated for this turn only.
+// data "Description" "he2198ab3g189fg417ag88cag40589a6b514e"
 // You are &lt;LSTag Type="Status" Tooltip="INCAPACITATED"&gt;Incapacitated&lt;/LSTag&gt;.
-data "Description" "he2198ab3g189fg417ag88cag40589a6b514e"
+data "Description" "h3c752a5cge156g4fffg8cdfg77893b0eeac9"
 data "Icon" "statIcon_WildMagicD100_Incapacitated"
 data "TooltipStatusApply" "ApplyStatus(INCAPACITATED_DND,100,1)"
 
@@ -553,7 +555,9 @@ data "TargetConditions" "Self()"
 // Wild Magic: Summon Spectator
 data "DisplayName" "h41ab8688g8ddeg4e9cgb1cage6d0595461a0;1"
 // You spawned a hostile spectator!
-data "Description" "h7e7787d3g92e6g4dc8g8d00g951d1d752611"
+// data "Description" "h7e7787d3g92e6g4dc8g8d00g951d1d752611"
+// You have summoned a hostile spectator!
+data "Description" "h335c78a9g3d50g43bdg8a3bgf792ec0c85e0;1"
 data "Icon" "statIcon_WildMagicD100_SummonSpectator"
 data "CastSound" "Spell_Cast_Sorcerer_Wildmagic_Mephit"
 data "SpellAnimation" ",,;,,;eae14188-2976-40e7-899a-4646c68074aa,,;17ed59ba-ee4d-43dd-8345-bf8edf0fcc87,,;,,;,,;,,;,,;,,"
@@ -729,7 +733,7 @@ data "TargetConditions" "Self()"
 data "DisplayName" "h5b4e767ag6647g4829ga608g8387c5ccca0d;1"
 // You become charged with a massive amount of static electricity. When a creature hits you with a melee attack, you deal 1d6 lightning damage to them.
 // data "Description" "h97d9c295ge4cbg4fd4gbfdeg0298d2435981"
-// You become charged with a massive amount of static electricity. When a creature hits you with a melee attack, you deal [1] to them.
+// You become charged with a massive amount of static electricity. When a creature hits you with a melee &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt;, you deal [1] to them.
 data "Description" "h6b8cccdbg823eg4edega9f4gc79870717dd0;1"
 // data "DescriptionParams" ""
 data "DescriptionParams" "DealDamage(1d6,Lightning)"
@@ -743,7 +747,7 @@ data "StatusType" "BOOST"
 data "DisplayName" "h5b4e767ag6647g4829ga608g8387c5ccca0d;1"
 // You become charged with a massive amount of static electricity. When a creature hits you with a melee attack, you deal 1d6 lightning damage to them.
 // data "Description" "h97d9c295ge4cbg4fd4gbfdeg0298d2435981"
-// You become charged with a massive amount of static electricity. When a creature hits you with a melee attack, you deal [1] to them.
+// You become charged with a massive amount of static electricity. When a creature hits you with a melee &lt;LSTag Tooltip="AttackRoll"&gt;Attack&lt;/LSTag&gt;, you deal [1] to them.
 data "Description" "h6b8cccdbg823eg4edega9f4gc79870717dd0;1"
 // data "DescriptionParams" ""
 data "DescriptionParams" "DealDamage(1d6,Lightning)"

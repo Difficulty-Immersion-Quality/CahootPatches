@@ -2,7 +2,7 @@
 
 // ==================================== BB - Vinewoven Shortbow
 // Changes: Treant's Grasp uses ManeuverSaveDC instead of a fixed DC of 12.
-// Changes: Bonus damage removed
+// Changes: Bonus damage removed.
 new entry "BB_Vinewoven_Passive"
 type "PassiveData"
 using "BB_Vinewoven_Passive"
@@ -10,7 +10,7 @@ using "BB_Vinewoven_Passive"
 // data "DisplayName" "he05cbb7fge340g4a3cg944fgc40ef70069e7;1"
 // The living wood of the bow reaches out with its own will, guiding your aim and possibly &lt;LSTag Type="Status" Tooltip="ENSNARED"&gt;Ensnaring&lt;/LSTag&gt; those struck by its arrows. This weapon also deals additional damage equal to half your Dexterity &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt;.
 // data "Description" "he05cbb7fge340g4a3cg944fgc40ef70069e8;1"
-// Attacks with this weapon &lt;LSTag Type="Status" Tooltip="ENSNARED"&gt;Ensnare&lt;/LSTag&gt; your target for 1 turn if they fail a Dexterity &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;
+// Attacks with this weapon &lt;LSTag Type="Status" Tooltip="ENSNARED"&gt;Ensnare&lt;/LSTag&gt; your target for 1 turn if they fail a Dexterity &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throw&lt;/LSTag&gt;.
 data "Description" "hc8f41164g3c43g4c0fga181gea776245b317;1"
 // data "StatsFunctorContext" "OnDamage"
 // data "Conditions" "AttackedWithPassiveSourceWeapon() and IsRangedWeaponAttack()"
@@ -20,7 +20,7 @@ data "StatsFunctors" "IF(not SavingThrow(Ability.Dexterity,ManeuverSaveDC())):Ap
 data "Boosts" ""
 
 // ==================================== BB - Boots of the Swift Stalker
-// Dash: Bonus Action: add once per short rest cooldown
+// Dash: Bonus Action: add once per short rest cooldown.
 new entry "RangerEquipmentAIO_Boots_of_the_Swift_Stalker"
 type "Armor"
 // using "ARM_Boots_Leather"
@@ -305,6 +305,7 @@ data "StatusType" "BOOST"
 using "BB_ARCHER_EYE_CHARM"
 // data "DisplayName" "he05cbb7fge340g4a3cg944fgc40ef70069e129;1"
 // data "Description" "he05cbb7fge340g4a3cg944fgc40ef70069e131;1"
+// You and your allies within [1] of you gain &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="RangedWeaponAttack"&gt;ranged weapon attacks&lt;/LSTag&gt;.
 data "Description" "h29c8e5dbg9951g4987ga181g2fae3408e7bf;1"
 // data "DescriptionParams" "Distance(9);1"
 // data "Icon" "Action_TransmuterStone_Darkvision"
@@ -448,6 +449,7 @@ data "ValueUUID" "a229f048-70b0-4b0c-88cb-29b5c6bdb2d0"
 // data "ValueLevel" "5"
 // data "Unique" "1"
 
+// TODO: Not unique?
 new entry "Tut_CC_Sorcerer_Equipment_Hat_of_Font_Surge"
 type "Armor"
 // using "_Head_Magic"
@@ -680,9 +682,10 @@ type "PassiveData"
 using "CC_HeartstoneParry_Passive"
 // Heartstone Parry
 // data "DisplayName" "h27ad4a5fg8ebeg4b8egb71dg81a7d073b089;1"
+// While the Heartstone is equipped, you gain a +[1] bonus to &lt;LSTag Tooltip="SpellDifficultyClass"&gt;Spell Save DC&lt;/LSTag&gt; and Armor Class.
 // data "Description" "h27ad4a5fg8ebeg4b8egb71dg81a7d073b090;1"
-data "Description" "he64209e3g089eg4edfg9c5ag87217b326ebd;1"
 // Gain a +[1] bonus to &lt;LSTag Tooltip="SpellDifficultyClass"&gt;Spell Save DC&lt;/LSTag&gt; and Armor Class.
+data "Description" "he64209e3g089eg4edfg9c5ag87217b326ebd;1"
 // data "DescriptionParams" "2"
 data "DescriptionParams" "1"
 // data "Boosts" "SpellSaveDC(2);AC(2)"
@@ -3249,7 +3252,7 @@ using "PP_Shadowfell_Infusion_Passive"
 // data "Icon" "Spell_Conjuration_ArmsOfHadar"
 // data "Properties" "Highlighted;DisplayBoostInTooltip"
 // data "StatsFunctorContext" "OnDamage"
-data "Conditions" "SpellId('Shout_ArmsOfHadar') or SpellId('Shout_ArmsOfHadar_2') or SpellId('Shout_ArmsOfHadar_3') or SpellId('Shout_ArmsOfHadar_4') or SpellId('Shout_ArmsOfHadar_5') or SpellId('Shout_ArmsOfHadar_6') or SpellId('Shout_ArmsOfHadar_7') or SpellId('Shout_ArmsOfHadar_8') or SpellId('Shout_ArmsOfHadar_9')"
+data "Conditions" "IsSpellChildOrVariantFromContext('Shout_ArmsOfHadar')"
 // data "StatsFunctors" "DealDamage(1d4,Necrotic,Magical,,0,,true,true)"
 
 // ==================================== PP - Gloves of Eldritch Power
@@ -3267,7 +3270,7 @@ data "DescriptionParams" ""
 // data "Properties" "Highlighted;OncePerAttack"
 data "Properties" "Highlighted"
 // data "Boosts" "IF(SpellId('Projectile_EldritchBlast')):Advantage(AttackRoll);IF(SpellId('Projectile_EldritchBlast')):DamageBonus(1d8, Force)"
-data "Boosts" "IF(SpellId('Projectile_EldritchBlast')):Advantage(AttackRoll)"
+data "Boosts" "IF(IsSpellChildOrVariantFromContext('Projectile_EldritchBlast')):Advantage(AttackRoll)"
 
 // ==================================== Rage and Resilience - Barbarian Equipment ====================================
 
@@ -3276,8 +3279,11 @@ data "Boosts" "IF(SpellId('Projectile_EldritchBlast')):Advantage(AttackRoll)"
 new entry "RR_BerserkerStrength_Passive"
 type "PassiveData"
 using "RR_BerserkerStrength_Passive"
+// Berserker's Strength
 // data "DisplayName" "h8d32f6b2g3ee5g45c1gacb7gebb38311b035;1"
+// Add half of your Barbarian Level to your weapon attack damage.
 // data "Description" "h8d32f6b2g3ee5g45c1gacb7gebb38311b036;1"
+// When you enter &lt;LSTag Type="Status" Tooltip="RAGE"&gt;Rage&lt;/LSTag&gt;, add your Strength &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; twice instead of once to the damage of your next &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;melee weapon attack&lt;/LSTag&gt;.
 data "Description" "h5c6a40bfg91c3g443eg8dd9g62eeacc96023;1"
 // data "Icon" "Action_Slam"
 // data "Properties" "Highlighted;OncePerTurn"
@@ -3293,7 +3299,7 @@ new entry "CHT_RR_BERSERKERSTRENGTH"
 type "StatusData"
 data "StatusType" "BOOST"
 // Berserker's Strength
-data "DisplayName" "he5ade18eg9d40g48f9gb6bcgce9f6c667d0b;1"
+data "DisplayName" "h8d32f6b2g3ee5g45c1gacb7gebb38311b035;1"
 // Add your Strength &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; twice instead of once to the damage of your next &lt;LSTag Tooltip="MeleeWeaponAttack"&gt;melee weapon attack&lt;/LSTag&gt;.
 data "Description" "hd99dc633g1f39g4b20gb582g66f8d8c110a1;1"
 data "Icon" "Action_Slam"
@@ -4070,7 +4076,7 @@ using "Interrupt_Shield_Monk"
 // data "DisplayName" "h030cfbceg6228g4604ga04dg17d9ad402a27;1"
 // data "Description" "h030cfbceg6228g4604ga04dg17d9ad402a29;1"
 // When you are about to be hit by an enemy, increase your &lt;LSTag Tooltip="ArmourClass"&gt;Armour Class&lt;/LSTag&gt; by [1] for the rest of your turn.
-data "Description" "Xh5dbad148gd6e2g404bgab0fgf618d1c4947eXX;1"
+data "Description" "h5dbad148gd6e2g404bgab0fgf618d1c4947e;1"
 // data "DescriptionParams" ""
 data "DescriptionParams" "3"
 // data "Icon" "Action_WildMagic_Blur"
@@ -4133,6 +4139,7 @@ data "Boosts" "CharacterWeaponDamage(1d4, Force);CharacterUnarmedDamage(1d4, For
 
 // ==================================== UU - Ring of the Weaving Hummingbird
 // Hummingbird's Precision: add compatibility for Monk 5e Adjustments by PlatypusVenom
+// TODO: Goon's Library function for these spells.
 new entry "UU_One_Monk_Ring_Passive"
 type "PassiveData"
 using "UU_One_Monk_Ring_Passive"
