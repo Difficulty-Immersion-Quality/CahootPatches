@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<save>
+	<version major="4" minor="7" revision="1" build="3" lslib_meta="v1,bswap_guids,lsf_keys_adjacency" />
+	<region id="Templates">
+		<node id="Templates">
+			<children>
+				<node id="GameObjects">
+					<children>
+					</children>
+				</node>
+			</children>
+		</node>
+	</region>
+</save>
+				<!-- <node id="GameObjects">
+					<attribute id="MapKey" type="FixedString" value="93d24f1d-cfd9-45ea-a980-23edd21213e9" />
+					<attribute id="Name" type="LSString" value="ARM_CircletOfBlasting_006" />
+					<attribute id="LevelName" type="FixedString" value="SCL_Campfire_A" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="TemplateName" type="FixedString" value="3abdbb8a-4701-4397-8fce-7a8dd8a0bb84" />
+					<attribute id="Flag" type="uint8" value="1" />
+					<children>
+						<node id="Transform">
+							<attribute id="Scale" type="float" value="1" />
+							<attribute id="Position" type="fvec3" value="-33.186047 28.261578 -28.130362" />
+							<attribute id="RotationQuat" type="fvec4" value="-0.019329626 -0.21125609 -0.01741025 0.9770846" />
+						</node>
+						<node id="LayerList">
+							<children>
+								<node id="Layers">
+									<children>
+										<node id="Object" key="MapKey">
+											<attribute id="MapKey" type="FixedString" value="SCL_Campfire_A" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+			</children>
+		</node>
+	</region>
+</save> -->

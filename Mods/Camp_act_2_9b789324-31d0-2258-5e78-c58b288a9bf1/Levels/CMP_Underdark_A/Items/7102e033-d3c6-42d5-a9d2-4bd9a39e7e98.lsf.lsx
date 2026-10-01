@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<save>
+	<version major="4" minor="7" revision="1" build="3" lslib_meta="v1,bswap_guids,lsf_keys_adjacency" />
+	<region id="Templates">
+		<node id="Templates">
+			<children>
+				<node id="GameObjects">
+					<children>
+					</children>
+				</node>
+			</children>
+		</node>
+	</region>
+</save>
+				<!-- <node id="GameObjects">
+					<attribute id="MapKey" type="FixedString" value="7102e033-d3c6-42d5-a9d2-4bd9a39e7e98" />
+					<attribute id="Name" type="LSString" value="ARM_CircletOfBlasting_001" />
+					<attribute id="LevelName" type="FixedString" value="CMP_Underdark_A" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="TemplateName" type="FixedString" value="3abdbb8a-4701-4397-8fce-7a8dd8a0bb84" />
+					<attribute id="Flag" type="uint8" value="1" />
+					<children>
+						<node id="Transform">
+							<attribute id="Scale" type="float" value="1" />
+							<attribute id="Position" type="fvec3" value="-19.596739 4.2186265 33.63824" />
+							<attribute id="RotationQuat" type="fvec4" value="0 0.41385233 0 0.910344" />
+						</node>
+						<node id="LayerList">
+							<children>
+								<node id="Layers">
+									<children>
+										<node id="Object" key="MapKey">
+											<attribute id="MapKey" type="FixedString" value="CMP_Underdark_A" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+			</children>
+		</node>
+	</region>
+</save> -->

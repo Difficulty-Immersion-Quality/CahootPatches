@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<save>
+	<version major="4" minor="7" revision="1" build="3" lslib_meta="v1,bswap_guids,lsf_keys_adjacency" />
+	<region id="Templates">
+		<node id="Templates">
+			<children>
+				<node id="GameObjects">
+					<children>
+					</children>
+				</node>
+			</children>
+		</node>
+	</region>
+</save>
+				<!-- <node id="GameObjects">
+					<attribute id="MapKey" type="FixedString" value="ccdb579d-626d-46a9-bef7-1328d87267bb" />
+					<attribute id="Name" type="LSString" value="ARM_CircletOfBlasting_000" />
+					<attribute id="LevelName" type="FixedString" value="WLD_Campfire_E" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="TemplateName" type="FixedString" value="3abdbb8a-4701-4397-8fce-7a8dd8a0bb84" />
+					<attribute id="Flag" type="uint8" value="1" />
+					<children>
+						<node id="Transform">
+							<attribute id="Scale" type="float" value="1" />
+							<attribute id="Position" type="fvec3" value="-8.788939 0.757556 -2.285325" />
+							<attribute id="RotationQuat" type="fvec4" value="0.013149346 0.4419719 -0.02667332 0.8965358" />
+						</node>
+						<node id="LayerList">
+							<children>
+								<node id="Layers">
+									<children>
+										<node id="Object" key="MapKey">
+											<attribute id="MapKey" type="FixedString" value="WLD_Campfire_E" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+			</children>
+		</node>
+	</region>
+</save> -->
