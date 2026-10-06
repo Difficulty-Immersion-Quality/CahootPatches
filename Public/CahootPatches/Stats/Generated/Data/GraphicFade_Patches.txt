@@ -4570,7 +4570,7 @@ type "PassiveData"
 using "WW_Cinderbrand_Passive"
 // data "DisplayName" "h941a2a1agcc5ag4161gb947g4797cc56ab16;1"
 // data "Description" "h941a2a1agcc5ag4161gb947g4797cc56ab17;1"
-// When you deal[1] to a creature, a fire surface erupts around it in a [2] radius. Your[3] spells also deal an additional [2]. This bonus damage only applies once per attack.
+// When you deal[1] to a creature, a fire surface erupts around it in a [2] radius. Your[1] spells also deal an additional [3]. This bonus damage only applies once per attack.
 data "Description" "h73cc541fgdb06g4bd6g8266g6135495e8449;1"
 // data "DescriptionParams" "Distance(3);DealDamage(1d4,Fire)"
 data "DescriptionParams" "DealDamage(,Fire);Distance(3);DealDamage(1d4,Fire)"
