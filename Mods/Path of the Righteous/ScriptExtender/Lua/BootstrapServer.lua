@@ -977,23 +977,26 @@ local function StalwartParagon(object,causee)
         ApplyStatus(object,"SIAEL_POTR_HEROISM",-1,0,causee)
     end
     if HasPassive(causee,"Siael_POTR_Righteous_R") == 1 then
+        print("Set Protection from evil and good")
         ApplyStatus(object,"SIAEL_POTR_PFEG",-1,0,causee)
     end
 end
 
 --Handles the Stalwart Paragon passive, applying the effects when an ally is within the wearer's aura
 Ext.Osiris.RegisterListener("StatusApplied", 4, "after", function(object, status, causee, storyActionID)
-    Wait(10,function()
-        if HasValidAura(object) == true and (HasActiveStatus(object,"SIAEL_POTR_ARMOR_R") == 1 or HasActiveStatus(object,"SIAEL_POTR_ARMOR") == 1) and HasActiveStatus(object,"SIAEL_POTR_ARMOR_AURA") == 0 and Ext.Vars.GetModVariables("60b7b37b-c006-4775-bda2-6ebb726acc12").stalwart ~= 1 then
+    if status:find("SIAEL_POTR_") == 1 and status ~= "SIAEL_POTR_ARMOR_AURA" and status ~= "SIAEL_POTR_ARMOR_AURA_EFFECT" and Ext.Vars.GetModVariables("60b7b37b-c006-4775-bda2-6ebb726acc12").stalwart ~= 1 then
+        if HasValidAura(object) == true and (HasActiveStatus(object,"SIAEL_POTR_ARMOR_R") == 1 or HasActiveStatus(object,"SIAEL_POTR_ARMOR") == 1) and HasActiveStatus(object,"SIAEL_POTR_ARMOR_AURA") == 0 then
             Ext.Vars.GetModVariables("60b7b37b-c006-4775-bda2-6ebb726acc12")["stalwart"] = 1
-            print("Stalwart Paragon - Self: " .. ResolveTranslatedString(GetDisplayName(object)))
             ApplyStatus(object,"SIAEL_POTR_ARMOR_AURA",-1,0,object)
-            StalwartParagon(object,object)
+        else
+            Ext.Vars.GetModVariables("60b7b37b-c006-4775-bda2-6ebb726acc12")["stalwart"] = 0
         end
-    end)
+    elseif status == "SIAEL_POTR_ARMOR_AURA" then
+        print("Stalwart Paragon - Self: " .. ResolveTranslatedString(GetDisplayName(object)))
+        StalwartParagon(object,object)
 
-    --For allies receiving the aura status
-    if status == "SIAEL_POTR_ARMOR_AURA_EFFECT" then
+        --For allies receiving the aura status
+    elseif status == "SIAEL_POTR_ARMOR_AURA_EFFECT" then
         print("Stalwart Paragon - Ally: " .. ResolveTranslatedString(GetDisplayName(object)))
         StalwartParagon(object,causee)
     end
@@ -1009,7 +1012,7 @@ Ext.Osiris.RegisterListener("StatusRemoved", 4, "after", function(object, status
         RemoveStatus(object,"SIAEL_POTR_HEROISM")
         RemoveStatus(object,"SIAEL_POTR_PFEG")
         Ext.Vars.GetModVariables("60b7b37b-c006-4775-bda2-6ebb726acc12")["stalwart"] = 0
-        if object ~= nil then print("Stalwart Paragon - Self removal: " .. ResolveTranslatedString(GetDisplayName(object))) end
+        if object ~= nil and GetDisplayName(object) ~= nil then print("Stalwart Paragon - Self removal: " .. ResolveTranslatedString(GetDisplayName(object))) end
     end
 
     if status == "SIAEL_POTR_ARMOR_AURA_EFFECT" then
@@ -1017,7 +1020,7 @@ Ext.Osiris.RegisterListener("StatusRemoved", 4, "after", function(object, status
         RemoveStatus(object,"SIAEL_POTR_BLESS")
         RemoveStatus(object,"SIAEL_POTR_HEROISM")
         RemoveStatus(object,"SIAEL_POTR_PFEG")
-        if object ~= nil then print("Stalwart Paragon - Ally removal: " .. ResolveTranslatedString(GetDisplayName(object))) end
+        if object ~= nil and GetDisplayName(object) ~= nil then print("Stalwart Paragon - Ally removal: " .. ResolveTranslatedString(GetDisplayName(object))) end
     end
 end)
 
