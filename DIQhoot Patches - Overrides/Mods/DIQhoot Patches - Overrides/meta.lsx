@@ -9,7 +9,7 @@
           <attribute id="Author" type="LSString" value="Cahoot" />
           <attribute id="CharacterCreationLevelName" type="FixedString" value="" />
           <attribute id="Description" type="LSString" value="Patches for personal use" />
-          <attribute id="Folder" type="LSString" value="CahootPatches" />
+          <attribute id="Folder" type="LSString" value="DIQhoot Patches - Overrides" />
           <attribute id="GMTemplate" type="FixedString" value="" />
           <attribute id="LobbyLevelName" type="FixedString" value="" />
           <attribute id="MD5" type="LSString" value="" />
@@ -21,11 +21,11 @@
           <attribute id="StartupLevelName" type="FixedString" value="" />
           <attribute id="Tags" type="LSString" value="" />
           <attribute id="Type" type="FixedString" value="Add-on" />
-          <attribute id="UUID" type="FixedString" value="86487654-f3b2-46a6-859b-9ebf43c95bbb" />
-          <attribute id="Version64" type="int64" value="36028797018963968" />
+          <attribute id="UUID" type="FixedString" value="8ba7564a-f95f-48c0-9457-4d7927464410" />
+          <attribute id="Version64" type="int64" value="72057594037927936" />
           <children>
             <node id="PublishVersion">
-              <attribute id="Version64" type="int64" value="36028797018963968" />
+              <attribute id="Version64" type="int64" value="72057594037927936" />
             </node>
             <node id="Scripts" />
             <node id="TargetModes">
