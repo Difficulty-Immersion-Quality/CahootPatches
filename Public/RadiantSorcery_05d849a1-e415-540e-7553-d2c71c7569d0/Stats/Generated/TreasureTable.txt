@@ -1,0 +1,111 @@
+treasure itemtypes "Common","Uncommon","Rare","Epic","Legendary","Divine","Unique"
+// new treasuretable "TUT_Chest_Potions"
+// CanMerge 1
+// new subtable "1,1"
+// object category "I_ADRG_RS_Chest",1,0,0,0,0,0,0,0
+new treasuretable "MOO_BugBearvendor_Trade"
+CanMerge 1
+new subtable "1,1"
+object category "I_OBJ_ADRG_RS_SickeningRadiance_Scroll",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_OBJ_ADRG_RS_WallOfLight_Scroll",1,0,0,0,0,0,0,0
+new treasuretable "HAV_HarperQuarterMaster_Magic_Trade"
+CanMerge 1
+new subtable "1,1"
+object category "I_OBJ_ADRG_RS_SickeningRadiance_Scroll",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_OBJ_ADRG_RS_WallOfLight_Scroll",1,0,0,0,0,0,0,0
+new treasuretable "LOW_SorcerousSundries_Trade"
+CanMerge 1
+new subtable "1,1"
+object category "I_OBJ_ADRG_RS_SickeningRadiance_Scroll",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_OBJ_ADRG_RS_WallOfLight_Scroll",1,0,0,0,0,0,0,0
+new treasuretable "LOW_SorcerousSundries_TolnaTomeMonger"
+CanMerge 1
+new subtable "1,1"
+object category "I_OBJ_ADRG_RS_SickeningRadiance_Scroll",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_OBJ_ADRG_RS_WallOfLight_Scroll",1,0,0,0,0,0,0,0
+new treasuretable "LOW_StormshoreTabernacle_Guardian"
+CanMerge 1
+new subtable "1,1"
+object category "I_OBJ_ADRG_RS_SickeningRadiance_Scroll",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_OBJ_ADRG_RS_WallOfLight_Scroll",1,0,0,0,0,0,0,0
+new treasuretable "UND_SocietyOfBrilliance_Mindflayer"
+CanMerge 1
+new subtable "1,1"
+object category "I_OBJ_ADRG_RS_SickeningRadiance_Scroll",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_OBJ_ADRG_RS_WallOfLight_Scroll",1,0,0,0,0,0,0,0
+new treasuretable "UND_SocietyOfBrilliance_Hobgoblin"
+CanMerge 1
+new subtable "1,1"
+object category "I_OBJ_ADRG_RS_SickeningRadiance_Scroll",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "I_OBJ_ADRG_RS_WallOfLight_Scroll",1,0,0,0,0,0,0,0
+// new treasuretable "ADRG_RS_Chest_TT"
+// CanMerge 1
+// new subtable "1,1"
+// object category "I_ARM_ADRG_RadiantSorceryRobe",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_ARM_ADRG_LuminousRobe_Uncommon",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_ARM_ADRG_LuminousRobe_Rare",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_ARM_ADRG_LuminousRobe_VeryRare",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_ARM_ADRG_LuminousRobe_Legendary",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_ADRG_TheDiademOfDaybreak_Uncommon",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_ADRG_TheDiademOfDaybreak_Rare",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_ADRG_TheDiademOfDaybreak_VeryRare",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_ADRG_TheDiademOfDaybreak_Legendary",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_OBJ_ADRG_RS_UpgradeOrb_v1",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_OBJ_ADRG_RS_UpgradeOrb_v2",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_OBJ_ADRG_RS_UpgradeOrb_v3",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_OBJ_ADRG_RS_UpgradeCrystal_v1",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_OBJ_ADRG_RS_UpgradeCrystal_v2",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_OBJ_ADRG_RS_UpgradeCrystal_v3",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_OBJ_ADRG_RS_RadiantShaping_Scroll",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_OBJ_ADRG_RS_SickeningRadiance_Scroll",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_OBJ_ADRG_RS_WallOfLight_Scroll",1,0,0,0,0,0,0,0
+// new treasuretable "UND_SeluneOutpost_Treasure"
+// CanMerge 1
+// new subtable "1,1"
+// object category "I_ARM_ADRG_LuminousRobe_Uncommon",1,0,0,0,0,0,0,0
+// new treasuretable "CRE_RooftopExploration_Chest"
+// CanMerge 1
+// new subtable "1,1"
+// object category "I_ADRG_TheDiademOfDaybreak_Uncommon",1,0,0,0,0,0,0,0
+// new treasuretable "FOR_VillageFightReward"
+// CanMerge 1
+// new subtable "1,1"
+// object category "I_OBJ_ADRG_RS_UpgradeOrb_v1",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_OBJ_ADRG_RS_UpgradeCrystal_v1",1,0,0,0,0,0,0,0
+// new treasuretable "MOO_KethericCombat_Chest"
+// CanMerge 1
+// new subtable "1,1"
+// object category "I_OBJ_ADRG_RS_UpgradeOrb_v2",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_OBJ_ADRG_RS_UpgradeCrystal_v2",1,0,0,0,0,0,0,0
+// new treasuretable "WYR_OpenHand_PersonalChest"
+// CanMerge 1
+// new subtable "1,1"
+// object category "I_OBJ_ADRG_RS_UpgradeOrb_v3",1,0,0,0,0,0,0,0
+// new subtable "1,1"
+// object category "I_OBJ_ADRG_RS_UpgradeCrystal_v3",1,0,0,0,0,0,0,0
